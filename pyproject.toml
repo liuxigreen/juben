@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "juben"
+version = "0.1.0"
+description = "AI剧本/小说创作引擎 — Python控世界观+LLM写正文"
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.0",
+    "pydantic>=2.0",
+    "rich>=13.0",
+]
+
+[project.scripts]
+juben = "juben.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["juben*"]

@@ -1,0 +1,17 @@
+{
+  "relationships": [
+    {
+      "character_a": "char_001",
+      "character_b": "char_002",
+      "type": "ally",
+      "status": "current status description",
+      "trust_level": 50,
+      "history": "关系历史简述",
+      "tension": "当前张力/冲突点",
+      "evolution": [
+        {"chapter": 1, "change": "初次相遇", "trust_delta": 0},
+        {"chapter": 5, "change": "共同战斗", "trust_delta": 20}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,280 @@
+"""
+CLI入口 — juben命令行工具
+
+命令：
+  juben init <premise>     初始化项目
+  juben outline            生成大纲prompt
+  juben write <N>          生成第N章的prompt
+  juben audit [chapter]    审校（检查已有章节）
+  juben info               查看项目状态
+"""
+from __future__ import annotations
+
+import json
+import sys
+from pathlib import Path
+
+import click
+from rich.console import Console
+from rich.table import Table
+from rich.panel import Panel
+from rich import print as rprint
+
+from juben.state.manager import StateManager
+from juben.state.schema import ChapterReport
+from juben.extract import ContextExtractor
+from juben.generate.scribe import Scribe
+from juben.validate.anti_ai import AntiAIChecker
+from juben.validate.anti_cliche import AntiClicheChecker
+from juben.validate.cliffhanger import CliffhangerValidator
+from juben.validate.info_asymmetry import InfoAsymmetryValidator
+
+console = Console()
+
+
+@click.group()
+@click.version_option(version="0.1.0")
+def main():
+    """剧本引擎 — AI剧本/小说创作引擎"""
+    pass
+
+
+# ============================================================
+# init — 初始化项目
+# ============================================================
+
+@main.command()
+@click.argument("premise", default="")
+@click.option("--template", "-t", default="rebirth-revenge", help="题材模板")
+@click.option("--dir", "-d", default=".", help="项目目录")
+def init(premise: str, template: str, dir: str):
+    """初始化一个新故事项目"""
+    from juben.genre_templates import get_template, list_templates
+
+    tpl_fn = get_template(template)
+    if tpl_fn is None:
+        console.print(f"[red]未知模板: {template}[/red]")
+        console.print(f"可用模板: {', '.join(list_templates())}")
+        sys.exit(1)
+
+    project_dir = Path(dir).resolve()
+    if project_dir.exists() and any(project_dir.glob("*.json")):
+        if not click.confirm(f"目录 {project_dir} 已有项目文件，继续？"):
+            sys.exit(0)
+
+    result = tpl_fn(premise=premise)
+    mgr = StateManager(project_dir)
+    mgr.init_project(
+        meta=result["meta"],
+        characters=result["characters"],
+        world_rules=result["world_rules"],
+    )
+
+    console.print(Panel(
+        f"[green]✓ 项目初始化完成[/green]\n\n"
+        f"目录: {project_dir}\n"
+        f"模板: {template}\n"
+        f"主角: {result['characters'][0].name}\n"
+        f"前提: {result['meta'].premise[:80]}...\n\n"
+        f"[yellow]下一步: juben write 1 --dir {project_dir}[/yellow]",
+        title="🎬 剧本引擎",
+    ))
+
+
+# ============================================================
+# write — 生成章节prompt
+# ============================================================
+
+@main.command()
+@click.argument("chapter", type=int)
+@click.option("--dir", "-d", default=".", help="项目目录")
+@click.option("--chars", "-c", default="", help="出场角色ID，逗号分隔")
+def write(chapter: int, dir: str, chars: str):
+    """生成第N章的Scribe prompt（投喂给LLM生成正文）"""
+    project_dir = Path(dir).resolve()
+    mgr = StateManager(project_dir)
+    scribe = Scribe(mgr)
+
+    char_ids = [c.strip() for c in chars.split(",") if c.strip()] if chars else None
+
+    console.print(f"[cyan]正在为第{chapter}章生成prompt...[/cyan]")
+
+    prompt = scribe.generate_prompt(chapter, character_ids=char_ids)
+    path = scribe.save_prompt(chapter, prompt)
+
+    # 统计
+    word_count = len(prompt)
+    console.print(Panel(
+        f"[green]✓ Prompt已生成[/green]\n\n"
+        f"文件: {path}\n"
+        f"长度: {word_count} 字符\n\n"
+        f"[yellow]使用方法:[/yellow]\n"
+        f"1. 把 {path} 的内容投喂给LLM\n"
+        f"2. 把LLM输出保存到 chapters/{chapter:03d}.md\n"
+        f"3. 运行 [cyan]juben audit {chapter}[/cyan] 校验质量",
+        title=f"📝 第{chapter}章 Prompt",
+    ))
+
+
+# ============================================================
+# audit — 审校章节
+# ============================================================
+
+@main.command()
+@click.argument("chapter", type=int, default=0)
+@click.option("--dir", "-d", default=".", help="项目目录")
+def audit(chapter: int, dir: str):
+    """审校已有章节（0=全部）"""
+    project_dir = Path(dir).resolve()
+    mgr = StateManager(project_dir)
+    chapter_dir = project_dir / "chapters"
+
+    if not chapter_dir.exists():
+        console.print("[red]没有找到chapters目录[/red]")
+        sys.exit(1)
+
+    chapters = []
+    if chapter > 0:
+        p = chapter_dir / f"{chapter:03d}.md"
+        if p.exists():
+            chapters.append((chapter, p))
+        else:
+            console.print(f"[red]找不到第{chapter}章[/red]")
+            sys.exit(1)
+    else:
+        for p in sorted(chapter_dir.glob("*.md")):
+            num = int(p.stem)
+            chapters.append((num, p))
+
+    if not chapters:
+        console.print("[red]chapters目录为空[/red]")
+        sys.exit(1)
+
+    # 加载反套路黑名单
+    world = mgr.load_world_rules()
+    anti_cliche = AntiClicheChecker(world.anti_cliche_blacklist)
+    anti_ai = AntiAIChecker()
+    cliffhanger = CliffhangerValidator()
+
+    # 加载信息对称性
+    rels = mgr.load_relationships()
+    info_validator = InfoAsymmetryValidator(rels.info_asymmetry)
+
+    # 加载角色
+    characters = mgr.load_characters()
+
+    for ch_num, ch_path in chapters:
+        text = ch_path.read_text(encoding="utf-8")
+        console.print(f"\n[bold]═══ 第{ch_num}章审校 ═══[/bold]")
+
+        # 1. 反AI味
+        ai_result = anti_ai.check(text)
+        _print_validation("反AI味", ai_result)
+
+        # 2. 反套路
+        cliche_result = anti_cliche.check(text)
+        _print_validation("反套路", cliche_result)
+
+        # 3. Cliffhanger
+        ch_result = cliffhanger.check(text)
+        _print_validation("Cliffhanger", ch_result)
+
+        # 4. 信息对称性
+        char_ids = [c.id for c in characters]
+        info_result = info_validator.check(text, char_ids)
+        _print_validation("信息对称性", info_result)
+
+        # 总分
+        total = (
+            ai_result.score + cliche_result.score +
+            ch_result.score + info_result.score
+        ) / 4
+        passed = ai_result.passed and cliche_result.passed and ch_result.passed
+
+        color = "green" if passed else "red"
+        console.print(f"\n[{color}]总分: {total:.1f}/10 {'✓ PASS' if passed else '✗ FAIL'}[/{color}]")
+
+        # 保存报告
+        report = ChapterReport(
+            chapter_num=ch_num,
+            word_count=len(text),
+            anti_ai=ai_result,
+            anti_cliche=cliche_result,
+            cliffhanger=ch_result,
+            overall_score=total,
+            passed=passed,
+        )
+        report_dir = project_dir / "reports"
+        report_dir.mkdir(exist_ok=True)
+        report_path = report_dir / f"chapter_{ch_num:03d}.json"
+        report_path.write_text(
+            report.model_dump_json(indent=2),
+            encoding="utf-8",
+        )
+        console.print(f"  报告: {report_path}")
+
+
+def _print_validation(name: str, result):
+    """打印校验结果"""
+    color = "green" if result.passed else "red"
+    icon = "✓" if result.passed else "✗"
+    console.print(f"  [{color}]{icon} {name}: {result.score:.1f}/10[/{color}]")
+    for v in result.violations:
+        sev_color = {"critical": "red", "warning": "yellow", "info": "dim"}.get(v.severity.value, "white")
+        console.print(f"    [{sev_color}][{v.severity.value}] {v.description}[/{sev_color}]")
+        if v.suggestion:
+            console.print(f"           → {v.suggestion}")
+
+
+# ============================================================
+# info — 查看项目状态
+# ============================================================
+
+@main.command()
+@click.option("--dir", "-d", default=".", help="项目目录")
+def info(dir: str):
+    """查看项目状态"""
+    project_dir = Path(dir).resolve()
+    mgr = StateManager(project_dir)
+
+    try:
+        meta = mgr.load_meta()
+    except Exception:
+        console.print("[red]找不到项目文件，请先运行 juben init[/red]")
+        sys.exit(1)
+
+    characters = mgr.load_characters()
+    threads = mgr.load_plot_threads()
+    timeline = mgr.load_timeline()
+
+    table = Table(title="🎬 项目状态")
+    table.add_column("项目", style="cyan")
+    table.add_column("值")
+
+    table.add_row("标题", meta.title)
+    table.add_row("题材", meta.genre)
+    table.add_row("前提", meta.premise[:60] + "...")
+    table.add_row("意外变量", meta.disruption_variable[:60] + "..." if meta.disruption_variable else "未设置")
+    table.add_row("目标章节", str(meta.target_chapters))
+    table.add_row("已写章节", str(meta.last_chapter_written))
+    table.add_row("角色数", str(len(characters)))
+    table.add_row("伏笔数", str(len(threads.threads)))
+    table.add_row("时间线事件", str(len(timeline.events)))
+    table.add_row("算法卡点", str(len(meta.pacing_cards)) + "个")
+
+    console.print(table)
+
+    # 角色列表
+    if characters:
+        t2 = Table(title="角色")
+        t2.add_column("ID")
+        t2.add_column("名字")
+        t2.add_column("角色")
+        t2.add_column("状态")
+        for c in characters:
+            t2.add_row(c.id, c.name, c.role.value, "✓" if c.state.alive else "✗")
+        console.print(t2)
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,57 @@
+{
+  "id": "char_XXX",
+  "name": "角色名",
+  "aliases": ["别名1", "别名2"],
+  "role": "protagonist",
+  "appearance": {
+    "age": 22,
+    "height": "175cm",
+    "build": "体型描述",
+    "hair": "发型发色",
+    "eyes": "眼睛颜色",
+    "distinguishing": "标志性特征（疤痕/纹身/习惯动作）",
+    "clothing_default": "默认穿着"
+  },
+  "personality": {
+    "ocean": {
+      "openness": 5,
+      "conscientiousness": 5,
+      "extraversion": 5,
+      "agreeableness": 5,
+      "neuroticism": 5
+    },
+    "speech_pattern": "说话方式描述",
+    "habits": ["习惯1", "习惯2"],
+    "fears": ["恐惧1", "恐惧2"],
+    "desires": "核心欲望"
+  },
+  "background": {
+    "origin": "出身",
+    "family": "家庭背景",
+    "education": "教育",
+    "key_event": "关键人生事件",
+    "secret": "隐藏秘密"
+  },
+  "abilities": {
+    "combat": "战斗能力",
+    "knowledge": "知识技能",
+    "special": "特殊能力"
+  },
+  "relationships": {
+    "other_char_id": "关系描述"
+  },
+  "arc": {
+    "start": "故事开始时的状态",
+    "midpoint": "中段状态",
+    "end": "故事结束时的状态",
+    "internal_conflict": "Want（表层目标）vs Need（深层需求）"
+  },
+  "state": {
+    "alive": true,
+    "location": "初始位置",
+    "health": "健康",
+    "current_goal": "当前目标",
+    "last_appeared": null,
+    "last_state_change": null
+  }
+}

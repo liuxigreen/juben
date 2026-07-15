@@ -1,0 +1,14 @@
+{
+  "threads": [
+    {
+      "id": "thread_001",
+      "description": "伏笔描述",
+      "planted_chapter": 1,
+      "payoff_chapter": null,
+      "status": "open",
+      "characters_involved": ["char_001"],
+      "importance": "major",
+      "resolution": null
+    }
+  ]
+}

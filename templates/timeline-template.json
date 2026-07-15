@@ -1,0 +1,14 @@
+{
+  "events": [
+    {
+      "id": "event_001",
+      "chapter": 1,
+      "timestamp": "末世第1天 晨",
+      "description": "事件描述",
+      "characters_involved": ["char_001"],
+      "location": "地点",
+      "impact": "事件影响",
+      "type": "catastrophe/combat/revelation/relationship"
+    }
+  ]
+}

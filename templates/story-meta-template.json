@@ -1,0 +1,25 @@
+{
+  "title": "你的故事标题",
+  "genre": "apocalypse-survival",
+  "sub_genres": ["system-leveling", "rebirth-revenge"],
+  "target_platform": "fanqie",
+  "target_chapters": 50,
+  "target_word_count_per_chapter": 2000,
+  "pov": "third_person_limited",
+  "language": "zh-CN",
+  "created_at": "",
+  "last_chapter_written": 0,
+  "premise": "一句话描述你的故事核心",
+  "logline": "主角（身份）+ 目标 + 障碍 + 利害关系",
+  "themes": ["主题1", "主题2"],
+  "target_audience": {
+    "age_range": "18-35",
+    "gender": "both",
+    "reading_habit": "daily_reader"
+  },
+  "monetization": {
+    "model": "free_with_ads",
+    "hook_chapters": 20,
+    "cliffhanger_density": "every_chapter"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "world_name": "你的世界名",
+  "genre": "apocalypse-survival",
+  "setting": {
+    "time_period": "时间设定",
+    "geography": "地理设定",
+    "climate": "气候",
+    "technology_level": "科技水平"
+  },
+  "catastrophe": {
+    "type": "灾难类型",
+    "trigger": "触发原因",
+    "timeline": {
+      "day_0": "灾难发生",
+      "day_1": "第一天后",
+      "week_1": "第一周后",
+      "month_1": "第一个月后",
+      "year_1": "一年后"
+    }
+  },
+  "power_system": {
+    "name": "力量体系名",
+    "type": "类型",
+    "levels": [
+      {"level": 1, "name": "等级1", "description": "描述"},
+      {"level": 2, "name": "等级2", "description": "描述"},
+      {"level": 3, "name": "等级3", "description": "描述"}
+    ],
+    "rules": [
+      "规则1",
+      "规则2",
+      "规则3"
+    ]
+  },
+  "factions": [
+    {
+      "name": "势力名",
+      "type": "秩序方/中立方/反派方",
+      "leader": "领袖名",
+      "territory": "领地",
+      "goal": "目标"
+    }
+  ],
+  "resources": {
+    "critical": ["关键资源1", "关键资源2"],
+    "rare": ["稀有资源1"],
+    "abundant": ["丰富资源1"]
+  },
+  "rules": [
+    "世界规则1",
+    "世界规则2",
+    "世界规则3"
+  ]
+}
