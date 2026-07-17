@@ -144,14 +144,17 @@ def _extract_dialogues_with_context(text: str, alias_map: CharacterAliasMap) -> 
 
 def _is_revelation_dialogue(line: str) -> bool:
     """判断一段对话是否是'交代真相'式的嘴炮"""
+    # 最少4个字符，避免"三年前"这种短片段误判
+    if len(line.strip()) < 4:
+        return False
     revelation_keywords = [
         "真相", "实话告诉你", "我告诉你", "告诉你", "其实",
         "八年前", "三年前", "当年", "那时候",
-        "是我", "我做的", "我杀的", "我有罪",
+        "是我做的", "我杀的", "我有罪",
         "秘密", "不能说", "瞒了", "藏了",
-        "灭门", "灭口", "杀了", "死了",
+        "灭门", "灭口", "杀了人", "死了人",
         "证据", "账本", "账册",
-        "答应过", "保护", "替你",
+        "答应过", "替你死", "替你挡",
     ]
     return any(kw in line for kw in revelation_keywords)
 
