@@ -1,0 +1,54 @@
+{
+  "threads": [
+    {
+      "id": "thread_001",
+      "description": "林夏寻找弟弟林晨的主线",
+      "planted_chapter": 1,
+      "payoff_chapter": null,
+      "status": "open",
+      "characters_involved": [],
+      "importance": "major",
+      "resolution": null
+    },
+    {
+      "id": "thread_002",
+      "description": "林夏的记忆正在快速流失，她还能记住弟弟多久？",
+      "planted_chapter": 1,
+      "payoff_chapter": null,
+      "status": "open",
+      "characters_involved": [],
+      "importance": "major",
+      "resolution": null
+    },
+    {
+      "id": "thread_003",
+      "description": "周野调查的实验室与丧尸爆发有关",
+      "planted_chapter": 2,
+      "payoff_chapter": null,
+      "status": "open",
+      "characters_involved": [],
+      "importance": "major",
+      "resolution": null
+    },
+    {
+      "id": "thread_004",
+      "description": "赵铁军知道丧尸爆发的真正原因",
+      "planted_chapter": 3,
+      "payoff_chapter": null,
+      "status": "open",
+      "characters_involved": [],
+      "importance": "major",
+      "resolution": null
+    },
+    {
+      "id": "thread_005",
+      "description": "林晨可能是隐性感染者，血液里有抗体",
+      "planted_chapter": 5,
+      "payoff_chapter": null,
+      "status": "open",
+      "characters_involved": [],
+      "importance": "major",
+      "resolution": null
+    }
+  ]
+}

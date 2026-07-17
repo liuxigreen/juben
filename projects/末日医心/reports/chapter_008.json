@@ -1,0 +1,31 @@
+{
+  "chapter_num": 8,
+  "word_count": 2937,
+  "continuity": {
+    "passed": true,
+    "violations": [],
+    "score": 0.0
+  },
+  "anti_ai": {
+    "passed": true,
+    "violations": [],
+    "score": 10.0
+  },
+  "cliffhanger": {
+    "passed": true,
+    "violations": [],
+    "score": 10.0
+  },
+  "pacing": {
+    "passed": true,
+    "violations": [],
+    "score": 0.0
+  },
+  "anti_cliche": {
+    "passed": true,
+    "violations": [],
+    "score": 10.0
+  },
+  "overall_score": 9.6,
+  "passed": true
+}

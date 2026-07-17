@@ -1,0 +1,28 @@
+name: modern
+description: 现代都市背景
+
+world_rules:
+  - "时代：当代（2020年代）"
+  - "科技水平：智能手机、互联网、社交媒体普及"
+  - "社会结构：现代城市，有医院/警察/政府等机构"
+  - "通讯：手机、微信、视频通话"
+
+character_defaults:
+  speech_modern:
+    style: "口语化，带网络用语"
+    forbidden_words: ["之乎者也", "尔等", "吾辈"]
+
+  body_language_modern:
+    habits: ["看手机", "叹气", "揉太阳穴", "靠在墙上"]
+
+ending_patterns:
+  modern_hooks:
+    - "手机屏幕亮了"
+    - "消息提示音响起"
+    - "监控画面里出现了不该出现的人"
+    - "她打开门，门外站着..."
+
+anti_cliche:
+  - "禁止：主角是富二代/官二代（除非有反转）"
+  - "禁止：所有问题都用钱解决"
+  - "禁止：反派智商突然下线"

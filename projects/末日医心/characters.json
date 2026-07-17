@@ -1,0 +1,270 @@
+{
+  "characters": [
+    {
+      "id": "char_pro",
+      "name": "林夏",
+      "aliases": [
+        "夏夏",
+        "林护士",
+        "医仙"
+      ],
+      "role": "protagonist",
+      "appearance": {
+        "age": 25,
+        "height": "165cm",
+        "build": "偏瘦，但手臂有肌肉线条（长期护理训练）",
+        "hair": "黑色短发，用橡皮筋随意扎在脑后",
+        "eyes": "深棕色，使用异能时瞳孔会变成金色",
+        "distinguishing": "左手腕有一道旧伤疤（弟弟小时候咬的）",
+        "clothing_default": "脏兮兮的护士服，外面套一件军用外套"
+      },
+      "personality": {
+        "ocean": {
+          "openness": 7,
+          "conscientiousness": 8,
+          "extraversion": 4,
+          "agreeableness": 6,
+          "neuroticism": 6
+        },
+        "speech_pattern": "简短实用，带医学术语。紧张时会自言自语。偶尔蹦出护士时期的口头禅（'深呼吸''放松'）",
+        "habits": [
+          "下意识数人数",
+          "检查周围人的伤势",
+          "咬嘴唇"
+        ],
+        "fears": [
+          "忘记弟弟的样子",
+          "失去救人能力",
+          "被孤立"
+        ],
+        "desires": "找到弟弟，然后带他去一个安全的地方"
+      },
+      "background": {
+        "origin": "小镇医院护士",
+        "family": "",
+        "education": "护理专科毕业",
+        "key_event": "丧尸爆发当天，弟弟在学校，她值夜班，手机信号中断",
+        "secret": "她已经忘记了弟弟的声音，只记得照片里的样子"
+      },
+      "abilities": {
+        "combat": "弱，只会用手术刀和急救剪刀",
+        "knowledge": "精通急救、外科护理、药物配比",
+        "special": "能'看见'伤口的最佳治疗方案——伤者身上会出现金色的光路，显示最佳切口/缝合路径/用药方案。每次使用后，会失去一段随机记忆（从最远的记忆开始）"
+      },
+      "relationships": {},
+      "arc": {
+        "start": "恐慌、自责、只想找到弟弟",
+        "midpoint": "发现自己救的人可能是导致丧尸爆发的帮凶",
+        "end": "选择牺牲最后的记忆来救弟弟",
+        "internal_conflict": "Want: 找到弟弟 vs Need: 接受失去记忆的代价"
+      },
+      "state": {
+        "alive": true,
+        "location": "废弃医院",
+        "health": "轻微营养不良，左脚扭伤",
+        "current_goal": "找到弟弟",
+        "last_appeared": null,
+        "last_state_change": null
+      }
+    },
+    {
+      "id": "char_ant",
+      "name": "赵铁军",
+      "aliases": [
+        "赵指挥",
+        "铁军",
+        "赵疯子"
+      ],
+      "role": "antagonist",
+      "appearance": {
+        "age": 45,
+        "height": "185cm",
+        "build": "魁梧，肌肉发达",
+        "hair": "板寸，两鬓斑白",
+        "eyes": "深灰色，锐利",
+        "distinguishing": "右脸有一道从眉骨到下巴的旧刀疤",
+        "clothing_default": "军装，但袖口磨损严重"
+      },
+      "personality": {
+        "ocean": {
+          "openness": 3,
+          "conscientiousness": 9,
+          "extraversion": 6,
+          "agreeableness": 2,
+          "neuroticism": 4
+        },
+        "speech_pattern": "命令式，短句，军事术语。偶尔引用兵法。威胁人时声音反而变轻",
+        "habits": [
+          "背手站立",
+          "敲桌面",
+          "盯着人看不说话"
+        ],
+        "fears": [
+          "失控",
+          "被背叛",
+          "变成丧尸"
+        ],
+        "desires": "建立新秩序，控制所有异能者"
+      },
+      "background": {
+        "origin": "特种部队退役",
+        "family": "",
+        "education": "军校",
+        "key_event": "丧尸爆发时，他亲手杀死了变成丧尸的妻子和女儿",
+        "secret": "他知道丧尸爆发的真正原因，但他选择隐瞒"
+      },
+      "abilities": {
+        "combat": "精通格斗、射击、战术指挥",
+        "knowledge": "军事战略、武器维护、人员管理",
+        "special": "无异能，但收集并控制异能者"
+      },
+      "relationships": {},
+      "arc": {
+        "start": "建立秩序，收集异能者",
+        "midpoint": "发现林夏的能力后，不惜一切代价要抓住她",
+        "end": "被自己控制的异能者反噬",
+        "internal_conflict": "Want: 控制一切 vs Need: 承认自己无法阻止末日"
+      },
+      "state": {
+        "alive": true,
+        "location": "军事基地",
+        "health": "健康",
+        "current_goal": "找到林夏",
+        "last_appeared": null,
+        "last_state_change": null
+      }
+    },
+    {
+      "id": "char_ally",
+      "name": "周野",
+      "aliases": [
+        "阿野",
+        "周哥"
+      ],
+      "role": "supporting",
+      "appearance": {
+        "age": 28,
+        "height": "178cm",
+        "build": "精瘦，敏捷",
+        "hair": "棕色，乱糟糟",
+        "eyes": "浅褐色，带笑",
+        "distinguishing": "脖子上挂着一个旧相机（从不摘下）",
+        "clothing_default": "冲锋衣+工装裤，背上永远背着相机包"
+      },
+      "personality": {
+        "ocean": {
+          "openness": 8,
+          "conscientiousness": 5,
+          "extraversion": 7,
+          "agreeableness": 7,
+          "neuroticism": 5
+        },
+        "speech_pattern": "话多，爱开玩笑，紧张时反而更话痨。偶尔蹦出记者术语（'独家''曝光'）",
+        "habits": [
+          "拍照记录",
+          "吹口哨",
+          "分享食物"
+        ],
+        "fears": [
+          "真相被埋没",
+          "孤独",
+          "没有意义地死去"
+        ],
+        "desires": "记录末日真相，有一天告诉所有人"
+      },
+      "background": {
+        "origin": "调查记者",
+        "family": "",
+        "education": "新闻系毕业",
+        "key_event": "丧尸爆发前，他正在调查一个神秘的实验室",
+        "secret": "他拍到了丧尸爆发前的关键照片，但相机里只剩最后一张胶卷"
+      },
+      "abilities": {
+        "combat": "中等，会用弓箭（静音武器）",
+        "knowledge": "调查技巧、信息收集、摄影",
+        "special": "无异能，但观察力极强"
+      },
+      "relationships": {},
+      "arc": {
+        "start": "独自行动，记录一切",
+        "midpoint": "遇到林夏后，决定保护她",
+        "end": "用最后一张胶卷拍下林夏救人的真相",
+        "internal_conflict": "Want: 记录真相 vs Need: 选择保护人而不是拍照"
+      },
+      "state": {
+        "alive": true,
+        "location": "废弃医院附近",
+        "health": "健康",
+        "current_goal": "找到丧尸爆发的真相",
+        "last_appeared": null,
+        "last_state_change": null
+      }
+    },
+    {
+      "id": "char_bro",
+      "name": "林晨",
+      "aliases": [
+        "小晨",
+        "弟弟"
+      ],
+      "role": "supporting",
+      "appearance": {
+        "age": 16,
+        "height": "170cm",
+        "build": "瘦弱",
+        "hair": "黑色，刘海很长",
+        "eyes": "和林夏一样的深棕色",
+        "distinguishing": "左手腕有一个和林夏对称的伤疤",
+        "clothing_default": "校服，脏兮兮的"
+      },
+      "personality": {
+        "ocean": {
+          "openness": 6,
+          "conscientiousness": 4,
+          "extraversion": 3,
+          "agreeableness": 7,
+          "neuroticism": 7
+        },
+        "speech_pattern": "少言，但关键时刻会说出超出年龄的话。叫姐姐时声音会变小",
+        "habits": [
+          "画画",
+          "数星星",
+          "咬指甲"
+        ],
+        "fears": [
+          "被姐姐忘记",
+          "拖累别人",
+          "变成丧尸"
+        ],
+        "desires": "回到姐姐身边"
+      },
+      "background": {
+        "origin": "高中生",
+        "family": "",
+        "education": "高一",
+        "key_event": "丧尸爆发时在学校，被同学救出但走散",
+        "secret": "他可能已经感染了丧尸病毒，但没有发作（隐性携带者）"
+      },
+      "abilities": {
+        "combat": "弱",
+        "knowledge": "画画、基础急救（姐姐教的）",
+        "special": "隐性感染（可能成为疫苗的关键）"
+      },
+      "relationships": {},
+      "arc": {
+        "start": "独自求生，等待姐姐",
+        "midpoint": "被赵铁军的人找到，成为人质",
+        "end": "用自己感染者的血清救了林夏",
+        "internal_conflict": "Want: 和姐姐在一起 vs Need: 不拖累姐姐"
+      },
+      "state": {
+        "alive": true,
+        "location": "未知（被赵铁军控制）",
+        "health": "隐性感染，未发作",
+        "current_goal": "活下去，等姐姐来",
+        "last_appeared": null,
+        "last_state_change": null
+      }
+    }
+  ]
+}

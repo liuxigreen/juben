@@ -1,0 +1,28 @@
+name: horror
+description: 恐怖/末日/丧尸背景
+
+world_rules:
+  - "生存法则：资源稀缺，信任危机"
+  - "威胁等级：丧尸有等级，会进化"
+  - "安全区：临时避难所，随时可能沦陷"
+  - "通讯：信号中断，只能靠口信或无线电"
+
+character_defaults:
+  speech_horror:
+    style: "简短、紧张、实用"
+    forbidden_words: ["废话", "长篇大论"]
+
+  body_language_horror:
+    habits: ["握紧武器", "频繁回头", "压低声音", "屏住呼吸"]
+
+ending_patterns:
+  horror_hooks:
+    - "黑暗中传来脚步声"
+    - "门把手缓缓转动"
+    - "她低头看见自己的手，指甲变黑了"
+    - "无线电突然响起，传来弟弟的声音"
+
+anti_cliche:
+  - "禁止：丧尸突然出现只是为了吓人"
+  - "禁止：主角每次都能毫发无损逃脱"
+  - "禁止：所有配角都是炮灰"

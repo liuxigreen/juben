@@ -1,0 +1,70 @@
+{
+  "title": "末日医心",
+  "genre": "现代都市背景 + 恐怖/末日/丧尸背景",
+  "sub_genres": [],
+  "premise": "护士林夏在丧尸爆发时与弟弟失散。逃亡中她发现自己能'看见'伤口的最佳治疗方案——但每次使用，她都会暂时失去一段记忆。为了找到弟弟，她必须在遗忘与治愈之间做出选择。",
+  "logline": "",
+  "target_chapters": 50,
+  "target_word_count_per_chapter": 2000,
+  "pov": "third_person_limited",
+  "language": "zh-CN",
+  "last_chapter_written": 0,
+  "disruption_variable": "能看见伤口的最佳治疗方案，但每次使用会失去一段记忆",
+  "pacing_cards": [
+    {
+      "label": "3s_Hook",
+      "word_range": [
+        0,
+        100
+      ],
+      "rule": "动词+特写开局。禁止背景铺垫。必须在前100字内出现一个具体的感官冲击（坠落感/疼痛/重生的眩晕）",
+      "emotion": "震惊/恐惧",
+      "cliffhanger_type": null
+    },
+    {
+      "label": "15s_Retention",
+      "word_range": [
+        300,
+        500
+      ],
+      "rule": "爆出核心信息差——主角知道但其他人不知道的关键事实。这是留住读者的炸弹",
+      "emotion": "掌控感/暗爽",
+      "cliffhanger_type": null
+    },
+    {
+      "label": "Mini_Tension",
+      "word_range": [
+        600,
+        800
+      ],
+      "rule": "一次小规模紧张对峙或试探，主角不能暴露自己知道太多",
+      "emotion": "紧张/压抑",
+      "cliffhanger_type": null
+    },
+    {
+      "label": "Emotion_Dip",
+      "word_range": [
+        1000,
+        1200
+      ],
+      "rule": "情绪下压——回忆前世的痛苦/看到还活着的已故亲人/意识到代价",
+      "emotion": "心痛/愤怒",
+      "cliffhanger_type": null
+    },
+    {
+      "label": "50s_Cliffhanger",
+      "word_range": [
+        1700,
+        2000
+      ],
+      "rule": "断崖。必须在最后一句植入一个具体的未回答问题",
+      "emotion": "悬念/紧迫",
+      "cliffhanger_type": "Reveal"
+    }
+  ],
+  "template": "universal",
+  "narrative_skeleton": "mixins:rebirth-revenge",
+  "global_hook_density": "high",
+  "themes": [],
+  "target_audience": {}
+}

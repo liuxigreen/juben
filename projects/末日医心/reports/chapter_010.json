@@ -1,0 +1,46 @@
+{
+  "chapter_num": 10,
+  "word_count": 3180,
+  "continuity": {
+    "passed": true,
+    "violations": [],
+    "score": 0.0
+  },
+  "anti_ai": {
+    "passed": true,
+    "violations": [],
+    "score": 10.0
+  },
+  "cliffhanger": {
+    "passed": true,
+    "violations": [
+      {
+        "type": "cliffhanger_weak",
+        "severity": "warning",
+        "description": "未检测到明确的Cliffhanger信号",
+        "location": "",
+        "suggestion": "在结尾植入一个具体的未回答问题"
+      },
+      {
+        "type": "cliffhanger_weak",
+        "severity": "warning",
+        "description": "结尾没有问句，也没有检测到Cliffhanger模式",
+        "location": "",
+        "suggestion": "考虑在最后一句植入悬念性问句"
+      }
+    ],
+    "score": 5.0
+  },
+  "pacing": {
+    "passed": true,
+    "violations": [],
+    "score": 0.0
+  },
+  "anti_cliche": {
+    "passed": true,
+    "violations": [],
+    "score": 10.0
+  },
+  "overall_score": 8.6,
+  "passed": true
+}
