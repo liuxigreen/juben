@@ -202,6 +202,8 @@ def generate_bootstrap_prompt(mgr: StateManager) -> str:
     """
     根据项目当前状态生成Bootstrapper prompt。
 
+    如果项目目录下有research/目录的调研报告，会自动注入。
+
     Args:
         mgr: StateManager实例
 
@@ -210,6 +212,14 @@ def generate_bootstrap_prompt(mgr: StateManager) -> str:
     """
     meta = mgr.load_meta()
     world = mgr.load_world_rules()
+
+    # 尝试注入调研结果
+    research_context = ""
+    try:
+        from juben.research import compile_research_for_bootstrap
+        research_context = compile_research_for_bootstrap(mgr.project_dir)
+    except Exception:
+        pass
 
     # 填充模板
     prompt = BOOTSTRAP_PROMPT_TEMPLATE.format(
@@ -223,6 +233,10 @@ def generate_bootstrap_prompt(mgr: StateManager) -> str:
             for c in meta.pacing_cards
         ) or "(无)",
     )
+
+    # 如果有调研结果，插入到prompt末尾
+    if research_context:
+        prompt += "\n\n---\n\n" + research_context
 
     return prompt
 

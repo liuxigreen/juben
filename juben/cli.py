@@ -70,6 +70,36 @@ def mixins():
 
 
 # ============================================================
+# research — 题材调研
+# ============================================================
+
+@main.command()
+@click.argument("query")
+@click.option("--dir", "-d", default=".", help="项目目录（用于保存报告）")
+@click.option("--fetch", "-f", "fetch_n", default=2, type=int, help="抓取前N条结果的完整内容")
+def research(query: str, dir: str, fetch_n: int):
+    """联网搜索题材趋势、爆款元素、市场数据"""
+    from juben.research import research_genre, format_research_report
+
+    project_dir = Path(dir).resolve()
+
+    console.print(f"[cyan]正在调研: {query}[/cyan]")
+
+    result = research_genre(
+        query=query,
+        project_dir=project_dir,
+        fetch_top_n=fetch_n,
+    )
+
+    report = format_research_report(result)
+    console.print(report)
+
+    if result.get("report_path"):
+        console.print(f"\n[green]报告已保存到 {result['report_path']}[/green]")
+        console.print("[dim]下次 juben bootstrap 时会自动注入这些调研结果[/dim]")
+
+
+# ============================================================
 # init — 初始化项目
 # ============================================================
 
@@ -338,6 +368,25 @@ def audit(chapter: int, dir: str):
 
     # 加载角色
     characters = mgr.load_characters()
+    protagonist = next((c for c in characters if c.role.value == "protagonist"), None)
+    protagonist_name = protagonist.name if protagonist else ""
+
+    # 加载Timeline Lock
+    from juben.timeline_lock import TimelineLock
+    tl_config_path = project_dir / "timeline_lock.json"
+    if tl_config_path.exists():
+        timeline_lock = TimelineLock.from_config(tl_config_path)
+    else:
+        timeline_lock = TimelineLock.from_default()
+
+    # 收集所有章节结尾（用于Anti-Repetition检测）
+    all_endings = []
+    for p in sorted(chapter_dir.glob("*.md")):
+        t = p.read_text(encoding="utf-8")
+        from juben.guardian import _extract_ending
+        all_endings.append(_extract_ending(t))
+
+    completed_nodes = []  # TODO: 从状态文件中读取已完成的节点
 
     for ch_num, ch_path in chapters:
         text = ch_path.read_text(encoding="utf-8")
@@ -360,12 +409,35 @@ def audit(chapter: int, dir: str):
         info_result = info_validator.check(text, char_ids)
         _print_validation("信息对称性", info_result)
 
-        # 总分
+        # 5. Guardian（Anti-Dialogue + Anti-Repetition + 高频词）
+        from juben.guardian import guardian_check
+        endings_up_to_ch = all_endings[:ch_num]
+        guardian_result = guardian_check(
+            chapter_text=text,
+            chapter_num=ch_num,
+            protagonist_name=protagonist_name,
+            chapter_endings=endings_up_to_ch,
+        )
+        _print_validation("Guardian", guardian_result)
+
+        # 6. Timeline Lock
+        tl_result = timeline_lock.validate_chapter(ch_num, text, completed_nodes)
+        if tl_result.passed:
+            console.print(f"  [green]✓ Timeline Lock: PASS[/green]")
+        else:
+            console.print(f"  [red]✗ Timeline Lock: FAIL[/red]")
+            for v in tl_result.violations:
+                sev_color = "red" if v["severity"] == "critical" else "yellow"
+                console.print(f"    [{sev_color}][{v['severity']}] {v['description']}[/]")
+
+        # 总分（6项）
         total = (
             ai_result.score + cliche_result.score +
-            ch_result.score + info_result.score
-        ) / 4
-        passed = ai_result.passed and cliche_result.passed and ch_result.passed
+            ch_result.score + info_result.score +
+            guardian_result.score
+        ) / 5
+        passed = (ai_result.passed and cliche_result.passed and
+                  ch_result.passed and guardian_result.passed and tl_result.passed)
 
         color = "green" if passed else "red"
         console.print(f"\n[{color}]总分: {total:.1f}/10 {'✓ PASS' if passed else '✗ FAIL'}[/{color}]")
@@ -396,8 +468,9 @@ def _print_validation(name: str, result):
     icon = "✓" if result.passed else "✗"
     console.print(f"  [{color}]{icon} {name}: {result.score:.1f}/10[/{color}]")
     for v in result.violations:
-        sev_color = {"critical": "red", "warning": "yellow", "info": "dim"}.get(v.severity.value, "white")
-        console.print(f"    [{sev_color}][{v.severity.value}] {v.description}[/{sev_color}]")
+        sev = v.severity.value if hasattr(v.severity, 'value') else v.severity
+        sev_color = {"critical": "red", "warning": "yellow", "info": "dim"}.get(sev, "white")
+        console.print(f"    [{sev_color}][{sev}] {v.description}[/{sev_color}]")
         if v.suggestion:
             console.print(f"           → {v.suggestion}")
 
