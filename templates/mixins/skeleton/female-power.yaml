@@ -1,0 +1,34 @@
+# 女频权谋骨架 — PacingCards模板
+# 适用于：大女主、女相、女将军、宫斗权谋
+# 核心节奏：女主用智慧破局，每章一个人性博弈
+
+name: female-power
+description: 女频权谋卡点骨架 — 女主智斗节奏公式
+
+pacing_cards:
+  - label: "3s_Hook"
+    word_range: [0, 100]
+    rule: "开局即危机。第一句话必须是女主面对一个迫在眉睫的威胁（赐婚/降罪/暗杀/指控），不是在梳妆打扮"
+    emotion: "紧迫/危机"
+    cliffhanger_type: null
+
+  - label: "15s_Retention"
+    word_range: [300, 500]
+    rule: "女主亮出一个非武力的破局手段（话术/情报/布局/心理博弈），让读者看到她的脑子"
+    emotion: "好奇/佩服"
+
+  - label: "Gender_Tension"
+    word_range: [600, 800]
+    rule: "性别压迫的具体呈现——不是抽象的'男权社会'，而是一个具体的场景让人感受到不公"
+    emotion: "愤怒/共鸣"
+
+  - label: "Intelligence_Payoff"
+    word_range: [1000, 1400]
+    rule: "女主的布局开始收网。但不能太顺利——至少一个意外变量打乱计划，逼她临场应变"
+    emotion: "紧张→爽"
+
+  - label: "50s_Cliffhanger"
+    word_range: [1700, 2000]
+    rule: "断崖。女主刚破一局，发现背后有更大的棋手——或者一个她信任的人露出破绽"
+    emotion: "震惊/背叛感"
+    cliffhanger_type: "Reveal"

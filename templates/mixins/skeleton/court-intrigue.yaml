@@ -1,0 +1,34 @@
+# 权谋宫斗骨架 — PacingCards模板
+# 适用于：宫廷、权谋、宫斗、宅斗题材
+# 核心节奏：层层递进的智斗，每章一个小博弈
+
+name: court-intrigue
+description: 权谋宫斗卡点骨架 — 智斗节奏公式
+
+pacing_cards:
+  - label: "3s_Hook"
+    word_range: [0, 100]
+    rule: "开局即博弈。第一句话必须是一个权力动作（下旨/审讯/对峙/密谋），禁止从环境描写开始"
+    emotion: "紧张/压迫"
+    cliffhanger_type: null
+
+  - label: "15s_Retention"
+    word_range: [300, 500]
+    rule: "抛出一个读者不知道但主角知道的关键信息（情报/密信/旧怨）。这是留住读者的钩子"
+    emotion: "好奇/暗爽"
+
+  - label: "Mini_Confrontation"
+    word_range: [600, 800]
+    rule: "一次小规模试探或交锋。主角不能暴露底牌，只能用暗示/反问/沉默来施压"
+    emotion: "紧张/压抑"
+
+  - label: "Emotion_Layer"
+    word_range: [1000, 1200]
+    rule: "揭示一个角色的深层动机（不是表面的争宠/争权，而是背后的人性驱动力：恐惧/愧疚/执念）"
+    emotion: "心痛/理解"
+
+  - label: "50s_Cliffhanger"
+    word_range: [1700, 2000]
+    rule: "断崖。必须在最后一句植入一个博弈翻转——主角的下一步棋出乎所有人意料"
+    emotion: "震惊/期待"
+    cliffhanger_type: "Turn"

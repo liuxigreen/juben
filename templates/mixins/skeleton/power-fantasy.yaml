@@ -1,0 +1,34 @@
+# 逆袭打脸骨架 — PacingCards模板
+# 适用于：男频爽文、都市逆袭、重生复仇
+# 核心节奏：每章一个"看不起我→我碾压你"的循环
+
+name: power-fantasy
+description: 逆袭打脸卡点骨架 — 爽感节奏公式
+
+pacing_cards:
+  - label: "3s_Hook"
+    word_range: [0, 100]
+    rule: "开局即冲突。第一句话必须是有人在看不起/羞辱/威胁主角，或者主角正在面对一个不可能的困境"
+    emotion: "愤怒/憋屈"
+    cliffhanger_type: null
+
+  - label: "15s_Retention"
+    word_range: [300, 500]
+    rule: "主角亮出一张底牌（不是全部实力，只是一个信号）。让读者知道'好戏要来了'"
+    emotion: "期待/暗爽"
+
+  - label: "Face_Slap"
+    word_range: [600, 900]
+    rule: "第一次打脸。但不能太轻松——主角需要付出一定代价或动用一定资源，让读者觉得'值'"
+    emotion: "爽/解气"
+
+  - label: "Escalation"
+    word_range: [1000, 1300]
+    rule: "打脸引出更大的敌人/更深的危机。小爽之后必须有大坑，否则读者没有继续看的理由"
+    emotion: "紧张/担忧"
+
+  - label: "50s_Cliffhanger"
+    word_range: [1700, 2000]
+    rule: "断崖。主角刚解决一个问题，更大的威胁浮现——或者一个关键信息暴露，改变整个局面"
+    emotion: "震惊/紧迫"
+    cliffhanger_type: "Reveal"

@@ -7,6 +7,7 @@ CLI入口 — juben命令行工具
   juben write <N>          生成第N章的prompt
   juben audit [chapter]    审校（检查已有章节）
   juben info               查看项目状态
+  juben mixins             列出所有可用mixin
 """
 from __future__ import annotations
 
@@ -33,10 +34,39 @@ console = Console()
 
 
 @click.group()
-@click.version_option(version="0.1.0")
+@click.version_option(version="0.2.0")
 def main():
     """剧本引擎 — AI剧本/小说创作引擎"""
     pass
+
+
+# ============================================================
+# mixins — 列出可用mixin
+# ============================================================
+
+@main.command()
+def mixins():
+    """列出所有可用的mixin规则包"""
+    from juben.mixins.merge_engine import MergeEngine
+
+    engine = MergeEngine()
+    available = engine.list_available()
+
+    for category, names in available.items():
+        table = Table(title=f"📦 {category}/")
+        table.add_column("名称", style="cyan")
+        table.add_column("说明")
+
+        for name in names:
+            try:
+                data = engine.load_mixin(category, name)
+                desc = data.get("description", "")
+                table.add_row(name, desc)
+            except Exception as e:
+                table.add_row(name, f"[red]加载失败: {e}[/red]")
+
+        console.print(table)
+        console.print()
 
 
 # ============================================================
@@ -45,9 +75,15 @@ def main():
 
 @main.command()
 @click.argument("premise", default="")
-@click.option("--template", "-t", default="rebirth-revenge", help="题材模板")
+@click.option("--template", "-t", default="rebirth-revenge", help="题材模板 (rebirth-revenge / universal)")
 @click.option("--dir", "-d", default=".", help="项目目录")
-def init(premise: str, template: str, dir: str):
+@click.option("--mixin", "-m", default="", help="Genre mixin列表，逗号分隔 (仅universal模板)")
+@click.option("--skeleton", "-s", default="", help="Skeleton mixin列表，逗号分隔 (仅universal模板)")
+@click.option("--title", default="", help="故事标题")
+@click.option("--disruption", default="", help="意外变量")
+@click.option("--yes", "-y", is_flag=True, help="跳过确认，直接初始化")
+def init(premise: str, template: str, dir: str, mixin: str, skeleton: str,
+         title: str, disruption: str, yes: bool):
     """初始化一个新故事项目"""
     from juben.genre_templates import get_template, list_templates
 
@@ -62,7 +98,51 @@ def init(premise: str, template: str, dir: str):
         if not click.confirm(f"目录 {project_dir} 已有项目文件，继续？"):
             sys.exit(0)
 
-    result = tpl_fn(premise=premise)
+    # 解析mixin参数
+    mixin_list = [m.strip() for m in mixin.split(",") if m.strip()] if mixin else None
+    skeleton_list = [s.strip() for s in skeleton.split(",") if s.strip()] if skeleton else None
+
+    # universal模板：显示合并报告并确认
+    if template == "universal" and (mixin_list or skeleton_list):
+        from juben.mixins.merge_engine import MergeEngine
+
+        engine = MergeEngine()
+
+        try:
+            world_rules = engine.build_world_rules(mixin_list or [])
+            pacing_cards = engine.build_pacing_cards(skeleton_list or [])
+        except Exception as e:
+            console.print(f"[red]Mixin加载失败: {e}[/red]")
+            sys.exit(1)
+
+        # 显示合并报告
+        report = engine.generate_init_report(
+            genre_mixins=mixin_list or [],
+            skeleton_mixins=skeleton_list or [],
+            world_rules=world_rules,
+            pacing_cards=pacing_cards,
+        )
+        console.print(report)
+
+        if not yes:
+            console.print("\n[yellow]以上是将要写入项目的规则。[/yellow]")
+            console.print("[yellow]你可以手动编辑 templates/mixins/ 中的YAML文件后再确认。[/yellow]")
+            if not click.confirm("确认使用这些规则初始化项目？"):
+                console.print("已取消。修改mixin后重新运行即可。")
+                sys.exit(0)
+
+    # 调用模板初始化
+    if template == "universal":
+        result = tpl_fn(
+            premise=premise,
+            mixins=mixin_list,
+            skeletons=skeleton_list,
+            title=title,
+            disruption_variable=disruption,
+        )
+    else:
+        result = tpl_fn(premise=premise)
+
     mgr = StateManager(project_dir)
     mgr.init_project(
         meta=result["meta"],
