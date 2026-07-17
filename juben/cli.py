@@ -288,6 +288,117 @@ def bootstrap(dir: str, do_apply: bool, response: str):
 
 
 # ============================================================
+# rewrite — Guardian低分章节重写prompt
+# ============================================================
+
+@main.command()
+@click.argument("chapter", type=int)
+@click.option("--dir", "-d", default=".", help="项目目录")
+@click.option("--context", "-c", default="", help="额外上下文")
+def rewrite(chapter: int, dir: str, context: str):
+    """为Guardian低分章节生成重写prompt"""
+    from juben.rewriter import save_rewrite_prompt
+
+    project_dir = Path(dir).resolve()
+    mgr = StateManager(project_dir)
+
+    try:
+        path = save_rewrite_prompt(mgr, chapter, extra_context=context)
+    except FileNotFoundError as e:
+        console.print(f"[red]{e}[/red]")
+        sys.exit(1)
+
+    console.print(Panel(
+        f"[green]✓ 重写prompt已生成[/green]\n\n"
+        f"文件: {path}\n\n"
+        f"[yellow]使用方法:[/yellow]\n"
+        f"1. 把 {path.name} 的内容投喂给LLM\n"
+        f"2. 把LLM输出保存到 rewrites/chapter_{chapter:03d}_v2.md\n"
+        f"3. 满意后替换 chapters/{chapter:03d}.md\n"
+        f"4. 运行 [cyan]juben commit {chapter} --dir {project_dir}[/cyan]",
+        title=f"🔄 第{chapter}章重写Prompt",
+    ))
+
+
+# ============================================================
+# commit — 章节锁定 + Curator状态更新
+# ============================================================
+
+@main.command()
+@click.argument("chapter", type=int)
+@click.option("--dir", "-d", default=".", help="项目目录")
+@click.option("--skip-audit", is_flag=True, help="跳过audit检查")
+@click.option("--apply-curator", is_flag=True, help="自动应用Curator提案")
+def commit(chapter: int, dir: str, skip_audit: bool, apply_curator: bool):
+    """锁定已通过audit的章节，生成Curator状态更新prompt"""
+    from juben.committer import commit_chapter, apply_curator_response
+
+    project_dir = Path(dir).resolve()
+    mgr = StateManager(project_dir)
+
+    result = commit_chapter(mgr, chapter, skip_audit=skip_audit)
+
+    if result.error:
+        console.print(f"[red]✗ {result.error}[/red]")
+        sys.exit(1)
+
+    console.print(Panel(
+        f"[green]✓ 第{chapter}章已锁定[/green]\n\n"
+        f"Audit分数: {result.audit_score}/10\n"
+        f"Curator prompt: {result.curator_proposal.get('prompt_path', 'N/A')}\n\n"
+        f"[yellow]下一步:[/yellow]\n"
+        f"1. 把Curator prompt喂给LLM\n"
+        f"2. 保存LLM输出到 curator/curator_response_{chapter:03d}.json\n"
+        f"3. 运行 [cyan]juben commit {chapter} --apply-curator --dir {project_dir}[/cyan]\n"
+        f"   或 [cyan]juben curator-apply {chapter} --dir {project_dir}[/cyan]",
+        title="🔒 章节锁定",
+    ))
+
+    # 如果指定了--apply-curator，尝试应用已有的响应
+    if apply_curator:
+        try:
+            applied = apply_curator_response(mgr, chapter)
+            if applied:
+                console.print(f"\n[green]✓ Curator状态已更新:[/green]")
+                for a in applied:
+                    console.print(f"  ✓ {a}")
+            else:
+                console.print(f"\n[yellow]没有找到Curator响应文件[/yellow]")
+        except FileNotFoundError:
+            console.print(f"\n[yellow]Curator响应文件不存在，请先生成[/yellow]")
+        except Exception as e:
+            console.print(f"\n[red]Curator应用失败: {e}[/red]")
+
+
+@main.command()
+@click.argument("chapter", type=int)
+@click.option("--dir", "-d", default=".", help="项目目录")
+@click.option("--response", "-r", default="", help="指定响应文件路径")
+def curator_apply(chapter: int, dir: str, response: str):
+    """应用Curator的状态更新响应"""
+    from juben.committer import apply_curator_response
+
+    project_dir = Path(dir).resolve()
+    mgr = StateManager(project_dir)
+
+    try:
+        resp_path = response if response else None
+        applied = apply_curator_response(mgr, chapter, resp_path)
+        if applied:
+            console.print(f"[green]✓ Curator状态已更新:[/green]")
+            for a in applied:
+                console.print(f"  ✓ {a}")
+        else:
+            console.print(f"[yellow]没有变更[/yellow]")
+    except FileNotFoundError as e:
+        console.print(f"[red]{e}[/red]")
+        sys.exit(1)
+    except Exception as e:
+        console.print(f"[red]应用失败: {e}[/red]")
+        sys.exit(1)
+
+
+# ============================================================
 # write — 生成章节prompt
 # ============================================================
 
@@ -409,7 +520,7 @@ def audit(chapter: int, dir: str):
         info_result = info_validator.check(text, char_ids)
         _print_validation("信息对称性", info_result)
 
-        # 5. Guardian（Anti-Dialogue + Anti-Repetition + 高频词）
+        # 5. Guardian（Anti-Dialogue + Anti-Repetition + 高频词 + 信息倾倒）
         from juben.guardian import guardian_check
         endings_up_to_ch = all_endings[:ch_num]
         guardian_result = guardian_check(
@@ -417,6 +528,7 @@ def audit(chapter: int, dir: str):
             chapter_num=ch_num,
             protagonist_name=protagonist_name,
             chapter_endings=endings_up_to_ch,
+            characters=characters,
         )
         _print_validation("Guardian", guardian_result)
 
