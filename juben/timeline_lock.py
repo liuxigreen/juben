@@ -182,6 +182,7 @@ class TimelineLock:
         chapter: int,
         chapter_text: str,
         completed_nodes: Optional[list[str]] = None,
+        recent_chapter_texts: Optional[list[str]] = None,
     ) -> TimelineLockResult:
         """
         校验一个章节是否违反Timeline Lock。
@@ -190,6 +191,7 @@ class TimelineLock:
             chapter: 章节号
             chapter_text: 章节正文
             completed_nodes: 已完成的节点ID列表
+            recent_chapter_texts: 最近几章的正文（用于主题重复检测）
 
         Returns:
             TimelineLockResult
@@ -223,6 +225,16 @@ class TimelineLock:
                     f"第{chapter}章包含禁止元素: '{forbidden}'（当前节点: {current_node.name}）"
                 )
 
+        # 4. 主题不重复检测（新增）
+        if recent_chapter_texts:
+            repetition = self._check_theme_repetition(chapter_text, recent_chapter_texts)
+            if repetition:
+                result.add_violation(
+                    "warning",
+                    current_node.node_id,
+                    repetition
+                )
+
         return result
 
     def _text_contains_element(self, text: str, element: str) -> bool:
@@ -236,6 +248,57 @@ class TimelineLock:
         keywords = [k.strip() for k in keywords if k.strip()]
 
         return all(kw in text_lower for kw in keywords)
+
+    def _check_theme_repetition(self, current_text: str, recent_texts: list[str]) -> str | None:
+        """
+        检测当前章节与最近章节的主题重复。
+
+        规则：
+        - 提取每章的关键词（去掉停用词后的高频词）
+        - 如果当前章与前一章的关键词重叠率 > 60%，触发警告
+        """
+        import re
+        from collections import Counter
+
+        # 停用词
+        stop_words = {
+            "的", "了", "在", "是", "和", "与", "也", "都", "就", "不",
+            "她", "他", "我", "你", "们", "这", "那", "有", "被", "从",
+            "到", "把", "让", "对", "为", "着", "过", "说", "道", "一",
+            "个", "上", "下", "里", "中", "来", "去", "得", "能", "会",
+            "可", "以", "所", "之", "其", "而", "但", "又", "如", "及",
+            "没", "很", "还", "更", "已", "并", "或", "则", "等", "将",
+            "向", "当", "比", "因", "此", "虽", "然", "若", "即", "何",
+        }
+
+        def extract_keywords(text: str) -> set[str]:
+            """提取关键词（简单的分词+去停用词）"""
+            # 去掉标点和数字
+            clean = re.sub(r'[^\u4e00-\u9fff]', '', text)
+            # 按字拆分，去停用词
+            words = [c for c in clean if c not in stop_words and len(c) > 0]
+            # 统计词频，取top30
+            counter = Counter(words)
+            return {w for w, _ in counter.most_common(30)}
+
+        current_keywords = extract_keywords(current_text)
+
+        for i, prev_text in enumerate(recent_texts[-2:]):  # 只检查最近2章
+            prev_keywords = extract_keywords(prev_text)
+            if not prev_keywords:
+                continue
+
+            overlap = len(current_keywords & prev_keywords)
+            total = min(len(current_keywords), len(prev_keywords))
+            if total > 0 and overlap / total > 0.6:
+                common = list(current_keywords & prev_keywords)[:5]
+                return (
+                    f"第{len(recent_texts) - i}章与当前章主题高度重叠（关键词重叠率{overlap/total:.0%}）。"
+                    f"共同关键词: {', '.join(common)}。"
+                    f"建议：引入新的场景/角色/冲突，避免读者感到重复。"
+                )
+
+        return None
 
     def get_chapter_guidance(self, chapter: int) -> str:
         """获取当前章节的写作指导（注入到Scribe prompt中）"""

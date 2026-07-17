@@ -299,7 +299,7 @@ def check_info_dump(text: str, alias_map: CharacterAliasMap | None = None) -> Gu
     else:
         density = 0
 
-    if density > 2.0 and revelation_count >= 2:
+    if density > 1.5 and revelation_count >= 2:
         # 找出信息倾倒最严重的段落
         worst = max(non_protag, key=lambda d: sum(1 for p in explanation_patterns if p in d.text))
 
@@ -430,6 +430,68 @@ def check_word_frequency(
 
 
 # ============================================================
+# 钩子密度检测
+# ============================================================
+
+def check_hook_density(chapter_text: str, chapter_num: int) -> GuardianViolation | None:
+    """
+    检测章节结尾是否有悬念钩子。
+
+    规则：
+    - 最后一段必须包含钩子元素（悬念/反问/感官冲击/未完成动作）
+    - 不能是平淡的叙述收尾
+    """
+    lines = [l.strip() for l in chapter_text.split("\n") if l.strip() and not l.startswith("#") and not l.startswith("-")]
+    if not lines:
+        return None
+
+    # 取最后一段
+    last_para = lines[-1]
+
+    # 钩子元素
+    hook_indicators = [
+        "？", "?",  # 反问
+        "——",  # 破折号（暗示未完成）
+        "...", "……",  # 省略号（暗示未尽之意）
+        "突然", "忽然",  # 突发事件
+        "转头", "转身", "回头",  # 动作暗示后续
+        "发现", "看见", "注意到",  # 发现新信息
+        "不对", "有问题", "奇怪",  # 悬念词
+    ]
+
+    # 感官冲击词
+    sensory_hooks = [
+        "冰冷", "滚烫", "血腥", "腐臭", "刺鼻",
+        "嗡", "咔", "砰", "咚",  # 声音
+        "黑", "红", "白",  # 颜色冲击
+    ]
+
+    has_hook = any(indicator in last_para for indicator in hook_indicators + sensory_hooks)
+
+    # 检查是否是平淡收尾（常见的复读模式）
+    boring_endings = [
+        "继续查", "还得查", "还没完", "还没结束",
+        "转身离开", "走出门", "回到房间",
+        "深吸一口气", "叹了口气",
+    ]
+
+    is_boring = any(ending in last_para for ending in boring_endings)
+
+    if not has_hook or is_boring:
+        # 截取最后50字作为证据
+        evidence = last_para[:50] + "..." if len(last_para) > 50 else last_para
+        return GuardianViolation(
+            rule="hook_density",
+            severity="warning",
+            description=f"章节结尾缺少悬念钩子。最后一段: '{evidence}'",
+            suggestion="在结尾加入一个反问/感官冲击/未完成动作/悬念词，让读者想看下一章",
+            offending_segments=[{"text": last_para[:80], "reason": "缺少钩子元素或使用平淡收尾"}],
+        )
+
+    return None
+
+
+# ============================================================
 # 统一入口
 # ============================================================
 
@@ -467,6 +529,11 @@ def guardian_check(
 
     # 3. 高频词熔断
     v = check_word_frequency(chapter_text, word_blacklist)
+    if v:
+        result.add(v)
+
+    # 4. 钩子密度检测（新增）
+    v = check_hook_density(chapter_text, chapter_num)
     if v:
         result.add(v)
 
