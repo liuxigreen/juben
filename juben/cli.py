@@ -156,9 +156,105 @@ def init(premise: str, template: str, dir: str, mixin: str, skeleton: str,
         f"模板: {template}\n"
         f"主角: {result['characters'][0].name}\n"
         f"前提: {result['meta'].premise[:80]}...\n\n"
-        f"[yellow]下一步: juben write 1 --dir {project_dir}[/yellow]",
+        f"[yellow]下一步:[/yellow]\n"
+        f"  1. juben bootstrap --dir {project_dir}  (生成LLM填充prompt)\n"
+        f"  2. 把prompt喂给LLM，保存输出为 bootstrap_response.json\n"
+        f"  3. juben bootstrap --apply --dir {project_dir}  (应用LLM输出)\n"
+        f"  4. juben write 1 --dir {project_dir}  (开始写作)",
         title="🎬 剧本引擎",
     ))
+
+
+# ============================================================
+# bootstrap — LLM驱动的角色/世界观填充
+# ============================================================
+
+@main.command()
+@click.option("--dir", "-d", default=".", help="项目目录")
+@click.option("--apply", "do_apply", is_flag=True, help="应用bootstrap_response.json到项目")
+@click.option("--response", "-r", default="", help="指定响应文件路径 (默认 bootstrap_response.json)")
+def bootstrap(dir: str, do_apply: bool, response: str):
+    """生成LLM填充prompt，或将LLM输出应用到项目"""
+    from juben.bootstrapper import (
+        save_bootstrap_prompt, apply_bootstrap_response, ValidationError,
+    )
+
+    project_dir = Path(dir).resolve()
+    mgr = StateManager(project_dir)
+
+    if not do_apply:
+        # 模式1：生成prompt
+        try:
+            mgr.load_meta()
+        except Exception:
+            console.print("[red]找不到项目文件，请先运行 juben init[/red]")
+            sys.exit(1)
+
+        path = save_bootstrap_prompt(mgr)
+        console.print(Panel(
+            f"[green]✓ Bootstrap prompt已生成[/green]\n\n"
+            f"文件: {path}\n\n"
+            f"[yellow]使用方法:[/yellow]\n"
+            f"1. 把 {path.name} 的内容投喂给任意LLM（ChatGPT/Claude/Agent）\n"
+            f"2. 让LLM输出JSON，保存为 bootstrap_response.json\n"
+            f"3. 运行 [cyan]juben bootstrap --apply --dir {project_dir}[/cyan]\n\n"
+            f"[dim]提示：也可以用 juben bootstrap --apply -r my_response.json 指定文件[/dim]",
+            title="📝 Bootstrap Prompt",
+        ))
+    else:
+        # 模式2：应用响应
+        response_path = project_dir / (response or "bootstrap_response.json")
+        if not response_path.exists():
+            console.print(f"[red]找不到响应文件: {response_path}[/red]")
+            sys.exit(1)
+
+        try:
+            with open(response_path, "r", encoding="utf-8") as f:
+                # 支持LLM输出中包含markdown代码块的情况
+                content = f.read().strip()
+                if content.startswith("```"):
+                    # 提取代码块中的JSON
+                    lines = content.split("\n")
+                    json_lines = []
+                    in_block = False
+                    for line in lines:
+                        if line.strip().startswith("```") and not in_block:
+                            in_block = True
+                            continue
+                        elif line.strip() == "```" and in_block:
+                            break
+                        elif in_block:
+                            json_lines.append(line)
+                    content = "\n".join(json_lines)
+
+                response_data = json.loads(content)
+        except json.JSONDecodeError as e:
+            console.print(f"[red]JSON解析失败: {e}[/red]")
+            console.print("[yellow]提示：确保LLM输出的是纯JSON（可以包含在```代码块中）[/yellow]")
+            sys.exit(1)
+
+        try:
+            result = apply_bootstrap_response(mgr, response_data)
+        except ValidationError as e:
+            console.print(f"[red]验证失败: {e}[/red]")
+            sys.exit(1)
+
+        # 显示结果
+        table = Table(title="🎬 Bootstrap 应用结果")
+        table.add_column("项目", style="cyan")
+        table.add_column("值")
+        for change in result["applied"]:
+            table.add_row("✓", change)
+        table.add_row("角色", ", ".join(result["character_names"]))
+        console.print(table)
+
+        console.print(Panel(
+            f"[green]✓ 项目已填充完成[/green]\n\n"
+            f"[yellow]下一步:[/yellow]\n"
+            f"  1. juben info --dir {project_dir}  (查看项目状态)\n"
+            f"  2. juben write 1 --dir {project_dir}  (开始写作)",
+            title="🎬 剧本引擎",
+        ))
 
 
 # ============================================================
