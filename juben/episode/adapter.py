@@ -121,33 +121,47 @@ class EpisodeAdapter:
         paragraphs: list[str],
         target_duration: int,
     ) -> list[PacingCheckpoint]:
-        """按节奏卡点分配段落"""
+        """按节奏卡点聚合段落（每个卡点聚合多个段落）"""
         checkpoints = []
         char_offset = 0
+        total_chars = sum(len(p) for p in paragraphs)
+
+        # 按5个卡点分组，每组聚合多个段落
+        groups = {label: {"text": [], "chars": 0} for label in PacingLabel}
 
         for para in paragraphs:
             para_len = len(para)
-
-            # 判断这个段落应该属于哪个卡点
             label = self._infer_checkpoint(char_offset, para, target_duration)
+            groups[label]["text"].append(para)
+            groups[label]["chars"] += para_len
+            char_offset += para_len
 
-            # 计算时间轴（按字数比例）
-            time_ratio = char_offset / max(1, sum(len(p) for p in paragraphs))
+        # 每个非空组生成一个checkpoint
+        char_offset = 0
+        for label in PacingLabel:
+            group = groups[label]
+            if not group["text"]:
+                continue
+
+            combined_text = "\n".join(group["text"])
+            group_chars = group["chars"]
+
+            time_ratio = char_offset / max(1, total_chars)
             time_start = time_ratio * target_duration
-            time_end = (char_offset + para_len) / max(1, sum(len(p) for p in paragraphs)) * target_duration
+            time_end = (char_offset + group_chars) / max(1, total_chars) * target_duration
 
             checkpoints.append(PacingCheckpoint(
                 label=label,
-                word_range=[char_offset, char_offset + para_len],
+                word_range=[char_offset, char_offset + group_chars],
                 time_range=[round(time_start, 1), round(time_end, 1)],
                 rule=self._get_rule_for_label(label),
-                visual_action=self._extract_action(para),
-                dialogue=self._extract_dialogue(para),
-                emotion=self._infer_emotion(para),
+                visual_action=self._extract_action(combined_text),
+                dialogue=self._extract_dialogue(combined_text),
+                emotion=self._infer_emotion(combined_text),
                 passed=True,
             ))
 
-            char_offset += para_len
+            char_offset += group_chars
 
         return checkpoints
 
@@ -332,7 +346,8 @@ class EpisodeAdapter:
     def _estimate_shot_duration(self, cp: PacingCheckpoint) -> float:
         """估算镜头时长"""
         if cp.time_range and len(cp.time_range) >= 2:
-            return round(cp.time_range[1] - cp.time_range[0], 1)
+            duration = round(cp.time_range[1] - cp.time_range[0], 1)
+            return max(2.0, min(30.0, duration))  # 2-30秒
         return 3.0
 
     def _build_subject_description(

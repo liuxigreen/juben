@@ -78,7 +78,7 @@ class Shot(BaseModel):
     shot_type: ShotType
     camera_movement: CameraMovement = CameraMovement.STATIC
     camera_angle: CameraAngle = CameraAngle.EYE_LEVEL
-    duration: float = Field(ge=1.5, le=15.0, description="秒")
+    duration: float = Field(ge=1.5, le=30.0, description="秒")
     composition: Composition = Composition.RULE_OF_THIRDS
 
     # 6组件Prompt（英文，可直接喂Kling/Runway/Veo）
@@ -163,8 +163,8 @@ class Episode(BaseModel):
     """短剧单集"""
     episode_number: int
     title: str = ""
-    duration_estimate_seconds: int = Field(ge=60, le=180, description="目标时长（秒）")
-    word_count_estimate: int = Field(ge=500, le=3000, description="目标字数")
+    duration_estimate_seconds: int = Field(ge=30, le=300, description="目标时长（秒）")
+    word_count_estimate: int = Field(ge=500, le=10000, description="目标字数")
 
     # 节奏卡点（双轴校验）
     pacing_checkpoints: list[PacingCheckpoint] = Field(default_factory=list)
