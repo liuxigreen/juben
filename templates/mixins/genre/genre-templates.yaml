@@ -1,0 +1,267 @@
+# 题材模板（Genre Templates）
+# 参考0xsline/short-drama的13种题材
+# 每种题材有特定的开场规则、节奏曲线、钩子设计
+
+name: genre-templates
+description: "13种短剧题材模板，定义每种题材的开场、节奏、钩子、反派层级"
+version: "1.0"
+
+# ============================================================
+# 题材列表
+# ============================================================
+
+genres:
+  # 1. 霸总（Bossy President）
+  bossy-president:
+    name: "霸总"
+    name_en: "Bossy President"
+    audience: "女频"
+    opening_rule: "男主必须在前3秒展示权力符号（豪车/保镖/集团大楼）"
+    rhythm_curve: "开局权力展示(15%) → 女主低位被欺(30%) → 男主暗中保护(35%) → 身份揭露打脸(20%)"
+    hook_types: ["身份钩子", "情绪钩子", "反转钩子"]
+    villain_hierarchy:
+      small: "情敌/同事嫉妒"
+      medium: "家族长辈反对"
+      large: "商业对手/前女友"
+      hidden: "男主身世秘密"
+    satisfaction_matrix: ["打脸", "甜宠", "逆袭"]
+    anti_cliche:
+      - "男主冷面霸道只为女主一人融化"
+      - "女主摔倒必被男主接住"
+      - "误会推动感情：不听解释转身就走"
+
+  # 2. 甜宠（Sweet Romance）
+  sweet-romance:
+    name: "甜宠"
+    name_en: "Sweet Romance"
+    audience: "女频"
+    opening_rule: "前3秒必须有甜蜜互动或意外接触（撞见/同居/契约）"
+    rhythm_curve: "意外接触(15%) → 甜蜜互动(35%) → 误会危机(30%) → 和好撒糖(20%)"
+    hook_types: ["情绪钩子", "关系钩子", "反转钩子"]
+    villain_hierarchy:
+      small: "情敌出现"
+      medium: "家族反对"
+      large: "身份秘密"
+      hidden: "前世纠葛"
+    satisfaction_matrix: ["甜宠", "打脸", "逆袭"]
+    anti_cliche:
+      - "女主生气就跑，男主追上来壁咚"
+      - "男主后宫争宠模式"
+      - "女主和男主初次见面就心跳加速"
+
+  # 3. 复仇（Revenge）
+  revenge:
+    name: "复仇"
+    name_en: "Revenge"
+    audience: "女频/男频"
+    opening_rule: "前3秒必须展示主角被伤害的具体场景（被推下楼/被毒/被背叛）"
+    rhythm_curve: "被伤害(15%) → 隐忍蛰伏(25%) → 收集证据(30%) → 反击打脸(30%)"
+    hook_types: ["情绪钩子", "身份钩子", "反转钩子"]
+    villain_hierarchy:
+      small: "帮凶/走狗"
+      medium: "直接加害者"
+      large: "幕后主使"
+      hidden: "最亲近的人背叛"
+    satisfaction_matrix: ["打脸", "逆袭", "碾压"]
+    anti_cliche:
+      - "女主被陷害时只会哭和等男主来救"
+      - "女主明明有证据却不拿出来"
+      - "反派的阴谋永远只差一步就被识破"
+
+  # 4. 重生（Rebirth）
+  rebirth:
+    name: "重生"
+    name_en: "Rebirth"
+    audience: "女频/男频"
+    opening_rule: "前3秒必须有重生的感官冲击（坠落感/疼痛/眩晕/睁眼回到过去）"
+    rhythm_curve: "重生觉醒(15%) → 利用前世记忆避坑(30%) → 逆转命运(35%) → 清算仇人(20%)"
+    hook_types: ["时间钩子", "身份钩子", "反转钩子"]
+    villain_hierarchy:
+      small: "前世的小人"
+      medium: "前世的加害者"
+      large: "前世的幕后黑手"
+      hidden: "前世最信任的人"
+    satisfaction_matrix: ["逆袭", "打脸", "碾压"]
+    anti_cliche:
+      - "重生后随口背唐诗宋词震惊全场"
+      - "女主用现代医学知识秒变神医"
+      - "女主掏出信物/令牌让全场震惊"
+
+  # 5. 穿越（Time Travel）
+  time-travel:
+    name: "穿越"
+    name_en: "Time Travel"
+    audience: "女频"
+    opening_rule: "前3秒必须有穿越的视觉冲击（现代→古代/古代→现代）"
+    rhythm_curve: "穿越适应(15%) → 利用现代知识(30%) → 身份危机(35%) → 逆转结局(20%)"
+    hook_types: ["时间钩子", "身份钩子", "反转钩子"]
+    villain_hierarchy:
+      small: "古代的嫉妒者"
+      medium: "家族势力"
+      large: "皇权/权贵"
+      hidden: "穿越的真相"
+    satisfaction_matrix: ["逆袭", "打脸", "甜宠"]
+    anti_cliche:
+      - "女主随口说出'民主''平等'引发朝堂震动"
+      - "女主在古代开奶茶店/火锅店发家致富"
+      - "穿越者用'现代思维'碾压所有人"
+
+  # 6. 宫斗（Palace Intrigue）
+  palace-intrigue:
+    name: "宫斗"
+    name_en: "Palace Intrigue"
+    audience: "女频"
+    opening_rule: "前3秒必须展示宫廷权力斗争的具体场景（赐死/下毒/废妃）"
+    rhythm_curve: "入宫危机(15%) → 隐忍生存(25%) → 步步为营(35%) → 登上权力巅峰(25%)"
+    hook_types: ["身份钩子", "冲突钩子", "反转钩子"]
+    villain_hierarchy:
+      small: "宫女/太监"
+      medium: "嫔妃/贵妃"
+      large: "皇后/太后"
+      hidden: "皇帝本人"
+    satisfaction_matrix: ["打脸", "逆袭", "权谋"]
+    anti_cliche:
+      - "女主在宴席上当众跳舞/弹琴惊艳四座"
+      - "圣旨/懿旨像微信消息一样随便发"
+      - "女主轻松进出皇宫如入无人之境"
+
+  # 7. 悬疑（Suspense）
+  suspense:
+    name: "悬疑"
+    name_en: "Suspense"
+    audience: "男女通用"
+    opening_rule: "前3秒必须有悬念钩子（尸体/密室/失踪/诡异事件）"
+    rhythm_curve: "发现线索(15%) → 追查真相(30%) → 危机逼近(35%) → 真相大白(20%)"
+    hook_types: ["悬念钩子", "反转钩子", "情绪钩子"]
+    villain_hierarchy:
+      small: "嫌疑人A"
+      medium: "嫌疑人B"
+      large: "真正的凶手"
+      hidden: "最不可能的人"
+    satisfaction_matrix: ["悬念", "反转", "碾压"]
+    anti_cliche:
+      - "凶手是管家"
+      - "密室杀人用绳子从门缝操作"
+      - "主角靠直觉破案而不是证据"
+
+  # 8. 都市（Urban）
+  urban:
+    name: "都市"
+    name_en: "Urban"
+    audience: "女频/男频"
+    opening_rule: "前3秒必须有都市生活的具体冲突（裁员/离婚/被甩/破产）"
+    rhythm_curve: "生活危机(15%) → 绝地反击(30%) → 逆袭成功(35%) → 登上人生巅峰(20%)"
+    hook_types: ["身份钩子", "情绪钩子", "反转钩子"]
+    villain_hierarchy:
+      small: "同事/邻居"
+      medium: "上司/竞争对手"
+      large: "行业大佬"
+      hidden: "最亲近的人"
+    satisfaction_matrix: ["逆袭", "打脸", "碾压"]
+    anti_cliche:
+      - "女主被退婚后对方后悔跪舔"
+      - "女主隐藏身份当丫鬟/乞丐，一朝翻身众人跪"
+      - "反派当众揭发女主，女主三句话反杀"
+
+  # 9. 奇幻（Fantasy）
+  fantasy:
+    name: "奇幻"
+    name_en: "Fantasy"
+    audience: "男频"
+    opening_rule: "前3秒必须有奇幻元素觉醒（系统/异能/神力/龙）"
+    rhythm_curve: "觉醒(15%) → 升级打怪(30%) → 遭遇强敌(35%) → 突破碾压(20%)"
+    hook_types: ["身份钩子", "反转钩子", "情绪钩子"]
+    villain_hierarchy:
+      small: "小喽啰"
+      medium: "区域BOSS"
+      large: "宗门长老"
+      hidden: "天道/神明"
+    satisfaction_matrix: ["碾压", "逆袭", "爽感"]
+    anti_cliche:
+      - "系统提示音像Siri"
+      - "升级靠吃丹药"
+      - "主角永远比对手高一个境界"
+
+  # 10. 末日（Apocalypse）
+  apocalypse:
+    name: "末日"
+    name_en: "Apocalypse"
+    audience: "男频/女频"
+    opening_rule: "前3秒必须有末日降临的视觉冲击（丧尸/病毒/灾难）"
+    rhythm_curve: "灾难降临(15%) → 求生挣扎(30%) → 建立据点(35%) → 重建文明(20%)"
+    hook_types: ["悬念钩子", "情绪钩子", "反转钩子"]
+    villain_hierarchy:
+      small: "丧尸/变异兽"
+      medium: "其他幸存者团体"
+      large: "军阀/独裁者"
+      hidden: "灾难的真相"
+    satisfaction_matrix: ["逆袭", "碾压", "悬念"]
+    anti_cliche:
+      - "主角有无限物资"
+      - "丧尸只会慢走"
+      - "主角一个人拯救世界"
+
+  # 11. 校园（Campus）
+  campus:
+    name: "校园"
+    name_en: "Campus"
+    audience: "女频/男频"
+    opening_rule: "前3秒必须有校园霸凌或身份误判场景"
+    rhythm_curve: "被欺凌(15%) → 隐藏身份(30%) → 身份揭露(35%) → 打脸全场(20%)"
+    hook_types: ["身份钩子", "情绪钩子", "反转钩子"]
+    villain_hierarchy:
+      small: "校霸/小团体"
+      medium: "富二代/校花"
+      large: "校方/家族"
+      hidden: "最信任的朋友"
+    satisfaction_matrix: ["打脸", "逆袭", "甜宠"]
+    anti_cliche:
+      - "转学生第一天就被欺负"
+      - "校花喜欢穷小子"
+      - "考试作弊被抓"
+
+  # 12. 职场（Workplace）
+  workplace:
+    name: "职场"
+    name_en: "Workplace"
+    audience: "女频"
+    opening_rule: "前3秒必须有职场不公场景（被抢功/被排挤/被开除）"
+    rhythm_curve: "被欺负(15%) → 隐藏实力(30%) → 展示能力(35%) → 碾压对手(20%)"
+    hook_types: ["身份钩子", "情绪钩子", "反转钩子"]
+    villain_hierarchy:
+      small: "同事嫉妒"
+      medium: "上司打压"
+      large: "公司政治"
+      hidden: "行业潜规则"
+    satisfaction_matrix: ["打脸", "逆袭", "碾压"]
+    anti_cliche:
+      - "实习生第一天就犯大错"
+      - "女主靠男主上位"
+      - "开会时被当众羞辱"
+
+  # 13. 古装（Ancient Romance）
+  ancient-romance:
+    name: "古装"
+    name_en: "Ancient Romance"
+    audience: "女频"
+    opening_rule: "前3秒必须有古装场景的视觉冲击（宫廷/战场/江湖）"
+    rhythm_curve: "身世之谜(15%) → 江湖历练(30%) → 身份揭露(35%) → 逆袭登顶(20%)"
+    hook_types: ["身份钩子", "时间钩子", "反转钩子"]
+    villain_hierarchy:
+      small: "恶奴/小人"
+      medium: "家族势力"
+      large: "皇权/权贵"
+      hidden: "身世秘密"
+    satisfaction_matrix: ["打脸", "逆袭", "甜宠"]
+    anti_cliche:
+      - "女主随口说出现代词汇"
+      - "女主用现代知识碾压古人"
+      - "古装剧里出现现代道具"
+
+# ============================================================
+# 使用方式
+# ============================================================
+# 1. 用户选择题材（最多2种）
+# 2. 从genres中读取对应的开场规则、节奏曲线、钩子类型
+# 3. 注入到Scribe Prompt中
+# 4. 反套路黑名单自动从anti_cliche中读取

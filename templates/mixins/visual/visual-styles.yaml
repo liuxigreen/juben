@@ -1,0 +1,140 @@
+# 视觉风格预设（Visual Styles）
+# 参考Micro-Drama-Skills的10种电影级视觉风格
+# 每种风格有特定的prompt_suffix，自动追加到所有AI生成提示词末尾
+
+name: visual-styles
+description: "10种电影级视觉风格预设，用于分镜提示词生成"
+version: "1.0"
+
+# ============================================================
+# 视觉风格列表
+# ============================================================
+
+styles:
+  # 1. 电影质感（默认）
+  cinematic-film:
+    name: "电影质感"
+    name_en: "Cinematic Film"
+    id: 1
+    camera: "Panavision Sphero 65"
+    film_stock: "Vision3 500T"
+    prompt_suffix: "cinematic film look, Panavision Sphero 65 lens, Kodak Vision3 500T film grain, shallow depth of field, anamorphic flare"
+    color_palette: "warm golden tones, rich shadows, natural skin tones"
+    best_for: ["霸总", "甜宠", "复仇", "重生"]
+    mood: "高端、质感、电影感"
+
+  # 2. 经典动漫
+  anime-classic:
+    name: "经典动漫"
+    name_en: "Anime Classic"
+    id: 2
+    camera: "Studio Ghibli style"
+    film_stock: "hand-drawn animation"
+    prompt_suffix: "anime style, Studio Ghibli inspired, hand-drawn look, cel shading, vibrant colors, expressive eyes"
+    color_palette: "bright saturated colors, soft pastels, warm lighting"
+    best_for: ["校园", "奇幻", "穿越"]
+    mood: "梦幻、青春、活力"
+
+  # 3. 赛博朋克
+  cyberpunk-neon:
+    name: "赛博朋克"
+    name_en: "Cyberpunk Neon"
+    id: 3
+    camera: "RED Monstro 8K"
+    film_stock: "digital high contrast"
+    prompt_suffix: "cyberpunk style, neon lights, high contrast, rain-slicked streets, holographic displays, dark atmosphere"
+    color_palette: "neon blue, magenta, cyan, dark purple, black"
+    best_for: ["末日", "奇幻", "悬疑"]
+    mood: "未来感、科技感、暗黑"
+
+  # 4. 水墨国风
+  chinese-ink:
+    name: "水墨国风"
+    name_en: "Chinese Ink Painting"
+    id: 4
+    camera: "ARRI ALEXA Mini LF"
+    film_stock: "digital with ink wash overlay"
+    prompt_suffix: "Chinese ink painting style, brush stroke textures, flowing robes, misty mountains, traditional architecture"
+    color_palette: "black ink, white paper, subtle red accents, jade green"
+    best_for: ["古装", "宫斗", "穿越"]
+    mood: "古典、优雅、意境"
+
+  # 5. 韩剧氛围
+  korean-drama:
+    name: "韩剧氛围"
+    name_en: "Korean Drama"
+    id: 5
+    camera: "Sony VENICE 2"
+    film_stock: "digital warm soft focus"
+    prompt_suffix: "Korean drama style, warm soft focus, shallow depth of field, natural lighting, romantic atmosphere"
+    color_palette: "warm beige, soft pink, cream white, golden hour light"
+    best_for: ["甜宠", "霸总", "校园"]
+    mood: "浪漫、温馨、治愈"
+
+  # 6. 暗黑悬疑
+  dark-thriller:
+    name: "暗黑悬疑"
+    name_en: "Dark Thriller"
+    id: 6
+    camera: "ARRI ALEXA 65"
+    film_stock: "digital high contrast chiaroscuro"
+    prompt_suffix: "dark thriller style, chiaroscuro lighting, deep shadows, high contrast, mysterious atmosphere"
+    color_palette: "dark blue, black, blood red, cold steel grey"
+    best_for: ["悬疑", "复仇", "末日"]
+    mood: "紧张、压抑、神秘"
+
+  # 7. 港风复古
+  vintage-hongkong:
+    name: "港风复古"
+    name_en: "Vintage Hong Kong"
+    id: 7
+    camera: "Kodak Vision3"
+    film_stock: "Cooke Anamorphic"
+    prompt_suffix: "vintage Hong Kong cinema style, Cooke anamorphic lens, film grain, warm nostalgic tones, dramatic lighting"
+    color_palette: "warm gold, deep red, teal shadows, amber highlights"
+    best_for: ["复仇", "都市", "职场"]
+    mood: "复古、怀旧、电影感"
+
+  # 8. 武侠大片
+  wuxia-epic:
+    name: "武侠大片"
+    name_en: "Wuxia Epic"
+    id: 8
+    camera: "Panavision DXL2"
+    film_stock: "digital with fog effects"
+    prompt_suffix: "wuxia epic style, flowing robes, sword fights, misty mountains, dramatic fog, sweeping camera movements"
+    color_palette: "jade green, deep red, gold accents, white mist"
+    best_for: ["古装", "宫斗", "奇幻"]
+    mood: "武侠、豪迈、意境"
+
+  # 9. 甜蜜恋爱
+  soft-romance:
+    name: "甜蜜恋爱"
+    name_en: "Soft Romance"
+    id: 9
+    camera: "Canon C500"
+    film_stock: "digital soft focus"
+    prompt_suffix: "soft romance style, gentle soft focus, warm backlight, bokeh lights, dreamy atmosphere"
+    color_palette: "soft pink, cream, lavender, warm golden light"
+    best_for: ["甜宠", "校园", "重生"]
+    mood: "甜蜜、梦幻、温馨"
+
+  # 10. 纪实写实
+  documentary-real:
+    name: "纪实写实"
+    name_en: "Documentary Real"
+    id: 10
+    camera: "Sony FX6"
+    film_stock: "digital natural"
+    prompt_suffix: "documentary style, handheld camera, natural lighting, raw unfiltered look, realistic textures"
+    color_palette: "natural colors, muted tones, realistic skin tones"
+    best_for: ["都市", "职场", "悬疑"]
+    mood: "真实、接地气、纪实"
+
+# ============================================================
+# 使用方式
+# ============================================================
+# 1. 用户选择风格（或根据题材自动推荐）
+# 2. 从styles中读取prompt_suffix
+# 3. 在ShotPromptGenerator中自动追加到每条prompt末尾
+# 4. 确保同一集的所有镜头使用同一风格
