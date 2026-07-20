@@ -139,9 +139,8 @@ class EpisodeParser:
         # 提取情绪（从视觉动作推断）
         emotion = self._infer_emotion(visual_action)
 
-        # 估算时长（按内容量）
-        word_count = len(visual_action) + len(dialogue)
-        duration = max(8.0, min(30.0, word_count / 10))
+        # 估算时长（5个镜头，目标90秒，每镜头约18秒）
+        duration = 18.0  # 固定时长，后续可按内容量调整
 
         # 构建Shot
         shot = Shot(
@@ -160,6 +159,7 @@ class EpisodeParser:
         )
 
         # 构建PacingCheckpoint
+        word_count = len(visual_action) + len(dialogue)
         checkpoint = PacingCheckpoint(
             label=PacingLabel(pacing_label) if pacing_label in [e.value for e in PacingLabel] else PacingLabel.HOOK_3S,
             word_range=[0, word_count],  # 粗略
@@ -276,12 +276,13 @@ class EpisodeParser:
     def _infer_emotion(self, text: str) -> str:
         """推断情绪"""
         emotion_keywords = {
-            "愤怒": ["攥紧", "咬牙", "瞪", "摔", "砸", "指节发白"],
-            "恐惧": ["颤抖", "冷汗", "退缩", "发抖"],
-            "震惊": ["愣住", "瞳孔", "不敢相信", "呆住"],
-            "悲伤": ["眼泪", "哽咽", "泪珠", "哭泣"],
-            "爽感": ["微笑", "冷笑", "碾压", "打脸"],
-            "悬念": ["？", "难道", "究竟", "秘密"],
+            "愤怒": ["攥紧", "咬牙", "瞪", "摔", "砸", "指节发白", "厉喝", "冷笑", "怒吼", "踹"],
+            "恐惧": ["颤抖", "冷汗", "退缩", "发抖", "发颤", "哆嗦", "僵直", "瞳孔骤缩"],
+            "震惊": ["愣住", "瞳孔", "不敢相信", "呆住", "猛地", "骤然", "一抖", "身体一僵"],
+            "悲伤": ["眼泪", "哽咽", "泪珠", "哭泣", "声音发抖", "气若游丝"],
+            "爽感": ["微笑", "冷笑", "碾压", "打脸", "眼神坚定", "语气平静"],
+            "悬念": ["？", "难道", "究竟", "秘密", "无声", "极轻", "几乎听不见"],
+            "紧张": ["急促", "逼近", "破窗", "冲入", "追", "跑", "闪"],
         }
         for emotion, keywords in emotion_keywords.items():
             for kw in keywords:

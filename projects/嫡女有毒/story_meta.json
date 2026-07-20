@@ -1,0 +1,74 @@
+{
+  "title": "嫡女有毒",
+  "genre": "古代历史常识限制锁 — 杜绝现代元素穿越 + 女频核心反套路 — 从真实爆款中提炼的降智烂梗",
+  "sub_genres": [],
+  "premise": "沈清辞是丞相府嫡女，前世被继母和庶妹联手陷害，死于非命。重生回三年前，她决定不再做任人摆布的棋子。这一世，她要夺回属于自己的一切，让害她的人付出代价。",
+  "logline": "",
+  "target_chapters": 50,
+  "target_word_count_per_chapter": 2000,
+  "pov": "third_person_limited",
+  "language": "zh-CN",
+  "last_chapter_written": 0,
+  "disruption_variable": "重生回三年前，带着前世记忆",
+  "pacing_cards": [
+    {
+      "label": "3s_Hook",
+      "word_range": [
+        0,
+        100
+      ],
+      "rule": "动词+特写开局。禁止背景铺垫。必须在前100字内出现一个具体的感官冲击（坠落感/疼痛/重生的眩晕）",
+      "emotion": "震惊/恐惧",
+      "cliffhanger_type": null
+    },
+    {
+      "label": "15s_Retention",
+      "word_range": [
+        300,
+        500
+      ],
+      "rule": "爆出核心信息差——主角知道但其他人不知道的关键事实。这是留住读者的炸弹",
+      "emotion": "掌控感/暗爽",
+      "cliffhanger_type": null
+    },
+    {
+      "label": "Mini_Tension",
+      "word_range": [
+        600,
+        800
+      ],
+      "rule": "一次小规模紧张对峙或试探，主角不能暴露自己知道太多",
+      "emotion": "紧张/压抑",
+      "cliffhanger_type": null
+    },
+    {
+      "label": "Emotion_Dip",
+      "word_range": [
+        1000,
+        1200
+      ],
+      "rule": "情绪下压——回忆前世的痛苦/看到还活着的已故亲人/意识到代价",
+      "emotion": "心痛/愤怒",
+      "cliffhanger_type": null
+    },
+    {
+      "label": "50s_Cliffhanger",
+      "word_range": [
+        1700,
+        2000
+      ],
+      "rule": "断崖。必须在最后一句植入一个具体的未回答问题",
+      "emotion": "悬念/紧迫",
+      "cliffhanger_type": "Reveal"
+    }
+  ],
+  "template": "universal",
+  "narrative_skeleton": "mixins:rebirth-revenge",
+  "global_hook_density": "high",
+  "themes": [
+    "女本位叙事：女主有独立人格和目标，不是男主的附属品",
+    "双强设定：男女主势均力敌，不是谁救谁",
+    "成长弧光：女主从'小我'到'家国'的价值递进"
+  ],
+  "target_audience": {}
+}

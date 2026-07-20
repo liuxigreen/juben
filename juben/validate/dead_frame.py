@@ -47,7 +47,7 @@ class DeadFrameResult:
 
 def detect_dead_frames(
     text: str,
-    min_physical_actions: int = 2,
+    min_physical_actions: int = 1,
     segment_size: int = 200,
 ) -> list[DeadFrameResult]:
     """

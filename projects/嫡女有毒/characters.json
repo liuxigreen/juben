@@ -1,0 +1,271 @@
+{
+  "characters": [
+    {
+      "id": "char_pro",
+      "name": "沈清辞",
+      "aliases": [
+        "辞儿",
+        "大小姐",
+        "嫡小姐"
+      ],
+      "role": "protagonist",
+      "appearance": {
+        "age": 18,
+        "height": "165cm",
+        "build": "纤细但不柔弱",
+        "hair": "乌黑如墨，常梳垂鬟分肖髻",
+        "eyes": "杏眼，清澈见底，但眼底藏着不属于这个年纪的冷意",
+        "distinguishing": "右手腕内侧有一颗朱砂痣（前世临死前看到的最后一样东西）",
+        "clothing_default": "素色襦裙，不喜艳色，腰间常挂一枚旧玉佩（亡母遗物）"
+      },
+      "personality": {
+        "ocean": {
+          "openness": 7,
+          "conscientiousness": 9,
+          "extraversion": 4,
+          "agreeableness": 3,
+          "neuroticism": 6
+        },
+        "speech_pattern": "说话慢条斯理，用词考究。生气时声音反而更轻。偶尔蹦出前世才知道的信息，然后立刻收回。",
+        "habits": [
+          "抚弄腰间玉佩",
+          "下意识摸右手腕的朱砂痣",
+          "看人时先看眼睛再看手"
+        ],
+        "fears": [
+          "重蹈覆辙",
+          "保护不了想保护的人",
+          "变成和继母一样的人"
+        ],
+        "desires": "让害她的人付出代价，保护弟弟，查出前世真正的幕后黑手"
+      },
+      "background": {
+        "origin": "丞相府嫡女，生母早逝",
+        "family": "",
+        "education": "琴棋书画皆通，但前世被继母打压，不许展露才华",
+        "key_event": "前世被继母下毒，临死前看到继母和一个神秘男人的密谈",
+        "secret": "她知道三年后丞相府会被满门抄斩，但不知道是谁下的令"
+      },
+      "abilities": {
+        "combat": "弱，只会些防身的花拳绣腿",
+        "knowledge": "精通药理（生母是医女），前世记忆",
+        "special": "重生者，知道未来三年会发生的事，但细节会随她的干预而改变"
+      },
+      "relationships": {},
+      "arc": {
+        "start": "隐忍、试探、收集证据",
+        "midpoint": "发现前世的幕后黑手不是继母，而是另有其人",
+        "end": "揭开真相，保全家族，手刃仇人",
+        "internal_conflict": "Want: 复仇 vs Need: 不被仇恨吞噬"
+      },
+      "state": {
+        "alive": true,
+        "location": "丞相府清风院",
+        "health": "虚弱（刚重生，身体不适）",
+        "current_goal": "摸清府内局势，找到盟友",
+        "last_appeared": null,
+        "last_state_change": null
+      }
+    },
+    {
+      "id": "char_ant",
+      "name": "林姨娘",
+      "aliases": [
+        "林氏",
+        "姨娘",
+        "继母"
+      ],
+      "role": "antagonist",
+      "appearance": {
+        "age": 35,
+        "height": "160cm",
+        "build": "丰腴，保养得宜",
+        "hair": "乌黑油亮，常梳牡丹髻，插金步摇",
+        "eyes": "丹凤眼，眼尾上挑，看人时带着审视",
+        "distinguishing": "左手无名指戴一枚红宝石戒指（来历不明）",
+        "clothing_default": "正红色或玫红色衣裙，喜欢用金线绣花"
+      },
+      "personality": {
+        "ocean": {
+          "openness": 5,
+          "conscientiousness": 8,
+          "extraversion": 7,
+          "agreeableness": 2,
+          "neuroticism": 7
+        },
+        "speech_pattern": "说话温柔体贴，但每句话都藏着针。对下人颐指气使，对老爷小鸟依人。",
+        "habits": [
+          "抚弄红宝石戒指",
+          "喝茶时用杯盖拨弄茶叶",
+          "笑的时候眼睛不笑"
+        ],
+        "fears": [
+          "失去老爷宠爱",
+          "被揭穿身世",
+          "女儿嫁不好"
+        ],
+        "desires": "让自己的女儿取代嫡女的位置，保住当家主母的权力"
+      },
+      "background": {
+        "origin": "出身商户，后被丞相纳为妾，扶正为继室",
+        "family": "",
+        "education": "识字不多，但心机深沉",
+        "key_event": "生母死后第三个月就嫁入丞相府",
+        "secret": "她和宫里的某位贵人有联系，定期传递消息"
+      },
+      "abilities": {
+        "combat": "无",
+        "knowledge": "后宅争斗、人情世故、下毒",
+        "special": "无异能，但有一张遍布府内外的人脉网"
+      },
+      "relationships": {},
+      "arc": {
+        "start": "打压嫡女，抬举亲生女儿",
+        "midpoint": "发现沈清辞变了，开始警惕",
+        "end": "被揭穿真面目，但背后的人比她更可怕",
+        "internal_conflict": "Want: 权力地位 vs Need: 女儿的幸福"
+      },
+      "state": {
+        "alive": true,
+        "location": "丞相府锦绣院",
+        "health": "健康",
+        "current_goal": "把亲生女儿沈清婉送进宫选秀",
+        "last_appeared": null,
+        "last_state_change": null
+      }
+    },
+    {
+      "id": "char_ally",
+      "name": "谢昭",
+      "aliases": [
+        "谢公子",
+        "世子爷"
+      ],
+      "role": "supporting",
+      "appearance": {
+        "age": 22,
+        "height": "182cm",
+        "build": "清瘦，但肩宽腰窄",
+        "hair": "束发，用一根白玉簪",
+        "eyes": "狭长的桃花眼，似笑非笑",
+        "distinguishing": "左耳戴一枚银色耳钉（不符合世家公子身份）",
+        "clothing_default": "月白色长袍，腰系墨色腰带，佩一块无字玉牌"
+      },
+      "personality": {
+        "ocean": {
+          "openness": 8,
+          "conscientiousness": 6,
+          "extraversion": 6,
+          "agreeableness": 5,
+          "neuroticism": 4
+        },
+        "speech_pattern": "说话吊儿郎当，喜欢用反问句。认真的时候语速会变慢。",
+        "habits": [
+          "摇折扇",
+          "歪头看人",
+          "说话时眼睛不看对方"
+        ],
+        "fears": [
+          "被家族束缚",
+          "失去自由",
+          "真相"
+        ],
+        "desires": "查清母亲死亡的真相"
+      },
+      "background": {
+        "origin": "镇国公府世子，母亲早逝",
+        "family": "",
+        "education": "文武双全，但故意装作纨绔",
+        "key_event": "母亲死因蹊跷，他一直在暗中调查",
+        "secret": "他知道一些关于丞相府的秘密，但还没完全查清"
+      },
+      "abilities": {
+        "combat": "高手，师从江湖名门",
+        "knowledge": "情报收集、人脉广、消息灵通",
+        "special": "无异能，但有一张遍布京城的情报网"
+      },
+      "relationships": {},
+      "arc": {
+        "start": "旁观者，对沈清辞好奇",
+        "midpoint": "发现沈清辞和他查的事情有关",
+        "end": "联手揭开真相，发现两家的秘密相连",
+        "internal_conflict": "Want: 自由 vs Need: 为母报仇"
+      },
+      "state": {
+        "alive": true,
+        "location": "镇国公府",
+        "health": "健康",
+        "current_goal": "调查母亲死因",
+        "last_appeared": null,
+        "last_state_change": null
+      }
+    },
+    {
+      "id": "char_sis",
+      "name": "沈清婉",
+      "aliases": [
+        "婉儿",
+        "二小姐",
+        "庶小姐"
+      ],
+      "role": "supporting",
+      "appearance": {
+        "age": 16,
+        "height": "162cm",
+        "build": "娇小，弱柳扶风",
+        "hair": "柔顺，常梳双螺髻",
+        "eyes": "水汪汪的杏眼，楚楚可怜",
+        "distinguishing": "说话时喜欢低头，露出一截白皙的后颈",
+        "clothing_default": "鹅黄色或淡粉色襦裙，喜欢戴珠花"
+      },
+      "personality": {
+        "ocean": {
+          "openness": 4,
+          "conscientiousness": 7,
+          "extraversion": 3,
+          "agreeableness": 6,
+          "neuroticism": 8
+        },
+        "speech_pattern": "说话轻声细语，喜欢用'姐姐说得是''婉儿不懂'这类谦卑句式。",
+        "habits": [
+          "低头绞手帕",
+          "说话前先看母亲脸色",
+          "喜欢跟在嫡姐身后"
+        ],
+        "fears": [
+          "被嫡姐报复",
+          "嫁不出去",
+          "母亲出事"
+        ],
+        "desires": "嫁给太子，成为太子妃"
+      },
+      "background": {
+        "origin": "丞相府庶女，林姨娘亲生",
+        "family": "",
+        "education": "琴棋书画样样不如嫡姐，但女红出众",
+        "key_event": "前世是她亲手把毒药放进嫡姐的茶里",
+        "secret": "她其实不愿意害嫡姐，但被母亲逼迫"
+      },
+      "abilities": {
+        "combat": "无",
+        "knowledge": "女红、讨好男人、装可怜",
+        "special": "无"
+      },
+      "relationships": {},
+      "arc": {
+        "start": "听母亲的话，打压嫡姐",
+        "midpoint": "发现嫡姐变了，开始动摇",
+        "end": "选择站在嫡姐这边，揭露母亲的阴谋",
+        "internal_conflict": "Want: 母亲的认可 vs Need: 做正确的事"
+      },
+      "state": {
+        "alive": true,
+        "location": "丞相府落英院",
+        "health": "健康",
+        "current_goal": "准备宫中选秀",
+        "last_appeared": null,
+        "last_state_change": null
+      }
+    }
+  ]
+}

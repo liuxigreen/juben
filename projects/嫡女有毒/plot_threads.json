@@ -1,0 +1,54 @@
+{
+  "threads": [
+    {
+      "id": "thread_001",
+      "description": "沈清辞复仇主线：揭穿继母真面目",
+      "planted_chapter": 1,
+      "payoff_chapter": null,
+      "status": "open",
+      "characters_involved": [],
+      "importance": "major",
+      "resolution": null
+    },
+    {
+      "id": "thread_002",
+      "description": "三年后丞相府满门抄斩的真相——谁下的令？",
+      "planted_chapter": 1,
+      "payoff_chapter": null,
+      "status": "open",
+      "characters_involved": [],
+      "importance": "major",
+      "resolution": null
+    },
+    {
+      "id": "thread_003",
+      "description": "谢昭母亲的死因与丞相府有关",
+      "planted_chapter": 3,
+      "payoff_chapter": null,
+      "status": "open",
+      "characters_involved": [],
+      "importance": "major",
+      "resolution": null
+    },
+    {
+      "id": "thread_004",
+      "description": "林姨娘与宫中贵人的联系",
+      "planted_chapter": 5,
+      "payoff_chapter": null,
+      "status": "open",
+      "characters_involved": [],
+      "importance": "major",
+      "resolution": null
+    },
+    {
+      "id": "thread_005",
+      "description": "沈清婉是否真的愿意害嫡姐？",
+      "planted_chapter": 7,
+      "payoff_chapter": null,
+      "status": "open",
+      "characters_involved": [],
+      "importance": "major",
+      "resolution": null
+    }
+  ]
+}
