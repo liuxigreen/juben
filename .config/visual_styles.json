@@ -1,0 +1,76 @@
+{
+  "styles": [
+    {
+      "id": 1,
+      "name": "Cinematic Film",
+      "name_cn": "电影质感",
+      "prompt_suffix": "cinematic, 4K, photorealistic, Panavision Sphero 65 lens, film grain, dramatic lighting",
+      "description": "默认风格，适合大多数题材"
+    },
+    {
+      "id": 2,
+      "name": "Anime Classic",
+      "name_cn": "经典动漫",
+      "prompt_suffix": "anime style, Studio Ghibli inspired, hand-drawn look, vibrant colors, expressive eyes",
+      "description": "二次元风格，适合奇幻/校园题材"
+    },
+    {
+      "id": 3,
+      "name": "Cyberpunk Neon",
+      "name_cn": "赛博朋克",
+      "prompt_suffix": "cyberpunk style, neon lights, high contrast, rain-soaked streets, futuristic, RED Monstro 8K",
+      "description": "霓虹灯+暗色调，适合科幻/悬疑题材"
+    },
+    {
+      "id": 4,
+      "name": "Chinese Ink Painting",
+      "name_cn": "水墨国风",
+      "prompt_suffix": "Chinese ink painting style, traditional brush strokes, misty mountains, elegant, ARRI ALEXA Mini LF",
+      "description": "古风水墨，适合古装/武侠题材"
+    },
+    {
+      "id": 5,
+      "name": "Korean Drama",
+      "name_cn": "韩剧氛围",
+      "prompt_suffix": "Korean drama style, warm soft focus, shallow depth of field, romantic lighting, Sony VENICE 2",
+      "description": "暖色柔焦，适合甜宠/爱情题材"
+    },
+    {
+      "id": 6,
+      "name": "Dark Thriller",
+      "name_cn": "暗黑悬疑",
+      "prompt_suffix": "dark thriller style, chiaroscuro lighting, deep shadows, mysterious, ARRI ALEXA 65",
+      "description": "明暗对比强，适合悬疑/复仇题材"
+    },
+    {
+      "id": 7,
+      "name": "Vintage Hong Kong",
+      "name_cn": "港风复古",
+      "prompt_suffix": "vintage Hong Kong cinema, Kodak Vision3 film, warm tones, grainy, Cooke Anamorphic lens",
+      "description": "90年代港片质感，适合都市/江湖题材"
+    },
+    {
+      "id": 8,
+      "name": "Wuxia Epic",
+      "name_cn": "武侠大片",
+      "prompt_suffix": "wuxia epic style, misty atmosphere, flowing fabrics, dynamic action, Panavision DXL2",
+      "description": "雾气+大场面，适合武侠/玄幻题材"
+    },
+    {
+      "id": 9,
+      "name": "Soft Romance",
+      "name_cn": "甜蜜恋爱",
+      "prompt_suffix": "soft romance style, dreamy bokeh, warm golden hour light, gentle, Canon C500",
+      "description": "柔焦暖色，适合甜宠/恋爱题材"
+    },
+    {
+      "id": 10,
+      "name": "Documentary Real",
+      "name_cn": "纪实写实",
+      "prompt_suffix": "documentary style, handheld camera, natural lighting, raw, Sony FX6",
+      "description": "手持自然光，适合职场/现实题材"
+    }
+  ],
+  "default_style_id": 1,
+  "usage": "在生成AI提示词时，根据题材选择对应风格的prompt_suffix追加到每条提示词末尾"
+}
