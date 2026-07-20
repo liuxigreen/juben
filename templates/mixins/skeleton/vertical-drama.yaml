@@ -1,0 +1,128 @@
+# 竖屏短剧节奏模板
+# 适用于：YouTube Shorts / TikTok / 红果 / 抖音 / 快手
+# 单集时长：60-120秒
+# 单集字数：800-1500字
+
+name: vertical-drama
+description: "竖屏短剧节奏模板 — 双轴校验（字数轴+秒数轴）"
+version: "1.0"
+
+# ============================================================
+# 节奏卡点（双轴）
+# ============================================================
+pacing_checkpoints:
+  - label: "3s_Hook"
+    word_range: [0, 100]
+    time_range: [0, 3]
+    rule: "动词+特写开局。禁止背景铺垫。必须出现一个具体的感官冲击（坠落感/疼痛/重生的眩晕/血/碎裂声）"
+    emotion: "震惊/恐惧"
+    shot_type: "CU"
+    camera_movement: "static"
+
+  - label: "15s_Retention"
+    word_range: [300, 500]
+    time_range: [10, 20]
+    rule: "爆出核心信息差——主角知道但其他人不知道的关键事实。这是留住观众的炸弹"
+    emotion: "掌控感/暗爽"
+    shot_type: "MCU"
+    camera_movement: "push"
+
+  - label: "30s_Explosion"
+    word_range: [600, 800]
+    time_range: [25, 35]
+    rule: "视觉/物理冲击（踢飞、玻璃碎、雷劈、打翻茶杯）。必须有物理位移，不能只靠对话"
+    emotion: "紧张/冲击"
+    shot_type: "MS"
+    camera_movement: "handheld"
+
+  - label: "60s_Satisfaction"
+    word_range: [1000, 1200]
+    time_range: [50, 65]
+    rule: "小赢——主角获得一个小胜利（点头、表扬、反派愣住、证据到手）"
+    emotion: "暗爽/掌控"
+    shot_type: "MCU"
+    camera_movement: "pull"
+
+  - label: "90s_Cliffhanger"
+    word_range: [1700, 2000]
+    time_range: [80, 95]
+    rule: "断崖钩子。必须在最后一句植入一个具体的未回答问题或突发事件"
+    emotion: "悬念/紧迫"
+    shot_type: "CU"
+    camera_movement: "push"
+
+# ============================================================
+# 断崖类型
+# ============================================================
+cliffhanger_types:
+  - type: "question"
+    description: "未回答的问题"
+    example: "她到底是谁？"
+  - type: "reveal"
+    description: "信息揭露"
+    example: "原来，他才是真正的..."
+  - type: "shock"
+    description: "突发事件"
+    example: "门突然被踢开。"
+  - type: "action"
+    description: "动作中断"
+    example: "她举起手——"
+
+# ============================================================
+# 死帧熔断规则
+# ============================================================
+dead_frame_rules:
+  segment_size: 200          # 每200字检测一次
+  min_physical_actions: 2    # 最少2个物理动作
+  physical_actions:          # 物理动作词库
+    - 推
+    - 拉
+    - 握
+    - 砸
+    - 转身
+    - 跪
+    - 站
+    - 走
+    - 跑
+    - 颤抖
+    - 瞳孔收缩
+    - 泼
+    - 摔
+    - 踢
+    - 扇
+    - 掐
+    - 冲
+    - 扑
+  non_physical_actions:      # 非物理动作（镜头拍不出来）
+    - 感到
+    - 觉得
+    - 认为
+    - 意识到
+    - 心中暗想
+    - 不禁感叹
+
+# ============================================================
+# 镜头规则
+# ============================================================
+shot_rules:
+  max_duration: 15           # 单镜头最长15秒
+  min_duration: 1.5          # 单镜头最短1.5秒
+  preferred_types:           # 竖屏偏好景别
+    - "CU"                   # 特写（40%）
+    - "MCU"                  # 近景（30%）
+    - "MS"                   # 中景（20%）
+    - "FS"                   # 全景（10%）
+  camera_variation:          # 相邻镜头运镜必须变化
+    - ["push", "pull"]
+    - ["static", "handheld"]
+    - ["push", "pan"]
+
+# ============================================================
+# 情绪曲线比例（参考0xsline）
+# ============================================================
+emotion_curve:
+  # 15-30-35-20 比例
+  opening_tension: 15        # 开局紧张（0-15%）
+  rising_action: 30          # 上升动作（15-45%）
+  climax: 35                 # 高潮（45-80%）
+  resolution_hook: 20        # 断崖钩子（80-100%）
