@@ -95,28 +95,50 @@ GUARDRAILS = """
 - 纯风景展示（山水花鸟）= 废稿
 """
 
-# 钩子类型说明（结尾必须使用）
-HOOK_TYPES = """
+# 骨架与钩子类型（基于蒸馏数据）
+SKELETON_AND_HOOKS = """
+### 骨架类型（必须选择一种）
+
+**1. 身份落差型**（avg_views: 63,993）
+- 叙事模式：低位身份→被轻视→真实身份曝光→打脸
+- 结尾钩子：反转钩、情绪钩
+- 示例："Useless man mocked like dog, unexpectedly trillion-dollar heir"
+
+**2. 关系背叛补偿型**（avg_views: 70,554）
+- 叙事模式：被背叛→离开→获得更高身份→前任后悔
+- 结尾钩子：情绪钩、悬念钩
+- 示例："After he chose his first love, she walked away and returned as CEO"
+
+**3. 重生改命型**（avg_views: 116,527）
+- 叙事模式：前世被害→重生→拒绝旧选择→反击敌人
+- 结尾钩子：信息钩、悬念钩
+- 示例："Reborn before the betrayal, she exposed everyone and lived for herself"
+
+**4. 情绪爆点型**（avg_views: 136,972）
+- 叙事模式：极端情绪瞬间（婚礼/生日/求婚）→观众代入→情绪释放
+- 结尾钩子：情绪钩、反转钩
+- 示例："She Saved Him On Their Wedding Night. He Repaid Her With Coldness"
+
+**5. 系统开挂型**（avg_views: 58,088）
+- 叙事模式：事故/羞辱→获得系统/异能→快速逆袭
+- 结尾钩子：反转钩、危机钩
+- 示例："After being mocked, he awakened a system and conquered everything"
+
 ### 结尾钩子类型（必须选择一种）
 
 **悬念钩**：抛出关键疑问，答案留到下一集
-- 子模式：身份悬念、结果悬念、选择悬念、来者悬念、发现悬念
 - 示例："她打开抽屉，瞳孔骤缩——"
 
 **反转钩**：最后一刻颠覆观众预期
-- 子模式：身份反转、局势反转、关系反转、时间反转、动机反转
 - 示例："DNA报告上写着——亲缘关系：父女"
 
 **情绪钩**：情绪推到最高点然后切断
-- 子模式：甜蜜中断、心碎中断、误会引爆、决绝中断、重逢中断
 - 示例："他凑近，呼吸交缠——手机响了"
 
 **信息钩**：透露改变全局的关键信息，只说一半
-- 子模式：证据揭露、秘密泄露、记忆闪回、文件发现、线索串联
 - 示例："监控录像里那个身影——穿着和他一模一样的衣服"
 
 **危机钩**：突发重大危机，主角来不及反应
-- 子模式：突袭、背刺、暴露、倒计时、绝境
 - 示例："她接过他递来的水，喝了一口——他笑了"
 """
 
@@ -197,7 +219,7 @@ def build_scribe_prompt_with_shots(
 
 {FEW_SHOT_EXAMPLE}
 
-{HOOK_TYPES}
+{SKELETON_AND_HOOKS}
 
 {VILLAIN_DIALOGUE}
 
