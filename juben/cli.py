@@ -640,6 +640,11 @@ def audit(chapter: int, dir: str):
         )
         _print_validation("Guardian", guardian_result)
 
+        # 5.5 Curator状态更新
+        from juben.curator import CuratorState
+        curator = CuratorState.load(project_dir)
+        curator.update_chapter(ch_num, text, concept_mapping=concept_mapping)
+
         # 6. Timeline Lock
         tl_result = timeline_lock.validate_chapter(ch_num, text, completed_nodes)
         if tl_result.passed:
@@ -661,6 +666,12 @@ def audit(chapter: int, dir: str):
 
         color = "green" if passed else "red"
         console.print(f"\n[{color}]总分: {total:.1f}/10 {'✓ PASS' if passed else '✗ FAIL'}[/{color}]")
+
+    # Curator全局报告
+    curator = CuratorState.load(project_dir)
+    if curator.chapters:
+        console.print(f"\n[bold]═══ Curator状态报告 ═══[/bold]")
+        console.print(curator.get_health_report())
 
         # 保存报告
         report = ChapterReport(

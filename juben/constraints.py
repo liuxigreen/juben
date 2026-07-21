@@ -250,12 +250,119 @@ DEFAULT_CONCEPT_MAPPING: dict[str, list[str]] = {}
 
 
 def load_concept_mapping(project_dir: Path) -> dict[str, list[str]]:
-    """从项目配置加载概念映射字典"""
+    """从项目配置加载概念映射字典
+    
+    优先级：
+    1. 项目目录下的 concept_mapping.json（手动配置）
+    2. 从 world_rules.json 自动生成（通用方案）
+    3. 空字典（无映射）
+    """
+    # 1. 手动配置
     mapping_file = project_dir / "concept_mapping.json"
     if mapping_file.exists():
         with open(mapping_file, encoding="utf-8") as f:
             return json.load(f)
+
+    # 2. 从world_rules自动生成
+    world_file = project_dir / "world_rules.json"
+    if world_file.exists():
+        with open(world_file, encoding="utf-8") as f:
+            world = json.load(f)
+        return _auto_generate_mapping(world)
+
     return DEFAULT_CONCEPT_MAPPING
+
+
+def _auto_generate_mapping(world: dict) -> dict[str, list[str]]:
+    """从world_rules自动生成概念映射
+    
+    从setting、power_system、rules中提取关键词，
+    按领域分组生成映射。
+    """
+    mapping: dict[str, list[str]] = {}
+
+    # 从setting提取
+    setting = world.get("setting", {})
+    for key, value in setting.items():
+        if isinstance(value, str) and value:
+            # 用key作为传统概念，value的关键词作为现代概念
+            keywords = _extract_keywords_from_text(value)
+            if keywords:
+                mapping[key] = keywords
+
+    # 从power_system提取
+    power = world.get("power_system", {})
+    if isinstance(power, dict):
+        for key, value in power.items():
+            if isinstance(value, str) and value:
+                keywords = _extract_keywords_from_text(value)
+                if keywords:
+                    mapping[f"力量体系.{key}"] = keywords
+            elif isinstance(value, list):
+                for item in value:
+                    if isinstance(item, str):
+                        keywords = _extract_keywords_from_text(item)
+                        if keywords:
+                            mapping[f"力量体系.{key}"] = keywords
+
+    # 从rules提取
+    rules = world.get("rules", [])
+    for i, rule in enumerate(rules):
+        if isinstance(rule, str) and len(rule) > 5:
+            keywords = _extract_keywords_from_text(rule)
+            if keywords:
+                mapping[f"规则{i+1}"] = keywords
+
+    return mapping
+
+
+def _extract_keywords_from_text(text: str) -> list[str]:
+    """从文本中提取关键词（用于自动生成概念映射）
+    
+    策略：
+    1. 按标点和空格分割成短语
+    2. 从每个短语中提取核心词
+    3. 过滤停用词和过短的词
+    """
+    import re
+    
+    # 按标点和空格分割
+    segments = re.split(r'[,，。、；：\s]+', text)
+    
+    keywords = []
+    for seg in segments:
+        seg = seg.strip()
+        if len(seg) < 2:
+            continue
+        
+        # 提取中文词（2-6字）
+        zh_words = re.findall(r'[\u4e00-\u9fff]{2,6}', seg)
+        # 提取英文词（2+字）
+        en_words = re.findall(r'[a-zA-Z]{2,}', seg)
+        
+        for w in zh_words + en_words:
+            if len(w) >= 2:
+                keywords.append(w)
+    
+    # 过滤常见停用词
+    stop_words = {"的", "了", "是", "在", "和", "有", "不", "人", "这", "中",
+                  "大", "为", "上", "个", "到", "说", "会", "从", "对", "也",
+                  "可以", "通过", "进行", "使用", "需要", "已经", "正在",
+                  "the", "and", "for", "that", "this", "with", "from", "are",
+                  "can", "use", "has", "have", "been", "being"}
+    
+    # 去重，保留前5个
+    seen = set()
+    result = []
+    for w in keywords:
+        w_lower = w.lower()
+        if w_lower not in stop_words and w not in seen:
+            seen.add(w)
+            result.append(w)
+        if len(result) >= 5:
+            break
+    
+    return result
 
 
 def get_required_elements_for_chapter(
