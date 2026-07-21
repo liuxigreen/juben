@@ -519,6 +519,7 @@ def guardian_check(
     required_setting_elements: list[str] | None = None,
     cost_history: list[str] | None = None,
     concept_mapping: dict | None = None,
+    dynamic_blacklist: list[str] | None = None,
 ) -> GuardianResult:
     """
     Guardian统一审查入口（v3：硬门禁升级）
@@ -641,4 +642,79 @@ def guardian_check(
                 ],
             ))
 
+    # 10. 视觉密度检查（纯叙述占比）
+    visual_density = _check_visual_density(chapter_text)
+    if visual_density:
+        result.add(visual_density)
+
+    # 11. 动态黑名单检查（从已生成章节提取的高频词）
+    if dynamic_blacklist:
+        found = []
+        for phrase in dynamic_blacklist:
+            count = chapter_text.count(phrase)
+            if count > 0:
+                found.append(f"'{phrase}'×{count}")
+        if found:
+            result.add(GuardianViolation(
+                rule="dynamic_blacklist",
+                severity="critical",
+                description=f"检测到动态黑名单词汇: {', '.join(found[:5])}",
+                suggestion="这些是近期章节中泛滥的高频表达，请用独特的描写替代",
+            ))
+
     return result
+
+
+def _check_visual_density(chapter_text: str) -> GuardianViolation | None:
+    """
+    检测视觉密度（纯叙述占比）。
+
+    规则：
+    - 可拍摄的动作描写占比不能低于60%
+    - 纯叙述（心理描写、背景交代、抽象描述）占比不能超过40%
+    """
+    import re
+
+    # 按段落分割
+    paragraphs = [p.strip() for p in chapter_text.split('\n') if p.strip() and not p.startswith('#') and not p.startswith('-')]
+    if not paragraphs:
+        return None
+
+    total_chars = 0
+    visual_chars = 0
+
+    # 物理动作关键词（可拍摄）
+    action_keywords = [
+        '站', '坐', '走', '跑', '跳', '推', '拉', '握', '抓', '扔', '打', '踢',
+        '转', '抬', '低', '看', '盯', '瞪', '眨', '笑', '哭', '喊', '说',
+        '拿', '放', '开', '关', '按', '点', '敲', '滑', '拖', '拉',
+        '瞳孔', '手指', '拳头', '肩膀', '膝盖', '眼睛', '嘴唇',
+        '屏幕', '键盘', '鼠标', '手机', '杯子', '桌子', '椅子',
+        '红', '蓝', '绿', '白', '黑', '亮', '暗', '闪',
+        '嗡', '咔', '砰', '咚', '滴', '响',
+    ]
+
+    for para in paragraphs:
+        para_len = len(para)
+        total_chars += para_len
+
+        # 检查是否包含物理动作
+        has_action = any(kw in para for kw in action_keywords)
+        if has_action:
+            visual_chars += para_len
+
+    if total_chars == 0:
+        return None
+
+    visual_ratio = visual_chars / total_chars
+
+    # 视觉密度低于60% → warning
+    if visual_ratio < 0.6:
+        return GuardianViolation(
+            rule="visual_density",
+            severity="warning",
+            description=f"视觉密度不足：可拍摄动作占比{visual_ratio:.0%}（要求≥60%）",
+            suggestion="增加更多物理动作描写、环境光影变化、道具特写，减少纯叙述和心理描写",
+        )
+
+    return None
