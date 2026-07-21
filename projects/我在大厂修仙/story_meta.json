@@ -1,0 +1,24 @@
+{
+  "title": "我在大厂修仙，老板让我加班渡劫",
+  "genre": "",
+  "sub_genres": [],
+  "premise": "996程序员林默在加班到凌晨三点时觉醒仙帝记忆。他发现公司是修仙门派的产业，用神识感知WiFi、用灵气debug代码、用仙术怼老板张伟。核心冲突：现代职场PUA vs 修仙降维打击。每一章必须有'修仙×现代'的碰撞——用神识debug代码、用灵气优化服务器、用仙术对抗职场PUA。禁止变成纯仙侠。",
+  "logline": "996程序员觉醒仙帝记忆，用修仙能力整顿职场",
+  "target_chapters": 10,
+  "target_word_count_per_chapter": 2000,
+  "pov": "third_person_limited",
+  "language": "zh-CN",
+  "last_chapter_written": 0,
+  "disruption_variable": "修仙系统的任务都是反996的：'让产品经理闭嘴1小时'、'准时下班一次'、'怼领导一次'。灵气来源是WiFi信号和数据流，不是传统天地灵气。",
+  "pacing_cards": [],
+  "template": "universal",
+  "narrative_skeleton": "mixins:",
+  "global_hook_density": "high",
+  "themes": [
+    "996批判",
+    "打工人逆袭",
+    "现代修仙",
+    "修仙×职场碰撞"
+  ],
+  "target_audience": {}
+}

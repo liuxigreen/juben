@@ -1,0 +1,162 @@
+{
+  "characters": [
+    {
+      "id": "char_pro",
+      "name": "林默",
+      "aliases": ["林工", "林默默"],
+      "role": "protagonist",
+      "appearance": {
+        "age": 28,
+        "height": "175cm",
+        "build": "偏瘦，久坐程序员体型",
+        "hair": "黑色短发，发际线略高",
+        "eyes": "黑色，戴黑框眼镜",
+        "distinguishing": "左手腕有加班导致的腱鞘炎护腕",
+        "clothing_default": "格子衫+牛仔裤+运动鞋"
+      },
+      "personality": {
+        "ocean": {
+          "openness": 7,
+          "conscientiousness": 8,
+          "extraversion": 3,
+          "agreeableness": 6,
+          "neuroticism": 7
+        },
+        "speech_pattern": "技术宅说话风格，喜欢用编程术语比喻生活，被怼时会结巴",
+        "habits": ["敲代码时会抖腿", "紧张时会推眼镜", "加班时会喝红牛"],
+        "fears": ["被裁员", "35岁危机", "产品经理改需求"],
+        "desires": "写出一段能改变世界的代码，实现财务自由"
+      },
+      "background": {
+        "origin": "小城市普通家庭，父母是教师",
+        "education": "985计算机专业本科",
+        "key_event": "加班猝死边缘觉醒修仙系统",
+        "secret": "其实是个隐藏的技术天才，只是被996埋没了"
+      },
+      "abilities": {
+        "combat": "无（觉醒前）",
+        "knowledge": "编程技术扎实，但被996消磨",
+        "special": "修仙系统：完成任务获得修为，可用神识写代码、用灵气debug"
+      },
+      "arc": {
+        "start": "996社畜，被产品经理PUA，被同事看不起",
+        "midpoint": "用仙术完成不可能项目，打脸所有人，发现公司是修仙门派产业",
+        "end": "成为公司掌门人，改革996文化，实现修仙自由",
+        "internal_conflict": "Want: 升职加薪 vs Need: 找到人生意义"
+      },
+      "state": {
+        "alive": true,
+        "location": "大厂办公室",
+        "health": "亚健康，即将猝死",
+        "current_goal": "完成这个不可能的项目"
+      }
+    },
+    {
+      "id": "char_ant",
+      "name": "张伟",
+      "aliases": ["张总", "产品张"],
+      "role": "antagonist",
+      "appearance": {
+        "age": 35,
+        "height": "180cm",
+        "build": "微胖，啤酒肚",
+        "hair": "地中海发型",
+        "eyes": "小眼睛，总是眯着",
+        "distinguishing": "喜欢戴金链子，说话时会挥手",
+        "clothing_default": "Polo衫+西裤+皮鞋"
+      },
+      "personality": {
+        "ocean": {
+          "openness": 4,
+          "conscientiousness": 6,
+          "extraversion": 8,
+          "agreeableness": 3,
+          "neuroticism": 6
+        },
+        "speech_pattern": "喜欢画大饼，说话时会加'赋能'、'抓手'、'闭环'等黑话",
+        "habits": ["拍肩膀", "说'辛苦了'但不给加班费", "改需求时说'小调整'"],
+        "fears": ["被老板骂", "项目失败", "被裁员"],
+        "desires": "升职加薪，成为高管"
+      },
+      "background": {
+        "origin": "普通家庭，靠溜须拍马上位",
+        "education": "普通本科，市场营销专业",
+        "key_event": "靠关系进入大厂，成为产品经理",
+        "secret": "其实不懂技术，全靠忽悠"
+      },
+      "abilities": {
+        "combat": "无",
+        "knowledge": "PPT做得好，会画大饼",
+        "special": "无（但背后有修仙势力支持）"
+      },
+      "arc": {
+        "start": "嚣张跋扈的产品经理，PUA程序员",
+        "midpoint": "被林默用仙术打脸，开始害怕",
+        "end": "被打脸后跪地求饶，被公司开除",
+        "internal_conflict": "Want: 升职加薪 vs Need: 被认可"
+      },
+      "state": {
+        "alive": true,
+        "location": "大厂办公室",
+        "health": "健康",
+        "current_goal": "让林默完成不可能的项目"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "char_pro",
+      "character_b": "char_ant",
+      "type": "enemy",
+      "status": "林默被张伟PUA，张伟看不起林默",
+      "trust_level": 10,
+      "tension": "张伟不断改需求，林默被迫加班"
+    }
+  ],
+  "world_rules_update": {
+    "world_name": "现代修仙世界",
+    "setting": {
+      "time_period": "2024年",
+      "geography": "一线城市",
+      "technology_level": "现代科技+修仙",
+      "social_structure": "表面是现代社会，实际被修仙门派控制"
+    },
+    "power_system": {
+      "修仙系统": "完成任务获得修为，修为越高能力越强",
+      "灵气来源": "WiFi信号、电力、数据流",
+      "境界划分": "练气→筑基→金丹→元婴→化神"
+    }
+  },
+  "meta_update": {
+    "title": "我在大厂修仙，老板让我加班渡劫",
+    "logline": "996程序员觉醒修仙系统，用仙术写代码、用道法怼产品经理、用渡劫加班",
+    "themes": ["996批判", "打工人逆袭", "现代修仙"],
+    "disruption_variable": "修仙系统的任务都是反996的：'让产品经理闭嘴1小时'、'准时下班一次'、'怼领导一次'"
+  },
+  "plot_threads": [
+    {
+      "id": "thread_1",
+      "description": "公司背后是修仙门派，高层都是修仙者",
+      "importance": "major"
+    },
+    {
+      "id": "thread_2",
+      "description": "林默其实是上界仙帝转世，被封印了记忆",
+      "importance": "major"
+    }
+  ],
+  "info_asymmetry": [
+    {
+      "info_id": "info_1",
+      "description": "林默知道自己有修仙系统",
+      "known_by": ["char_pro"],
+      "is_protagonist_advantage": true
+    },
+    {
+      "info_id": "info_2",
+      "description": "公司高层知道林默是仙帝转世",
+      "known_by": ["char_ant"],
+      "is_protagonist_advantage": false
+    }
+  ]
+}

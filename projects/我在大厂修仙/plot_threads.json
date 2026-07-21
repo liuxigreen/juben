@@ -1,0 +1,24 @@
+{
+  "threads": [
+    {
+      "id": "thread_1",
+      "description": "公司背后是修仙门派，高层都是修仙者",
+      "planted_chapter": 0,
+      "payoff_chapter": null,
+      "status": "open",
+      "characters_involved": [],
+      "importance": "major",
+      "resolution": null
+    },
+    {
+      "id": "thread_2",
+      "description": "林默其实是上界仙帝转世，被封印了记忆",
+      "planted_chapter": 0,
+      "payoff_chapter": null,
+      "status": "open",
+      "characters_involved": [],
+      "importance": "major",
+      "resolution": null
+    }
+  ]
+}

@@ -129,6 +129,8 @@ class ContextExtractor:
             "info_asymmetry": info_matrix,
             "pacing_cards": pacing,
             "timeline_recent": self._get_recent_events(timeline, chapter_num, limit=5),
+            "hard_constraints": getattr(world, 'hard_constraints', []),
+            "banned_phrases": [],  # 将由外部注入
         }
 
     def build_scribe_prompt(self, context: dict, outline: Optional[ChapterOutline] = None) -> str:
@@ -259,6 +261,19 @@ class ContextExtractor:
             parts.append("\n## ⛔ 反套路黑名单（触发即判定失败）")
             for i, c in enumerate(ctx["anti_cliche_blacklist"], 1):
                 parts.append(f"{i}. {c}")
+
+        # === 硬约束（违反即熔断）===
+        if ctx.get("hard_constraints"):
+            parts.append("\n## ⛔ 硬约束（违反即熔断，绝对不可触犯）")
+            for i, c in enumerate(ctx["hard_constraints"], 1):
+                parts.append(f"{i}. {c}")
+
+        # === 禁用短语（上章高频词，本章禁止出现）===
+        if ctx.get("banned_phrases"):
+            parts.append("\n## ⛔ 禁用短语（以下短语在上章已高频出现，本章绝对禁止使用）")
+            for phrase in ctx["banned_phrases"]:
+                parts.append(f"- 禁止: '{phrase}'")
+            parts.append("→ 必须用全新的、具体的、独特的描写替代上述短语")
 
         # === 算法时间轴卡点 ===
         if ctx["pacing_cards"]:

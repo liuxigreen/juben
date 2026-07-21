@@ -1,0 +1,39 @@
+{
+  "chapter_num": 8,
+  "word_count": 913,
+  "continuity": {
+    "passed": true,
+    "violations": [],
+    "score": 0.0
+  },
+  "anti_ai": {
+    "passed": true,
+    "violations": [
+      {
+        "type": "character_inconsistency",
+        "severity": "warning",
+        "description": "感官描写不足: 仅涉及2种感官（目标≥3种）",
+        "location": "",
+        "suggestion": "缺少: tactile, olfactory, gustatory"
+      }
+    ],
+    "score": 8.5
+  },
+  "cliffhanger": {
+    "passed": true,
+    "violations": [],
+    "score": 10.0
+  },
+  "pacing": {
+    "passed": true,
+    "violations": [],
+    "score": 0.0
+  },
+  "anti_cliche": {
+    "passed": true,
+    "violations": [],
+    "score": 10.0
+  },
+  "overall_score": 9.5,
+  "passed": true
+}

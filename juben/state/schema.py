@@ -196,6 +196,11 @@ class WorldRules(BaseModel):
         default_factory=list,
         description="因果律断言，如'金丹以下无法飞行'"
     )
+    # 硬约束：违反即熔断的设定锚定规则
+    hard_constraints: list[str] = Field(
+        default_factory=list,
+        description="硬约束——违反即熔断，用于锚定核心设定不被抛弃"
+    )
 
 
 # ============================================================

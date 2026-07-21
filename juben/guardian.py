@@ -389,6 +389,13 @@ DEFAULT_WORD_BLACKLIST = [
     "轻轻的", "缓缓的", "微微的",
     "不禁", "竟然", "居然", "仿佛", "好像", "似乎",
     "不知不觉", "一瞬间", "那一刻", "就这样", "不知不觉中",
+    # AI味高频短语（新增）
+    "喃喃自语", "嘴角勾起一抹笑", "眼睛里闪过一丝光芒",
+    "感觉到自己的血液在沸腾", "感觉到自己的战意在升腾",
+    "两人的剑光在空中交错", "发出耀眼的光芒",
+    "你果然有仙帝的风范", "他的眼睛亮了",
+    "感觉到自己的心跳在加速", "脸色变得苍白",
+    "嘴巴张了张，想说什么，但又说不出来",
 ]
 
 
@@ -495,6 +502,9 @@ def check_hook_density(chapter_text: str, chapter_num: int) -> GuardianViolation
 # 统一入口
 # ============================================================
 
+from juben.validate.structure_diversity import check_structure_diversity, get_banned_phrases
+
+
 def guardian_check(
     chapter_text: str,
     chapter_num: int,
@@ -502,6 +512,9 @@ def guardian_check(
     chapter_endings: list[str] | None = None,
     word_blacklist: list[str] | None = None,
     characters: list | None = None,
+    previous_chapter_text: str | None = None,
+    previous_fingerprints: list[list[str]] | None = None,
+    banned_phrases: list[str] | None = None,
 ) -> GuardianResult:
     """
     Guardian统一审查入口（v2：支持别名注入）
@@ -536,5 +549,34 @@ def guardian_check(
     v = check_hook_density(chapter_text, chapter_num)
     if v:
         result.add(v)
+
+    # 5. 章节结构多样性检测（新增 — 防复读机死循环）
+    v = check_structure_diversity(
+        current_text=chapter_text,
+        previous_text=previous_chapter_text,
+        previous_fingerprints=previous_fingerprints,
+    )
+    if v:
+        result.add(GuardianViolation(
+            rule=v["rule"],
+            severity=v["severity"],
+            description=v["description"],
+            suggestion=v["suggestion"],
+        ))
+
+    # 6. 禁用短语检测（新增 — 跨章反重复）
+    if banned_phrases:
+        found = []
+        for phrase in banned_phrases:
+            count = chapter_text.count(phrase)
+            if count > 0:
+                found.append(f"'{phrase}'×{count}")
+        if found:
+            result.add(GuardianViolation(
+                rule="banned_phrases",
+                severity="warning" if len(found) <= 2 else "critical",
+                description=f"检测到上章禁用短语: {', '.join(found)}",
+                suggestion="替换为具体的、独特的描写，禁止复用上章的高频表达",
+            ))
 
     return result

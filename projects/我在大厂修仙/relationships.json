@@ -1,0 +1,34 @@
+{
+  "relationships": [
+    {
+      "character_a": "char_pro",
+      "character_b": "char_ant",
+      "type": "enemy",
+      "status": "林默被张伟PUA，张伟看不起林默",
+      "trust_level": 10,
+      "history": "",
+      "tension": "张伟不断改需求，林默被迫加班",
+      "evolution": []
+    }
+  ],
+  "info_asymmetry": [
+    {
+      "info_id": "info_1",
+      "description": "林默知道自己有修仙系统",
+      "known_by": [
+        "char_pro"
+      ],
+      "chapter_revealed": 0,
+      "is_protagonist_advantage": true
+    },
+    {
+      "info_id": "info_2",
+      "description": "公司高层知道林默是仙帝转世",
+      "known_by": [
+        "char_ant"
+      ],
+      "chapter_revealed": 0,
+      "is_protagonist_advantage": false
+    }
+  ]
+}
