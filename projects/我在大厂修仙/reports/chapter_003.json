@@ -1,6 +1,6 @@
 {
   "chapter_num": 3,
-  "word_count": 1288,
+  "word_count": 1211,
   "continuity": {
     "passed": true,
     "violations": [],
@@ -26,6 +26,6 @@
     "violations": [],
     "score": 10.0
   },
-  "overall_score": 10.0,
-  "passed": true
+  "overall_score": 9.4,
+  "passed": false
 }

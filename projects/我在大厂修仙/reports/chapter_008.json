@@ -1,6 +1,6 @@
 {
   "chapter_num": 8,
-  "word_count": 913,
+  "word_count": 1357,
   "continuity": {
     "passed": true,
     "violations": [],
@@ -12,9 +12,9 @@
       {
         "type": "character_inconsistency",
         "severity": "warning",
-        "description": "感官描写不足: 仅涉及2种感官（目标≥3种）",
+        "description": "检测到禁用句式: '不是项目代码，而是'",
         "location": "",
-        "suggestion": "缺少: tactile, olfactory, gustatory"
+        "suggestion": "用情节转折代替句式套路"
       }
     ],
     "score": 8.5
@@ -34,6 +34,6 @@
     "violations": [],
     "score": 10.0
   },
-  "overall_score": 9.5,
-  "passed": true
+  "overall_score": 8.9,
+  "passed": false
 }

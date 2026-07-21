@@ -1,0 +1,377 @@
+{
+  "chapters": [
+    {
+      "chapter_num": 1,
+      "body_costs": [],
+      "setting_elements_used": [
+        "机房",
+        "服务器",
+        "Bug",
+        "代码",
+        "自动化",
+        "领导"
+      ],
+      "new_banned_phrases": [
+        "嘴角动了动"
+      ],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 2,
+      "body_costs": [],
+      "setting_elements_used": [
+        "WiFi",
+        "服务器",
+        "内存",
+        "代码",
+        "扫描",
+        "防火墙",
+        "公司",
+        "CEO"
+      ],
+      "new_banned_phrases": [
+        "有意思"
+      ],
+      "realm_change": " → 筑基",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 3,
+      "body_costs": [
+        "鼻血"
+      ],
+      "setting_elements_used": [
+        "服务器",
+        "代码",
+        "扫描",
+        "公司",
+        "总监"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 4,
+      "body_costs": [
+        "鼻血"
+      ],
+      "setting_elements_used": [
+        "WiFi",
+        "路由器",
+        "扫描",
+        "自动化",
+        "公司"
+      ],
+      "new_banned_phrases": [
+        "有意思"
+      ],
+      "realm_change": "金丹 → 化神",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 5,
+      "body_costs": [],
+      "setting_elements_used": [
+        "扫描"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 6,
+      "body_costs": [],
+      "setting_elements_used": [
+        "扫描",
+        "公司",
+        "总监"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": "筑基 → 化神",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 7,
+      "body_costs": [],
+      "setting_elements_used": [
+        "WiFi",
+        "电脑",
+        "扫描",
+        "自动化",
+        "加班费",
+        "公司"
+      ],
+      "new_banned_phrases": [
+        "嘴角动了动",
+        "有意思"
+      ],
+      "realm_change": "筑基 → 金丹",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 8,
+      "body_costs": [],
+      "setting_elements_used": [
+        "WiFi",
+        "电脑",
+        "代码",
+        "扫描",
+        "隧道",
+        "自动化",
+        "公司"
+      ],
+      "new_banned_phrases": [
+        "嘴角动了动",
+        "有意思"
+      ],
+      "realm_change": "金丹 → 元婴",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 9,
+      "body_costs": [],
+      "setting_elements_used": [
+        "WiFi",
+        "路由器",
+        "代码",
+        "扫描",
+        "领导"
+      ],
+      "new_banned_phrases": [
+        "嘴角动了动",
+        "有意思"
+      ],
+      "realm_change": "金丹 → 元婴",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 10,
+      "body_costs": [],
+      "setting_elements_used": [
+        "WiFi",
+        "服务器",
+        "代码",
+        "审查",
+        "加班费",
+        "公司",
+        "领导"
+      ],
+      "new_banned_phrases": [
+        "感觉到自己的心跳在加速",
+        "脸色变得苍白",
+        "嘴角动了动",
+        "有意思"
+      ],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 1,
+      "body_costs": [],
+      "setting_elements_used": [
+        "机房",
+        "服务器",
+        "Bug",
+        "代码",
+        "自动化",
+        "领导"
+      ],
+      "new_banned_phrases": [
+        "嘴角动了动"
+      ],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 2,
+      "body_costs": [],
+      "setting_elements_used": [
+        "WiFi",
+        "服务器",
+        "内存",
+        "代码",
+        "扫描",
+        "防火墙",
+        "公司",
+        "CEO"
+      ],
+      "new_banned_phrases": [
+        "有意思"
+      ],
+      "realm_change": "元婴 → 筑基",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 3,
+      "body_costs": [
+        "鼻血"
+      ],
+      "setting_elements_used": [
+        "服务器",
+        "代码",
+        "扫描",
+        "公司",
+        "总监"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 4,
+      "body_costs": [
+        "鼻血"
+      ],
+      "setting_elements_used": [
+        "WiFi",
+        "路由器",
+        "扫描",
+        "自动化",
+        "公司"
+      ],
+      "new_banned_phrases": [
+        "有意思"
+      ],
+      "realm_change": "金丹 → 化神",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 5,
+      "body_costs": [],
+      "setting_elements_used": [
+        "扫描"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 6,
+      "body_costs": [],
+      "setting_elements_used": [
+        "扫描",
+        "公司",
+        "总监"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": "筑基 → 化神",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 7,
+      "body_costs": [],
+      "setting_elements_used": [
+        "WiFi",
+        "电脑",
+        "扫描",
+        "自动化",
+        "加班费",
+        "公司"
+      ],
+      "new_banned_phrases": [
+        "嘴角动了动",
+        "有意思"
+      ],
+      "realm_change": "筑基 → 金丹",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 8,
+      "body_costs": [],
+      "setting_elements_used": [
+        "WiFi",
+        "电脑",
+        "代码",
+        "扫描",
+        "隧道",
+        "自动化",
+        "公司"
+      ],
+      "new_banned_phrases": [
+        "嘴角动了动",
+        "有意思"
+      ],
+      "realm_change": "金丹 → 元婴",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 9,
+      "body_costs": [],
+      "setting_elements_used": [
+        "WiFi",
+        "路由器",
+        "代码",
+        "扫描",
+        "领导"
+      ],
+      "new_banned_phrases": [
+        "嘴角动了动",
+        "有意思"
+      ],
+      "realm_change": "金丹 → 元婴",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 10,
+      "body_costs": [],
+      "setting_elements_used": [
+        "WiFi",
+        "服务器",
+        "代码",
+        "审查",
+        "加班费",
+        "公司",
+        "领导"
+      ],
+      "new_banned_phrases": [
+        "感觉到自己的心跳在加速",
+        "脸色变得苍白",
+        "嘴角动了动",
+        "有意思"
+      ],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    }
+  ],
+  "accumulated_costs": [
+    "鼻血",
+    "鼻血",
+    "鼻血",
+    "鼻血"
+  ],
+  "accumulated_banned": [
+    "脸色变得苍白",
+    "感觉到自己的心跳在加速",
+    "有意思",
+    "嘴角动了动"
+  ],
+  "current_realm": "元婴",
+  "realm_progress": {
+    "筑基": 6,
+    "金丹": 6,
+    "化神": 4,
+    "元婴": 4
+  }
+}

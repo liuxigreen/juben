@@ -1,0 +1,70 @@
+{
+  "chapter": 10,
+  "fingerprints": [
+    [
+      "dialogue_heavy",
+      "reveal",
+      "workplace"
+    ],
+    [
+      "dialogue_heavy",
+      "confrontation",
+      "breakthrough",
+      "workplace"
+    ],
+    [
+      "dialogue_heavy",
+      "breakthrough",
+      "workplace"
+    ],
+    [
+      "dialogue_heavy",
+      "combat",
+      "breakthrough",
+      "reveal",
+      "workplace"
+    ],
+    [
+      "dialogue_heavy",
+      "reveal",
+      "chase",
+      "emotion"
+    ],
+    [
+      "dialogue_heavy",
+      "breakthrough",
+      "workplace"
+    ],
+    [
+      "dialogue_heavy",
+      "combat",
+      "breakthrough",
+      "workplace"
+    ],
+    [
+      "dialogue_heavy",
+      "breakthrough",
+      "reveal",
+      "chase",
+      "workplace"
+    ],
+    [
+      "dialogue_heavy",
+      "breakthrough",
+      "reveal",
+      "workplace"
+    ],
+    [
+      "dialogue_heavy",
+      "combat",
+      "breakthrough",
+      "reveal",
+      "workplace"
+    ]
+  ],
+  "banned_phrases": [
+    "点点头"
+  ],
+  "passed": true,
+  "score": 10.0
+}
