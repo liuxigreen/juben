@@ -131,6 +131,10 @@ class ContextExtractor:
             "timeline_recent": self._get_recent_events(timeline, chapter_num, limit=5),
             "hard_constraints": getattr(world, 'hard_constraints', []),
             "banned_phrases": [],  # 将由外部注入
+            "required_setting_elements": [],  # 将由外部注入
+            "cost_instruction": "",  # 将由外部注入
+            "beat_template": "",  # 将由外部注入
+            "concept_mapping": {},  # 将由外部注入
         }
 
     def build_scribe_prompt(self, context: dict, outline: Optional[ChapterOutline] = None) -> str:
@@ -274,6 +278,28 @@ class ContextExtractor:
             for phrase in ctx["banned_phrases"]:
                 parts.append(f"- 禁止: '{phrase}'")
             parts.append("→ 必须用全新的、具体的、独特的描写替代上述短语")
+
+        # === 必需设定元素（硬门禁）===
+        if ctx.get("required_setting_elements"):
+            parts.append("\n## ⛔ 必需设定元素（本章必须自然融入以下至少1个，否则Guardian熔断）")
+            for elem in ctx["required_setting_elements"]:
+                parts.append(f"- 必须出现: **{elem}**")
+            parts.append("→ 必须通过具体场景/对白/动作自然融入，不能生硬插入")
+
+        # === 突破代价指令 ===
+        if ctx.get("cost_instruction"):
+            parts.append(f"\n## 突破代价规则\n{ctx['cost_instruction']}")
+
+        # === 概念映射字典 ===
+        if ctx.get("concept_mapping"):
+            parts.append("\n## 概念映射字典（写作时必须用右侧词汇替代左侧传统概念）")
+            for traditional, modern in ctx["concept_mapping"].items():
+                parts.append(f"- {traditional} → {modern}")
+            parts.append("→ 禁止直接使用左侧传统词汇，必须用右侧现代概念替换")
+
+        # === 四段式Beat模板 ===
+        if ctx.get("beat_template"):
+            parts.append(f"\n{ctx['beat_template']}")
 
         # === 算法时间轴卡点 ===
         if ctx["pacing_cards"]:

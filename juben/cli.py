@@ -34,7 +34,7 @@ console = Console()
 
 
 @click.group()
-@click.version_option(version="0.2.0")
+@click.version_option(version="0.3.0")
 def main():
     """剧本引擎 — AI剧本/小说创作引擎"""
     pass
@@ -416,8 +416,81 @@ def write(chapter: int, dir: str, chars: str):
 
     console.print(f"[cyan]正在为第{chapter}章生成prompt...[/cyan]")
 
+    # === 注入动态约束（v3硬门禁）===
+    from juben.constraints import (
+        build_dynamic_banlist, CostRoulette, load_concept_mapping,
+        get_required_elements_for_chapter, get_beat_prompt, DEFAULT_COST_POOL,
+    )
+    import json as _json
+
+    chapters_dir = project_dir / "chapters"
+
+    # 1. 动态禁用短语
+    banned = build_dynamic_banlist(chapters_dir, chapter, lookback=3)
+
+    # 2. 概念映射
+    concept_mapping = load_concept_mapping(project_dir)
+
+    # 3. 必需设定元素
+    required_elems = get_required_elements_for_chapter(concept_mapping, chapter, min_count=2)
+
+    # 4. 代价轮盘（从项目状态读取历史）
+    cost_state_file = project_dir / "cost_history.json"
+    if cost_state_file.exists():
+        with open(cost_state_file) as f:
+            cost_history = _json.load(f)
+    else:
+        cost_history = []
+
+    # 选择本章代价
+    from juben.constraints import CostRoulette
+    roulette = CostRoulette(cooldown=3)
+    roulette.history = [{"chapter": h["chapter"], "cost": h["cost"]} for h in cost_history]
+    chosen_cost = roulette.pick(chapter, DEFAULT_COST_POOL)
+
+    cost_instruction = (
+        f"本章如果涉及突破/觉醒/力量提升，代价必须是：**{chosen_cost}**。\n"
+        f"最近已用过的代价（禁止重复）：{', '.join(roulette.get_recent(3))}\n"
+        "→ 代价必须通过具体的生理反应描写展现，不能只写'他付出了代价'。"
+    )
+
+    # 5. 四段式beat
+    beat_template = get_beat_prompt(chapter)
+
+    # 生成prompt
     prompt = scribe.generate_prompt(chapter, character_ids=char_ids)
+
+    # 注入约束到prompt
+    injection = []
+    if banned:
+        injection.append("\n## ⛔ 动态禁用短语（最近3章高频词，本章绝对禁止）")
+        for p in banned:
+            injection.append(f"- 禁止: '{p}'")
+        injection.append("→ 必须用全新的、具体的描写替代")
+
+    if required_elems:
+        injection.append("\n## ⛔ 必需设定元素（本章必须自然融入至少1个，否则Guardian熔断）")
+        for elem in required_elems:
+            injection.append(f"- 必须出现: **{elem}**")
+
+    if concept_mapping:
+        injection.append("\n## 概念映射字典（写作时必须用右侧词汇替代左侧传统概念）")
+        for traditional, modern in concept_mapping.items():
+            injection.append(f"- {traditional} → {modern}")
+
+    injection.append(f"\n## 突破代价规则\n{cost_instruction}")
+    injection.append(f"\n{beat_template}")
+
+    # 在prompt末尾追加约束
+    if injection:
+        prompt = prompt + "\n" + "\n".join(injection)
+
     path = scribe.save_prompt(chapter, prompt)
+
+    # 保存代价历史
+    cost_history.append({"chapter": chapter, "cost": chosen_cost})
+    with open(cost_state_file, "w") as f:
+        _json.dump(cost_history, f, ensure_ascii=False, indent=2)
 
     # 统计
     word_count = len(prompt)
@@ -522,13 +595,48 @@ def audit(chapter: int, dir: str):
 
         # 5. Guardian（Anti-Dialogue + Anti-Repetition + 高频词 + 信息倾倒）
         from juben.guardian import guardian_check
+        from juben.constraints import (
+            build_dynamic_banlist, load_concept_mapping,
+            get_required_elements_for_chapter,
+        )
+        import json as _json
+
         endings_up_to_ch = all_endings[:ch_num]
+
+        # 加载v3硬门禁参数
+        banned = build_dynamic_banlist(chapter_dir, ch_num, lookback=3)
+        concept_mapping = load_concept_mapping(project_dir)
+        required_elems = get_required_elements_for_chapter(concept_mapping, ch_num, min_count=2)
+
+        # 加载代价历史
+        cost_state_file = project_dir / "cost_history.json"
+        if cost_state_file.exists():
+            with open(cost_state_file) as f:
+                cost_history_data = _json.load(f)
+            cost_history = [h["cost"] for h in cost_history_data]
+        else:
+            cost_history = []
+
+        # 收集前几章指纹
+        previous_fps = []
+        for p in sorted(chapter_dir.glob("*.md")):
+            num = int(p.stem)
+            if num < ch_num:
+                from juben.validate.structure_diversity import extract_event_fingerprint
+                t = p.read_text(encoding="utf-8")
+                previous_fps.append(extract_event_fingerprint(t))
+
         guardian_result = guardian_check(
             chapter_text=text,
             chapter_num=ch_num,
             protagonist_name=protagonist_name,
             chapter_endings=endings_up_to_ch,
             characters=characters,
+            banned_phrases=banned,
+            required_setting_elements=required_elems,
+            cost_history=cost_history,
+            concept_mapping=concept_mapping,
+            previous_fingerprints=previous_fps,
         )
         _print_validation("Guardian", guardian_result)
 

@@ -499,10 +499,11 @@ def check_hook_density(chapter_text: str, chapter_num: int) -> GuardianViolation
 
 
 # ============================================================
+# ============================================================
 # 统一入口
 # ============================================================
-
 from juben.validate.structure_diversity import check_structure_diversity, get_banned_phrases
+from juben.constraints import check_setting_elements, DEFAULT_COST_POOL
 
 
 def guardian_check(
@@ -515,9 +516,12 @@ def guardian_check(
     previous_chapter_text: str | None = None,
     previous_fingerprints: list[list[str]] | None = None,
     banned_phrases: list[str] | None = None,
+    required_setting_elements: list[str] | None = None,
+    cost_history: list[str] | None = None,
+    concept_mapping: dict | None = None,
 ) -> GuardianResult:
     """
-    Guardian统一审查入口（v2：支持别名注入）
+    Guardian统一审查入口（v3：硬门禁升级）
     """
     result = GuardianResult()
 
@@ -550,16 +554,20 @@ def guardian_check(
     if v:
         result.add(v)
 
-    # 5. 章节结构多样性检测（新增 — 防复读机死循环）
+    # 5. 章节结构多样性检测（升级为hard fail）
     v = check_structure_diversity(
         current_text=chapter_text,
         previous_text=previous_chapter_text,
         previous_fingerprints=previous_fingerprints,
     )
     if v:
+        # 升级：结构相似度>70%直接critical，不再只是warning
+        severity = v.get("severity", "warning")
+        if severity == "warning":
+            severity = "critical"  # 升级为hard fail
         result.add(GuardianViolation(
             rule=v["rule"],
-            severity=v["severity"],
+            severity=severity,
             description=v["description"],
             suggestion=v["suggestion"],
         ))
@@ -574,9 +582,42 @@ def guardian_check(
         if found:
             result.add(GuardianViolation(
                 rule="banned_phrases",
-                severity="warning" if len(found) <= 2 else "critical",
-                description=f"检测到上章禁用短语: {', '.join(found)}",
-                suggestion="替换为具体的、独特的描写，禁止复用上章的高频表达",
+                severity="critical",  # 硬门禁：出现即fail
+                description=f"检测到禁用短语: {', '.join(found)}",
+                suggestion="替换为具体的、独特的描写，禁止复用高频表达",
+            ))
+
+    # 7. 设定漂移检测（硬门禁：任意1个概念组有命中即通过）
+    if concept_mapping:
+        found_elems, missing_groups = check_setting_elements(
+            chapter_text, [], concept_mapping=concept_mapping
+        )
+        if len(found_elems) == 0:
+            result.add(GuardianViolation(
+                rule="setting_drift",
+                severity="critical",
+                description=f"设定漂移：本章未命中任何概念映射组。未命中组: {', '.join(missing_groups[:5])}",
+                suggestion="必须在正文中自然融入至少1个核心设定元素",
+            ))
+        elif len(missing_groups) > len(concept_mapping) * 0.7:
+            result.add(GuardianViolation(
+                rule="setting_drift_weak",
+                severity="warning",
+                description=f"设定元素覆盖不足：命中{len(found_elems)}个，未命中{len(missing_groups)}组",
+                suggestion="建议增加更多设定元素的自然出现",
+            ))
+
+    # 8. 代价重复检测
+    if cost_history:
+        # 检测本章文本中是否包含最近用过的代价
+        recent_costs = cost_history[-3:]  # 最近3章
+        repeated = [c for c in recent_costs if c in chapter_text]
+        if repeated:
+            result.add(GuardianViolation(
+                rule="cost_repetition",
+                severity="warning" if len(repeated) == 1 else "critical",
+                description=f"代价重复：本章使用了近期已用过的代价: {', '.join(repeated)}",
+                suggestion="每次突破的代价必须不同，参考代价轮盘选择新代价",
             ))
 
     return result
