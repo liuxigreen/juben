@@ -620,4 +620,25 @@ def guardian_check(
                 suggestion="每次突破的代价必须不同，参考代价轮盘选择新代价",
             ))
 
+    # 9. 时空折叠检测（物理位置跳跃）
+    from juben.guardian.location_tracker import LocationTracker
+    tracker = LocationTracker()
+    paragraphs = [p.strip() for p in chapter_text.split("\n\n") if p.strip()]
+    if len(paragraphs) >= 3:
+        jumps = tracker.detect_jumps(paragraphs, max_jump_distance=2)
+        critical_jumps = [j for j in jumps if j.severity == "critical"]
+        if critical_jumps:
+            jump_desc = "; ".join(j.reason for j in critical_jumps[:3])
+            result.add(GuardianViolation(
+                rule="location_fold",
+                severity="critical",
+                description=f"时空折叠：检测到{len(critical_jumps)}处物理位置无逻辑跳跃。{jump_desc}",
+                suggestion="场景切换需要过渡描写（走路/坐电梯/开门等），不能瞬间跳跃",
+                offending_segments=[
+                    {"start_line": j.from_para, "end_line": j.to_para,
+                     "text": f"{j.from_location} → {j.to_location}", "reason": j.reason}
+                    for j in critical_jumps[:3]
+                ],
+            ))
+
     return result

@@ -1,8 +1,14 @@
 """
-Episode Schema — 短剧单集数据结构
+Episode Schema — 短剧单集数据结构（v3 超写实版）
 
-定义 Episode / Shot / PacingCheckpoint 三个核心模型。
+定义 Episode / Shot / PacingCheckpoint 核心模型。
 输出两件套：剧本文档 + 分镜提示词包。
+
+新增：
+- RenderStyle 枚举（超写实漫剧 / 沙雕真人剧）
+- Shot.final_render_prompt（最终渲染prompt）
+- Shot.character_tags（角色材质标签）
+- Shot.style_suffix（风格后缀）
 """
 from __future__ import annotations
 
@@ -15,6 +21,12 @@ from pydantic import BaseModel, Field
 # ============================================================
 # 枚举
 # ============================================================
+
+class RenderStyle(str, Enum):
+    """渲染风格"""
+    REALISTIC = "realistic"    # 超写实漫剧（Kling/Runway）
+    COMEDY = "comedy"          # 沙雕真人剧（图文分镜/配音）
+
 
 class ShotType(str, Enum):
     """景别"""
@@ -69,6 +81,25 @@ class PacingLabel(str, Enum):
 
 
 # ============================================================
+# 风格后缀常量
+# ============================================================
+
+# 超写实漫剧风格后缀
+REALISTIC_SUFFIX = (
+    "(Photorealistic, hyper-detailed, cinematic lighting, "
+    "8k resolution, shot on 35mm lens, shallow depth of field, "
+    "dramatic shadows, film grain, anamorphic lens flare)"
+)
+
+# 沙雕真人剧风格后缀
+COMEDY_SUFFIX = (
+    "(Bright colorful lighting, slightly exaggerated expressions, "
+    "4K resolution, clean sharp focus, sitcom-style framing, "
+    "warm inviting atmosphere, high saturation)"
+)
+
+
+# ============================================================
 # 核心模型
 # ============================================================
 
@@ -89,6 +120,15 @@ class Shot(BaseModel):
     mood: str = ""              # 情绪/色彩
     style: str = "cinematic, 4K"  # 风格锚点
 
+    # 角色材质标签（从characters.json查表注入）
+    character_tags: str = ""    # "1boy, realistic young asian man, hyper-detailed skin texture..."
+
+    # 风格后缀（根据RenderStyle自动注入）
+    style_suffix: str = ""
+
+    # 最终渲染prompt = character_tags + visual_prompt + style_suffix
+    final_render_prompt: str = ""
+
     # 音频
     audio_prompt: str = ""      # 音效/SFX描述
     dialogue: str = ""          # 台词（如有）
@@ -97,6 +137,8 @@ class Shot(BaseModel):
     emotion_tag: str = ""       # 情绪标签
     pacing_label: str = ""      # 对应的节奏卡点
     word_range: list[int] = Field(default_factory=list)  # 对应字数区间
+    location: str = ""          # 物理位置（用于时空折叠检测）
+    characters_present: list[str] = Field(default_factory=list)  # 出场角色
 
     def to_visual_prompt(self) -> str:
         """生成完整的视觉Prompt（英文，可直接喂视频模型）"""
@@ -130,6 +172,23 @@ class Shot(BaseModel):
             parts.append(f'dialogue: "{self.dialogue}"')
         return ", ".join(parts) if parts else ""
 
+    def build_final_render_prompt(self, render_style: RenderStyle = RenderStyle.REALISTIC) -> str:
+        """构建最终渲染prompt（character_tags + visual + style_suffix）"""
+        visual = self.to_visual_prompt()
+
+        # 角色材质标签
+        char_part = self.character_tags if self.character_tags else ""
+
+        # 风格后缀
+        suffix = self.style_suffix
+        if not suffix:
+            suffix = REALISTIC_SUFFIX if render_style == RenderStyle.REALISTIC else COMEDY_SUFFIX
+
+        # 组装
+        parts = [p for p in [char_part, visual, suffix] if p]
+        self.final_render_prompt = ", ".join(parts)
+        return self.final_render_prompt
+
 
 class PacingCheckpoint(BaseModel):
     """节奏卡点"""
@@ -156,6 +215,7 @@ class VisualConsistency(BaseModel):
     appearance: str = ""        # 外貌描述（发型、体型、特征）
     default_attire: str = ""    # 默认服装
     voice_tone: str = ""        # 声线描述（供TTS）
+    visual_tags: str = ""       # 英文材质标签（注入prompt）
     reference_images: list[str] = Field(default_factory=list)  # 参考图路径
 
 
@@ -163,6 +223,7 @@ class Episode(BaseModel):
     """短剧单集"""
     episode_number: int
     title: str = ""
+    render_style: RenderStyle = RenderStyle.REALISTIC  # 渲染风格
     duration_estimate_seconds: int = Field(ge=30, le=300, description="目标时长（秒）")
     word_count_estimate: int = Field(ge=500, le=10000, description="目标字数")
 
@@ -195,3 +256,33 @@ class Episode(BaseModel):
         """校验镜头总时长是否在目标范围内"""
         total = self.get_total_shot_duration()
         return abs(total - self.duration_estimate_seconds) <= 10
+
+    def build_all_final_prompts(self) -> list[dict]:
+        """为所有镜头构建最终渲染prompt"""
+        results = []
+        for shot in self.shots:
+            prompt = shot.build_final_render_prompt(self.render_style)
+            results.append({
+                "shot_id": shot.shot_id,
+                "final_render_prompt": prompt,
+                "duration": shot.duration,
+                "shot_type": shot.shot_type.value,
+                "location": shot.location,
+            })
+        return results
+
+
+class BeatSheet(BaseModel):
+    """结构化动作指令集（timeline.json用）"""
+    chapter: int
+    beats: list[dict] = Field(default_factory=list)
+    # 每个beat: {"beat": "0-20%", "action": "...", "location": "...", "characters": [...]}
+
+
+class LocationJump(BaseModel):
+    """位置跳跃检测结果"""
+    from_location: str
+    to_location: str
+    paragraph_index: int
+    is_valid: bool = True
+    reason: str = ""

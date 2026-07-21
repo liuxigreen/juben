@@ -3,10 +3,7 @@
     {
       "id": "char_pro",
       "name": "林默",
-      "aliases": [
-        "林工",
-        "林默默"
-      ],
+      "aliases": ["林工", "林默默"],
       "role": "protagonist",
       "appearance": {
         "age": 28,
@@ -17,6 +14,10 @@
         "distinguishing": "左手腕有加班导致的腱鞘炎护腕",
         "clothing_default": "格子衫+牛仔裤+运动鞋"
       },
+      "visual_tags": {
+        "realistic": "1boy, realistic young asian man, hyper-detailed skin texture, visible pores, heavy dark circles under eyes, messy black hair slightly receding hairline, black-framed glasses, slightly wrinkled plaid shirt, jeans, white sneakers, wrist brace on left hand, slim build, tired expression, cinematic rim lighting on face",
+        "comedy": "1boy, young asian man, exaggerated tired expression, big dark circles, messy hair, oversized plaid shirt, jeans, sneakers, cartoon-style sweat drops, bright lighting"
+      },
       "personality": {
         "ocean": {
           "openness": 7,
@@ -26,16 +27,8 @@
           "neuroticism": 7
         },
         "speech_pattern": "技术宅说话风格，喜欢用编程术语比喻生活，被怼时会结巴",
-        "habits": [
-          "敲代码时会抖腿",
-          "紧张时会推眼镜",
-          "加班时会喝红牛"
-        ],
-        "fears": [
-          "被裁员",
-          "35岁危机",
-          "产品经理改需求"
-        ],
+        "habits": ["敲代码时会抖腿", "紧张时会推眼镜", "加班时会喝红牛"],
+        "fears": ["被裁员", "35岁危机", "产品经理改需求"],
         "desires": "写出一段能改变世界的代码，实现财务自由"
       },
       "background": {
@@ -69,10 +62,7 @@
     {
       "id": "char_ant",
       "name": "张伟",
-      "aliases": [
-        "张总",
-        "产品张"
-      ],
+      "aliases": ["张总", "产品张"],
       "role": "antagonist",
       "appearance": {
         "age": 35,
@@ -83,6 +73,10 @@
         "distinguishing": "喜欢戴金链子，说话时会挥手",
         "clothing_default": "Polo衫+西裤+皮鞋"
       },
+      "visual_tags": {
+        "realistic": "1boy, realistic middle-aged asian man, slightly overweight, beer belly, receding hairline balding, small squinting eyes, gold chain necklace, polo shirt, dress pants, leather shoes, condescending smirk, dramatic side lighting",
+        "comedy": "1boy, middle-aged asian man, exaggerated beer belly, very bald head, tiny squinting eyes, shiny gold chain, tight polo shirt, cartoon-style anger marks, bright sitcom lighting"
+      },
       "personality": {
         "ocean": {
           "openness": 4,
@@ -92,16 +86,8 @@
           "neuroticism": 6
         },
         "speech_pattern": "喜欢画大饼，说话时会加'赋能'、'抓手'、'闭环'等黑话",
-        "habits": [
-          "拍肩膀",
-          "说'辛苦了'但不给加班费",
-          "改需求时说'小调整'"
-        ],
-        "fears": [
-          "被老板骂",
-          "项目失败",
-          "被裁员"
-        ],
+        "habits": ["拍肩膀", "说'辛苦了'但不给加班费", "改需求时说'小调整'"],
+        "fears": ["被老板骂", "项目失败", "被裁员"],
         "desires": "升职加薪，成为高管"
       },
       "background": {
@@ -130,6 +116,37 @@
         "current_goal": "让林默完成不可能的项目",
         "last_appeared": null,
         "last_state_change": null
+      }
+    },
+    {
+      "id": "char_support",
+      "name": "李薇",
+      "aliases": ["薇姐", "测试薇"],
+      "role": "supporting",
+      "appearance": {
+        "age": 26,
+        "height": "165cm",
+        "build": "匀称",
+        "hair": "黑色长发，扎马尾",
+        "eyes": "杏眼，戴隐形眼镜",
+        "distinguishing": "工位上摆满手办",
+        "clothing_default": "卫衣+短裙+帆布鞋"
+      },
+      "visual_tags": {
+        "realistic": "1girl, realistic young asian woman, long black hair in ponytail, almond eyes, clean skin, wearing hoodie and skirt, canvas shoes, cute anime figures on desk behind her, natural daylight, soft shadows",
+        "comedy": "1girl, young asian woman, long black ponytail, big expressive eyes, oversized hoodie, skirt, canvas shoes, surrounded by cute figures, bright cheerful lighting"
+      },
+      "personality": {
+        "speech_pattern": "说话直接，喜欢吐槽，但对林默很照顾",
+        "habits": ["测试时会念叨bug的名字", "给bug起搞笑名字"],
+        "fears": ["加班到秃头"],
+        "desires": "找到一个不加班的公司"
+      },
+      "state": {
+        "alive": true,
+        "location": "大厂办公室",
+        "health": "健康",
+        "current_goal": "帮林默完成项目"
       }
     }
   ]

@@ -1,8 +1,8 @@
 """
-Episode Parser — 解析器（不是生成器）
+Episode Parser — 解析器（v3 带位置提取）
 
 解析Scribe输出的带镜头标注的结构化文本。
-不再从纯文本机械切割，而是解析已有的镜头块。
+新增：从文本中提取物理位置（用于时空折叠检测）。
 """
 from __future__ import annotations
 
@@ -19,6 +19,7 @@ from .schema import (
     ShotType,
     CameraMovement,
     CameraAngle,
+    RenderStyle,
 )
 
 
@@ -58,6 +59,21 @@ ANGLE_MAP = {
     "Eye Level": CameraAngle.EYE_LEVEL,
 }
 
+# 位置关键词（用于从文本提取物理位置）
+LOCATION_KEYWORDS = {
+    "大厂工位区": ["工位", "办公桌", "电脑前", "显示器前", "键盘"],
+    "公司机房": ["机房", "服务器", "机柜", "数据中心"],
+    "会议室": ["会议室", "投影仪", "白板", "会议桌"],
+    "公司大楼门口": ["大楼门口", "公司门口", "走出公司"],
+    "便利店": ["便利店", "超市", "小卖部"],
+    "公司大楼走廊": ["走廊", "过道", "电梯间"],
+    "天台": ["天台", "楼顶", "屋顶"],
+    "茶水间": ["茶水间", "咖啡机", "饮水机"],
+    "地铁": ["地铁", "车厢", "站台"],
+    "家": ["家里", "卧室", "床", "出租屋"],
+}
+
+
 class EpisodeParser:
     """
     解析Scribe输出的带镜头标注的结构化文本。
@@ -67,12 +83,18 @@ class EpisodeParser:
     ## 镜头 1 | 3s_Hook (0-100字)
     - **【画面机位】**: [CU] + [Push]
     - **【视觉动作】**: 沈清辞的手指被针扎破，血珠迅速渗出
-    - **【光影/音效】**: 暖色烛光摇曳 / 针尖刺破皮肤的微小音效被放大
-    - **【台词】**: 沈清辞(眼神骤然转冷): "这毒，果然是从宫里出来的。"
+    - **【场景光影】**: [Warm] + 暖色烛光摇曳
+    - **【角色台词】**: 沈清辞(眼神骤然转冷): "这毒，果然是从宫里出来的。"
     ```
     """
 
-    def parse(self, text: str, episode_number: int = 1) -> Episode:
+    def parse(
+        self,
+        text: str,
+        episode_number: int = 1,
+        render_style: RenderStyle = RenderStyle.REALISTIC,
+        characters: list[dict] | None = None,
+    ) -> Episode:
         """解析带镜头标注的文本，返回Episode"""
         # 1. 按镜头块切割
         shot_blocks = self._split_shot_blocks(text)
@@ -81,7 +103,7 @@ class EpisodeParser:
         shots = []
         checkpoints = []
         for i, block in enumerate(shot_blocks, 1):
-            shot, checkpoint = self._parse_block(block, i)
+            shot, checkpoint = self._parse_block(block, i, characters)
             if shot:
                 shots.append(shot)
             if checkpoint:
@@ -96,6 +118,7 @@ class EpisodeParser:
 
         return Episode(
             episode_number=episode_number,
+            render_style=render_style,
             duration_estimate_seconds=int(total_duration),
             word_count_estimate=total_chars,
             pacing_checkpoints=checkpoints,
@@ -114,7 +137,12 @@ class EpisodeParser:
         blocks = re.split(pattern, text, flags=re.MULTILINE)
         return [b.strip() for b in blocks if b.strip() and re.match(r'^## (?:镜头|Shot)', b.strip())]
 
-    def _parse_block(self, block: str, shot_id: int) -> tuple[Shot | None, PacingCheckpoint | None]:
+    def _parse_block(
+        self,
+        block: str,
+        shot_id: int,
+        characters: list[dict] | None = None,
+    ) -> tuple[Shot | None, PacingCheckpoint | None]:
         """解析单个镜头块"""
         # 提取卡点标签
         pacing_label = self._extract_pacing_label(block)
@@ -139,6 +167,12 @@ class EpisodeParser:
         # 提取情绪（从视觉动作推断）
         emotion = self._infer_emotion(visual_action)
 
+        # 提取物理位置（新增）
+        location = self._extract_location(block)
+
+        # 提取出场角色（新增）
+        characters_present = self._extract_characters_present(block, characters)
+
         # 估算时长（5个镜头，目标90秒，每镜头约18秒）
         duration = 18.0  # 固定时长，后续可按内容量调整
 
@@ -156,6 +190,8 @@ class EpisodeParser:
             mood=emotion,
             emotion_tag=emotion,
             pacing_label=pacing_label,
+            location=location,
+            characters_present=characters_present,
         )
 
         # 构建PacingCheckpoint
@@ -219,7 +255,7 @@ class EpisodeParser:
 
     def _extract_field(self, block: str, field_name: str) -> str:
         """提取指定字段的内容"""
-        pattern = rf'【{field_name}】[^:：]*[：:]\s*(.+?)(?=\n-|\n##|\Z)'
+        pattern = rf'【{field_name}】[^：:]*[：:]\s*(.+?)(?=\n-|\n##|\Z)'
         match = re.search(pattern, block, re.DOTALL)
         if match:
             return match.group(1).strip()
@@ -231,6 +267,48 @@ class EpisodeParser:
         # 提取引号内的内容
         matches = re.findall(r'["「](.*?)["」]', dialogue_block)
         return matches[0] if matches else dialogue_block
+
+    def _extract_location(self, block: str) -> str:
+        """
+        从镜头块中提取物理位置。
+        优先从【场景环境】字段提取，其次从整个块文本匹配关键词。
+        """
+        # 1. 尝试从【场景环境】字段提取
+        setting = self._extract_field(block, "场景环境")
+        if setting:
+            for location, keywords in LOCATION_KEYWORDS.items():
+                if any(kw in setting for kw in keywords):
+                    return location
+
+        # 2. 从整个块文本匹配关键词
+        for location, keywords in LOCATION_KEYWORDS.items():
+            if any(kw in block for kw in keywords):
+                return location
+
+        return ""
+
+    def _extract_characters_present(
+        self,
+        block: str,
+        characters: list[dict] | None = None,
+    ) -> list[str]:
+        """
+        从镜头块中提取出场角色。
+        通过匹配角色名和别名。
+        """
+        if not characters:
+            return []
+
+        present = []
+        for char in characters:
+            name = char.get("name", "")
+            aliases = char.get("aliases", [])
+            all_names = [name] + aliases
+
+            if any(n in block for n in all_names if n):
+                present.append(name)
+
+        return present
 
     def _extract_cliffhanger(self, shot_blocks: list[str]) -> Cliffhanger:
         """提取断崖钩子（最后一个镜头块）"""
