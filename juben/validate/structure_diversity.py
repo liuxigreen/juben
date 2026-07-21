@@ -8,6 +8,7 @@ def extract_event_fingerprint(text: str) -> list[str]:
     """提取章节的事件序列指纹
     
     将章节内容简化为事件类型序列，用于结构比较。
+    v2: 增加更多细分事件类型，区分同题材章节。
     """
     events = []
     
@@ -18,13 +19,13 @@ def extract_event_fingerprint(text: str) -> list[str]:
     elif dialogue_count > 0:
         events.append("dialogue")
     
-    # 战斗事件
-    combat_keywords = ["剑", "攻击", "战斗", "出手", "冲去", "招式", "灵气爆发", "突破"]
+    # 战斗事件（纯物理战斗）
+    combat_keywords = ["剑", "攻击", "出手", "冲去", "招式", "灵气爆发"]
     combat_count = sum(text.count(kw) for kw in combat_keywords)
     if combat_count >= 3:
         events.append("combat")
     
-    # 对峙事件
+    # 对峙事件（言语冲突）
     confrontation_keywords = ["你是谁", "让我看看", "你以为", "来吧", "指着", "冷笑"]
     confront_count = sum(text.count(kw) for kw in confrontation_keywords)
     if confront_count >= 2:
@@ -59,6 +60,50 @@ def extract_event_fingerprint(text: str) -> list[str]:
     emotion_count = sum(text.count(kw) for kw in emotion_keywords)
     if emotion_count >= 2:
         events.append("emotion")
+    
+    # === v2新增：细分事件类型 ===
+    
+    # 调查/分析事件
+    investigation_keywords = ["分析", "研究", "调查", "扫描", "检测", "追踪", "日志", "监控"]
+    invest_count = sum(text.count(kw) for kw in investigation_keywords)
+    if invest_count >= 2:
+        events.append("investigation")
+    
+    # 创造/编程事件
+    creation_keywords = ["编程", "写代码", "开发", "创建", "设计", "架构", "算法", "程序"]
+    creation_count = sum(text.count(kw) for kw in creation_keywords)
+    if creation_count >= 2:
+        events.append("creation")
+    
+    # 修炼/学习事件
+    training_keywords = ["修炼", "练习", "学习", "领悟", "参悟", "冥想", "打坐"]
+    training_count = sum(text.count(kw) for kw in training_keywords)
+    if training_count >= 2:
+        events.append("training")
+    
+    # 社交/谈判事件
+    social_keywords = ["谈判", "交易", "合作", "结盟", "说服", "讨价还价", "条件"]
+    social_count = sum(text.count(kw) for kw in social_keywords)
+    if social_count >= 2:
+        events.append("social")
+    
+    # 逃脱/隐藏事件
+    escape_keywords = ["逃脱", "隐藏", "伪装", "潜入", "潜伏", "暗中", "秘密"]
+    escape_count = sum(text.count(kw) for kw in escape_keywords)
+    if escape_count >= 2:
+        events.append("escape")
+    
+    # 计划/策略事件
+    planning_keywords = ["计划", "策略", "部署", "准备", "安排", "算计", "布局"]
+    planning_count = sum(text.count(kw) for kw in planning_keywords)
+    if planning_count >= 2:
+        events.append("planning")
+    
+    # 技术对抗事件（黑客/网络安全）
+    tech_combat_keywords = ["防火墙", "黑客", "入侵", "破解", "加密", "解密", "漏洞", "攻击"]
+    tech_count = sum(text.count(kw) for kw in tech_combat_keywords)
+    if tech_count >= 2:
+        events.append("tech_combat")
     
     return events
 
