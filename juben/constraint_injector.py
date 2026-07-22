@@ -19,7 +19,7 @@ from pathlib import Path
 from typing import Any
 
 from .validate.dynamic_blacklist import (
-    build_dynamic_blacklist,
+    check_ai_flavor,
     scan_chapter_for_blacklist,
     load_blacklist,
     save_blacklist,
@@ -285,15 +285,12 @@ class ConstraintInjector:
         return "\n\n".join(blocks)
 
     def _get_dynamic_blacklist(self, previous_chapters: list[str] | None = None) -> list[str]:
-        """获取动态黑名单"""
+        """获取黑名单 — 只使用静态种子，不自动生成"""
+        # 如果有手动配置的黑名单，使用它
         if self.blacklist_path.exists():
             return load_blacklist(self.blacklist_path)
 
-        if previous_chapters:
-            blacklist = build_dynamic_blacklist(previous_chapters)
-            save_blacklist(blacklist, self.blacklist_path)
-            return blacklist
-
+        # 否则使用种子黑名单（已验证的27个AI味词）
         return SEED_BLACKLIST.copy()
 
     def _format_blacklist(self, blacklist: list[str]) -> str:
@@ -408,7 +405,11 @@ class ConstraintInjector:
 **4. 视觉密度要求**：
 - 纯叙述（无法拍摄的文字）占比不超过30%
 - 每个镜头块必须有至少1个物理动作描写
-- 对话不能连续超过2句不插入动作或环境变化"""
+- 对话不能连续超过2句不插入动作或环境变化
+
+**5. 视觉铁律（违反即熔断）**：
+- ❌ 禁止纯心理描写："他心想"、"她感到绝望"、"他意识到" → 必须用动作/表情/环境外化情绪
+- ❌ 禁止概述性长句："她非常愤怒" → 用具体动作替代（"她的指甲陷进掌心，血珠渗出"）"""
 
 
 def build_constrained_scribe_prompt(

@@ -1,0 +1,63 @@
+{
+  "relationships": [
+    {
+      "character_a": "char_pro",
+      "character_b": "char_ant",
+      "type": "enemy",
+      "status": "陈默还不知道王建国是凶手",
+      "trust_level": 0,
+      "history": "",
+      "tension": "陈默无意中掌握了能揭露王建国的证据",
+      "evolution": []
+    },
+    {
+      "character_a": "char_pro",
+      "character_b": "char_ally",
+      "type": "ally",
+      "status": "互不相识",
+      "trust_level": 3,
+      "history": "",
+      "tension": "陈默不想惹事，林小雨想挖新闻",
+      "evolution": []
+    },
+    {
+      "character_a": "char_ally",
+      "character_b": "char_ant",
+      "type": "enemy",
+      "status": "林小雨在调查王建国，但还没找到证据",
+      "trust_level": 0,
+      "history": "",
+      "tension": "王建国想除掉林小雨，林小雨想揭露王建国",
+      "evolution": []
+    }
+  ],
+  "info_asymmetry": [
+    {
+      "info_id": "info_1",
+      "description": "陈默三年前目睹的车祸",
+      "known_by": [
+        "char_pro"
+      ],
+      "chapter_revealed": 0,
+      "is_protagonist_advantage": true
+    },
+    {
+      "info_id": "info_2",
+      "description": "王建国是连环杀手",
+      "known_by": [
+        "char_ant"
+      ],
+      "chapter_revealed": 0,
+      "is_protagonist_advantage": false
+    },
+    {
+      "info_id": "info_3",
+      "description": "林小雨父亲的死和王建国有关",
+      "known_by": [
+        "char_ant"
+      ],
+      "chapter_revealed": 0,
+      "is_protagonist_advantage": false
+    }
+  ]
+}

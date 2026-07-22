@@ -600,11 +600,12 @@ def audit(chapter: int, dir: str):
         _print_validation("Guardian", guardian_result)
 
         # 5.1 动态黑名单扫描（显示具体违规）
-        blacklist_violations = scan_chapter_for_blacklist(text, banned)
+        from juben.validate.dynamic_blacklist import check_ai_flavor
+        blacklist_violations = check_ai_flavor(text, project_dir)
         if blacklist_violations:
-            console.print(f"  [yellow]⚠ 动态黑名单违规: {len(blacklist_violations)}个短语[/yellow]")
+            console.print(f"  [yellow]⚠ AI味检测: {len(blacklist_violations)}个违规[/yellow]")
             for v in blacklist_violations[:5]:  # 最多显示5个
-                console.print(f"    [dim]\"{v['phrase']}\" ×{v['count']}次, 行号: {v['lines']}[/dim]")
+                console.print(f"    [dim][{v['type']}] 第{v['line']}行: \"{v['match']}\"[/dim]")
 
         # 5.5 Curator状态更新
         from juben.curator import CuratorState

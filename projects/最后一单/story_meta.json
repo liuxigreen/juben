@@ -1,0 +1,23 @@
+{
+  "title": "最后一单",
+  "genre": "现代都市背景",
+  "sub_genres": [],
+  "premise": "外卖员深夜送餐时意外撞见谋杀现场，被迫卷入连环杀人案调查",
+  "logline": "外卖员撞见谋杀，被迫用超强记忆力追查连环杀手",
+  "target_chapters": 50,
+  "target_word_count_per_chapter": 2000,
+  "pov": "third_person_limited",
+  "language": "zh-CN",
+  "last_chapter_written": 0,
+  "disruption_variable": "外卖员拥有超强记忆力，能记住每个订单的地址和客户信息",
+  "pacing_cards": [],
+  "template": "universal",
+  "narrative_skeleton": "mixins:",
+  "global_hook_density": "high",
+  "themes": [
+    "真相与逃避",
+    "正义与生存",
+    "记忆与遗忘"
+  ],
+  "target_audience": {}
+}

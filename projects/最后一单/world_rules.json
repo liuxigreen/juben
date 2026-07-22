@@ -1,0 +1,19 @@
+{
+  "world_name": "现代都市",
+  "genre": "",
+  "setting": {
+    "time_period": "2026年",
+    "geography": "某二线城市，城中村和高档小区并存",
+    "technology_level": "现代科技，监控普及，但城中村有盲区",
+    "social_structure": "贫富差距大，底层打工人和上层商人"
+  },
+  "power_system": {
+    "记忆力": "陈默的超强记忆力是天生的，不是超能力，只是比普通人强很多"
+  },
+  "factions": [],
+  "resources": {},
+  "rules": [],
+  "anti_cliche_blacklist": [],
+  "causal_constraints": [],
+  "hard_constraints": []
+}

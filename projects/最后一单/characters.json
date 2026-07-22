@@ -1,0 +1,197 @@
+{
+  "characters": [
+    {
+      "id": "char_pro",
+      "name": "陈默",
+      "aliases": [
+        "小陈",
+        "默哥"
+      ],
+      "role": "protagonist",
+      "appearance": {
+        "age": 28,
+        "height": "175cm",
+        "build": "偏瘦，长期熬夜送外卖导致",
+        "hair": "黑色短发，总是有点乱",
+        "eyes": "黑色，有黑眼圈",
+        "distinguishing": "右手食指有一道旧伤疤（小时候被刀划的）",
+        "clothing_default": "蓝色外卖骑手服，头盔挂在车把上"
+      },
+      "personality": {
+        "ocean": {
+          "openness": 7,
+          "conscientiousness": 8,
+          "extraversion": 3,
+          "agreeableness": 6,
+          "neuroticism": 4
+        },
+        "speech_pattern": "话少，回答简短，偶尔冒出一句冷幽默",
+        "habits": [
+          "送餐时默念订单号",
+          "紧张时摸右手食指的伤疤",
+          "习惯性观察周围环境"
+        ],
+        "fears": [
+          "被冤枉",
+          "失去妹妹"
+        ],
+        "desires": "攒够钱给妹妹治病"
+      },
+      "background": {
+        "origin": "农村出来的，父母早亡",
+        "family": "",
+        "education": "高中辍学",
+        "key_event": "妹妹得了白血病，需要巨额医药费",
+        "secret": "三年前目睹过一场车祸，但因为害怕没报警，一直内疚"
+      },
+      "abilities": {
+        "combat": "普通人，但跑得快（送外卖练出来的）",
+        "knowledge": "熟悉城市的每一条小巷、每一个小区的门禁密码",
+        "special": "超强记忆力——能记住每个订单的地址、客户信息、送餐时间"
+      },
+      "relationships": {},
+      "arc": {
+        "start": "只想安安静静送外卖赚钱，不想惹事",
+        "midpoint": "发现自己被卷入的案件和三年前的车祸有关",
+        "end": "主动面对真相，不再逃避",
+        "internal_conflict": "Want: 安全地活着赚钱 vs Need: 面对真相，承担责任"
+      },
+      "state": {
+        "alive": true,
+        "location": "出租屋",
+        "health": "疲惫，有黑眼圈",
+        "current_goal": "攒钱给妹妹治病",
+        "last_appeared": null,
+        "last_state_change": null
+      }
+    },
+    {
+      "id": "char_ant",
+      "name": "王建国",
+      "aliases": [
+        "王总",
+        "老王"
+      ],
+      "role": "antagonist",
+      "appearance": {
+        "age": 45,
+        "height": "180cm",
+        "build": "微胖，保养得当",
+        "hair": "黑色，梳得一丝不苟",
+        "eyes": "黑色，眼神锐利",
+        "distinguishing": "左手无名指戴一枚旧式金戒指",
+        "clothing_default": "深色西装，衬衫袖口有定制袖扣"
+      },
+      "personality": {
+        "ocean": {
+          "openness": 4,
+          "conscientiousness": 9,
+          "extraversion": 7,
+          "agreeableness": 2,
+          "neuroticism": 3
+        },
+        "speech_pattern": "说话温和有礼，但每句话都暗藏威胁",
+        "habits": [
+          "摸左手无名指的戒指",
+          "说话时微笑"
+        ],
+        "fears": [
+          "真相被揭露",
+          "失去现有地位"
+        ],
+        "desires": "保护自己的秘密，维护现有生活"
+      },
+      "background": {
+        "origin": "本地人，白手起家",
+        "family": "",
+        "education": "大专",
+        "key_event": "二十年前的一场事故，让他走上不归路",
+        "secret": "二十年前意外杀人，之后连环作案掩盖真相"
+      },
+      "abilities": {
+        "combat": "普通人，但心思缜密",
+        "knowledge": "熟悉法律漏洞，善于伪装",
+        "special": "极强的反侦察能力"
+      },
+      "relationships": {},
+      "arc": {
+        "start": "隐藏在人群中，表面成功商人",
+        "midpoint": "发现有人开始调查当年的事",
+        "end": "伪装被撕破，真相大白",
+        "internal_conflict": "Want: 继续隐藏 vs Need: 承认过去"
+      },
+      "state": {
+        "alive": true,
+        "location": "高档小区",
+        "health": "健康",
+        "current_goal": "除掉任何可能揭露真相的人",
+        "last_appeared": null,
+        "last_state_change": null
+      }
+    },
+    {
+      "id": "char_ally",
+      "name": "林小雨",
+      "aliases": [
+        "小雨",
+        "林记者"
+      ],
+      "role": "supporting",
+      "appearance": {
+        "age": 26,
+        "height": "165cm",
+        "build": "匀称",
+        "hair": "黑色长发，常扎马尾",
+        "eyes": "黑色，眼神坚定",
+        "distinguishing": "背一个旧帆布包，里面装满采访本",
+        "clothing_default": "休闲装，牛仔裤配T恤"
+      },
+      "personality": {
+        "ocean": {
+          "openness": 8,
+          "conscientiousness": 7,
+          "extraversion": 6,
+          "agreeableness": 5,
+          "neuroticism": 5
+        },
+        "speech_pattern": "直接，不绕弯子，采访时会追问",
+        "habits": [
+          "采访时习惯性录音",
+          "紧张时咬笔帽"
+        ],
+        "fears": [
+          "报道失实",
+          "伤害无辜"
+        ],
+        "desires": "揭露真相，做一个好记者"
+      },
+      "background": {
+        "origin": "新闻系毕业，理想主义者",
+        "family": "",
+        "education": "本科",
+        "key_event": "父亲是警察，十年前因公殉职",
+        "secret": "一直在调查父亲当年的案子，发现和现在的连环案有关联"
+      },
+      "abilities": {
+        "combat": "不会打架，但会保护自己",
+        "knowledge": "新闻采访技巧、信息搜集能力",
+        "special": "敏锐的观察力和追问能力"
+      },
+      "relationships": {},
+      "arc": {
+        "start": "追着外卖员撞见谋杀的新闻想挖独家",
+        "midpoint": "发现案件和父亲的死有关",
+        "end": "和陈默联手揭开真相",
+        "internal_conflict": "Want: 独家新闻 vs Need: 真相和正义"
+      },
+      "state": {
+        "alive": true,
+        "location": "报社宿舍",
+        "health": "健康",
+        "current_goal": "找到连环案的突破口",
+        "last_appeared": null,
+        "last_state_change": null
+      }
+    }
+  ]
+}

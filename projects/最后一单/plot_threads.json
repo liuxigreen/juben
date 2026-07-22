@@ -1,0 +1,34 @@
+{
+  "threads": [
+    {
+      "id": "thread_1",
+      "description": "三年前的车祸和现在的连环案有关联",
+      "planted_chapter": 0,
+      "payoff_chapter": null,
+      "status": "open",
+      "characters_involved": [],
+      "importance": "major",
+      "resolution": null
+    },
+    {
+      "id": "thread_2",
+      "description": "林小雨父亲的死另有隐情",
+      "planted_chapter": 0,
+      "payoff_chapter": null,
+      "status": "open",
+      "characters_involved": [],
+      "importance": "major",
+      "resolution": null
+    },
+    {
+      "id": "thread_3",
+      "description": "陈默妹妹的医药费快凑够了，但真相可能会让他失去一切",
+      "planted_chapter": 0,
+      "payoff_chapter": null,
+      "status": "open",
+      "characters_involved": [],
+      "importance": "minor",
+      "resolution": null
+    }
+  ]
+}
