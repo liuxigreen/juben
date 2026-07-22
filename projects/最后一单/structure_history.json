@@ -30,5 +30,25 @@
   {
     "chapter": 10,
     "type": "chase"
+  },
+  {
+    "chapter": 11,
+    "type": "suspense"
+  },
+  {
+    "chapter": 12,
+    "type": "investigation"
+  },
+  {
+    "chapter": 13,
+    "type": "reveal"
+  },
+  {
+    "chapter": 14,
+    "type": "chase"
+  },
+  {
+    "chapter": 15,
+    "type": "suspense"
   }
 ]

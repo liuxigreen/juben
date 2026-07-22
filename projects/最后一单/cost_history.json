@@ -46,5 +46,25 @@
   {
     "chapter": 10,
     "cost": "指甲断裂"
+  },
+  {
+    "chapter": 11,
+    "cost": "肌肉痉挛"
+  },
+  {
+    "chapter": 12,
+    "cost": "视野发红"
+  },
+  {
+    "chapter": 13,
+    "cost": "视线模糊"
+  },
+  {
+    "chapter": 14,
+    "cost": "记忆闪回"
+  },
+  {
+    "chapter": 15,
+    "cost": "手脚发麻"
   }
 ]

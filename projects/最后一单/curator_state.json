@@ -759,6 +759,124 @@
       "realm_change": " [身体接近极限]",
       "foreshadow_planted": [],
       "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 11,
+      "body_costs": [
+        "记忆闪回"
+      ],
+      "setting_elements_used": [
+        "城中村和高档",
+        "现代科技"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": " [身体接近极限]",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 12,
+      "body_costs": [
+        "记忆闪回",
+        "视野发红"
+      ],
+      "setting_elements_used": [
+        "城中村和高档",
+        "监控普及"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": " [身体接近极限]",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 11,
+      "body_costs": [
+        "记忆闪回"
+      ],
+      "setting_elements_used": [
+        "城中村和高档",
+        "现代科技"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": " [身体接近极限]",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 12,
+      "body_costs": [
+        "记忆闪回",
+        "视野发红"
+      ],
+      "setting_elements_used": [
+        "城中村和高档",
+        "监控普及"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": " [身体接近极限]",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 13,
+      "body_costs": [
+        "视线模糊"
+      ],
+      "setting_elements_used": [
+        "城中村和高档",
+        "监控普及"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": " [身体接近极限]",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 14,
+      "body_costs": [],
+      "setting_elements_used": [
+        "城中村和高档"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 15,
+      "body_costs": [],
+      "setting_elements_used": [
+        "城中村和高档",
+        "监控普及"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 14,
+      "body_costs": [],
+      "setting_elements_used": [
+        "城中村和高档"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 15,
+      "body_costs": [],
+      "setting_elements_used": [
+        "城中村和高档",
+        "监控普及"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
     }
   ],
   "accumulated_costs": [
@@ -785,7 +903,14 @@
     "记忆闪回",
     "视野发红",
     "记忆闪回",
-    "记忆闪回"
+    "记忆闪回",
+    "记忆闪回",
+    "记忆闪回",
+    "视野发红",
+    "记忆闪回",
+    "记忆闪回",
+    "视野发红",
+    "视线模糊"
   ],
   "accumulated_banned": [],
   "current_realm": "",
