@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import re
 from collections import Counter
+from pathlib import Path
 from dataclasses import dataclass, field
 
 
@@ -520,6 +521,7 @@ def guardian_check(
     cost_history: list[str] | None = None,
     concept_mapping: dict | None = None,
     dynamic_blacklist: list[str] | None = None,
+    project_dir: str | Path | None = None,
 ) -> GuardianResult:
     """
     Guardian统一审查入口（v3：硬门禁升级）
@@ -588,7 +590,7 @@ def guardian_check(
                 suggestion="替换为具体的、独特的描写，禁止复用高频表达",
             ))
 
-    # 7. 设定漂移检测（硬门禁：任意1个概念组有命中即通过）
+    # 7. 设定漂移检测（warning：auto-generated关键词不可靠，仅作提醒）
     if concept_mapping:
         found_elems, missing_groups = check_setting_elements(
             chapter_text, [], concept_mapping=concept_mapping
@@ -596,9 +598,9 @@ def guardian_check(
         if len(found_elems) == 0:
             result.add(GuardianViolation(
                 rule="setting_drift",
-                severity="critical",
+                severity="warning",
                 description=f"设定漂移：本章未命中任何概念映射组。未命中组: {', '.join(missing_groups[:5])}",
-                suggestion="必须在正文中自然融入至少1个核心设定元素",
+                suggestion="考虑在正文中自然融入至少1个核心设定元素",
             ))
         elif len(missing_groups) > len(concept_mapping) * 0.7:
             result.add(GuardianViolation(
@@ -621,9 +623,10 @@ def guardian_check(
                 suggestion="每次突破的代价必须不同，参考代价轮盘选择新代价",
             ))
 
-    # 9. 时空折叠检测（物理位置跳跃）
+    # 9. 时空折叠检测（物理位置跳跃 + 位移介质锁）
     from juben.guardian.location_tracker import LocationTracker
-    tracker = LocationTracker()
+    _proj_dir = Path(project_dir) if project_dir else None
+    tracker = LocationTracker(project_dir=_proj_dir)
     paragraphs = [p.strip() for p in chapter_text.split("\n\n") if p.strip()]
     if len(paragraphs) >= 3:
         jumps = tracker.detect_jumps(paragraphs, max_jump_distance=2)

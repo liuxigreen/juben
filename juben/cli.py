@@ -596,6 +596,7 @@ def audit(chapter: int, dir: str):
             cost_history=cost_history,
             concept_mapping=concept_mapping,
             previous_fingerprints=previous_fps,
+            project_dir=str(project_dir),
         )
         _print_validation("Guardian", guardian_result)
 

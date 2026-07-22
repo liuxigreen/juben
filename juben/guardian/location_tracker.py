@@ -1,33 +1,63 @@
 """
-Location Tracker — 物理位置追踪 + 时空折叠检测
+Location Tracker — 物理位置追踪 + 时空折叠检测（v2）
 
-从结构化文本中提取物理位置，检测无逻辑跳跃。
-用于Guardian审计门卫的熔断触发条件A。
+v2改动：
+1. 位置关键词从项目级 locations.json 动态加载，不硬编码
+2. 引入位移介质锁（Transition Media）：有交通/位移动作即豁免时空折叠
+3. _validate_jump 不再依赖硬编码的场景转换列表
 """
 from __future__ import annotations
 
+import json
 import re
 import logging
+from pathlib import Path
 from dataclasses import dataclass, field
 
 logger = logging.getLogger(__name__)
 
 
-# 位置关键词映射
-LOCATION_KEYWORDS = {
-    "大厂工位区": ["工位", "办公桌", "电脑前", "显示器前", "键盘", "代码"],
-    "公司机房": ["机房", "服务器", "机柜", "数据中心", "服务器集群"],
-    "会议室": ["会议室", "投影仪", "白板", "会议桌"],
-    "公司大楼门口": ["大楼门口", "公司门口", "走出公司", "大厦门口"],
-    "便利店": ["便利店", "超市", "小卖部"],
-    "公司大楼走廊": ["公司走廊", "公司过道", "公司电梯间", "大楼走廊"],
-    "天台": ["天台", "楼顶", "屋顶"],
-    "茶水间": ["茶水间", "咖啡机", "饮水机"],
-    "地铁": ["地铁", "车厢", "站台"],
-    "家": ["家里", "卧室", "出租屋", "回到家里"],
-    "医院": ["医院", "病房", "病床", "护士站", "检查室", "住院部"],
-    "万达广场": ["万达广场", "万达B座"],
+# ============================================================
+# 位移介质（Transition Media）
+# 有这些关键词出现在场景切换段落中 → 合法转场，豁免时空折叠
+# ============================================================
+
+TRANSITION_MEDIA = {
+    "riding": ["骑", "电动车", "头盔", "拧把", "加速", "红绿灯", "穿过街道", "摩托"],
+    "driving": ["开车", "驾驶", "方向盘", "油门", "刹车", "停车位", "倒车"],
+    "walking": ["走出", "跨过", "推开门", "上楼", "下楼", "拐进", "步行", "沿着", "穿过走廊"],
+    "elevator": ["电梯", "按了", "电梯门", "楼层"],
+    "transit": ["地铁", "公交", "打车", "出租车", "网约车", "站台", "车厢"],
+    "time_pass": ["分钟后", "半小时", "一小时", "抵达", "来到", "一路", "到了", "到达"],
 }
+
+
+# ============================================================
+# 默认位置关键词（兜底，项目应提供自己的）
+# ============================================================
+
+DEFAULT_LOCATION_KEYWORDS: dict[str, list[str]] = {
+    "医院": ["医院", "病房", "病床", "护士站", "检查室", "住院部", "挂号"],
+    "家": ["家里", "卧室", "出租屋", "回到家里", "家门口"],
+    "街道": ["街道", "马路", "人行道", "十字路口", "红绿灯"],
+}
+
+
+def load_locations_from_project(project_dir: Path) -> dict[str, list[str]] | None:
+    """从项目目录加载位置关键词
+
+    优先级：
+    1. project_dir/locations.json — 显式定义
+    2. 从 chapters/ 已有文本自动提取（TODO）
+    3. None → 使用默认
+    """
+    loc_file = project_dir / "locations.json"
+    if loc_file.exists():
+        with open(loc_file, encoding="utf-8") as f:
+            data = json.load(f)
+        if isinstance(data, dict) and data:
+            return data
+    return None
 
 
 @dataclass
@@ -49,13 +79,22 @@ class LocationJumpResult:
     is_valid: bool
     reason: str
     severity: str  # "warning" | "critical"
+    has_transition_media: bool = False  # 是否检测到位移介质
 
 
 class LocationTracker:
-    """物理位置追踪器"""
+    """物理位置追踪器（v2：动态加载 + 位移介质锁）"""
 
-    def __init__(self, custom_locations: dict[str, list[str]] | None = None):
-        self.locations = custom_locations or LOCATION_KEYWORDS
+    def __init__(self, custom_locations: dict[str, list[str]] | None = None,
+                 project_dir: Path | None = None):
+        # 优先使用custom_locations，其次从项目加载，最后用默认
+        if custom_locations:
+            self.locations = custom_locations
+        elif project_dir:
+            loaded = load_locations_from_project(project_dir)
+            self.locations = loaded if loaded else DEFAULT_LOCATION_KEYWORDS
+        else:
+            self.locations = DEFAULT_LOCATION_KEYWORDS
         self.records: list[LocationRecord] = []
 
     def extract_locations(self, paragraphs: list[str]) -> list[LocationRecord]:
@@ -72,18 +111,14 @@ class LocationTracker:
                 ))
         return self.records
 
-    def detect_jumps(self, paragraphs: list[str], max_jump_distance: int = 1) -> list[LocationJumpResult]:
+    def detect_jumps(self, paragraphs: list[str], max_jump_distance: int = 2) -> list[LocationJumpResult]:
         """
         检测位置跳跃。
 
-        Args:
-            paragraphs: 段落列表
-            max_jump_distance: 允许的最大跳跃距离（段落数）。
-                              1 = 只允许相邻段落切换位置
-                              2 = 允许跨1段切换位置
-
-        Returns:
-            跳跃检测结果列表
+        v2改动：
+        - 检查场景切换段落中是否有位移介质
+        - 有位移介质 → 自动豁免（is_valid=True）
+        - 无位移介质且距离>30段 → 标记为critical
         """
         if not self.records:
             self.extract_locations(paragraphs)
@@ -97,19 +132,38 @@ class LocationTracker:
                 para_distance = curr.paragraph_index - prev.paragraph_index
 
                 if para_distance > max_jump_distance:
-                    # 检查是否是合理的长距离移动
-                    is_valid = self._validate_jump(prev.location, curr.location, para_distance)
-                    reason = "" if is_valid else f"从{prev.location}瞬间跳到{curr.location}，跨{para_distance}段无过渡"
+                    # 检查中间段落是否有位移介质
+                    has_media = self._check_transition_media(
+                        paragraphs, prev.paragraph_index, curr.paragraph_index
+                    )
 
-                    jumps.append(LocationJumpResult(
-                        from_location=prev.location,
-                        to_location=curr.location,
-                        from_para=prev.paragraph_index,
-                        to_para=curr.paragraph_index,
-                        is_valid=is_valid,
-                        reason=reason,
-                        severity="critical" if not is_valid else "warning",
-                    ))
+                    if has_media:
+                        # 有位移介质 → 合法转场
+                        jumps.append(LocationJumpResult(
+                            from_location=prev.location,
+                            to_location=curr.location,
+                            from_para=prev.paragraph_index,
+                            to_para=curr.paragraph_index,
+                            is_valid=True,
+                            reason="",
+                            severity="warning",
+                            has_transition_media=True,
+                        ))
+                    else:
+                        # 无位移介质 → 检查距离
+                        is_valid = para_distance <= 30
+                        reason = "" if is_valid else f"从{prev.location}瞬间跳到{curr.location}，跨{para_distance}段无过渡"
+
+                        jumps.append(LocationJumpResult(
+                            from_location=prev.location,
+                            to_location=curr.location,
+                            from_para=prev.paragraph_index,
+                            to_para=curr.paragraph_index,
+                            is_valid=is_valid,
+                            reason=reason,
+                            severity="critical" if not is_valid else "warning",
+                            has_transition_media=False,
+                        ))
 
         return jumps
 
@@ -147,31 +201,24 @@ class LocationTracker:
 
         return best_location, best_confidence, best_evidence
 
-    def _validate_jump(self, from_loc: str, to_loc: str, distance: int) -> bool:
-        """验证跳跃是否合理"""
-        # 合理的跳跃对（物理上可能的快速移动）
-        valid_transitions = {
-            ("大厂工位区", "公司机房"),
-            ("公司机房", "大厂工位区"),
-            ("大厂工位区", "会议室"),
-            ("会议室", "大厂工位区"),
-            ("大厂工位区", "茶水间"),
-            ("茶水间", "大厂工位区"),
-            ("大厂工位区", "公司大楼走廊"),
-            ("公司大楼走廊", "大厂工位区"),
-            ("公司大楼门口", "公司大楼走廊"),
-            ("公司大楼走廊", "公司大楼门口"),
-            ("大厂工位区", "天台"),
-            ("天台", "大厂工位区"),
-        }
+    def _check_transition_media(self, paragraphs: list[str],
+                                 from_idx: int, to_idx: int) -> bool:
+        """检查两个位置之间的段落是否包含位移介质
 
-        transition = (from_loc, to_loc)
-        if transition in valid_transitions:
-            return True
+        扫描范围：from_idx 到 to_idx 之间的所有段落（含两端）
+        """
+        # 收集所有位移介质关键词
+        all_media_keywords: list[str] = []
+        for keywords in TRANSITION_MEDIA.values():
+            all_media_keywords.extend(keywords)
 
-        # 跳跃距离超过3段 = 不合理
-        if distance > 3:
-            return False
+        # 扫描中间段落
+        start = max(0, from_idx)
+        end = min(len(paragraphs), to_idx + 1)
+        for i in range(start, end):
+            para = paragraphs[i]
+            for kw in all_media_keywords:
+                if kw in para:
+                    return True
 
-        # 默认允许
-        return True
+        return False
