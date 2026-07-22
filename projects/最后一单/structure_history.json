@@ -50,5 +50,25 @@
   {
     "chapter": 15,
     "type": "suspense"
+  },
+  {
+    "chapter": 16,
+    "type": "action_heavy"
+  },
+  {
+    "chapter": 17,
+    "type": "confrontation"
+  },
+  {
+    "chapter": 18,
+    "type": "chase"
+  },
+  {
+    "chapter": 19,
+    "type": "action_heavy"
+  },
+  {
+    "chapter": 20,
+    "type": "investigation"
   }
 ]

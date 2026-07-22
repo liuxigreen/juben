@@ -1,70 +1,22 @@
 [
   {
-    "chapter": 1,
-    "cost": "鼻血"
-  },
-  {
-    "chapter": 2,
-    "cost": "灵气失控"
-  },
-  {
-    "chapter": 3,
-    "cost": "吐血"
-  },
-  {
-    "chapter": 3,
-    "cost": "视野发红"
-  },
-  {
-    "chapter": 3,
-    "cost": "耳鸣"
-  },
-  {
-    "chapter": 4,
-    "cost": "肌肉痉挛"
-  },
-  {
-    "chapter": 5,
-    "cost": "记忆闪回"
-  },
-  {
-    "chapter": 6,
-    "cost": "口中血腥味"
-  },
-  {
-    "chapter": 7,
-    "cost": "吐血"
-  },
-  {
-    "chapter": 8,
-    "cost": "视野发红"
-  },
-  {
-    "chapter": 9,
-    "cost": "短暂失聪"
-  },
-  {
-    "chapter": 10,
+    "chapter": 16,
     "cost": "指甲断裂"
   },
   {
-    "chapter": 11,
-    "cost": "肌肉痉挛"
+    "chapter": 17,
+    "cost": "灵气失控"
   },
   {
-    "chapter": 12,
-    "cost": "视野发红"
+    "chapter": 18,
+    "cost": "鼻血"
   },
   {
-    "chapter": 13,
-    "cost": "视线模糊"
+    "chapter": 19,
+    "cost": "心跳紊乱"
   },
   {
-    "chapter": 14,
-    "cost": "记忆闪回"
-  },
-  {
-    "chapter": 15,
-    "cost": "手脚发麻"
+    "chapter": 20,
+    "cost": "短暂失聪"
   }
 ]
