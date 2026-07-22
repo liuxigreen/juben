@@ -518,7 +518,19 @@ def audit(chapter: int, dir: str):
         from juben.guardian import _extract_ending
         all_endings.append(_extract_ending(t))
 
-    completed_nodes = []  # TODO: 从状态文件中读取已完成的节点
+    # 自动推断已完成的节点：扫描目录中所有章节文件
+    all_chapter_files = set()
+    for p in chapter_dir.glob("*.md"):
+        try:
+            all_chapter_files.add(int(p.stem))
+        except ValueError:
+            pass
+    completed_nodes = []
+    for node in timeline_lock._sorted_nodes:
+        node_start, node_end = node.chapter_range
+        node_chapters = set(range(node_start, node_end + 1))
+        if node_chapters.issubset(all_chapter_files):
+            completed_nodes.append(node.node_id)
 
     for ch_num, ch_path in chapters:
         text = ch_path.read_text(encoding="utf-8")
