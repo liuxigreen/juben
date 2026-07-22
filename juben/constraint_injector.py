@@ -1,18 +1,20 @@
 """
-Scribe Constraint Injector — Scribe生成前强制动态注入
+Scribe Constraint Injector — Scribe生成前强制动态注入（v2统一版）
 
 核心思想：事前熔断 > 事后检查
 在Scribe生成prompt之前，强制注入：
-1. 动态黑名单（近期高频短语）
-2. 本章必须完成的大厂元素清单
-3. 身体状态检查（代价累积）
+1. 动态黑名单（近期高频短语，n-gram分析）
+2. 本章必须完成的设定元素清单（概念映射）
+3. 身体状态检查（代价累积，CostRoulette）
 4. 禁止结构模板列表
-5. 短剧节奏硬指标
+5. 四段式beat节奏模板
+6. 短剧节奏硬指标（视觉密度、钩子、断崖）
 """
 from __future__ import annotations
 
 import json
 import logging
+import random
 from pathlib import Path
 from typing import Any
 
@@ -27,8 +29,212 @@ from .validate.dynamic_blacklist import (
 logger = logging.getLogger(__name__)
 
 
+# ============================================================
+# 代价轮盘（从constraints.py合并）
+# ============================================================
+
+DEFAULT_COST_POOL = [
+    "鼻血", "耳鸣", "视线模糊", "手脚发麻", "记忆闪回",
+    "灵气失控", "指甲断裂", "吐血", "太阳穴剧痛", "肌肉痉挛",
+    "呼吸困难", "心跳紊乱", "短暂失聪", "视野发红", "口中血腥味",
+]
+
+
+class CostRoulette:
+    """突破代价轮盘 — 确保3章内不重复"""
+
+    def __init__(self, cooldown: int = 3):
+        self.cooldown = cooldown
+        self.history: list[dict] = []  # [{"chapter": N, "cost": "..."}]
+
+    def pick(self, chapter_num: int, pool: list[str] | None = None) -> str:
+        """为本章随机选一个代价，排除最近cooldown章内用过的"""
+        if pool is None:
+            pool = DEFAULT_COST_POOL
+
+        recent_costs = {
+            h["cost"] for h in self.history
+            if h["chapter"] > chapter_num - self.cooldown
+        }
+        available = [c for c in pool if c not in recent_costs]
+        if not available:
+            available = pool
+
+        chosen = random.choice(available)
+        self.history.append({"chapter": chapter_num, "cost": chosen})
+        return chosen
+
+    def get_recent(self, n: int = 5) -> list[str]:
+        """获取最近n个已用代价"""
+        return [h["cost"] for h in self.history[-n:]]
+
+
+# ============================================================
+# 四段式Beat模板（从constraints.py合并）
+# ============================================================
+
+DEFAULT_BEATS = [
+    {
+        "label": "钩子",
+        "range": [0, 10],
+        "unit": "%",
+        "rule": "第一句话立刻切入核心冲突或悬念。禁止背景铺垫。必须有动词+感官细节。",
+    },
+    {
+        "label": "阻碍",
+        "range": [10, 40],
+        "unit": "%",
+        "rule": "反派/环境/内心制造情绪压力。通过具体对白和动作展现，禁止概述。",
+    },
+    {
+        "label": "破局",
+        "range": [40, 80],
+        "unit": "%",
+        "rule": "主角利用核心能力降维打击。必须有具体的操作过程，不是一句'他赢了'。",
+    },
+    {
+        "label": "代价与悬念",
+        "range": [80, 100],
+        "unit": "%",
+        "rule": "突破/胜利必须伴随物理代价。结尾必须有断崖式悬念（未完成动作/新危机/反问）。",
+    },
+]
+
+
+def get_beat_prompt(chapter_num: int, beats: list[dict] | None = None) -> str:
+    """生成四段式beat的prompt注入文本"""
+    if beats is None:
+        beats = DEFAULT_BEATS
+
+    lines = ["## 四段式节拍（必须严格遵守）\n"]
+    for beat in beats:
+        label = beat["label"]
+        r = beat["range"]
+        rule = beat["rule"]
+        lines.append(f"- **{label}**（{r[0]}%-{r[1]}%）: {rule}")
+
+    lines.append("\n→ 每一段必须有具体的对白/动作/感官描写，禁止概述性长句。")
+    return "\n".join(lines)
+
+
+# ============================================================
+# 概念映射（从constraints.py合并）
+# ============================================================
+
+DEFAULT_CONCEPT_MAPPING: dict[str, list[str]] = {}
+
+
+def load_concept_mapping(project_dir: Path) -> dict[str, list[str]]:
+    """从项目配置加载概念映射字典"""
+    mapping_file = project_dir / "concept_mapping.json"
+    if mapping_file.exists():
+        with open(mapping_file, encoding="utf-8") as f:
+            return json.load(f)
+
+    world_file = project_dir / "world_rules.json"
+    if world_file.exists():
+        with open(world_file, encoding="utf-8") as f:
+            world = json.load(f)
+        return _auto_generate_mapping(world)
+
+    return DEFAULT_CONCEPT_MAPPING
+
+
+def _auto_generate_mapping(world: dict) -> dict[str, list[str]]:
+    """从world_rules自动生成概念映射"""
+    import re
+    mapping: dict[str, list[str]] = {}
+
+    setting = world.get("setting", {})
+    for key, value in setting.items():
+        if isinstance(value, str) and value:
+            keywords = _extract_keywords_from_text(value)
+            if keywords:
+                mapping[key] = keywords
+
+    power = world.get("power_system", {})
+    if isinstance(power, dict):
+        for key, value in power.items():
+            if isinstance(value, str) and value:
+                keywords = _extract_keywords_from_text(value)
+                if keywords:
+                    mapping[f"力量体系.{key}"] = keywords
+            elif isinstance(value, list):
+                for item in value:
+                    if isinstance(item, str):
+                        keywords = _extract_keywords_from_text(item)
+                        if keywords:
+                            mapping[f"力量体系.{key}"] = keywords
+
+    rules = world.get("rules", [])
+    for i, rule in enumerate(rules):
+        if isinstance(rule, str) and len(rule) > 5:
+            keywords = _extract_keywords_from_text(rule)
+            if keywords:
+                mapping[f"规则{i+1}"] = keywords
+
+    return mapping
+
+
+def _extract_keywords_from_text(text: str) -> list[str]:
+    """从文本中提取关键词"""
+    import re
+    segments = re.split(r'[,，。、；：\s]+', text)
+    keywords = []
+    for seg in segments:
+        seg = seg.strip()
+        if len(seg) < 2:
+            continue
+        zh_words = re.findall(r'[\u4e00-\u9fff]{2,6}', seg)
+        en_words = re.findall(r'[a-zA-Z]{2,}', seg)
+        for w in zh_words + en_words:
+            if len(w) >= 2:
+                keywords.append(w)
+
+    stop_words = {"的", "了", "是", "在", "和", "有", "不", "人", "这", "中",
+                  "大", "为", "上", "个", "到", "说", "会", "从", "对", "也",
+                  "可以", "通过", "进行", "使用", "需要", "已经", "正在",
+                  "the", "and", "for", "that", "this", "with", "from", "are",
+                  "can", "use", "has", "have", "been", "being"}
+
+    seen = set()
+    result = []
+    for w in keywords:
+        w_lower = w.lower()
+        if w_lower not in stop_words and w not in seen:
+            seen.add(w)
+            result.append(w)
+        if len(result) >= 5:
+            break
+    return result
+
+
+def get_required_elements_for_chapter(
+    mapping: dict[str, list[str]],
+    chapter_num: int,
+    min_count: int = 2,
+) -> list[str]:
+    """为本章选择必须出现的设定元素"""
+    if not mapping:
+        return []
+
+    groups = list(mapping.keys())
+    selected_groups = random.sample(groups, min(min_count, len(groups)))
+
+    selected = []
+    for group in selected_groups:
+        modern_list = mapping[group]
+        if modern_list:
+            selected.append(random.choice(modern_list))
+    return selected
+
+
+# ============================================================
+# 主注入器
+# ============================================================
+
 class ConstraintInjector:
-    """Scribe约束注入器"""
+    """Scribe约束注入器（v2统一版）"""
 
     def __init__(self, project_dir: str | Path):
         self.project_dir = Path(project_dir)
@@ -42,12 +248,7 @@ class ConstraintInjector:
         chapter_num: int,
         previous_chapters: list[str] | None = None,
     ) -> str:
-        """
-        构建约束注入文本块，用于插入Scribe prompt。
-
-        Returns:
-            格式化的约束文本
-        """
+        """构建约束注入文本块，用于插入Scribe prompt"""
         blocks = []
 
         # 1. 动态黑名单
@@ -56,22 +257,27 @@ class ConstraintInjector:
             blacklist_text = self._format_blacklist(blacklist)
             blocks.append(blacklist_text)
 
-        # 2. 大厂元素清单
+        # 2. 设定元素清单
         setting_injection = self._build_setting_injection(chapter_num)
         if setting_injection:
             blocks.append(setting_injection)
 
-        # 3. 身体状态检查
-        body_state = self._build_body_state_injection(chapter_num)
-        if body_state:
-            blocks.append(body_state)
+        # 3. 代价轮盘
+        cost_injection = self._build_cost_injection(chapter_num)
+        if cost_injection:
+            blocks.append(cost_injection)
 
-        # 4. 禁止结构模板
+        # 4. 四段式beat
+        beat_text = get_beat_prompt(chapter_num)
+        if beat_text:
+            blocks.append(beat_text)
+
+        # 5. 禁止结构模板
         structure_ban = self._build_structure_ban(chapter_num)
         if structure_ban:
             blocks.append(structure_ban)
 
-        # 5. 短剧节奏硬指标
+        # 6. 短剧节奏硬指标
         rhythm_requirements = self._build_rhythm_requirements(chapter_num)
         if rhythm_requirements:
             blocks.append(rhythm_requirements)
@@ -80,22 +286,18 @@ class ConstraintInjector:
 
     def _get_dynamic_blacklist(self, previous_chapters: list[str] | None = None) -> list[str]:
         """获取动态黑名单"""
-        # 尝试从文件加载
         if self.blacklist_path.exists():
             return load_blacklist(self.blacklist_path)
 
-        # 如果有历史章节，动态生成
         if previous_chapters:
             blacklist = build_dynamic_blacklist(previous_chapters)
             save_blacklist(blacklist, self.blacklist_path)
             return blacklist
 
-        # 使用种子黑名单
         return SEED_BLACKLIST.copy()
 
     def _format_blacklist(self, blacklist: list[str]) -> str:
         """格式化黑名单为prompt注入文本"""
-        # 只取前30个，避免prompt过长
         top_phrases = blacklist[:30]
         phrases_str = "、".join(f'"{p}"' for p in top_phrases)
 
@@ -108,92 +310,59 @@ class ConstraintInjector:
 请用具体的、独特的、符合场景的描写替代这些通用表达。"""
 
     def _build_setting_injection(self, chapter_num: int) -> str:
-        """构建大厂元素强制注入"""
-        # 读取concept_mapping
-        if not self.concept_mapping_path.exists():
+        """构建设定元素强制注入"""
+        concept_mapping = load_concept_mapping(self.project_dir)
+        if not concept_mapping:
             return ""
 
-        try:
-            mapping = json.loads(self.concept_mapping_path.read_text(encoding='utf-8'))
-        except Exception:
+        required = get_required_elements_for_chapter(concept_mapping, chapter_num, min_count=2)
+        if not required:
             return ""
 
-        # 提取核心概念组
-        concept_groups = mapping.get("concept_groups", mapping.get("groups", []))
-        if not concept_groups:
-            return ""
-
-        # 根据章节选择必须出现的概念（轮转）
-        required_groups = []
-        for i, group in enumerate(concept_groups):
-            if (chapter_num + i) % 3 == 0:  # 每3章轮转一次
-                group_name = group.get("name", "")
-                keywords = group.get("keywords", [])
-                if group_name and keywords:
-                    required_groups.append((group_name, keywords[:5]))
-
-        if not required_groups:
-            return ""
-
-        lines = ["### 🏢 本章必须出现的大厂元素（至少命中1组）"]
+        lines = ["### 🏢 本章必须出现的设定元素（至少命中1个）"]
         lines.append("")
-        for name, keywords in required_groups:
-            kw_str = "、".join(keywords)
-            lines.append(f"- **{name}**：{kw_str}")
-
+        for elem in required:
+            lines.append(f"- 必须出现: **{elem}**")
         lines.append("")
-        lines.append("以上元素必须自然融入剧情，不能生硬插入。可以通过对话、动作、环境描写等方式体现。")
-
+        lines.append("以上元素必须自然融入剧情，不能生硬插入。")
         return "\n".join(lines)
 
-    def _build_body_state_injection(self, chapter_num: int) -> str:
-        """构建身体状态注入"""
-        # 读取curator_state
-        if not self.curator_state_path.exists():
-            return ""
+    def _build_cost_injection(self, chapter_num: int) -> str:
+        """构建代价轮盘注入"""
+        # 读取代价历史
+        cost_history = []
+        if self.cost_history_path.exists():
+            try:
+                cost_history = json.loads(self.cost_history_path.read_text(encoding='utf-8'))
+            except Exception:
+                pass
 
-        try:
-            state = json.loads(self.curator_state_path.read_text(encoding='utf-8'))
-        except Exception:
-            return ""
+        # 构建轮盘
+        roulette = CostRoulette(cooldown=3)
+        roulette.history = [{"chapter": h["chapter"], "cost": h["cost"]} for h in cost_history]
 
-        body_state = state.get("body_state", {})
-        if not body_state:
-            return ""
+        # 选择本章代价
+        chosen_cost = roulette.pick(chapter_num, DEFAULT_COST_POOL)
 
-        # 提取当前状态
-        current_cost = body_state.get("current_cost", "")
-        cost_history = body_state.get("cost_history", [])
-        health_status = body_state.get("health_status", "")
-        abilities_used = body_state.get("abilities_used", [])
+        # 保存代价历史
+        cost_history.append({"chapter": chapter_num, "cost": chosen_cost})
+        self.cost_history_path.write_text(
+            json.dumps(cost_history, ensure_ascii=False, indent=2),
+            encoding='utf-8'
+        )
 
-        lines = ["### 🩺 身体状态检查（必须体现在剧情中）"]
-        lines.append("")
+        recent_costs = roulette.get_recent(3)
+        recent_str = "、".join(recent_costs) if recent_costs else "无"
 
-        if health_status:
-            lines.append(f"- **当前健康状态**：{health_status}")
+        return f"""### 🩺 突破代价规则
 
-        if current_cost:
-            lines.append(f"- **当前代价**：{current_cost}")
+本章如果涉及突破/觉醒/力量提升，代价必须是：**{chosen_cost}**
+最近已用过的代价（禁止重复）：{recent_str}
 
-        if cost_history:
-            recent_costs = cost_history[-3:]  # 最近3章的代价
-            costs_str = "、".join(recent_costs)
-            lines.append(f"- **近期代价累积**：{costs_str}")
-            lines.append("- **注意**：连续使用相同代价会导致身体崩溃，请选择不同的代价")
-
-        if abilities_used:
-            abilities_str = "、".join(abilities_used[-3:])
-            lines.append(f"- **近期使用能力**：{abilities_str}")
-
-        lines.append("")
-        lines.append("以上身体状态必须在本章中有所体现（动作描写、环境反馈、他人反应等）。")
-
-        return "\n".join(lines)
+→ 代价必须通过具体的生理反应描写展现，不能只写"他付出了代价"。"""
 
     def _build_structure_ban(self, chapter_num: int) -> str:
         """构建禁止结构模板"""
-        # 常见的结构模板（需要避免重复）
         banned_patterns = [
             "对峙→揭示→突破→代价",
             "任务→执行→成功→奖励",
@@ -201,7 +370,6 @@ class ConstraintInjector:
             "日常→被打脸→反击→打脸成功",
         ]
 
-        # 根据章节号选择不同的禁止模式
         banned_idx = chapter_num % len(banned_patterns)
         banned = banned_patterns[banned_idx]
 
@@ -273,5 +441,4 @@ def build_constrained_scribe_prompt(
         parts = base_prompt.split(marker)
         return parts[0] + injection_block + "\n\n" + marker + parts[1]
     else:
-        # 如果没有找到标记，在末尾追加
         return base_prompt + "\n\n" + injection_block

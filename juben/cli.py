@@ -416,81 +416,29 @@ def write(chapter: int, dir: str, chars: str):
 
     console.print(f"[cyan]正在为第{chapter}章生成prompt...[/cyan]")
 
-    # === 注入动态约束（v3硬门禁）===
-    from juben.constraints import (
-        build_dynamic_banlist, CostRoulette, load_concept_mapping,
-        get_required_elements_for_chapter, get_beat_prompt, DEFAULT_COST_POOL,
-    )
-    import json as _json
+    # === 使用统一约束注入器（v2）===
+    from juben.constraint_injector import ConstraintInjector, build_constrained_scribe_prompt
 
+    # 生成基础prompt
+    base_prompt = scribe.generate_prompt(chapter, character_ids=char_ids)
+
+    # 读取已有章节用于动态黑名单
     chapters_dir = project_dir / "chapters"
+    previous_texts = []
+    for i in range(max(1, chapter - 3), chapter):
+        ch_file = chapters_dir / f"{i:03d}.md"
+        if ch_file.exists():
+            previous_texts.append(ch_file.read_text(encoding="utf-8"))
 
-    # 1. 动态禁用短语
-    banned = build_dynamic_banlist(chapters_dir, chapter, lookback=3)
-
-    # 2. 概念映射
-    concept_mapping = load_concept_mapping(project_dir)
-
-    # 3. 必需设定元素
-    required_elems = get_required_elements_for_chapter(concept_mapping, chapter, min_count=2)
-
-    # 4. 代价轮盘（从项目状态读取历史）
-    cost_state_file = project_dir / "cost_history.json"
-    if cost_state_file.exists():
-        with open(cost_state_file) as f:
-            cost_history = _json.load(f)
-    else:
-        cost_history = []
-
-    # 选择本章代价
-    from juben.constraints import CostRoulette
-    roulette = CostRoulette(cooldown=3)
-    roulette.history = [{"chapter": h["chapter"], "cost": h["cost"]} for h in cost_history]
-    chosen_cost = roulette.pick(chapter, DEFAULT_COST_POOL)
-
-    cost_instruction = (
-        f"本章如果涉及突破/觉醒/力量提升，代价必须是：**{chosen_cost}**。\n"
-        f"最近已用过的代价（禁止重复）：{', '.join(roulette.get_recent(3))}\n"
-        "→ 代价必须通过具体的生理反应描写展现，不能只写'他付出了代价'。"
+    # 注入所有约束
+    prompt = build_constrained_scribe_prompt(
+        chapter_num=chapter,
+        project_dir=project_dir,
+        base_prompt=base_prompt,
+        previous_chapters=previous_texts,
     )
-
-    # 5. 四段式beat
-    beat_template = get_beat_prompt(chapter)
-
-    # 生成prompt
-    prompt = scribe.generate_prompt(chapter, character_ids=char_ids)
-
-    # 注入约束到prompt
-    injection = []
-    if banned:
-        injection.append("\n## ⛔ 动态禁用短语（最近3章高频词，本章绝对禁止）")
-        for p in banned:
-            injection.append(f"- 禁止: '{p}'")
-        injection.append("→ 必须用全新的、具体的描写替代")
-
-    if required_elems:
-        injection.append("\n## ⛔ 必需设定元素（本章必须自然融入至少1个，否则Guardian熔断）")
-        for elem in required_elems:
-            injection.append(f"- 必须出现: **{elem}**")
-
-    if concept_mapping:
-        injection.append("\n## 概念映射字典（写作时必须用右侧词汇替代左侧传统概念）")
-        for traditional, modern in concept_mapping.items():
-            injection.append(f"- {traditional} → {modern}")
-
-    injection.append(f"\n## 突破代价规则\n{cost_instruction}")
-    injection.append(f"\n{beat_template}")
-
-    # 在prompt末尾追加约束
-    if injection:
-        prompt = prompt + "\n" + "\n".join(injection)
 
     path = scribe.save_prompt(chapter, prompt)
-
-    # 保存代价历史
-    cost_history.append({"chapter": chapter, "cost": chosen_cost})
-    with open(cost_state_file, "w") as f:
-        _json.dump(cost_history, f, ensure_ascii=False, indent=2)
 
     # 统计
     word_count = len(prompt)
@@ -595,16 +543,27 @@ def audit(chapter: int, dir: str):
 
         # 5. Guardian（Anti-Dialogue + Anti-Repetition + 高频词 + 信息倾倒）
         from juben.guardian import guardian_check
-        from juben.constraints import (
-            build_dynamic_banlist, load_concept_mapping,
-            get_required_elements_for_chapter,
+        from juben.constraint_injector import (
+            ConstraintInjector, load_concept_mapping,
+            get_required_elements_for_chapter, CostRoulette,
         )
+        from juben.validate.dynamic_blacklist import scan_chapter_for_blacklist, SEED_BLACKLIST
         import json as _json
 
         endings_up_to_ch = all_endings[:ch_num]
 
-        # 加载v3硬门禁参数
-        banned = build_dynamic_banlist(chapter_dir, ch_num, lookback=3)
+        # 加载约束注入器
+        injector = ConstraintInjector(project_dir)
+        
+        # 读取最近3章用于动态黑名单
+        previous_texts = []
+        for i in range(max(1, ch_num - 3), ch_num):
+            ch_file = chapter_dir / f"{i:03d}.md"
+            if ch_file.exists():
+                previous_texts.append(ch_file.read_text(encoding="utf-8"))
+        
+        # 获取动态黑名单
+        banned = injector._get_dynamic_blacklist(previous_texts if previous_texts else None)
         concept_mapping = load_concept_mapping(project_dir)
         required_elems = get_required_elements_for_chapter(concept_mapping, ch_num, min_count=2)
 
@@ -639,6 +598,13 @@ def audit(chapter: int, dir: str):
             previous_fingerprints=previous_fps,
         )
         _print_validation("Guardian", guardian_result)
+
+        # 5.1 动态黑名单扫描（显示具体违规）
+        blacklist_violations = scan_chapter_for_blacklist(text, banned)
+        if blacklist_violations:
+            console.print(f"  [yellow]⚠ 动态黑名单违规: {len(blacklist_violations)}个短语[/yellow]")
+            for v in blacklist_violations[:5]:  # 最多显示5个
+                console.print(f"    [dim]\"{v['phrase']}\" ×{v['count']}次, 行号: {v['lines']}[/dim]")
 
         # 5.5 Curator状态更新
         from juben.curator import CuratorState
