@@ -9,6 +9,7 @@ Guardian质量门卫 — 流式文本审查断言 v2
 from __future__ import annotations
 
 import re
+import json
 from collections import Counter
 from pathlib import Path
 from dataclasses import dataclass, field
@@ -609,6 +610,27 @@ def guardian_check(
                 description=f"设定元素覆盖不足：命中{len(found_elems)}个，未命中{len(missing_groups)}组",
                 suggestion="建议增加更多设定元素的自然出现",
             ))
+
+    # 7.5 实体锚点落地检测（warning级）
+    if project_dir:
+        from pathlib import Path as _Path2
+        _anchors_path = _Path2(project_dir) / "entity_anchors.json"
+        if _anchors_path.exists():
+            try:
+                _anchors = json.loads(_anchors_path.read_text(encoding="utf-8"))
+                for _concept, _anchor in _anchors.items():
+                    _keywords = _anchor.get("must_include_keywords", [])
+                    if _keywords:
+                        _found = any(kw in chapter_text for kw in _keywords)
+                        if not _found:
+                            result.add(GuardianViolation(
+                                rule="anchor_miss",
+                                severity="warning",
+                                description=f"实体锚点未落地：本章涉及【{_concept}】但未出现锚点关键词: {', '.join(_keywords[:3])}",
+                                suggestion=f"在正文中通过物理道具呈现【{_concept}】，使用锚点关键词",
+                            ))
+            except Exception:
+                pass
 
     # 8. 代价重复检测 + 闪回硬限
     if cost_history:

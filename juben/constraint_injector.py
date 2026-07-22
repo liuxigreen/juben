@@ -269,6 +269,7 @@ class ConstraintInjector:
         self.concept_mapping_path = self.project_dir / "concept_mapping.json"
         self.cost_history_path = self.project_dir / "cost_history.json"
         self.structure_history_path = self.project_dir / "structure_history.json"
+        self.entity_anchors_path = self.project_dir / "entity_anchors.json"
 
     def build_injection_block(
         self,
@@ -308,6 +309,11 @@ class ConstraintInjector:
         cooldown_rules = self._build_cooldown_rules(chapter_num)
         if cooldown_rules:
             blocks.append(cooldown_rules)
+
+        # 5.6 实体锚点注入
+        anchor_injection = self._build_entity_anchors_injection()
+        if anchor_injection:
+            blocks.append(anchor_injection)
 
         # 6. 四段式beat + 物理打断锁
         beat_text = get_beat_prompt(chapter_num)
@@ -596,6 +602,46 @@ class ConstraintInjector:
         text = ch_file.read_text(encoding="utf-8")
         sms_keywords = ["短信", "彩信", "微信消息", "发来一条", "手机震了"]
         return sum(text.count(kw) for kw in sms_keywords)
+
+    # ============================================================
+    # 新增：实体锚点注入
+    # ============================================================
+
+    def _build_entity_anchors_injection(self) -> str:
+        """从entity_anchors.json加载锚点，注入Scribe prompt"""
+        if not self.entity_anchors_path.exists():
+            return ""
+
+        try:
+            anchors = json.loads(self.entity_anchors_path.read_text(encoding="utf-8"))
+        except Exception:
+            return ""
+
+        if not anchors:
+            return ""
+
+        lines = ["### 🎯 实体锚点（必须通过物理道具呈现，禁止纯语言解释）"]
+        lines.append("")
+        lines.append("本章若涉及以下设定，**必须通过指定物理道具的交互动作呈现**：")
+        lines.append("")
+
+        for concept_name, anchor_data in anchors.items():
+            prop = anchor_data.get("anchor_prop", "")
+            keywords = anchor_data.get("must_include_keywords", [])
+            action = anchor_data.get("typical_action", "")
+
+            if not prop or not keywords:
+                continue
+
+            kw_str = "/".join(keywords[:3])
+            lines.append(f"- 涉及【{concept_name}】时：必须描写【{prop}】")
+            lines.append(f"  关键词：{kw_str}")
+            if action:
+                lines.append(f"  典型动作：{action}")
+            lines.append(f"  禁止用对话解释，必须用物理动作呈现")
+            lines.append("")
+
+        return "\n".join(lines)
 
     # ============================================================
     # 原有：禁止结构模板（已废弃，用结构轮换替代）
