@@ -18,5 +18,33 @@
   {
     "chapter": 3,
     "cost": "耳鸣"
+  },
+  {
+    "chapter": 4,
+    "cost": "肌肉痉挛"
+  },
+  {
+    "chapter": 5,
+    "cost": "记忆闪回"
+  },
+  {
+    "chapter": 6,
+    "cost": "口中血腥味"
+  },
+  {
+    "chapter": 7,
+    "cost": "吐血"
+  },
+  {
+    "chapter": 8,
+    "cost": "视野发红"
+  },
+  {
+    "chapter": 9,
+    "cost": "短暂失聪"
+  },
+  {
+    "chapter": 10,
+    "cost": "指甲断裂"
   }
 ]

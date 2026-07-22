@@ -2,5 +2,33 @@
   {
     "chapter": 3,
     "type": "chase"
+  },
+  {
+    "chapter": 4,
+    "type": "action_heavy"
+  },
+  {
+    "chapter": 5,
+    "type": "confrontation"
+  },
+  {
+    "chapter": 6,
+    "type": "chase"
+  },
+  {
+    "chapter": 7,
+    "type": "suspense"
+  },
+  {
+    "chapter": 8,
+    "type": "investigation"
+  },
+  {
+    "chapter": 9,
+    "type": "confrontation"
+  },
+  {
+    "chapter": 10,
+    "type": "chase"
   }
 ]
