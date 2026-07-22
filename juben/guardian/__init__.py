@@ -610,18 +610,34 @@ def guardian_check(
                 suggestion="建议增加更多设定元素的自然出现",
             ))
 
-    # 8. 代价重复检测
+    # 8. 代价重复检测 + 闪回硬限
     if cost_history:
-        # 检测本章文本中是否包含最近用过的代价
-        recent_costs = cost_history[-3:]  # 最近3章
+        # 检测本章文本中是否包含最近5章用过的代价
+        recent_costs = cost_history[-5:]  # 最近5章
         repeated = [c for c in recent_costs if c in chapter_text]
         if repeated:
             result.add(GuardianViolation(
                 rule="cost_repetition",
-                severity="warning" if len(repeated) == 1 else "critical",
+                severity="critical",
                 description=f"代价重复：本章使用了近期已用过的代价: {', '.join(repeated)}",
                 suggestion="每次突破的代价必须不同，参考代价轮盘选择新代价",
             ))
+
+        # 闪回硬限检测
+        from juben.constraint_injector import CostRoulette
+        flashback_count = sum(
+            1 for c in cost_history if c in CostRoulette.FLASHBACK_COSTS
+        )
+        if flashback_count >= CostRoulette.FLASHBACK_HARD_LIMIT:
+            # 检查本章是否使用了闪回
+            flashback_in_text = any(kw in chapter_text for kw in CostRoulette.FLASHBACK_COSTS)
+            if flashback_in_text:
+                result.add(GuardianViolation(
+                    rule="flashback_limit",
+                    severity="critical",
+                    description=f"闪回超限：全剧已使用{flashback_count}次闪回，上限{CostRoulette.FLASHBACK_HARD_LIMIT}次",
+                    suggestion="本章禁止使用任何形式的闪回/记忆回溯，必须用当前场景的动作和对话推进剧情",
+                ))
 
     # 9. 时空折叠检测（物理位置跳跃 + 位移介质锁）
     from juben.guardian.location_tracker import LocationTracker

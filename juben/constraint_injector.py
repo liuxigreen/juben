@@ -96,9 +96,13 @@ DEFAULT_COST_POOL = [
 
 
 class CostRoulette:
-    """突破代价轮盘 — 确保3章内不重复"""
+    """突破代价轮盘 — 确保cooldown章内不重复 + 闪回硬限"""
 
-    def __init__(self, cooldown: int = 3):
+    # 闪回类代价（全剧上限3次）
+    FLASHBACK_COSTS = {"记忆闪回", "记忆碎片", "往事重现", "闪回"}
+    FLASHBACK_HARD_LIMIT = 3
+
+    def __init__(self, cooldown: int = 5):
         self.cooldown = cooldown
         self.history: list[dict] = []
 
@@ -109,15 +113,27 @@ class CostRoulette:
             h["cost"] for h in self.history
             if h["chapter"] > chapter_num - self.cooldown
         }
+        # 闪回硬限：全剧已达上限则从候选池中移除
+        flashback_count = sum(
+            1 for h in self.history if h["cost"] in self.FLASHBACK_COSTS
+        )
         available = [c for c in pool if c not in recent_costs]
+        if flashback_count >= self.FLASHBACK_HARD_LIMIT:
+            available = [c for c in available if c not in self.FLASHBACK_COSTS]
+        if not available:
+            available = [c for c in pool if c not in self.FLASHBACK_COSTS]
         if not available:
             available = pool
         chosen = random.choice(available)
         self.history.append({"chapter": chapter_num, "cost": chosen})
         return chosen
 
-    def get_recent(self, n: int = 5) -> list[str]:
-        return [h["cost"] for h in self.history[-n:]]
+    def get_recent(self, n: int = 3) -> list[str]:
+        recent = sorted(self.history, key=lambda h: h["chapter"], reverse=True)[:n]
+        return [h["cost"] for h in recent]
+
+    def get_flashback_count(self) -> int:
+        return sum(1 for h in self.history if h["cost"] in self.FLASHBACK_COSTS)
 
 
 # ============================================================
@@ -287,6 +303,11 @@ class ConstraintInjector:
         cost_injection = self._build_cost_injection(chapter_num)
         if cost_injection:
             blocks.append(cost_injection)
+
+        # 5.5 冷却规则（闪回硬限 + 场景多样性 + 短信线索限制）
+        cooldown_rules = self._build_cooldown_rules(chapter_num)
+        if cooldown_rules:
+            blocks.append(cooldown_rules)
 
         # 6. 四段式beat + 物理打断锁
         beat_text = get_beat_prompt(chapter_num)
@@ -498,6 +519,83 @@ class ConstraintInjector:
 最近已用过的代价（禁止重复）：{recent_str}
 
 → 代价必须通过具体的生理反应描写展现，不能只写"他付出了代价"。"""
+
+    # ============================================================
+    # 新增：冷却引擎
+    # ============================================================
+
+    def _build_cooldown_rules(self, chapter_num: int) -> str:
+        """冷却规则注入：闪回硬限 + 场景多样性 + 短信线索限制"""
+        rules = []
+
+        # 1. 闪回硬限
+        cost_history = []
+        if self.cost_history_path.exists():
+            try:
+                cost_history = json.loads(self.cost_history_path.read_text(encoding='utf-8'))
+            except Exception:
+                pass
+
+        flashback_count = sum(
+            1 for h in cost_history
+            if h.get("cost", "") in CostRoulette.FLASHBACK_COSTS
+        )
+        if flashback_count >= CostRoulette.FLASHBACK_HARD_LIMIT:
+            rules.append(f"- ⚠️ 记忆闪回已使用{flashback_count}次，已达上限（{CostRoulette.FLASHBACK_HARD_LIMIT}次）。本章**禁止使用任何形式的闪回/记忆回溯**。必须用当前场景的动作和对话推进剧情。")
+
+        # 2. 场景多样性：从已有章节提取最近使用的场景
+        recent_locations = self._get_recent_locations(chapter_num)
+        if recent_locations:
+            loc_str = "、".join(recent_locations)
+            rules.append(f"- ⚠️ 最近3章的主场景：{loc_str}。本章**必须使用不同的主场景**，避免重复。如果必须回到这些场景，需要有新的信息/冲突/角度。")
+
+        # 3. 短信线索限制
+        sms_count = self._count_sms_clues(chapter_num)
+        if sms_count >= 2:
+            rules.append(f"- ⚠️ 本章已通过短信/彩信获取{sms_count}条关键线索。**禁止再用短信传递关键信息**，必须通过物理搜寻（翻找、跟踪、痕迹对比）获得。")
+
+        if not rules:
+            return ""
+
+        header = "### ⚡ 冷却规则（违反即熔断）"
+        return header + "\n" + "\n".join(rules)
+
+    def _get_recent_locations(self, current_chapter: int) -> list[str]:
+        """从最近3章中提取已使用的主场景"""
+        chapter_dir = self.project_dir / "chapters"
+        if not chapter_dir.exists():
+            return []
+
+        locations = []
+        for ch_num in range(max(1, current_chapter - 3), current_chapter):
+            ch_file = chapter_dir / f"{ch_num:03d}.md"
+            if ch_file.exists():
+                text = ch_file.read_text(encoding="utf-8")
+                # 简单提取：检查前200字中出现的场景关键词
+                opening = text[:500]
+                scene_keywords = {
+                    "医院": ["医院", "病房", "护士"],
+                    "电梯": ["电梯", "轿厢"],
+                    "万达广场": ["万达", "B座"],
+                    "出租屋": ["出租屋", "卧室", "床"],
+                    "城中村": ["城中村", "巷子", "小巷"],
+                    "星巴克": ["星巴克", "咖啡"],
+                }
+                for scene, keywords in scene_keywords.items():
+                    if any(kw in opening for kw in keywords):
+                        locations.append(scene)
+                        break
+        return list(set(locations))
+
+    def _count_sms_clues(self, current_chapter: int) -> int:
+        """统计本章已通过短信/彩信获取的关键线索数"""
+        chapter_dir = self.project_dir / "chapters"
+        ch_file = chapter_dir / f"{current_chapter:03d}.md"
+        if not ch_file.exists():
+            return 0
+        text = ch_file.read_text(encoding="utf-8")
+        sms_keywords = ["短信", "彩信", "微信消息", "发来一条", "手机震了"]
+        return sum(text.count(kw) for kw in sms_keywords)
 
     # ============================================================
     # 原有：禁止结构模板（已废弃，用结构轮换替代）
