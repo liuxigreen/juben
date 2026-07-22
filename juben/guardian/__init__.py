@@ -662,6 +662,16 @@ def guardian_check(
                 suggestion="这些是近期章节中泛滥的高频表达，请用独特的描写替代",
             ))
 
+    # 12. 对话比例检查（新增）
+    v = check_dialogue_ratio(chapter_text)
+    if v:
+        result.add(v)
+
+    # 13. 物理打断锁检查（Cliffhanger强化版）
+    v = check_physical_interruption_lock(chapter_text)
+    if v:
+        result.add(v)
+
     return result
 
 
@@ -719,3 +729,101 @@ def _check_visual_density(chapter_text: str) -> GuardianViolation | None:
 
     return None
 from .location_tracker import LocationTracker, LocationJumpResult, LocationRecord
+
+
+# ============================================================
+# 新增：对话比例检查
+# ============================================================
+
+def check_dialogue_ratio(chapter_text: str) -> GuardianViolation | None:
+    """检查对话占比是否超标"""
+    import re
+    
+    # 提取对话内容（引号内的文字）
+    dialogue_pattern = re.compile(r'[「"\"](.*?)[」\""]')
+    dialogues = dialogue_pattern.findall(chapter_text)
+    
+    # 计算对话字数
+    dialogue_chars = sum(len(d) for d in dialogues)
+    total_chars = len(chapter_text)
+    
+    if total_chars < 100:
+        return None
+    
+    ratio = dialogue_chars / total_chars
+    
+    if ratio > 0.35:
+        return GuardianViolation(
+            rule="dialogue_ratio_critical",
+            severity="critical",
+            description=f"对话占比{ratio:.0%}（超过35%），剧情靠嘴炮推进",
+            suggestion="用动作、读心、潜伏、偷听等方式替代直接对话。每2句对话后插入1段物理动作/环境变化。",
+        )
+    elif ratio > 0.25:
+        return GuardianViolation(
+            rule="dialogue_ratio_warning",
+            severity="warning",
+            description=f"对话占比{ratio:.0%}（超过25%），对话偏多",
+            suggestion="考虑用Show Don't Tell替代部分对话。",
+        )
+    
+    return None
+
+
+# ============================================================
+# 新增：物理打断锁检查（Cliffhanger强化版）
+# ============================================================
+
+def check_physical_interruption_lock(chapter_text: str) -> GuardianViolation | None:
+    """检查结尾是否使用了物理打断锁"""
+    lines = [l.strip() for l in chapter_text.split("\n") if l.strip() and not l.startswith("#")]
+    if not lines:
+        return None
+    
+    # 取最后3行
+    last_lines = lines[-3:]
+    last_text = "\n".join(last_lines)
+    
+    # 物理打断元素
+    interruption_indicators = [
+        "突然", "忽然", "猛地", "骤然",
+        "还没", "正要", "即将", "准备",
+        "渗出", "传来", "响起", "炸开",
+        "——", "……", "...",
+    ]
+    
+    # 感官冲击元素
+    sensory_indicators = [
+        "血", "冰冷", "滚烫", "血腥",
+        "嗡", "咔", "砰", "咚", "轰",
+        "黑", "红", "白", "暗",
+    ]
+    
+    # 弱结尾模式（禁止）
+    weak_endings = [
+        "他不知道", "她不知道", "他想", "她想",
+        "他沉默了", "她沉默了", "他看着", "她看着",
+        "走进雨里", "走进黑暗", "走进夜色",
+    ]
+    
+    has_interruption = any(indicator in last_text for indicator in interruption_indicators)
+    has_sensory = any(indicator in last_text for indicator in sensory_indicators)
+    is_weak = any(ending in last_text for ending in weak_endings)
+    
+    if is_weak:
+        return GuardianViolation(
+            rule="physical_interruption_lock_weak",
+            severity="critical",
+            description=f"结尾使用了弱收尾模式: '{last_text[:50]}...'",
+            suggestion="使用物理打断锁：[动作被打断] + [物理异常] + [感官定格]",
+        )
+    
+    if not has_interruption and not has_sensory:
+        return GuardianViolation(
+            rule="physical_interruption_lock_missing",
+            severity="warning",
+            description=f"结尾缺少物理打断元素: '{last_text[:50]}...'",
+            suggestion="在结尾加入突发物理异象或感官冲击。",
+        )
+    
+    return None
