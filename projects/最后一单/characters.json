@@ -127,7 +127,9 @@
         "current_goal": "除掉任何可能揭露真相的人",
         "last_appeared": null,
         "last_state_change": null
-      }
+      },
+      "hidden_motivation": "二十年前的杀人案被重新翻出来会毁掉一切，必须在真相暴露前灭口或收买知情者",
+      "personal_goal": "维持成功商人的体面形象，让女儿过上好日子（女儿不知道父亲的过去）"
     },
     {
       "id": "char_ally",
@@ -191,7 +193,9 @@
         "current_goal": "找到连环案的突破口",
         "last_appeared": null,
         "last_state_change": null
-      }
+      },
+      "hidden_motivation": "调查父亲十年前殉职的真相，发现和当前连环案有关联，想亲手揭开黑幕",
+      "personal_goal": "做出一篇改变命运的独家报道，在新闻圈站稳脚跟"
     }
   ]
 }

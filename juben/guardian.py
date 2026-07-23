@@ -320,6 +320,66 @@ def check_info_dump(text: str, alias_map: CharacterAliasMap | None = None) -> Gu
 
 
 # ============================================================
+# 断言1.6：NPC行为校验（动机驱动 + 反解说员）
+# ============================================================
+
+def check_npc_behavior(
+    text: str,
+    characters: list[dict] | None = None,
+    alias_map: CharacterAliasMap | None = None,
+) -> GuardianViolation | None:
+    """
+    检测NPC是否退化为解说员：
+    1. NPC连续3句以上纯对话（无动作打断）
+    2. NPC主动交代秘密（reveal关键词）
+    """
+    if alias_map is None:
+        alias_map = CharacterAliasMap()
+
+    dialogues = _extract_dialogues_with_context(text, alias_map)
+    non_protag = [d for d in dialogues if not d.is_protagonist]
+
+    if len(non_protag) < 2:
+        return None
+
+    # 检测1：连续NPC对话无打断
+    consecutive_npc = 0
+    max_consecutive = 0
+    for d in dialogues:
+        if not d.is_protagonist:
+            consecutive_npc += 1
+            max_consecutive = max(max_consecutive, consecutive_npc)
+        else:
+            consecutive_npc = 0
+
+    if max_consecutive >= 4:
+        return GuardianViolation(
+            rule="npc_consecutive_dialogue",
+            severity="critical",
+            description=f"NPC连续{max_consecutive}句对话无主角打断，退化为解说员模式",
+            suggestion="NPC说话超过2句时必须被主角反问/环境异响/物理动作打断",
+        )
+
+    # 检测2：NPC主动交代秘密密度
+    reveal_count = sum(1 for d in non_protag if d.is_revelation)
+    if reveal_count >= 2:
+        return GuardianViolation(
+            rule="npc_secret_dump",
+            severity="critical",
+            description=f"{reveal_count}段NPC对话直接交代秘密/真相，解说员模式",
+            suggestion="真相揭露应通过偷听、物证、推理拼凑完成，不能NPC主动说",
+            offending_segments=[{
+                "line_num": d.line_num,
+                "speaker": d.speaker or "未知",
+                "text": d.text[:80],
+                "reason": "NPC主动交代秘密",
+            } for d in non_protag if d.is_revelation][:3],
+        )
+
+    return None
+
+
+# ============================================================
 # 断言2：Anti-Repetition（反复读）
 # ============================================================
 
@@ -537,6 +597,11 @@ def guardian_check(
 
     # 1.5 信息倾倒密度（新增）
     v = check_info_dump(chapter_text, alias_map)
+    if v:
+        result.add(v)
+
+    # 1.6 NPC行为校验（反解说员 + 动机驱动）
+    v = check_npc_behavior(chapter_text, characters, alias_map)
     if v:
         result.add(v)
 

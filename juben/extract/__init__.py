@@ -70,6 +70,8 @@ class ContextExtractor:
                 "abilities_special": c.abilities.special,
                 "state": c.state.model_dump(),
                 "arc_current": self._get_arc_phase(c, chapter_num, meta.target_chapters),
+                "hidden_motivation": c.hidden_motivation,
+                "personal_goal": c.personal_goal,
             })
 
         # 前章结局
@@ -173,6 +175,10 @@ class ContextExtractor:
             parts.append(f"- 当前弧线: {card['arc_current']}")
             if card["abilities_special"]:
                 parts.append(f"- 特殊能力: {card['abilities_special']}")
+            if card.get("hidden_motivation"):
+                parts.append(f"- 隐秘动机（不告诉主角）: {card['hidden_motivation']}")
+            if card.get("personal_goal"):
+                parts.append(f"- 个人目标（独立于剧情）: {card['personal_goal']}")
 
         # 信息对称性
         if ctx["info_asymmetry"]:

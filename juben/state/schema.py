@@ -171,6 +171,8 @@ class Character(BaseModel):
     relationships: dict[str, str] = Field(default_factory=dict)
     arc: CharacterArc = Field(default_factory=CharacterArc)
     state: CharacterState = Field(default_factory=CharacterState)
+    hidden_motivation: str = ""  # NPC隐秘动机：不告诉主角的真实目的
+    personal_goal: str = ""  # NPC个人目标：独立于剧情的自身诉求
 
 
 # ============================================================

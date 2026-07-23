@@ -120,7 +120,9 @@ BOOTSTRAP_PROMPT_TEMPLATE = """\
         "location": "",
         "health": "",
         "current_goal": ""
-      }}
+      }},
+      "hidden_motivation": "不告诉主角的真实目的（NPC专用，主角可留空）",
+      "personal_goal": "独立于主线剧情的自身诉求（如：想升职、想追某人、想还债）"
     }},
     {{
       "id": "char_ant",
@@ -206,6 +208,7 @@ BOOTSTRAP_PROMPT_TEMPLATE = """\
 4. **信息差必须具体**：不要写"主角知道未来"，要写"主角知道某人在第X章会做某事"。
 5. **符合已有的因果约束和反套路黑名单**：生成的内容不能违反上面列出的任何规则。
 6. **实体锚点必须具体可拍**：每个核心抽象概念（如"经济压力"、"神秘威胁"、"职业身份"）都必须解构为一个可以在镜头前展示的物理道具/UI界面，并给出3个硬核关键词。禁止用抽象名词作为锚点。
+7. **NPC必须有隐秘动机和个人目标**：每个非主角角色必须有`hidden_motivation`（不告诉主角的真实目的）和`personal_goal`（独立于主线的自身诉求）。这两个字段是NPC行为的锚点——没有它们，NPC就会退化成解说员。主角可以留空。
 
 只输出JSON，不要输出任何其他文字。
 """
@@ -427,3 +430,4 @@ def apply_bootstrap_response(mgr: StateManager, response_data: dict) -> dict:
         "character_count": len(validated["characters"]),
         "character_names": [c.name for c in validated["characters"]],
     }
+

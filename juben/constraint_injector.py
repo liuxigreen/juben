@@ -315,6 +315,11 @@ class ConstraintInjector:
         if anchor_injection:
             blocks.append(anchor_injection)
 
+        # 5.7 NPC行为约束注入
+        npc_injection = self._build_npc_behavior_injection()
+        if npc_injection:
+            blocks.append(npc_injection)
+
         # 6. 四段式beat + 物理打断锁
         beat_text = get_beat_prompt(chapter_num)
         if beat_text:
@@ -644,8 +649,85 @@ class ConstraintInjector:
         return "\n".join(lines)
 
     # ============================================================
-    # 原有：禁止结构模板（已废弃，用结构轮换替代）
+    # 新增：NPC行为约束注入
     # ============================================================
+
+    def _build_npc_behavior_injection(self) -> str:
+        """从characters.json读取NPC的隐秘动机和个人目标，注入Scribe prompt"""
+        chars_file = self.project_dir / "characters.json"
+        if not chars_file.exists():
+            return ""
+
+        try:
+            data = json.loads(chars_file.read_text(encoding="utf-8"))
+        except Exception:
+            return ""
+
+        chars = data.get("characters", [])
+        if not chars:
+            return ""
+
+        # 收集有hidden_motivation或personal_goal的非主角角色
+        npc_cards = []
+        for c in chars:
+            role = c.get("role", "")
+            if role == "protagonist":
+                continue
+            name = c.get("name", "")
+            motivation = c.get("hidden_motivation", "")
+            goal = c.get("personal_goal", "")
+            speech = c.get("personality", {}).get("speech_pattern", "")
+            habits = c.get("personality", {}).get("habits", [])
+
+            if not name:
+                continue
+            # 即使没有motivation/goal，也注入基础行为规则
+            card_lines = [f"**{name}**（{role}）"]
+            if motivation:
+                card_lines.append(f"- 隐秘动机：{motivation}")
+            if goal:
+                card_lines.append(f"- 个人目标：{goal}")
+            if speech:
+                card_lines.append(f"- 说话风格：{speech}")
+            if habits:
+                card_lines.append(f"- 习惯动作：{'、'.join(habits[:3])}")
+            npc_cards.append("\n".join(card_lines))
+
+        if not npc_cards:
+            return ""
+
+        cards_str = "\n\n".join(npc_cards)
+
+        return f"""### 🎭 NPC行为约束（违反即扣分）
+
+本章出场的NPC角色卡：
+
+{cards_str}
+
+**硬性规则**：
+1. **禁止解说员模式**：NPC不能连续说3句以上纯信息输出。每句NPC对话必须有潜台词（嘴上说的≠心里想的）
+2. **动机驱动行为**：NPC的每个行动必须与其hidden_motivation或personal_goal有因果关系。如果一个NPC做了一件事却和他的动机无关，那就是解说员不是角色
+3. **必须有打断**：NPC说话超过2句时，必须被以下元素打断——主角反问/环境异响/物理动作/情绪突变
+4. **习惯动作锚定**：NPC出场时必须使用其习惯动作（从上方角色卡读取），不要用通用描写
+5. **NPC不能主动交代秘密**：真相揭露必须通过偷听、发现物证、推理拼凑完成，不能NPC主动说"我告诉你真相"
+
+**正确示范**：
+```
+王建国摸了摸左手无名指的戒指（习惯动作），看了眼手机屏幕，站起来。
+"饭就不吃了，公司还有个会。"
+他走到门口，忽然回头——
+"对了，你那个妹妹……好好照顾。"
+门关上。陈默愣了两秒。他怎么知道妹妹的事？
+```
+→ 王建国没主动交代任何真相，但"你那个妹妹"暗示他知道更多。潜台词驱动。
+
+**错误示范**：
+```
+"实话告诉你，三年前那场车祸是我安排的。当时我找了三个人……"
+"为什么？"
+"因为当年你妹妹的医药费，其实是我出的。我一直瞒着你……"
+```
+→ NPC排队念白交代真相，是解说员不是角色。"""
 
     def _build_structure_ban(self, chapter_num: int) -> str:
         """已废弃，保留兼容性"""
