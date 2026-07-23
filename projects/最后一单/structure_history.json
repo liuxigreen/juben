@@ -118,5 +118,25 @@
   {
     "chapter": 30,
     "type": "suspense"
+  },
+  {
+    "chapter": 31,
+    "type": "action_heavy"
+  },
+  {
+    "chapter": 32,
+    "type": "investigation"
+  },
+  {
+    "chapter": 33,
+    "type": "chase"
+  },
+  {
+    "chapter": 34,
+    "type": "reveal"
+  },
+  {
+    "chapter": 35,
+    "type": "action_heavy"
   }
 ]

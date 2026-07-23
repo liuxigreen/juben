@@ -164,6 +164,7 @@ class Character(BaseModel):
     name: str
     aliases: list[str] = Field(default_factory=list)
     role: CharacterRole = CharacterRole.SUPPORTING
+    gender: str = ""  # "male" / "female" / "" (未知，用于代词消解)
     appearance: Appearance = Field(default_factory=Appearance)
     personality: Personality = Field(default_factory=Personality)
     background: Background = Field(default_factory=Background)

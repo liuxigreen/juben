@@ -54,6 +54,8 @@ class CharacterAliasMap:
         self.protagonist_names: set[str] = set()
         self.all_names: set[str] = set()
         self.name_to_role: dict[str, str] = {}
+        self.name_to_gender: dict[str, str] = {}  # 新增：gender映射
+        self.gender_to_names: dict[str, set[str]] = {"male": set(), "female": set()}  # 新增：按gender分组
 
         if characters:
             self._build(characters)
@@ -64,12 +66,21 @@ class CharacterAliasMap:
             if hasattr(c, 'aliases'):
                 names.update(c.aliases)
             role = c.role.value if hasattr(c.role, 'value') else str(c.role)
+            gender = getattr(c, 'gender', '') or ''
 
+            # 用主名作为代表（避免别名导致gender_to_names有重复条目）
+            representative_name = c.name
+            
             for name in names:
                 self.all_names.add(name)
                 self.name_to_role[name] = role
+                self.name_to_gender[name] = gender
                 if role == "protagonist":
                     self.protagonist_names.add(name)
+            
+            # 按gender分组（只用主名，避免别名重复）
+            if gender in ("male", "female"):
+                self.gender_to_names[gender].add(representative_name)
 
     def is_protagonist(self, text: str) -> bool:
         """判断一段文本是否包含主角名/别名"""
@@ -80,6 +91,45 @@ class CharacterAliasMap:
         for name in self.all_names:
             if name in text:
                 return name
+        return None
+
+    def resolve_pronoun(self, pronoun: str, last_speaker: str | None = None) -> str | None:
+        """
+        代词消解：根据gender和交替状态机推断说话者
+        
+        Args:
+            pronoun: "他" 或 "她"
+            last_speaker: 上一个说话者（用于交替推断）
+        """
+        target_gender = "male" if pronoun == "他" else "female" if pronoun == "她" else None
+        if not target_gender:
+            return None
+        
+        candidates = self.gender_to_names.get(target_gender, set())
+        if not candidates:
+            return None
+        
+        # 只有一个候选 → 直接返回
+        if len(candidates) == 1:
+            return next(iter(candidates))
+        
+        # 多个候选 → 优先策略：
+        # 1. 优先选protagonist（主角对话概率更高）
+        protagonist_candidates = candidates & self.protagonist_names
+        if protagonist_candidates:
+            # 如果last_speaker是protagonist，选另一个（交替）
+            if last_speaker in protagonist_candidates and len(protagonist_candidates) > 1:
+                remaining = protagonist_candidates - {last_speaker}
+                return next(iter(remaining))
+            return next(iter(protagonist_candidates))
+        
+        # 2. 无protagonist → 用交替状态机排除last_speaker
+        if last_speaker and last_speaker in candidates:
+            remaining = candidates - {last_speaker}
+            if len(remaining) == 1:
+                return next(iter(remaining))
+        
+        # 无法消解 → 返回None（保守策略，不猜测）
         return None
 
 
@@ -98,37 +148,117 @@ class DialogueLine:
 
 
 def _extract_dialogues_with_context(text: str, alias_map: CharacterAliasMap) -> list[DialogueLine]:
-    """提取对话并尝试归属说话者"""
+    """
+    提取对话并归属说话者 — 三级识别 + 交替发言状态机
+    
+    Level 1: 显式人名匹配 "陈默说" / "王建国冷笑道"
+    Level 2: 代词匹配 "他说" / "她问" → 根据gender消解
+    Level 3: 无主语动词 "冷笑道" / "沉声道" → 根据交替状态机推断
+    """
     lines = text.split("\n")
     dialogues = []
-
-    # 匹配引号内的对话
-    dialogue_pattern = re.compile(r'[「""]([^」""]*)[」""]')
-
+    
+    # 匹配引号内的对话（支持「」""""多种引号）
+    dialogue_pattern = re.compile(r'[「"\u201c]([^」"\u201d]*)[」"\u201d]')
+    
+    # 说话动词列表
+    SPEECH_VERBS = r'说|道|问|答|喊|叫|嚷|吼|怒|笑|冷笑|苦笑|微笑|叹|叹道|低声道|沉声道|淡淡地说|轻声道|厉声道|高声道|尖声|喃喃|呵斥|质问|追问|反问|回应|嘟囔|嘀咕|插嘴|反驳|解释|补充|强调|低声|厉声|大声|小声'
+    
+    # 交替发言状态机
+    last_speaker: str | None = None
+    last_speaker_role: str | None = None  # "protagonist" / "npc"
+    
     for i, line in enumerate(lines):
-        matches = dialogue_pattern.findall(line)
-        for d_text in matches:
+        # 找到所有对话及其位置
+        matches = list(dialogue_pattern.finditer(line))
+        if not matches:
+            continue
+        
+        for match in matches:
+            d_text = match.group(1)
             if not d_text.strip():
                 continue
-
-            # 尝试从同行的叙述文字中找说话者
+            
+            # 获取对话前后的叙述文字
+            before = line[:match.start()].strip()
+            after = line[match.end():].strip()
+            
             speaker = None
-            # 常见模式："XXX说/道/笑/怒/问/答"
-            speaker_match = re.search(
-                r'(\S{2,4})(?:说|道|笑|怒|问|答|喊|叫|低声道|冷笑道|淡淡地说)',
-                line
-            )
-            if speaker_match:
-                candidate = speaker_match.group(1)
-                if alias_map.get_speaker(candidate):
-                    speaker = alias_map.get_speaker(candidate)
-
-            # 如果没找到，检查是否包含角色名
+            speaker_role = None
+            
+            # === Level 1: 显式人名匹配 ===
+            # 检查对话前的引导语
+            name_pattern = re.compile(rf'(\S{{2,6}})(?:{SPEECH_VERBS})')
+            name_match = name_pattern.search(before)
+            if name_match:
+                candidate = name_match.group(1)
+                resolved = alias_map.get_speaker(candidate)
+                if resolved:
+                    speaker = resolved
+                    speaker_role = alias_map.name_to_role.get(resolved, '')
+            
+            # 检查对话后的引导语（少见但存在）
             if not speaker:
-                speaker = alias_map.get_speaker(line)
-
-            is_protag = alias_map.is_protagonist(line) if speaker else False
-
+                name_match = name_pattern.search(after)
+                if name_match:
+                    candidate = name_match.group(1)
+                    resolved = alias_map.get_speaker(candidate)
+                    if resolved:
+                        speaker = resolved
+                        speaker_role = alias_map.name_to_role.get(resolved, '')
+            
+            # === Level 2: 代词匹配 ===
+            if not speaker:
+                pronoun_pattern = re.compile(rf'(他|她)(?:{SPEECH_VERBS})')
+                # 检查对话前
+                pronoun_match = pronoun_pattern.search(before)
+                if not pronoun_match:
+                    # 检查对话后
+                    pronoun_match = pronoun_pattern.search(after)
+                if pronoun_match:
+                    pronoun = pronoun_match.group(1)
+                    # 代词消解：结合gender和交替状态机
+                    resolved = alias_map.resolve_pronoun(pronoun, last_speaker)
+                    if resolved:
+                        speaker = resolved
+                        speaker_role = alias_map.name_to_role.get(resolved, '')
+            
+            # === Level 3: 无主语动词 或 纯对话（无引导语）===
+            if not speaker:
+                bare_verb_pattern = re.compile(rf'(?:{SPEECH_VERBS})')
+                has_verb = bare_verb_pattern.search(before) or bare_verb_pattern.search(after)
+                # 纯对话（before和after都很短，无引导语）
+                is_bare_dialogue = (len(before) < 3 and len(after) < 3)
+                
+                if has_verb or is_bare_dialogue:
+                    # 交替状态机
+                    # 上一个是非主角（antagonist/supporting/minor）→ 这个可能是主角
+                    if last_speaker_role and last_speaker_role != 'protagonist' and alias_map.protagonist_names:
+                        speaker = next(iter(alias_map.protagonist_names))
+                        speaker_role = 'protagonist'
+                    # 上一个是主角 → 这个可能是NPC（找一个非主角）
+                    elif last_speaker_role == 'protagonist':
+                        for name in alias_map.all_names:
+                            if name not in alias_map.protagonist_names:
+                                speaker = name
+                                speaker_role = alias_map.name_to_role.get(name, '')
+                                break
+            
+            # === 兜底：检查整行是否包含角色名 ===
+            if not speaker:
+                resolved = alias_map.get_speaker(line)
+                if resolved:
+                    speaker = resolved
+                    speaker_role = alias_map.name_to_role.get(resolved, '')
+            
+            # 确定是否是主角
+            is_protag = (speaker_role == 'protagonist') if speaker else False
+            
+            # 更新状态机
+            if speaker:
+                last_speaker = speaker
+                last_speaker_role = speaker_role
+            
             dialogues.append(DialogueLine(
                 text=d_text,
                 line_num=i + 1,
@@ -136,18 +266,7 @@ def _extract_dialogues_with_context(text: str, alias_map: CharacterAliasMap) -> 
                 is_protagonist=is_protag,
                 is_revelation=_is_revelation_dialogue(d_text),
             ))
-
-    # 第二轮：上下文推断 — 无speaker的短对话，如果紧跟在NPC问句后面，推断为protagonist回答
-    for j in range(1, len(dialogues)):
-        curr = dialogues[j]
-        prev = dialogues[j - 1]
-        if curr.speaker is None and not curr.is_protagonist:
-            # 如果前一句是非protagonist（有speaker或无speaker），当前是短回复（<15字），推断为protagonist
-            if not prev.is_protagonist and len(curr.text) < 15:
-                curr.is_protagonist = True
-                if alias_map.protagonist_names:
-                    curr.speaker = next(iter(alias_map.protagonist_names))
-
+    
     return dialogues
 
 
@@ -347,7 +466,7 @@ def check_npc_behavior(
     2. NPC主动交代秘密（reveal关键词）
     """
     if alias_map is None:
-        alias_map = CharacterAliasMap()
+        alias_map = CharacterAliasMap(characters)
 
     dialogues = _extract_dialogues_with_context(text, alias_map)
     non_protag = [d for d in dialogues if not d.is_protagonist]
@@ -363,6 +482,31 @@ def check_npc_behavior(
     prev_line = -1
     lines = text.split("\n")
 
+    # 构建通用说话引导语剥离正则（方案一+方案二组合）
+    # 方案一：从characters动态加载人名
+    char_names = []
+    if characters:
+        for c in characters:
+            name = c.name if hasattr(c, 'name') else c.get('name', '')
+            if name:
+                char_names.append(name)
+            aliases = c.aliases if hasattr(c, 'aliases') else c.get('aliases', [])
+            if aliases:
+                char_names.extend(aliases)
+    # 方案二：通用说话动词范式
+    speech_verbs = r"说|道|问|答|喊|叫|笑|怒|冷笑道|低声道|淡淡地说|喃喃|叹道|呵斥|回应|插话|追问|嘟囔"
+    # 拼接：人名 + 可选微动作(0-4字) + 说话动词
+    if char_names:
+        names_pattern = "|".join(re.escape(n) for n in char_names)
+        speech_tag_re = re.compile(
+            rf"(?:{names_pattern})(?:[\u4e00-\u9fff]{{0,4}})?(?:{speech_verbs})[：:，,]?"
+        )
+    else:
+        # 兜底：2-6字中文 + 说话动词（不依赖人名）
+        speech_tag_re = re.compile(
+            rf"[\u4e00-\u9fa5]{{2,6}}(?:{speech_verbs})[：:，,]?"
+        )
+
     for d in dialogues:
         if not d.is_protagonist:
             # 检查与前一句NPC对话之间是否有叙述文字
@@ -371,10 +515,15 @@ def check_npc_behavior(
                 has_narrative = False
                 for ln in range(prev_line, min(d.line_num, len(lines))):
                     line_text = lines[ln].strip()
-                    # 跳过空行和纯对话行
+                    # 跳过空行
                     if not line_text:
                         continue
-                    if re.match(r'^[「""].*[」""]$', line_text):
+                    # 去掉对话内容
+                    stripped = re.sub(r'[「""].*?[」""]', '', line_text)
+                    # 去掉说话引导语（动态人名+通用动词）
+                    stripped = speech_tag_re.sub('', stripped)
+                    stripped = stripped.strip().rstrip('。，！？,.!?')
+                    if not stripped:
                         continue
                     # 有非对话文字 = 叙述打断
                     has_narrative = True

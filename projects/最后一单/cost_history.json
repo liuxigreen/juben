@@ -66,5 +66,25 @@
   {
     "chapter": 30,
     "cost": "吐血"
+  },
+  {
+    "chapter": 31,
+    "cost": "心跳紊乱"
+  },
+  {
+    "chapter": 32,
+    "cost": "灵气失控"
+  },
+  {
+    "chapter": 33,
+    "cost": "记忆闪回"
+  },
+  {
+    "chapter": 34,
+    "cost": "呼吸困难"
+  },
+  {
+    "chapter": 35,
+    "cost": "吐血"
   }
 ]

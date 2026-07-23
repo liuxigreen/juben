@@ -3,6 +3,7 @@
     {
       "id": "char_pro",
       "name": "陈默",
+      "gender": "male",
       "aliases": [
         "小陈",
         "默哥"
@@ -68,6 +69,7 @@
     {
       "id": "char_ant",
       "name": "王建国",
+      "gender": "male",
       "aliases": [
         "王总",
         "老王"
@@ -134,6 +136,7 @@
     {
       "id": "char_ally",
       "name": "林小雨",
+      "gender": "female",
       "aliases": [
         "小雨",
         "林记者"
