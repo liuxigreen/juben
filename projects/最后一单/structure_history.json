@@ -74,5 +74,49 @@
   {
     "chapter": 11,
     "type": "suspense"
+  },
+  {
+    "chapter": 21,
+    "type": "reveal"
+  },
+  {
+    "chapter": 21,
+    "type": "investigation"
+  },
+  {
+    "chapter": 22,
+    "type": "suspense"
+  },
+  {
+    "chapter": 23,
+    "type": "action_heavy"
+  },
+  {
+    "chapter": 24,
+    "type": "investigation"
+  },
+  {
+    "chapter": 25,
+    "type": "chase"
+  },
+  {
+    "chapter": 26,
+    "type": "reveal"
+  },
+  {
+    "chapter": 27,
+    "type": "action_heavy"
+  },
+  {
+    "chapter": 28,
+    "type": "confrontation"
+  },
+  {
+    "chapter": 29,
+    "type": "reveal"
+  },
+  {
+    "chapter": 30,
+    "type": "suspense"
   }
 ]

@@ -137,6 +137,17 @@ def _extract_dialogues_with_context(text: str, alias_map: CharacterAliasMap) -> 
                 is_revelation=_is_revelation_dialogue(d_text),
             ))
 
+    # 第二轮：上下文推断 — 无speaker的短对话，如果紧跟在NPC问句后面，推断为protagonist回答
+    for j in range(1, len(dialogues)):
+        curr = dialogues[j]
+        prev = dialogues[j - 1]
+        if curr.speaker is None and not curr.is_protagonist:
+            # 如果前一句是非protagonist（有speaker或无speaker），当前是短回复（<15字），推断为protagonist
+            if not prev.is_protagonist and len(curr.text) < 15:
+                curr.is_protagonist = True
+                if alias_map.protagonist_names:
+                    curr.speaker = next(iter(alias_map.protagonist_names))
+
     return dialogues
 
 
@@ -332,9 +343,8 @@ def check_npc_behavior(
 ) -> GuardianViolation | None:
     """
     检测NPC是否退化为解说员：
-    1. NPC连续3句以上纯对话（无动作打断）
+    1. NPC连续3句以上纯对话（同一行或相邻行无叙述打断）
     2. NPC主动交代秘密（reveal关键词）
-    3. NPC对话中无习惯动作锚定
     """
     if alias_map is None:
         alias_map = CharacterAliasMap()
@@ -345,38 +355,84 @@ def check_npc_behavior(
     if len(non_protag) < 2:
         return None
 
-    # 检测1：连续NPC对话无打断
+    # 检测1：连续NPC对话无叙述打断
+    # 核心改进：不只看对话列表的连续性，还要检查对话之间是否有叙述文字
+    # 同一行的多句对话算连续；不同行之间如果有叙述文字则算有打断
     consecutive_npc = 0
     max_consecutive = 0
+    prev_line = -1
+    lines = text.split("\n")
+
     for d in dialogues:
         if not d.is_protagonist:
-            consecutive_npc += 1
+            # 检查与前一句NPC对话之间是否有叙述文字
+            if prev_line >= 0 and d.line_num > prev_line:
+                # 检查prev_line和d.line_num之间的行是否有叙述文字
+                has_narrative = False
+                for ln in range(prev_line, min(d.line_num, len(lines))):
+                    line_text = lines[ln].strip()
+                    # 跳过空行和纯对话行
+                    if not line_text:
+                        continue
+                    if re.match(r'^[「""].*[」""]$', line_text):
+                        continue
+                    # 有非对话文字 = 叙述打断
+                    has_narrative = True
+                    break
+                if has_narrative:
+                    consecutive_npc = 1  # 有叙述打断，重置为1（当前这句）
+                else:
+                    consecutive_npc += 1
+            else:
+                consecutive_npc += 1
+            prev_line = d.line_num - 1  # 0-indexed
             max_consecutive = max(max_consecutive, consecutive_npc)
         else:
             consecutive_npc = 0
+            prev_line = d.line_num - 1
 
     if max_consecutive >= 4:
         return GuardianViolation(
             rule="npc_consecutive_dialogue",
             severity="critical",
-            description=f"NPC连续{max_consecutive}句对话无主角打断，退化为解说员模式",
-            suggestion="NPC说话超过2句时必须被主角反问/环境异响/物理动作打断",
+            description=f"NPC连续{max_consecutive}句对话无叙述打断，退化为解说员模式",
+            suggestion="NPC说话超过2句时必须插入动作/环境/感官描写打断",
         )
 
     # 检测2：NPC主动交代秘密密度
-    reveal_count = sum(1 for d in non_protag if d.is_revelation)
+    # 豁免：如果NPC的揭露对话周围有物证关键词（录音/文件/照片/视频/短信/案卷），算"物证触发"不算"嘴炮"
+    evidence_keywords = [
+        "录音", "文件", "照片", "视频", "U盘", "笔记本", "短信", "彩信",
+        "案卷", "监控", "截图", "证据", "报告", "手机屏幕", "屏幕",
+        "翻盖手机", "信封", "名片", "卡片",
+    ]
+    lines = text.split("\n")
+
+    def _has_evidence_context(dialogue: DialogueLine) -> bool:
+        """检查对话所在行及上下2行是否有物证关键词"""
+        line_idx = dialogue.line_num - 1  # 0-indexed
+        for offset in range(-2, 3):
+            idx = line_idx + offset
+            if 0 <= idx < len(lines):
+                if any(kw in lines[idx] for kw in evidence_keywords):
+                    return True
+        return False
+
+    # 只统计没有物证上下文的NPC揭露对话
+    active_reveals = [d for d in non_protag if d.is_revelation and not _has_evidence_context(d)]
+    reveal_count = len(active_reveals)
     if reveal_count >= 2:
         return GuardianViolation(
             rule="npc_secret_dump",
             severity="critical",
-            description=f"{reveal_count}段NPC对话直接交代秘密/真相，解说员模式",
-            suggestion="真相揭露应通过偷听、物证、推理拼凑完成，不能NPC主动说",
+            description=f"{reveal_count}段NPC对话主动交代秘密/真相（非物证触发），解说员模式",
+            suggestion="真相揭露应通过偷听、物证、推理拼凑完成，不能NPC主动开口说",
             offending_segments=[{
                 "line_num": d.line_num,
                 "speaker": d.speaker or "未知",
                 "text": d.text[:80],
                 "reason": "NPC主动交代秘密",
-            } for d in non_protag if d.is_revelation][:3],
+            } for d in active_reveals][:3],
         )
 
     return None

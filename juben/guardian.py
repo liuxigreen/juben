@@ -9,7 +9,9 @@ Guardian质量门卫 — 流式文本审查断言 v2
 from __future__ import annotations
 
 import re
+import json
 from collections import Counter
+from pathlib import Path
 from dataclasses import dataclass, field
 
 
@@ -134,6 +136,17 @@ def _extract_dialogues_with_context(text: str, alias_map: CharacterAliasMap) -> 
                 is_protagonist=is_protag,
                 is_revelation=_is_revelation_dialogue(d_text),
             ))
+
+    # 第二轮：上下文推断 — 无speaker的短对话，如果紧跟在NPC问句后面，推断为protagonist回答
+    for j in range(1, len(dialogues)):
+        curr = dialogues[j]
+        prev = dialogues[j - 1]
+        if curr.speaker is None and not curr.is_protagonist:
+            # 如果前一句是非protagonist（有speaker或无speaker），当前是短回复（<15字），推断为protagonist
+            if not prev.is_protagonist and len(curr.text) < 15:
+                curr.is_protagonist = True
+                if alias_map.protagonist_names:
+                    curr.speaker = next(iter(alias_map.protagonist_names))
 
     return dialogues
 
@@ -330,7 +343,7 @@ def check_npc_behavior(
 ) -> GuardianViolation | None:
     """
     检测NPC是否退化为解说员：
-    1. NPC连续3句以上纯对话（无动作打断）
+    1. NPC连续3句以上纯对话（同一行或相邻行无叙述打断）
     2. NPC主动交代秘密（reveal关键词）
     """
     if alias_map is None:
@@ -342,38 +355,84 @@ def check_npc_behavior(
     if len(non_protag) < 2:
         return None
 
-    # 检测1：连续NPC对话无打断
+    # 检测1：连续NPC对话无叙述打断
+    # 核心改进：不只看对话列表的连续性，还要检查对话之间是否有叙述文字
+    # 同一行的多句对话算连续；不同行之间如果有叙述文字则算有打断
     consecutive_npc = 0
     max_consecutive = 0
+    prev_line = -1
+    lines = text.split("\n")
+
     for d in dialogues:
         if not d.is_protagonist:
-            consecutive_npc += 1
+            # 检查与前一句NPC对话之间是否有叙述文字
+            if prev_line >= 0 and d.line_num > prev_line:
+                # 检查prev_line和d.line_num之间的行是否有叙述文字
+                has_narrative = False
+                for ln in range(prev_line, min(d.line_num, len(lines))):
+                    line_text = lines[ln].strip()
+                    # 跳过空行和纯对话行
+                    if not line_text:
+                        continue
+                    if re.match(r'^[「""].*[」""]$', line_text):
+                        continue
+                    # 有非对话文字 = 叙述打断
+                    has_narrative = True
+                    break
+                if has_narrative:
+                    consecutive_npc = 1  # 有叙述打断，重置为1（当前这句）
+                else:
+                    consecutive_npc += 1
+            else:
+                consecutive_npc += 1
+            prev_line = d.line_num - 1  # 0-indexed
             max_consecutive = max(max_consecutive, consecutive_npc)
         else:
             consecutive_npc = 0
+            prev_line = d.line_num - 1
 
     if max_consecutive >= 4:
         return GuardianViolation(
             rule="npc_consecutive_dialogue",
             severity="critical",
-            description=f"NPC连续{max_consecutive}句对话无主角打断，退化为解说员模式",
-            suggestion="NPC说话超过2句时必须被主角反问/环境异响/物理动作打断",
+            description=f"NPC连续{max_consecutive}句对话无叙述打断，退化为解说员模式",
+            suggestion="NPC说话超过2句时必须插入动作/环境/感官描写打断",
         )
 
     # 检测2：NPC主动交代秘密密度
-    reveal_count = sum(1 for d in non_protag if d.is_revelation)
+    # 豁免：如果NPC的揭露对话周围有物证关键词（录音/文件/照片/视频/短信/案卷），算"物证触发"不算"嘴炮"
+    evidence_keywords = [
+        "录音", "文件", "照片", "视频", "U盘", "笔记本", "短信", "彩信",
+        "案卷", "监控", "截图", "证据", "报告", "手机屏幕", "屏幕",
+        "翻盖手机", "信封", "名片", "卡片",
+    ]
+    lines = text.split("\n")
+
+    def _has_evidence_context(dialogue: DialogueLine) -> bool:
+        """检查对话所在行及上下2行是否有物证关键词"""
+        line_idx = dialogue.line_num - 1  # 0-indexed
+        for offset in range(-2, 3):
+            idx = line_idx + offset
+            if 0 <= idx < len(lines):
+                if any(kw in lines[idx] for kw in evidence_keywords):
+                    return True
+        return False
+
+    # 只统计没有物证上下文的NPC揭露对话
+    active_reveals = [d for d in non_protag if d.is_revelation and not _has_evidence_context(d)]
+    reveal_count = len(active_reveals)
     if reveal_count >= 2:
         return GuardianViolation(
             rule="npc_secret_dump",
             severity="critical",
-            description=f"{reveal_count}段NPC对话直接交代秘密/真相，解说员模式",
-            suggestion="真相揭露应通过偷听、物证、推理拼凑完成，不能NPC主动说",
+            description=f"{reveal_count}段NPC对话主动交代秘密/真相（非物证触发），解说员模式",
+            suggestion="真相揭露应通过偷听、物证、推理拼凑完成，不能NPC主动开口说",
             offending_segments=[{
                 "line_num": d.line_num,
                 "speaker": d.speaker or "未知",
                 "text": d.text[:80],
                 "reason": "NPC主动交代秘密",
-            } for d in non_protag if d.is_revelation][:3],
+            } for d in active_reveals][:3],
         )
 
     return None
@@ -580,7 +639,7 @@ def guardian_check(
     cost_history: list[str] | None = None,
     concept_mapping: dict | None = None,
     dynamic_blacklist: list[str] | None = None,
-    project_dir: str | None = None,
+    project_dir: str | Path | None = None,
 ) -> GuardianResult:
     """
     Guardian统一审查入口（v3：硬门禁升级）
@@ -664,7 +723,7 @@ def guardian_check(
                 rule="setting_drift",
                 severity="warning",
                 description=f"设定漂移：本章未命中任何概念映射组。未命中组: {', '.join(missing_groups[:5])}",
-                suggestion="必须在正文中自然融入至少1个核心设定元素",
+                suggestion="考虑在正文中自然融入至少1个核心设定元素",
             ))
         elif len(missing_groups) > len(concept_mapping) * 0.7:
             result.add(GuardianViolation(
@@ -673,6 +732,27 @@ def guardian_check(
                 description=f"设定元素覆盖不足：命中{len(found_elems)}个，未命中{len(missing_groups)}组",
                 suggestion="建议增加更多设定元素的自然出现",
             ))
+
+    # 7.5 实体锚点落地检测（warning级）
+    if project_dir:
+        from pathlib import Path as _Path2
+        _anchors_path = _Path2(project_dir) / "entity_anchors.json"
+        if _anchors_path.exists():
+            try:
+                _anchors = json.loads(_anchors_path.read_text(encoding="utf-8"))
+                for _concept, _anchor in _anchors.items():
+                    _keywords = _anchor.get("must_include_keywords", [])
+                    if _keywords:
+                        _found = any(kw in chapter_text for kw in _keywords)
+                        if not _found:
+                            result.add(GuardianViolation(
+                                rule="anchor_miss",
+                                severity="warning",
+                                description=f"实体锚点未落地：本章涉及【{_concept}】但未出现锚点关键词: {', '.join(_keywords[:3])}",
+                                suggestion=f"在正文中通过物理道具呈现【{_concept}】，使用锚点关键词",
+                            ))
+            except Exception:
+                pass
 
     # 8. 代价重复检测 + 闪回硬限
     if cost_history:
@@ -693,19 +773,19 @@ def guardian_check(
             1 for c in cost_history if c in CostRoulette.FLASHBACK_COSTS
         )
         if flashback_count >= CostRoulette.FLASHBACK_HARD_LIMIT:
+            # 检查本章是否使用了闪回
             flashback_in_text = any(kw in chapter_text for kw in CostRoulette.FLASHBACK_COSTS)
             if flashback_in_text:
                 result.add(GuardianViolation(
                     rule="flashback_limit",
                     severity="critical",
                     description=f"闪回超限：全剧已使用{flashback_count}次闪回，上限{CostRoulette.FLASHBACK_HARD_LIMIT}次",
-                    suggestion="本章禁止使用任何形式的闪回/记忆回溯",
+                    suggestion="本章禁止使用任何形式的闪回/记忆回溯，必须用当前场景的动作和对话推进剧情",
                 ))
 
     # 9. 时空折叠检测（物理位置跳跃 + 位移介质锁）
     from juben.guardian.location_tracker import LocationTracker
-    from pathlib import Path as _Path
-    _proj_dir = _Path(project_dir) if project_dir else None
+    _proj_dir = Path(project_dir) if project_dir else None
     tracker = LocationTracker(project_dir=_proj_dir)
     paragraphs = [p.strip() for p in chapter_text.split("\n\n") if p.strip()]
     if len(paragraphs) >= 3:
@@ -744,6 +824,16 @@ def guardian_check(
                 description=f"检测到动态黑名单词汇: {', '.join(found[:5])}",
                 suggestion="这些是近期章节中泛滥的高频表达，请用独特的描写替代",
             ))
+
+    # 12. 对话比例检查（新增）
+    v = check_dialogue_ratio(chapter_text)
+    if v:
+        result.add(v)
+
+    # 13. 物理打断锁检查（Cliffhanger强化版）
+    v = check_physical_interruption_lock(chapter_text)
+    if v:
+        result.add(v)
 
     return result
 
@@ -800,4 +890,103 @@ def _check_visual_density(chapter_text: str) -> GuardianViolation | None:
             suggestion="增加更多物理动作描写、环境光影变化、道具特写，减少纯叙述和心理描写",
         )
 
+    return None
+from .location_tracker import LocationTracker, LocationJumpResult, LocationRecord
+
+
+# ============================================================
+# 新增：对话比例检查
+# ============================================================
+
+def check_dialogue_ratio(chapter_text: str) -> GuardianViolation | None:
+    """检查对话占比是否超标"""
+    import re
+    
+    # 提取对话内容（引号内的文字）
+    dialogue_pattern = re.compile(r'[「"\"](.*?)[」\""]')
+    dialogues = dialogue_pattern.findall(chapter_text)
+    
+    # 计算对话字数
+    dialogue_chars = sum(len(d) for d in dialogues)
+    total_chars = len(chapter_text)
+    
+    if total_chars < 100:
+        return None
+    
+    ratio = dialogue_chars / total_chars
+    
+    if ratio > 0.35:
+        return GuardianViolation(
+            rule="dialogue_ratio_critical",
+            severity="critical",
+            description=f"对话占比{ratio:.0%}（超过35%），剧情靠嘴炮推进",
+            suggestion="用动作、读心、潜伏、偷听等方式替代直接对话。每2句对话后插入1段物理动作/环境变化。",
+        )
+    elif ratio > 0.25:
+        return GuardianViolation(
+            rule="dialogue_ratio_warning",
+            severity="warning",
+            description=f"对话占比{ratio:.0%}（超过25%），对话偏多",
+            suggestion="考虑用Show Don't Tell替代部分对话。",
+        )
+    
+    return None
+
+
+# ============================================================
+# 新增：物理打断锁检查（Cliffhanger强化版）
+# ============================================================
+
+def check_physical_interruption_lock(chapter_text: str) -> GuardianViolation | None:
+    """检查结尾是否使用了物理打断锁"""
+    lines = [l.strip() for l in chapter_text.split("\n") if l.strip() and not l.startswith("#")]
+    if not lines:
+        return None
+    
+    # 取最后3行
+    last_lines = lines[-3:]
+    last_text = "\n".join(last_lines)
+    
+    # 物理打断元素
+    interruption_indicators = [
+        "突然", "忽然", "猛地", "骤然",
+        "还没", "正要", "即将", "准备",
+        "渗出", "传来", "响起", "炸开",
+        "——", "……", "...",
+    ]
+    
+    # 感官冲击元素
+    sensory_indicators = [
+        "血", "冰冷", "滚烫", "血腥",
+        "嗡", "咔", "砰", "咚", "轰",
+        "黑", "红", "白", "暗",
+    ]
+    
+    # 弱结尾模式（禁止）
+    weak_endings = [
+        "他不知道", "她不知道", "他想", "她想",
+        "他沉默了", "她沉默了", "他看着", "她看着",
+        "走进雨里", "走进黑暗", "走进夜色",
+    ]
+    
+    has_interruption = any(indicator in last_text for indicator in interruption_indicators)
+    has_sensory = any(indicator in last_text for indicator in sensory_indicators)
+    is_weak = any(ending in last_text for ending in weak_endings)
+    
+    if is_weak:
+        return GuardianViolation(
+            rule="physical_interruption_lock_weak",
+            severity="critical",
+            description=f"结尾使用了弱收尾模式: '{last_text[:50]}...'",
+            suggestion="使用物理打断锁：[动作被打断] + [物理异常] + [感官定格]",
+        )
+    
+    if not has_interruption and not has_sensory:
+        return GuardianViolation(
+            rule="physical_interruption_lock_missing",
+            severity="warning",
+            description=f"结尾缺少物理打断元素: '{last_text[:50]}...'",
+            suggestion="在结尾加入突发物理异象或感官冲击。",
+        )
+    
     return None
