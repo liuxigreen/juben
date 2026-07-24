@@ -93,6 +93,8 @@ def check_structure_diversity(
     previous_fingerprints: list[list[str]] | None = None,
     similarity_threshold: float = 0.7,
     event_fingerprints: dict[str, list[str]] | None = None,
+    chapter_num: int = 0,
+    total_chapters: int = 50,
 ) -> dict | None:
     """检查章节结构多样性
     
@@ -102,18 +104,29 @@ def check_structure_diversity(
         previous_fingerprints: 前几章的指纹列表（可选）
         similarity_threshold: 相似度阈值，超过则判定为重复
         event_fingerprints: 事件指纹关键词（可选，从项目配置加载）
+        chapter_num: 当前章节号（用于动态阈值）
+        total_chapters: 总章数（用于动态阈值）
     
     Returns:
         None if passed, or dict with violation info
     """
     current_fp = extract_event_fingerprint(current_text, event_fingerprints)
     
+    # 动态阈值：风暴段和决战段放宽阈值，允许高潮连贯
+    ratio = chapter_num / total_chapters if total_chapters > 0 else 0.5
+    if ratio > 0.45:  # 风暴段+决战段
+        adjusted_threshold = min(similarity_threshold + 0.1, 0.85)
+        adjusted_batch_threshold = 0.7  # 放宽批量检测
+    else:
+        adjusted_threshold = similarity_threshold
+        adjusted_batch_threshold = 0.6
+    
     # 与上一章比较
     if previous_text:
         prev_fp = extract_event_fingerprint(previous_text, event_fingerprints)
         sim = fingerprint_similarity(current_fp, prev_fp)
         
-        if sim >= similarity_threshold:
+        if sim >= adjusted_threshold:
             return {
                 "rule": "structure_diversity",
                 "severity": "critical" if sim >= 0.85 else "warning",
@@ -129,7 +142,7 @@ def check_structure_diversity(
         similarities = [fingerprint_similarity(current_fp, fp) for fp in recent_fps]
         avg_sim = sum(similarities) / len(similarities)
         
-        if avg_sim >= 0.6:
+        if avg_sim >= adjusted_batch_threshold:
             return {
                 "rule": "structure_diversity_batch",
                 "severity": "critical",

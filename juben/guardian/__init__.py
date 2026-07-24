@@ -950,11 +950,25 @@ def guardian_check(
         from juben.validate.structure_diversity import load_event_fingerprints_from_project
         event_fps = load_event_fingerprints_from_project(Path(project_dir))
     
+    # 获取总章数（用于动态阈值）
+    total_chapters = 50  # 默认值
+    if project_dir:
+        meta_path = Path(project_dir) / "story_meta.json"
+        if meta_path.exists():
+            try:
+                import json
+                meta = json.loads(meta_path.read_text(encoding="utf-8"))
+                total_chapters = meta.get("target_chapters", 50)
+            except Exception:
+                pass
+    
     v = check_structure_diversity(
         current_text=chapter_text,
         previous_text=previous_chapter_text,
         previous_fingerprints=previous_fingerprints,
         event_fingerprints=event_fps,
+        chapter_num=chapter_num,
+        total_chapters=total_chapters,
     )
     if v:
         # 升级：结构相似度>70%直接critical，不再只是warning
