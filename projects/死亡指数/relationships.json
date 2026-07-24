@@ -1,0 +1,92 @@
+{
+  "relationships": [
+    {
+      "character_a": "char_pro",
+      "character_b": "char_ant",
+      "type": "enemy",
+      "status": "陆沉还不知道周鸣岐的存在，但周鸣岐已经注意到这个总在异常建筑附近出现的外卖员",
+      "trust_level": 0,
+      "history": "",
+      "tension": "陆沉能看到死亡指数，周鸣岐能制造死亡——两个人的能力指向同一个真相，但立场完全对立",
+      "evolution": []
+    },
+    {
+      "character_a": "char_pro",
+      "character_b": "char_ally",
+      "type": "friend",
+      "status": "熟悉的陌生人，互相有好感但都没捅破",
+      "trust_level": 60,
+      "history": "",
+      "tension": "秦小满掌握的关键信息可能帮陆沉揭开真相，但也可能把她自己卷入危险",
+      "evolution": []
+    },
+    {
+      "character_a": "char_pro",
+      "character_b": "char_info",
+      "type": "mentor",
+      "status": "送餐时偶尔碰到，点头之交",
+      "trust_level": 20,
+      "history": "",
+      "tension": "老范知道太多，但他选择信任陆沉的时机将决定整个局势的走向",
+      "evolution": []
+    },
+    {
+      "character_a": "char_ant",
+      "character_b": "char_info",
+      "type": "enemy",
+      "status": "老范在暗中跟踪周鸣岐，周鸣岐还不知道",
+      "trust_level": 0,
+      "history": "",
+      "tension": "十五年前的恩怨，两个老人的对峙将在关键时刻爆发",
+      "evolution": []
+    }
+  ],
+  "info_asymmetry": [
+    {
+      "info_id": "info_1",
+      "description": "陆沉能看到死亡指数，其他人看不到",
+      "known_by": [
+        "char_pro"
+      ],
+      "chapter_revealed": 0,
+      "is_protagonist_advantage": true
+    },
+    {
+      "info_id": "info_2",
+      "description": "周鸣岐在制造'可控事故'来消灭有结构缺陷的建筑",
+      "known_by": [
+        "char_ant",
+        "char_info"
+      ],
+      "chapter_revealed": 0,
+      "is_protagonist_advantage": false
+    },
+    {
+      "info_id": "info_3",
+      "description": "老范就是十五年前安置楼事故的幸存者，他的老伴在转移时去世",
+      "known_by": [
+        "char_info"
+      ],
+      "chapter_revealed": 0,
+      "is_protagonist_advantage": false
+    },
+    {
+      "info_id": "info_4",
+      "description": "改变命运会加速衰老——陆沉还不知道这个代价的全貌",
+      "known_by": [
+        "char_pro"
+      ],
+      "chapter_revealed": 0,
+      "is_protagonist_advantage": false
+    },
+    {
+      "info_id": "info_5",
+      "description": "3号楼的结构缺陷和十五年前的安置楼一模一样——这是周鸣岐的最终目标",
+      "known_by": [
+        "char_ant"
+      ],
+      "chapter_revealed": 0,
+      "is_protagonist_advantage": false
+    }
+  ]
+}
