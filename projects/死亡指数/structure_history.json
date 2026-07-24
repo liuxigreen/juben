@@ -14,5 +14,13 @@
   {
     "chapter": 4,
     "type": "confrontation"
+  },
+  {
+    "chapter": 5,
+    "type": "chase"
+  },
+  {
+    "chapter": 6,
+    "type": "reveal"
   }
 ]
