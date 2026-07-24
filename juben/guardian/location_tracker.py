@@ -18,11 +18,11 @@ logger = logging.getLogger(__name__)
 
 
 # ============================================================
-# 位移介质（Transition Media）
+# 位移介质（Transition Media）— 默认值，项目可通过transition_media.json覆盖
 # 有这些关键词出现在场景切换段落中 → 合法转场，豁免时空折叠
 # ============================================================
 
-TRANSITION_MEDIA = {
+DEFAULT_TRANSITION_MEDIA = {
     "riding": ["骑", "电动车", "头盔", "拧把", "加速", "红绿灯", "穿过街道", "摩托"],
     "driving": ["开车", "驾驶", "方向盘", "油门", "刹车", "停车位", "倒车"],
     "walking": ["走出", "跨过", "推开门", "上楼", "下楼", "拐进", "步行", "沿着", "穿过走廊"],
@@ -30,6 +30,23 @@ TRANSITION_MEDIA = {
     "transit": ["地铁", "公交", "打车", "出租车", "网约车", "站台", "车厢"],
     "time_pass": ["分钟后", "半小时", "一小时", "抵达", "来到", "一路", "到了", "到达"],
 }
+
+
+def load_transition_media_from_project(project_dir: Path) -> dict[str, list[str]]:
+    """从项目目录加载位移介质关键词
+
+    优先级：
+    1. project_dir/transition_media.json — 显式定义
+    2. 从mixins YAML加载（TODO）
+    3. DEFAULT_TRANSITION_MEDIA — 默认值
+    """
+    tm_file = project_dir / "transition_media.json"
+    if tm_file.exists():
+        with open(tm_file, encoding="utf-8") as f:
+            data = json.load(f)
+        if isinstance(data, dict) and data:
+            return data
+    return DEFAULT_TRANSITION_MEDIA
 
 
 # ============================================================
@@ -96,6 +113,12 @@ class LocationTracker:
         else:
             self.locations = DEFAULT_LOCATION_KEYWORDS
         self.records: list[LocationRecord] = []
+        
+        # 动态加载位移介质
+        if project_dir:
+            self.transition_media = load_transition_media_from_project(project_dir)
+        else:
+            self.transition_media = DEFAULT_TRANSITION_MEDIA
 
     def extract_locations(self, paragraphs: list[str]) -> list[LocationRecord]:
         """从段落列表中提取位置"""
@@ -207,9 +230,9 @@ class LocationTracker:
 
         扫描范围：from_idx 到 to_idx 之间的所有段落（含两端）
         """
-        # 收集所有位移介质关键词
+        # 收集所有位移介质关键词（使用动态加载的transition_media）
         all_media_keywords: list[str] = []
-        for keywords in TRANSITION_MEDIA.values():
+        for keywords in self.transition_media.values():
             all_media_keywords.extend(keywords)
 
         # 扫描中间段落

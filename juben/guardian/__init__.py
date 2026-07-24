@@ -857,10 +857,17 @@ def guardian_check(
         result.add(v)
 
     # 5. 章节结构多样性检测（升级为hard fail）
+    # 从项目配置加载事件指纹关键词
+    event_fps = None
+    if project_dir:
+        from juben.validate.structure_diversity import load_event_fingerprints_from_project
+        event_fps = load_event_fingerprints_from_project(Path(project_dir))
+    
     v = check_structure_diversity(
         current_text=chapter_text,
         previous_text=previous_chapter_text,
         previous_fingerprints=previous_fingerprints,
+        event_fingerprints=event_fps,
     )
     if v:
         # 升级：结构相似度>70%直接critical，不再只是warning

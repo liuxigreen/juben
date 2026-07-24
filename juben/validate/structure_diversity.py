@@ -1,16 +1,61 @@
 """章节结构多样性检测 — 防止LLM复读机死循环"""
 from __future__ import annotations
 import re
+import json
+from pathlib import Path
 from collections import Counter
 
 
-def extract_event_fingerprint(text: str) -> list[str]:
+# ============================================================
+# 默认事件指纹关键词（项目可通过event_fingerprints.json覆盖）
+# ============================================================
+
+DEFAULT_EVENT_FINGERPRINTS = {
+    "combat": ["剑", "攻击", "出手", "冲去", "招式", "灵气爆发"],
+    "confrontation": ["你是谁", "让我看看", "你以为", "来吧", "指着", "冷笑"],
+    "breakthrough": ["突破", "觉醒", "修为提升", "境界", "力量暴涨"],
+    "reveal": ["发现", "原来", "真相", "秘密", "没想到", "竟然是"],
+    "chase": ["逃跑", "追", "逃", "躲避", "追踪"],
+    "workplace": ["代码", "加班", "会议", "需求", "工位", "办公室", "电脑", "键盘"],
+    "emotion": ["流泪", "哭", "感动", "拥抱", "心疼", "愤怒", "杀意"],
+    "investigation": ["分析", "研究", "调查", "扫描", "检测", "追踪", "日志", "监控"],
+    "creation": ["编程", "写代码", "开发", "创建", "设计", "架构", "算法", "程序"],
+    "training": ["修炼", "练习", "学习", "领悟", "参悟", "冥想", "打坐"],
+    "social": ["谈判", "交易", "合作", "结盟", "说服", "讨价还价", "条件"],
+    "escape": ["逃脱", "隐藏", "伪装", "潜入", "潜伏", "暗中", "秘密"],
+    "planning": ["计划", "策略", "部署", "准备", "安排", "算计", "布局"],
+    "tech_combat": ["防火墙", "黑客", "入侵", "破解", "加密", "解密", "漏洞", "攻击"],
+}
+
+
+def load_event_fingerprints_from_project(project_dir: Path) -> dict[str, list[str]]:
+    """从项目目录加载事件指纹关键词
+
+    优先级：
+    1. project_dir/event_fingerprints.json — 显式定义
+    2. DEFAULT_EVENT_FINGERPRINTS — 默认值
+    """
+    ef_file = project_dir / "event_fingerprints.json"
+    if ef_file.exists():
+        with open(ef_file, encoding="utf-8") as f:
+            data = json.load(f)
+        if isinstance(data, dict) and data:
+            return data
+    return DEFAULT_EVENT_FINGERPRINTS
+
+
+def extract_event_fingerprint(text: str, event_fingerprints: dict[str, list[str]] | None = None) -> list[str]:
     """提取章节的事件序列指纹
     
     将章节内容简化为事件类型序列，用于结构比较。
     v2: 增加更多细分事件类型，区分同题材章节。
+    v3: 支持从项目配置动态加载事件指纹关键词。
     """
     events = []
+    
+    # 使用传入的event_fingerprints，或使用默认值
+    if event_fingerprints is None:
+        event_fingerprints = DEFAULT_EVENT_FINGERPRINTS
     
     # 对话事件
     dialogue_count = len(re.findall(r'[""「][^""」]*[""」]', text))
@@ -19,91 +64,11 @@ def extract_event_fingerprint(text: str) -> list[str]:
     elif dialogue_count > 0:
         events.append("dialogue")
     
-    # 战斗事件（纯物理战斗）
-    combat_keywords = ["剑", "攻击", "出手", "冲去", "招式", "灵气爆发"]
-    combat_count = sum(text.count(kw) for kw in combat_keywords)
-    if combat_count >= 3:
-        events.append("combat")
-    
-    # 对峙事件（言语冲突）
-    confrontation_keywords = ["你是谁", "让我看看", "你以为", "来吧", "指着", "冷笑"]
-    confront_count = sum(text.count(kw) for kw in confrontation_keywords)
-    if confront_count >= 2:
-        events.append("confrontation")
-    
-    # 觉醒/突破事件
-    breakthrough_keywords = ["突破", "觉醒", "修为提升", "境界", "力量暴涨"]
-    break_count = sum(text.count(kw) for kw in breakthrough_keywords)
-    if break_count >= 2:
-        events.append("breakthrough")
-    
-    # 发现/揭示事件
-    reveal_keywords = ["发现", "原来", "真相", "秘密", "没想到", "竟然是"]
-    reveal_count = sum(text.count(kw) for kw in reveal_keywords)
-    if reveal_count >= 2:
-        events.append("reveal")
-    
-    # 逃跑/追逐事件
-    chase_keywords = ["逃跑", "追", "逃", "躲避", "追踪"]
-    chase_count = sum(text.count(kw) for kw in chase_keywords)
-    if chase_count >= 2:
-        events.append("chase")
-    
-    # 日常/职场事件
-    daily_keywords = ["代码", "加班", "会议", "需求", "工位", "办公室", "电脑", "键盘"]
-    daily_count = sum(text.count(kw) for kw in daily_keywords)
-    if daily_count >= 2:
-        events.append("workplace")
-    
-    # 情感事件
-    emotion_keywords = ["流泪", "哭", "感动", "拥抱", "心疼", "愤怒", "杀意"]
-    emotion_count = sum(text.count(kw) for kw in emotion_keywords)
-    if emotion_count >= 2:
-        events.append("emotion")
-    
-    # === v2新增：细分事件类型 ===
-    
-    # 调查/分析事件
-    investigation_keywords = ["分析", "研究", "调查", "扫描", "检测", "追踪", "日志", "监控"]
-    invest_count = sum(text.count(kw) for kw in investigation_keywords)
-    if invest_count >= 2:
-        events.append("investigation")
-    
-    # 创造/编程事件
-    creation_keywords = ["编程", "写代码", "开发", "创建", "设计", "架构", "算法", "程序"]
-    creation_count = sum(text.count(kw) for kw in creation_keywords)
-    if creation_count >= 2:
-        events.append("creation")
-    
-    # 修炼/学习事件
-    training_keywords = ["修炼", "练习", "学习", "领悟", "参悟", "冥想", "打坐"]
-    training_count = sum(text.count(kw) for kw in training_keywords)
-    if training_count >= 2:
-        events.append("training")
-    
-    # 社交/谈判事件
-    social_keywords = ["谈判", "交易", "合作", "结盟", "说服", "讨价还价", "条件"]
-    social_count = sum(text.count(kw) for kw in social_keywords)
-    if social_count >= 2:
-        events.append("social")
-    
-    # 逃脱/隐藏事件
-    escape_keywords = ["逃脱", "隐藏", "伪装", "潜入", "潜伏", "暗中", "秘密"]
-    escape_count = sum(text.count(kw) for kw in escape_keywords)
-    if escape_count >= 2:
-        events.append("escape")
-    
-    # 计划/策略事件
-    planning_keywords = ["计划", "策略", "部署", "准备", "安排", "算计", "布局"]
-    planning_count = sum(text.count(kw) for kw in planning_keywords)
-    if planning_count >= 2:
-        events.append("planning")
-    
-    # 技术对抗事件（黑客/网络安全）
-    tech_combat_keywords = ["防火墙", "黑客", "入侵", "破解", "加密", "解密", "漏洞", "攻击"]
-    tech_count = sum(text.count(kw) for kw in tech_combat_keywords)
-    if tech_count >= 2:
-        events.append("tech_combat")
+    # 遍历所有事件类型，检查关键词
+    for event_type, keywords in event_fingerprints.items():
+        count = sum(text.count(kw) for kw in keywords)
+        if count >= 2:
+            events.append(event_type)
     
     return events
 
@@ -127,6 +92,7 @@ def check_structure_diversity(
     previous_text: str | None = None,
     previous_fingerprints: list[list[str]] | None = None,
     similarity_threshold: float = 0.7,
+    event_fingerprints: dict[str, list[str]] | None = None,
 ) -> dict | None:
     """检查章节结构多样性
     
@@ -135,15 +101,16 @@ def check_structure_diversity(
         previous_text: 上一章文本（可选）
         previous_fingerprints: 前几章的指纹列表（可选）
         similarity_threshold: 相似度阈值，超过则判定为重复
+        event_fingerprints: 事件指纹关键词（可选，从项目配置加载）
     
     Returns:
         None if passed, or dict with violation info
     """
-    current_fp = extract_event_fingerprint(current_text)
+    current_fp = extract_event_fingerprint(current_text, event_fingerprints)
     
     # 与上一章比较
     if previous_text:
-        prev_fp = extract_event_fingerprint(previous_text)
+        prev_fp = extract_event_fingerprint(previous_text, event_fingerprints)
         sim = fingerprint_similarity(current_fp, prev_fp)
         
         if sim >= similarity_threshold:
