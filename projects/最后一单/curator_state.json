@@ -1991,6 +1991,48 @@
       "realm_change": "",
       "foreshadow_planted": [],
       "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 32,
+      "body_costs": [],
+      "setting_elements_used": [],
+      "new_banned_phrases": [],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 33,
+      "body_costs": [],
+      "setting_elements_used": [
+        "城中村和高档"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 33,
+      "body_costs": [],
+      "setting_elements_used": [
+        "城中村和高档"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 34,
+      "body_costs": [],
+      "setting_elements_used": [],
+      "new_banned_phrases": [
+        "脸色变得苍白"
+      ],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
     }
   ],
   "accumulated_costs": [
@@ -2081,7 +2123,9 @@
     "视线模糊",
     "耳鸣"
   ],
-  "accumulated_banned": [],
+  "accumulated_banned": [
+    "脸色变得苍白"
+  ],
   "current_realm": "",
   "realm_progress": {}
 }

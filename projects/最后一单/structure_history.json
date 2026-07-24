@@ -134,5 +134,13 @@
   {
     "chapter": 33,
     "type": "chase"
+  },
+  {
+    "chapter": 33,
+    "type": "confrontation"
+  },
+  {
+    "chapter": 34,
+    "type": "reveal"
   }
 ]
