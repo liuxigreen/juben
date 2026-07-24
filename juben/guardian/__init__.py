@@ -93,13 +93,14 @@ class CharacterAliasMap:
                 return name
         return None
 
-    def resolve_pronoun(self, pronoun: str, last_speaker: str | None = None) -> str | None:
+    def resolve_pronoun(self, pronoun: str, last_speaker: str | None = None, recent_speakers: list[str] | None = None) -> str | None:
         """
         代词消解：根据gender和交替状态机推断说话者
         
         Args:
             pronoun: "他" 或 "她"
             last_speaker: 上一个说话者（用于交替推断）
+            recent_speakers: 最近出现过的说话者列表（用于优先选择）
         """
         target_gender = "male" if pronoun == "他" else "female" if pronoun == "她" else None
         if not target_gender:
@@ -114,7 +115,13 @@ class CharacterAliasMap:
             return next(iter(candidates))
         
         # 多个候选 → 优先策略：
-        # 1. 优先选protagonist（主角对话概率更高）
+        # 1. 优先选最近出现过的（最近5句）
+        if recent_speakers:
+            recent_candidates = [s for s in recent_speakers if s in candidates]
+            if recent_candidates:
+                return recent_candidates[0]
+        
+        # 2. 优先选protagonist（主角对话概率更高）
         protagonist_candidates = candidates & self.protagonist_names
         if protagonist_candidates:
             # 如果last_speaker是protagonist，选另一个（交替）
@@ -123,7 +130,7 @@ class CharacterAliasMap:
                 return next(iter(remaining))
             return next(iter(protagonist_candidates))
         
-        # 2. 无protagonist → 用交替状态机排除last_speaker
+        # 3. 无protagonist → 用交替状态机排除last_speaker
         if last_speaker and last_speaker in candidates:
             remaining = candidates - {last_speaker}
             if len(remaining) == 1:
@@ -145,6 +152,7 @@ class DialogueLine:
     speaker: str | None = None  # 说话者（通过上下文推断）
     is_protagonist: bool = False
     is_revelation: bool = False  # 是否是交代真相
+    confidence: str = "high"  # 置信度：high/medium/low
 
 
 def _extract_dialogues_with_context(text: str, alias_map: CharacterAliasMap) -> list[DialogueLine]:
@@ -167,6 +175,7 @@ def _extract_dialogues_with_context(text: str, alias_map: CharacterAliasMap) -> 
     # 交替发言状态机
     last_speaker: str | None = None
     last_speaker_role: str | None = None  # "protagonist" / "npc"
+    recent_speakers: list[str] = []  # 最近5句的说话者
     
     for i, line in enumerate(lines):
         # 找到所有对话及其位置
@@ -185,6 +194,7 @@ def _extract_dialogues_with_context(text: str, alias_map: CharacterAliasMap) -> 
             
             speaker = None
             speaker_role = None
+            confidence = "high"  # 默认高置信度
             
             # === Level 1: 显式人名匹配 ===
             # 检查对话前的引导语
@@ -196,6 +206,7 @@ def _extract_dialogues_with_context(text: str, alias_map: CharacterAliasMap) -> 
                 if resolved:
                     speaker = resolved
                     speaker_role = alias_map.name_to_role.get(resolved, '')
+                    confidence = "high"  # Level 1: 显式人名，高置信度
             
             # 检查对话后的引导语（少见但存在）
             if not speaker:
@@ -206,6 +217,7 @@ def _extract_dialogues_with_context(text: str, alias_map: CharacterAliasMap) -> 
                     if resolved:
                         speaker = resolved
                         speaker_role = alias_map.name_to_role.get(resolved, '')
+                        confidence = "high"  # Level 1: 显式人名，高置信度
             
             # === Level 2: 代词匹配 ===
             if not speaker:
@@ -218,10 +230,11 @@ def _extract_dialogues_with_context(text: str, alias_map: CharacterAliasMap) -> 
                 if pronoun_match:
                     pronoun = pronoun_match.group(1)
                     # 代词消解：结合gender和交替状态机
-                    resolved = alias_map.resolve_pronoun(pronoun, last_speaker)
+                    resolved = alias_map.resolve_pronoun(pronoun, last_speaker, recent_speakers)
                     if resolved:
                         speaker = resolved
                         speaker_role = alias_map.name_to_role.get(resolved, '')
+                        confidence = "medium"  # Level 2: 代词匹配，中置信度
             
             # === Level 3: 无主语动词 或 纯对话（无引导语）===
             if not speaker:
@@ -236,12 +249,14 @@ def _extract_dialogues_with_context(text: str, alias_map: CharacterAliasMap) -> 
                     if last_speaker_role and last_speaker_role != 'protagonist' and alias_map.protagonist_names:
                         speaker = next(iter(alias_map.protagonist_names))
                         speaker_role = 'protagonist'
+                        confidence = "low"  # Level 3: 交替状态机，低置信度
                     # 上一个是主角 → 这个可能是NPC（找一个非主角）
                     elif last_speaker_role == 'protagonist':
                         for name in alias_map.all_names:
                             if name not in alias_map.protagonist_names:
                                 speaker = name
                                 speaker_role = alias_map.name_to_role.get(name, '')
+                                confidence = "low"  # Level 3: 交替状态机，低置信度
                                 break
             
             # === 兜底：检查整行是否包含角色名 ===
@@ -250,6 +265,7 @@ def _extract_dialogues_with_context(text: str, alias_map: CharacterAliasMap) -> 
                 if resolved:
                     speaker = resolved
                     speaker_role = alias_map.name_to_role.get(resolved, '')
+                    confidence = "medium"  # 兜底：整行匹配，中置信度
             
             # 确定是否是主角
             is_protag = (speaker_role == 'protagonist') if speaker else False
@@ -258,6 +274,10 @@ def _extract_dialogues_with_context(text: str, alias_map: CharacterAliasMap) -> 
             if speaker:
                 last_speaker = speaker
                 last_speaker_role = speaker_role
+                # 更新最近说话者列表（保留最近5句）
+                recent_speakers.append(speaker)
+                if len(recent_speakers) > 5:
+                    recent_speakers.pop(0)
             
             dialogues.append(DialogueLine(
                 text=d_text,
@@ -265,6 +285,7 @@ def _extract_dialogues_with_context(text: str, alias_map: CharacterAliasMap) -> 
                 speaker=speaker,
                 is_protagonist=is_protag,
                 is_revelation=_is_revelation_dialogue(d_text),
+                confidence=confidence,
             ))
     
     return dialogues
@@ -715,6 +736,10 @@ def check_hook_density(chapter_text: str, chapter_num: int) -> GuardianViolation
     规则：
     - 最后一段必须包含钩子元素（悬念/反问/感官冲击/未完成动作）
     - 不能是平淡的叙述收尾
+    
+    与check_physical_interruption_lock()的关系：
+    - 本函数：检测是否有钩子元素（warning级）
+    - check_physical_interruption_lock()：检测是否使用了弱结尾模式（critical级）
     """
     lines = [l.strip() for l in chapter_text.split("\n") if l.strip() and not l.startswith("#") and not l.startswith("-")]
     if not lines:
@@ -723,22 +748,24 @@ def check_hook_density(chapter_text: str, chapter_num: int) -> GuardianViolation
     # 取最后一段
     last_para = lines[-1]
 
-    # 钩子元素
+    # 钩子元素（与check_physical_interruption_lock()统一）
     hook_indicators = [
         "？", "?",  # 反问
         "——",  # 破折号（暗示未完成）
         "...", "……",  # 省略号（暗示未尽之意）
-        "突然", "忽然",  # 突发事件
+        "突然", "忽然", "猛地", "骤然",  # 突发事件
         "转头", "转身", "回头",  # 动作暗示后续
         "发现", "看见", "注意到",  # 发现新信息
         "不对", "有问题", "奇怪",  # 悬念词
+        "还没", "正要", "即将", "准备",  # 未完成动作
+        "渗出", "传来", "响起", "炸开",  # 物理异象
     ]
 
-    # 感官冲击词
+    # 感官冲击词（与check_physical_interruption_lock()统一）
     sensory_hooks = [
         "冰冷", "滚烫", "血腥", "腐臭", "刺鼻",
-        "嗡", "咔", "砰", "咚",  # 声音
-        "黑", "红", "白",  # 颜色冲击
+        "嗡", "咔", "砰", "咚", "轰",  # 声音
+        "黑", "红", "白", "暗",  # 颜色冲击
     ]
 
     has_hook = any(indicator in last_para for indicator in hook_indicators + sensory_hooks)
