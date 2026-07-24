@@ -22,5 +22,17 @@
     "type": "情感爆发",
     "sub_mode": "爆发哭诉",
     "stage": "风暴段"
+  },
+  {
+    "chapter": 35,
+    "type": "悬念揭秘",
+    "sub_mode": "身份揭秘",
+    "stage": "风暴段"
+  },
+  {
+    "chapter": 35,
+    "type": "逆袭翻盘",
+    "sub_mode": "绝境翻盘",
+    "stage": "风暴段"
   }
 ]
