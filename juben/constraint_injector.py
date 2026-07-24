@@ -466,17 +466,12 @@ class ConstraintInjector:
         if villain_injection:
             blocks.append(villain_injection)
 
-        # 6. 四段式beat + 物理打断锁
+        # 6. 四段式beat
         beat_text = get_beat_prompt(chapter_num)
         if beat_text:
             blocks.append(beat_text)
 
-        # 7. 物理打断锁（Cliffhanger强制）
-        cliffhanger_lock = self._build_cliffhanger_lock(chapter_num)
-        if cliffhanger_lock:
-            blocks.append(cliffhanger_lock)
-
-        # 8. 短剧节奏硬指标（含视觉铁律）
+        # 7. 短剧节奏硬指标（含视觉铁律）
         rhythm_requirements = self._build_rhythm_requirements(chapter_num)
         if rhythm_requirements:
             blocks.append(rhythm_requirements)
@@ -1046,7 +1041,24 @@ class ConstraintInjector:
 - 反转钩：最后一刻颠覆观众预期
 - 情绪钩：情绪推到最高点然后切断
 - 信息钩：透露改变全局的关键信息，只说一半
-- 危机钩：突发重大危机，主角来不及反应"""
+- 危机钩：突发重大危机，主角来不及反应
+
+### 🔒 物理打断锁（Cliffhanger强制 — 违反即熔断）
+
+**结尾强制范式**：
+`[主角即将完成某个动作] + [外界物理异象瞬间爆发/强行打断] + [视觉定格]`
+
+**禁止**：
+- ❌ 纯问句结尾："难道凶手是他？"
+- ❌ 概述性结尾："他不知道该怎么办"
+- ❌ 平淡收尾："他走进雨里"
+
+**必须**：
+- ✅ 物理动作被打断："他伸手按向门铃，指尖还没碰到按钮——"
+- ✅ 突发物理异象："门缝里突然渗出一股粘稠的血水"
+- ✅ 感官冲击定格："隔壁的电梯井里，传来一声铁链剧烈拉扯的巨响"
+
+**核心原则**：结尾必须让读者的身体产生反应（心跳加速/屏息/寒毛竖起），不能只是让读者"思考"。"""
 
     # ============================================================
     # 新增：爽点类型注入（基于satisfaction-matrix.md）
