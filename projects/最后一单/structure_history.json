@@ -174,5 +174,13 @@
   {
     "chapter": 34,
     "type": "suspense"
+  },
+  {
+    "chapter": 35,
+    "type": "investigation"
+  },
+  {
+    "chapter": 35,
+    "type": "action_heavy"
   }
 ]

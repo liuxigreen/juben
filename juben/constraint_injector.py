@@ -486,6 +486,11 @@ class ConstraintInjector:
         if progress_enforcement:
             blocks.append(progress_enforcement)
 
+        # 10. 高概念注入（权重最高，放在最前面）
+        high_concept_injection = self._build_high_concept_injection(chapter_num)
+        if high_concept_injection:
+            blocks.insert(0, high_concept_injection)
+
         return "\n\n".join(blocks)
 
     def _get_dynamic_blacklist(self, previous_chapters: list[str] | None = None) -> list[str]:
@@ -1020,6 +1025,76 @@ class ConstraintInjector:
 - 如果连续3段的"主语+动作+结果"结构相同 → 熔断
 - 如果同一句话出现2次以上 → 熔断
 - 如果200字内没有任何新信息 → 熔断"""
+
+    # ============================================================
+    # 新增：高概念注入（权重最高）
+    # ============================================================
+
+    def _build_high_concept_injection(self, chapter_num: int) -> str:
+        """注入高概念模式的核心异常和反退化规则"""
+        meta_path = self.project_dir / "story_meta.json"
+        if not meta_path.exists():
+            return ""
+
+        try:
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        except Exception as e:
+            logger.warning(f"加载story_meta.json失败: {e}")
+            return ""
+
+        hc = meta.get("high_concept", {})
+        if not hc or not hc.get("enabled"):
+            return ""
+
+        anomaly = hc.get("anomaly", "")
+        visual_core = hc.get("visual_core", "")
+        personal_cost = hc.get("personal_cost", "")
+        banned_patterns = hc.get("banned_patterns", [])
+        visual_anchor_prop = hc.get("visual_anchor_prop", "")
+        visual_anchor_keywords = hc.get("visual_anchor_keywords", [])
+
+        if not anomaly:
+            return ""
+
+        # 构建反退化规则
+        banned_section = ""
+        if banned_patterns:
+            banned_items = "\n".join(f"- ❌ {p}" for p in banned_patterns)
+            banned_section = f"""
+### 禁止的故事结构（反退化锁）
+以下故事结构已被锁定为"退化模式"，本章**严禁**使用：
+{banned_items}
+
+如果本章剧情走向以上任何结构，系统将判定为"退化"并给出警告。"""
+
+        # 构建视觉锚点要求
+        anchor_section = ""
+        if visual_anchor_prop and visual_anchor_keywords:
+            kw_str = "、".join(visual_anchor_keywords[:3])
+            # 每3-5章检查一次
+            if chapter_num % 3 == 0 or chapter_num % 5 == 0:
+                anchor_section = f"""
+### 视觉锚点（本章必须出现）
+**道具**：{visual_anchor_prop}
+**关键词**：{kw_str}
+**要求**：本章必须出现{visual_anchor_prop}的描写，且必须参与剧情推进（不能只是背景板）。"""
+
+        return f"""### 🧠 高概念核心（全剧最高优先级）
+
+**本剧异常规则**：{anomaly}
+
+**核心画面**：{visual_core}
+
+**主角持续代价**：{personal_cost}
+
+**本章要求**：
+- 必须推进异常规则的暴露或代价的加深
+- 不能把异常解释成幻觉、巧合、普通犯罪
+- 不能偏离异常规则的核心吸引力
+{banned_section}
+{anchor_section}
+
+**退化警告**：如果本章剧情出现"其实是隐藏身份""原来是失忆""靠系统开挂"等退化模式，系统将判定为critical违规。"""
 
     # ============================================================
     # 新增：钩子类型注入（基于hook-design.md）

@@ -1127,6 +1127,12 @@ def guardian_check(
     if v:
         result.add(v)
 
+    # 14. 高概念退化检测
+    if project_dir:
+        degradation_violation = check_high_concept_degradation(chapter_text, Path(project_dir))
+        if degradation_violation:
+            result.add(degradation_violation)
+
     return result
 
 
@@ -1386,5 +1392,78 @@ def check_paragraph_repetition(chapter_text: str) -> GuardianViolation | None:
                 description=f"检测到高频短语重复：'{pattern}'出现{count}次",
                 suggestion="替换为多样化的描写。同一个情绪/动作用不同的物理细节表达。",
             )
+    
+    return None
+
+
+def check_high_concept_degradation(chapter_text: str, project_dir: Path) -> GuardianViolation | None:
+    """
+    检测高概念退化：剧情是否退化到被禁止的结构模式
+    
+    检测逻辑：
+    1. 读取story_meta中的high_concept配置
+    2. 检测退化关键词（"隐藏身份""原来是失忆"等）
+    3. 检测banned_patterns中的结构模式
+    """
+    meta_path = project_dir / "story_meta.json"
+    if not meta_path.exists():
+        return None
+    
+    try:
+        import json
+        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+    
+    hc = meta.get("high_concept", {})
+    if not hc or not hc.get("enabled"):
+        return None
+    
+    anomaly = hc.get("anomaly", "")
+    if not anomaly:
+        return None
+    
+    # 退化关键词检测
+    degradation_keywords = [
+        "隐藏身份",
+        "前刑警",
+        "前兵王",
+        "隐世神医",
+        "隐藏首富",
+        "卧底",
+        "车祸失忆",
+        "意外失忆",
+        "系统开挂",
+        "签到无敌",
+        "天选之人",
+        "天赋异禀",
+    ]
+    
+    found_degradation = []
+    for kw in degradation_keywords:
+        if kw in chapter_text:
+            found_degradation.append(kw)
+    
+    if found_degradation:
+        return GuardianViolation(
+            rule="high_concept_degradation",
+            severity="critical",
+            description=f"高概念退化：检测到退化关键词: {', '.join(found_degradation[:3])}",
+            suggestion=f"本剧的核心异常是「{anomaly}」，不能退化成隐藏身份/失忆/系统开挂等俗套模式。请围绕异常规则推进剧情。",
+        )
+    
+    # 检测banned_patterns（如果有的话）
+    banned_patterns = hc.get("banned_patterns", [])
+    for pattern in banned_patterns:
+        # 简单的关键词匹配（后续可以升级为结构模式检测）
+        if pattern in chapter_text:
+            return GuardianViolation(
+                rule="high_concept_banned_pattern",
+                severity="warning",
+                description=f"高概念警告：检测到被禁止的故事结构「{pattern}」",
+                suggestion=f"本剧的核心异常是「{anomaly}」，请避免使用被禁止的故事结构。",
+            )
+    
+    return None
     
     return None

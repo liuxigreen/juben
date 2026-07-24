@@ -19,5 +19,9 @@
     "正义与生存",
     "记忆与遗忘"
   ],
-  "target_audience": {}
+  "target_audience": {},
+  "high_concept": {
+    "enabled": true,
+    "anomaly": "测试异常"
+  }
 }

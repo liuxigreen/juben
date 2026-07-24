@@ -69,6 +69,18 @@ class PacingCard(BaseModel):
     )
 
 
+class HighConcept(BaseModel):
+    """高概念模式数据"""
+    enabled: bool = Field(default=False, description="是否启用高概念模式")
+    anomaly: str = Field(default="", description="这个世界多出来的异常规则（一句话）")
+    visual_core: str = Field(default="", description="一个能拍下来的画面")
+    personal_cost: str = Field(default="", description="主角必须持续付出的代价")
+    why_new: str = Field(default="", description="为什么它不像常见短剧")
+    banned_patterns: list[str] = Field(default_factory=list, description="禁止的故事结构模式")
+    visual_anchor_prop: str = Field(default="", description="从异常中长出的视觉锚点道具")
+    visual_anchor_keywords: list[str] = Field(default_factory=list, description="视觉锚点关键词")
+
+
 class StoryMeta(BaseModel):
     """故事元数据 — 包含意外变量和算法卡点"""
     title: str = ""
@@ -96,6 +108,9 @@ class StoryMeta(BaseModel):
     global_hook_density: str = "high"
     themes: list[str] = Field(default_factory=list)
     target_audience: dict = Field(default_factory=dict)
+
+    # === 高概念模式 ===
+    high_concept: HighConcept = Field(default_factory=HighConcept)
 
 
 # ============================================================
