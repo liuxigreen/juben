@@ -300,16 +300,34 @@ def _is_revelation_dialogue(line: str) -> bool:
     # 最少4个字符，避免"三年前"这种短片段误判
     if len(line.strip()) < 4:
         return False
-    revelation_keywords = [
-        "真相", "实话告诉你", "我告诉你", "告诉你", "其实",
-        "八年前", "三年前", "当年", "那时候",
+    
+    # 核心揭露关键词（必须是主动交代真相，不是提及真相）
+    core_revelation_keywords = [
+        "实话告诉你", "我告诉你", "告诉你真相",
         "是我做的", "我杀的", "我有罪",
-        "秘密", "不能说", "瞒了", "藏了",
         "灭门", "灭口", "杀了人", "死了人",
-        "证据", "账本", "账册",
-        "答应过", "替你死", "替你挡",
+        "替你死", "替你挡",
     ]
-    return any(kw in line for kw in revelation_keywords)
+    
+    # 次级揭露关键词（需要结合上下文判断）
+    secondary_keywords = [
+        "真相", "告诉你", "其实",
+        "八年前", "三年前", "当年", "那时候",
+        "秘密", "不能说", "瞒了", "藏了",
+        "证据", "账本", "账册",
+        "答应过",
+    ]
+    
+    # 检查核心揭露关键词
+    if any(kw in line for kw in core_revelation_keywords):
+        return True
+    
+    # 检查次级揭露关键词（需要至少2个才判定）
+    secondary_count = sum(1 for kw in secondary_keywords if kw in line)
+    if secondary_count >= 2:
+        return True
+    
+    return False
 
 
 def check_anti_dialogue(

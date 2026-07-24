@@ -138,5 +138,13 @@
   {
     "chapter": 35,
     "type": "action_heavy"
+  },
+  {
+    "chapter": 31,
+    "type": "investigation"
+  },
+  {
+    "chapter": 32,
+    "type": "confrontation"
   }
 ]
