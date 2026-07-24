@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import json
 import sys
+import logging
 from pathlib import Path
 
 import click
@@ -31,6 +32,7 @@ from juben.validate.cliffhanger import CliffhangerValidator
 from juben.validate.info_asymmetry import InfoAsymmetryValidator
 
 console = Console()
+logger = logging.getLogger(__name__)
 
 
 @click.group()
@@ -109,11 +111,12 @@ def research(query: str, dir: str, fetch_n: int):
 @click.option("--dir", "-d", default=".", help="项目目录")
 @click.option("--mixin", "-m", default="", help="Genre mixin列表，逗号分隔 (仅universal模板)")
 @click.option("--skeleton", "-s", default="", help="Skeleton mixin列表，逗号分隔 (仅universal模板)")
+@click.option("--timeline-skeleton", "-ts", default="50chap-standard", help="Timeline Lock骨架类型 (20chap-fast/50chap-standard/100chap-epic)")
 @click.option("--title", default="", help="故事标题")
 @click.option("--disruption", default="", help="意外变量")
 @click.option("--yes", "-y", is_flag=True, help="跳过确认，直接初始化")
 def init(premise: str, template: str, dir: str, mixin: str, skeleton: str,
-         title: str, disruption: str, yes: bool):
+         timeline_skeleton: str, title: str, disruption: str, yes: bool):
     """初始化一个新故事项目"""
     from juben.genre_templates import get_template, list_templates
 
@@ -179,6 +182,13 @@ def init(premise: str, template: str, dir: str, mixin: str, skeleton: str,
         characters=result["characters"],
         world_rules=result["world_rules"],
     )
+    
+    # 保存Timeline Lock骨架配置
+    timeline_lock_config = {
+        "skeleton_type": timeline_skeleton,
+        "description": f"Timeline Lock骨架类型: {timeline_skeleton}"
+    }
+    mgr._write_json("timeline_lock_config.json", timeline_lock_config)
 
     console.print(Panel(
         f"[green]✓ 项目初始化完成[/green]\n\n"
@@ -503,13 +513,27 @@ def audit(chapter: int, dir: str):
     protagonist = next((c for c in characters if c.role.value == "protagonist"), None)
     protagonist_name = protagonist.name if protagonist else ""
 
-    # 加载Timeline Lock
+    # 加载Timeline Lock（从项目的timeline_lock_config.json读取skeleton类型）
     from juben.timeline_lock import TimelineLock
     tl_config_path = project_dir / "timeline_lock.json"
+    tl_skeleton_config_path = project_dir / "timeline_lock_config.json"
+    
     if tl_config_path.exists():
+        # 优先使用timeline_lock.json（项目自定义配置）
         timeline_lock = TimelineLock.from_config(tl_config_path)
+    elif tl_skeleton_config_path.exists():
+        # 从timeline_lock_config.json读取skeleton类型
+        try:
+            with open(tl_skeleton_config_path, "r", encoding="utf-8") as f:
+                tl_skeleton_config = json.load(f)
+            skeleton_type = tl_skeleton_config.get("skeleton_type", "50chap-standard")
+            timeline_lock = TimelineLock.from_skeleton(skeleton_type)
+        except Exception as e:
+            logger.warning(f"加载timeline_lock_config.json失败: {e}，使用默认50chap-standard")
+            timeline_lock = TimelineLock.from_skeleton("50chap-standard")
     else:
-        timeline_lock = TimelineLock.from_default()
+        # 默认使用50chap-standard
+        timeline_lock = TimelineLock.from_skeleton("50chap-standard")
 
     # 收集所有章节结尾（用于Anti-Repetition检测）
     all_endings = []

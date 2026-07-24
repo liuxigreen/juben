@@ -1,0 +1,68 @@
+{
+  "name": "50chap-standard",
+  "description": "50章标准短剧（适合悬疑、复仇、逆袭题材）",
+  "total_chapters": 50,
+  "nodes": [
+    {
+      "node_id": "act1_setup",
+      "name": "第一幕：入局",
+      "chapter_range": [1, 10],
+      "min_words": 15000,
+      "description": "建立世界观、引入主角困境、展示核心能力、埋下第一条线索",
+      "forbidden_elements": [
+        "反派大boss正面登场",
+        "主角直接对抗最高层反派",
+        "真相全部揭开"
+      ]
+    },
+    {
+      "node_id": "act1_complication",
+      "name": "第一幕：复杂化",
+      "chapter_range": [11, 20],
+      "min_words": 15000,
+      "description": "盟友出现、信息差建立、第一个小胜利、发现更大的阴谋",
+      "required_before": ["act1_setup"],
+      "forbidden_elements": [
+        "反派大boss被逮捕",
+        "所有秘密被揭开",
+        "主角获得最终胜利"
+      ]
+    },
+    {
+      "node_id": "act2_rising",
+      "name": "第二幕：上升",
+      "chapter_range": [21, 30],
+      "min_words": 15000,
+      "description": "深入敌方内部、收集关键证据、遭遇重大挫折、信任危机",
+      "required_before": ["act1_complication"],
+      "forbidden_elements": [
+        "反派主动交代一切",
+        "轻松获得关键证据"
+      ]
+    },
+    {
+      "node_id": "act2_crisis",
+      "name": "第二幕：危机",
+      "chapter_range": [31, 40],
+      "min_words": 15000,
+      "description": "主角陷入绝境、盟友背叛或牺牲、核心秘密揭露",
+      "required_before": ["act2_rising"]
+    },
+    {
+      "node_id": "act3_climax",
+      "name": "第三幕：高潮",
+      "chapter_range": [41, 48],
+      "min_words": 12000,
+      "description": "最终对决、反派伏法、真相大白",
+      "required_before": ["act2_crisis"]
+    },
+    {
+      "node_id": "act3_resolution",
+      "name": "第三幕：收尾",
+      "chapter_range": [49, 50],
+      "min_words": 3000,
+      "description": "善后、角色归处、情感收束",
+      "required_before": ["act3_climax"]
+    }
+  ]
+}

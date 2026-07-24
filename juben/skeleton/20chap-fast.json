@@ -1,0 +1,50 @@
+{
+  "name": "20chap-fast",
+  "description": "20章极速短剧（适合悬疑、反转、快节奏题材）",
+  "total_chapters": 20,
+  "nodes": [
+    {
+      "node_id": "act1_setup",
+      "name": "第一幕：入局",
+      "chapter_range": [1, 5],
+      "min_words": 8000,
+      "description": "快速建立世界观、引入核心冲突、展示主角能力",
+      "forbidden_elements": [
+        "反派大boss正面登场",
+        "真相全部揭开"
+      ]
+    },
+    {
+      "node_id": "act1_complication",
+      "name": "第一幕：复杂化",
+      "chapter_range": [6, 10],
+      "min_words": 8000,
+      "description": "信息差建立、第一个小胜利、发现更大的阴谋",
+      "required_before": ["act1_setup"],
+      "forbidden_elements": [
+        "反派大boss被逮捕",
+        "所有秘密被揭开"
+      ]
+    },
+    {
+      "node_id": "act2_climax",
+      "name": "第二幕：高潮",
+      "chapter_range": [11, 16],
+      "min_words": 10000,
+      "description": "核心真相揭露、关键对决、主角陷入绝境",
+      "required_before": ["act1_complication"],
+      "forbidden_elements": [
+        "反派主动交代一切",
+        "轻松获得关键证据"
+      ]
+    },
+    {
+      "node_id": "act3_resolution",
+      "name": "第三幕：收尾",
+      "chapter_range": [17, 20],
+      "min_words": 6000,
+      "description": "最终对决、反派伏法、真相大白、情感收束",
+      "required_before": ["act2_climax"]
+    }
+  ]
+}

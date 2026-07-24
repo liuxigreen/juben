@@ -92,7 +92,7 @@ class TimelineLock:
         path = Path(config_path)
         if not path.exists():
             logger.warning(f"Timeline Lock配置不存在: {path}，使用默认配置")
-            return cls.from_default()
+            return cls.from_skeleton("50chap-standard")
 
         with open(path, "r", encoding="utf-8") as f:
             data = json.load(f)
@@ -103,8 +103,35 @@ class TimelineLock:
         return cls(nodes)
 
     @classmethod
+    def from_skeleton(cls, skeleton_name: str = "50chap-standard") -> "TimelineLock":
+        """从skeleton配置文件加载（支持20chap-fast/50chap-standard/100chap-epic）"""
+        skeleton_dir = Path(__file__).parent / "skeleton"
+        skeleton_path = skeleton_dir / f"{skeleton_name}.json"
+        
+        if not skeleton_path.exists():
+            logger.warning(f"Skeleton配置不存在: {skeleton_path}，使用默认50chap-standard")
+            skeleton_path = skeleton_dir / "50chap-standard.json"
+        
+        if not skeleton_path.exists():
+            logger.warning(f"默认skeleton配置也不存在，使用硬编码默认值")
+            return cls._from_hardcoded_default()
+
+        with open(skeleton_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        nodes = []
+        for n in data.get("nodes", []):
+            nodes.append(PlotNode(**n))
+        return cls(nodes)
+
+    @classmethod
     def from_default(cls) -> "TimelineLock":
-        """默认配置 — 适用于50章的悬疑/复仇类题材"""
+        """默认配置 — 适用于50章的悬疑/复仇类题材（向后兼容）"""
+        return cls.from_skeleton("50chap-standard")
+
+    @classmethod
+    def _from_hardcoded_default(cls) -> "TimelineLock":
+        """硬编码默认值（最后的fallback）"""
         nodes = [
             PlotNode(
                 node_id="act1_setup",
