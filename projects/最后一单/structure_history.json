@@ -166,5 +166,9 @@
   {
     "chapter": 35,
     "type": "chase"
+  },
+  {
+    "chapter": 35,
+    "type": "action_heavy"
   }
 ]

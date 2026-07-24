@@ -1,0 +1,914 @@
+# 高概念脑洞模式设计方案（详细版）
+# 作者：juben引擎开发团队
+# 日期：2026-07-24
+# 版本：v1.0
+
+================================================================================
+## 一、问题背景与诊断
+================================================================================
+
+### 1.1 核心问题
+
+传统AI在生成剧本大纲时存在三大根本性缺陷：
+
+**问题1：平庸化**
+- AI倾向于选择"安全"的、"最大公约数"式的创意
+- 原因：训练数据中常见模式占比高，AI学习后复制
+- 表现：生成的故事缺乏突破性，观众看了开头就知道结尾
+
+**问题2：套路化**
+- AI会重复使用训练数据中常见的模式
+- 原因：AI没有"创新"的概念，只有"概率最高"的选择
+- 表现：所有故事都是同一个模板，换皮不换骨
+
+**问题3：缺乏商业Hook**
+- AI不理解"什么能让观众点击"，只关注"逻辑自洽"
+- 原因：AI没有"观众心理"的概念，只有"语法正确"
+- 表现：故事逻辑完整但无聊，观众没有点击欲望
+
+### 1.2 问题根源
+
+AI的本质是"模式匹配器"，不是"创意生成器"：
+- AI擅长：从训练数据中找到最可能的模式
+- AI不擅长：创造训练数据中不存在的新模式
+- 结果：AI生成的内容是"平均值"，不是"峰值"
+
+### 1.3 解决思路
+
+**核心理念：创意结构 ≠ 剧情细节**
+
+- 创意结构是骨架：决定故事的吸引力（可标准化）
+- 剧情细节是血肉：决定故事的独特性（需AI发挥）
+- 解决方案：人类设计骨架，AI填充血肉
+
+**实施策略：在Bootstrap的第一秒，强制注入高反差、强视觉、极具商业Hook的创意结构**
+
+================================================================================
+## 二、高概念模式四大组件
+================================================================================
+
+### 2.1 高概念种子（Core Hook Seed）
+
+#### 2.1.1 定义
+
+一句话描述故事的核心吸引力，必须同时满足三个条件：
+
+1. **高反差**：两个极端元素的碰撞
+   - 示例：外卖员 vs 连环杀手
+   - 示例：乞丐 vs 总裁
+   - 示例：学生 vs 黑帮老大
+
+2. **强视觉**：必须能用一个画面概括
+   - 示例：外卖员在凶案现场送餐
+   - 示例：乞丐在豪华酒店被赶出门
+   - 示例：学生在黑帮谈判会上做作业
+
+3. **商业Hook**：必须能让观众产生"我想看"的冲动
+   - 示例：外卖员发现死者是自己的下一个订单客户
+   - 示例：乞丐其实是隐藏的亿万富翁
+   - 示例：学生其实是卧底警察
+
+#### 2.1.2 生成规则
+
+```
+高反差公式：
+[低位身份] + [高位场景] + [意外发现]
+
+示例：
+- 外卖员（低位） + 凶案现场（高位） + 发现死者是订单客户（意外）
+- 乞丐（低位） + 豪华酒店（高位） + 其实是隐藏富豪（意外）
+- 学生（低位） + 黑帮谈判（高位） + 其实是卧底（意外）
+```
+
+#### 2.1.3 验证标准
+
+必须同时满足：
+- [ ] 能用一句话概括（不超过20字）
+- [ ] 包含两个极端元素（低位 vs 高位）
+- [ ] 有意外发现（身份反转/秘密揭露）
+- [ ] 能让观众产生"我想看"的冲动
+
+#### 2.1.4 注入方式
+
+**Bootstrap阶段**：
+```json
+{
+  "core_hook": {
+    "high_contrast": "外卖员 vs 连环杀手",
+    "strong_visual": "外卖员在凶案现场送餐",
+    "commercial_hook": "发现死者是下一个订单客户",
+    "one_liner": "外卖员在凶案现场送餐，发现死者是订单客户"
+  }
+}
+```
+
+**约束注入**：
+- 每2章必须推进core_hook的进展
+- 不能偏离core_hook的核心吸引力
+- 必须在第1章就展示core_hook
+
+### 2.2 视觉锚点（Visual Anchor）
+
+#### 2.2.1 定义
+
+一个可拍摄的、极具视觉冲击力的画面，作为全剧的视觉符号。
+
+#### 2.2.2 要求
+
+1. **必须是物理的、可拍摄的**
+   - ❌ "他很愤怒"（抽象）
+   - ✅ "他的手指攥紧，指节发白"（物理）
+
+2. **必须贯穿全剧（每3-5章出现一次）**
+   - 第1章：首次出现，建立视觉记忆
+   - 第3-5章：第二次出现，强化视觉符号
+   - 第8-10章：第三次出现，成为剧情关键
+   - 后续：反复出现，成为视觉锚点
+
+3. **必须与core_hook强相关**
+   - 如果core_hook是"外卖员在凶案现场送餐"
+   - 视觉锚点可以是"黄色外卖箱"
+   - 黄色外卖箱在凶案现场、警察局、医院、逃亡路上反复出现
+
+#### 2.2.3 生成规则
+
+```
+视觉锚点公式：
+[物理道具] + [场景对比] + [情感冲击]
+
+示例：
+- 黄色外卖箱（物理） + 凶案现场（对比） + 恐惧/紧张（情感）
+- 破旧书包（物理） + 豪华酒店（对比） + 尴尬/自卑（情感）
+- 学生证（物理） + 黑帮谈判（对比） + 危险/紧张（情感）
+```
+
+#### 2.2.4 验证标准
+
+必须同时满足：
+- [ ] 是物理道具（可拍摄）
+- [ ] 能贯穿全剧（至少出现3次）
+- [ ] 与core_hook强相关
+- [ ] 有视觉冲击力（能引发情感反应）
+
+#### 2.2.5 注入方式
+
+**Bootstrap阶段**：
+```json
+{
+  "visual_anchor": {
+    "prop": "黄色外卖箱",
+    "first_appearance": "第1章：外卖员背着黄色外卖箱出现在凶案现场",
+    "recurring_frequency": "每3-5章出现一次",
+    "emotional_impact": "恐惧、紧张、压迫感",
+    "symbolic_meaning": "外卖员的普通身份 vs 不普通的遭遇"
+  }
+}
+```
+
+**约束注入**：
+- 每3章必须出现visual_anchor的描写
+- 必须在关键情节点出现
+- 不能只是背景板，必须参与剧情
+
+### 2.3 商业钩子矩阵（Commercial Hook Matrix）
+
+#### 2.3.1 定义
+
+从蒸馏数据中提取的、经过市场验证的钩子模式。
+
+#### 2.3.2 数据来源
+
+1. **yt-drama-ops蒸馏数据**（真实播放数据）
+   - 包含5种核心骨架类型
+   - 每种骨架有平均播放量、样本数量
+   - 有心理学钩子和适用题材
+
+2. **0xsline/short-drama**（钩子类型参考）
+   - 悬念钩：抛出关键疑问，答案留到下一集
+   - 反转钩：最后一刻颠覆观众预期
+   - 情绪钩：情绪推到最高点然后切断
+   - 信息钩：透露改变全局的关键信息，只说一半
+   - 危机钩：突发重大危机，主角来不及反应
+
+#### 2.3.3 五种钩子类型
+
+**类型1：身份钩**
+- 定义：主角隐藏真实身份，观众期待揭露
+- 原理：观众享受"我知道你不知道"的优越感
+- 示例：外卖员其实是前刑警
+- 使用场景：起势段建立，风暴段揭露
+
+**类型2：复仇钩**
+- 定义：主角被伤害，观众期待反击
+- 原理：观众享受"恶有恶报"的快感
+- 示例：外卖员被冤枉，观众期待他洗清冤屈
+- 使用场景：起势段建立，攀升段+风暴段释放
+
+**类型3：悬念钩**
+- 定义：抛出关键疑问，观众期待答案
+- 原理：观众享受"解谜"的乐趣
+- 示例：外卖员发现死者是订单客户，但为什么？
+- 使用场景：每章结尾必须使用
+
+**类型4：情绪钩**
+- 定义：情绪推到最高点，观众期待释放
+- 原理：观众享受"情绪过山车"的刺激
+- 示例：外卖员被冤枉入狱，观众期待他翻案
+- 使用场景：风暴段+决战段使用
+
+**类型5：危机钩**
+- 定义：突发重大危机，观众期待解决
+- 原理：观众享受"紧张-释放"的循环
+- 示例：外卖员被凶手追杀，观众期待他逃脱
+- 使用场景：每章结尾使用
+
+#### 2.3.4 注入方式
+
+**Bootstrap阶段**：
+```json
+{
+  "commercial_hooks": {
+    "primary": ["身份钩", "悬念钩"],
+    "secondary": ["复仇钩", "危机钩"],
+    "usage": {
+      "身份钩": "起势段建立，风暴段揭露",
+      "悬念钩": "每章结尾必须使用",
+      "复仇钩": "起势段建立，攀升段+风暴段释放",
+      "危机钩": "每章结尾使用"
+    }
+  }
+}
+```
+
+**约束注入**：
+- 每章结尾必须使用指定的钩子类型
+- 钩子类型必须与剧情阶段匹配
+- 不能连续3章使用同类型钩子
+
+### 2.4 创意碰撞引擎（Creative Collision Engine）
+
+#### 2.4.1 定义
+
+强制将两个不相关的元素碰撞，产生意外创意。
+
+#### 2.4.2 碰撞公式
+
+```
+[题材A] × [题材B] × [商业Hook] = 高概念创意
+
+示例：
+- 外卖员 × 连环杀手 × 身份钩 = 外卖员其实是前刑警
+- 甜宠 × 悬疑 × 复仇钩 = 女主以为在谈恋爱，其实是在被PUA
+- 学生 × 黑帮 × 危机钩 = 学生其实是卧底警察
+```
+
+#### 2.4.3 生成规则
+
+**步骤1：选择两个不相关的题材**
+- 题材A：主题材（如：外卖员生活）
+- 题材B：副题材（如：连环杀手）
+
+**步骤2：选择商业钩子类型**
+- 身份钩：主角隐藏真实身份
+- 复仇钩：主角被伤害，期待反击
+- 悬念钩：抛出关键疑问
+- 情绪钩：情绪推到最高点
+- 危机钩：突发重大危机
+
+**步骤3：碰撞产生创意**
+- 公式：[题材A] × [题材B] × [商业Hook]
+- 示例：外卖员 × 连环杀手 × 身份钩 = 外卖员其实是前刑警
+
+#### 2.4.4 验证标准
+
+必须同时满足：
+- [ ] 两个题材不相关（有反差）
+- [ ] 商业钩子类型明确
+- [ ] 创意有视觉冲击力
+- [ ] 能让观众产生"我想看"的冲动
+
+#### 2.4.5 注入方式
+
+**Bootstrap阶段**：
+```json
+{
+  "creative_collision": {
+    "genre_a": "外卖员生活",
+    "genre_b": "连环杀手",
+    "hook_type": "身份钩",
+    "collision_result": "外卖员其实是前刑警，因为三年前的车祸失去记忆",
+    "alternative_collisions": [
+      "外卖员其实是凶手的下一个目标",
+      "外卖员其实是警察的卧底"
+    ]
+  }
+}
+```
+
+**约束注入**：
+- 碰撞方案必须贯穿全剧
+- 不能偏离碰撞方案的核心
+- 必须在关键情节点推进碰撞
+
+================================================================================
+## 三、实现路径
+================================================================================
+
+### 3.1 Phase 1：Bootstrap增强（1-2天）
+
+#### 3.1.1 修改bootstrapper.py
+
+**新增字段**：
+```python
+# 在BOOTSTRAP_PROMPT_TEMPLATE中添加
+"""
+## 高概念模式（必须生成）
+
+### 高概念种子
+```json
+{
+  "core_hook": {
+    "high_contrast": "[低位身份] vs [高位场景]",
+    "strong_visual": "[一个可拍摄的画面]",
+    "commercial_hook": "[意外发现]",
+    "one_liner": "[一句话概括]"
+  }
+}
+```
+
+### 视觉锚点
+```json
+{
+  "visual_anchor": {
+    "prop": "[物理道具名称]",
+    "first_appearance": "[首次出现场景]",
+    "recurring_frequency": "每3-5章出现一次",
+    "emotional_impact": "[情感冲击]",
+    "symbolic_meaning": "[象征意义]"
+  }
+}
+```
+
+### 商业钩子矩阵
+```json
+{
+  "commercial_hooks": {
+    "primary": ["[主要钩子类型1]", "[主要钩子类型2]"],
+    "secondary": ["[次要钩子类型1]", "[次要钩子类型2]"],
+    "usage": {
+      "[钩子类型]": "[使用场景]"
+    }
+  }
+}
+```
+
+### 创意碰撞方案
+```json
+{
+  "creative_collision": {
+    "genre_a": "[主题材]",
+    "genre_b": "[副题材]",
+    "hook_type": "[钩子类型]",
+    "collision_result": "[碰撞结果]",
+    "alternative_collisions": ["[备选方案1]", "[备选方案2]"]
+  }
+}
+```
+"""
+```
+
+**新增验证逻辑**：
+```python
+def validate_core_hook(data: dict) -> bool:
+    """验证高概念种子是否符合要求"""
+    core_hook = data.get("core_hook", {})
+    
+    # 检查是否包含三个必要条件
+    if not core_hook.get("high_contrast"):
+        return False
+    if not core_hook.get("strong_visual"):
+        return False
+    if not core_hook.get("commercial_hook"):
+        return False
+    
+    # 检查一句话概括是否不超过20字
+    one_liner = core_hook.get("one_liner", "")
+    if len(one_liner) > 20:
+        return False
+    
+    return True
+
+def validate_visual_anchor(data: dict) -> bool:
+    """验证视觉锚点是否符合要求"""
+    visual_anchor = data.get("visual_anchor", {})
+    
+    # 检查是否是物理道具
+    prop = visual_anchor.get("prop", "")
+    if not prop:
+        return False
+    
+    # 检查是否能贯穿全剧
+    recurring = visual_anchor.get("recurring_frequency", "")
+    if "每3-5章" not in recurring and "每3章" not in recurring:
+        return False
+    
+    return True
+```
+
+#### 3.1.2 修改bootstrap_response.json schema
+
+```json
+{
+  "core_hook": {
+    "type": "object",
+    "properties": {
+      "high_contrast": {"type": "string"},
+      "strong_visual": {"type": "string"},
+      "commercial_hook": {"type": "string"},
+      "one_liner": {"type": "string", "maxLength": 20}
+    },
+    "required": ["high_contrast", "strong_visual", "commercial_hook", "one_liner"]
+  },
+  "visual_anchor": {
+    "type": "object",
+    "properties": {
+      "prop": {"type": "string"},
+      "first_appearance": {"type": "string"},
+      "recurring_frequency": {"type": "string"},
+      "emotional_impact": {"type": "string"},
+      "symbolic_meaning": {"type": "string"}
+    },
+    "required": ["prop", "first_appearance", "recurring_frequency"]
+  },
+  "commercial_hooks": {
+    "type": "object",
+    "properties": {
+      "primary": {"type": "array", "items": {"type": "string"}},
+      "secondary": {"type": "array", "items": {"type": "string"}},
+      "usage": {"type": "object"}
+    },
+    "required": ["primary", "secondary"]
+  },
+  "creative_collision": {
+    "type": "object",
+    "properties": {
+      "genre_a": {"type": "string"},
+      "genre_b": {"type": "string"},
+      "hook_type": {"type": "string"},
+      "collision_result": {"type": "string"},
+      "alternative_collisions": {"type": "array", "items": {"type": "string"}}
+    },
+    "required": ["genre_a", "genre_b", "hook_type", "collision_result"]
+  }
+}
+```
+
+### 3.2 Phase 2：约束注入增强（1天）
+
+#### 3.2.1 修改constraint_injector.py
+
+**新增注入方法**：
+```python
+def _build_core_hook_injection(self, chapter_num: int) -> str:
+    """注入core_hook推进要求"""
+    # 读取bootstrap_response.json
+    bootstrap_path = self.project_dir / "bootstrap_response.json"
+    if not bootstrap_path.exists():
+        return ""
+    
+    try:
+        bootstrap = json.loads(bootstrap_path.read_text(encoding="utf-8"))
+    except Exception:
+        return ""
+    
+    core_hook = bootstrap.get("core_hook", {})
+    if not core_hook:
+        return ""
+    
+    one_liner = core_hook.get("one_liner", "")
+    
+    return f"""### 🎯 高概念推进（强制）
+
+**本剧高概念**：{one_liner}
+
+**本章要求**：
+- 必须推进高概念的进展
+- 不能偏离高概念的核心吸引力
+- 必须在本章展示高概念的某个方面
+
+**推进方式**：
+- 展示高概念的冲突（如：外卖员被卷入谋杀案）
+- 揭示高概念的秘密（如：外卖员其实是前刑警）
+- 推进高概念的解决（如：外卖员开始调查真相）"""
+
+def _build_visual_anchor_injection(self, chapter_num: int) -> str:
+    """注入visual_anchor描写要求"""
+    # 读取bootstrap_response.json
+    bootstrap_path = self.project_dir / "bootstrap_response.json"
+    if not bootstrap_path.exists():
+        return ""
+    
+    try:
+        bootstrap = json.loads(bootstrap_path.read_text(encoding="utf-8"))
+    except Exception:
+        return ""
+    
+    visual_anchor = bootstrap.get("visual_anchor", {})
+    if not visual_anchor:
+        return ""
+    
+    prop = visual_anchor.get("prop", "")
+    emotional_impact = visual_anchor.get("emotional_impact", "")
+    
+    # 检查是否应该出现（每3-5章）
+    if chapter_num % 3 != 0 and chapter_num % 5 != 0:
+        return ""
+    
+    return f"""### 📸 视觉锚点（强制）
+
+**本剧视觉锚点**：{prop}
+
+**本章要求**：
+- 必须出现{prop}的描写
+- {prop}必须参与剧情（不能只是背景板）
+- 必须引发{emotional_impact}的情感反应
+
+**正确示范**：
+- {prop}出现在关键场景（如：凶案现场、警察局、医院）
+- {prop}引发角色情感反应（如：恐惧、紧张、回忆）
+- {prop}推动剧情发展（如：成为线索、成为威胁）"""
+
+def _build_commercial_hook_injection(self, chapter_num: int) -> str:
+    """注入商业钩子使用要求"""
+    # 读取bootstrap_response.json
+    bootstrap_path = self.project_dir / "bootstrap_response.json"
+    if not bootstrap_path.exists():
+        return ""
+    
+    try:
+        bootstrap = json.loads(bootstrap_path.read_text(encoding="utf-8"))
+    except Exception:
+        return ""
+    
+    commercial_hooks = bootstrap.get("commercial_hooks", {})
+    if not commercial_hooks:
+        return ""
+    
+    primary = commercial_hooks.get("primary", [])
+    secondary = commercial_hooks.get("secondary", [])
+    
+    # 根据章节号选择钩子类型
+    if chapter_num % 2 == 0:
+        hook_type = primary[0] if primary else "悬念钩"
+    else:
+        hook_type = primary[1] if len(primary) > 1 else "危机钩"
+    
+    return f"""### 🎣 商业钩子（强制）
+
+**本章钩子类型**：{hook_type}
+
+**设计要求**：
+- 结尾必须使用{hook_type}
+- 必须让读者产生"必须看下一集"的冲动
+- 必须与本章剧情自然衔接
+
+**正确示范**：
+- 悬念钩：关键信息只透露一半，答案留到下一集
+- 反转钩：最后一刻颠覆观众预期
+- 情绪钩：情绪推到最高点然后切断
+- 信息钩：透露改变全局的关键信息，只说一半
+- 危机钩：突发重大危机，主角来不及反应"""
+```
+
+#### 3.2.2 修改build_injection_block
+
+```python
+def build_injection_block(self, chapter_num: int, ...) -> str:
+    blocks = []
+    
+    # ... 现有注入 ...
+    
+    # 新增高概念注入
+    core_hook_injection = self._build_core_hook_injection(chapter_num)
+    if core_hook_injection:
+        blocks.append(core_hook_injection)
+    
+    visual_anchor_injection = self._build_visual_anchor_injection(chapter_num)
+    if visual_anchor_injection:
+        blocks.append(visual_anchor_injection)
+    
+    commercial_hook_injection = self._build_commercial_hook_injection(chapter_num)
+    if commercial_hook_injection:
+        blocks.append(commercial_hook_injection)
+    
+    # ... 现有注入 ...
+    
+    return "\n\n".join(blocks)
+```
+
+### 3.3 Phase 3：Guardian增强（1天）
+
+#### 3.3.1 修改guardian/__init__.py
+
+**新增检查函数**：
+```python
+def check_core_hook_progress(chapter_text: str, chapter_num: int, project_dir: str) -> GuardianViolation | None:
+    """检查高概念推进情况"""
+    # 读取bootstrap_response.json
+    bootstrap_path = Path(project_dir) / "bootstrap_response.json"
+    if not bootstrap_path.exists():
+        return None
+    
+    try:
+        bootstrap = json.loads(bootstrap_path.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+    
+    core_hook = bootstrap.get("core_hook", {})
+    if not core_hook:
+        return None
+    
+    # 检查是否推进了高概念
+    # 这里需要更复杂的逻辑，暂时简化
+    return None
+
+def check_visual_anchor_presence(chapter_text: str, chapter_num: int, project_dir: str) -> GuardianViolation | None:
+    """检查视觉锚点出现情况"""
+    # 每3-5章检查一次
+    if chapter_num % 3 != 0 and chapter_num % 5 != 0:
+        return None
+    
+    # 读取bootstrap_response.json
+    bootstrap_path = Path(project_dir) / "bootstrap_response.json"
+    if not bootstrap_path.exists():
+        return None
+    
+    try:
+        bootstrap = json.loads(bootstrap_path.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+    
+    visual_anchor = bootstrap.get("visual_anchor", {})
+    if not visual_anchor:
+        return None
+    
+    prop = visual_anchor.get("prop", "")
+    if not prop:
+        return None
+    
+    # 检查是否出现
+    if prop not in chapter_text:
+        return GuardianViolation(
+            rule="visual_anchor_missing",
+            severity="warning",
+            description=f"视觉锚点'{prop}'未在本章出现",
+            suggestion=f"在关键场景中加入{prop}的描写"
+        )
+    
+    return None
+
+def check_commercial_hook_usage(chapter_text: str, chapter_num: int, project_dir: str) -> GuardianViolation | None:
+    """检查商业钩子使用情况"""
+    # 读取bootstrap_response.json
+    bootstrap_path = Path(project_dir) / "bootstrap_response.json"
+    if not bootstrap_path.exists():
+        return None
+    
+    try:
+        bootstrap = json.loads(bootstrap_path.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+    
+    commercial_hooks = bootstrap.get("commercial_hooks", {})
+    if not commercial_hooks:
+        return None
+    
+    # 检查结尾是否有钩子
+    # 这里需要更复杂的逻辑，暂时简化
+    return None
+```
+
+================================================================================
+## 四、测试用例
+================================================================================
+
+### 4.1 测试用例1：《最后一单》
+
+**输入**：
+```json
+{
+  "premise": "外卖员深夜送餐时意外撞见谋杀现场，被迫卷入连环杀人案调查",
+  "genre": "现代都市悬疑"
+}
+```
+
+**期望输出**：
+```json
+{
+  "core_hook": {
+    "high_contrast": "外卖员 vs 连环杀手",
+    "strong_visual": "外卖员在凶案现场送餐",
+    "commercial_hook": "发现死者是下一个订单客户",
+    "one_liner": "外卖员在凶案现场送餐，发现死者是订单客户"
+  },
+  "visual_anchor": {
+    "prop": "黄色外卖箱",
+    "first_appearance": "第1章：外卖员背着黄色外卖箱出现在凶案现场",
+    "recurring_frequency": "每3-5章出现一次",
+    "emotional_impact": "恐惧、紧张、压迫感",
+    "symbolic_meaning": "外卖员的普通身份 vs 不普通的遭遇"
+  },
+  "commercial_hooks": {
+    "primary": ["身份钩", "悬念钩"],
+    "secondary": ["复仇钩", "危机钩"],
+    "usage": {
+      "身份钩": "起势段建立，风暴段揭露",
+      "悬念钩": "每章结尾必须使用",
+      "复仇钩": "起势段建立，攀升段+风暴段释放",
+      "危机钩": "每章结尾使用"
+    }
+  },
+  "creative_collision": {
+    "genre_a": "外卖员生活",
+    "genre_b": "连环杀手",
+    "hook_type": "身份钩",
+    "collision_result": "外卖员其实是前刑警，因为三年前的车祸失去记忆",
+    "alternative_collisions": [
+      "外卖员其实是凶手的下一个目标",
+      "外卖员其实是警察的卧底"
+    ]
+  }
+}
+```
+
+### 4.2 测试用例2：《甜宠悬疑》
+
+**输入**：
+```json
+{
+  "premise": "女主以为在谈恋爱，其实是在被PUA，发现真相后反杀",
+  "genre": "甜宠悬疑"
+}
+```
+
+**期望输出**：
+```json
+{
+  "core_hook": {
+    "high_contrast": "甜宠 vs 悬疑",
+    "strong_visual": "女主在浪漫约会中发现真相",
+    "commercial_hook": "发现男友其实是PUA高手",
+    "one_liner": "女主在浪漫约会中发现男友是PUA高手"
+  },
+  "visual_anchor": {
+    "prop": "情侣戒指",
+    "first_appearance": "第1章：男友送女主情侣戒指",
+    "recurring_frequency": "每3-5章出现一次",
+    "emotional_impact": "甜蜜、怀疑、愤怒",
+    "symbolic_meaning": "爱情的甜蜜 vs 真相的残酷"
+  },
+  "commercial_hooks": {
+    "primary": ["情绪钩", "复仇钩"],
+    "secondary": ["悬念钩", "危机钩"],
+    "usage": {
+      "情绪钩": "起势段建立，风暴段释放",
+      "复仇钩": "攀升段建立，决战段释放",
+      "悬念钩": "每章结尾必须使用",
+      "危机钩": "每章结尾使用"
+    }
+  },
+  "creative_collision": {
+    "genre_a": "甜宠",
+    "genre_b": "悬疑",
+    "hook_type": "情绪钩",
+    "collision_result": "女主以为在谈恋爱，其实是在被PUA，发现真相后反杀",
+    "alternative_collisions": [
+      "女主其实是卧底警察",
+      "女主其实是复仇者"
+    ]
+  }
+}
+```
+
+================================================================================
+## 五、风险控制
+================================================================================
+
+### 5.1 风险1：创意过于天马行空
+
+**控制措施**：
+1. 蒸馏数据验证：所有创意必须在蒸馏数据中有类似案例
+2. 用户确认：Bootstrap阶段必须用户确认后才写入
+3. 渐进式：先在小范围测试，验证效果后再推广
+
+**验证方法**：
+```python
+def validate_creative_collision(data: dict, distill_data: dict) -> bool:
+    """验证创意碰撞是否符合蒸馏数据"""
+    collision_result = data.get("collision_result", "")
+    
+    # 检查是否有类似案例
+    for skeleton_type, skeleton_data in distill_data.items():
+        if collision_result in skeleton_data.get("examples", []):
+            return True
+    
+    return False
+```
+
+### 5.2 风险2：实现复杂度高
+
+**控制措施**：
+1. 分阶段实现：先实现Phase 1，验证效果后再做Phase 2/3
+2. 复用现有代码：尽量复用现有的constraint_injector和guardian框架
+3. 简化版本：先做简化版本，只支持core_hook和visual_anchor
+
+**简化版本**：
+- Phase 1：只支持core_hook和visual_anchor
+- Phase 2：添加commercial_hooks
+- Phase 3：添加creative_collision
+
+### 5.3 风险3：与现有系统冲突
+
+**控制措施**：
+1. 独立模块：高概念模式作为独立模块，不影响现有功能
+2. 可选启用：用户可以选择是否启用高概念模式
+3. 向后兼容：现有项目不受影响
+
+**实现方式**：
+```python
+# 在bootstrap_response.json中添加开关
+{
+  "high_concept_mode": {
+    "enabled": true,
+    "components": {
+      "core_hook": true,
+      "visual_anchor": true,
+      "commercial_hooks": true,
+      "creative_collision": true
+    }
+  }
+}
+```
+
+================================================================================
+## 六、预期效果
+================================================================================
+
+### 6.1 短期效果（1-2周）
+
+1. Bootstrap阶段生成的创意质量提升30%
+2. 章节结尾钩子使用率提升50%
+3. 视觉锚点出现频率提升40%
+
+### 6.2 中期效果（1-2月）
+
+1. 全剧爽点密度提升20%
+2. 观众留存率提升15%
+3. 付费转化率提升10%
+
+### 6.3 长期效果（3-6月）
+
+1. 形成高概念创意库，支持跨题材复用
+2. 建立创意碰撞算法，自动生成高概念方案
+3. 积累市场验证数据，优化创意选择策略
+
+================================================================================
+## 七、下一步行动
+================================================================================
+
+### 7.1 用户确认
+
+用户确认方案后，开始Phase 1实现。
+
+### 7.2 原型开发
+
+先开发简化版本，只支持core_hook和visual_anchor。
+
+### 7.3 测试验证
+
+在《最后一单》上测试，验证效果。
+
+### 7.4 迭代优化
+
+根据测试结果，迭代优化方案。
+
+================================================================================
+## 八、附录
+================================================================================
+
+### 8.1 参考文档
+
+1. hook-design.md — 钩子与骨架设计手册
+2. satisfaction-matrix.md — 爽点矩阵
+3. villain-design.md — 反派设计体系
+4. rhythm-curve.md — 节奏曲线设计
+5. camera-language.md — 镜头语言
+
+### 8.2 数据来源
+
+1. yt-drama-ops蒸馏数据（真实播放数据）
+2. 0xsline/short-drama（钩子类型参考）
+
+### 8.3 版本历史
+
+- v1.0 (2026-07-24): 初始版本
