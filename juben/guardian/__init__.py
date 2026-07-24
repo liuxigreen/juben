@@ -10,9 +10,12 @@ from __future__ import annotations
 
 import re
 import json
+import logging
 from collections import Counter
 from pathlib import Path
 from dataclasses import dataclass, field
+
+logger = logging.getLogger(__name__)
 
 
 @dataclass
@@ -427,13 +430,18 @@ def check_anti_dialogue(
 # 断言1.5：信息倾倒密度（新增）
 # ============================================================
 
-def check_info_dump(text: str, alias_map: CharacterAliasMap | None = None) -> GuardianViolation | None:
+def check_info_dump(text: str, alias_map: CharacterAliasMap | None = None, structure_type: str | None = None) -> GuardianViolation | None:
     """
     检测"信息倾倒"——非主角在短时间内密集输出背景/真相/设定。
 
     规则：
     - 非主角对话中，真相关键词+解释性句式的集中度超过阈值 → critical
     - 即使对话占比不超标，信息倾倒本身也该被抓
+    
+    动态阈值（按结构类型）：
+    - action_heavy / chase: ≤ 1.0（极度严苛）
+    - confrontation / suspense: ≤ 1.5（标准）
+    - investigation / reveal: ≤ 2.2（允许高密度事实与证据交代）
     """
     if alias_map is None:
         alias_map = CharacterAliasMap()
@@ -470,14 +478,27 @@ def check_info_dump(text: str, alias_map: CharacterAliasMap | None = None) -> Gu
     else:
         density = 0
 
-    if density > 1.5 and revelation_count >= 2:
+    # 动态阈值：按结构类型设置不同上限
+    INFO_DUMP_CAPS = {
+        "action_heavy": 1.0,
+        "chase": 1.0,
+        "suspense": 1.5,
+        "confrontation": 1.5,
+        "investigation": 2.2,
+        "reveal": 2.2,
+    }
+    
+    # 获取本章的信息倾倒上限
+    cap = INFO_DUMP_CAPS.get(structure_type or "", 1.5)  # 默认1.5
+
+    if density > cap and revelation_count >= 2:
         # 找出信息倾倒最严重的段落
         worst = max(non_protag, key=lambda d: sum(1 for p in explanation_patterns if p in d.text))
 
         return GuardianViolation(
             rule="info_dump_density",
             severity="critical",
-            description=f"信息倾倒密度{density:.1f}（阈值2.0），{revelation_count}段真相密集输出",
+            description=f"信息倾倒密度{density:.1f}（阈值{cap}，结构类型: {structure_type or '未知'}），{revelation_count}段真相密集输出",
             suggestion="把背景信息拆散到多章中，用动作/物品/环境来暗示，不要一次性说完",
             offending_segments=[{
                 "line_num": worst.line_num,
@@ -710,13 +731,24 @@ def check_word_frequency(
     text: str,
     blacklist: list[str] | None = None,
     threshold: int = 3,
+    entity_anchors: dict | None = None,
 ) -> GuardianViolation | None:
-    """检查高频词"""
+    """检查高频词（自动豁免entity_anchors关键词）"""
     if blacklist is None:
         blacklist = DEFAULT_WORD_BLACKLIST
 
+    # 动态构建本章的豁免词库（道具锚点词不计入频次惩罚）
+    anchor_keywords = set()
+    if entity_anchors:
+        for anchor in entity_anchors.values():
+            keywords = anchor.get("must_include_keywords", [])
+            anchor_keywords.update(keywords)
+
     hits = {}
     for word in blacklist:
+        # 跳过锚点词（锚点词允许高频出现）
+        if word in anchor_keywords:
+            continue
         count = text.count(word)
         if count >= threshold:
             hits[word] = count
@@ -842,14 +874,28 @@ def guardian_check(
 
     # 构建别名映射
     alias_map = CharacterAliasMap(characters)
+    
+    # 提前加载结构类型（用于动态阈值）
+    structure_type = None
+    if project_dir:
+        structure_history_path = Path(project_dir) / "structure_history.json"
+        if structure_history_path.exists():
+            try:
+                history = json.loads(structure_history_path.read_text(encoding="utf-8"))
+                for entry in history:
+                    if entry.get("chapter") == chapter_num:
+                        structure_type = entry.get("type")
+                        break
+            except Exception as e:
+                logger.warning(f"加载structure_history.json失败: {e}")
 
     # 1. Anti-Dialogue（带别名）
     v = check_anti_dialogue(chapter_text, alias_map, protagonist_name)
     if v:
         result.add(v)
 
-    # 1.5 信息倾倒密度（新增）
-    v = check_info_dump(chapter_text, alias_map)
+    # 1.5 信息倾倒密度（动态阈值）
+    v = check_info_dump(chapter_text, alias_map, structure_type)
     if v:
         result.add(v)
 
@@ -864,8 +910,18 @@ def guardian_check(
         if v:
             result.add(v)
 
-    # 3. 高频词熔断
-    v = check_word_frequency(chapter_text, word_blacklist)
+    # 3. 高频词熔断（自动豁免entity_anchors关键词）
+    # 从项目配置加载entity_anchors
+    entity_anchors = None
+    if project_dir:
+        anchors_path = Path(project_dir) / "entity_anchors.json"
+        if anchors_path.exists():
+            try:
+                entity_anchors = json.loads(anchors_path.read_text(encoding="utf-8"))
+            except Exception as e:
+                logger.warning(f"加载entity_anchors.json失败: {e}")
+    
+    v = check_word_frequency(chapter_text, word_blacklist, entity_anchors=entity_anchors)
     if v:
         result.add(v)
 
@@ -1026,8 +1082,8 @@ def guardian_check(
                 suggestion="这些是近期章节中泛滥的高频表达，请用独特的描写替代",
             ))
 
-    # 12. 对话比例检查（新增）
-    v = check_dialogue_ratio(chapter_text)
+    # 12. 对话比例检查（动态阈值）
+    v = check_dialogue_ratio(chapter_text, structure_type)
     if v:
         result.add(v)
 
@@ -1099,12 +1155,12 @@ from .location_tracker import LocationTracker, LocationJumpResult, LocationRecor
 # 新增：对话比例检查
 # ============================================================
 
-def check_dialogue_ratio(chapter_text: str) -> GuardianViolation | None:
-    """检查对话占比是否超标"""
+def check_dialogue_ratio(chapter_text: str, structure_type: str | None = None) -> GuardianViolation | None:
+    """检查对话占比是否超标（动态阈值）"""
     import re
     
     # 提取对话内容（引号内的文字）
-    dialogue_pattern = re.compile(r'[「"\"](.*?)[」\""]')
+    dialogue_pattern = re.compile(r'[「\""](.*?)[」\""]')
     dialogues = dialogue_pattern.findall(chapter_text)
     
     # 计算对话字数
@@ -1116,11 +1172,30 @@ def check_dialogue_ratio(chapter_text: str) -> GuardianViolation | None:
     
     ratio = dialogue_chars / total_chars
     
-    if ratio > 0.35:
+    # 动态阈值：按结构类型设置不同上限
+    DIALOGUE_CAPS = {
+        "action_heavy": 0.20,
+        "chase": 0.20,
+        "suspense": 0.30,
+        "investigation": 0.30,
+        "confrontation": 0.40,
+        "reveal": 0.40,
+    }
+    
+    # 获取本章的对话比例上限
+    cap = DIALOGUE_CAPS.get(structure_type or "", 0.35)  # 默认35%
+    
+    # 物证豁免：confrontation/reveal章节，35%-40%之间给予warning而非critical
+    if ratio > cap:
+        severity = "critical"
+        # confrontation/reveal章节的弹性容忍
+        if structure_type in ("confrontation", "reveal") and ratio <= 0.40:
+            severity = "warning"
+        
         return GuardianViolation(
             rule="dialogue_ratio_critical",
-            severity="critical",
-            description=f"对话占比{ratio:.0%}（超过35%），剧情靠嘴炮推进",
+            severity=severity,
+            description=f"对话占比{ratio:.0%}（超过{cap:.0%}上限，结构类型: {structure_type or '未知'}），剧情靠嘴炮推进",
             suggestion="用动作、读心、潜伏、偷听等方式替代直接对话。每2句对话后插入1段物理动作/环境变化。",
         )
     elif ratio > 0.25:

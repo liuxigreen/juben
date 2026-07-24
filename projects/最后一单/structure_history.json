@@ -72,14 +72,6 @@
     "type": "investigation"
   },
   {
-    "chapter": 11,
-    "type": "suspense"
-  },
-  {
-    "chapter": 21,
-    "type": "reveal"
-  },
-  {
     "chapter": 21,
     "type": "investigation"
   },
@@ -121,11 +113,11 @@
   },
   {
     "chapter": 31,
-    "type": "action_heavy"
+    "type": "investigation"
   },
   {
     "chapter": 32,
-    "type": "investigation"
+    "type": "confrontation"
   },
   {
     "chapter": 33,
@@ -140,11 +132,7 @@
     "type": "action_heavy"
   },
   {
-    "chapter": 31,
-    "type": "investigation"
-  },
-  {
-    "chapter": 32,
-    "type": "confrontation"
+    "chapter": 33,
+    "type": "chase"
   }
 ]
