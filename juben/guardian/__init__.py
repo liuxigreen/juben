@@ -615,15 +615,28 @@ def check_npc_behavior(
         "案卷", "监控", "截图", "证据", "报告", "手机屏幕", "屏幕",
         "翻盖手机", "信封", "名片", "卡片",
     ]
+    
+    # 物证动作关键词（主角展示物证的动作）
+    prop_action_keywords = [
+        "展示", "甩出", "拍在", "放在", "递出", "拿出", "掏出", "打开",
+        "播放", "按下", "插入", "连接", "显示", "投射", "投影",
+        "砸在", "扔在", "丢在", "摆在", "亮出", "出示",
+    ]
+    
     lines = text.split("\n")
 
     def _has_evidence_context(dialogue: DialogueLine) -> bool:
-        """检查对话所在行及上下2行是否有物证关键词"""
+        """检查对话所在行及上下2行是否有物证关键词或物证动作"""
         line_idx = dialogue.line_num - 1  # 0-indexed
         for offset in range(-2, 3):
             idx = line_idx + offset
             if 0 <= idx < len(lines):
-                if any(kw in lines[idx] for kw in evidence_keywords):
+                line_text = lines[idx]
+                # 检查物证关键词
+                if any(kw in line_text for kw in evidence_keywords):
+                    return True
+                # 检查物证动作
+                if any(kw in line_text for kw in prop_action_keywords):
                     return True
         return False
 
