@@ -137,6 +137,137 @@ class CostRoulette:
 
 
 # ============================================================
+# 钩子类型定义（基于hook-design.md）
+# ============================================================
+
+HOOK_TYPES = {
+    "悬念钩": {
+        "description": "抛出关键疑问，答案留到下一集",
+        "sub_modes": ["身份悬念", "结果悬念", "选择悬念", "来者悬念", "发现悬念"],
+    },
+    "反转钩": {
+        "description": "最后一刻颠覆观众预期",
+        "sub_modes": ["身份反转", "局势反转", "关系反转", "时间反转", "动机反转"],
+    },
+    "情绪钩": {
+        "description": "情绪推到最高点然后切断",
+        "sub_modes": ["甜蜜中断", "心碎中断", "误会引爆", "决绝中断", "重逢中断"],
+    },
+    "信息钩": {
+        "description": "透露改变全局的关键信息，只说一半",
+        "sub_modes": ["证据揭露", "秘密泄露", "记忆闪回", "文件发现", "线索串联"],
+    },
+    "危机钩": {
+        "description": "突发重大危机，主角来不及反应",
+        "sub_modes": ["突袭", "背刺", "暴露", "倒计时", "绝境"],
+    },
+}
+
+# 骨架类型与推荐钩子的对应关系
+SKELETON_HOOK_MAP = {
+    "身份落差型": {"recommended": ["反转钩", "情绪钩"], "avoid": ["信息钩"]},
+    "关系背叛补偿型": {"recommended": ["情绪钩", "悬念钩"], "avoid": ["危机钩"]},
+    "重生改命型": {"recommended": ["信息钩", "悬念钩"], "avoid": ["情绪钩"]},
+    "情绪爆点型": {"recommended": ["情绪钩", "反转钩"], "avoid": ["信息钩"]},
+    "系统开挂型": {"recommended": ["反转钩", "危机钩"], "avoid": ["情绪钩"]},
+}
+
+# ============================================================
+# 爽点类型定义（基于satisfaction-matrix.md）
+# ============================================================
+
+SATISFACTION_TYPES = {
+    "身份碾压": {
+        "description": "被看不起的人亮出真实身份，全场震惊",
+        "sub_modes": ["军衔碾压", "身份证明碾压", "电话碾压", "财富碾压", "能力碾压", "关系碾压"],
+    },
+    "打脸复仇": {
+        "description": "以彼之道还施彼身，让恶人搬起石头砸自己的脚",
+        "sub_modes": ["原话奉还", "证据反杀", "局中局", "以牙还牙", "群众审判", "实力碾压"],
+    },
+    "逆袭翻盘": {
+        "description": "从谷底绝地反弹，命运彻底逆转",
+        "sub_modes": ["绝境翻盘", "实力进阶", "逆风翻盘", "连环翻盘", "复仇翻盘"],
+    },
+    "情感爆发": {
+        "description": "压抑已久的情感突然释放，直击人心",
+        "sub_modes": ["告白爆发", "真相告白", "误会冰释", "久别重逢", "牺牲揭露", "爆发哭诉"],
+    },
+    "悬念揭秘": {
+        "description": "困扰已久的谜题终于揭晓，真相比想象更震撼",
+        "sub_modes": ["身份揭秘", "阴谋揭秘", "关系揭秘", "动机揭秘", "历史揭秘"],
+    },
+}
+
+# 不同题材的爽点侧重
+GENRE_SATISFACTION_MAP = {
+    "战神归来": {"主爽点": "身份碾压", "副爽点": "打脸复仇", "辅助爽点": "情感爆发"},
+    "霸道总裁": {"主爽点": "情感爆发", "副爽点": "身份碾压", "辅助爽点": "悬念揭秘"},
+    "甜宠": {"主爽点": "情感爆发", "副爽点": "身份碾压", "辅助爽点": "打脸复仇"},
+    "重生穿越": {"主爽点": "逆袭翻盘", "副爽点": "悬念揭秘", "辅助爽点": "打脸复仇"},
+    "家庭伦理": {"主爽点": "打脸复仇", "副爽点": "逆袭翻盘", "辅助爽点": "情感爆发"},
+    "古装宫廷": {"主爽点": "逆袭翻盘", "副爽点": "打脸复仇", "辅助爽点": "悬念揭秘"},
+    "悬疑探案": {"主爽点": "悬念揭秘", "副爽点": "逆袭翻盘", "辅助爽点": "情感爆发"},
+    "末日重生": {"主爽点": "逆袭翻盘", "副爽点": "身份碾压", "辅助爽点": "悬念揭秘"},
+    "励志逆袭": {"主爽点": "逆袭翻盘", "副爽点": "打脸复仇", "辅助爽点": "情感爆发"},
+    "萌宝": {"主爽点": "身份碾压", "副爽点": "情感爆发", "辅助爽点": "悬念揭秘"},
+}
+
+# ============================================================
+# 反派层级定义（基于villain-design.md）
+# ============================================================
+
+VILLAIN_LAYERS = {
+    "小反派": {
+        "description": "前期用来给主角'练手'的靶子，被打脸后迅速退场",
+        "stage": "起势段（前15%集数）",
+        "defeat_pattern": "被主角一次打脸后认怂",
+    },
+    "中反派": {
+        "description": "中期的主要障碍，有一定实力和资源，需要主角花费心思才能击败",
+        "stage": "攀升段（15%-45%集数）",
+        "defeat_pattern": "三段式：试探→受挫→翻盘",
+    },
+    "大反派": {
+        "description": "全剧的终极对手，实力最强、威胁最大，最后的高潮对决对象",
+        "stage": "风暴段开始显露（45%集数），决战段正面对决",
+        "defeat_pattern": "终极对决被击败",
+    },
+    "隐藏反派": {
+        "description": "隐藏在暗处的最终反转，用于制造全剧最大的惊喜",
+        "stage": "决战段（通常在击败大反派后或过程中）",
+        "defeat_pattern": "最终对决（全剧最大反转）",
+    },
+}
+
+
+def _get_stage(chapter_num: int, total_chapters: int) -> str:
+    """根据章节号判断当前阶段"""
+    ratio = chapter_num / total_chapters
+    if ratio <= 0.15:
+        return "起势段"
+    elif ratio <= 0.45:
+        return "攀升段"
+    elif ratio <= 0.80:
+        return "风暴段"
+    else:
+        return "决战段"
+
+
+def _get_satisfaction_strength(chapter_num: int, total_chapters: int) -> str:
+    """根据阶段返回爽点强度要求"""
+    ratio = chapter_num / total_chapters
+    if ratio <= 0.15:
+        return "★★☆（小爽）"
+    elif ratio <= 0.45:
+        return "★★★（中爽）"
+    elif ratio <= 0.80:
+        return "★★★★（大爽）"
+    else:
+        return "★★★★★（极爽）"
+
+
+# ============================================================
 # 四段式Beat模板
 # ============================================================
 
@@ -319,6 +450,21 @@ class ConstraintInjector:
         npc_injection = self._build_npc_behavior_injection()
         if npc_injection:
             blocks.append(npc_injection)
+
+        # 5.8 钩子类型注入（基于hook-design.md）
+        hook_injection = self._build_hook_injection(chapter_num)
+        if hook_injection:
+            blocks.append(hook_injection)
+
+        # 5.9 爽点类型注入（基于satisfaction-matrix.md）
+        satisfaction_injection = self._build_satisfaction_injection(chapter_num)
+        if satisfaction_injection:
+            blocks.append(satisfaction_injection)
+
+        # 5.10 反派层级注入（基于villain-design.md）
+        villain_injection = self._build_villain_injection(chapter_num)
+        if villain_injection:
+            blocks.append(villain_injection)
 
         # 6. 四段式beat + 物理打断锁
         beat_text = get_beat_prompt(chapter_num)
@@ -798,6 +944,304 @@ class ConstraintInjector:
 **5. 视觉铁律（违反即熔断）**：
 - ❌ 禁止纯心理描写："他心想"、"她感到绝望"、"他意识到" → 必须用动作/表情/环境外化情绪
 - ❌ 禁止概述性长句："她非常愤怒" → 用具体动作替代（"她的指甲陷进掌心，血珠渗出"）"""
+
+    # ============================================================
+    # 新增：钩子类型注入（基于hook-design.md）
+    # ============================================================
+
+    def _build_hook_injection(self, chapter_num: int) -> str:
+        """根据骨架类型选择合适的结尾钩子"""
+        # 读取项目配置
+        meta_path = self.project_dir / "story_meta.json"
+        if not meta_path.exists():
+            return ""
+
+        try:
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        except Exception as e:
+            logger.warning(f"加载story_meta.json失败: {e}")
+            return ""
+
+        # 获取骨架类型（默认为情绪爆点型）
+        skeleton_type = meta.get("narrative_skeleton", "情绪爆点型")
+        if "mixins:" in skeleton_type:
+            # 从genre推断骨架类型
+            genre = meta.get("genre", "")
+            if "悬疑" in genre or "探案" in genre or "犯罪" in genre:
+                skeleton_type = "重生改命型"  # 悬疑探案适合信息钩、悬念钩
+            elif "总裁" in genre or "豪门" in genre:
+                skeleton_type = "身份落差型"
+            elif "甜宠" in genre:
+                skeleton_type = "情绪爆点型"
+            elif "都市" in genre or "现代" in genre:
+                # 现代都市题材，根据premise判断
+                premise = meta.get("premise", "")
+                if "谋杀" in premise or "犯罪" in premise or "调查" in premise:
+                    skeleton_type = "重生改命型"  # 犯罪悬疑类
+                else:
+                    skeleton_type = "情绪爆点型"  # 默认
+            else:
+                skeleton_type = "情绪爆点型"  # 默认
+
+        # 获取推荐钩子
+        hook_config = SKELETON_HOOK_MAP.get(skeleton_type, {})
+        recommended = hook_config.get("recommended", ["悬念钩", "反转钩"])
+        avoid = hook_config.get("avoid", [])
+
+        # 根据章节号轮转钩子类型
+        hook_idx = chapter_num % len(recommended)
+        chosen_hook = recommended[hook_idx]
+        hook_info = HOOK_TYPES.get(chosen_hook, {})
+
+        # 选择子模式
+        sub_modes = hook_info.get("sub_modes", ["悬念"])
+        sub_idx = chapter_num % len(sub_modes)
+        chosen_sub = sub_modes[sub_idx]
+
+        # 构建钩子历史（避免连续使用同类型）
+        history_path = self.project_dir / "hook_history.json"
+        hook_history = []
+        if history_path.exists():
+            try:
+                hook_history = json.loads(history_path.read_text(encoding="utf-8"))
+            except Exception as e:
+                logger.warning(f"加载hook_history.json失败: {e}")
+
+        # 检查最近使用的钩子类型
+        recent_hooks = [h["hook"] for h in hook_history[-2:]]
+        if chosen_hook in recent_hooks:
+            # 换一种钩子
+            for alt_hook in recommended:
+                if alt_hook not in recent_hooks:
+                    chosen_hook = alt_hook
+                    hook_info = HOOK_TYPES.get(chosen_hook, {})
+                    sub_modes = hook_info.get("sub_modes", ["悬念"])
+                    chosen_sub = sub_modes[chapter_num % len(sub_modes)]
+                    break
+
+        # 保存钩子历史
+        hook_history.append({
+            "chapter": chapter_num,
+            "hook": chosen_hook,
+            "sub_mode": chosen_sub,
+        })
+        history_path.write_text(
+            json.dumps(hook_history, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+
+        return f"""### 🎣 结尾钩子类型（强制）
+
+**本章结尾必须使用：{chosen_hook}（{chosen_sub}）**
+
+钩子说明：{hook_info.get('description', '')}
+
+**设计要点**：
+- 结尾必须让读者产生"必须看下一集"的冲动
+- 钩子必须与本章剧情自然衔接，不能生硬插入
+- 禁止使用：{'、'.join(avoid)}（与本骨架类型不匹配）
+
+**正确示范**：
+- 悬念钩：关键信息只透露一半，答案留到下一集
+- 反转钩：最后一刻颠覆观众预期
+- 情绪钩：情绪推到最高点然后切断
+- 信息钩：透露改变全局的关键信息，只说一半
+- 危机钩：突发重大危机，主角来不及反应"""
+
+    # ============================================================
+    # 新增：爽点类型注入（基于satisfaction-matrix.md）
+    # ============================================================
+
+    def _build_satisfaction_injection(self, chapter_num: int) -> str:
+        """每章指定爽点类型和强度"""
+        # 读取项目配置
+        meta_path = self.project_dir / "story_meta.json"
+        if not meta_path.exists():
+            return ""
+
+        try:
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        except Exception as e:
+            logger.warning(f"加载story_meta.json失败: {e}")
+            return ""
+
+        # 获取题材和总章数
+        genre = meta.get("genre", "现代都市")
+        total_chapters = meta.get("target_chapters", 50)
+
+        # 判断当前阶段
+        stage = _get_stage(chapter_num, total_chapters)
+        strength = _get_satisfaction_strength(chapter_num, total_chapters)
+
+        # 获取题材对应的爽点侧重
+        satisfaction_config = GENRE_SATISFACTION_MAP.get(genre, {})
+        if not satisfaction_config:
+            # 根据genre关键词匹配
+            for genre_key, config in GENRE_SATISFACTION_MAP.items():
+                if genre_key in genre:
+                    satisfaction_config = config
+                    break
+            if not satisfaction_config:
+                satisfaction_config = {"主爽点": "悬念揭秘", "副爽点": "逆袭翻盘", "辅助爽点": "情感爆发"}
+
+        # 根据阶段选择爽点类型
+        if stage == "起势段":
+            # 起势段用小爽点，主爽点为主
+            chosen_type = satisfaction_config.get("主爽点", "悬念揭秘")
+        elif stage == "攀升段":
+            # 攀升段用中爽点，主副交替
+            if chapter_num % 2 == 0:
+                chosen_type = satisfaction_config.get("主爽点", "悬念揭秘")
+            else:
+                chosen_type = satisfaction_config.get("副爽点", "逆袭翻盘")
+        elif stage == "风暴段":
+            # 风暴段用大爽点，三种类型轮转
+            types = [
+                satisfaction_config.get("主爽点", "悬念揭秘"),
+                satisfaction_config.get("副爽点", "逆袭翻盘"),
+                satisfaction_config.get("辅助爽点", "情感爆发"),
+            ]
+            chosen_type = types[chapter_num % 3]
+        else:
+            # 决战段用极爽点，终极类型
+            chosen_type = satisfaction_config.get("主爽点", "悬念揭秘")
+
+        # 获取爽点信息
+        satisfaction_info = SATISFACTION_TYPES.get(chosen_type, {})
+        sub_modes = satisfaction_info.get("sub_modes", [""])
+        chosen_sub = sub_modes[chapter_num % len(sub_modes)]
+
+        # 构建爽点历史
+        history_path = self.project_dir / "satisfaction_history.json"
+        satisfaction_history = []
+        if history_path.exists():
+            try:
+                satisfaction_history = json.loads(history_path.read_text(encoding="utf-8"))
+            except Exception as e:
+                logger.warning(f"加载satisfaction_history.json失败: {e}")
+
+        # 避免连续使用同类型爽点
+        recent_types = [h["type"] for h in satisfaction_history[-2:]]
+        if chosen_type in recent_types:
+            for alt_type in [satisfaction_config.get("主爽点"), satisfaction_config.get("副爽点"), satisfaction_config.get("辅助爽点")]:
+                if alt_type and alt_type not in recent_types:
+                    chosen_type = alt_type
+                    satisfaction_info = SATISFACTION_TYPES.get(chosen_type, {})
+                    sub_modes = satisfaction_info.get("sub_modes", [""])
+                    chosen_sub = sub_modes[chapter_num % len(sub_modes)]
+                    break
+
+        # 保存爽点历史
+        satisfaction_history.append({
+            "chapter": chapter_num,
+            "type": chosen_type,
+            "sub_mode": chosen_sub,
+            "stage": stage,
+        })
+        history_path.write_text(
+            json.dumps(satisfaction_history, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+
+        return f"""### 🔥 爽点设计（强制）
+
+**本章爽点类型：{chosen_type}（{chosen_sub}）**
+**强度要求：{strength}**
+**当前阶段：{stage}**
+
+爽点说明：{satisfaction_info.get('description', '')}
+
+**设计要点**：
+- 爽点前必须有压抑/蓄力（至少1-2个场次的铺垫）
+- 释放要彻底，观众积累的情绪要被完全释放
+- 必须有旁观者反应（震惊/赞叹/恐惧）放大爽感
+- 反派下场要交代（跪地/被开除/痛哭）
+- 禁止无铺垫的突然"爽"（廉价感）
+
+**正确示范**：
+- 身份碾压：前期受辱→身份揭露→全场震惊→施辱者跪地
+- 打脸复仇：被欺负→隐忍→证据反杀→恶人当众出丑
+- 逆袭翻盘：跌入谷底→绝望→转机→一步步翻盘→站上巅峰
+- 情感爆发：误会/压抑→积累到极限→爆发/告白→泪目
+- 悬念揭秘：谜题建立→线索积累→真相逼近→终极揭秘"""
+
+    # ============================================================
+    # 新增：反派层级注入（基于villain-design.md）
+    # ============================================================
+
+    def _build_villain_injection(self, chapter_num: int) -> str:
+        """根据当前阶段指定反派行为"""
+        # 读取项目配置
+        meta_path = self.project_dir / "story_meta.json"
+        if not meta_path.exists():
+            return ""
+
+        try:
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        except Exception as e:
+            logger.warning(f"加载story_meta.json失败: {e}")
+            return ""
+
+        # 获取题材和总章数
+        genre = meta.get("genre", "现代都市")
+        total_chapters = meta.get("target_chapters", 50)
+
+        # 判断当前阶段
+        stage = _get_stage(chapter_num, total_chapters)
+
+        # 根据阶段确定反派层级
+        if stage == "起势段":
+            villain_layer = "小反派"
+        elif stage == "攀升段":
+            villain_layer = "中反派"
+        elif stage == "风暴段":
+            villain_layer = "大反派"
+        else:
+            villain_layer = "隐藏反派"
+
+        # 获取反派层级信息
+        layer_info = VILLAIN_LAYERS.get(villain_layer, {})
+
+        # 读取characters.json获取反派信息
+        chars_path = self.project_dir / "characters.json"
+        villain_info = ""
+        if chars_path.exists():
+            try:
+                chars_data = json.loads(chars_path.read_text(encoding="utf-8"))
+                chars = chars_data.get("characters", [])
+                villains = [c for c in chars if c.get("role") in ["antagonist", "villain"]]
+                if villains:
+                    villain_names = [v.get("name", "未知") for v in villains[:2]]
+                    villain_info = f"本剧反派角色：{'、'.join(villain_names)}"
+            except Exception as e:
+                logger.warning(f"加载characters.json失败: {e}")
+
+        return f"""### 😈 反派行为指导（强制）
+
+**本章反派层级：{villain_layer}**
+**当前阶段：{stage}**
+{villain_info}
+
+**反派定位**：{layer_info.get('description', '')}
+**出场时段**：{layer_info.get('stage', '')}
+**击败模式**：{layer_info.get('defeat_pattern', '')}
+
+**反派塑造三原则**：
+1. **可恨原则**：观众必须对反派产生强烈的负面情绪（愤怒/厌恶/恐惧）
+2. **可信原则**：反派的行为要有合理动机，不能为恶而恶
+3. **递进原则**：反派层层升级，每一层都比上一层更难对付
+
+**本章反派行为要求**：
+- 反派必须给主角制造实质性障碍（不能只是口头威胁）
+- 反派的行动必须与其动机一致（不能无理由作恶）
+- 反派必须有"赢"的时刻（制造低谷，让观众紧张）
+- 反派被打脸/失败时，惨状要写足（跪地/痛哭/众叛亲离）
+
+**反派台词风格**：
+- 小反派：嚣张直白（"你也配？""一个穷鬼也敢……"）
+- 中反派：阴险含蓄（"你以为赢了？天真。"）
+- 大反派：从容自信（"你很有意思，可惜……"）
+- 隐藏反派：揭露前温柔可靠，揭露后180度反转"""
 
 
 def build_constrained_scribe_prompt(

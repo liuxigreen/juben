@@ -142,5 +142,17 @@
   {
     "chapter": 34,
     "type": "reveal"
+  },
+  {
+    "chapter": 35,
+    "type": "suspense"
+  },
+  {
+    "chapter": 35,
+    "type": "action_heavy"
+  },
+  {
+    "chapter": 35,
+    "type": "chase"
   }
 ]
