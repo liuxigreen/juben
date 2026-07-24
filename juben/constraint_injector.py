@@ -339,8 +339,6 @@ class ConstraintInjector:
 
     def _get_dynamic_blacklist(self, previous_chapters: list[str] | None = None) -> list[str]:
         """获取黑名单 — 只使用静态种子，不自动生成"""
-        if self.blacklist_path.exists():
-            return load_blacklist(self.blacklist_path)
         return SEED_BLACKLIST.copy()
 
     def _format_blacklist(self, blacklist: list[str]) -> str:
@@ -410,8 +408,8 @@ class ConstraintInjector:
         if self.structure_history_path.exists():
             try:
                 return json.loads(self.structure_history_path.read_text(encoding='utf-8'))
-            except Exception:
-                pass
+            except Exception as e:
+                logger.warning(f"加载structure_history.json失败: {e}")
         return []
 
     def _save_structure_history(self, history: list[dict]):
@@ -508,10 +506,10 @@ class ConstraintInjector:
         if self.cost_history_path.exists():
             try:
                 cost_history = json.loads(self.cost_history_path.read_text(encoding='utf-8'))
-            except Exception:
-                pass
+            except Exception as e:
+                logger.warning(f"加载cost_history.json失败: {e}")
 
-        roulette = CostRoulette(cooldown=3)
+        roulette = CostRoulette(cooldown=5)
         roulette.history = [{"chapter": h["chapter"], "cost": h["cost"]} for h in cost_history]
         chosen_cost = roulette.pick(chapter_num, DEFAULT_COST_POOL)
 
@@ -544,8 +542,8 @@ class ConstraintInjector:
         if self.cost_history_path.exists():
             try:
                 cost_history = json.loads(self.cost_history_path.read_text(encoding='utf-8'))
-            except Exception:
-                pass
+            except Exception as e:
+                logger.warning(f"加载cost_history.json失败（冷却规则）: {e}")
 
         flashback_count = sum(
             1 for h in cost_history
@@ -572,31 +570,65 @@ class ConstraintInjector:
         return header + "\n" + "\n".join(rules)
 
     def _get_recent_locations(self, current_chapter: int) -> list[str]:
-        """从最近3章中提取已使用的主场景"""
+        """从最近3章中提取已使用的主场景（动态加载locations.json）"""
         chapter_dir = self.project_dir / "chapters"
         if not chapter_dir.exists():
+            return []
+
+        # 动态加载场景关键词：优先locations.json，fallback到world_rules.json
+        scene_keywords = self._load_scene_keywords()
+        if not scene_keywords:
             return []
 
         locations = []
         for ch_num in range(max(1, current_chapter - 3), current_chapter):
             ch_file = chapter_dir / f"{ch_num:03d}.md"
             if ch_file.exists():
-                text = ch_file.read_text(encoding="utf-8")
-                # 简单提取：检查前200字中出现的场景关键词
-                opening = text[:500]
-                scene_keywords = {
-                    "医院": ["医院", "病房", "护士"],
-                    "电梯": ["电梯", "轿厢"],
-                    "万达广场": ["万达", "B座"],
-                    "出租屋": ["出租屋", "卧室", "床"],
-                    "城中村": ["城中村", "巷子", "小巷"],
-                    "星巴克": ["星巴克", "咖啡"],
-                }
-                for scene, keywords in scene_keywords.items():
-                    if any(kw in opening for kw in keywords):
-                        locations.append(scene)
-                        break
+                try:
+                    text = ch_file.read_text(encoding="utf-8")
+                    # 全章扫描（不只是前500字）
+                    for scene, keywords in scene_keywords.items():
+                        if any(kw in text for kw in keywords):
+                            locations.append(scene)
+                            break
+                except Exception as e:
+                    logger.warning(f"读取章节{ch_num}失败: {e}")
         return list(set(locations))
+
+    def _load_scene_keywords(self) -> dict[str, list[str]]:
+        """加载场景关键词字典（动态）"""
+        # 优先：locations.json
+        locations_path = self.project_dir / "locations.json"
+        if locations_path.exists():
+            try:
+                data = json.loads(locations_path.read_text(encoding="utf-8"))
+                if isinstance(data, dict) and data:
+                    return data
+            except Exception as e:
+                logger.warning(f"加载locations.json失败: {e}")
+
+        # Fallback：从world_rules.json的setting推断
+        world_path = self.project_dir / "world_rules.json"
+        if world_path.exists():
+            try:
+                world = json.loads(world_path.read_text(encoding="utf-8"))
+                setting = world.get("setting", {})
+                # 从setting中提取地点关键词
+                keywords = {}
+                for key, value in setting.items():
+                    if isinstance(value, str) and len(value) >= 2:
+                        keywords[value] = [value]
+                if keywords:
+                    return keywords
+            except Exception as e:
+                logger.warning(f"从world_rules.json推断场景失败: {e}")
+
+        # 最后fallback：通用默认值
+        return {
+            "医院": ["医院", "病房", "护士", "住院部"],
+            "家": ["家里", "卧室", "出租屋", "回到家里"],
+            "街道": ["街道", "马路", "人行道", "十字路口"],
+        }
 
     def _count_sms_clues(self, current_chapter: int) -> int:
         """统计本章已通过短信/彩信获取的关键线索数"""
@@ -619,7 +651,8 @@ class ConstraintInjector:
 
         try:
             anchors = json.loads(self.entity_anchors_path.read_text(encoding="utf-8"))
-        except Exception:
+        except Exception as e:
+            logger.warning(f"加载entity_anchors.json失败: {e}")
             return ""
 
         if not anchors:
@@ -660,7 +693,8 @@ class ConstraintInjector:
 
         try:
             data = json.loads(chars_file.read_text(encoding="utf-8"))
-        except Exception:
+        except Exception as e:
+            logger.warning(f"加载characters.json失败: {e}")
             return ""
 
         chars = data.get("characters", [])
