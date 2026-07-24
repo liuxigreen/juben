@@ -772,7 +772,10 @@ def check_word_frequency(
     total_hits = sum(hits.values())
     hit_words = ", ".join(f"'{w}'×{c}" for w, c in hits.items())
 
-    if len(hits) >= 3 or total_hits >= 8:
+    # 升级条件：单个短语出现5次以上也升级为critical
+    max_single_count = max(hits.values()) if hits else 0
+    
+    if len(hits) >= 3 or total_hits >= 8 or max_single_count >= 5:
         return GuardianViolation(
             rule="word_frequency_critical",
             severity="critical",
@@ -996,6 +999,11 @@ def guardian_check(
                 description=f"检测到禁用短语: {', '.join(found)}",
                 suggestion="替换为具体的、独特的描写，禁止复用高频表达",
             ))
+
+    # 6.5 段落重复检测（防复读机死循环）
+    repetition_violation = check_paragraph_repetition(chapter_text)
+    if repetition_violation:
+        result.add(repetition_violation)
 
     # 7. 设定漂移检测（warning：auto-generated关键词不可靠，仅作提醒）
     if concept_mapping:
@@ -1291,5 +1299,92 @@ def check_physical_interruption_lock(chapter_text: str) -> GuardianViolation | N
             description=f"结尾缺少物理打断元素: '{last_text[:50]}...'",
             suggestion="在结尾加入突发物理异象或感官冲击。",
         )
+    
+    return None
+
+
+def check_paragraph_repetition(chapter_text: str) -> GuardianViolation | None:
+    """
+    检测段落级重复（防复读机死循环）
+    
+    检测逻辑：
+    1. 将文本按段落分割
+    2. 检测连续段落的相似度
+    3. 检测同一句话出现次数
+    4. 检测同一动作模式循环
+    """
+    import re
+    
+    # 按空行分割段落
+    paragraphs = [p.strip() for p in chapter_text.split('\n\n') if p.strip()]
+    
+    if len(paragraphs) < 3:
+        return None
+    
+    # 检测1：连续段落相似度（使用简化的n-gram比较）
+    def get_ngrams(text: str, n: int = 3) -> set:
+        """提取n-gram"""
+        words = re.findall(r'[\u4e00-\u9fff]', text)
+        return set(''.join(words[i:i+n]) for i in range(len(words)-n+1))
+    
+    def similarity(text1: str, text2: str) -> float:
+        """计算两个文本的相似度"""
+        ngrams1 = get_ngrams(text1)
+        ngrams2 = get_ngrams(text2)
+        if not ngrams1 or not ngrams2:
+            return 0.0
+        intersection = len(ngrams1 & ngrams2)
+        union = len(ngrams1 | ngrams2)
+        return intersection / union if union > 0 else 0.0
+    
+    # 检测连续3个段落的相似度
+    for i in range(len(paragraphs) - 2):
+        sim1 = similarity(paragraphs[i], paragraphs[i+1])
+        sim2 = similarity(paragraphs[i+1], paragraphs[i+2])
+        
+        if sim1 > 0.7 and sim2 > 0.7:
+            return GuardianViolation(
+                rule="paragraph_repetition_loop",
+                severity="critical",
+                description=f"检测到段落重复循环（位置{i}-{i+2}）：连续3段相似度>{70}%",
+                suggestion="每200字必须有新信息推进，禁止原地打转。改变动作/对话/场景，推进剧情。",
+            )
+    
+    # 检测2：同一句话出现次数
+    sentences = re.split(r'[。！？]', chapter_text)
+    sentence_counts = {}
+    for sent in sentences:
+        sent = sent.strip()
+        if len(sent) > 10:  # 只检测较长的句子
+            sentence_counts[sent] = sentence_counts.get(sent, 0) + 1
+    
+    for sent, count in sentence_counts.items():
+        if count >= 3:
+            return GuardianViolation(
+                rule="sentence_repetition",
+                severity="critical",
+                description=f"检测到句子重复{count}次：'{sent[:30]}...'",
+                suggestion="禁止复读同一句话。用不同的表达方式传达相同信息，或推进到新的剧情。",
+            )
+    
+    # 检测3：高频短语重复（同一章内）
+    phrase_patterns = [
+        r'脸色变得苍白',
+        r'手在发抖',
+        r'他的手在发抖',
+        r'王建国看着',
+        r'陈默看着',
+        r'你——',
+    ]
+    
+    for pattern in phrase_patterns:
+        count = len(re.findall(pattern, chapter_text))
+        if count >= 4:
+            return GuardianViolation(
+                rule="phrase_repetition_critical",
+                severity="critical",
+                description=f"检测到高频短语重复：'{pattern}'出现{count}次",
+                suggestion="替换为多样化的描写。同一个情绪/动作用不同的物理细节表达。",
+            )
     
     return None

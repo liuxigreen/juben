@@ -33,5 +33,10 @@
     "chapter": 35,
     "hook": "信息钩",
     "sub_mode": "证据揭露"
+  },
+  {
+    "chapter": 34,
+    "hook": "信息钩",
+    "sub_mode": "线索串联"
   }
 ]
