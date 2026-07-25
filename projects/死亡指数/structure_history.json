@@ -54,5 +54,13 @@
   {
     "chapter": 11,
     "type": "suspense"
+  },
+  {
+    "chapter": 12,
+    "type": "investigation"
+  },
+  {
+    "chapter": 12,
+    "type": "confrontation"
   }
 ]

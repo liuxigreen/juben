@@ -82,5 +82,17 @@
     "type": "逆袭翻盘",
     "sub_mode": "实力进阶",
     "stage": "攀升段"
+  },
+  {
+    "chapter": 12,
+    "type": "情感爆发",
+    "sub_mode": "告白爆发",
+    "stage": "攀升段"
+  },
+  {
+    "chapter": 12,
+    "type": "悬念揭秘",
+    "sub_mode": "关系揭秘",
+    "stage": "攀升段"
   }
 ]
