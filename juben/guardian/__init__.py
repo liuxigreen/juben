@@ -1247,6 +1247,7 @@ def check_dialogue_ratio(chapter_text: str, structure_type: str | None = None) -
     ratio = dialogue_chars / total_chars
     
     # 基础阈值：按结构类型设置不同上限
+    # Guardian熔断红线（与constraint_injector.GUARDIAN_DIALOGUE_CAPS保持一致）
     DIALOGUE_CAPS = {
         "action_heavy": 0.25,
         "chase": 0.28,

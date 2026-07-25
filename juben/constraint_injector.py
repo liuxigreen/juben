@@ -44,39 +44,47 @@ STRUCTURE_TYPES = [
 ]
 
 # 每种结构的具体要求
+# ============================================================
+# STRUCTURE_REQUIREMENTS — 从 DIALOGUE_CAPS 派生
+# Prompt目标值 = Guardian熔断红线 - 3%软缓冲带
+# ============================================================
+
+# Guardian熔断红线（单一事实来源）
+GUARDIAN_DIALOGUE_CAPS = {'action_heavy': 0.25, 'chase': 0.28, 'suspense': 0.3, 'investigation': 0.35, 'confrontation': 0.4, 'reveal': 0.4}
+
 STRUCTURE_REQUIREMENTS = {
     "action_heavy": {
-        "dialogue_max": 0.25,
+        "dialogue_max": 0.22,
         "action_min": 0.45,
-        "description": "动作主导：物理动作≥45%，对话≤25%",
+        "description": "动作主导：物理动作≥45%，对话≤22%",
         "forbidden": ["纯对话推进", "概述性动作"],
     },
     "investigation": {
-        "dialogue_max": 0.35,
+        "dialogue_max": 0.31999999999999995,
         "action_min": 0.30,
         "description": "调查发现：主角主动探索、发现线索、拼凑信息",
         "required_elements": ["发现", "观察", "推理"],
     },
     "confrontation": {
-        "dialogue_max": 0.40,
+        "dialogue_max": 0.37,
         "action_min": 0.25,
         "description": "对峙冲突：角色间直接冲突，情绪张力拉满",
         "required_elements": ["威胁", "反击", "对视"],
     },
     "reveal": {
-        "dialogue_max": 0.40,
+        "dialogue_max": 0.37,
         "action_min": 0.30,
         "description": "真相揭示：信息炸弹，颠覆认知",
         "required_elements": ["真相", "意外", "反转"],
     },
     "chase": {
-        "dialogue_max": 0.28,
+        "dialogue_max": 0.25,
         "action_min": 0.45,
         "description": "追逐紧迫：高速节奏，物理动作密集",
         "required_elements": ["跑", "追", "躲", "逃"],
     },
     "suspense": {
-        "dialogue_max": 0.30,
+        "dialogue_max": 0.27,
         "action_min": 0.35,
         "description": "悬疑压迫：环境恐惧，感官放大",
         "required_elements": ["异响", "阴影", "不安"],
