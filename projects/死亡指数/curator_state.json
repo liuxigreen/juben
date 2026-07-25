@@ -186,9 +186,25 @@
       "realm_change": "",
       "foreshadow_planted": [],
       "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 15,
+      "body_costs": [
+        "耳鸣"
+      ],
+      "setting_elements_used": [
+        "城中村",
+        "外卖",
+        "城中村居民以"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
     }
   ],
   "accumulated_costs": [
+    "耳鸣",
     "耳鸣",
     "耳鸣"
   ],
