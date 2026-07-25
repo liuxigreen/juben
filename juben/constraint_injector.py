@@ -47,37 +47,37 @@ STRUCTURE_TYPES = [
 STRUCTURE_REQUIREMENTS = {
     "action_heavy": {
         "dialogue_max": 0.25,
-        "action_min": 0.50,
-        "description": "动作主导：物理动作≥50%，对话≤25%",
+        "action_min": 0.45,
+        "description": "动作主导：物理动作≥45%，对话≤25%",
         "forbidden": ["纯对话推进", "概述性动作"],
     },
     "investigation": {
-        "dialogue_max": 0.30,
-        "action_min": 0.35,
+        "dialogue_max": 0.35,
+        "action_min": 0.30,
         "description": "调查发现：主角主动探索、发现线索、拼凑信息",
         "required_elements": ["发现", "观察", "推理"],
     },
     "confrontation": {
-        "dialogue_max": 0.35,
-        "action_min": 0.30,
+        "dialogue_max": 0.40,
+        "action_min": 0.25,
         "description": "对峙冲突：角色间直接冲突，情绪张力拉满",
         "required_elements": ["威胁", "反击", "对视"],
     },
     "reveal": {
-        "dialogue_max": 0.30,
-        "action_min": 0.35,
+        "dialogue_max": 0.40,
+        "action_min": 0.30,
         "description": "真相揭示：信息炸弹，颠覆认知",
         "required_elements": ["真相", "意外", "反转"],
     },
     "chase": {
-        "dialogue_max": 0.15,
-        "action_min": 0.60,
+        "dialogue_max": 0.28,
+        "action_min": 0.45,
         "description": "追逐紧迫：高速节奏，物理动作密集",
         "required_elements": ["跑", "追", "躲", "逃"],
     },
     "suspense": {
-        "dialogue_max": 0.25,
-        "action_min": 0.40,
+        "dialogue_max": 0.30,
+        "action_min": 0.35,
         "description": "悬疑压迫：环境恐惧，感官放大",
         "required_elements": ["异响", "阴影", "不安"],
     },
@@ -589,13 +589,26 @@ class ConstraintInjector:
     # ============================================================
 
     def _build_dialogue_ratio_requirement(self, chapter_num: int) -> str:
-        """强制对话比例限制"""
-        return """### 📊 对话比例硬指标（违反即熔断）
+        """强制对话比例限制（动态，按结构类型）"""
+        # 读取本章结构类型
+        history = self._load_structure_history()
+        structure_type = None
+        for h in history:
+            if h.get("chapter") == chapter_num:
+                structure_type = h.get("type")
+                break
+        if not structure_type and history:
+            structure_type = history[-1].get("type")
+
+        req = STRUCTURE_REQUIREMENTS.get(structure_type, {})
+        max_pct = int(req.get("dialogue_max", 0.30) * 100)
+
+        return f"""### 📊 对话比例硬指标（违反即熔断）
 
 **规则**：
-- 对话总字数 ≤ 全文字数的 25%
-- 每出现一句对话（<15字），必须跟随至少 2 段关于"环境观察"或"手部/足部物理微动作"的描写
-- 禁止连续3句以上纯对话（必须插入动作/环境/感官）
+- 对话总字数 ≤ 全文字数的 {max_pct}%（本章结构: {structure_type or '默认'}）
+- 每出现一句对话（<15字），必须跟随至少 1 段关于"环境观察"或"手部/足部物理微动作"的描写
+- 禁止连续2句以上纯对话（必须插入动作/环境/感官）
 
 **为什么**：
 对话过多 = 结构单调 = Guardian扣分

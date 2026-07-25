@@ -1277,6 +1277,10 @@ def check_physical_interruption_lock(chapter_text: str) -> GuardianViolation | N
         "突然", "忽然", "猛地", "骤然",
         "还没", "正要", "即将", "准备",
         "渗出", "传来", "响起", "炸开",
+        "震动", "颤抖", "摇晃", "崩塌",
+        "断裂", "裂开", "碎了", "掉下来",
+        "亮了", "灭了", "黑了", "闪了",
+        "停了", "断了", "消失了", "出现了",
         "——", "……", "...",
     ]
     
@@ -1285,6 +1289,10 @@ def check_physical_interruption_lock(chapter_text: str) -> GuardianViolation | N
         "血", "冰冷", "滚烫", "血腥",
         "嗡", "咔", "砰", "咚", "轰",
         "黑", "红", "白", "暗",
+        "冰凉", "发麻", "刺痛", "发紧",
+        "闷响", "巨响", "吱呀", "嘎吱",
+        "气味", "味道", "铁锈", "霉味",
+        "发抖", "颤抖", "攥紧", "松开",
     ]
     
     # 弱结尾模式（禁止）
@@ -1292,6 +1300,7 @@ def check_physical_interruption_lock(chapter_text: str) -> GuardianViolation | N
         "他不知道", "她不知道", "他想", "她想",
         "他沉默了", "她沉默了", "他看着", "她看着",
         "走进雨里", "走进黑暗", "走进夜色",
+        "一切归于平静", "新世界开始了", "她闭上眼睛",
     ]
     
     has_interruption = any(indicator in last_text for indicator in interruption_indicators)
