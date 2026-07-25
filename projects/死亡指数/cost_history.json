@@ -166,5 +166,25 @@
   {
     "chapter": 30,
     "cost": "耳鸣"
+  },
+  {
+    "chapter": 31,
+    "cost": "口中血腥味"
+  },
+  {
+    "chapter": 32,
+    "cost": "鼻血"
+  },
+  {
+    "chapter": 33,
+    "cost": "指甲断裂"
+  },
+  {
+    "chapter": 34,
+    "cost": "心跳紊乱"
+  },
+  {
+    "chapter": 35,
+    "cost": "视线模糊"
   }
 ]

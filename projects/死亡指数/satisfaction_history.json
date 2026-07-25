@@ -250,5 +250,35 @@
     "type": "情感爆发",
     "sub_mode": "告白爆发",
     "stage": "风暴段"
+  },
+  {
+    "chapter": 31,
+    "type": "悬念揭秘",
+    "sub_mode": "阴谋揭秘",
+    "stage": "风暴段"
+  },
+  {
+    "chapter": 32,
+    "type": "逆袭翻盘",
+    "sub_mode": "逆风翻盘",
+    "stage": "风暴段"
+  },
+  {
+    "chapter": 33,
+    "type": "情感爆发",
+    "sub_mode": "久别重逢",
+    "stage": "风暴段"
+  },
+  {
+    "chapter": 34,
+    "type": "悬念揭秘",
+    "sub_mode": "历史揭秘",
+    "stage": "风暴段"
+  },
+  {
+    "chapter": 35,
+    "type": "逆袭翻盘",
+    "sub_mode": "绝境翻盘",
+    "stage": "风暴段"
   }
 ]
