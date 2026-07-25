@@ -42,5 +42,9 @@
   {
     "chapter": 8,
     "type": "investigation"
+  },
+  {
+    "chapter": 9,
+    "type": "chase"
   }
 ]
