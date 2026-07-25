@@ -110,5 +110,9 @@
   {
     "chapter": 19,
     "type": "action_heavy"
+  },
+  {
+    "chapter": 20,
+    "type": "investigation"
   }
 ]
