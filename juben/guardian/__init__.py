@@ -1213,6 +1213,9 @@ def _detect_dialogue_content_type(chapter_text: str) -> list[str]:
         "杀了", "死了", "代价", "自首", "报仇", "恨", "原谅",
         "你骗", "你知道", "我告诉你", "真相", "秘密",
         "我老伴", "我妻子", "我丈夫", "我孩子",
+        "遗体", "遗骨", "墙壁里", "封在", "活埋",
+        "你跑了", "你没救", "你选择", "赎罪",
+        "选择了", "不改", "改了会死",
     ]
     if sum(1 for w in confrontation_indicators if w in chapter_text) >= 3:
         types.append("confrontation")
@@ -1221,7 +1224,7 @@ def _detect_dialogue_content_type(chapter_text: str) -> list[str]:
     reveal_indicators = [
         "遗书", "日记", "报告", "名单", "证据", "档案",
         "十五年前", "坍塌事故", "偷工减料", "封在墙壁",
-        "死亡指数", "结构性死亡概率",
+        "死亡指数", "结构性死亡概率", "事故调查", "竣工",
     ]
     if sum(1 for w in reveal_indicators if w in chapter_text) >= 3:
         types.append("reveal")

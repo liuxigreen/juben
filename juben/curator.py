@@ -110,34 +110,59 @@ class CuratorState:
             found, _ = check_setting_elements(text, [], concept_mapping=concept_mapping)
             ch_state.setting_elements_used = found
 
-        # 3. 追踪代价使用
+        # 3. 追踪代价使用（通用代价池，适用于任何题材）
         cost_pool = [
-            "鼻血", "耳鸣", "视线模糊", "手脚发麻", "记忆闪回",
-            "灵气失控", "指甲断裂", "吐血", "太阳穴剧痛", "肌肉痉挛",
-            "呼吸困难", "心跳紊乱", "短暂失聪", "视野发红", "口中血腥味",
+            # 疼痛/身体损伤
+            "疼痛", "发麻", "抽搐", "痉挛", "发抖", "颤抖",
+            "吐血", "咳血", "鼻血", "伤口", "骨折", "扭伤",
+            # 感官异常
+            "耳鸣", "视线模糊", "视野发红", "短暂失聪", "失明",
+            "嗅觉", "味觉", "触觉", "幻觉", "幻听",
+            # 心理/精神
+            "心跳紊乱", "呼吸困难", "胸闷", "窒息", "头晕", "恶心",
+            "恐惧", "焦虑", "绝望", "崩溃", "失忆", "记忆闪回",
+            # 衰老/超自然代价
+            "老年斑", "白发", "皱纹", "衰老", "寿命", "代价",
+            # 通用
+            "出血", "昏迷", "休克", "中毒", "感染",
         ]
         for cost in cost_pool:
             if cost in text:
                 ch_state.body_costs.append(cost)
                 self.accumulated_costs.append(cost)
 
-        # 4. 追踪境界变化
+        # 4. 追踪阶段/状态变化（从项目world_rules.json加载，兼容任何题材）
+        # 默认的通用阶段关键词（悬疑/现代/现实题材）
         realm_keywords = {
-            "筑基": "筑基", "金丹": "金丹", "元婴": "元婴", "化神": "化神",
-            "渡劫": "渡劫", "大乘": "大乘", "飞升": "飞升",
+            "第一幕": "入局", "第二幕": "升级", "第三幕": "高潮", "第四幕": "收尾",
+            "转折": "转折", "危机": "危机", "觉醒": "觉醒", "突破": "突破",
         }
+        # 尝试从项目world_rules加载自定义阶段
+        try:
+            world_rules_path = self.project_dir / "world_rules.json"
+            if world_rules_path.exists():
+                import json as _json
+                world_rules = _json.loads(world_rules_path.read_text(encoding="utf-8"))
+                custom_realms = world_rules.get("realm_keywords", {})
+                if custom_realms:
+                    realm_keywords = custom_realms
+        except Exception:
+            pass  # 使用默认值
+
         for keyword, realm in realm_keywords.items():
             if keyword in text and realm != self.current_realm:
                 ch_state.realm_change = f"{self.current_realm} → {realm}"
                 self.current_realm = realm
                 self.realm_progress[realm] = self.realm_progress.get(realm, 0) + 1
 
-        # 5. 更新health状态
+        # 5. 更新health状态（通用：代价累积越多，状态越差）
         if ch_state.body_costs:
-            # 累积代价越多，health越差
             total_costs = len(self.accumulated_costs)
-            if total_costs >= 10:
+            unique_costs = len(set(self.accumulated_costs))
+            if total_costs >= 10 or unique_costs >= 6:
                 ch_state.realm_change += " [身体接近极限]"
+            elif total_costs >= 5 or unique_costs >= 3:
+                ch_state.realm_change += " [身体负担中等]"
 
         self.chapters.append(ch_state)
         self.save()
