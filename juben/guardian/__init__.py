@@ -1204,12 +1204,37 @@ from .location_tracker import LocationTracker, LocationJumpResult, LocationRecor
 # 新增：对话比例检查
 # ============================================================
 
+def _detect_dialogue_content_type(chapter_text: str) -> list[str]:
+    """检测章节中的对话内容类型（对峙/揭露/调查等），用于动态调整对话上限"""
+    types = []
+
+    # 对峙指标：角色间直接冲突、情绪对抗
+    confrontation_indicators = [
+        "杀了", "死了", "代价", "自首", "报仇", "恨", "原谅",
+        "你骗", "你知道", "我告诉你", "真相", "秘密",
+        "我老伴", "我妻子", "我丈夫", "我孩子",
+    ]
+    if sum(1 for w in confrontation_indicators if w in chapter_text) >= 3:
+        types.append("confrontation")
+
+    # 揭露指标：信息炸弹、真相揭示
+    reveal_indicators = [
+        "遗书", "日记", "报告", "名单", "证据", "档案",
+        "十五年前", "坍塌事故", "偷工减料", "封在墙壁",
+        "死亡指数", "结构性死亡概率",
+    ]
+    if sum(1 for w in reveal_indicators if w in chapter_text) >= 3:
+        types.append("reveal")
+
+    return types
+
+
 def check_dialogue_ratio(chapter_text: str, structure_type: str | None = None) -> GuardianViolation | None:
-    """检查对话占比是否超标（动态阈值）"""
+    """检查对话占比是否超标（动态阈值，混合结构自适应）"""
     import re
     
     # 提取对话内容（引号内的文字）
-    dialogue_pattern = re.compile(r'[「\""](.*?)[」\""]')
+    dialogue_pattern = re.compile(r'[「\\\"\"](.*?)[」\\\"\"]')
     dialogues = dialogue_pattern.findall(chapter_text)
     
     # 计算对话字数
@@ -1221,7 +1246,7 @@ def check_dialogue_ratio(chapter_text: str, structure_type: str | None = None) -
     
     ratio = dialogue_chars / total_chars
     
-    # 动态阈值：按结构类型设置不同上限
+    # 基础阈值：按结构类型设置不同上限
     DIALOGUE_CAPS = {
         "action_heavy": 0.25,
         "chase": 0.28,
@@ -1231,23 +1256,35 @@ def check_dialogue_ratio(chapter_text: str, structure_type: str | None = None) -
         "reveal": 0.40,
     }
     
-    # 获取本章的对话比例上限
-    cap = DIALOGUE_CAPS.get(structure_type or "", 0.35)  # 默认35%
+    # 获取本章的基础对话比例上限
+    base_cap = DIALOGUE_CAPS.get(structure_type or "", 0.35)
+
+    # 混合结构自适应：检测章节实际内容，如果包含对峙/揭露元素则放宽上限
+    content_types = _detect_dialogue_content_type(chapter_text)
+    if content_types:
+        # 取所有匹配内容类型的上限中的最大值
+        content_caps = [DIALOGUE_CAPS.get(ct, 0.35) for ct in content_types]
+        blended_cap = max(base_cap, max(content_caps))
+        # 对混合结构给予额外5%容忍度（因为章节既有动作又有对峙）
+        cap = min(blended_cap + 0.05, 0.45)  # 绝对上限45%
+    else:
+        cap = base_cap
     
     # 物证豁免：confrontation/reveal章节，35%-40%之间给予warning而非critical
     if ratio > cap:
         severity = "critical"
-        # confrontation/reveal章节的弹性容忍
-        if structure_type in ("confrontation", "reveal") and ratio <= 0.40:
+        # confrontation/reveal或混合结构的弹性容忍
+        if (structure_type in ("confrontation", "reveal") or content_types) and ratio <= 0.45:
             severity = "warning"
         
         return GuardianViolation(
             rule="dialogue_ratio_critical",
             severity=severity,
-            description=f"对话占比{ratio:.0%}（超过{cap:.0%}上限，结构类型: {structure_type or '未知'}），剧情靠嘴炮推进",
+            description=f"对话占比{ratio:.0%}（超过{cap:.0%}上限，结构类型: {structure_type or '未知'}{'+' + '+'.join(content_types) if content_types else ''}），剧情靠嘴炮推进",
             suggestion="用动作、读心、潜伏、偷听等方式替代直接对话。每2句对话后插入1段物理动作/环境变化。",
         )
-    elif ratio > 0.30:
+    elif ratio > 0.30 and not content_types:
+        # 只有纯动作/追逐章节才在30%时给warning
         return GuardianViolation(
             rule="dialogue_ratio_warning",
             severity="warning",
