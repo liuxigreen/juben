@@ -574,6 +574,16 @@ class ConstraintInjector:
             encoding='utf-8'
         )
 
+    def _get_structure_type(self, chapter_num: int) -> str:
+        """获取本章的结构类型（用于CRITICAL_CHECKLIST）"""
+        history = self._load_structure_history()
+        # 查找是否已有本章的结构类型
+        for entry in history:
+            if entry.get("chapter") == chapter_num:
+                return entry.get("type", "confrontation")
+        # 如果没有，选择一个新的
+        return self._pick_structure_type(chapter_num, history)
+
     # ============================================================
     # 新增：对话比例硬指标
     # ============================================================
@@ -625,12 +635,57 @@ class ConstraintInjector:
         return "\n".join(lines)
 
     # ============================================================
+    # 新增：结尾介质轮换检测
+    # ============================================================
+
+    # 结尾介质关键词分类（视觉/听觉/触觉/嗅觉）
+    ENDING_MEDIA_KEYWORDS = {
+        "视觉黑屏": ["黑了", "黑暗", "视野发黑", "左眼黑", "右眼黑", "眼前一黑", "看不见"],
+        "视觉数字": ["数字", "红色", "荧光", "跳动", "指数", "归零"],
+        "视觉碎裂": ["碎了", "裂开", "破碎", "崩裂", "断裂", "倒塌"],
+        "听觉闷响": ["闷响", "巨响", "轰隆", "断裂声", "爆裂声", "碎裂声"],
+        "听觉尖叫": ["尖叫", "惨叫", "嘶喊", "哀嚎"],
+        "触觉冰凉": ["冰凉", "冰冷", "发凉", "发冷"],
+        "触觉疼痛": ["疼", "痛", "刺痛", "发麻"],
+        "嗅觉血腥": ["血腥", "铁锈味", "腐臭", "霉味"],
+    }
+
+    def _get_recent_ending_media(self, chapter_num: int) -> list[str]:
+        """从上章文本提取结尾介质关键词分类，用于禁用重复"""
+        if chapter_num <= 1:
+            return []
+        
+        prev_path = self.project_dir / "chapters" / f"{chapter_num - 1:03d}.md"
+        if not prev_path.exists():
+            return []
+        
+        try:
+            text = prev_path.read_text(encoding="utf-8")
+        except Exception:
+            return []
+        
+        # 取最后300字
+        ending = text[-300:] if len(text) > 300 else text
+        
+        # 检测命中哪些介质分类
+        matched = []
+        for media_type, keywords in self.ENDING_MEDIA_KEYWORDS.items():
+            if any(kw in ending for kw in keywords):
+                matched.append(media_type)
+        
+        return matched
+
+    # ============================================================
     # 新增：物理打断锁（Cliffhanger强制）
     # ============================================================
 
     def _build_cliffhanger_lock(self, chapter_num: int) -> str:
-        """强制Cliffhanger使用物理打断，禁止纯问句结尾"""
-        return """### 🔒 物理打断锁（Cliffhanger强制 — 违反即熔断）
+        """强制Cliffhanger使用物理打断，禁止纯问句结尾，禁止重复上章结尾介质"""
+        
+        # 从上章文本提取结尾介质关键词
+        banned_ending_media = self._get_recent_ending_media(chapter_num)
+        
+        base = """### 🔒 物理打断锁（Cliffhanger强制 — 违反即熔断）
 
 **结尾强制范式**：
 `[主角即将完成某个动作] + [外界物理异象瞬间爆发/强行打断] + [视觉定格]`
@@ -645,13 +700,17 @@ class ConstraintInjector:
 - ✅ 突发物理异象：\"门缝里突然渗出一股粘稠的血水\"
 - ✅ 感官冲击定格：\"隔壁的电梯井里，传来一声铁链剧烈拉扯的巨响\"
 
-**正确示范**：
-```
-陈默伸手按向404室的门铃。指尖还没碰到按钮，门缝里突然渗出一股粘稠的血水，缓缓漫过了他的脚面。
-隔壁的电梯井里，传来一声铁链剧烈拉扯的巨响——
-```
-
 **核心原则**：结尾必须让读者的身体产生反应（心跳加速/屏息/寒毛竖起），不能只是让读者\"思考\"。"""
+        
+        if banned_ending_media:
+            ban_list = "、".join(banned_ending_media)
+            base += f"""
+
+**⛔ 本章结尾介质禁忌（上章已用，禁止重复）**：
+上章结尾使用了【{ban_list}】，本章结尾【绝对禁止】再用同类介质！
+必须换一种完全不同的打断方式（如：上章用视觉→本章用听觉/触觉/嗅觉）。"""
+        
+        return base
 
     # ============================================================
     # 原有：代价轮盘
@@ -1412,6 +1471,46 @@ class ConstraintInjector:
 - 隐藏反派：揭露前温柔可靠，揭露后180度反转"""
 
 
+def _build_critical_checklist(injector: ConstraintInjector, chapter_num: int) -> str:
+    """构建CRITICAL_CHECKLIST，放在prompt最底部，利用Transformer的终因效应"""
+    
+    # 获取结构类型
+    structure_type = injector._get_structure_type(chapter_num)
+    
+    # 根据结构类型确定对话上限
+    dialogue_limits = {
+        "action_heavy": 15,
+        "chase": 12,
+        "suspense": 18,
+        "investigation": 20,
+        "confrontation": 22,
+        "reveal": 20,
+    }
+    max_dialogues = dialogue_limits.get(structure_type, 20)
+    
+    # 获取结尾介质禁忌
+    banned_media = injector._get_recent_ending_media(chapter_num)
+    
+    checklist = f"""<CRITICAL_CHECKLIST>
+写入前终极检查（写完每一段请对照）：
+1. 检查对话：本章总对白绝对不能超过 {max_dialogues} 句！每句对话后必须跟物理动作/环境描写。
+2. 检查结尾：最后50字必须被【突发物理异象】打断，绝不能写平淡收尾！"""
+    
+    if banned_media:
+        ban_list = "、".join(banned_media)
+        checklist += f"""
+3. 检查结尾介质：上章用了【{ban_list}】，本章结尾【绝对禁止】再用同类介质！必须换一种感官通道（如视觉→听觉/触觉）。
+4. 检查重复：同一句话不能出现2次以上，同一动作不能重复3次以上。"""
+    else:
+        checklist += """
+3. 检查重复：同一句话不能出现2次以上，同一动作不能重复3次以上。"""
+    
+    checklist += """
+</CRITICAL_CHECKLIST>"""
+    
+    return checklist
+
+
 def build_constrained_scribe_prompt(
     chapter_num: int,
     project_dir: str | Path,
@@ -1431,4 +1530,12 @@ def build_constrained_scribe_prompt(
         parts = base_prompt.split(marker)
         return parts[0] + injection_block + "\n\n" + marker + parts[1]
     else:
-        return base_prompt + "\n\n" + injection_block
+        # 没有"## 开始写作"marker，在"## 输出"之前插入约束+CRITICAL_CHECKLIST
+        output_marker = "## 输出"
+        if output_marker in base_prompt:
+            # 构建CRITICAL_CHECKLIST
+            checklist = _build_critical_checklist(injector, chapter_num)
+            parts = base_prompt.split(output_marker)
+            return parts[0] + injection_block + "\n\n" + checklist + "\n\n" + output_marker + parts[1]
+        else:
+            return base_prompt + "\n\n" + injection_block
