@@ -28,5 +28,30 @@
     "chapter": 6,
     "hook": "情绪钩",
     "sub_mode": "心碎中断"
+  },
+  {
+    "chapter": 6,
+    "hook": "情绪钩",
+    "sub_mode": "心碎中断"
+  },
+  {
+    "chapter": 7,
+    "hook": "反转钩",
+    "sub_mode": "关系反转"
+  },
+  {
+    "chapter": 8,
+    "hook": "情绪钩",
+    "sub_mode": "决绝中断"
+  },
+  {
+    "chapter": 8,
+    "hook": "情绪钩",
+    "sub_mode": "决绝中断"
+  },
+  {
+    "chapter": 8,
+    "hook": "反转钩",
+    "sub_mode": "时间反转"
   }
 ]

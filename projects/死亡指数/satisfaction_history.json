@@ -34,5 +34,35 @@
     "type": "情感爆发",
     "sub_mode": "告白爆发",
     "stage": "起势段"
+  },
+  {
+    "chapter": 6,
+    "type": "悬念揭秘",
+    "sub_mode": "阴谋揭秘",
+    "stage": "起势段"
+  },
+  {
+    "chapter": 7,
+    "type": "逆袭翻盘",
+    "sub_mode": "逆风翻盘",
+    "stage": "起势段"
+  },
+  {
+    "chapter": 8,
+    "type": "情感爆发",
+    "sub_mode": "误会冰释",
+    "stage": "攀升段"
+  },
+  {
+    "chapter": 8,
+    "type": "悬念揭秘",
+    "sub_mode": "动机揭秘",
+    "stage": "攀升段"
+  },
+  {
+    "chapter": 8,
+    "type": "逆袭翻盘",
+    "sub_mode": "连环翻盘",
+    "stage": "攀升段"
   }
 ]

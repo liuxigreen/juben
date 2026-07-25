@@ -22,5 +22,25 @@
   {
     "chapter": 6,
     "type": "reveal"
+  },
+  {
+    "chapter": 6,
+    "type": "confrontation"
+  },
+  {
+    "chapter": 7,
+    "type": "action_heavy"
+  },
+  {
+    "chapter": 8,
+    "type": "reveal"
+  },
+  {
+    "chapter": 8,
+    "type": "confrontation"
+  },
+  {
+    "chapter": 8,
+    "type": "investigation"
   }
 ]

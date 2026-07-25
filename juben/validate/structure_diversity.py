@@ -119,7 +119,7 @@ def check_structure_diversity(
         adjusted_batch_threshold = 0.7  # 放宽批量检测
     else:
         adjusted_threshold = similarity_threshold
-        adjusted_batch_threshold = 0.6
+        adjusted_batch_threshold = 0.8
     
     # 与上一章比较
     if previous_text:
