@@ -62,5 +62,9 @@
   {
     "chapter": 12,
     "type": "confrontation"
+  },
+  {
+    "chapter": 12,
+    "type": "reveal"
   }
 ]
