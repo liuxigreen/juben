@@ -537,8 +537,10 @@ class ConstraintInjector:
         else:
             # 确定本章结构类型
             structure_type = self._pick_structure_type(chapter_num, history)
-            # 保存到历史
+            # 保存到历史（去重）
+            history = [h for h in history if h.get("chapter") != chapter_num]
             history.append({"chapter": chapter_num, "type": structure_type})
+            history.sort(key=lambda h: h.get("chapter", 0))
             self._save_structure_history(history)
 
         # 获取结构要求

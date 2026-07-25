@@ -350,13 +350,21 @@ def _extract_keywords_from_text(text: str) -> list[str]:
                   "可以", "通过", "进行", "使用", "需要", "已经", "正在",
                   "the", "and", "for", "that", "this", "with", "from", "are",
                   "can", "use", "has", "have", "been", "being"}
+    # 过滤抽象/通用词（这些词在任何文本中都可能出现，不适合做设定检测）
+    abstract_words = {
+        "概率", "规则", "结构", "系统", "数据", "信息", "状态", "结果",
+        "分析", "检测", "处理", "控制", "管理", "运行", "变化", "影响",
+        "情况", "问题", "原因", "方式", "方法", "过程", "条件", "范围",
+        "水平", "程度", "数量", "质量", "时间", "地点", "人员", "部门",
+        "类型", "模式", "标准", "目标", "计划", "方案", "措施", "手段",
+    }
     
     # 去重，保留前5个
     seen = set()
     result = []
     for w in keywords:
         w_lower = w.lower()
-        if w_lower not in stop_words and w not in seen:
+        if w_lower not in stop_words and w not in abstract_words and w not in seen:
             seen.add(w)
             result.append(w)
         if len(result) >= 5:

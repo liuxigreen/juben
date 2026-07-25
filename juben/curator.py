@@ -111,6 +111,9 @@ class CuratorState:
             ch_state.setting_elements_used = found
 
         # 3. 追踪代价使用（通用代价池，适用于任何题材）
+        _PAST_CONTEXT = ["回忆", "想起", "记得", "当时", "那时候", "当年",
+                         "三年前", "五年前", "十年前", "十五年前", "八年前",
+                         "上次", "以前", "过去", "曾经", "提到", "说起"]
         cost_pool = [
             # 疼痛/身体损伤
             "疼痛", "发麻", "抽搐", "痉挛", "发抖", "颤抖",
@@ -127,9 +130,19 @@ class CuratorState:
             "出血", "昏迷", "休克", "中毒", "感染",
         ]
         for cost in cost_pool:
+            # 检查代价是否在当前发生（非回忆/提及）
             if cost in text:
-                ch_state.body_costs.append(cost)
-                self.accumulated_costs.append(cost)
+                import re as _re
+                is_past = False
+                for m in _re.finditer(_re.escape(cost), text):
+                    start = max(0, m.start() - 10)
+                    prefix = text[start:m.start()]
+                    if any(kw in prefix for kw in _PAST_CONTEXT):
+                        is_past = True
+                        break
+                if not is_past:
+                    ch_state.body_costs.append(cost)
+                    self.accumulated_costs.append(cost)
 
         # 4. 追踪阶段/状态变化（从项目world_rules.json加载，兼容任何题材）
         # 默认的通用阶段关键词（悬疑/现代/现实题材）
@@ -164,7 +177,16 @@ class CuratorState:
             elif total_costs >= 5 or unique_costs >= 3:
                 ch_state.realm_change += " [身体负担中等]"
 
-        self.chapters.append(ch_state)
+        # 去重：如果已有同chapter_num的记录，替换而非追加
+        existing_idx = None
+        for i, ch in enumerate(self.chapters):
+            if ch.chapter_num == chapter_num:
+                existing_idx = i
+                break
+        if existing_idx is not None:
+            self.chapters[existing_idx] = ch_state
+        else:
+            self.chapters.append(ch_state)
         self.save()
 
     def get_cost_history(self, lookback: int = 3) -> list[str]:

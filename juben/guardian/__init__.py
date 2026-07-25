@@ -875,6 +875,22 @@ def check_hook_density(chapter_text: str, chapter_num: int) -> GuardianViolation
 from juben.validate.structure_diversity import check_structure_diversity, get_banned_phrases
 from juben.constraints import check_setting_elements, DEFAULT_COST_POOL
 
+# 代价检测辅助：过滤"回忆/提及"场景
+_PAST_CONTEXT_KEYWORDS = [
+    "回忆", "想起", "记得", "当时", "那时候", "当年",
+    "三年前", "五年前", "十年前", "十五年前", "八年前",
+    "上次", "以前", "过去", "曾经", "早就不", "已经不",
+    "提到", "说起", "谈起", "聊起", "想到",
+]
+
+def _is_past_mention(text: str, cost: str) -> bool:
+    """检查代价词是否出现在回忆/提及上下文中（前10字有过去时态标记）"""
+    for m in re.finditer(re.escape(cost), text):
+        start = max(0, m.start() - 10)
+        prefix = text[start:m.start()]
+        if any(kw in prefix for kw in _PAST_CONTEXT_KEYWORDS):
+            return True
+    return False
 
 def guardian_check(
     chapter_text: str,
@@ -1021,14 +1037,14 @@ def guardian_check(
         if len(found_elems) == 0:
             result.add(GuardianViolation(
                 rule="setting_drift",
-                severity="warning",
+                severity="info",
                 description=f"设定漂移：本章未命中任何概念映射组。未命中组: {', '.join(missing_groups[:5])}",
                 suggestion="考虑在正文中自然融入至少1个核心设定元素",
             ))
         elif len(missing_groups) > len(concept_mapping) * 0.7:
             result.add(GuardianViolation(
                 rule="setting_drift_weak",
-                severity="warning",
+                severity="info",
                 description=f"设定元素覆盖不足：命中{len(found_elems)}个，未命中{len(missing_groups)}组",
                 suggestion="建议增加更多设定元素的自然出现",
             ))
@@ -1058,7 +1074,9 @@ def guardian_check(
     if cost_history:
         # 检测本章文本中是否包含最近5章用过的代价
         recent_costs = cost_history[-5:]  # 最近5章
-        repeated = [c for c in recent_costs if c in chapter_text]
+        # 过滤掉"回忆/提及"场景 — 只算当前发生的代价
+        repeated = [c for c in recent_costs
+                     if c in chapter_text and not _is_past_mention(chapter_text, c)]
         if repeated:
             result.add(GuardianViolation(
                 rule="cost_repetition",
