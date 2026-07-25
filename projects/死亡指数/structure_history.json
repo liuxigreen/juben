@@ -46,5 +46,9 @@
   {
     "chapter": 9,
     "type": "chase"
+  },
+  {
+    "chapter": 10,
+    "type": "reveal"
   }
 ]
