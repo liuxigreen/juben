@@ -106,5 +106,9 @@
   {
     "chapter": 18,
     "type": "chase"
+  },
+  {
+    "chapter": 19,
+    "type": "action_heavy"
   }
 ]
