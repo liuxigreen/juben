@@ -110,5 +110,9 @@
   {
     "chapter": 28,
     "type": "investigation"
+  },
+  {
+    "chapter": 29,
+    "type": "reveal"
   }
 ]
