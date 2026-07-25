@@ -98,5 +98,9 @@
   {
     "chapter": 20,
     "type": "investigation"
+  },
+  {
+    "chapter": 17,
+    "type": "reveal"
   }
 ]
