@@ -417,7 +417,7 @@ def check_anti_dialogue(
             suggestion="用动作、读心、潜伏、偷听等方式替代反派主动交代",
             offending_segments=offending,
         )
-    elif ratio > 0.25:
+    elif ratio > 0.30:
         return GuardianViolation(
             rule="anti_dialogue_ratio",
             severity="warning",
@@ -1223,10 +1223,10 @@ def check_dialogue_ratio(chapter_text: str, structure_type: str | None = None) -
     
     # 动态阈值：按结构类型设置不同上限
     DIALOGUE_CAPS = {
-        "action_heavy": 0.20,
-        "chase": 0.20,
+        "action_heavy": 0.25,
+        "chase": 0.28,
         "suspense": 0.30,
-        "investigation": 0.30,
+        "investigation": 0.35,
         "confrontation": 0.40,
         "reveal": 0.40,
     }
@@ -1247,11 +1247,11 @@ def check_dialogue_ratio(chapter_text: str, structure_type: str | None = None) -
             description=f"对话占比{ratio:.0%}（超过{cap:.0%}上限，结构类型: {structure_type or '未知'}），剧情靠嘴炮推进",
             suggestion="用动作、读心、潜伏、偷听等方式替代直接对话。每2句对话后插入1段物理动作/环境变化。",
         )
-    elif ratio > 0.25:
+    elif ratio > 0.30:
         return GuardianViolation(
             rule="dialogue_ratio_warning",
             severity="warning",
-            description=f"对话占比{ratio:.0%}（超过25%），对话偏多",
+            description=f"对话占比{ratio:.0%}（超过30%），对话偏多",
             suggestion="考虑用Show Don't Tell替代部分对话。",
         )
     

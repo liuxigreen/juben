@@ -114,5 +114,9 @@
   {
     "chapter": 20,
     "type": "investigation"
+  },
+  {
+    "chapter": 21,
+    "type": "chase"
   }
 ]
