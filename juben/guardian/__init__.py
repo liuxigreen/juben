@@ -968,7 +968,6 @@ def guardian_check(
         meta_path = Path(project_dir) / "story_meta.json"
         if meta_path.exists():
             try:
-                import json
                 meta = json.loads(meta_path.read_text(encoding="utf-8"))
                 total_chapters = meta.get("target_chapters", 50)
             except Exception:
@@ -1419,7 +1418,6 @@ def check_high_concept_degradation(chapter_text: str, project_dir: Path) -> Guar
         return None
     
     try:
-        import json
         meta = json.loads(meta_path.read_text(encoding="utf-8"))
     except Exception:
         return None

@@ -91,7 +91,7 @@ def check_structure_diversity(
     current_text: str,
     previous_text: str | None = None,
     previous_fingerprints: list[list[str]] | None = None,
-    similarity_threshold: float = 0.7,
+    similarity_threshold: float = 0.82,
     event_fingerprints: dict[str, list[str]] | None = None,
     chapter_num: int = 0,
     total_chapters: int = 50,
