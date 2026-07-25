@@ -525,12 +525,21 @@ class ConstraintInjector:
         # 读取结构历史
         history = self._load_structure_history()
 
-        # 确定本章结构类型
-        structure_type = self._pick_structure_type(chapter_num, history)
+        # 检查本章是否已有分配（复用已有分配，避免重复生成）
+        existing = None
+        for h in history:
+            if h.get("chapter") == chapter_num:
+                existing = h.get("type")
+                break
 
-        # 保存到历史
-        history.append({"chapter": chapter_num, "type": structure_type})
-        self._save_structure_history(history)
+        if existing:
+            structure_type = existing
+        else:
+            # 确定本章结构类型
+            structure_type = self._pick_structure_type(chapter_num, history)
+            # 保存到历史
+            history.append({"chapter": chapter_num, "type": structure_type})
+            self._save_structure_history(history)
 
         # 获取结构要求
         req = STRUCTURE_REQUIREMENTS.get(structure_type, {})

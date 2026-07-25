@@ -196,5 +196,23 @@
     "type": "情感爆发",
     "sub_mode": "告白爆发",
     "stage": "风暴段"
+  },
+  {
+    "chapter": 24,
+    "type": "悬念揭秘",
+    "sub_mode": "历史揭秘",
+    "stage": "风暴段"
+  },
+  {
+    "chapter": 24,
+    "type": "逆袭翻盘",
+    "sub_mode": "复仇翻盘",
+    "stage": "风暴段"
+  },
+  {
+    "chapter": 24,
+    "type": "情感爆发",
+    "sub_mode": "告白爆发",
+    "stage": "风暴段"
   }
 ]

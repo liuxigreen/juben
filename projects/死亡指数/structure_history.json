@@ -21,23 +21,11 @@
   },
   {
     "chapter": 6,
-    "type": "reveal"
-  },
-  {
-    "chapter": 6,
     "type": "confrontation"
   },
   {
     "chapter": 7,
     "type": "action_heavy"
-  },
-  {
-    "chapter": 8,
-    "type": "reveal"
-  },
-  {
-    "chapter": 8,
-    "type": "confrontation"
   },
   {
     "chapter": 8,
@@ -57,14 +45,6 @@
   },
   {
     "chapter": 12,
-    "type": "investigation"
-  },
-  {
-    "chapter": 12,
-    "type": "confrontation"
-  },
-  {
-    "chapter": 12,
     "type": "reveal"
   },
   {
@@ -81,22 +61,6 @@
   },
   {
     "chapter": 16,
-    "type": "investigation"
-  },
-  {
-    "chapter": 17,
-    "type": "reveal"
-  },
-  {
-    "chapter": 18,
-    "type": "suspense"
-  },
-  {
-    "chapter": 19,
-    "type": "action_heavy"
-  },
-  {
-    "chapter": 20,
     "type": "investigation"
   },
   {
@@ -130,5 +94,9 @@
   {
     "chapter": 24,
     "type": "confrontation"
+  },
+  {
+    "chapter": 24,
+    "type": "investigation"
   }
 ]
