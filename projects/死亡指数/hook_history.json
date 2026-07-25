@@ -83,5 +83,10 @@
     "chapter": 12,
     "hook": "反转钩",
     "sub_mode": "关系反转"
+  },
+  {
+    "chapter": 13,
+    "hook": "反转钩",
+    "sub_mode": "时间反转"
   }
 ]

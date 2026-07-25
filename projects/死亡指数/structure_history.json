@@ -66,5 +66,9 @@
   {
     "chapter": 12,
     "type": "reveal"
+  },
+  {
+    "chapter": 13,
+    "type": "chase"
   }
 ]
