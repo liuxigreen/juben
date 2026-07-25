@@ -78,5 +78,25 @@
   {
     "chapter": 15,
     "cost": "指甲断裂"
+  },
+  {
+    "chapter": 16,
+    "cost": "心跳紊乱"
+  },
+  {
+    "chapter": 17,
+    "cost": "视线模糊"
+  },
+  {
+    "chapter": 18,
+    "cost": "记忆闪回"
+  },
+  {
+    "chapter": 19,
+    "cost": "视野发红"
+  },
+  {
+    "chapter": 20,
+    "cost": "灵气失控"
   }
 ]

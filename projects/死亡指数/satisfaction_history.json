@@ -118,5 +118,35 @@
     "type": "逆袭翻盘",
     "sub_mode": "绝境翻盘",
     "stage": "攀升段"
+  },
+  {
+    "chapter": 16,
+    "type": "情感爆发",
+    "sub_mode": "牺牲揭露",
+    "stage": "攀升段"
+  },
+  {
+    "chapter": 17,
+    "type": "悬念揭秘",
+    "sub_mode": "关系揭秘",
+    "stage": "攀升段"
+  },
+  {
+    "chapter": 18,
+    "type": "逆袭翻盘",
+    "sub_mode": "连环翻盘",
+    "stage": "攀升段"
+  },
+  {
+    "chapter": 19,
+    "type": "情感爆发",
+    "sub_mode": "真相告白",
+    "stage": "攀升段"
+  },
+  {
+    "chapter": 20,
+    "type": "悬念揭秘",
+    "sub_mode": "身份揭秘",
+    "stage": "攀升段"
   }
 ]
