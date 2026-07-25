@@ -262,12 +262,24 @@
       "realm_change": "",
       "foreshadow_planted": [],
       "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 18,
+      "body_costs": [
+        "心跳紊乱"
+      ],
+      "setting_elements_used": [],
+      "new_banned_phrases": [],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
     }
   ],
   "accumulated_costs": [
     "耳鸣",
     "耳鸣",
-    "耳鸣"
+    "耳鸣",
+    "心跳紊乱"
   ],
   "accumulated_banned": [],
   "current_realm": "",
