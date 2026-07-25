@@ -373,6 +373,21 @@
       "realm_change": " [身体接近极限]",
       "foreshadow_planted": [],
       "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 28,
+      "body_costs": [
+        "老年斑"
+      ],
+      "setting_elements_used": [
+        "城中村",
+        "外卖",
+        "城中村居民以"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": " [身体接近极限]",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
     }
   ],
   "accumulated_costs": [
@@ -422,7 +437,8 @@
     "伤口",
     "老年斑",
     "皱纹",
-    "代价"
+    "代价",
+    "老年斑"
   ],
   "accumulated_banned": [],
   "current_realm": "",
