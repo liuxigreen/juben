@@ -675,6 +675,79 @@
       "realm_change": " [身体接近极限]",
       "foreshadow_planted": [],
       "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 25,
+      "body_costs": [
+        "耳鸣",
+        "心跳紊乱",
+        "呼吸困难",
+        "老年斑",
+        "代价"
+      ],
+      "setting_elements_used": [
+        "城中村",
+        "外卖",
+        "城中村居民以"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": " [身体接近极限]",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 25,
+      "body_costs": [
+        "耳鸣",
+        "心跳紊乱",
+        "呼吸困难",
+        "老年斑",
+        "代价"
+      ],
+      "setting_elements_used": [
+        "城中村",
+        "外卖",
+        "城中村居民以"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": " [身体接近极限]",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 25,
+      "body_costs": [
+        "耳鸣",
+        "心跳紊乱",
+        "呼吸困难",
+        "老年斑",
+        "代价"
+      ],
+      "setting_elements_used": [
+        "城中村",
+        "外卖",
+        "城中村居民以"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": " [身体接近极限]",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 25,
+      "body_costs": [
+        "老年斑",
+        "代价"
+      ],
+      "setting_elements_used": [
+        "城中村",
+        "外卖",
+        "城中村居民以"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": " [身体接近极限]",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
     }
   ],
   "accumulated_costs": [
@@ -686,6 +759,23 @@
     "心跳紊乱",
     "颤抖",
     "衰老",
+    "代价",
+    "耳鸣",
+    "心跳紊乱",
+    "呼吸困难",
+    "老年斑",
+    "代价",
+    "耳鸣",
+    "心跳紊乱",
+    "呼吸困难",
+    "老年斑",
+    "代价",
+    "耳鸣",
+    "心跳紊乱",
+    "呼吸困难",
+    "老年斑",
+    "代价",
+    "老年斑",
     "代价"
   ],
   "accumulated_banned": [],
