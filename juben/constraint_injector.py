@@ -758,6 +758,22 @@ class ConstraintInjector:
 
         roulette = CostRoulette(cooldown=5)
         roulette.history = [{"chapter": h["chapter"], "cost": h["cost"]} for h in cost_history]
+
+        # 同步curator_state的实际代价记录（解决prompt/curator不同步问题）
+        curator_path = self.project_dir / "curator_state.json"
+        if curator_path.exists():
+            try:
+                curator = json.loads(curator_path.read_text(encoding='utf-8'))
+                existing_chapters = {h["chapter"] for h in roulette.history}
+                for ch in curator.get("chapters", []):
+                    ch_num = ch.get("chapter_num", 0)
+                    for cost in ch.get("body_costs", []):
+                        # 只添加curator有但cost_history没有的记录
+                        if not any(h["chapter"] == ch_num and h["cost"] == cost for h in roulette.history):
+                            roulette.history.append({"chapter": ch_num, "cost": cost})
+            except Exception as e:
+                logger.warning(f"同步curator_state代价失败: {e}")
+
         chosen_cost = roulette.pick(chapter_num, DEFAULT_COST_POOL)
 
         cost_history.append({"chapter": chapter_num, "cost": chosen_cost})
