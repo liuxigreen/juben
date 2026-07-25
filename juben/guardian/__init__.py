@@ -155,6 +155,7 @@ class DialogueLine:
     speaker: str | None = None  # 说话者（通过上下文推断）
     is_protagonist: bool = False
     is_revelation: bool = False  # 是否是交代真相
+    is_evidence: bool = False  # 是否是物证内容（短信/屏幕/文件等）
     confidence: str = "high"  # 置信度：high/medium/low
 
 
@@ -175,6 +176,38 @@ def _extract_dialogues_with_context(text: str, alias_map: CharacterAliasMap) -> 
     # 说话动词列表
     SPEECH_VERBS = r'说|道|问|答|喊|叫|嚷|吼|怒|笑|冷笑|苦笑|微笑|叹|叹道|低声道|沉声道|淡淡地说|轻声道|厉声道|高声道|尖声|喃喃|呵斥|质问|追问|反问|回应|嘟囔|嘀咕|插嘴|反驳|解释|补充|强调|低声|厉声|大声|小声'
     
+    # 物证上下文关键词（短信/屏幕/文件/录音等）
+    EVIDENCE_KEYWORDS = [
+        "短信", "彩信", "微信", "消息", "信息",
+        "手机屏幕", "屏幕显示", "屏幕亮起", "屏幕弹出",
+        "录音", "播放", "音频", "视频",
+        "文件", "照片", "截图", "图片",
+        "案卷", "卷宗", "档案", "报告",
+        "笔记本", "日记", "信件", "信封",
+        "U盘", "硬盘", "存储卡",
+    ]
+    # 物证动作关键词（展示/播放/打开等）
+    EVIDENCE_ACTIONS = [
+        "展示", "甩出", "拍在", "放在", "递出", "拿出", "掏出", "打开",
+        "播放", "按下", "插入", "连接", "显示", "投射", "投影",
+        "砸在", "扔在", "丢在", "摆在", "亮出", "出示",
+        "翻出", "调出", "点开", "划开",
+    ]
+    
+    def _is_evidence_context(line_idx: int) -> bool:
+        """检查当前行及上下2行是否有物证关键词"""
+        for offset in range(-2, 3):
+            idx = line_idx + offset
+            if 0 <= idx < len(lines):
+                line_text = lines[idx]
+                # 检查物证关键词
+                if any(kw in line_text for kw in EVIDENCE_KEYWORDS):
+                    return True
+                # 检查物证动作
+                if any(kw in line_text for kw in EVIDENCE_ACTIONS):
+                    return True
+        return False
+    
     # 交替发言状态机
     last_speaker: str | None = None
     last_speaker_role: str | None = None  # "protagonist" / "npc"
@@ -185,6 +218,9 @@ def _extract_dialogues_with_context(text: str, alias_map: CharacterAliasMap) -> 
         matches = list(dialogue_pattern.finditer(line))
         if not matches:
             continue
+        
+        # 检查当前行是否是物证上下文
+        is_evidence_line = _is_evidence_context(i)
         
         for match in matches:
             d_text = match.group(1)
@@ -288,6 +324,7 @@ def _extract_dialogues_with_context(text: str, alias_map: CharacterAliasMap) -> 
                 speaker=speaker,
                 is_protagonist=is_protag,
                 is_revelation=_is_revelation_dialogue(d_text),
+                is_evidence=is_evidence_line,
                 confidence=confidence,
             ))
     
@@ -447,7 +484,8 @@ def check_info_dump(text: str, alias_map: CharacterAliasMap | None = None, struc
         alias_map = CharacterAliasMap()
 
     dialogues = _extract_dialogues_with_context(text, alias_map)
-    non_protag = [d for d in dialogues if not d.is_protagonist]
+    # 过滤掉物证内容（短信/屏幕/文件等），这些不算NPC主动说话
+    non_protag = [d for d in dialogues if not d.is_protagonist and not d.is_evidence]
 
     if len(non_protag) < 2:
         return None
@@ -529,7 +567,8 @@ def check_npc_behavior(
         alias_map = CharacterAliasMap(characters)
 
     dialogues = _extract_dialogues_with_context(text, alias_map)
-    non_protag = [d for d in dialogues if not d.is_protagonist]
+    # 过滤掉物证内容（短信/屏幕/文件等），这些不算NPC主动说话
+    non_protag = [d for d in dialogues if not d.is_protagonist and not d.is_evidence]
 
     if len(non_protag) < 2:
         return None
@@ -568,7 +607,7 @@ def check_npc_behavior(
         )
 
     for d in dialogues:
-        if not d.is_protagonist:
+        if not d.is_protagonist and not d.is_evidence:
             # 检查与前一句NPC对话之间是否有叙述文字
             if prev_line >= 0 and d.line_num > prev_line:
                 # 检查prev_line和d.line_num之间的行是否有叙述文字
@@ -609,39 +648,9 @@ def check_npc_behavior(
         )
 
     # 检测2：NPC主动交代秘密密度
-    # 豁免：如果NPC的揭露对话周围有物证关键词（录音/文件/照片/视频/短信/案卷），算"物证触发"不算"嘴炮"
-    evidence_keywords = [
-        "录音", "文件", "照片", "视频", "U盘", "笔记本", "短信", "彩信",
-        "案卷", "监控", "截图", "证据", "报告", "手机屏幕", "屏幕",
-        "翻盖手机", "信封", "名片", "卡片",
-    ]
-    
-    # 物证动作关键词（主角展示物证的动作）
-    prop_action_keywords = [
-        "展示", "甩出", "拍在", "放在", "递出", "拿出", "掏出", "打开",
-        "播放", "按下", "插入", "连接", "显示", "投射", "投影",
-        "砸在", "扔在", "丢在", "摆在", "亮出", "出示",
-    ]
-    
-    lines = text.split("\n")
-
-    def _has_evidence_context(dialogue: DialogueLine) -> bool:
-        """检查对话所在行及上下2行是否有物证关键词或物证动作"""
-        line_idx = dialogue.line_num - 1  # 0-indexed
-        for offset in range(-2, 3):
-            idx = line_idx + offset
-            if 0 <= idx < len(lines):
-                line_text = lines[idx]
-                # 检查物证关键词
-                if any(kw in line_text for kw in evidence_keywords):
-                    return True
-                # 检查物证动作
-                if any(kw in line_text for kw in prop_action_keywords):
-                    return True
-        return False
-
-    # 只统计没有物证上下文的NPC揭露对话
-    active_reveals = [d for d in non_protag if d.is_revelation and not _has_evidence_context(d)]
+    # 使用DialogueLine.is_evidence标记豁免物证内容（短信/屏幕/文件等）
+    # 只统计非物证的NPC揭露对话
+    active_reveals = [d for d in non_protag if d.is_revelation]
     reveal_count = len(active_reveals)
     if reveal_count >= 2:
         return GuardianViolation(
