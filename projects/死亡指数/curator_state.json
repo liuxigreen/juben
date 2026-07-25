@@ -437,6 +437,21 @@
       "realm_change": " [身体接近极限]",
       "foreshadow_planted": [],
       "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 32,
+      "body_costs": [
+        "发抖",
+        "耳鸣",
+        "代价"
+      ],
+      "setting_elements_used": [
+        "外卖"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": " [身体接近极限]",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
     }
   ],
   "accumulated_costs": [
@@ -511,7 +526,25 @@
     "发抖",
     "耳鸣",
     "发抖",
-    "耳鸣"
+    "耳鸣",
+    "发抖",
+    "耳鸣",
+    "代价",
+    "发抖",
+    "耳鸣",
+    "代价",
+    "发抖",
+    "耳鸣",
+    "代价",
+    "发抖",
+    "耳鸣",
+    "代价",
+    "发抖",
+    "耳鸣",
+    "代价",
+    "发抖",
+    "耳鸣",
+    "代价"
   ],
   "accumulated_banned": [],
   "current_realm": "",
