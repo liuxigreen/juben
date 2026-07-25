@@ -442,9 +442,42 @@
       "realm_change": "",
       "foreshadow_planted": [],
       "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 11,
+      "body_costs": [
+        "视线模糊"
+      ],
+      "setting_elements_used": [
+        "城中村",
+        "外卖",
+        "城中村居民以"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 11,
+      "body_costs": [
+        "耳鸣"
+      ],
+      "setting_elements_used": [
+        "城中村",
+        "外卖",
+        "城中村居民以"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
     }
   ],
-  "accumulated_costs": [],
+  "accumulated_costs": [
+    "视线模糊",
+    "耳鸣"
+  ],
   "accumulated_banned": [],
   "current_realm": "",
   "realm_progress": {}

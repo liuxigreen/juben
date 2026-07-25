@@ -63,5 +63,10 @@
     "chapter": 10,
     "hook": "情绪钩",
     "sub_mode": "甜蜜中断"
+  },
+  {
+    "chapter": 11,
+    "hook": "反转钩",
+    "sub_mode": "局势反转"
   }
 ]
