@@ -527,6 +527,40 @@
       "realm_change": " [身体接近极限]",
       "foreshadow_planted": [],
       "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 38,
+      "body_costs": [
+        "老年斑",
+        "衰老",
+        "寿命"
+      ],
+      "setting_elements_used": [
+        "城中村",
+        "城中村居民以"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": " [身体接近极限]",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 39,
+      "body_costs": [
+        "发麻",
+        "痉挛",
+        "头晕",
+        "老年斑"
+      ],
+      "setting_elements_used": [
+        "城中村",
+        "APP",
+        "城中村居民以"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": " [身体接近极限]",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
     }
   ],
   "accumulated_costs": [
@@ -659,6 +693,25 @@
     "发抖",
     "老年斑",
     "老年斑",
+    "老年斑",
+    "老年斑",
+    "衰老",
+    "寿命",
+    "老年斑",
+    "衰老",
+    "寿命",
+    "发麻",
+    "痉挛",
+    "鼻血",
+    "头晕",
+    "老年斑",
+    "发麻",
+    "痉挛",
+    "头晕",
+    "老年斑",
+    "发麻",
+    "痉挛",
+    "头晕",
     "老年斑"
   ],
   "accumulated_banned": [],
