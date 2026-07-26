@@ -509,6 +509,11 @@ class ConstraintInjector:
         if entity_contract_injection:
             blocks.insert(0, entity_contract_injection)
 
+        # 12. 张力预算注入（节奏控制）
+        tension_injection = self._build_tension_injection(chapter_num)
+        if tension_injection:
+            blocks.insert(0, tension_injection)
+
         return "\n\n".join(blocks)
 
     def _get_dynamic_blacklist(self, previous_chapters: list[str] | None = None) -> list[str]:
@@ -1560,6 +1565,122 @@ class ConstraintInjector:
 
 **惩罚机制**：如果本章违反以上任何规则，系统将自动判定任务失败，需要重新生成。
 请严格遵守以上规则，确保人物关系与设定一致。"""
+
+    # ============================================================
+    # 新增：张力预算注入（节奏控制）
+    # ============================================================
+
+    def _build_tension_injection(self, chapter_num: int) -> str:
+        """注入张力预算和节奏类型"""
+        timeline_path = self.project_dir / "timeline.json"
+        if not timeline_path.exists():
+            return ""
+
+        try:
+            timeline = json.loads(timeline_path.read_text(encoding="utf-8"))
+        except Exception as e:
+            logger.warning(f"加载timeline.json失败: {e}")
+            return ""
+
+        # 查找本章的张力预算
+        chapters = timeline.get("chapters", [])
+        chapter_info = None
+        for ch in chapters:
+            if ch.get("chapter") == chapter_num:
+                chapter_info = ch
+                break
+
+        if not chapter_info:
+            return ""
+
+        tension = chapter_info.get("tension", 5)
+        rhythm = chapter_info.get("rhythm", "Unknown")
+        key_event = chapter_info.get("key_event", "")
+
+        # 根据节奏类型生成不同的指导
+        rhythm_guidance = self._get_rhythm_guidance(rhythm, tension)
+
+        return f"""### 📊 张力预算与节奏控制（强制）
+
+**本章张力分**：{tension}/10
+**节奏类型**：{rhythm}
+**关键事件**：{key_event}
+
+{rhythm_guidance}"""
+
+    def _get_rhythm_guidance(self, rhythm: str, tension: int) -> str:
+        """根据节奏类型生成指导"""
+        guidance_map = {
+            "Discovery": {
+                "description": "发现阶段：逐步揭示规则，建立世界观",
+                "requirements": [
+                    "必须有1-2个'发现'时刻（主角观察到新现象）",
+                    "对话占比≤30%，以主角的观察和思考为主",
+                    "节奏偏慢，允许环境描写和内心独白",
+                    "结尾必须有悬念钩子（引出下一个疑问）",
+                ],
+            },
+            "Investigation": {
+                "description": "调查阶段：追查真相，拼凑线索",
+                "requirements": [
+                    "必须有'线索发现'时刻（文件、对话、观察）",
+                    "对话占比≤35%，允许信息交换",
+                    "节奏中等，推进剧情",
+                    "结尾必须有信息炸弹或反转",
+                ],
+            },
+            "Confrontation": {
+                "description": "对峙阶段：正面冲突，情绪张力拉满",
+                "requirements": [
+                    "必须有'对峙'时刻（角色间直接冲突）",
+                    "对话占比≤40%，允许激烈交锋",
+                    "节奏快，紧张感强",
+                    "结尾必须有危机升级或悬念",
+                ],
+            },
+            "Storm_Climax": {
+                "description": "风暴高潮：最高紧张度，物理危机",
+                "requirements": [
+                    "必须有'生死危机'时刻（物理危险）",
+                    "对话占比≤25%，以动作和环境为主",
+                    "节奏极快，紧张感爆棚",
+                    "结尾必须有断崖式悬念",
+                ],
+            },
+            "Cooldown_Breathing": {
+                "description": "喘息复盘：高潮后的缓冲，情感铺垫",
+                "requirements": [
+                    "必须有'日常互动'时刻（吃饭、聊天、照顾）",
+                    "对话占比≤45%，允许情感交流",
+                    "节奏慢，允许抒情和回忆",
+                    "必须推进感情线（秦小满）",
+                    "禁止物理冲突和危机",
+                ],
+            },
+            "Resolution_Arc": {
+                "description": "落幕收网：命运归宿，价值升华",
+                "requirements": [
+                    "必须有'命运交代'时刻（角色的结局）",
+                    "对话占比≤40%，允许温情对话",
+                    "节奏慢，允许回忆和展望",
+                    "必须推进主线收束",
+                    "禁止新的冲突和危机",
+                ],
+            },
+        }
+
+        guidance = guidance_map.get(rhythm, {})
+        if not guidance:
+            return ""
+
+        requirements = "\n".join(f"- {r}" for r in guidance.get("requirements", []))
+
+        return f"""**节奏说明**：{guidance.get('description', '')}
+
+**本章要求**：
+{requirements}
+
+**惩罚机制**：如果本章违反节奏要求，系统将自动判定任务失败。"""
 
     # ============================================================
     # 新增：描写范式冷却注入（防止描写复读）

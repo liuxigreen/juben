@@ -1,3 +1,93 @@
 {
-  "events": []
+  "total_chapters": 50,
+  "tension_budget": {
+    "ch01_ch10": {
+      "range": [1, 10],
+      "rhythm_type": "Discovery",
+      "tension_range": [3, 6],
+      "description": "发现阶段：外卖员发现死亡指数，逐渐了解规则"
+    },
+    "ch11_ch25": {
+      "range": [11, 25],
+      "rhythm_type": "Investigation",
+      "tension_range": [5, 7],
+      "description": "调查阶段：追查真相，发现周鸣岐和张德胜"
+    },
+    "ch26_ch37": {
+      "range": [26, 37],
+      "rhythm_type": "Confrontation",
+      "tension_range": [7, 9],
+      "description": "对峙阶段：与周鸣岐正面冲突，揭露真相"
+    },
+    "ch38_ch40": {
+      "range": [38, 40],
+      "rhythm_type": "Storm_Climax",
+      "tension_range": [9, 10],
+      "description": "风暴高潮：3号楼天然气危机，按按钮救人"
+    },
+    "ch41_ch42": {
+      "range": [41, 42],
+      "rhythm_type": "Cooldown_Breathing",
+      "tension_range": [3, 4],
+      "description": "喘息复盘：医院醒来，秦小满照顾，感情线铺垫"
+    },
+    "ch43_ch50": {
+      "range": [43, 50],
+      "rhythm_type": "Resolution_Arc",
+      "tension_range": [2, 5],
+      "description": "落幕收网：城中村改造，周鸣岐出狱，陆沉回老家"
+    }
+  },
+  "chapters": [
+    {"chapter": 1, "tension": 4, "rhythm": "Discovery", "key_event": "发现死亡指数"},
+    {"chapter": 2, "tension": 5, "rhythm": "Discovery", "key_event": "第一次看到数字归零"},
+    {"chapter": 3, "tension": 5, "rhythm": "Discovery", "key_event": "尝试报警被忽视"},
+    {"chapter": 4, "tension": 4, "rhythm": "Discovery", "key_event": "认识老范"},
+    {"chapter": 5, "tension": 5, "rhythm": "Discovery", "key_event": "发现代价：老年斑"},
+    {"chapter": 6, "tension": 6, "rhythm": "Discovery", "key_event": "第一次改变指数"},
+    {"chapter": 7, "tension": 5, "rhythm": "Discovery", "key_event": "认识秦小满"},
+    {"chapter": 8, "tension": 5, "rhythm": "Discovery", "key_event": "发现更多楼有问题"},
+    {"chapter": 9, "tension": 6, "rhythm": "Discovery", "key_event": "发现周鸣岐"},
+    {"chapter": 10, "tension": 6, "rhythm": "Discovery", "key_event": "第一次跟踪周鸣岐"},
+    {"chapter": 11, "tension": 6, "rhythm": "Investigation", "key_event": "发现范小雨"},
+    {"chapter": 12, "tension": 6, "rhythm": "Investigation", "key_event": "范小雨的调查"},
+    {"chapter": 13, "tension": 7, "rhythm": "Investigation", "key_event": "发现安置楼历史"},
+    {"chapter": 14, "tension": 7, "rhythm": "Investigation", "key_event": "发现张德胜"},
+    {"chapter": 15, "tension": 7, "rhythm": "Investigation", "key_event": "发现范秀兰"},
+    {"chapter": 16, "tension": 7, "rhythm": "Investigation", "key_event": "张德胜的威胁"},
+    {"chapter": 17, "tension": 7, "rhythm": "Investigation", "key_event": "3号楼的秘密"},
+    {"chapter": 18, "tension": 7, "rhythm": "Investigation", "key_event": "发现偷工减料"},
+    {"chapter": 19, "tension": 7, "rhythm": "Investigation", "key_event": "周鸣岐的警告"},
+    {"chapter": 20, "tension": 8, "rhythm": "Investigation", "key_event": "302室的发现"},
+    {"chapter": 21, "tension": 8, "rhythm": "Investigation", "key_event": "墙内的骨头"},
+    {"chapter": 22, "tension": 8, "rhythm": "Investigation", "key_event": "范秀兰的真相"},
+    {"chapter": 23, "tension": 8, "rhythm": "Investigation", "key_event": "张德胜的罪行"},
+    {"chapter": 24, "tension": 8, "rhythm": "Investigation", "key_event": "直播揭发"},
+    {"chapter": 25, "tension": 8, "rhythm": "Investigation", "key_event": "张德胜倒台"},
+    {"chapter": 26, "tension": 8, "rhythm": "Confrontation", "key_event": "周鸣岐现身"},
+    {"chapter": 27, "tension": 8, "rhythm": "Confrontation", "key_event": "周鸣岐的真相"},
+    {"chapter": 28, "tension": 8, "rhythm": "Confrontation", "key_event": "张德胜的手机"},
+    {"chapter": 29, "tension": 8, "rhythm": "Confrontation", "key_event": "周鸣岐的动机"},
+    {"chapter": 30, "tension": 9, "rhythm": "Confrontation", "key_event": "张德胜砸墙"},
+    {"chapter": 31, "tension": 9, "rhythm": "Confrontation", "key_event": "3号楼危机"},
+    {"chapter": 32, "tension": 9, "rhythm": "Confrontation", "key_event": "张德胜自首"},
+    {"chapter": 33, "tension": 9, "rhythm": "Confrontation", "key_event": "周鸣岐的计划"},
+    {"chapter": 34, "tension": 9, "rhythm": "Confrontation", "key_event": "地下室的图纸"},
+    {"chapter": 35, "tension": 9, "rhythm": "Confrontation", "key_event": "量墙人=周鸣岐"},
+    {"chapter": 36, "tension": 9, "rhythm": "Confrontation", "key_event": "管道调查"},
+    {"chapter": 37, "tension": 9, "rhythm": "Confrontation", "key_event": "陈默=周鸣岐"},
+    {"chapter": 38, "tension": 10, "rhythm": "Storm_Climax", "key_event": "楼顶对峙"},
+    {"chapter": 39, "tension": 10, "rhythm": "Storm_Climax", "key_event": "天然气危机"},
+    {"chapter": 40, "tension": 10, "rhythm": "Storm_Climax", "key_event": "按按钮救人"},
+    {"chapter": 41, "tension": 4, "rhythm": "Cooldown_Breathing", "key_event": "医院醒来"},
+    {"chapter": 42, "tension": 4, "rhythm": "Cooldown_Breathing", "key_event": "秦小满照顾"},
+    {"chapter": 43, "tension": 3, "rhythm": "Resolution_Arc", "key_event": "出院回城中村"},
+    {"chapter": 44, "tension": 3, "rhythm": "Resolution_Arc", "key_event": "张德胜遗信"},
+    {"chapter": 45, "tension": 3, "rhythm": "Resolution_Arc", "key_event": "回老家陪父亲"},
+    {"chapter": 46, "tension": 4, "rhythm": "Resolution_Arc", "key_event": "老范公开信"},
+    {"chapter": 47, "tension": 4, "rhythm": "Resolution_Arc", "key_event": "城中村改造"},
+    {"chapter": 48, "tension": 4, "rhythm": "Resolution_Arc", "key_event": "周鸣岐学法律"},
+    {"chapter": 49, "tension": 4, "rhythm": "Resolution_Arc", "key_event": "纪念碑"},
+    {"chapter": 50, "tension": 3, "rhythm": "Resolution_Arc", "key_event": "三年后"}
+  ]
 }
