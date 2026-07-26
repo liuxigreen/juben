@@ -263,5 +263,30 @@
     "chapter": 40,
     "hook": "情绪钩",
     "sub_mode": "甜蜜中断"
+  },
+  {
+    "chapter": 41,
+    "hook": "反转钩",
+    "sub_mode": "局势反转"
+  },
+  {
+    "chapter": 42,
+    "hook": "情绪钩",
+    "sub_mode": "误会引爆"
+  },
+  {
+    "chapter": 43,
+    "hook": "反转钩",
+    "sub_mode": "时间反转"
+  },
+  {
+    "chapter": 44,
+    "hook": "情绪钩",
+    "sub_mode": "重逢中断"
+  },
+  {
+    "chapter": 45,
+    "hook": "反转钩",
+    "sub_mode": "身份反转"
   }
 ]

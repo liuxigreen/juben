@@ -214,5 +214,25 @@
   {
     "chapter": 40,
     "cost": "短暂失聪"
+  },
+  {
+    "chapter": 41,
+    "cost": "视野发红"
+  },
+  {
+    "chapter": 42,
+    "cost": "灵气失控"
+  },
+  {
+    "chapter": 43,
+    "cost": "太阳穴剧痛"
+  },
+  {
+    "chapter": 44,
+    "cost": "耳鸣"
+  },
+  {
+    "chapter": 45,
+    "cost": "吐血"
   }
 ]
