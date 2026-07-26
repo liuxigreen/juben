@@ -609,6 +609,22 @@
       "realm_change": " [身体接近极限]",
       "foreshadow_planted": [],
       "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 43,
+      "body_costs": [
+        "发抖",
+        "老年斑"
+      ],
+      "setting_elements_used": [
+        "城中村",
+        "外卖",
+        "城中村居民以"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": " [身体接近极限]",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
     }
   ],
   "accumulated_costs": [
@@ -830,7 +846,13 @@
     "寿命",
     "发抖",
     "老年斑",
-    "寿命"
+    "寿命",
+    "发抖",
+    "老年斑",
+    "发抖",
+    "老年斑",
+    "发抖",
+    "老年斑"
   ],
   "accumulated_banned": [],
   "current_realm": "",
