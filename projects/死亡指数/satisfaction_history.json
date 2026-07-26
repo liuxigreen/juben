@@ -346,5 +346,35 @@
     "type": "悬念揭秘",
     "sub_mode": "身份揭秘",
     "stage": "决战段"
+  },
+  {
+    "chapter": 46,
+    "type": "逆袭翻盘",
+    "sub_mode": "实力进阶",
+    "stage": "决战段"
+  },
+  {
+    "chapter": 47,
+    "type": "情感爆发",
+    "sub_mode": "爆发哭诉",
+    "stage": "决战段"
+  },
+  {
+    "chapter": 48,
+    "type": "悬念揭秘",
+    "sub_mode": "动机揭秘",
+    "stage": "决战段"
+  },
+  {
+    "chapter": 49,
+    "type": "逆袭翻盘",
+    "sub_mode": "复仇翻盘",
+    "stage": "决战段"
+  },
+  {
+    "chapter": 50,
+    "type": "情感爆发",
+    "sub_mode": "误会冰释",
+    "stage": "决战段"
   }
 ]

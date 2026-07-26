@@ -178,5 +178,25 @@
   {
     "chapter": 45,
     "type": "reveal"
+  },
+  {
+    "chapter": 46,
+    "type": "suspense"
+  },
+  {
+    "chapter": 47,
+    "type": "action_heavy"
+  },
+  {
+    "chapter": 48,
+    "type": "investigation"
+  },
+  {
+    "chapter": 49,
+    "type": "chase"
+  },
+  {
+    "chapter": 50,
+    "type": "suspense"
   }
 ]

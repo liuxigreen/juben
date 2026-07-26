@@ -234,5 +234,25 @@
   {
     "chapter": 45,
     "cost": "吐血"
+  },
+  {
+    "chapter": 46,
+    "cost": "呼吸困难"
+  },
+  {
+    "chapter": 47,
+    "cost": "鼻血"
+  },
+  {
+    "chapter": 48,
+    "cost": "指甲断裂"
+  },
+  {
+    "chapter": 49,
+    "cost": "短暂失聪"
+  },
+  {
+    "chapter": 50,
+    "cost": "耳鸣"
   }
 ]
