@@ -695,13 +695,17 @@ def _similarity(a: str, b: str) -> float:
 
 
 def check_anti_repetition(chapter_endings: list[str]) -> GuardianViolation | None:
-    """检查连续章节的结尾是否重复"""
+    """检查连续章节的结尾是否重复（只检查最近10章）"""
     if len(chapter_endings) < 2:
         return None
 
-    # 检查连续3章
-    for i in range(len(chapter_endings) - 2):
-        a, b, c = chapter_endings[i], chapter_endings[i+1], chapter_endings[i+2]
+    # 只检查最近10章，避免历史章节的旧问题干扰当前审计
+    recent = chapter_endings[-10:] if len(chapter_endings) > 10 else chapter_endings
+    offset = len(chapter_endings) - len(recent)
+
+    # 检查连续3章（从最近的开始往前查）
+    for i in range(len(recent) - 3, -1, -1):
+        a, b, c = recent[i], recent[i+1], recent[i+2]
         ab_sim = _similarity(a, b)
         bc_sim = _similarity(b, c)
         ac_sim = _similarity(a, c)
@@ -711,18 +715,18 @@ def check_anti_repetition(chapter_endings: list[str]) -> GuardianViolation | Non
             return GuardianViolation(
                 rule="anti_repetition_ending",
                 severity="critical",
-                description=f"第{i+1}-{i+3}章结尾高度相似（平均相似度{avg_sim:.0%}），疑似LLM复读",
+                description=f"第{offset+i+1}-{offset+i+3}章结尾高度相似（平均相似度{avg_sim:.0%}），疑似LLM复读",
                 suggestion="每章结尾必须有不同的意象/情绪/悬念，禁止重复句式",
             )
 
-    # 检查连续2章
-    for i in range(len(chapter_endings) - 1):
-        sim = _similarity(chapter_endings[i], chapter_endings[i+1])
+    # 检查连续2章（从最近的开始往前查）
+    for i in range(len(recent) - 2, -1, -1):
+        sim = _similarity(recent[i], recent[i+1])
         if sim > 0.8:
             return GuardianViolation(
                 rule="anti_repetition_ending",
                 severity="warning",
-                description=f"第{i+1}-{i+2}章结尾高度相似（相似度{sim:.0%}）",
+                description=f"第{offset+i+1}-{offset+i+2}章结尾高度相似（相似度{sim:.0%}）",
                 suggestion="考虑换一种结尾方式",
             )
 

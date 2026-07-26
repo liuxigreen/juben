@@ -116,7 +116,7 @@ def check_structure_diversity(
     ratio = chapter_num / total_chapters if total_chapters > 0 else 0.5
     if ratio > 0.45:  # 风暴段+决战段
         adjusted_threshold = min(similarity_threshold + 0.1, 0.85)
-        adjusted_batch_threshold = 0.7  # 放宽批量检测
+        adjusted_batch_threshold = 0.85  # 放宽批量检测，允许高潮连贯
     else:
         adjusted_threshold = similarity_threshold
         adjusted_batch_threshold = 0.8
