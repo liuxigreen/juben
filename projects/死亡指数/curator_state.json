@@ -561,6 +561,21 @@
       "realm_change": " [身体接近极限]",
       "foreshadow_planted": [],
       "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 40,
+      "body_costs": [
+        "头晕",
+        "寿命",
+        "中毒"
+      ],
+      "setting_elements_used": [
+        "外卖"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": " [身体接近极限]",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
     }
   ],
   "accumulated_costs": [
@@ -712,7 +727,13 @@
     "发麻",
     "痉挛",
     "头晕",
-    "老年斑"
+    "老年斑",
+    "头晕",
+    "寿命",
+    "中毒",
+    "头晕",
+    "寿命",
+    "中毒"
   ],
   "accumulated_banned": [],
   "current_realm": "",
