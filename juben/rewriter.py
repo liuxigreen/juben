@@ -121,12 +121,29 @@ def generate_rewrite_prompt(
         t = p.read_text(encoding="utf-8")
         all_endings.append(_extract_ending(t))
 
+    # 加载 high_concept
+    story_meta_file = project_dir / "story_meta.json"
+    high_concept = None
+    if story_meta_file.exists():
+        import json as _json
+        _meta = _json.loads(story_meta_file.read_text(encoding="utf-8"))
+        high_concept = _meta.get("high_concept")
+
+    # 收集最近章节文本
+    recent_texts = []
+    for i in range(max(1, chapter_num - 5), chapter_num):
+        ch_file = chapter_dir / f"{i:03d}.md"
+        if ch_file.exists():
+            recent_texts.append(ch_file.read_text(encoding="utf-8"))
+
     guardian_result = guardian_check(
         chapter_text=original_text,
         chapter_num=chapter_num,
         protagonist_name=protagonist_name,
         chapter_endings=all_endings[:chapter_num],
         characters=characters,
+        high_concept=high_concept,
+        recent_chapter_texts=recent_texts,
     )
 
     # 4. 读取前一章结尾

@@ -621,6 +621,13 @@ def audit(chapter: int, dir: str):
                 t = p.read_text(encoding="utf-8")
                 previous_fps.append(extract_event_fingerprint(t))
 
+        # 加载 story_meta 的 high_concept（用于异常退化检测）
+        story_meta_file = project_dir / "story_meta.json"
+        high_concept = None
+        if story_meta_file.exists():
+            _meta = _json.loads(story_meta_file.read_text(encoding="utf-8"))
+            high_concept = _meta.get("high_concept")
+
         guardian_result = guardian_check(
             chapter_text=text,
             chapter_num=ch_num,
@@ -633,6 +640,8 @@ def audit(chapter: int, dir: str):
             concept_mapping=concept_mapping,
             previous_fingerprints=previous_fps,
             project_dir=str(project_dir),
+            high_concept=high_concept,
+            recent_chapter_texts=previous_texts,
         )
         _print_validation("Guardian", guardian_result)
 

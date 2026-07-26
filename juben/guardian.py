@@ -789,6 +789,8 @@ def guardian_check(
     concept_mapping: dict | None = None,
     dynamic_blacklist: list[str] | None = None,
     project_dir: str | Path | None = None,
+    high_concept: dict | None = None,
+    recent_chapter_texts: list[str] | None = None,
 ) -> GuardianResult:
     """
     Guardian统一审查入口（v3：硬门禁升级）
@@ -984,6 +986,24 @@ def guardian_check(
     if v:
         result.add(v)
 
+    # 14. 异常退化检测
+    v = check_anomaly_degradation(
+        chapter_text=chapter_text,
+        high_concept=high_concept,
+        recent_chapter_texts=recent_chapter_texts,
+        chapter_num=chapter_num,
+    )
+    if v:
+        result.add(v)
+
+    # 15. 机械短句循环检测
+    v = check_mechanical_short_sentences(
+        chapter_text=chapter_text,
+        recent_chapter_texts=recent_chapter_texts,
+    )
+    if v:
+        result.add(v)
+
     return result
 
 
@@ -1138,4 +1158,151 @@ def check_physical_interruption_lock(chapter_text: str) -> GuardianViolation | N
             suggestion="在结尾加入突发物理异象或感官冲击。",
         )
     
+    return None
+
+
+# ============================================================
+# 14. 异常退化检测 (Anomaly Degradation Check)
+# ============================================================
+
+# 异常被"解释回普通"的退化模式
+ANOMALY_DEGRADATION_PATTERNS = [
+    # 幻觉/心理解释
+    (r"原来只?是[一]?[个]?(?:幻觉|错觉|做梦|梦|心理作用|精神问题)", "异常被解释为幻觉/心理问题"),
+    (r"不过是[一]?[个]?(?:幻觉|错觉|巧合)", "异常被解释为幻觉/巧合"),
+    # 科学/系统解释
+    (r"其实(?:是|就是)(?:一种|某个|某种)?(?:科学|技术|算法|程序|传感器|监控)", "异常被降维为科技设备"),
+    (r"不过是[一]?[个]?(?:传感器|监控|程序|系统)而?已", "异常被降维为普通设备"),
+    # 普通犯罪解释
+    (r"原来(?:是|不过是)(?:一[个件]?(?:谋杀|凶杀|事故|案件))", "异常被降维为普通案件"),
+    (r"不过是[一]?[个]?(?:谋杀|凶杀|事故|案件)而?已", "异常被降维为普通案件"),
+    # 通用退化
+    (r"并没有什么特别", "异常被否定"),
+    (r"根本不存在", "异常被否定"),
+    (r"一切(?:都|只是)(?:正常|普通|平常)", "异常被正常化"),
+]
+
+
+def check_anomaly_degradation(
+    chapter_text: str,
+    high_concept: dict | None = None,
+    recent_chapter_texts: list[str] | None = None,
+    chapter_num: int = 0,
+) -> GuardianViolation | None:
+    """
+    检测异常是否被"解释回普通"。
+
+    三层检查：
+    1. 退化话术检测 — 异常是否被解释为幻觉/巧合/普通案件/科学设备
+    2. 视觉锚点存续 — 异常的可视化元素是否还在使用
+    3. banned_patterns 违反检测
+    """
+    if not high_concept:
+        return None
+
+    visual_anchor_keywords = high_concept.get("visual_anchor_keywords", [])
+    banned_patterns = high_concept.get("banned_patterns", [])
+    violations = []
+
+    # === 1. 退化话术检测 ===
+    for pattern, reason in ANOMALY_DEGRADATION_PATTERNS:
+        matches = re.findall(pattern, chapter_text)
+        if matches:
+            violations.append(f"退化话术: '{matches[0]}' ({reason})")
+
+    # === 2. 视觉锚点存续 ===
+    if visual_anchor_keywords and chapter_num >= 5 and recent_chapter_texts:
+        has_visual_anchor = any(kw in chapter_text for kw in visual_anchor_keywords)
+        if not has_visual_anchor:
+            recent_has_anchor = any(
+                any(kw in text for kw in visual_anchor_keywords)
+                for text in recent_chapter_texts[-5:]
+            )
+            if not recent_has_anchor:
+                violations.append(
+                    f"视觉锚点消失: 最近5章未出现异常视觉关键词 {visual_anchor_keywords}"
+                )
+
+    # === 3. banned_patterns 违反 ===
+    for pattern in banned_patterns:
+        if pattern in chapter_text:
+            violations.append(f"违反banned_pattern: '{pattern}'")
+
+    if not violations:
+        return None
+
+    has_degradation = any("退化话术" in v for v in violations)
+    severity = "critical" if has_degradation else "warning"
+
+    return GuardianViolation(
+        rule="anomaly_degradation",
+        severity=severity,
+        description=f"异常退化检测({len(violations)}项): {'; '.join(violations[:3])}",
+        suggestion=(
+            "异常是故事的核心，禁止解释回普通。"
+            "保持异常的不可名状性，让视觉锚点持续从异常中长出来。"
+            "如果需要推进理解，只能揭示异常的'规则'，不能揭示异常的'本质'。"
+        ),
+    )
+
+
+def check_mechanical_short_sentences(
+    chapter_text: str,
+    recent_chapter_texts: list[str] | None = None,
+) -> GuardianViolation | None:
+    """
+    检测结尾机械短句循环（"嗯/好/你骗我/我知道"类）。
+
+    规则：
+    - 结尾100字内，连续3+句≤3字 → WARNING
+    - 连续2章结尾都是短句循环 → FAIL
+    """
+    lines = [l.strip() for l in chapter_text.split("\n") if l.strip() and not l.startswith("#")]
+    if not lines:
+        return None
+
+    last_lines = lines[-5:]
+    consecutive_short = 0
+    max_consecutive = 0
+    for line in last_lines:
+        clean = re.sub(r"[^\w]", "", line)
+        if 0 < len(clean) <= 3:
+            consecutive_short += 1
+            max_consecutive = max(max_consecutive, consecutive_short)
+        else:
+            consecutive_short = 0
+
+    if max_consecutive >= 3:
+        if recent_chapter_texts:
+            prev_short_too = False
+            for prev_text in recent_chapter_texts[-2:]:
+                prev_lines = [l.strip() for l in prev_text.split("\n") if l.strip() and not l.startswith("#")]
+                prev_last = prev_lines[-5:] if prev_lines else []
+                prev_consecutive = 0
+                prev_max = 0
+                for line in prev_last:
+                    clean = re.sub(r"[^\w]", "", line)
+                    if 0 < len(clean) <= 3:
+                        prev_consecutive += 1
+                        prev_max = max(prev_max, prev_consecutive)
+                    else:
+                        prev_consecutive = 0
+                if prev_max >= 3:
+                    prev_short_too = True
+                    break
+            if prev_short_too:
+                return GuardianViolation(
+                    rule="mechanical_short_sentences",
+                    severity="critical",
+                    description=f"连续多章结尾使用机械短句循环（连续{max_consecutive}句≤3字）",
+                    suggestion="结尾需要具体的感官画面或未回答的问题，不能用'嗯/好/你骗我'等短句循环撑篇幅",
+                )
+
+        return GuardianViolation(
+            rule="mechanical_short_sentences",
+            severity="warning",
+            description=f"结尾出现{max_consecutive}句连续短句（≤3字）",
+            suggestion="用具体感官画面或物理打断替代短句循环",
+        )
+
     return None
