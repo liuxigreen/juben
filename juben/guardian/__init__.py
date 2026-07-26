@@ -694,7 +694,7 @@ def _similarity(a: str, b: str) -> float:
     return intersection / union if union > 0 else 0.0
 
 
-def check_anti_repetition(chapter_endings: list[str]) -> GuardianViolation | None:
+def check_anti_repetition(chapter_endings: list[str], chapter_num: int = 0, total_chapters: int = 50) -> GuardianViolation | None:
     """检查连续章节的结尾是否重复（只检查最近10章）"""
     if len(chapter_endings) < 2:
         return None
@@ -702,6 +702,18 @@ def check_anti_repetition(chapter_endings: list[str]) -> GuardianViolation | Non
     # 只检查最近10章，避免历史章节的旧问题干扰当前审计
     recent = chapter_endings[-10:] if len(chapter_endings) > 10 else chapter_endings
     offset = len(chapter_endings) - len(recent)
+
+    # 动态阈值：结局段放宽阈值，允许收尾叙事的自然结构相似
+    ratio = chapter_num / total_chapters if total_chapters > 0 else 0.5
+    if ratio > 0.80:  # 结局段（最后20%）
+        threshold_3ch = 0.85  # 放宽连续3章阈值
+        threshold_2ch = 0.90  # 放宽连续2章阈值
+    elif ratio > 0.45:  # 风暴段
+        threshold_3ch = 0.80
+        threshold_2ch = 0.85
+    else:  # 起势段/攀升段
+        threshold_3ch = 0.7
+        threshold_2ch = 0.8
 
     # 检查连续3章（从最近的开始往前查）
     for i in range(len(recent) - 3, -1, -1):
@@ -711,7 +723,7 @@ def check_anti_repetition(chapter_endings: list[str]) -> GuardianViolation | Non
         ac_sim = _similarity(a, c)
 
         avg_sim = (ab_sim + bc_sim + ac_sim) / 3
-        if avg_sim > 0.7:
+        if avg_sim > threshold_3ch:
             return GuardianViolation(
                 rule="anti_repetition_ending",
                 severity="critical",
@@ -722,7 +734,7 @@ def check_anti_repetition(chapter_endings: list[str]) -> GuardianViolation | Non
     # 检查连续2章（从最近的开始往前查）
     for i in range(len(recent) - 2, -1, -1):
         sim = _similarity(recent[i], recent[i+1])
-        if sim > 0.8:
+        if sim > threshold_2ch:
             return GuardianViolation(
                 rule="anti_repetition_ending",
                 severity="warning",
@@ -1545,4 +1557,71 @@ def check_high_concept_degradation(chapter_text: str, project_dir: Path) -> Guar
     
     return None
     
+    return None
+
+
+# ============================================================
+# 新增：实体关系一致性检查（防止人物设定漂移）
+# ============================================================
+
+def check_entity_consistency(
+    chapter_text: str,
+    project_dir: str | Path,
+) -> GuardianViolation | None:
+    """检查章节内容是否违反实体关系锁"""
+    entity_graph_path = Path(project_dir) / "entity_graph.json"
+    if not entity_graph_path.exists():
+        return None
+
+    try:
+        entity_graph = json.loads(entity_graph_path.read_text(encoding="utf-8"))
+    except Exception as e:
+        logger.warning(f"加载entity_graph.json失败: {e}")
+        return None
+
+    # 检查禁止的组合
+    forbidden_combinations = entity_graph.get("forbidden_combinations", [])
+    for combo in forbidden_combinations:
+        for entity, forbidden_relation in combo.items():
+            # 检查实体是否存在
+            if entity in chapter_text:
+                # 检查是否包含禁止的关系描述
+                # 构建检测模式
+                patterns = [
+                    f"{entity}.*{forbidden_relation}",
+                    f"{forbidden_relation}.*{entity}",
+                    f"{entity}是{forbidden_relation}",
+                    f"{forbidden_relation}是{entity}",
+                    f"{entity}的{forbidden_relation}",
+                    f"{forbidden_relation}的{entity}",
+                ]
+
+                for pattern in patterns:
+                    if re.search(pattern, chapter_text):
+                        return GuardianViolation(
+                            rule="entity_consistency",
+                            severity="critical",
+                            description=f"实体关系冲突：检测到「{entity}」与「{forbidden_relation}」的非法组合",
+                            suggestion=f"根据entity_graph.json的设定，「{entity}」不能是「{forbidden_relation}」。请修正人物关系。",
+                        )
+
+    # 检查硬规则
+    hard_rules = entity_graph.get("hard_rules", [])
+    for rule in hard_rules:
+        # 从规则中提取关键信息
+        # 例如："严禁将张德胜描述为周鸣岐的父亲！周鸣岐的父亲是周建国（工号037）"
+        if "严禁" in rule and "！" in rule:
+            # 提取禁止的内容
+            parts = rule.split("！")
+            if len(parts) >= 2:
+                forbidden_part = parts[0].replace("严禁", "").strip()
+                # 检查是否违反
+                if forbidden_part in chapter_text:
+                    return GuardianViolation(
+                        rule="entity_consistency",
+                        severity="critical",
+                        description=f"实体关系冲突：违反硬规则「{rule}」",
+                        suggestion=f"请严格遵守entity_graph.json中的硬规则。",
+                    )
+
     return None

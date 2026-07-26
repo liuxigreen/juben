@@ -474,6 +474,11 @@ class ConstraintInjector:
         if villain_injection:
             blocks.append(villain_injection)
 
+        # 5.11 描写范式冷却注入（防止描写复读）
+        motif_injection = self._build_motif_injection(chapter_num)
+        if motif_injection:
+            blocks.append(motif_injection)
+
         # 6. 四段式beat
         beat_text = get_beat_prompt(chapter_num)
         if beat_text:
@@ -498,6 +503,11 @@ class ConstraintInjector:
         high_concept_injection = self._build_high_concept_injection(chapter_num)
         if high_concept_injection:
             blocks.insert(0, high_concept_injection)
+
+        # 11. 实体关系锁注入（防止人物设定漂移）
+        entity_contract_injection = self._build_entity_contract_injection()
+        if entity_contract_injection:
+            blocks.insert(0, entity_contract_injection)
 
         return "\n\n".join(blocks)
 
@@ -1517,6 +1527,85 @@ class ConstraintInjector:
 - 中反派：阴险含蓄（"你以为赢了？天真。"）
 - 大反派：从容自信（"你很有意思，可惜……"）
 - 隐藏反派：揭露前温柔可靠，揭露后180度反转"""
+
+    # ============================================================
+    # 新增：实体关系锁注入（防止人物设定漂移）
+    # ============================================================
+
+    def _build_entity_contract_injection(self) -> str:
+        """注入实体关系锁，防止人物设定漂移"""
+        entity_graph_path = self.project_dir / "entity_graph.json"
+        if not entity_graph_path.exists():
+            return ""
+
+        try:
+            entity_graph = json.loads(entity_graph_path.read_text(encoding="utf-8"))
+        except Exception as e:
+            logger.warning(f"加载entity_graph.json失败: {e}")
+            return ""
+
+        # 提取硬规则
+        hard_rules = entity_graph.get("hard_rules", [])
+        if not hard_rules:
+            return ""
+
+        # 构建规则文本
+        rules_text = "\n".join(f"- {rule}" for rule in hard_rules)
+
+        return f"""### 🔒 实体关系锁（绝对禁止违反）
+
+以下规则是本剧的**核心设定契约**，绝对禁止违反：
+
+{rules_text}
+
+**惩罚机制**：如果本章违反以上任何规则，系统将自动判定任务失败，需要重新生成。
+请严格遵守以上规则，确保人物关系与设定一致。"""
+
+    # ============================================================
+    # 新增：描写范式冷却注入（防止描写复读）
+    # ============================================================
+
+    def _build_motif_injection(self, chapter_num: int) -> str:
+        """注入描写范式冷却规则"""
+        from .curator import NarrativeMotifTracker
+
+        # 加载或创建tracker
+        motif_history_path = self.project_dir / "motif_history.json"
+        tracker = NarrativeMotifTracker()
+
+        if motif_history_path.exists():
+            try:
+                history_data = json.loads(motif_history_path.read_text(encoding="utf-8"))
+                tracker.history = history_data
+            except Exception as e:
+                logger.warning(f"加载motif_history.json失败: {e}")
+
+        # 生成注入文本
+        injection_text = tracker.get_injection_text(chapter_num)
+        return injection_text
+
+    def record_motif(self, chapter_num: int, text: str):
+        """记录章节的描写范式（在章节写完后调用）"""
+        from .curator import NarrativeMotifTracker
+
+        motif_history_path = self.project_dir / "motif_history.json"
+        tracker = NarrativeMotifTracker()
+
+        if motif_history_path.exists():
+            try:
+                history_data = json.loads(motif_history_path.read_text(encoding="utf-8"))
+                tracker.history = history_data
+            except Exception as e:
+                logger.warning(f"加载motif_history.json失败: {e}")
+
+        # 记录本章
+        tracker.record_chapter(chapter_num, text)
+
+        # 保存
+        motif_history_path.write_text(
+            json.dumps(tracker.history, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
 
 
 def _build_critical_checklist(injector: ConstraintInjector, chapter_num: int) -> str:

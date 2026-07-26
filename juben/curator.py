@@ -261,3 +261,103 @@ class CuratorState:
             lines.append("⚡ 身体负担中等，注意代价多样性")
 
         return "\n".join(lines)
+
+
+# ============================================================
+# 新增：叙事范式追踪器（防止描写复读）
+# ============================================================
+
+# 定义描写范式关键词
+NARRATIVE_MOTIFS = {
+    "ear_bleeding": {
+        "keywords": ["耳朵听不见", "耳鸣", "耳朵流血", "左耳", "听力"],
+        "description": "耳朵出血/听力丧失",
+    },
+    "nosebleed": {
+        "keywords": ["流鼻血", "鼻血", "鼻孔涌出", "鼻子出血"],
+        "description": "流鼻血",
+    },
+    "hand_pain": {
+        "keywords": ["手背刺痛", "手背发麻", "手背疼痛", "右手背", "老年斑扩散"],
+        "description": "手背疼痛/老年斑",
+    },
+    "file_list_recite": {
+        "keywords": ["第一页施工日志", "第二页监理签字表", "第三页材料检测报告", "第八页36人名单"],
+        "description": "文件清单罗列",
+    },
+    "visit_and_leave": {
+        "keywords": ["走到", "看了一眼", "转身离开", "走开", "离开了"],
+        "description": "访问后离开",
+    },
+    "blood_dripping": {
+        "keywords": ["血从", "渗出来", "滴下来", "沾着血", "血腥味"],
+        "description": "血液滴落",
+    },
+}
+
+
+class NarrativeMotifTracker:
+    """叙事范式追踪器 — 防止描写复读"""
+
+    def __init__(self, cooldown: int = 3):
+        self.cooldown = cooldown
+        self.history: list[dict] = []
+
+    def detect_motifs(self, text: str) -> list[str]:
+        """检测文本中的描写范式"""
+        detected = []
+        for motif_id, motif_info in NARRATIVE_MOTIFS.items():
+            keywords = motif_info["keywords"]
+            count = sum(text.count(kw) for kw in keywords)
+            if count >= 2:  # 至少出现2次才算
+                detected.append(motif_id)
+        return detected
+
+    def record_chapter(self, chapter_num: int, text: str):
+        """记录章节的描写范式"""
+        motifs = self.detect_motifs(text)
+        self.history.append({
+            "chapter": chapter_num,
+            "motifs": motifs,
+        })
+
+    def get_banned_motifs(self, chapter_num: int) -> list[str]:
+        """获取本章禁用的描写范式"""
+        recent = [
+            h for h in self.history
+            if h["chapter"] > chapter_num - self.cooldown
+        ]
+        banned = set()
+        for h in recent:
+            banned.update(h["motifs"])
+        return sorted(banned)
+
+    def get_injection_text(self, chapter_num: int) -> str:
+        """生成描写范式禁用注入文本"""
+        banned = self.get_banned_motifs(chapter_num)
+        if not banned:
+            return ""
+
+        banned_descriptions = []
+        for motif_id in banned:
+            if motif_id in NARRATIVE_MOTIFS:
+                banned_descriptions.append(NARRATIVE_MOTIFS[motif_id]["description"])
+
+        if not banned_descriptions:
+            return ""
+
+        ban_list = "、".join(banned_descriptions)
+        return f"""### 🚫 描写范式冷却（强制）
+
+最近{self.cooldown}章已使用过以下描写范式，本章**绝对禁止**再用：
+**禁用范式**：{ban_list}
+
+**替代方案**：
+- 耳朵出血 → 换用"视野偏色"、"肌肉痉挛"、"发冷"
+- 流鼻血 → 换用"视线模糊"、"心跳紊乱"、"呼吸困难"
+- 手背刺痛 → 换用"视野发红"、"短暂失聪"、"口中血腥味"
+- 文件清单罗列 → 换用"那份泛黄的C25偷工减料卷宗"一笔带过
+- 访问后离开 → 换用"对话被打断"、"新危机出现"、"时间倒计时"
+
+**惩罚机制**：如果本章重复使用禁用范式，系统将自动判定任务失败。"""
+
