@@ -142,5 +142,9 @@
   {
     "chapter": 36,
     "type": "investigation"
+  },
+  {
+    "chapter": 37,
+    "type": "reveal"
   }
 ]
