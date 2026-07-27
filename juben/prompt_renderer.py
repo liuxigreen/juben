@@ -73,6 +73,68 @@ MOOD_EN = {
     "Warmth": "warm, heartwarming",
 }
 
+import re as _re
+
+
+# 常见中文动作→英文翻译词典
+ACTION_ZH_EN = {
+    "擦拭": "wipes", "擦着": "wipes", "擦": "wipes",
+    "走进": "walks in", "走进来": "walks in", "走入": "walks into",
+    "坐下": "sits down", "坐到": "sits at", "坐在": "sits at",
+    "端起": "picks up", "端着": "holds", "放下": "puts down",
+    "闭眼": "closes eyes", "闭上眼": "closes eyes", "闭上眼睛": "closes eyes",
+    "睁开眼": "opens eyes", "猛地睁开": "eyes snap open",
+    "喝了一口": "takes a sip", "喝": "drinks",
+    "转身": "turns around", "转头": "turns head",
+    "低头": "looks down", "抬头": "looks up",
+    "打字": "types on phone", "打瞌睡": "dozes off",
+    "磨豆": "grinds beans", "磨": "grinds",
+    "敲击": "taps", "敲": "knocks",
+    "消失": "disappears", "离开": "leaves",
+    "注意到": "notices", "看到": "sees", "看向": "looks at",
+    "站起": "stands up", "站起来": "stands up",
+    "扫码": "scans QR code", "付款": "pays",
+    "冲洗": "rinses", "冲掉": "rinses off",
+    "擦干": "dries", "看了看": "glances at",
+    "翻了个身": "turns over", "翻身": "turns over",
+    "打盹": "naps", "皱眉": "frowns",
+    "攥紧": "clenches", "发抖": "trembles",
+    "微笑": "smiles", "点头": "nods",
+    "掏出": "takes out", "掏出手机": "pulls out phone",
+    "放桌上": "places on table", "放在": "places on",
+    "留着": "lingers", "留下": "leaves behind",
+    "冒热气": "steaming", "烫手": "hot to touch",
+    "旋转门": "revolving door", "玻璃幕墙": "glass curtain wall",
+    "水龙头": "faucet", "水池": "sink",
+    "口红印": "lipstick mark", "唇印": "lipstick mark",
+    "疤痕": "scar", "印痕": "mark", "墨渍": "ink stain",
+    "围裙": "apron", "西装": "suit",
+    "老大爷": "old man", "女孩": "girl",
+    "男人": "man", "女人": "woman",
+    "咖啡店": "coffee shop", "咖啡": "coffee",
+    "美式": "americano", "红茶": "black tea",
+    "吧台": "counter", "桌子": "table",
+    "写字楼": "office building",
+    "左手": "left hand", "右手": "right hand",
+    "无名指": "ring finger", "食指": "index finger",
+    "中指": "middle finger",
+    "声音消失": "all sounds fade", "声音恢复": "sounds return",
+    "世界安静": "world goes silent", "安静": "quiet",
+    "脑海": "mind", "浮现": "surfaces",
+    "想不起来": "cannot recall", "记得": "remembers",
+    "记得那个声音": "remembers that voice",
+    "热牛奶": "hot milk",
+    "灰色西装": "grey suit",
+    "齐肩短发": "shoulder-length hair",
+    "银框眼镜": "silver-framed glasses",
+    "马尾辫": "ponytail",
+    "彩色指甲": "colorful nails",
+    "方脸": "square jaw", "短发": "short hair",
+    "念想": "Nianxiang",
+    "苏念": "Su Nian", "顾深": "Gu Shen",
+    "林可": "Lin Ke", "陈锐": "Chen Rui",
+}
+
 
 class PromptRenderer:
     """
@@ -138,7 +200,9 @@ class PromptRenderer:
         # 3. Visible action (must be English, filmable)
         action = shot_data.get("action_visual", "")
         if action:
-            # 如果还是中文，直接使用（后续由SemanticCalibrator翻译）
+            # 如果含中文，翻译为英文
+            if _re.search(r'[\u4e00-\u9fff]', action):
+                action = self._translate_action(action)
             parts.append(action)
 
         # 4. Visual anchors
@@ -185,6 +249,23 @@ class PromptRenderer:
             "dialogue_line": shot_data.get("dialogue", ""),
             "inner_voice": shot_data.get("inner_voice", ""),
         }
+
+    def _translate_action(self, text: str) -> str:
+        """将中文action翻译为英文（词典替换+兜底）"""
+        result = text
+        # 按长度降序替换（先替换长短语）
+        for zh, en in sorted(ACTION_ZH_EN.items(), key=lambda x: -len(x[0])):
+            result = result.replace(zh, en)
+        # 如果还有中文残留，用通用规则处理
+        if _re.search(r'[\u4e00-\u9fff]', result):
+            # 去掉残留中文标点和无意义词
+            result = _re.sub(r'[，。！？、；：""''（）\[\]【】]', ' ', result)
+            # 去掉单个残留中文字符（通常是虚词）
+            result = _re.sub(r'[\u4e00-\u9fff]{1,2}(?=[^[\u4e00-\u9fff])', '', result)
+            result = _re.sub(r'(?<=[^\u4e00-\u9fff])[\u4e00-\u9fff]{1,2}', '', result)
+            # 清理多余空格
+            result = _re.sub(r'\s+', ' ', result).strip()
+        return result if result else "character performs action"
 
     def format_shot_block(self, shot_data: dict) -> str:
         """

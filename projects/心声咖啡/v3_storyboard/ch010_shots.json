@@ -5,20 +5,20 @@
     "shot_type": "WS",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 6.8,
-    "location": "念想咖啡店",
+    "duration": 5.7,
+    "location": "coffee shop",
     "space": "Physical",
     "characters": [
-      "苏念"
+      "Su Nian"
     ],
-    "action_visual": "苏念坐在吧台后面，面前摊着一个笔记本",
+    "action_visual": "Su Nian sits down",
     "dialogue": "",
     "inner_voice": "",
     "focus_object": "",
     "lighting": "Natural",
     "emotion": "Neutral",
     "visual_anchors": [],
-    "veo_prompt": "wide shot, static camera, eye level, featuring 苏念 (26), 苏念坐在吧台后面，面前摊着一个笔记本, in 念想咖啡店, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "veo_prompt": "wide shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian sits down, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
   },
   {
     "shot_id": 2,
@@ -26,22 +26,24 @@
     "shot_type": "ECU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 7.5,
-    "location": "念想咖啡店",
-    "space": "Transition",
+    "duration": 6.3,
+    "location": "coffee shop",
+    "space": "Physical",
     "characters": [
-      "苏念"
+      "Su Nian",
+      "Gu Shen",
+      "Chen Rui"
     ],
-    "action_visual": "失去——手背上一道印痕",
+    "action_visual": "a faint mark",
     "dialogue": "",
     "inner_voice": "",
-    "focus_object": "手背",
+    "focus_object": "mark",
     "lighting": "Natural",
     "emotion": "Neutral",
     "visual_anchors": [
-      "手背"
+      "mark"
     ],
-    "veo_prompt": "extreme close-up, slow dolly forward, eye level, featuring 苏念 (26), 失去——手背上一道印痕, close-up detail on 手背, in 念想咖啡店, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "veo_prompt": "extreme close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Chen Rui (32yo Chinese man, square jaw, short hair, expensive watch), a faint mark, close-up detail on mark, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
   },
   {
     "shot_id": 3,
@@ -49,20 +51,22 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 7.5,
-    "location": "念想咖啡店",
+    "duration": 6.3,
+    "location": "coffee shop",
     "space": "Physical",
-    "characters": [],
-    "action_visual": "但有一个共同点——每次失去的，都是身体上的痕迹",
+    "characters": [
+      "Su Nian"
+    ],
+    "action_visual": "Su Nian stands in the scene",
     "dialogue": "",
     "inner_voice": "",
-    "focus_object": "疤痕",
+    "focus_object": "scar",
     "lighting": "Natural",
     "emotion": "Neutral",
     "visual_anchors": [
-      "疤痕"
+      "scar"
     ],
-    "veo_prompt": "close-up, static camera, eye level, 但有一个共同点——每次失去的，都是身体上的痕迹, close-up detail on 疤痕, in 念想咖啡店, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, close-up detail on scar, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
   },
   {
     "shot_id": 4,
@@ -70,18 +74,20 @@
     "shot_type": "MCU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 6.8,
-    "location": "念想咖啡店",
-    "space": "Transition",
-    "characters": [],
-    "action_visual": "它们不是\"想不起来了\"——是物理性地消失了",
+    "duration": 7.5,
+    "location": "coffee shop",
+    "space": "Physical",
+    "characters": [
+      "Su Nian"
+    ],
+    "action_visual": "Su Nian stands in the scene",
     "dialogue": "想不起来了",
     "inner_voice": "",
     "focus_object": "",
     "lighting": "Low key",
     "emotion": "Mystery",
     "visual_anchors": [],
-    "veo_prompt": "medium close-up, slow dolly forward, eye level, 它们不是\"想不起来了\"——是物理性地消失了, in 念想咖啡店, low key lighting, deep shadows, dim atmosphere, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in coffee shop, low key lighting, deep shadows, dim atmosphere, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
   },
   {
     "shot_id": 5,
@@ -89,77 +95,85 @@
     "shot_type": "MS",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 6.8,
-    "location": "念想咖啡店",
+    "duration": 7.5,
+    "location": "coffee shop",
     "space": "Physical",
-    "characters": [],
-    "action_visual": "苏念合上笔记本，走到镜子前",
+    "characters": [
+      "Su Nian"
+    ],
+    "action_visual": "Su Nian looks at coffee mirror",
     "dialogue": "",
     "inner_voice": "",
     "focus_object": "",
     "lighting": "Natural",
     "emotion": "Neutral",
     "visual_anchors": [],
-    "veo_prompt": "medium shot, static camera, eye level, 苏念合上笔记本，走到镜子前, in 念想咖啡店, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "veo_prompt": "medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks at coffee mirror, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
   },
   {
     "shot_id": 6,
     "pacing_label": "30s_Explosion",
-    "shot_type": "CU",
-    "camera_movement": "push",
-    "camera_angle": "eye-level",
-    "duration": 6.8,
-    "location": "念想咖啡店",
-    "space": "Physical",
-    "characters": [],
-    "action_visual": "第一张：一个年轻女人抱着婴儿",
-    "dialogue": "",
-    "inner_voice": "",
-    "focus_object": "",
-    "lighting": "Low key",
-    "emotion": "Mystery",
-    "visual_anchors": [],
-    "veo_prompt": "close-up, slow dolly forward, eye level, 第一张：一个年轻女人抱着婴儿, in 念想咖啡店, low key lighting, deep shadows, dim atmosphere, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
-  },
-  {
-    "shot_id": 7,
-    "pacing_label": "30s_Explosion",
     "shot_type": "MCU",
-    "camera_movement": "static",
-    "camera_angle": "eye-level",
-    "duration": 6.8,
-    "location": "念想咖啡店",
-    "space": "Physical",
-    "characters": [],
-    "action_visual": "照片是清晰的——白发，蓝围裙，笑眼",
-    "dialogue": "",
-    "inner_voice": "",
-    "focus_object": "",
-    "lighting": "Low key",
-    "emotion": "Mystery",
-    "visual_anchors": [],
-    "veo_prompt": "medium close-up, static camera, eye level, 照片是清晰的——白发，蓝围裙，笑眼, in 念想咖啡店, low key lighting, deep shadows, dim atmosphere, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
-  },
-  {
-    "shot_id": 8,
-    "pacing_label": "60s_Satisfaction",
-    "shot_type": "MS",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 6.8,
-    "location": "念想咖啡店",
-    "space": "Transition",
+    "duration": 5.7,
+    "location": "coffee shop",
+    "space": "Physical",
     "characters": [
-      "苏念"
+      "Su Nian"
     ],
-    "action_visual": "但苏念看着那张脸，想不起来——",
+    "action_visual": "Su Nian turns hand over",
     "dialogue": "",
     "inner_voice": "",
     "focus_object": "",
     "lighting": "Natural",
     "emotion": "Neutral",
     "visual_anchors": [],
-    "veo_prompt": "medium shot, slow dolly forward, eye level, featuring 苏念 (26), 但苏念看着那张脸，想不起来——, in 念想咖啡店, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian turns hand over, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+  },
+  {
+    "shot_id": 7,
+    "pacing_label": "30s_Explosion",
+    "shot_type": "ECU",
+    "camera_movement": "static",
+    "camera_angle": "eye-level",
+    "duration": 6.3,
+    "location": "coffee shop",
+    "space": "Physical",
+    "characters": [
+      "Su Nian"
+    ],
+    "action_visual": "Su Nian looks at photo",
+    "dialogue": "",
+    "inner_voice": "",
+    "focus_object": "photo",
+    "lighting": "Low key",
+    "emotion": "Mystery",
+    "visual_anchors": [
+      "photo"
+    ],
+    "veo_prompt": "extreme close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks at photo, close-up detail on photo, in coffee shop, low key lighting, deep shadows, dim atmosphere, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+  },
+  {
+    "shot_id": 8,
+    "pacing_label": "30s_Explosion",
+    "shot_type": "MS",
+    "camera_movement": "push",
+    "camera_angle": "eye-level",
+    "duration": 5.7,
+    "location": "coffee shop",
+    "space": "Physical",
+    "characters": [
+      "Su Nian"
+    ],
+    "action_visual": "Su Nian stands in the scene",
+    "dialogue": "",
+    "inner_voice": "",
+    "focus_object": "",
+    "lighting": "Natural",
+    "emotion": "Neutral",
+    "visual_anchors": [],
+    "veo_prompt": "medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
   },
   {
     "shot_id": 9,
@@ -167,97 +181,126 @@
     "shot_type": "MCU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 6.8,
-    "location": "念想咖啡店",
+    "duration": 5.7,
+    "location": "coffee shop",
     "space": "Physical",
-    "characters": [],
-    "action_visual": "对面写字楼的灯一层层亮起来，又一层层灭掉",
+    "characters": [
+      "Su Nian"
+    ],
+    "action_visual": "Su Nian reads phone",
     "dialogue": "",
     "inner_voice": "",
     "focus_object": "",
     "lighting": "Natural",
     "emotion": "Neutral",
     "visual_anchors": [],
-    "veo_prompt": "medium close-up, static camera, eye level, 对面写字楼的灯一层层亮起来，又一层层灭掉, in 念想咖啡店, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "veo_prompt": "medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian reads phone, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
   },
   {
     "shot_id": 10,
     "pacing_label": "60s_Satisfaction",
-    "shot_type": "ECU",
+    "shot_type": "MS",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 7.5,
-    "location": "念想咖啡店",
+    "duration": 5.7,
+    "location": "coffee shop",
     "space": "Physical",
-    "characters": [],
-    "action_visual": "她的手背上，已经没有任何疤痕和印记了",
-    "dialogue": "明天我来喝咖啡。",
+    "characters": [
+      "Su Nian"
+    ],
+    "action_visual": "the lights go out",
+    "dialogue": "",
     "inner_voice": "",
-    "focus_object": "疤痕",
+    "focus_object": "",
     "lighting": "Natural",
     "emotion": "Neutral",
-    "visual_anchors": [
-      "疤痕"
-    ],
-    "veo_prompt": "extreme close-up, slow dolly forward, eye level, 她的手背上，已经没有任何疤痕和印记了, close-up detail on 疤痕, in 念想咖啡店, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "visual_anchors": [],
+    "veo_prompt": "medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), the lights go out, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
   },
   {
     "shot_id": 11,
     "pacing_label": "90s_Cliffhanger",
-    "shot_type": "MCU",
+    "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 6.8,
-    "location": "念想咖啡店",
+    "duration": 7.5,
+    "location": "coffee shop",
     "space": "Physical",
     "characters": [
-      "苏念"
+      "Gu Shen"
     ],
-    "action_visual": "苏念看着那行字，手指在屏幕上悬了很久",
+    "action_visual": "Gu Shen drinks coffee phone",
+    "dialogue": "明天我来喝咖啡。",
+    "inner_voice": "",
+    "focus_object": "scar",
+    "lighting": "Natural",
+    "emotion": "Neutral",
+    "visual_anchors": [
+      "scar"
+    ],
+    "veo_prompt": "close-up, static camera, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen drinks coffee phone, close-up detail on scar, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+  },
+  {
+    "shot_id": 12,
+    "pacing_label": "90s_Cliffhanger",
+    "shot_type": "MCU",
+    "camera_movement": "push",
+    "camera_angle": "eye-level",
+    "duration": 5.7,
+    "location": "coffee shop",
+    "space": "Physical",
+    "characters": [
+      "Su Nian"
+    ],
+    "action_visual": "Su Nian looks at",
     "dialogue": "别来了。",
     "inner_voice": "",
     "focus_object": "",
     "lighting": "Natural",
     "emotion": "Neutral",
     "visual_anchors": [],
-    "veo_prompt": "medium close-up, static camera, eye level, featuring 苏念 (26), 苏念看着那行字，手指在屏幕上悬了很久, in 念想咖啡店, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
-  },
-  {
-    "shot_id": 12,
-    "pacing_label": "90s_Cliffhanger",
-    "shot_type": "MS",
-    "camera_movement": "push",
-    "camera_angle": "eye-level",
-    "duration": 6.8,
-    "location": "念想咖啡店",
-    "space": "Physical",
-    "characters": [],
-    "action_visual": "然后删掉。\n\n又打了一行：\"好。\"",
-    "dialogue": "",
-    "inner_voice": "",
-    "focus_object": "",
-    "lighting": "Natural",
-    "emotion": "Neutral",
-    "visual_anchors": [],
-    "veo_prompt": "medium shot, slow dolly forward, eye level, 然后删掉。\n\n又打了一行：\"好。\", in 念想咖啡店, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks at, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
   },
   {
     "shot_id": 13,
     "pacing_label": "90s_Cliffhanger",
-    "shot_type": "MCU",
+    "shot_type": "MS",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 6.8,
-    "location": "念想咖啡店",
+    "duration": 5.7,
+    "location": "coffee shop",
     "space": "Physical",
-    "characters": [],
-    "action_visual": "发送。",
+    "characters": [
+      "Su Nian"
+    ],
+    "action_visual": "Su Nian stands in the scene",
     "dialogue": "",
     "inner_voice": "",
     "focus_object": "",
     "lighting": "Natural",
     "emotion": "Neutral",
     "visual_anchors": [],
-    "veo_prompt": "medium close-up, static camera, eye level, 发送。, in 念想咖啡店, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "veo_prompt": "medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+  },
+  {
+    "shot_id": 14,
+    "pacing_label": "90s_Cliffhanger",
+    "shot_type": "MCU",
+    "camera_movement": "push",
+    "camera_angle": "eye-level",
+    "duration": 5.7,
+    "location": "coffee shop",
+    "space": "Physical",
+    "characters": [
+      "Su Nian"
+    ],
+    "action_visual": "Su Nian stands in the scene",
+    "dialogue": "",
+    "inner_voice": "",
+    "focus_object": "",
+    "lighting": "Natural",
+    "emotion": "Neutral",
+    "visual_anchors": [],
+    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
   }
 ]

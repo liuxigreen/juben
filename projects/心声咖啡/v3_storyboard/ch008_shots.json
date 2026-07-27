@@ -6,200 +6,224 @@
     "camera_movement": "static",
     "camera_angle": "eye-level",
     "duration": 7.5,
-    "location": "念想咖啡店",
+    "location": "Nianxiang coffee shop",
     "space": "Physical",
-    "characters": [],
-    "action_visual": "这次没带画，带了一个信封",
+    "characters": [
+      "Lin Ke"
+    ],
+    "action_visual": "Lin Ke interacts with photo",
     "dialogue": "给你。",
     "inner_voice": "",
-    "focus_object": "",
+    "focus_object": "photo",
     "lighting": "Natural",
     "emotion": "Neutral",
-    "visual_anchors": [],
-    "veo_prompt": "wide shot, static camera, eye level, 这次没带画，带了一个信封, in 念想咖啡店, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "visual_anchors": [
+      "photo"
+    ],
+    "veo_prompt": "wide shot, static camera, eye level, featuring Lin Ke (25yo Chinese woman, ponytail, colorful nails, large art bag), Lin Ke interacts with photo, close-up detail on photo, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
   },
   {
     "shot_id": 2,
     "pacing_label": "3s_Hook",
-    "shot_type": "MCU",
+    "shot_type": "ECU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
     "duration": 7.5,
-    "location": "念想咖啡店",
+    "location": "Nianxiang coffee shop",
     "space": "Physical",
-    "characters": [],
-    "action_visual": "一张泛黄的照片——一个白发老太太站在咖啡店门口，围裙上沾着咖啡渍，笑得眼睛眯成一条缝",
+    "characters": [
+      "Su Nian"
+    ],
+    "action_visual": "Su Nian stares at",
     "dialogue": "这是……外婆？",
     "inner_voice": "",
-    "focus_object": "",
+    "focus_object": "photo",
     "lighting": "Natural",
     "emotion": "Neutral",
-    "visual_anchors": [],
-    "veo_prompt": "medium close-up, slow dolly forward, eye level, 一张泛黄的照片——一个白发老太太站在咖啡店门口，围裙上沾着咖啡渍，笑得眼睛眯成一条缝, in 念想咖啡店, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "visual_anchors": [
+      "photo"
+    ],
+    "veo_prompt": "extreme close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stares at, close-up detail on photo, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
   },
   {
     "shot_id": 3,
     "pacing_label": "15s_Retention",
-    "shot_type": "MS",
+    "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
     "duration": 7.5,
-    "location": "念想咖啡店",
+    "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
-      "苏念"
+      "Su Nian",
+      "Lin Ke"
     ],
-    "action_visual": "\"苏念，你认不出来了",
+    "action_visual": "Su Nian looks at photo door",
     "dialogue": "苏念，你认不出来了？",
     "inner_voice": "",
-    "focus_object": "",
+    "focus_object": "photo",
     "lighting": "Natural",
     "emotion": "Neutral",
-    "visual_anchors": [],
-    "veo_prompt": "medium shot, static camera, eye level, featuring 苏念 (26), \"苏念，你认不出来了, in 念想咖啡店, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "visual_anchors": [
+      "photo"
+    ],
+    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Lin Ke (25yo Chinese woman, ponytail, colorful nails, large art bag), Su Nian looks at photo door, close-up detail on photo, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
   },
   {
     "shot_id": 4,
     "pacing_label": "15s_Retention",
-    "shot_type": "MCU",
+    "shot_type": "MS",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 7.5,
-    "location": "念想咖啡店",
+    "duration": 7.3,
+    "location": "Nianxiang coffee shop",
     "space": "Physical",
-    "characters": [],
-    "action_visual": "但那张脸——她看不出来了",
+    "characters": [
+      "Su Nian"
+    ],
+    "action_visual": "Su Nian looks at",
     "dialogue": "",
     "inner_voice": "",
     "focus_object": "",
     "lighting": "Natural",
     "emotion": "Neutral",
     "visual_anchors": [],
-    "veo_prompt": "medium close-up, slow dolly forward, eye level, 但那张脸——她看不出来了, in 念想咖啡店, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "veo_prompt": "medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks at, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
   },
   {
     "shot_id": 5,
     "pacing_label": "30s_Explosion",
-    "shot_type": "MS",
+    "shot_type": "MCU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 7.5,
-    "location": "念想咖啡店",
-    "space": "Transition",
+    "duration": 7.3,
+    "location": "Nianxiang coffee shop",
+    "space": "Physical",
     "characters": [
-      "苏念"
+      "Su Nian"
     ],
-    "action_visual": "\"苏念说，声音很轻，\"我记得她喜欢穿蓝色围裙",
+    "action_visual": "Su Nian says coffee",
     "dialogue": "我记得她的名字。",
     "inner_voice": "",
     "focus_object": "",
     "lighting": "Natural",
     "emotion": "Neutral",
     "visual_anchors": [],
-    "veo_prompt": "medium shot, static camera, eye level, featuring 苏念 (26), \"苏念说，声音很轻，\"我记得她喜欢穿蓝色围裙, in 念想咖啡店, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "veo_prompt": "medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian says coffee, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
   },
   {
     "shot_id": 6,
     "pacing_label": "30s_Explosion",
-    "shot_type": "MCU",
+    "shot_type": "ECU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
     "duration": 7.5,
-    "location": "念想咖啡店",
+    "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
-      "苏念"
+      "Su Nian",
+      "Lin Ke"
     ],
-    "action_visual": "林可的手在吧台上握紧",
+    "action_visual": "Su Nian interacts with photo",
     "dialogue": "你最近到底怎么了？",
     "inner_voice": "",
-    "focus_object": "",
+    "focus_object": "photo",
     "lighting": "Natural",
     "emotion": "Neutral",
-    "visual_anchors": [],
-    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring 苏念 (26), 林可的手在吧台上握紧, in 念想咖啡店, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "visual_anchors": [
+      "photo"
+    ],
+    "veo_prompt": "extreme close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Lin Ke (25yo Chinese woman, ponytail, colorful nails, large art bag), Su Nian interacts with photo, close-up detail on photo, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
   },
   {
     "shot_id": 7,
     "pacing_label": "60s_Satisfaction",
-    "shot_type": "MS",
+    "shot_type": "MCU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 7.5,
-    "location": "念想咖啡店",
+    "duration": 7.3,
+    "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
-      "林可"
+      "Su Nian",
+      "Lin Ke"
     ],
-    "action_visual": "她站起来，走到门口，又回头——",
+    "action_visual": "Su Nian stands up",
     "dialogue": "苏念，你哥以前也——",
     "inner_voice": "",
     "focus_object": "",
     "lighting": "Natural",
     "emotion": "Neutral",
     "visual_anchors": [],
-    "veo_prompt": "medium shot, static camera, eye level, featuring 林可 (25), 她站起来，走到门口，又回头——, in 念想咖啡店, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "veo_prompt": "medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Lin Ke (25yo Chinese woman, ponytail, colorful nails, large art bag), Su Nian stands up, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
   },
   {
     "shot_id": 8,
     "pacing_label": "60s_Satisfaction",
-    "shot_type": "MCU",
+    "shot_type": "MS",
     "camera_movement": "rapid_push",
     "camera_angle": "low",
-    "duration": 7.5,
-    "location": "念想咖啡店",
+    "duration": 7.3,
+    "location": "Nianxiang coffee shop",
     "space": "Physical",
-    "characters": [],
-    "action_visual": "\"林可推开玻璃门，\"我走了",
+    "characters": [
+      "Su Nian",
+      "Lin Ke"
+    ],
+    "action_visual": "Su Nian looks up",
     "dialogue": "我哥怎么了？",
     "inner_voice": "",
     "focus_object": "",
     "lighting": "High contrast",
     "emotion": "Shock",
     "visual_anchors": [],
-    "veo_prompt": "medium close-up, rapid push-in, low angle looking up, \"林可推开玻璃门，\"我走了, in 念想咖啡店, high contrast dramatic lighting, harsh shadows, shocked, dramatic, cinematic, 9:16 vertical, photorealistic, 4K"
+    "veo_prompt": "medium shot, rapid push-in, low angle looking up, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Lin Ke (25yo Chinese woman, ponytail, colorful nails, large art bag), Su Nian looks up, in Nianxiang coffee shop, high contrast dramatic lighting, harsh shadows, shocked, dramatic, cinematic, 9:16 vertical, photorealistic, 4K"
   },
   {
     "shot_id": 9,
     "pacing_label": "90s_Cliffhanger",
-    "shot_type": "MS",
+    "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
     "duration": 7.5,
-    "location": "念想咖啡店",
+    "location": "Nianxiang coffee shop",
     "space": "Physical",
-    "characters": [],
-    "action_visual": "门关上了。风铃晃了两下。",
+    "characters": [
+      "Su Nian"
+    ],
+    "action_visual": "Su Nian sits down",
     "dialogue": "",
     "inner_voice": "",
-    "focus_object": "",
+    "focus_object": "sticky note",
     "lighting": "Natural",
     "emotion": "Neutral",
-    "visual_anchors": [],
-    "veo_prompt": "medium shot, static camera, eye level, 门关上了。风铃晃了两下。, in 念想咖啡店, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "visual_anchors": [
+      "sticky note"
+    ],
+    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian sits down, close-up detail on sticky note, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
   },
   {
     "shot_id": 10,
     "pacing_label": "90s_Cliffhanger",
-    "shot_type": "ECU",
+    "shot_type": "CU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
     "duration": 7.5,
-    "location": "念想咖啡店",
+    "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
-      "苏念"
+      "Su Nian"
     ],
-    "action_visual": "苏念独自坐在空荡荡的店里，把信封里的照片拿出来，贴在墙上外婆便签的旁边",
+    "action_visual": "the lights come back on",
     "dialogue": "",
     "inner_voice": "",
-    "focus_object": "便签",
+    "focus_object": "photo",
     "lighting": "Natural",
     "emotion": "Neutral",
     "visual_anchors": [
-      "便签"
+      "photo"
     ],
-    "veo_prompt": "extreme close-up, slow dolly forward, eye level, featuring 苏念 (26), 苏念独自坐在空荡荡的店里，把信封里的照片拿出来，贴在墙上外婆便签的旁边, close-up detail on 便签, in 念想咖啡店, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), the lights come back on, close-up detail on photo, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
   },
   {
     "shot_id": 11,
@@ -208,16 +232,20 @@
     "camera_movement": "rapid_push",
     "camera_angle": "low",
     "duration": 7.5,
-    "location": "念想咖啡店",
-    "space": "Transition",
-    "characters": [],
-    "action_visual": "车灯的光从窗户扫进来，照亮了照片上的灰尘",
+    "location": "Nianxiang coffee shop",
+    "space": "Physical",
+    "characters": [
+      "Su Nian"
+    ],
+    "action_visual": "Su Nian cries",
     "dialogue": "",
     "inner_voice": "",
-    "focus_object": "",
+    "focus_object": "photo",
     "lighting": "High contrast",
     "emotion": "Shock",
-    "visual_anchors": [],
-    "veo_prompt": "close-up, rapid push-in, low angle looking up, 车灯的光从窗户扫进来，照亮了照片上的灰尘, in 念想咖啡店, high contrast dramatic lighting, harsh shadows, shocked, dramatic, cinematic, 9:16 vertical, photorealistic, 4K"
+    "visual_anchors": [
+      "photo"
+    ],
+    "veo_prompt": "close-up, rapid push-in, low angle looking up, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian cries, close-up detail on photo, in Nianxiang coffee shop, high contrast dramatic lighting, harsh shadows, shocked, dramatic, cinematic, 9:16 vertical, photorealistic, 4K"
   }
 ]

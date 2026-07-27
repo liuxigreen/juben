@@ -16,48 +16,55 @@ from typing import Callable
 
 logger = logging.getLogger(__name__)
 
-# 切片Prompt（一次调用，~500token输入）
-CHUNK_PROMPT = """You are a storyboard beat extractor for vertical short drama.
+# 切片Prompt — 强制英文输出，严格JSON
+CHUNK_PROMPT = """You are a storyboard beat extractor for vertical short drama (9:16, Veo video generation).
 
-Split the following script into 10-20 Visual Beats. Each beat = one camera shot.
+CRITICAL RULES:
+- ALL text fields (action_visual, spoken_dialogue, inner_voice) MUST be in ENGLISH. No Chinese characters anywhere.
+- action_visual: ONLY physical, filmable actions. No thoughts, no feelings, no abstract concepts.
+- Use character real names (e.g. "Su Nian" not "she"). Always resolve pronouns to names.
+- spoken_dialogue = words spoken OUT LOUD. inner_voice = mind reading / voice-over / monologue. NEVER mix them.
+- focus_object = specific physical prop visible in close-up (cup, scar, phone, etc.)
 
-Rules:
-1. A "Visual Beat" ends when: camera angle changes, time jumps, space changes (real→mental), speaker changes, or a major physical action completes.
-2. Do NOT split mid-action (e.g. "picks up cup, drinks" is ONE beat).
-3. DO split at: ability activation (reading minds, seeing visions), trace changes (scar fading, writing disappearing), speaker switches, scene transitions.
-4. Classify each beat's space: "Physical" (real world), "Mental" (mind reading, visions, flashbacks), "Transition" (crossing between real and mental).
-5. Separate spoken dialogue from inner voice/monologue.
-6. Extract focus objects (props that are visual anchors: cups, scars, notes, keys, etc.)
+Split the script into 10-20 Visual Beats. Each beat = one camera shot.
+
+Cut when: camera angle changes, time jumps, space changes (Physical->Mental), speaker changes, or major physical action completes.
+Do NOT cut mid-action (e.g. "picks up cup, drinks" is ONE beat).
+DO cut at: ability activation (mind reading), trace changes (scar appearing), speaker switches, scene transitions.
+
+Space types:
+- "Physical": real world visible action
+- "Mental": mind reading, visions, flashbacks, supernatural perception
+- "Transition": crossing between real and mental (e.g. closing eyes to activate ability)
+
+Emotions: Neutral, Tension, Shock, Sadness, Warmth, Mystery
 
 Script:
 {text}
 
 Known characters: {characters}
 
-Output JSON:
-```json
+Return ONLY valid JSON, no markdown, no explanation. Start with {{ and end with }}:
 {{
   "beats": [
     {{
       "beat_id": 1,
       "space": "Physical",
-      "characters_present": ["character names actually visible in this beat"],
-      "action_visual": "concrete filmable action in English (15-40 words, no inner thoughts)",
-      "spoken_dialogue": "words spoken aloud (empty if none)",
-      "inner_voice": "mind reading / monologue / voice-over (empty if none)",
-      "focus_object": "key prop or body part in close-up (empty if none)",
-      "emotion": "Neutral / Tension / Shock / Sadness / Warmth / Mystery"
+      "characters_present": ["Su Nian"],
+      "action_visual": "Su Nian wipes the coffee shop counter with a rag, glancing at the door for the third time",
+      "spoken_dialogue": "",
+      "inner_voice": "",
+      "focus_object": "",
+      "emotion": "Neutral"
     }}
   ]
-}}
-```
-"""
+}}"""
 
 
 class VisualBeatChunker:
     """
     用LLM把整章文本切成Visual Beat数组。
-    
+
     无LLM时用规则兜底（质量下降但不崩溃）。
     """
 
@@ -72,9 +79,9 @@ class VisualBeatChunker:
     def chunk(self, chapter_text: str) -> list[dict]:
         """
         切分整章文本为Visual Beat数组。
-        
+
         Returns:
-            [{"beat_id": 1, "space": "Physical", "characters_present": [...], 
+            [{"beat_id": 1, "space": "Physical", "characters_present": [...],
               "action_visual": "...", "spoken_dialogue": "...", "inner_voice": "...",
               "focus_object": "...", "emotion": "..."}, ...]
         """
@@ -84,47 +91,94 @@ class VisualBeatChunker:
             return self._chunk_with_rules(chapter_text)
 
     def _chunk_with_llm(self, text: str) -> list[dict]:
-        """用LLM切分"""
+        """用LLM切分（带重试和fallback）"""
         prompt = CHUNK_PROMPT.format(
-            text=text[:3000],  # 限制输入长度
+            text=text[:3000],
             characters=", ".join(self.char_names) if self.char_names else "unknown",
         )
 
+        # 第一次尝试
         try:
             response = self.llm_fn(prompt)
-            return self._parse_response(response)
+            beats = self._parse_response(response)
+            if beats and len(beats) >= 3:
+                return beats
         except Exception as e:
-            logger.warning(f"LLM chunking failed: {e}, falling back to rules")
-            return self._chunk_with_rules(text)
+            logger.warning(f"LLM attempt 1 failed: {e}")
+
+        # 第二次尝试（更简短的prompt，强调JSON only）
+        try:
+            retry_prompt = prompt + "\n\nIMPORTANT: Return ONLY the JSON object. No explanation, no markdown, no extra text. Start with { and end with }."
+            response = self.llm_fn(retry_prompt)
+            beats = self._parse_response(response)
+            if beats and len(beats) >= 3:
+                return beats
+        except Exception as e:
+            logger.warning(f"LLM attempt 2 failed: {e}")
+
+        # Fallback: 规则兜底
+        logger.warning("LLM failed, falling back to rules")
+        return self._chunk_with_rules(text)
 
     def _parse_response(self, response: str) -> list[dict]:
-        """解析LLM的JSON响应"""
-        # 提取JSON块
-        json_match = re.search(r'\{.*\}', response, re.DOTALL)
-        if json_match:
+        """解析LLM的JSON响应（多级容错）"""
+        # Level 1: 直接解析整个响应
+        for attempt_text in [response]:
+            # 尝试提取JSON块（支持```json...```包裹）
+            json_patterns = [
+                r'```json\s*\n?(\{.*?\})\s*\n?```',  # ```json...```
+                r'```\s*\n?(\{.*?\})\s*\n?```',      # ```...```
+                r'(\{[^{}]*"beats"[^{}]*\{.*?\}.*?\})', # 直接JSON with beats
+                r'(\{.*"beats".*\})',                      # 宽松匹配
+            ]
+
+            for pattern in json_patterns:
+                match = re.search(pattern, attempt_text, re.DOTALL)
+                if match:
+                    try:
+                        data = json.loads(match.group(1) if match.lastindex else match.group())
+                        beats = data.get("beats", [])
+                        if beats and len(beats) >= 3:  # 至少3个beat才算有效
+                            return self._validate_beats(beats)
+                    except json.JSONDecodeError:
+                        continue
+
+        # Level 2: 尝试从响应中手动提取beat数组
+        beat_pattern = re.findall(r'"beat_id"\s*:\s*(\d+)', response)
+        if len(beat_pattern) >= 3:
+            # 有beat_id字段，尝试逐个提取
             try:
-                data = json.loads(json_match.group())
-                beats = data.get("beats", [])
-                if beats:
-                    # 验证每个beat的必要字段
-                    validated = []
-                    for i, beat in enumerate(beats):
-                        validated.append({
-                            "beat_id": beat.get("beat_id", i + 1),
-                            "space": beat.get("space", "Physical"),
-                            "characters_present": beat.get("characters_present", []),
-                            "action_visual": beat.get("action_visual", ""),
-                            "spoken_dialogue": beat.get("spoken_dialogue", ""),
-                            "inner_voice": beat.get("inner_voice", ""),
-                            "focus_object": beat.get("focus_object", ""),
-                            "emotion": beat.get("emotion", "Neutral"),
-                        })
-                    return validated
-            except json.JSONDecodeError:
+                # 找到beats数组的开始和结束
+                start = response.find('"beats"')
+                if start > 0:
+                    bracket_start = response.find('[', start)
+                    bracket_end = response.rfind(']')
+                    if bracket_start > 0 and bracket_end > bracket_start:
+                        beats_json = response[bracket_start:bracket_end+1]
+                        beats = json.loads(beats_json)
+                        return self._validate_beats(beats)
+            except (json.JSONDecodeError, ValueError):
                 pass
 
-        logger.warning("Failed to parse LLM response")
+        logger.warning("Failed to parse LLM response as JSON")
         return []
+
+    def _validate_beats(self, beats: list) -> list[dict]:
+        """验证并规范化beat数据"""
+        validated = []
+        for i, beat in enumerate(beats):
+            if isinstance(beat, dict):
+                validated.append({
+                    "beat_id": beat.get("beat_id", i + 1),
+                    "space": beat.get("space", "Physical"),
+                    "characters_present": beat.get("characters_present", []),
+                    "action_visual": beat.get("action_visual", ""),
+                    "spoken_dialogue": beat.get("spoken_dialogue", ""),
+                    "inner_voice": beat.get("inner_voice", ""),
+                    "focus_object": beat.get("focus_object", ""),
+                    "emotion": beat.get("emotion", "Neutral"),
+                })
+        return validated
 
     def _chunk_with_rules(self, text: str) -> list[dict]:
         """

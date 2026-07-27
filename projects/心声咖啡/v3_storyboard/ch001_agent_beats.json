@@ -1,0 +1,154 @@
+{
+  "beats": [
+    {
+      "beat_id": 1,
+      "space": "Physical",
+      "characters_present": ["Su Nian"],
+      "action_visual": "Su Nian wipes the coffee shop counter with a rag, glancing at the entrance for the third time. An old man dozes by the window, a girl frowns at her laptop in the corner.",
+      "spoken_dialogue": "",
+      "inner_voice": "",
+      "focus_object": "",
+      "emotion": "Neutral"
+    },
+    {
+      "beat_id": 2,
+      "space": "Physical",
+      "characters_present": ["Gu Shen"],
+      "action_visual": "A man in a grey suit walks in through the door, the doorbell chimes. He sits at the counter without looking at the menu, pulls out his phone and places it face-down on the table.",
+      "spoken_dialogue": "Americano, hot.",
+      "inner_voice": "",
+      "focus_object": "phone",
+      "emotion": "Neutral"
+    },
+    {
+      "beat_id": 3,
+      "space": "Physical",
+      "characters_present": ["Su Nian", "Gu Shen"],
+      "action_visual": "Su Nian nods, turns around and grinds coffee beans. The man taps his fingers on the counter in a rhythmic pattern — index, middle, ring, repeating. His suit cuff has a small ink stain.",
+      "spoken_dialogue": "",
+      "inner_voice": "",
+      "focus_object": "ink stain on cuff",
+      "emotion": "Neutral"
+    },
+    {
+      "beat_id": 4,
+      "space": "Physical",
+      "characters_present": ["Su Nian", "Gu Shen"],
+      "action_visual": "Su Nian places the americano in front of the man. He takes a sip, sets the cup down. A clean arc-shaped mark appears on the rim — condensation, not lipstick.",
+      "spoken_dialogue": "",
+      "inner_voice": "",
+      "focus_object": "cup rim mark",
+      "emotion": "Neutral"
+    },
+    {
+      "beat_id": 5,
+      "space": "Physical",
+      "characters_present": ["Su Nian"],
+      "action_visual": "Su Nian turns to wipe a second table. She pauses, noticing the man's cup is still steaming but he has already set it down.",
+      "spoken_dialogue": "",
+      "inner_voice": "",
+      "focus_object": "steaming cup",
+      "emotion": "Mystery"
+    },
+    {
+      "beat_id": 6,
+      "space": "Transition",
+      "characters_present": ["Su Nian"],
+      "action_visual": "Su Nian walks back to the counter, picks up the americano. The cup is hot to the touch. She closes her eyes and takes a sip.",
+      "spoken_dialogue": "",
+      "inner_voice": "",
+      "focus_object": "cup",
+      "emotion": "Tension"
+    },
+    {
+      "beat_id": 7,
+      "space": "Mental",
+      "characters_present": ["Su Nian"],
+      "action_visual": "All ambient sounds fade to silence — the old man's snoring, the girl's keyboard, street horns all vanish. A low voice emerges, muffled as if through a wall.",
+      "spoken_dialogue": "",
+      "inner_voice": "This month's KPI is impossible again. Old Chen says if I don't close the deal, I'm out. That shop... the contract is ready...",
+      "focus_object": "",
+      "emotion": "Shock"
+    },
+    {
+      "beat_id": 8,
+      "space": "Physical",
+      "characters_present": ["Su Nian"],
+      "action_visual": "Su Nian's eyes snap open. All ambient sounds return instantly — the old man shifts in his sleep, the girl's keyboard clacks.",
+      "spoken_dialogue": "",
+      "inner_voice": "",
+      "focus_object": "",
+      "emotion": "Shock"
+    },
+    {
+      "beat_id": 9,
+      "space": "Transition",
+      "characters_present": ["Su Nian"],
+      "action_visual": "Su Nian looks down at her left hand. The old burn scar on her ring finger is still there. Beside it, a faint new mark she doesn't recognize.",
+      "spoken_dialogue": "",
+      "inner_voice": "",
+      "focus_object": "scar on ring finger",
+      "emotion": "Mystery"
+    },
+    {
+      "beat_id": 10,
+      "space": "Physical",
+      "characters_present": ["Gu Shen"],
+      "action_visual": "The man in the grey suit stands up, typing on his phone without looking up.",
+      "spoken_dialogue": "How much?",
+      "inner_voice": "",
+      "focus_object": "phone",
+      "emotion": "Neutral"
+    },
+    {
+      "beat_id": 11,
+      "space": "Physical",
+      "characters_present": ["Su Nian", "Gu Shen"],
+      "action_visual": "Su Nian answers. The man scans a QR code to pay, then turns and walks out of the coffee shop without looking back.",
+      "spoken_dialogue": "Twenty-eight.",
+      "inner_voice": "",
+      "focus_object": "",
+      "emotion": "Neutral"
+    },
+    {
+      "beat_id": 12,
+      "space": "Physical",
+      "characters_present": ["Su Nian"],
+      "action_visual": "Su Nian watches the man walk into the revolving door of the office building across the street, disappearing behind the glass curtain wall.",
+      "spoken_dialogue": "",
+      "inner_voice": "",
+      "focus_object": "revolving door",
+      "emotion": "Mystery"
+    },
+    {
+      "beat_id": 13,
+      "space": "Physical",
+      "characters_present": ["Su Nian"],
+      "action_visual": "Su Nian looks down at the americano cup. On the rim, a faint lipstick mark — not hers, she hasn't worn lipstick today.",
+      "spoken_dialogue": "",
+      "inner_voice": "",
+      "focus_object": "lipstick mark on cup rim",
+      "emotion": "Shock"
+    },
+    {
+      "beat_id": 14,
+      "space": "Physical",
+      "characters_present": ["Su Nian"],
+      "action_visual": "Su Nian places the cup in the sink, turns on the hot water faucet. The stream rinses away the lipstick mark, the condensation, everything.",
+      "spoken_dialogue": "",
+      "inner_voice": "That shop... the contract is ready...",
+      "focus_object": "lipstick mark washing away",
+      "emotion": "Sadness"
+    },
+    {
+      "beat_id": 15,
+      "space": "Physical",
+      "characters_present": ["Su Nian"],
+      "action_visual": "Su Nian dries her hands, looks down at her left ring finger. The scar remains. But something feels different — something is missing.",
+      "spoken_dialogue": "",
+      "inner_voice": "",
+      "focus_object": "scar on ring finger",
+      "emotion": "Mystery"
+    }
+  ]
+}

@@ -207,14 +207,14 @@ class StoryboardLint:
 
         # 6. 英文槽位检查
         if veo_prompt:
-            # 检查是否有过长中文片段（>5字的连续中文）
-            chinese_blocks = re.findall(r'[\u4e00-\u9fff]{5,}', veo_prompt)
-            if chinese_blocks:
+            # 检查是否有任何中文字符（零容忍）
+            chinese_chars = re.findall(r'[\u4e00-\u9fff]', veo_prompt)
+            if chinese_chars:
                 violations.append(LintViolation(
                     shot_id=shot_id,
                     rule="english_slot",
                     severity="warning",
-                    message=f"veo_prompt含中文长句: {chinese_blocks[:3]}",
+                    message=f"veo_prompt含中文: {''.join(chinese_chars[:10])}...",
                     suggestion="翻译为英文",
                 ))
 
