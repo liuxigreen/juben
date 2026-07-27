@@ -1,0 +1,1472 @@
+[
+  {
+    "chapter": 1,
+    "shot_id": 3,
+    "type": "onscreen",
+    "text_zh": "美式，热的。",
+    "speaker": "Gu Shen",
+    "emotion": "calm, conversational",
+    "duration": 4.1,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 1,
+    "shot_id": 14,
+    "type": "inner_voice",
+    "text_zh": "……这个月KPI又完不成了。老陈说再不签下来就让我走人。那家店……合同都准备好了……",
+    "speaker": "Su Nian",
+    "emotion": "low, deliberate, pauses between words",
+    "duration": 4.4,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 1,
+    "shot_id": 22,
+    "type": "onscreen",
+    "text_zh": "多少钱？",
+    "speaker": "Gu Shen",
+    "emotion": "calm, conversational",
+    "duration": 4.1,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 2,
+    "shot_id": 6,
+    "type": "inner_voice",
+    "text_zh": "……前女友说我不懂感情。也许她说得对。但我也不懂为什么隔壁那家破咖啡店的咖啡比星巴克好喝……不对，我在想什么，我是来谈收购的……",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.9,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 2,
+    "shot_id": 9,
+    "type": "onscreen",
+    "text_zh": "想不起来什么时候划的",
+    "speaker": "Su Nian",
+    "emotion": "low, deliberate, pauses between words",
+    "duration": 4.4,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 2,
+    "shot_id": 12,
+    "type": "onscreen",
+    "text_zh": "连看书都能受伤",
+    "speaker": "Lin Ke",
+    "emotion": "calm, conversational",
+    "duration": 3.2,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 2,
+    "shot_id": 14,
+    "type": "onscreen",
+    "text_zh": "你好。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.4,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 2,
+    "shot_id": 16,
+    "type": "onscreen",
+    "text_zh": "我叫顾深。对面写字楼的。",
+    "speaker": "Gu Shen",
+    "emotion": "calm, conversational",
+    "duration": 4.9,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 2,
+    "shot_id": 18,
+    "type": "onscreen",
+    "text_zh": "不考虑。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 3.2,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 2,
+    "shot_id": 20,
+    "type": "onscreen",
+    "text_zh": "好吧。",
+    "speaker": "Gu Shen",
+    "emotion": "calm, conversational",
+    "duration": 3.2,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 3,
+    "shot_id": 1,
+    "type": "onscreen",
+    "text_zh": "你记得我喝什么？",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.2,
+    "shot_type": "WS"
+  },
+  {
+    "chapter": 3,
+    "shot_id": 8,
+    "type": "inner_voice",
+    "text_zh": "为什么你不出来追我？",
+    "speaker": "Su Nian",
+    "emotion": "soft, trailing off, voice cracking",
+    "duration": 3.2,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 3,
+    "shot_id": 14,
+    "type": "onscreen",
+    "text_zh": "你还好吗？",
+    "speaker": "Su Nian",
+    "emotion": "low, deliberate, pauses between words",
+    "duration": 4.7,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 3,
+    "shot_id": 16,
+    "type": "onscreen",
+    "text_zh": "没事。",
+    "speaker": "Su Nian",
+    "emotion": "soft, trailing off, voice cracking",
+    "duration": 4.2,
+    "shot_type": "MS"
+  },
+  {
+    "chapter": 4,
+    "shot_id": 3,
+    "type": "onscreen",
+    "text_zh": "外婆的店……门口有这棵树？",
+    "speaker": "grandmother",
+    "emotion": "calm, conversational",
+    "duration": 4.6,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 4,
+    "shot_id": 5,
+    "type": "onscreen",
+    "text_zh": "你最近太累了。",
+    "speaker": "Gu Shen",
+    "emotion": "calm, conversational",
+    "duration": 5.1,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 4,
+    "shot_id": 8,
+    "type": "onscreen",
+    "text_zh": "锐见投资。苏念，他是来收购的。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.6,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 4,
+    "shot_id": 10,
+    "type": "onscreen",
+    "text_zh": "这是你外婆。你还记得她冲咖啡的样子吗？",
+    "speaker": "Lin Ke",
+    "emotion": "calm, conversational",
+    "duration": 5.1,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 4,
+    "shot_id": 12,
+    "type": "onscreen",
+    "text_zh": "不太记得了。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 3.2,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 4,
+    "shot_id": 16,
+    "type": "onscreen",
+    "text_zh": "送给小念。希望你永远记得。",
+    "speaker": "Lin Ke",
+    "emotion": "calm, conversational",
+    "duration": 5.1,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 4,
+    "shot_id": 20,
+    "type": "onscreen",
+    "text_zh": "小念，记住：拉花不是技术，是心意。",
+    "speaker": "grandmother",
+    "emotion": "calm, conversational",
+    "duration": 5.1,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 5,
+    "shot_id": 1,
+    "type": "onscreen",
+    "text_zh": "苏老板，久仰。",
+    "speaker": "Gu Shen",
+    "emotion": "calm, conversational",
+    "duration": 5.0,
+    "shot_type": "WS"
+  },
+  {
+    "chapter": 5,
+    "shot_id": 2,
+    "type": "onscreen",
+    "text_zh": "不卖。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 5.0,
+    "shot_type": "ECU"
+  },
+  {
+    "chapter": 5,
+    "shot_id": 3,
+    "type": "onscreen",
+    "text_zh": "你喝什么？",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 3.1,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 5,
+    "shot_id": 4,
+    "type": "onscreen",
+    "text_zh": "豆子不错。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.5,
+    "shot_type": "MS"
+  },
+  {
+    "chapter": 5,
+    "shot_id": 9,
+    "type": "inner_voice",
+    "text_zh": "……条件开得够高了。她不识货。但老陈说得对，这条街要改造，她的店迟早要拆。不如趁现在给她一个好价钱。不过……这咖啡确实好喝。比我十年前自己开的那家强。那时候……",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 5.0,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 5,
+    "shot_id": 14,
+    "type": "onscreen",
+    "text_zh": "——你考虑一下。我的名片——",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 5.0,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 5,
+    "shot_id": 15,
+    "type": "onscreen",
+    "text_zh": "你也开过咖啡店。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.5,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 5,
+    "shot_id": 16,
+    "type": "onscreen",
+    "text_zh": "什么？",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.5,
+    "shot_type": "MS"
+  },
+  {
+    "chapter": 5,
+    "shot_id": 17,
+    "type": "onscreen",
+    "text_zh": "你怎么知道的？",
+    "speaker": "Chen Rui",
+    "emotion": "calm, conversational",
+    "duration": 3.1,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 6,
+    "shot_id": 2,
+    "type": "onscreen",
+    "text_zh": "美式。",
+    "speaker": "Gu Shen",
+    "emotion": "calm, conversational",
+    "duration": 3.9,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 6,
+    "shot_id": 3,
+    "type": "onscreen",
+    "text_zh": "你每天都来。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 3.9,
+    "shot_type": "MS"
+  },
+  {
+    "chapter": 6,
+    "shot_id": 4,
+    "type": "onscreen",
+    "text_zh": "你的咖啡比楼下的好。",
+    "speaker": "Gu Shen",
+    "emotion": "calm, conversational",
+    "duration": 4.6,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 6,
+    "shot_id": 5,
+    "type": "onscreen",
+    "text_zh": "等一下。",
+    "speaker": "Su Nian",
+    "emotion": "whispered, restrained, breathing heavy",
+    "duration": 4.2,
+    "shot_type": "ECU"
+  },
+  {
+    "chapter": 6,
+    "shot_id": 6,
+    "type": "onscreen",
+    "text_zh": "因为这是外婆留给我的。",
+    "speaker": "grandmother",
+    "emotion": "sharp intake of breath, voice breaking",
+    "duration": 4.2,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 6,
+    "shot_id": 13,
+    "type": "onscreen",
+    "text_zh": "看到过画面",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.2,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 7,
+    "shot_id": 1,
+    "type": "onscreen",
+    "text_zh": "你从来不听我说话",
+    "speaker": "Su Nian",
+    "emotion": "soft, trailing off, voice cracking",
+    "duration": 5.1,
+    "shot_type": "WS"
+  },
+  {
+    "chapter": 7,
+    "shot_id": 7,
+    "type": "inner_voice",
+    "text_zh": "……他不知道我为什么生气。他永远不知道。我只是想让他记住我的生日，就一次……",
+    "speaker": "Gu Shen",
+    "emotion": "calm, conversational",
+    "duration": 5.7,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 7,
+    "shot_id": 11,
+    "type": "onscreen",
+    "text_zh": "告诉他你为什么生气。不是因为那件事，是因为生日。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 5.1,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 8,
+    "shot_id": 1,
+    "type": "onscreen",
+    "text_zh": "给你。",
+    "speaker": "Lin Ke",
+    "emotion": "calm, conversational",
+    "duration": 7.0,
+    "shot_type": "WS"
+  },
+  {
+    "chapter": 8,
+    "shot_id": 2,
+    "type": "onscreen",
+    "text_zh": "这是……外婆？",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 7.0,
+    "shot_type": "ECU"
+  },
+  {
+    "chapter": 8,
+    "shot_id": 4,
+    "type": "onscreen",
+    "text_zh": "苏念，你认不出来了？",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 6.3,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 8,
+    "shot_id": 6,
+    "type": "onscreen",
+    "text_zh": "我记得她的名字。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 6.3,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 8,
+    "shot_id": 7,
+    "type": "onscreen",
+    "text_zh": "你最近到底怎么了？",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 7.0,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 8,
+    "shot_id": 8,
+    "type": "onscreen",
+    "text_zh": "苏念，你哥以前也——",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 6.3,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 8,
+    "shot_id": 9,
+    "type": "onscreen",
+    "text_zh": "我哥怎么了？",
+    "speaker": "Su Nian",
+    "emotion": "sharp intake of breath, voice breaking",
+    "duration": 4.4,
+    "shot_type": "MS"
+  },
+  {
+    "chapter": 8,
+    "shot_id": 10,
+    "type": "onscreen",
+    "text_zh": "没什么。",
+    "speaker": "Lin Ke",
+    "emotion": "calm, conversational",
+    "duration": 4.4,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 9,
+    "shot_id": 1,
+    "type": "onscreen",
+    "text_zh": "你为什么每次都喝我喝过的咖啡？",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.4,
+    "shot_type": "WS"
+  },
+  {
+    "chapter": 9,
+    "shot_id": 3,
+    "type": "onscreen",
+    "text_zh": "巧合。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 3.2,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 9,
+    "shot_id": 6,
+    "type": "onscreen",
+    "text_zh": "第一次，我以为你口渴。",
+    "speaker": "Gu Shen",
+    "emotion": "whispered, restrained, breathing heavy",
+    "duration": 3.2,
+    "shot_type": "MS"
+  },
+  {
+    "chapter": 9,
+    "shot_id": 8,
+    "type": "onscreen",
+    "text_zh": "你喝完之后，",
+    "speaker": "Gu Shen",
+    "emotion": "sharp intake of breath, voice breaking",
+    "duration": 4.4,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 9,
+    "shot_id": 11,
+    "type": "onscreen",
+    "text_zh": "你多想了。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.4,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 9,
+    "shot_id": 12,
+    "type": "onscreen",
+    "text_zh": "也许。",
+    "speaker": "Gu Shen",
+    "emotion": "calm, conversational",
+    "duration": 3.4,
+    "shot_type": "ECU"
+  },
+  {
+    "chapter": 9,
+    "shot_id": 13,
+    "type": "onscreen",
+    "text_zh": "我送你回去。",
+    "speaker": "Gu Shen",
+    "emotion": "calm, conversational",
+    "duration": 4.4,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 9,
+    "shot_id": 15,
+    "type": "onscreen",
+    "text_zh": "苏念。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.4,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 9,
+    "shot_id": 17,
+    "type": "onscreen",
+    "text_zh": "我明天还会来喝咖啡。",
+    "speaker": "Gu Shen",
+    "emotion": "calm, conversational",
+    "duration": 3.2,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 9,
+    "shot_id": 18,
+    "type": "onscreen",
+    "text_zh": "你不用——",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 3.2,
+    "shot_type": "MS"
+  },
+  {
+    "chapter": 9,
+    "shot_id": 19,
+    "type": "onscreen",
+    "text_zh": "我不是来收购你的店的。",
+    "speaker": "Gu Shen",
+    "emotion": "whispered, restrained, breathing heavy",
+    "duration": 4.4,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 9,
+    "shot_id": 20,
+    "type": "onscreen",
+    "text_zh": "你让我想起一个人。",
+    "speaker": "Su Nian",
+    "emotion": "low, deliberate, pauses between words",
+    "duration": 4.9,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 9,
+    "shot_id": 21,
+    "type": "onscreen",
+    "text_zh": "但又完全不同。",
+    "speaker": "Su Nian",
+    "emotion": "whispered, restrained, breathing heavy",
+    "duration": 4.9,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 10,
+    "shot_id": 2,
+    "type": "inner_voice",
+    "text_zh": "第1天：读心灰色西装男（顾深）。失去——手背上一道印痕。原因不明。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 7.5,
+    "shot_type": "ECU"
+  },
+  {
+    "chapter": 10,
+    "shot_id": 4,
+    "type": "onscreen",
+    "text_zh": "想不起来了",
+    "speaker": "Su Nian",
+    "emotion": "low, deliberate, pauses between words",
+    "duration": 6.8,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 10,
+    "shot_id": 8,
+    "type": "inner_voice",
+    "text_zh": "规律：读心次数越多，失去的记忆越重要。从无关紧要的印记，到重要的人。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.8,
+    "shot_type": "MS"
+  },
+  {
+    "chapter": 10,
+    "shot_id": 11,
+    "type": "onscreen",
+    "text_zh": "明天我来喝咖啡。",
+    "speaker": "Gu Shen",
+    "emotion": "calm, conversational",
+    "duration": 6.8,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 10,
+    "shot_id": 12,
+    "type": "onscreen",
+    "text_zh": "别来了。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.8,
+    "shot_type": "MS"
+  },
+  {
+    "chapter": 11,
+    "shot_id": 1,
+    "type": "onscreen",
+    "text_zh": "苏老板，这是我们的评估团队。",
+    "speaker": "Chen Rui",
+    "emotion": "calm, conversational",
+    "duration": 4.1,
+    "shot_type": "WS"
+  },
+  {
+    "chapter": 11,
+    "shot_id": 3,
+    "type": "onscreen",
+    "text_zh": "公司给了最后期限。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.1,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 11,
+    "shot_id": 4,
+    "type": "onscreen",
+    "text_zh": "你这栋楼的产权——",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 3.0,
+    "shot_type": "MS"
+  },
+  {
+    "chapter": 11,
+    "shot_id": 9,
+    "type": "inner_voice",
+    "text_zh": "……老陈说的违规是真的。但我也查过——那栋楼的产权问题其实在三年前就解决了，公司故意隐瞒了这个信息。他们就是要逼她低价卖。我不该告诉她。但——",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.5,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 11,
+    "shot_id": 13,
+    "type": "inner_voice",
+    "text_zh": "那时候也没人站在我这边。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.1,
+    "shot_type": "MS"
+  },
+  {
+    "chapter": 11,
+    "shot_id": 22,
+    "type": "onscreen",
+    "text_zh": "陈总。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.9,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 12,
+    "shot_id": 11,
+    "type": "onscreen",
+    "text_zh": "你今天没喝。",
+    "speaker": "Su Nian",
+    "emotion": "sharp intake of breath, voice breaking",
+    "duration": 4.3,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 12,
+    "shot_id": 12,
+    "type": "onscreen",
+    "text_zh": "什么？",
+    "speaker": "Su Nian",
+    "emotion": "low, deliberate, pauses between words",
+    "duration": 4.3,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 12,
+    "shot_id": 17,
+    "type": "onscreen",
+    "text_zh": "我不渴。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 3.0,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 12,
+    "shot_id": 20,
+    "type": "onscreen",
+    "text_zh": "我查了一下。",
+    "speaker": "Gu Shen",
+    "emotion": "calm, conversational",
+    "duration": 4.3,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 12,
+    "shot_id": 21,
+    "type": "onscreen",
+    "text_zh": "你说'查了'什么？",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.7,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 13,
+    "shot_id": 1,
+    "type": "onscreen",
+    "text_zh": "美式。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 3.9,
+    "shot_type": "WS"
+  },
+  {
+    "chapter": 13,
+    "shot_id": 2,
+    "type": "onscreen",
+    "text_zh": "你这店，开了多久了？",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 3.0,
+    "shot_type": "ECU"
+  },
+  {
+    "chapter": 13,
+    "shot_id": 3,
+    "type": "onscreen",
+    "text_zh": "六年。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 3.9,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 13,
+    "shot_id": 5,
+    "type": "onscreen",
+    "text_zh": "好地方。",
+    "speaker": "Gu Shen",
+    "emotion": "sharp intake of breath, voice breaking",
+    "duration": 4.3,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 13,
+    "shot_id": 15,
+    "type": "inner_voice",
+    "text_zh": "……评估报告出来了。这栋楼的结构安全系数不达标，需要整体拆除。念想咖啡店所在的巷子——全部拆。工期三个月。我得把文件送到街道办。但这个消息不能提前泄露，不然那些商户会闹……",
+    "speaker": "Su Nian",
+    "emotion": "sharp intake of breath, voice breaking",
+    "duration": 5.1,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 13,
+    "shot_id": 22,
+    "type": "onscreen",
+    "text_zh": "多少钱？",
+    "speaker": "Gu Shen",
+    "emotion": "sharp intake of breath, voice breaking",
+    "duration": 4.3,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 14,
+    "shot_id": 5,
+    "type": "onscreen",
+    "text_zh": "小念满月，妈妈抱着。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.4,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 14,
+    "shot_id": 10,
+    "type": "onscreen",
+    "text_zh": "想不起来",
+    "speaker": "Su Nian",
+    "emotion": "low, deliberate, pauses between words",
+    "duration": 4.4,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 14,
+    "shot_id": 20,
+    "type": "inner_voice",
+    "text_zh": "小念，别再喝了。",
+    "speaker": "Su Nian",
+    "emotion": "low, deliberate, pauses between words",
+    "duration": 4.4,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 14,
+    "shot_id": 21,
+    "type": "inner_voice",
+    "text_zh": "你喝得越多，忘得越多。忘得越多，喝得越多。停下来。",
+    "speaker": "Su Nian",
+    "emotion": "whispered, restrained, breathing heavy",
+    "duration": 4.0,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 15,
+    "shot_id": 3,
+    "type": "onscreen",
+    "text_zh": "进来。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.5,
+    "shot_type": "MS"
+  },
+  {
+    "chapter": 15,
+    "shot_id": 4,
+    "type": "onscreen",
+    "text_zh": "你昨天挂了。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 3.3,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 15,
+    "shot_id": 5,
+    "type": "onscreen",
+    "text_zh": "我知道。",
+    "speaker": "Lin Ke",
+    "emotion": "low, deliberate, pauses between words",
+    "duration": 4.5,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 15,
+    "shot_id": 7,
+    "type": "onscreen",
+    "text_zh": "你说——我哥哥当年也是这样。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 3.4,
+    "shot_type": "ECU"
+  },
+  {
+    "chapter": 15,
+    "shot_id": 9,
+    "type": "onscreen",
+    "text_zh": "你有哥哥。",
+    "speaker": "Lin Ke",
+    "emotion": "soft, trailing off, voice cracking",
+    "duration": 3.3,
+    "shot_type": "MS"
+  },
+  {
+    "chapter": 15,
+    "shot_id": 10,
+    "type": "onscreen",
+    "text_zh": "我不记得。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.5,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 15,
+    "shot_id": 11,
+    "type": "onscreen",
+    "text_zh": "什么意思？",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.9,
+    "shot_type": "ECU"
+  },
+  {
+    "chapter": 15,
+    "shot_id": 12,
+    "type": "onscreen",
+    "text_zh": "这是你和苏远。",
+    "speaker": "Lin Ke",
+    "emotion": "calm, conversational",
+    "duration": 3.4,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 15,
+    "shot_id": 14,
+    "type": "onscreen",
+    "text_zh": "苏远——",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 3.4,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 15,
+    "shot_id": 16,
+    "type": "onscreen",
+    "text_zh": "苏远之墓",
+    "speaker": "Su Yuan",
+    "emotion": "calm, conversational",
+    "duration": 3.3,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 15,
+    "shot_id": 17,
+    "type": "onscreen",
+    "text_zh": "他死了。",
+    "speaker": "Lin Ke",
+    "emotion": "whispered, restrained, breathing heavy",
+    "duration": 5.3,
+    "shot_type": "MS"
+  },
+  {
+    "chapter": 15,
+    "shot_id": 18,
+    "type": "onscreen",
+    "text_zh": "怎么死的？",
+    "speaker": "Su Nian",
+    "emotion": "whispered, restrained, breathing heavy",
+    "duration": 3.4,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 15,
+    "shot_id": 19,
+    "type": "onscreen",
+    "text_zh": "他也有'能力'。",
+    "speaker": "Lin Ke",
+    "emotion": "sharp intake of breath, voice breaking",
+    "duration": 4.9,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 15,
+    "shot_id": 20,
+    "type": "onscreen",
+    "text_zh": "代价呢？",
+    "speaker": "Su Nian",
+    "emotion": "whispered, restrained, breathing heavy",
+    "duration": 4.5,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 15,
+    "shot_id": 21,
+    "type": "onscreen",
+    "text_zh": "他忘掉了什么？",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 5.3,
+    "shot_type": "MS"
+  },
+  {
+    "chapter": 16,
+    "shot_id": 1,
+    "type": "onscreen",
+    "text_zh": "灯泡。",
+    "speaker": "Gu Shen",
+    "emotion": "calm, conversational",
+    "duration": 4.6,
+    "shot_type": "WS"
+  },
+  {
+    "chapter": 16,
+    "shot_id": 2,
+    "type": "onscreen",
+    "text_zh": "我自己换。",
+    "speaker": "Su Nian",
+    "emotion": "low, deliberate, pauses between words",
+    "duration": 4.3,
+    "shot_type": "ECU"
+  },
+  {
+    "chapter": 16,
+    "shot_id": 3,
+    "type": "onscreen",
+    "text_zh": "你够不着。",
+    "speaker": "Gu Shen",
+    "emotion": "sharp intake of breath, voice breaking",
+    "duration": 4.3,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 16,
+    "shot_id": 4,
+    "type": "onscreen",
+    "text_zh": "好了。",
+    "speaker": "Su Nian",
+    "emotion": "whispered, restrained, breathing heavy",
+    "duration": 3.9,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 16,
+    "shot_id": 7,
+    "type": "onscreen",
+    "text_zh": "顾深。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 3.0,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 16,
+    "shot_id": 11,
+    "type": "onscreen",
+    "text_zh": "为什么是咖啡",
+    "speaker": "grandmother",
+    "emotion": "calm, conversational",
+    "duration": 4.3,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 16,
+    "shot_id": 13,
+    "type": "onscreen",
+    "text_zh": "顾深。",
+    "speaker": "Su Nian",
+    "emotion": "gentle, warm tone",
+    "duration": 4.3,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 16,
+    "shot_id": 15,
+    "type": "onscreen",
+    "text_zh": "你每次都要喝我的咖啡。",
+    "speaker": "Gu Shen",
+    "emotion": "whispered, restrained, breathing heavy",
+    "duration": 3.0,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 16,
+    "shot_id": 22,
+    "type": "inner_voice",
+    "text_zh": "画面一：第一次来咖啡店。他坐在吧台前，点了一杯美式。一个女孩端过来，围裙上沾着咖啡渍。她笑了一下，很小的一下。他想——这个人的笑，像是咖啡拉花失败了，歪歪扭扭的，但很好看。",
+    "speaker": "Gu Shen",
+    "emotion": "sharp intake of breath, voice breaking",
+    "duration": 4.3,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 17,
+    "shot_id": 2,
+    "type": "onscreen",
+    "text_zh": "去哪？",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 3.0,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 17,
+    "shot_id": 5,
+    "type": "onscreen",
+    "text_zh": "这里。",
+    "speaker": "Gu Shen",
+    "emotion": "low, deliberate, pauses between words",
+    "duration": 4.0,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 17,
+    "shot_id": 6,
+    "type": "onscreen",
+    "text_zh": "那天你穿了一件灰色西装。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.8,
+    "shot_type": "MS"
+  },
+  {
+    "chapter": 17,
+    "shot_id": 8,
+    "type": "onscreen",
+    "text_zh": "装修中，暂停营业。",
+    "speaker": "Gu Shen",
+    "emotion": "whispered, restrained, breathing heavy",
+    "duration": 4.0,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 17,
+    "shot_id": 9,
+    "type": "onscreen",
+    "text_zh": "然后你问我——为什么想收购你的店。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.0,
+    "shot_type": "MS"
+  },
+  {
+    "chapter": 17,
+    "shot_id": 11,
+    "type": "onscreen",
+    "text_zh": "你现在能回答吗？",
+    "speaker": "Su Nian",
+    "emotion": "whispered, restrained, breathing heavy",
+    "duration": 4.0,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 17,
+    "shot_id": 13,
+    "type": "onscreen",
+    "text_zh": "我的决定是——",
+    "speaker": "Gu Shen",
+    "emotion": "sharp intake of breath, voice breaking",
+    "duration": 4.4,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 17,
+    "shot_id": 14,
+    "type": "onscreen",
+    "text_zh": "但公司——",
+    "speaker": "Su Nian",
+    "emotion": "whispered, restrained, breathing heavy",
+    "duration": 4.0,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 17,
+    "shot_id": 15,
+    "type": "onscreen",
+    "text_zh": "你为什么辞职？",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.8,
+    "shot_type": "MS"
+  },
+  {
+    "chapter": 18,
+    "shot_id": 1,
+    "type": "onscreen",
+    "text_zh": "意式浓缩。",
+    "speaker": "Chen Rui",
+    "emotion": "calm, conversational",
+    "duration": 3.3,
+    "shot_type": "WS"
+  },
+  {
+    "chapter": 18,
+    "shot_id": 3,
+    "type": "onscreen",
+    "text_zh": "什么？",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.6,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 18,
+    "shot_id": 4,
+    "type": "onscreen",
+    "text_zh": "收购终止协议。",
+    "speaker": "Chen Rui",
+    "emotion": "calm, conversational",
+    "duration": 3.3,
+    "shot_type": "MS"
+  },
+  {
+    "chapter": 18,
+    "shot_id": 6,
+    "type": "onscreen",
+    "text_zh": "为什么？",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.6,
+    "shot_type": "MS"
+  },
+  {
+    "chapter": 18,
+    "shot_id": 8,
+    "type": "onscreen",
+    "text_zh": "你知道我以前是做什么的吗？",
+    "speaker": "Gu Shen",
+    "emotion": "calm, conversational",
+    "duration": 4.6,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 18,
+    "shot_id": 10,
+    "type": "onscreen",
+    "text_zh": "锐咖啡",
+    "speaker": "Chen Rui",
+    "emotion": "calm, conversational",
+    "duration": 5.0,
+    "shot_type": "ECU"
+  },
+  {
+    "chapter": 18,
+    "shot_id": 12,
+    "type": "onscreen",
+    "text_zh": "生意好吗？",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.6,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 18,
+    "shot_id": 13,
+    "type": "onscreen",
+    "text_zh": "不好。",
+    "speaker": "Chen Rui",
+    "emotion": "calm, conversational",
+    "duration": 3.3,
+    "shot_type": "MS"
+  },
+  {
+    "chapter": 18,
+    "shot_id": 14,
+    "type": "onscreen",
+    "text_zh": "这是我老婆。",
+    "speaker": "Chen Rui",
+    "emotion": "calm, conversational",
+    "duration": 5.0,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 18,
+    "shot_id": 15,
+    "type": "onscreen",
+    "text_zh": "我卖了。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 3.3,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 18,
+    "shot_id": 17,
+    "type": "onscreen",
+    "text_zh": "后来呢？",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.6,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 18,
+    "shot_id": 18,
+    "type": "onscreen",
+    "text_zh": "后来——",
+    "speaker": "Chen Rui",
+    "emotion": "calm, conversational",
+    "duration": 5.0,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 18,
+    "shot_id": 22,
+    "type": "onscreen",
+    "text_zh": "忘掉什么？",
+    "speaker": "Chen Rui",
+    "emotion": "calm, conversational",
+    "duration": 4.6,
+    "shot_type": "MS"
+  },
+  {
+    "chapter": 19,
+    "shot_id": 2,
+    "type": "onscreen",
+    "text_zh": "小念，美式要九十二度，不多不少。",
+    "speaker": "grandmother",
+    "emotion": "calm, conversational",
+    "duration": 4.5,
+    "shot_type": "ECU"
+  },
+  {
+    "chapter": 19,
+    "shot_id": 4,
+    "type": "inner_voice",
+    "text_zh": "小念，有些味道，不是用舌头记住的。是用心。你忘了的东西，都在咖啡里。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.5,
+    "shot_type": "ECU"
+  },
+  {
+    "chapter": 19,
+    "shot_id": 5,
+    "type": "onscreen",
+    "text_zh": "都在咖啡里",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 3.1,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 19,
+    "shot_id": 10,
+    "type": "onscreen",
+    "text_zh": "有些味道，不是用舌头记住的",
+    "speaker": "grandmother",
+    "emotion": "calm, conversational",
+    "duration": 4.5,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 19,
+    "shot_id": 18,
+    "type": "inner_voice",
+    "text_zh": "小念，你第一次拉花的时候才五岁。奶泡洒了一桌子，你哭了。我告诉你——拉花不是技术，是心意。",
+    "speaker": "Su Nian",
+    "emotion": "soft, trailing off, voice cracking",
+    "duration": 4.1,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 19,
+    "shot_id": 21,
+    "type": "onscreen",
+    "text_zh": "休息中",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 3.0,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 20,
+    "shot_id": 2,
+    "type": "onscreen",
+    "text_zh": "营业中",
+    "speaker": "Su Nian",
+    "emotion": "low, deliberate, pauses between words",
+    "duration": 4.4,
+    "shot_type": "ECU"
+  },
+  {
+    "chapter": 20,
+    "shot_id": 9,
+    "type": "onscreen",
+    "text_zh": "美式。",
+    "speaker": "Gu Shen",
+    "emotion": "low, deliberate, pauses between words",
+    "duration": 4.4,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 20,
+    "shot_id": 14,
+    "type": "onscreen",
+    "text_zh": "你今天没喝。",
+    "speaker": "Gu Shen",
+    "emotion": "calm, conversational",
+    "duration": 3.0,
+    "shot_type": "MS"
+  },
+  {
+    "chapter": 20,
+    "shot_id": 15,
+    "type": "onscreen",
+    "text_zh": "为什么？",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.4,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 20,
+    "shot_id": 16,
+    "type": "onscreen",
+    "text_zh": "因为——",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.0,
+    "shot_type": "MS"
+  },
+  {
+    "chapter": 20,
+    "shot_id": 18,
+    "type": "onscreen",
+    "text_zh": "你已经忘了很多。",
+    "speaker": "Gu Shen",
+    "emotion": "calm, conversational",
+    "duration": 4.8,
+    "shot_type": "MS"
+  },
+  {
+    "chapter": 20,
+    "shot_id": 19,
+    "type": "onscreen",
+    "text_zh": "我不记得我爸妈。不记得我外婆的声音。不记得我哥哥。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 3.0,
+    "shot_type": "CU"
+  },
+  {
+    "chapter": 20,
+    "shot_id": 20,
+    "type": "onscreen",
+    "text_zh": "但我记得怎么冲咖啡。",
+    "speaker": "Su Nian",
+    "emotion": "calm, conversational",
+    "duration": 4.8,
+    "shot_type": "MCU"
+  },
+  {
+    "chapter": 20,
+    "shot_id": 22,
+    "type": "onscreen",
+    "text_zh": "那够吗？",
+    "speaker": "Gu Shen",
+    "emotion": "whispered, restrained, breathing heavy",
+    "duration": 4.4,
+    "shot_type": "CU"
+  }
+]
