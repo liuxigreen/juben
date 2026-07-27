@@ -6,5 +6,9 @@
   {
     "chapter": 13,
     "type": "chase"
+  },
+  {
+    "chapter": 14,
+    "type": "reveal"
   }
 ]
