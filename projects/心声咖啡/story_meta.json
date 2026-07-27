@@ -1,14 +1,18 @@
 {
   "title": "心声咖啡",
   "genre": "都市甜宠",
-  "sub_genres": ["超自然", "悬疑", "职场"],
+  "sub_genres": [
+    "超自然",
+    "悬疑",
+    "职场"
+  ],
   "premise": "咖啡师苏念发现，喝下客人正在喝的同一杯咖啡，能听到对方此刻的心声——但每用一次，她会永久失去一段自己的记忆",
   "logline": "当咖啡师苏念为了拯救濒临倒闭的咖啡店而频繁使用读心能力时，她逐渐忘记了自己的过去——直到有一天，她对着镜子里的自己，完全想不起来这个人是谁",
   "target_chapters": 20,
   "target_word_count_per_chapter": 2000,
   "pov": "third_person_limited",
   "language": "zh-CN",
-  "last_chapter_written": 0,
+  "last_chapter_written": 11,
   "disruption_variable": "读心能力的代价是失去记忆——而且失去的不是随机记忆，而是与被读心对象感情最深的那段关联记忆",
   "pacing_cards": [],
   "template": "universal",

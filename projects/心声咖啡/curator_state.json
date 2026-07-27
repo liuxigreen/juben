@@ -53,6 +53,21 @@
       "realm_change": " [身体负担中等]",
       "foreshadow_planted": [],
       "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 12,
+      "body_costs": [],
+      "setting_elements_used": [
+        "读心",
+        "照片模糊",
+        "念想",
+        "外婆",
+        "顾深"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
     }
   ],
   "accumulated_costs": [
@@ -60,7 +75,8 @@
     "白发",
     "代价",
     "发抖",
-    "代价"
+    "代价",
+    "耳鸣"
   ],
   "accumulated_banned": [],
   "current_realm": "",
