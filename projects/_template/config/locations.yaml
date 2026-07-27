@@ -1,0 +1,32 @@
+# 场景配置模板
+# 定义所有场景的环境、氛围、道具
+
+locations:
+  - name: 主场景
+    type: interior
+    description: "小型咖啡店，温暖的灯光"
+    atmosphere: "温馨，略带忧郁"
+    props:
+      - "木质吧台"
+      - "黄色便签墙"
+      - "意式咖啡机"
+      - "窗边座位"
+    lighting:
+      time: "下午"
+      quality: "自然光+暖色灯光"
+      mood: "柔和，长影子"
+    color_palette: ["暖橙", "深棕", "米白"]
+
+  - name: 次场景
+    type: interior
+    description: "老旧面馆，荧光灯"
+    atmosphere: "压抑，紧张"
+    props:
+      - "木桌"
+      - "荧光灯"
+      - "蒸汽"
+    lighting:
+      time: "晚上"
+      quality: "冷白荧光灯"
+      mood: "刺眼，阴影重"
+    color_palette: ["冷白", "灰", "暗红"]

@@ -1,0 +1,24 @@
+# 事件类型配置模板
+# 定义剧本中的特殊事件（超能力、闪回等）
+
+events:
+  mind_reading:
+    name: 读心
+    enabled: false  # 按题材启用
+    visual_cue: "瞳孔特写"
+    audio_cue: "低沉嗡鸣"
+    duration_range: [3, 6]
+    
+  flashback:
+    name: 闪回
+    enabled: true
+    visual_cue: "画面褪色"
+    audio_cue: "环境音减弱"
+    duration_range: [4, 8]
+    
+  conflict:
+    name: 冲突
+    enabled: true
+    visual_cue: "镜头抖动"
+    audio_cue: "紧张音乐"
+    duration_range: [5, 10]

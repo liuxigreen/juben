@@ -1,0 +1,40 @@
+# 角色配置模板
+# 定义所有角色的外貌、性格、关系
+
+characters:
+  - name: 主角名
+    gender: female
+    age: 25
+    archetype: 角色原型  # 坚韧女主/霸道总裁/暖心闺蜜/反派
+    appearance:
+      face: "圆脸，杏眼"
+      hair: "黑色长发"
+      height: "165cm"
+      build: "纤细"
+      distinguishing: "左手无名指有烫伤疤痕"
+    wardrobe:
+      primary: "白色T恤+棕色围裙"
+      secondary: "灰色连帽衫"
+    personality: ["敏感", "坚韧", "压抑"]
+    speech_style: "简短，有时结巴"
+    relationships:
+      - 男配: "复杂情感"
+      - 闺蜜: "信任依赖"
+
+  - name: 男配名
+    gender: male
+    age: 30
+    archetype: 霸道总裁
+    appearance:
+      face: "方脸，剑眉"
+      hair: "黑色短发"
+      height: "183cm"
+      build: "宽肩"
+      distinguishing: "银框眼镜"
+    wardrobe:
+      primary: "深色西装"
+      secondary: "灰色西装"
+    personality: ["沉默", "控制欲强", "神秘"]
+    speech_style: "简短有力，少言"
+    relationships:
+      - 主角: "复杂情感"

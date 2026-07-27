@@ -1,0 +1,29 @@
+# 项目配置模板
+# 复制此文件到你的项目目录，修改以下字段
+
+project:
+  name: "你的剧名"
+  title: "剧集标题"
+  genre: "题材类型"  # 悬疑/甜宠/复仇/穿越/都市
+  total_chapters: 20
+  target_duration_per_chapter: 90  # 秒
+  target_shots_per_chapter: 22
+  style: "仿真人漫剧"
+
+structure:
+  three_act:
+    act1_setup: [1, 5]        # 第一幕：建置
+    act2_confrontation: [6, 15] # 第二幕：对抗
+    act3_resolution: [16, 20]   # 第三幕：解决
+
+video:
+  platform: "flow"  # flow/veo/kling/runway
+  aspect_ratio: "9:16"
+  resolution: "1080p"
+  fps: 24
+
+output:
+  chapters_dir: "chapters"
+  storyboard_dir: "v3_storyboard"
+  prompts_dir: "flow_prompts_pro"
+  subtitles_dir: "srt_subtitles"
