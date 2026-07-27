@@ -1,0 +1,175 @@
+[
+  {
+    "shot_id": 1,
+    "veo_prompt": "medium shot, static camera, eye level, featuring 陈锐, 苏念, 他一个人，穿着一件深蓝色的polo衫，手腕上的表还是那块——但表带换过了，从金属换成了皮的, Natural lighting, 日常 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "MS",
+    "camera_movement": "static",
+    "camera_direction": "static camera to medium shot",
+    "location": "念想咖啡店",
+    "characters": [
+      "陈锐",
+      "苏念"
+    ],
+    "visual_anchors": [],
+    "dialogue": "意式浓缩。"
+  },
+  {
+    "shot_id": 2,
+    "veo_prompt": "medium shot, static camera, eye level, featuring 陈锐, 苏念, 陈锐喝了一口，放下。, Natural lighting, 日常 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "MS",
+    "camera_movement": "static",
+    "camera_direction": "static camera to medium shot",
+    "location": "念想咖啡店",
+    "characters": [
+      "陈锐",
+      "苏念"
+    ],
+    "visual_anchors": [],
+    "dialogue": ""
+  },
+  {
+    "shot_id": 3,
+    "veo_prompt": "medium shot, static camera, eye level, featuring 陈锐, 苏念, 陈锐从口袋里拿出手机，翻到一张照片。, Natural lighting, 日常 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "MS",
+    "camera_movement": "static",
+    "camera_direction": "static camera to medium shot",
+    "location": "念想咖啡店",
+    "characters": [
+      "陈锐",
+      "苏念"
+    ],
+    "visual_anchors": [],
+    "dialogue": "锐咖啡"
+  },
+  {
+    "shot_id": 4,
+    "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring 苏念, 陈锐, 店门口有一棵桂花树，树下放着一张折叠椅。, High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "MCU",
+    "camera_movement": "push",
+    "camera_direction": "slow dolly forward to medium close-up",
+    "location": "门口",
+    "characters": [
+      "苏念",
+      "陈锐"
+    ],
+    "visual_anchors": [],
+    "dialogue": "不好。"
+  },
+  {
+    "shot_id": 5,
+    "veo_prompt": "extreme close-up, slow dolly forward, low angle looking up, featuring 苏念, 陈锐, 她侧着头，靠在椅背上，眼睛闭着。, High contrast lighting, 紧张 mood, close-up on 手机屏幕, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "ECU",
+    "camera_movement": "push",
+    "camera_direction": "slow dolly forward to extreme close-up",
+    "location": "门口",
+    "characters": [
+      "苏念",
+      "陈锐"
+    ],
+    "visual_anchors": [
+      "手机屏幕"
+    ],
+    "dialogue": "我卖了。"
+  },
+  {
+    "shot_id": 6,
+    "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring 陈锐, 顾深, 苏念, 苏念的指甲在吧台上敲了一下。\n\"所以你来收购我的店——\"\n\"是因为我必须完成公司, High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "MCU",
+    "camera_movement": "push",
+    "camera_direction": "slow dolly forward to medium close-up",
+    "location": "巷子",
+    "characters": [
+      "陈锐",
+      "顾深",
+      "苏念"
+    ],
+    "visual_anchors": [],
+    "dialogue": "所以你来收购我的店——"
+  },
+  {
+    "shot_id": 7,
+    "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring 陈锐, 顾深, 苏念, 他把信封又推了一下。\n\"签了吧。\"他说。\"公司不会再来了。我跟他们说了——这条巷, High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "MCU",
+    "camera_movement": "push",
+    "camera_direction": "slow dolly forward to medium close-up",
+    "location": "巷子",
+    "characters": [
+      "陈锐",
+      "顾深",
+      "苏念"
+    ],
+    "visual_anchors": [],
+    "dialogue": "是谁？"
+  },
+  {
+    "shot_id": 8,
+    "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring 陈锐, 顾深, 苏念, \"我以前不知道。\"陈锐说。\"是最近才查到的。所以我辞职了。\"\n苏念的呼吸停了。\n, High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "MCU",
+    "camera_movement": "push",
+    "camera_direction": "slow dolly forward to medium close-up",
+    "location": "巷子",
+    "characters": [
+      "陈锐",
+      "顾深",
+      "苏念"
+    ],
+    "visual_anchors": [],
+    "dialogue": "巧合。"
+  },
+  {
+    "shot_id": 9,
+    "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring 陈锐, 苏念, 他站起来，从口袋里掏出钱包，抽出一张二十块钱，放在吧台上。, High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "MCU",
+    "camera_movement": "push",
+    "camera_direction": "slow dolly forward to medium close-up",
+    "location": "念想咖啡店",
+    "characters": [
+      "陈锐",
+      "苏念"
+    ],
+    "visual_anchors": [],
+    "dialogue": "不用找了。"
+  },
+  {
+    "shot_id": 10,
+    "veo_prompt": "close-up, slow dolly forward, low angle looking up, featuring 陈锐, 苏念, \"陈锐的声音在发抖。, High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "CU",
+    "camera_movement": "push",
+    "camera_direction": "slow dolly forward to close-up",
+    "location": "念想咖啡店",
+    "characters": [
+      "陈锐",
+      "苏念"
+    ],
+    "visual_anchors": [],
+    "dialogue": "苏老板。"
+  },
+  {
+    "shot_id": 11,
+    "veo_prompt": "close-up, slow dolly forward, low angle looking up, featuring 陈锐, 苏念, 她看着那个牛皮纸信封，手指在信封边缘停了三秒。, High contrast lighting, 紧张 mood, close-up on 便签, 字迹, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "CU",
+    "camera_movement": "push",
+    "camera_direction": "slow dolly forward to close-up",
+    "location": "念想咖啡店",
+    "characters": [
+      "陈锐",
+      "苏念"
+    ],
+    "visual_anchors": [
+      "便签",
+      "字迹"
+    ],
+    "dialogue": "念想咖啡，值得留下来。"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "shot_id": 1,
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring 苏念, 顾深, 陈锐, 读心陌生人，失去的是无关紧要的碎片。, Low key lighting, 悬疑 mood, close-up on 疤痕, 手背, 左手, 无名指, 拉花, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "CU",
+    "camera_movement": "push",
+    "camera_direction": "slow dolly forward to close-up",
+    "location": "念想咖啡店",
+    "characters": [
+      "苏念",
+      "顾深",
+      "陈锐"
+    ],
+    "visual_anchors": [
+      "疤痕",
+      "手背",
+      "左手",
+      "无名指",
+      "拉花"
+    ],
+    "dialogue": "想不起来了"
+  },
+  {
+    "shot_id": 2,
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 照片是清晰的——白发，蓝围裙，笑眼, Natural lighting, 日常 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "CU",
+    "camera_movement": "push",
+    "camera_direction": "slow dolly forward to close-up",
+    "location": "念想咖啡店",
+    "characters": [
+      "顾深",
+      "苏念"
+    ],
+    "visual_anchors": [],
+    "dialogue": ""
+  },
+  {
+    "shot_id": 3,
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 对面写字楼的灯一层层亮起来，又一层层灭掉。, Natural lighting, 日常 mood, close-up on 疤痕, 手背, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "CU",
+    "camera_movement": "push",
+    "camera_direction": "slow dolly forward to close-up",
+    "location": "念想咖啡店",
+    "characters": [
+      "顾深",
+      "苏念"
+    ],
+    "visual_anchors": [
+      "疤痕",
+      "手背"
+    ],
+    "dialogue": "别来了。"
+  }
+]

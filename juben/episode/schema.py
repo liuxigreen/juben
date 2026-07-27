@@ -225,7 +225,7 @@ class Episode(BaseModel):
     episode_number: int
     title: str = ""
     render_style: RenderStyle = RenderStyle.REALISTIC  # 渲染风格
-    duration_estimate_seconds: int = Field(ge=30, le=300, description="目标时长（秒）")
+    duration_estimate_seconds: int = Field(ge=10, le=300, description="目标时长（秒）")
     word_count_estimate: int = Field(ge=500, le=10000, description="目标字数")
 
     # 节奏卡点（双轴校验）

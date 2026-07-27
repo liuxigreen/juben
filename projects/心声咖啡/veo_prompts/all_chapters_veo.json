@@ -1,0 +1,2513 @@
+{
+  "chapter_001": [
+    {
+      "shot_id": 1,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 苏念, 他没看菜单，掏出手机放桌上，屏幕朝下。, Low key lighting, 悬疑 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "写字楼",
+      "characters": [
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "美式，热的。"
+    },
+    {
+      "shot_id": 2,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 苏念, 苏念点头，转身磨豆。, Low key lighting, 悬疑 mood, close-up on 唇印, 疤痕, 杯沿, 左手, 无名指, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "写字楼",
+      "characters": [
+        "苏念"
+      ],
+      "visual_anchors": [
+        "唇印",
+        "疤痕",
+        "杯沿",
+        "左手",
+        "无名指"
+      ],
+      "dialogue": "多少钱？"
+    },
+    {
+      "shot_id": 3,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 苏念, 苏念看着他走进对面写字楼的旋转门，消失在玻璃幕墙后面。, Low key lighting, 悬疑 mood, close-up on 疤痕, 杯沿, 左手, 无名指, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "写字楼",
+      "characters": [
+        "苏念"
+      ],
+      "visual_anchors": [
+        "疤痕",
+        "杯沿",
+        "左手",
+        "无名指"
+      ],
+      "dialogue": "……那家店……合同都准备好了……"
+    }
+  ],
+  "chapter_002": [
+    {
+      "shot_id": 1,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 林可, 苏念, 这次他多要了一份可颂，咬了两口就放下了。, Low key lighting, 悬疑 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "林可",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "……前女友说我不懂感情。也许她说得对。但我也不懂为什么隔壁那家破咖啡店的咖啡比星巴克好喝……不对，我在想什么，我是来谈收购的……"
+    },
+    {
+      "shot_id": 2,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 林可, 苏念, 苏念放下杯子，心跳加速。, Low key lighting, 悬疑 mood, close-up on 疤痕, 左手, 无名指, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "林可",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "疤痕",
+        "左手",
+        "无名指"
+      ],
+      "dialogue": "你好。"
+    },
+    {
+      "shot_id": 3,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 苏念, 顾深, \"我叫顾深。对面写字楼的。\"他把名片推过来，\"我想问一下——你们店有没有考虑过…, High contrast lighting, 震惊 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "写字楼",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [],
+      "dialogue": "我叫顾深。对面写字楼的。"
+    },
+    {
+      "shot_id": 4,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 苏念, 顾深, 手指碰到一个光滑的平面。, High contrast lighting, 震惊 mood, close-up on 手背, 左手, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "写字楼",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [
+        "手背",
+        "左手"
+      ],
+      "dialogue": "好吧。"
+    }
+  ],
+  "chapter_003": [
+    {
+      "shot_id": 1,
+      "veo_prompt": "extreme close-up, slow dolly backward, high angle looking down, featuring 顾深, 苏念, 一个女孩站在雨里，头发贴在脸上，手里攥着一把钥匙。, Low key lighting, 悲伤 mood, close-up on 钥匙, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "ECU",
+      "camera_movement": "pull",
+      "camera_direction": "slow dolly backward to extreme close-up",
+      "location": "苏念的公寓",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "钥匙"
+      ],
+      "dialogue": "常客。"
+    },
+    {
+      "shot_id": 2,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 但泪水从苏念的眼角滑下来，滴在吧台上。, High contrast lighting, 震惊 mood, close-up on 疤痕, 左手, 无名指, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "巷子",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "疤痕",
+        "左手",
+        "无名指"
+      ],
+      "dialogue": "没事。"
+    },
+    {
+      "shot_id": 3,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 顾深, 苏念, \"顾深端起杯子，把剩下的半杯一饮而尽，\"凉的也行。, High contrast lighting, 震惊 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "巷子",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "不用。"
+    },
+    {
+      "shot_id": 4,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 疤痕消失的——戒指印、某个她想不起来的针眼、还有一道她甚至不记得什么时候有的划痕。, High contrast lighting, 震惊 mood, close-up on 疤痕, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "巷子",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "疤痕"
+      ],
+      "dialogue": ""
+    }
+  ],
+  "chapter_004": [
+    {
+      "shot_id": 1,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 林可, 顾深, 苏念, \"她把画塞进包里，转身去吧台后面给自己倒了杯水。, Low key lighting, 悬疑 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "林可",
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "你最近太累了。"
+    },
+    {
+      "shot_id": 2,
+      "veo_prompt": "extreme close-up, slow dolly forward, eye level, featuring 林可, 顾深, 苏念, 林可的手指在画纸上收紧，纸面微微凹陷。, Low key lighting, 悬疑 mood, close-up on 杯沿, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "ECU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to extreme close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "林可",
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "杯沿"
+      ],
+      "dialogue": "不太记得了。"
+    },
+    {
+      "shot_id": 3,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 林可, 顾深, 苏念, 咖啡店的灯自动亮了。, Low key lighting, 悬疑 mood, close-up on 疤痕, 拉花, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "林可",
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "疤痕",
+        "拉花"
+      ],
+      "dialogue": "送给小念。希望你永远记得。"
+    },
+    {
+      "shot_id": 4,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 林可, 顾深, 苏念, 墙上外婆的便签在灯光下微微发黄：\"小念，记住：拉花不是技术，是心意。, Low key lighting, 悬疑 mood, close-up on 便签, 字迹, 拉花, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "林可",
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "便签",
+        "字迹",
+        "拉花"
+      ],
+      "dialogue": "小念，记住：拉花不是技术，是心意。"
+    }
+  ],
+  "chapter_005": [
+    {
+      "shot_id": 1,
+      "veo_prompt": "close-up, slow dolly forward, high angle looking down, featuring 苏念, 陈锐, \"陈锐笑起来，眼角的纹很深，\"你这家店，月流水不到两万, Low key lighting, 悲伤 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念",
+        "陈锐"
+      ],
+      "visual_anchors": [],
+      "dialogue": "不卖。"
+    },
+    {
+      "shot_id": 2,
+      "veo_prompt": "close-up, slow dolly forward, high angle looking down, featuring 苏念, 陈锐, 画面闪过：一个更年轻的陈锐，站在一家更小的店门口，招牌写着\"锐咖啡\"。, Low key lighting, 悲伤 mood, close-up on 拉花, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念",
+        "陈锐"
+      ],
+      "visual_anchors": [
+        "拉花"
+      ],
+      "dialogue": "锐咖啡"
+    },
+    {
+      "shot_id": 3,
+      "veo_prompt": "close-up, slow dolly forward, high angle looking down, featuring 苏念, 陈锐, 苏念盯着碎成三瓣的杯子，手指在发抖。, Low key lighting, 悲伤 mood, close-up on 拉花, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念",
+        "陈锐"
+      ],
+      "visual_anchors": [
+        "拉花"
+      ],
+      "dialogue": "什么？"
+    }
+  ],
+  "chapter_006": [
+    {
+      "shot_id": 1,
+      "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring 苏念, 顾深, 他把湿伞放在门口，西装肩膀上有深色的水渍。, High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "MCU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to medium close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [],
+      "dialogue": "美式。"
+    },
+    {
+      "shot_id": 2,
+      "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring 苏念, 顾深, 苏念转身要走。\n\"等一下。\"顾深叫住她，\"上次你说不考虑合作。我想知道为什么。\", High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "MCU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to medium close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [],
+      "dialogue": "等一下。"
+    },
+    {
+      "shot_id": 3,
+      "veo_prompt": "close-up, slow dolly forward, low angle looking up, featuring 苏念, 顾深, 他端起咖啡喝了一口，杯沿留着他的唇印。, High contrast lighting, 紧张 mood, close-up on 唇印, 钥匙, 杯沿, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [
+        "唇印",
+        "钥匙",
+        "杯沿"
+      ],
+      "dialogue": "看到过画面"
+    },
+    {
+      "shot_id": 4,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 顾深坐在办公室里，面前是一份合同。合同上的地址——老城区巷子17号。\n\"念想\"咖, Low key lighting, 悬疑 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "巷子",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": ""
+    },
+    {
+      "shot_id": 5,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 他用红笔在合同上画了一个圈，然后放下笔，揉了揉太阳穴。, Low key lighting, 悬疑 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "巷子",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "为什么要亲自来？让小李去谈就行了。但那家店……那个咖啡师……她看我的眼神不像其他人。其他人看我的职位、我的公司、我的表。她看的是——"
+    },
+    {
+      "shot_id": 6,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 苏念放下杯子，手在发抖。, Low key lighting, 悬疑 mood, close-up on 疤痕, 左手, 无名指, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "巷子",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "疤痕",
+        "左手",
+        "无名指"
+      ],
+      "dialogue": ""
+    }
+  ],
+  "chapter_007": [
+    {
+      "shot_id": 1,
+      "veo_prompt": "close-up, slow dolly forward, high angle looking down, featuring 苏念, 女孩哭着说\"你从来不听我说话\"，男孩说\"你每次都这样\"。苏念站在吧台后面，不知道, Low key lighting, 悲伤 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "你每次都这样"
+    },
+    {
+      "shot_id": 2,
+      "veo_prompt": "close-up, slow dolly forward, high angle looking down, featuring 苏念, 十分钟后，男孩红着脸在女孩面前跪下来，从口袋里掏出一张皱巴巴的电影票——两张，下周二，女孩生日那天。, Low key lighting, 悲伤 mood, close-up on 唇印, 杯沿, 左手, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念"
+      ],
+      "visual_anchors": [
+        "唇印",
+        "杯沿",
+        "左手"
+      ],
+      "dialogue": "告诉他你为什么生气。不是因为那件事，是因为生日。"
+    }
+  ],
+  "chapter_008": [
+    {
+      "shot_id": 1,
+      "veo_prompt": "medium close-up, slow dolly backward, eye level, featuring 林可, 苏念, \"给你。\"她把信封推到吧台上，\"外婆的旧照片。我从我妈那里翻出来的。\", Warm lighting, 暧昧 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "MCU",
+      "camera_movement": "pull",
+      "camera_direction": "slow dolly backward to medium close-up",
+      "location": "门口",
+      "characters": [
+        "林可",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "给你。"
+    },
+    {
+      "shot_id": 2,
+      "veo_prompt": "medium close-up, slow dolly backward, eye level, featuring 林可, 苏念, 一张泛黄的照片——一个白发老太太站在咖啡店门口，围裙上沾着咖啡渍，笑得眼睛眯成一条缝。, Warm lighting, 暧昧 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "MCU",
+      "camera_movement": "pull",
+      "camera_direction": "slow dolly backward to medium close-up",
+      "location": "门口",
+      "characters": [
+        "林可",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": ""
+    },
+    {
+      "shot_id": 3,
+      "veo_prompt": "medium close-up, slow dolly backward, eye level, featuring 林可, 苏念, \"这是……外婆？\"\n林可的脸色变了。\n\"苏念，你认不出来了？\"\n苏念看着照片里那, Warm lighting, 暧昧 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "MCU",
+      "camera_movement": "pull",
+      "camera_direction": "slow dolly backward to medium close-up",
+      "location": "门口",
+      "characters": [
+        "林可",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "这是……外婆？"
+    },
+    {
+      "shot_id": 4,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 林可, 苏念, 林可的手在吧台上握紧, High contrast lighting, 震惊 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "窗户",
+      "characters": [
+        "林可",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "没事。"
+    },
+    {
+      "shot_id": 5,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 林可, 苏念, 她站起来，走到门口，又回头——\n\"苏念，你哥以前也——\"\n她突然闭嘴。, High contrast lighting, 震惊 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "窗户",
+      "characters": [
+        "林可",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "我哥怎么了？"
+    },
+    {
+      "shot_id": 6,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 林可, 苏念, 车灯的光从窗户扫进来，照亮了照片上的灰尘。, High contrast lighting, 震惊 mood, close-up on 便签, 猫, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "窗户",
+      "characters": [
+        "林可",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "便签",
+        "猫"
+      ],
+      "dialogue": "没什么。"
+    }
+  ],
+  "chapter_009": [
+    {
+      "shot_id": 1,
+      "veo_prompt": "medium shot, static camera, eye level, featuring 苏念, 顾深, 苏念坐在对面，手里攥着一双没拆封的一次性筷子。, Natural lighting, 日常 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "MS",
+      "camera_movement": "static",
+      "camera_direction": "static camera to medium shot",
+      "location": "面馆",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [],
+      "dialogue": "巧合。"
+    },
+    {
+      "shot_id": 2,
+      "veo_prompt": "extreme close-up, static camera, eye level, featuring 苏念, 顾深, 苏念的筷子终于拆开了。, Natural lighting, 日常 mood, close-up on 左手, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "ECU",
+      "camera_movement": "static",
+      "camera_direction": "static camera to extreme close-up",
+      "location": "面馆",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [
+        "左手"
+      ],
+      "dialogue": "你喝完之后，"
+    },
+    {
+      "shot_id": 3,
+      "veo_prompt": "medium shot, static camera, eye level, featuring 苏念, 顾深, 她掏出来擦手，纸巾被攥成了一团。, Natural lighting, 日常 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "MS",
+      "camera_movement": "static",
+      "camera_direction": "static camera to medium shot",
+      "location": "面馆",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [],
+      "dialogue": "你多想了。"
+    },
+    {
+      "shot_id": 4,
+      "veo_prompt": "medium shot, static camera, eye level, featuring 苏念, 顾深, \"顾深把面碗推到一边。, Natural lighting, 日常 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "MS",
+      "camera_movement": "static",
+      "camera_direction": "static camera to medium shot",
+      "location": "面馆",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [],
+      "dialogue": "也许。"
+    },
+    {
+      "shot_id": 5,
+      "veo_prompt": "extreme close-up, slow dolly forward, low angle looking up, featuring 苏念, 顾深, 她摸了三次才摸到——手指冰凉，金属钥匙更凉。, High contrast lighting, 紧张 mood, close-up on 钥匙, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "ECU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to extreme close-up",
+      "location": "巷子",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [
+        "钥匙"
+      ],
+      "dialogue": "苏念。"
+    },
+    {
+      "shot_id": 6,
+      "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring 苏念, 顾深, 她转身。顾深站在两米外，月光把他的影子拉得很长，一直延伸到她的脚边。\n\"我明天还, High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "MCU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to medium close-up",
+      "location": "巷子",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [],
+      "dialogue": "我明天还会来喝咖啡。"
+    },
+    {
+      "shot_id": 7,
+      "veo_prompt": "extreme close-up, slow dolly forward, low angle looking up, featuring 苏念, 顾深, 苏念的手攥紧了钥匙。, High contrast lighting, 紧张 mood, close-up on 钥匙, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "ECU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to extreme close-up",
+      "location": "巷子",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [
+        "钥匙"
+      ],
+      "dialogue": "你不用——"
+    },
+    {
+      "shot_id": 8,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 她推开门，走进空荡荡的咖啡店。, Low key lighting, 悬疑 mood, close-up on 茶水, 水珠, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "茶水",
+        "水珠"
+      ],
+      "dialogue": "她像一个人——我前女友。但又完全不同。"
+    },
+    {
+      "shot_id": 9,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 茶水溅出来，淌在吧台上，浸湿了一张便签纸。, Low key lighting, 悬疑 mood, close-up on 疤痕, 便签, 手背, 左手, 猫, 茶水, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "疤痕",
+        "便签",
+        "手背",
+        "左手",
+        "猫",
+        "茶水"
+      ],
+      "dialogue": ""
+    },
+    {
+      "shot_id": 10,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 吧台上的灯闪了一下。, Low key lighting, 悬疑 mood, close-up on 便签, 字迹, 灯管, 茶水, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "便签",
+        "字迹",
+        "灯管",
+        "茶水"
+      ],
+      "dialogue": "到家了。"
+    }
+  ],
+  "chapter_010": [
+    {
+      "shot_id": 1,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 苏念, 顾深, 陈锐, 读心陌生人，失去的是无关紧要的碎片。, Low key lighting, 悬疑 mood, close-up on 疤痕, 手背, 左手, 无名指, 拉花, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念",
+        "顾深",
+        "陈锐"
+      ],
+      "visual_anchors": [
+        "疤痕",
+        "手背",
+        "左手",
+        "无名指",
+        "拉花"
+      ],
+      "dialogue": "想不起来了"
+    },
+    {
+      "shot_id": 2,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 照片是清晰的——白发，蓝围裙，笑眼, Natural lighting, 日常 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": ""
+    },
+    {
+      "shot_id": 3,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 对面写字楼的灯一层层亮起来，又一层层灭掉。, Natural lighting, 日常 mood, close-up on 疤痕, 手背, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "疤痕",
+        "手背"
+      ],
+      "dialogue": "别来了。"
+    }
+  ],
+  "chapter_011": [
+    {
+      "shot_id": 1,
+      "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring 陈锐, 苏念, 陈锐第二次来，带了两个人。一男一女，西装革革，拿着平板电脑。\n\"苏老板，这是我们, High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "MCU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to medium close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "陈锐",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "不看。"
+    },
+    {
+      "shot_id": 2,
+      "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring 陈锐, 苏念, 陈锐喝了一口，放下。, High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "MCU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to medium close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "陈锐",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": ""
+    },
+    {
+      "shot_id": 3,
+      "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring 陈锐, 苏念, \"他的手指点在第二页的某一行上，\"下周五之前。, High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "MCU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to medium close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "陈锐",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "下周五之前。"
+    },
+    {
+      "shot_id": 4,
+      "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring 陈锐, 苏念, 她看着陈锐的手——他的右手食指在纸面上敲了两下，指甲修得很短, High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "MCU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to medium close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "陈锐",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": ""
+    },
+    {
+      "shot_id": 5,
+      "veo_prompt": "extreme close-up, slow dolly forward, low angle looking up, featuring 陈锐, 苏念, 苏念的手握紧了杯子。, High contrast lighting, 紧张 mood, close-up on 水珠, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "ECU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to extreme close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "陈锐",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "水珠"
+      ],
+      "dialogue": "你这栋楼的产权——"
+    },
+    {
+      "shot_id": 6,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 陈锐, 苏念, 画面闪过：十年前的陈锐，站在一家更小的店门口。, Low key lighting, 悬疑 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "陈锐",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "锐咖啡"
+    },
+    {
+      "shot_id": 7,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 陈锐, 苏念, 然后他站起来，对旁边的两个人使了个眼色。, Low key lighting, 悬疑 mood, close-up on 手背, 左手, 猫, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "陈锐",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "手背",
+        "左手",
+        "猫"
+      ],
+      "dialogue": "陈总。"
+    },
+    {
+      "shot_id": 8,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 陈锐, 苏念, 陈锐深吸一口气，转身走了。, Low key lighting, 悬疑 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "门口",
+      "characters": [
+        "陈锐",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "下周五之前。不管你知道什么。"
+    },
+    {
+      "shot_id": 9,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 陈锐, 苏念, 她低头看左手手背。那道猫抓的疤痕——五岁时被外婆养的橘猫抓的，外婆一边给她贴创可, Low key lighting, 悬疑 mood, close-up on 疤痕, 手背, 左手, 猫, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "门口",
+      "characters": [
+        "陈锐",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "疤痕",
+        "手背",
+        "左手",
+        "猫"
+      ],
+      "dialogue": ""
+    },
+    {
+      "shot_id": 10,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 陈锐, 苏念, 她翻出手机相册，找到一张老照片。, Low key lighting, 悬疑 mood, close-up on 字迹, 手机屏幕, 猫, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "门口",
+      "characters": [
+        "陈锐",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "字迹",
+        "手机屏幕",
+        "猫"
+      ],
+      "dialogue": "文件不存在"
+    }
+  ],
+  "chapter_012": [
+    {
+      "shot_id": 1,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 豆子碎了，但她没听到声音——不是磨豆机的声音，是她自己耳朵里的声音。, Low key lighting, 悬疑 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.4,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "门口",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": ""
+    },
+    {
+      "shot_id": 2,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 嗡鸣持续了四秒，然后消失了。, Low key lighting, 悬疑 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.4,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "门口",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": ""
+    },
+    {
+      "shot_id": 3,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 站起来的时候，看到门口站着一个人。, Low key lighting, 悬疑 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.4,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "门口",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": ""
+    },
+    {
+      "shot_id": 4,
+      "veo_prompt": "extreme close-up, slow dolly backward, eye level, featuring 苏念, 顾深, 顾深端起杯子，喝了一口。, Warm lighting, 暧昧 mood, close-up on 杯沿, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.4,
+      "shot_type": "ECU",
+      "camera_movement": "pull",
+      "camera_direction": "slow dolly backward to extreme close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [
+        "杯沿"
+      ],
+      "dialogue": "美式。"
+    },
+    {
+      "shot_id": 5,
+      "veo_prompt": "medium close-up, slow dolly backward, eye level, featuring 苏念, 顾深, \"我放下杯子的时候，\"顾深的声音从吧台那边传过来，\"你以前会端起来。, Warm lighting, 暧昧 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.4,
+      "shot_type": "MCU",
+      "camera_movement": "pull",
+      "camera_direction": "slow dolly backward to medium close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [],
+      "dialogue": "我不渴。"
+    },
+    {
+      "shot_id": 6,
+      "veo_prompt": "medium close-up, slow dolly backward, eye level, featuring 苏念, 顾深, 她看着顾深的手——他的手指在屏幕上点了一下，照片放大了。, Warm lighting, 暧昧 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.4,
+      "shot_type": "MCU",
+      "camera_movement": "pull",
+      "camera_direction": "slow dolly backward to medium close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [],
+      "dialogue": "你看。"
+    },
+    {
+      "shot_id": 7,
+      "veo_prompt": "extreme close-up, slow dolly forward, eye level, featuring 苏念, 顾深, \"你不舒服？\"顾深站起来。, Low key lighting, 悬疑 mood, close-up on 手机屏幕, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.4,
+      "shot_type": "ECU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to extreme close-up",
+      "location": "门口",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [
+        "手机屏幕"
+      ],
+      "dialogue": "这照片——"
+    },
+    {
+      "shot_id": 8,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 苏念, 顾深, \"苏念放下手，\"老毛病。, Low key lighting, 悬疑 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.4,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "门口",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [],
+      "dialogue": "没事。"
+    },
+    {
+      "shot_id": 9,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 苏念, 顾深, 站起来的时候，顾深已经走到了吧台这边。, High contrast lighting, 震惊 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.4,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [],
+      "dialogue": "你知道。"
+    },
+    {
+      "shot_id": 10,
+      "veo_prompt": "extreme close-up, slow dolly forward, eye level, featuring 苏念, 顾深, 吧台上的灯闪了一下。, High contrast lighting, 震惊 mood, close-up on 灯管, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.4,
+      "shot_type": "ECU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to extreme close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [
+        "灯管"
+      ],
+      "dialogue": ""
+    },
+    {
+      "shot_id": 11,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 苏念, 顾深, 顾深站在她面前，手还悬在灯绳上。, High contrast lighting, 震惊 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.4,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [],
+      "dialogue": "不用——"
+    },
+    {
+      "shot_id": 12,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 苏念, 顾深, \"明天我带一个新的来。\"他已经走回吧台那边了，拿起自己的公文包，\"明天见。\", High contrast lighting, 震惊 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.4,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [],
+      "dialogue": "明天见。"
+    },
+    {
+      "shot_id": 13,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 苏念, 顾深, 左耳的嗡鸣消失了，但那种奇怪的安静还在——像有人在她耳朵里塞了一层棉花。, High contrast lighting, 震惊 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.4,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [],
+      "dialogue": ""
+    },
+    {
+      "shot_id": 14,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 苏念, 顾深, 水渍里，那个陌生女人的脸消失了。, High contrast lighting, 震惊 mood, close-up on 手背, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.4,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [
+        "手背"
+      ],
+      "dialogue": "念念，别再喝了。"
+    }
+  ],
+  "chapter_013": [
+    {
+      "shot_id": 1,
+      "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring 苏念, \"他坐到靠窗的位子上，把公文包放在对面的椅子上。, High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "MCU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to medium close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "美式。"
+    },
+    {
+      "shot_id": 2,
+      "veo_prompt": "extreme close-up, slow dolly forward, low angle looking up, featuring 苏念, 男人接过杯子，喝了一大口。, High contrast lighting, 紧张 mood, close-up on 便签, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "ECU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to extreme close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念"
+      ],
+      "visual_anchors": [
+        "便签"
+      ],
+      "dialogue": "六年。"
+    },
+    {
+      "shot_id": 3,
+      "veo_prompt": "close-up, slow dolly forward, low angle looking up, featuring 苏念, 然后他放下杯子，从公文包里抽出一份文件，摊在桌上开始看。, High contrast lighting, 紧张 mood, close-up on 唇印, 杯沿, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念"
+      ],
+      "visual_anchors": [
+        "唇印",
+        "杯沿"
+      ],
+      "dialogue": "……评估报告出来了。这栋楼的结构安全系数不达标，需要整体拆除。念想咖啡店所在的巷子——全部拆。工期三个月。我得把文件送到街道办。但这个消息不能提前泄露，不然那些商户会闹……"
+    },
+    {
+      "shot_id": 4,
+      "veo_prompt": "extreme close-up, slow dolly forward, low angle looking up, featuring 苏念, 苏念放下杯子，走到吧台后面。, High contrast lighting, 紧张 mood, close-up on 手背, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "ECU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to extreme close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念"
+      ],
+      "visual_anchors": [
+        "手背"
+      ],
+      "dialogue": "十五。"
+    },
+    {
+      "shot_id": 5,
+      "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring 苏念, 他走了。门关上。风铃没响——今天的风太大，风铃被吹歪了。\n苏念站在吧台后面，看着, High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "MCU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to medium close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": ""
+    },
+    {
+      "shot_id": 6,
+      "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring 苏念, 她攥紧拳头，指甲陷进掌心。, High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "MCU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to medium close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "念想咖啡店 产权"
+    },
+    {
+      "shot_id": 7,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 林可, 顾深, 苏念, 她端起杯子，看着杯壁上的倒影。, Low key lighting, 悬疑 mood, close-up on 便签, 字迹, 拉花, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "林可",
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "便签",
+        "字迹",
+        "拉花"
+      ],
+      "dialogue": "营业中"
+    },
+    {
+      "shot_id": 8,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 林可, 顾深, 苏念, 手机屏幕暗下去，她看到屏幕倒影里——\n墙上的便签，又淡了一个笔画。, Low key lighting, 悬疑 mood, close-up on 便签, 手机屏幕, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "林可",
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "便签",
+        "手机屏幕"
+      ],
+      "dialogue": ""
+    }
+  ],
+  "chapter_014": [
+    {
+      "shot_id": 1,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 林可, 陈锐, 顾深, 苏念, 两根手指隔着一层玻璃，对在一起。, Low key lighting, 悬疑 mood, close-up on 字迹, 水珠, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "林可",
+        "陈锐",
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "字迹",
+        "水珠"
+      ],
+      "dialogue": "小念满月，妈妈抱着。"
+    },
+    {
+      "shot_id": 2,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 林可, 陈锐, 顾深, 苏念, 苏念的手指在照片上停了三秒。, Low key lighting, 悬疑 mood, close-up on 便签, 拉花, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "林可",
+        "陈锐",
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "便签",
+        "拉花"
+      ],
+      "dialogue": "想不起来"
+    },
+    {
+      "shot_id": 3,
+      "veo_prompt": "extreme close-up, slow dolly forward, eye level, featuring 林可, 陈锐, 顾深, 苏念, 苏念端起咖啡，喝了一口。, Low key lighting, 悬疑 mood, close-up on 便签, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "ECU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to extreme close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "林可",
+        "陈锐",
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "便签"
+      ],
+      "dialogue": "在杯子里"
+    },
+    {
+      "shot_id": 4,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 林可, 陈锐, 顾深, 苏念, 她站起来，走到吧台后面，拿起手机。, Low key lighting, 悬疑 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "林可",
+        "陈锐",
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": ""
+    },
+    {
+      "shot_id": 5,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 林可, 苏念, \"苏念！\"林可的声音很急，\"你看到新闻了吗？老城区要拆迁了！你们那条巷子——全拆, Low key lighting, 悬疑 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "林可",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "苏念！"
+    },
+    {
+      "shot_id": 6,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 林可, 苏念, 苏念的手攥紧了手机。, Low key lighting, 悬疑 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "林可",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "苏念？"
+    },
+    {
+      "shot_id": 7,
+      "veo_prompt": "extreme close-up, slow dolly forward, eye level, featuring 林可, 苏念, 电话断了。\n苏念看着手机屏幕。通话时长：2分17秒。信号满格。\n不是信号问题。是, Low key lighting, 悬疑 mood, close-up on 手机屏幕, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "ECU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to extreme close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "林可",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "手机屏幕"
+      ],
+      "dialogue": "您拨打的电话已关机。"
+    },
+    {
+      "shot_id": 8,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 林可, 苏念, 苏念放下手机。她的手在发抖。不是因为读心的代价——她今天没有读心。是因为林可说的, Low key lighting, 悬疑 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "林可",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": ""
+    },
+    {
+      "shot_id": 9,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 林可, 苏念, 便签上的字，全部消失了。, Low key lighting, 悬疑 mood, close-up on 便签, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "林可",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "便签"
+      ],
+      "dialogue": "你哥哥当年也是这样。"
+    }
+  ],
+  "chapter_015": [
+    {
+      "shot_id": 1,
+      "veo_prompt": "medium close-up, slow dolly backward, eye level, featuring 林可, 苏念, 她站在咖啡店门口，头发贴在脸上，雨水从发梢滴下来，在地板上形成一小滩水渍。, Warm lighting, 暧昧 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.4,
+      "shot_type": "MCU",
+      "camera_movement": "pull",
+      "camera_direction": "slow dolly backward to medium close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "林可",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "进来。"
+    },
+    {
+      "shot_id": 2,
+      "veo_prompt": "medium close-up, slow dolly backward, eye level, featuring 林可, 苏念, 毛巾被她攥在手里，攥成了一团。, Warm lighting, 暧昧 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.4,
+      "shot_type": "MCU",
+      "camera_movement": "pull",
+      "camera_direction": "slow dolly backward to medium close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "林可",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "你昨天挂了。"
+    },
+    {
+      "shot_id": 3,
+      "veo_prompt": "medium close-up, slow dolly backward, eye level, featuring 林可, 苏念, \"我知道。\"林可的声音很轻。她坐到吧台前的高脚凳上，凳子发出一声吱呀。\"我挂了之, Warm lighting, 暧昧 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.4,
+      "shot_type": "MCU",
+      "camera_movement": "pull",
+      "camera_direction": "slow dolly backward to medium close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "林可",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "我知道。"
+    },
+    {
+      "shot_id": 4,
+      "veo_prompt": "medium close-up, slow dolly backward, eye level, featuring 林可, 苏念, 苏念给她倒了一杯热水, Warm lighting, 暧昧 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.4,
+      "shot_type": "MCU",
+      "camera_movement": "pull",
+      "camera_direction": "slow dolly backward to medium close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "林可",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": ""
+    },
+    {
+      "shot_id": 5,
+      "veo_prompt": "medium close-up, slow dolly backward, eye level, featuring 林可, 苏念, \"因为你把关于他的记忆——全部读掉了。, Warm lighting, 暧昧 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.4,
+      "shot_type": "MCU",
+      "camera_movement": "pull",
+      "camera_direction": "slow dolly backward to medium close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "林可",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "你有哥哥。"
+    },
+    {
+      "shot_id": 6,
+      "veo_prompt": "medium close-up, slow dolly backward, eye level, featuring 苏念, 林可, 林可从包里拿出手机，翻到一张照片。, Warm lighting, 暧昧 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.4,
+      "shot_type": "MCU",
+      "camera_movement": "pull",
+      "camera_direction": "slow dolly backward to medium close-up",
+      "location": "门口",
+      "characters": [
+        "苏念",
+        "林可"
+      ],
+      "visual_anchors": [],
+      "dialogue": "苏远——"
+    },
+    {
+      "shot_id": 7,
+      "veo_prompt": "medium close-up, slow dolly backward, eye level, featuring 苏念, 林可, 这张照片是黑白的。一个墓碑。墓碑上写着：\"苏远之墓\"。日期是十年前。\n\"他死了。, Warm lighting, 暧昧 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.4,
+      "shot_type": "MCU",
+      "camera_movement": "pull",
+      "camera_direction": "slow dolly backward to medium close-up",
+      "location": "门口",
+      "characters": [
+        "苏念",
+        "林可"
+      ],
+      "visual_anchors": [],
+      "dialogue": "苏远之墓"
+    },
+    {
+      "shot_id": 8,
+      "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring 苏念, 林可, 她把手机翻过来，屏幕朝下，按在吧台上。, High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.4,
+      "shot_type": "MCU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to medium close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念",
+        "林可"
+      ],
+      "visual_anchors": [],
+      "dialogue": "代价呢？"
+    },
+    {
+      "shot_id": 9,
+      "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring 苏念, 林可, 每听到一次未来，他就忘掉一段过去。, High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.4,
+      "shot_type": "MCU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to medium close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念",
+        "林可"
+      ],
+      "visual_anchors": [],
+      "dialogue": "代价——"
+    },
+    {
+      "shot_id": 10,
+      "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring 苏念, 林可, 最后——他忘掉了自己是谁。, High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.4,
+      "shot_type": "MCU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to medium close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念",
+        "林可"
+      ],
+      "visual_anchors": [],
+      "dialogue": "然后呢？"
+    },
+    {
+      "shot_id": 11,
+      "veo_prompt": "close-up, slow dolly forward, low angle looking up, featuring 苏念, 林可, 林可站起来，拿起包。, High contrast lighting, 紧张 mood, close-up on 字迹, 手背, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.4,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念",
+        "林可"
+      ],
+      "visual_anchors": [
+        "字迹",
+        "手背"
+      ],
+      "dialogue": "小念：*\n*你看到这封信的时候，我已经不在了。*\n*我听到了。三月十五号，下午四点，念想咖啡店门口。一辆卡车。*\n*我不知道该怎么阻止。我试过了——那天我把自己锁在房间里，不出门。但三月十五号下午三点五十分，我突然想不起来自己为什么要把门锁上。我打开门，走出去。*\n*然后我听到了卡车的刹车声。*\n*小念，别再用了。你喝的每一杯咖啡，都在偷走你的过去。等你忘掉了所有让你成为你的东西——你就不是你了。*\n*别像我一样。*\n*哥哥"
+    },
+    {
+      "shot_id": 12,
+      "veo_prompt": "extreme close-up, slow dolly forward, low angle looking up, featuring 苏念, 林可, 血珠渗出来，滴在地板上，被雨水打湿的地板上多了几个深色的圆点。, High contrast lighting, 紧张 mood, close-up on 拉花, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.4,
+      "shot_type": "ECU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to extreme close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念",
+        "林可"
+      ],
+      "visual_anchors": [
+        "拉花"
+      ],
+      "dialogue": "苏念。"
+    },
+    {
+      "shot_id": 13,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 苏念转身，走到墙边。, Low key lighting, 悬疑 mood, close-up on 便签, 字迹, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.4,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "便签",
+        "字迹"
+      ],
+      "dialogue": "别再喝了。——苏念"
+    },
+    {
+      "shot_id": 14,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 她的手指在屏幕上悬了很久。, Low key lighting, 悬疑 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.4,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "别再喝了。"
+    }
+  ],
+  "chapter_016": [
+    {
+      "shot_id": 1,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 苏念, 顾深, 灯泡在纸袋里发出轻微的碰撞声。, Low key lighting, 悬疑 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.9,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [],
+      "dialogue": "灯泡。"
+    },
+    {
+      "shot_id": 2,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 苏念, 顾深, 暖光从新灯泡里洒下来，把咖啡店照得比平时亮了一点。, Low key lighting, 悬疑 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.9,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [],
+      "dialogue": "你够不着。"
+    },
+    {
+      "shot_id": 3,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 苏念, 顾深, \"好了。\"他说。\n他从桌子上下来。脚落地的时候，他的鞋带松了。他弯腰去系。\n苏念, Low key lighting, 悬疑 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.9,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [],
+      "dialogue": "好了。"
+    },
+    {
+      "shot_id": 4,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 苏念, 顾深, 手在动，磨豆、压粉、萃取, Low key lighting, 悬疑 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.9,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [],
+      "dialogue": ""
+    },
+    {
+      "shot_id": 5,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 苏念, 顾深, 外婆的咖啡店、外婆的便签、外婆教她拉花的下午——所有关于\"为什么是咖啡\"的记忆，都会消失。, Low key lighting, 悬疑 mood, close-up on 便签, 杯沿, 拉花, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.9,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [
+        "便签",
+        "杯沿",
+        "拉花"
+      ],
+      "dialogue": "顾深。"
+    },
+    {
+      "shot_id": 6,
+      "veo_prompt": "medium close-up, slow dolly backward, eye level, featuring 顾深, 苏念, 她坐在对面，筷子夹断了一根面条。, Warm lighting, 暧昧 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.9,
+      "shot_type": "MCU",
+      "camera_movement": "pull",
+      "camera_direction": "slow dolly backward to medium close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "念想咖啡店收购计划"
+    },
+    {
+      "shot_id": 7,
+      "veo_prompt": "close-up, slow dolly backward, eye level, featuring 顾深, 苏念, 她的手指攥着杯壁，指节发白。, Warm lighting, 暧昧 mood, close-up on 便签, 手背, 拉花, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.9,
+      "shot_type": "CU",
+      "camera_movement": "pull",
+      "camera_direction": "slow dolly backward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "便签",
+        "手背",
+        "拉花"
+      ],
+      "dialogue": "为什么是咖啡"
+    },
+    {
+      "shot_id": 8,
+      "veo_prompt": "medium close-up, slow dolly backward, eye level, featuring 顾深, 苏念, 像一本书被撕掉了第一页。, Warm lighting, 暧昧 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.9,
+      "shot_type": "MCU",
+      "camera_movement": "pull",
+      "camera_direction": "slow dolly backward to medium close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "苏念？"
+    },
+    {
+      "shot_id": 9,
+      "veo_prompt": "medium close-up, slow dolly backward, eye level, featuring 顾深, 苏念, 他的灰色眼睛里没有质问，只有困惑, Warm lighting, 暧昧 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.9,
+      "shot_type": "MCU",
+      "camera_movement": "pull",
+      "camera_direction": "slow dolly backward to medium close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "又变了。"
+    },
+    {
+      "shot_id": 10,
+      "veo_prompt": "medium close-up, slow dolly backward, eye level, featuring 顾深, 苏念, 我看到了你关掉了收购计划。, Warm lighting, 暧昧 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.9,
+      "shot_type": "MCU",
+      "camera_movement": "pull",
+      "camera_direction": "slow dolly backward to medium close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "你怎么知道的？"
+    },
+    {
+      "shot_id": 11,
+      "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring 顾深, 苏念, 金属风铃从门框上脱落，砸在地板上，弹了两下，滚到苏念脚边。, High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.9,
+      "shot_type": "MCU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to medium close-up",
+      "location": "门口",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": ""
+    },
+    {
+      "shot_id": 12,
+      "veo_prompt": "extreme close-up, slow dolly forward, low angle looking up, featuring 顾深, 苏念, 苏念站起来，走到门口。, High contrast lighting, 紧张 mood, close-up on 字迹, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.9,
+      "shot_type": "ECU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to extreme close-up",
+      "location": "门口",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "字迹"
+      ],
+      "dialogue": "小念，别喝最后一杯。"
+    },
+    {
+      "shot_id": 13,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 苏念蹲在地上，手指碰着那张便签。, Warm lighting, 暧昧 mood, close-up on 便签, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 6.9,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "巷子",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "便签"
+      ],
+      "dialogue": "小念，你哥哥的最后一杯，也是顾深的第一杯。"
+    }
+  ],
+  "chapter_017": [
+    {
+      "shot_id": 1,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 围裙上的咖啡渍在灯光下像一幅抽象画。, Low key lighting, 悬疑 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 7.5,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "巷子",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "去哪？"
+    },
+    {
+      "shot_id": 2,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 顾深带她拐进另一条巷子，走到一家面馆门口。, Low key lighting, 悬疑 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 7.5,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "巷子",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "这里。"
+    },
+    {
+      "shot_id": 3,
+      "veo_prompt": "close-up, slow dolly backward, high angle looking down, featuring 苏念, 顾深, \"你点了牛肉面，但只吃了半碗。, Low key lighting, 悲伤 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 7.5,
+      "shot_type": "CU",
+      "camera_movement": "pull",
+      "camera_direction": "slow dolly backward to close-up",
+      "location": "面馆",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [],
+      "dialogue": "不收购。"
+    },
+    {
+      "shot_id": 4,
+      "veo_prompt": "extreme close-up, slow dolly backward, high angle looking down, featuring 苏念, 顾深, 你的手背上——有些东西在消失。, Low key lighting, 悲伤 mood, close-up on 手背, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 7.5,
+      "shot_type": "ECU",
+      "camera_movement": "pull",
+      "camera_direction": "slow dolly backward to extreme close-up",
+      "location": "面馆",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [
+        "手背"
+      ],
+      "dialogue": "你的手。"
+    },
+    {
+      "shot_id": 5,
+      "veo_prompt": "close-up, slow dolly backward, high angle looking down, featuring 苏念, 顾深, 你忘掉了外婆的声音。, Low key lighting, 悲伤 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 7.5,
+      "shot_type": "CU",
+      "camera_movement": "pull",
+      "camera_direction": "slow dolly backward to close-up",
+      "location": "面馆",
+      "characters": [
+        "苏念",
+        "顾深"
+      ],
+      "visual_anchors": [],
+      "dialogue": "我不确定。"
+    },
+    {
+      "shot_id": 6,
+      "veo_prompt": "medium close-up, slow dolly backward, eye level, featuring 林可, 顾深, 苏念, 照片里是一个男孩和一个女孩，站在咖啡店门口。, Warm lighting, 暧昧 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 7.5,
+      "shot_type": "MCU",
+      "camera_movement": "pull",
+      "camera_direction": "slow dolly backward to medium close-up",
+      "location": "巷子",
+      "characters": [
+        "林可",
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": ""
+    },
+    {
+      "shot_id": 7,
+      "veo_prompt": "medium close-up, slow dolly backward, eye level, featuring 林可, 顾深, 苏念, 圆脸，短发，笑起来眼睛弯弯的, Warm lighting, 暧昧 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 7.5,
+      "shot_type": "MCU",
+      "camera_movement": "pull",
+      "camera_direction": "slow dolly backward to medium close-up",
+      "location": "巷子",
+      "characters": [
+        "林可",
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": ""
+    },
+    {
+      "shot_id": 8,
+      "veo_prompt": "medium close-up, slow dolly backward, eye level, featuring 林可, 顾深, 苏念, \"这是苏远。\"顾深说。\"你哥哥。\"\n苏念看着那张脸。她不认识。\n\"这张照片——你, Warm lighting, 暧昧 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 7.5,
+      "shot_type": "MCU",
+      "camera_movement": "pull",
+      "camera_direction": "slow dolly backward to medium close-up",
+      "location": "巷子",
+      "characters": [
+        "林可",
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "找谁？"
+    },
+    {
+      "shot_id": 9,
+      "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring 顾深, 苏念, \"找苏远。\"顾深说。\"我大学的时候，有一个同学叫苏远。他退学了，没说原因。我一直, Warm lighting, 暧昧 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 7.5,
+      "shot_type": "MCU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to medium close-up",
+      "location": "巷子",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "找苏远。"
+    },
+    {
+      "shot_id": 10,
+      "veo_prompt": "extreme close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 苏念的眼泪掉下来了。, Warm lighting, 暧昧 mood, close-up on 字迹, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 7.5,
+      "shot_type": "ECU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to extreme close-up",
+      "location": "巷子",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "字迹"
+      ],
+      "dialogue": "顾深。"
+    },
+    {
+      "shot_id": 11,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 他转身，看着那棵大榕树。, Warm lighting, 暧昧 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 7.5,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "巷子",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "我们回去吧。"
+    },
+    {
+      "shot_id": 12,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 苏念的手里攥着那张照片。, Warm lighting, 暧昧 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 7.5,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "巷子",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": ""
+    }
+  ],
+  "chapter_018": [
+    {
+      "shot_id": 1,
+      "veo_prompt": "medium shot, static camera, eye level, featuring 陈锐, 苏念, 他一个人，穿着一件深蓝色的polo衫，手腕上的表还是那块——但表带换过了，从金属换成了皮的, Natural lighting, 日常 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "MS",
+      "camera_movement": "static",
+      "camera_direction": "static camera to medium shot",
+      "location": "念想咖啡店",
+      "characters": [
+        "陈锐",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "意式浓缩。"
+    },
+    {
+      "shot_id": 2,
+      "veo_prompt": "medium shot, static camera, eye level, featuring 陈锐, 苏念, 陈锐喝了一口，放下。, Natural lighting, 日常 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "MS",
+      "camera_movement": "static",
+      "camera_direction": "static camera to medium shot",
+      "location": "念想咖啡店",
+      "characters": [
+        "陈锐",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": ""
+    },
+    {
+      "shot_id": 3,
+      "veo_prompt": "medium shot, static camera, eye level, featuring 陈锐, 苏念, 陈锐从口袋里拿出手机，翻到一张照片。, Natural lighting, 日常 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "MS",
+      "camera_movement": "static",
+      "camera_direction": "static camera to medium shot",
+      "location": "念想咖啡店",
+      "characters": [
+        "陈锐",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "锐咖啡"
+    },
+    {
+      "shot_id": 4,
+      "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring 苏念, 陈锐, 店门口有一棵桂花树，树下放着一张折叠椅。, High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "MCU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to medium close-up",
+      "location": "门口",
+      "characters": [
+        "苏念",
+        "陈锐"
+      ],
+      "visual_anchors": [],
+      "dialogue": "不好。"
+    },
+    {
+      "shot_id": 5,
+      "veo_prompt": "extreme close-up, slow dolly forward, low angle looking up, featuring 苏念, 陈锐, 她侧着头，靠在椅背上，眼睛闭着。, High contrast lighting, 紧张 mood, close-up on 手机屏幕, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "ECU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to extreme close-up",
+      "location": "门口",
+      "characters": [
+        "苏念",
+        "陈锐"
+      ],
+      "visual_anchors": [
+        "手机屏幕"
+      ],
+      "dialogue": "我卖了。"
+    },
+    {
+      "shot_id": 6,
+      "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring 陈锐, 顾深, 苏念, 苏念的指甲在吧台上敲了一下。\n\"所以你来收购我的店——\"\n\"是因为我必须完成公司, High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "MCU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to medium close-up",
+      "location": "巷子",
+      "characters": [
+        "陈锐",
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "所以你来收购我的店——"
+    },
+    {
+      "shot_id": 7,
+      "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring 陈锐, 顾深, 苏念, 他把信封又推了一下。\n\"签了吧。\"他说。\"公司不会再来了。我跟他们说了——这条巷, High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "MCU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to medium close-up",
+      "location": "巷子",
+      "characters": [
+        "陈锐",
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "是谁？"
+    },
+    {
+      "shot_id": 8,
+      "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring 陈锐, 顾深, 苏念, \"我以前不知道。\"陈锐说。\"是最近才查到的。所以我辞职了。\"\n苏念的呼吸停了。\n, High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "MCU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to medium close-up",
+      "location": "巷子",
+      "characters": [
+        "陈锐",
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "巧合。"
+    },
+    {
+      "shot_id": 9,
+      "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring 陈锐, 苏念, 他站起来，从口袋里掏出钱包，抽出一张二十块钱，放在吧台上。, High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "MCU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to medium close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "陈锐",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "不用找了。"
+    },
+    {
+      "shot_id": 10,
+      "veo_prompt": "close-up, slow dolly forward, low angle looking up, featuring 陈锐, 苏念, \"陈锐的声音在发抖。, High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "陈锐",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "苏老板。"
+    },
+    {
+      "shot_id": 11,
+      "veo_prompt": "close-up, slow dolly forward, low angle looking up, featuring 陈锐, 苏念, 她看着那个牛皮纸信封，手指在信封边缘停了三秒。, High contrast lighting, 紧张 mood, close-up on 便签, 字迹, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "陈锐",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "便签",
+        "字迹"
+      ],
+      "dialogue": "念想咖啡，值得留下来。"
+    }
+  ],
+  "chapter_019": [
+    {
+      "shot_id": 1,
+      "veo_prompt": "close-up, static camera, eye level, featuring 苏念, 手指在纸面上停了一下。, Natural lighting, 日常 mood, close-up on 便签, 字迹, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "static",
+      "camera_direction": "static camera to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念"
+      ],
+      "visual_anchors": [
+        "便签",
+        "字迹"
+      ],
+      "dialogue": "都在咖啡里"
+    },
+    {
+      "shot_id": 2,
+      "veo_prompt": "close-up, static camera, eye level, featuring 苏念, 她放下杯子，走到墙边。, Natural lighting, 日常 mood, close-up on 便签, 字迹, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "static",
+      "camera_direction": "static camera to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念"
+      ],
+      "visual_anchors": [
+        "便签",
+        "字迹"
+      ],
+      "dialogue": "有些味道，不是用舌头记住的"
+    },
+    {
+      "shot_id": 3,
+      "veo_prompt": "extreme close-up, static camera, eye level, featuring 苏念, 纸面温暖的——不是因为阳光，是因为这张便签贴在暖气管旁边，被管子的温度捂热了。, Natural lighting, 日常 mood, close-up on 便签, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "ECU",
+      "camera_movement": "static",
+      "camera_direction": "static camera to extreme close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念"
+      ],
+      "visual_anchors": [
+        "便签"
+      ],
+      "dialogue": ""
+    },
+    {
+      "shot_id": 4,
+      "veo_prompt": "extreme close-up, slow dolly forward, eye level, featuring 苏念, 墙上的便签——全部在。, Low key lighting, 悬疑 mood, close-up on 便签, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "ECU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to extreme close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念"
+      ],
+      "visual_anchors": [
+        "便签"
+      ],
+      "dialogue": ""
+    },
+    {
+      "shot_id": 5,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 苏念, 苏念的手指在字迹上停了三秒。, Low key lighting, 悬疑 mood, close-up on 字迹, 拉花, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念"
+      ],
+      "visual_anchors": [
+        "字迹",
+        "拉花"
+      ],
+      "dialogue": "小念，你第一次拉花的时候才五岁。奶泡洒了一桌子，你哭了。我告诉你——拉花不是技术，是心意。"
+    },
+    {
+      "shot_id": 6,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 苏念, 苏念转身，走到门口。, Low key lighting, 悬疑 mood, close-up on 便签, 拉花, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念"
+      ],
+      "visual_anchors": [
+        "便签",
+        "拉花"
+      ],
+      "dialogue": "休息中"
+    }
+  ],
+  "chapter_020": [
+    {
+      "shot_id": 1,
+      "veo_prompt": "extreme close-up, slow dolly forward, eye level, 阳光从巷子里涌进来，照在吧台上，照在墙上的便签上。, Low key lighting, 悬疑 mood, close-up on 便签, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "ECU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to extreme close-up",
+      "location": "念想咖啡店",
+      "characters": [],
+      "visual_anchors": [
+        "便签"
+      ],
+      "dialogue": "营业中"
+    },
+    {
+      "shot_id": 2,
+      "veo_prompt": "close-up, slow dolly forward, eye level, 豆子碎了，空气里弥漫着焦糖和坚果的味道。, Low key lighting, 悬疑 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [],
+      "visual_anchors": [],
+      "dialogue": ""
+    },
+    {
+      "shot_id": 3,
+      "veo_prompt": "close-up, slow dolly forward, eye level, 渍痕在灯光下形成一个不规则的图案——她不确定那是什么。, Low key lighting, 悬疑 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [],
+      "visual_anchors": [],
+      "dialogue": ""
+    },
+    {
+      "shot_id": 4,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 她想端起他的杯子，闭上眼，听他此刻在想什么。, Low key lighting, 悬疑 mood, close-up on 疤痕, 杯沿, 手背, 左手, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "疤痕",
+        "杯沿",
+        "手背",
+        "左手"
+      ],
+      "dialogue": "美式。"
+    },
+    {
+      "shot_id": 5,
+      "veo_prompt": "extreme close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 他的手指在杯壁上画了一个圈。, Low key lighting, 悬疑 mood, close-up on 拉花, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "ECU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to extreme close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "拉花"
+      ],
+      "dialogue": "那够吗？"
+    },
+    {
+      "shot_id": 6,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 顾深站起来，把钱放在吧台上。, Low key lighting, 悬疑 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [],
+      "dialogue": "苏念。"
+    },
+    {
+      "shot_id": 7,
+      "veo_prompt": "extreme close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 她看着那杯顾深喝过的咖啡——杯壁上还有他的唇印，杯底还剩一点冷掉的咖啡液。, Low key lighting, 悬疑 mood, close-up on 唇印, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "ECU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to extreme close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "唇印"
+      ],
+      "dialogue": ""
+    },
+    {
+      "shot_id": 8,
+      "veo_prompt": "extreme close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 苏念转身，走回吧台后面。, Low key lighting, 悬疑 mood, close-up on 便签, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "ECU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to extreme close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "顾深",
+        "苏念"
+      ],
+      "visual_anchors": [
+        "便签"
+      ],
+      "dialogue": ""
+    },
+    {
+      "shot_id": 9,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 苏念, 窗外，阳光照在巷子里的青石板上。, Low key lighting, 悬疑 mood, close-up on 便签, 字迹, 猫, 拉花, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念"
+      ],
+      "visual_anchors": [
+        "便签",
+        "字迹",
+        "猫",
+        "拉花"
+      ],
+      "dialogue": "小念，拉花不是技术，是心意。"
+    },
+    {
+      "shot_id": 10,
+      "veo_prompt": "close-up, slow dolly forward, eye level, featuring 苏念, 苏念走到咖啡机前，拿起拉花缸。\n她开始打奶泡。\n奶泡从缸里倒出来，在咖啡表面画了, Low key lighting, 悬疑 mood, close-up on 拉花, cinematic, 9:16 vertical, photorealistic, 4K",
+      "duration": 8.0,
+      "shot_type": "CU",
+      "camera_movement": "push",
+      "camera_direction": "slow dolly forward to close-up",
+      "location": "念想咖啡店",
+      "characters": [
+        "苏念"
+      ],
+      "visual_anchors": [
+        "拉花"
+      ],
+      "dialogue": ""
+    }
+  ]
+}

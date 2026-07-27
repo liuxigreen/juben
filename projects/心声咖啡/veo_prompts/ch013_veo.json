@@ -1,0 +1,132 @@
+[
+  {
+    "shot_id": 1,
+    "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring 苏念, \"他坐到靠窗的位子上，把公文包放在对面的椅子上。, High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "MCU",
+    "camera_movement": "push",
+    "camera_direction": "slow dolly forward to medium close-up",
+    "location": "念想咖啡店",
+    "characters": [
+      "苏念"
+    ],
+    "visual_anchors": [],
+    "dialogue": "美式。"
+  },
+  {
+    "shot_id": 2,
+    "veo_prompt": "extreme close-up, slow dolly forward, low angle looking up, featuring 苏念, 男人接过杯子，喝了一大口。, High contrast lighting, 紧张 mood, close-up on 便签, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "ECU",
+    "camera_movement": "push",
+    "camera_direction": "slow dolly forward to extreme close-up",
+    "location": "念想咖啡店",
+    "characters": [
+      "苏念"
+    ],
+    "visual_anchors": [
+      "便签"
+    ],
+    "dialogue": "六年。"
+  },
+  {
+    "shot_id": 3,
+    "veo_prompt": "close-up, slow dolly forward, low angle looking up, featuring 苏念, 然后他放下杯子，从公文包里抽出一份文件，摊在桌上开始看。, High contrast lighting, 紧张 mood, close-up on 唇印, 杯沿, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "CU",
+    "camera_movement": "push",
+    "camera_direction": "slow dolly forward to close-up",
+    "location": "念想咖啡店",
+    "characters": [
+      "苏念"
+    ],
+    "visual_anchors": [
+      "唇印",
+      "杯沿"
+    ],
+    "dialogue": "……评估报告出来了。这栋楼的结构安全系数不达标，需要整体拆除。念想咖啡店所在的巷子——全部拆。工期三个月。我得把文件送到街道办。但这个消息不能提前泄露，不然那些商户会闹……"
+  },
+  {
+    "shot_id": 4,
+    "veo_prompt": "extreme close-up, slow dolly forward, low angle looking up, featuring 苏念, 苏念放下杯子，走到吧台后面。, High contrast lighting, 紧张 mood, close-up on 手背, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "ECU",
+    "camera_movement": "push",
+    "camera_direction": "slow dolly forward to extreme close-up",
+    "location": "念想咖啡店",
+    "characters": [
+      "苏念"
+    ],
+    "visual_anchors": [
+      "手背"
+    ],
+    "dialogue": "十五。"
+  },
+  {
+    "shot_id": 5,
+    "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring 苏念, 他走了。门关上。风铃没响——今天的风太大，风铃被吹歪了。\n苏念站在吧台后面，看着, High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "MCU",
+    "camera_movement": "push",
+    "camera_direction": "slow dolly forward to medium close-up",
+    "location": "念想咖啡店",
+    "characters": [
+      "苏念"
+    ],
+    "visual_anchors": [],
+    "dialogue": ""
+  },
+  {
+    "shot_id": 6,
+    "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring 苏念, 她攥紧拳头，指甲陷进掌心。, High contrast lighting, 紧张 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "MCU",
+    "camera_movement": "push",
+    "camera_direction": "slow dolly forward to medium close-up",
+    "location": "念想咖啡店",
+    "characters": [
+      "苏念"
+    ],
+    "visual_anchors": [],
+    "dialogue": "念想咖啡店 产权"
+  },
+  {
+    "shot_id": 7,
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring 林可, 顾深, 苏念, 她端起杯子，看着杯壁上的倒影。, Low key lighting, 悬疑 mood, close-up on 便签, 字迹, 拉花, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "CU",
+    "camera_movement": "push",
+    "camera_direction": "slow dolly forward to close-up",
+    "location": "念想咖啡店",
+    "characters": [
+      "林可",
+      "顾深",
+      "苏念"
+    ],
+    "visual_anchors": [
+      "便签",
+      "字迹",
+      "拉花"
+    ],
+    "dialogue": "营业中"
+  },
+  {
+    "shot_id": 8,
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring 林可, 顾深, 苏念, 手机屏幕暗下去，她看到屏幕倒影里——\n墙上的便签，又淡了一个笔画。, Low key lighting, 悬疑 mood, close-up on 便签, 手机屏幕, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "CU",
+    "camera_movement": "push",
+    "camera_direction": "slow dolly forward to close-up",
+    "location": "念想咖啡店",
+    "characters": [
+      "林可",
+      "顾深",
+      "苏念"
+    ],
+    "visual_anchors": [
+      "便签",
+      "手机屏幕"
+    ],
+    "dialogue": ""
+  }
+]

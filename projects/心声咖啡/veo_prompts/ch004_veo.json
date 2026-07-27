@@ -1,0 +1,75 @@
+[
+  {
+    "shot_id": 1,
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring 林可, 顾深, 苏念, \"她把画塞进包里，转身去吧台后面给自己倒了杯水。, Low key lighting, 悬疑 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "CU",
+    "camera_movement": "push",
+    "camera_direction": "slow dolly forward to close-up",
+    "location": "念想咖啡店",
+    "characters": [
+      "林可",
+      "顾深",
+      "苏念"
+    ],
+    "visual_anchors": [],
+    "dialogue": "你最近太累了。"
+  },
+  {
+    "shot_id": 2,
+    "veo_prompt": "extreme close-up, slow dolly forward, eye level, featuring 林可, 顾深, 苏念, 林可的手指在画纸上收紧，纸面微微凹陷。, Low key lighting, 悬疑 mood, close-up on 杯沿, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "ECU",
+    "camera_movement": "push",
+    "camera_direction": "slow dolly forward to extreme close-up",
+    "location": "念想咖啡店",
+    "characters": [
+      "林可",
+      "顾深",
+      "苏念"
+    ],
+    "visual_anchors": [
+      "杯沿"
+    ],
+    "dialogue": "不太记得了。"
+  },
+  {
+    "shot_id": 3,
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring 林可, 顾深, 苏念, 咖啡店的灯自动亮了。, Low key lighting, 悬疑 mood, close-up on 疤痕, 拉花, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "CU",
+    "camera_movement": "push",
+    "camera_direction": "slow dolly forward to close-up",
+    "location": "念想咖啡店",
+    "characters": [
+      "林可",
+      "顾深",
+      "苏念"
+    ],
+    "visual_anchors": [
+      "疤痕",
+      "拉花"
+    ],
+    "dialogue": "送给小念。希望你永远记得。"
+  },
+  {
+    "shot_id": 4,
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring 林可, 顾深, 苏念, 墙上外婆的便签在灯光下微微发黄：\"小念，记住：拉花不是技术，是心意。, Low key lighting, 悬疑 mood, close-up on 便签, 字迹, 拉花, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "CU",
+    "camera_movement": "push",
+    "camera_direction": "slow dolly forward to close-up",
+    "location": "念想咖啡店",
+    "characters": [
+      "林可",
+      "顾深",
+      "苏念"
+    ],
+    "visual_anchors": [
+      "便签",
+      "字迹",
+      "拉花"
+    ],
+    "dialogue": "小念，记住：拉花不是技术，是心意。"
+  }
+]

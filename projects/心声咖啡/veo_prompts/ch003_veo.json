@@ -1,0 +1,70 @@
+[
+  {
+    "shot_id": 1,
+    "veo_prompt": "extreme close-up, slow dolly backward, high angle looking down, featuring 顾深, 苏念, 一个女孩站在雨里，头发贴在脸上，手里攥着一把钥匙。, Low key lighting, 悲伤 mood, close-up on 钥匙, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "ECU",
+    "camera_movement": "pull",
+    "camera_direction": "slow dolly backward to extreme close-up",
+    "location": "苏念的公寓",
+    "characters": [
+      "顾深",
+      "苏念"
+    ],
+    "visual_anchors": [
+      "钥匙"
+    ],
+    "dialogue": "常客。"
+  },
+  {
+    "shot_id": 2,
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 但泪水从苏念的眼角滑下来，滴在吧台上。, High contrast lighting, 震惊 mood, close-up on 疤痕, 左手, 无名指, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "CU",
+    "camera_movement": "push",
+    "camera_direction": "slow dolly forward to close-up",
+    "location": "巷子",
+    "characters": [
+      "顾深",
+      "苏念"
+    ],
+    "visual_anchors": [
+      "疤痕",
+      "左手",
+      "无名指"
+    ],
+    "dialogue": "没事。"
+  },
+  {
+    "shot_id": 3,
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring 顾深, 苏念, \"顾深端起杯子，把剩下的半杯一饮而尽，\"凉的也行。, High contrast lighting, 震惊 mood, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "CU",
+    "camera_movement": "push",
+    "camera_direction": "slow dolly forward to close-up",
+    "location": "巷子",
+    "characters": [
+      "顾深",
+      "苏念"
+    ],
+    "visual_anchors": [],
+    "dialogue": "不用。"
+  },
+  {
+    "shot_id": 4,
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring 顾深, 苏念, 疤痕消失的——戒指印、某个她想不起来的针眼、还有一道她甚至不记得什么时候有的划痕。, High contrast lighting, 震惊 mood, close-up on 疤痕, cinematic, 9:16 vertical, photorealistic, 4K",
+    "duration": 8.0,
+    "shot_type": "CU",
+    "camera_movement": "push",
+    "camera_direction": "slow dolly forward to close-up",
+    "location": "巷子",
+    "characters": [
+      "顾深",
+      "苏念"
+    ],
+    "visual_anchors": [
+      "疤痕"
+    ],
+    "dialogue": ""
+  }
+]
