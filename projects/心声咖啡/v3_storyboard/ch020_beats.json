@@ -65,7 +65,8 @@
     "voice_type": "none",
     "focus_object": "cup rim",
     "emotion": "Tension",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
     "beat_id": 5,
@@ -81,7 +82,8 @@
     "voice_type": "none",
     "focus_object": "",
     "emotion": "Shock",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
     "beat_id": 6,
@@ -97,7 +99,8 @@
     "voice_type": "none",
     "focus_object": "scar on ring finger",
     "emotion": "Mystery",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
     "beat_id": 7,
@@ -186,7 +189,8 @@
     "voice_type": "none",
     "focus_object": "cup rim",
     "emotion": "Tension",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
     "beat_id": 12,
@@ -202,7 +206,8 @@
     "voice_type": "none",
     "focus_object": "",
     "emotion": "Shock",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
     "beat_id": 13,
@@ -218,7 +223,8 @@
     "voice_type": "none",
     "focus_object": "scar on ring finger",
     "emotion": "Mystery",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
     "beat_id": 14,
@@ -559,7 +565,8 @@
     "voice_type": "none",
     "focus_object": "cup rim",
     "emotion": "Tension",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
     "beat_id": 33,
@@ -575,7 +582,8 @@
     "voice_type": "none",
     "focus_object": "",
     "emotion": "Shock",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
     "beat_id": 34,
@@ -591,7 +599,8 @@
     "voice_type": "none",
     "focus_object": "scar on ring finger",
     "emotion": "Mystery",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
     "beat_id": 35,

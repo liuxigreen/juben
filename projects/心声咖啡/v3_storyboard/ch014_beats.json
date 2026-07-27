@@ -194,7 +194,8 @@
     "voice_type": "none",
     "focus_object": "cup rim",
     "emotion": "Tension",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
     "beat_id": 12,
@@ -210,7 +211,8 @@
     "voice_type": "none",
     "focus_object": "",
     "emotion": "Shock",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
     "beat_id": 13,
@@ -226,7 +228,8 @@
     "voice_type": "none",
     "focus_object": "scar on ring finger",
     "emotion": "Mystery",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
     "beat_id": 14,
@@ -303,17 +306,35 @@
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian sees something",
+    "action_visual": "close-up of the changed object",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
-    "inner_voice": "小念，如果你看到这行字，说明你已经忘了什么。别怕。有些东西不在脑子里，在杯子里。",
-    "voice_type": "inner_voice",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "那行小字还在：*\"小念，如果你看到这行字，说明你已经忘了什么。别怕。有些东西不在脑子里，在杯子里。\"*\n\"在杯子里\"。"
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "changed object",
+    "emotion": "Shock",
+    "source_text": "[event: evidence_discover]",
+    "event_type": "evidence_discover"
   },
   {
     "beat_id": 19,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian freezes, breath catching",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Tension",
+    "source_text": "[event: evidence_discover]",
+    "event_type": "evidence_discover"
+  },
+  {
+    "beat_id": 20,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -331,7 +352,7 @@
     "source_text": "苏念看着手里的咖啡杯。杯壁上的咖啡渍在灯光下形成一个不规则的图案。\n她把杯子端到眼前。\n图案变了。\n不是咖啡渍——是一个画面。模糊的，像旧电视的雪花屏。画面里有"
   },
   {
-    "beat_id": 20,
+    "beat_id": 21,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -348,25 +369,58 @@
     "source_text": "和昨天一样的声音。外婆的声音。\n但这次，苏念听到了后面的话：\n*\"你喝得越多，忘得越多。忘得越多，喝得越多。停下来。\"*"
   },
   {
-    "beat_id": 21,
+    "beat_id": 22,
     "space": "Mental",
     "characters_present": [
-      "Su Nian",
-      "Lin Ke",
-      "grandmother"
+      "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian gazes at the coffee cup",
+    "action_visual": "Su Nian eyes go blank, staring into distance",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
-    "focus_object": "watercolor painting",
-    "emotion": "Neutral",
-    "source_text": "画面碎了。咖啡杯在苏念手里裂开了一道纹。热咖啡从裂缝里渗出来，烫了她的手指。\n苏念松开手。杯子掉在地上，碎了。咖啡洒了一地，溅在她的拖鞋上。\n她蹲在地上，看着那"
+    "focus_object": "",
+    "emotion": "Shock",
+    "source_text": "[event: vision_flash]",
+    "event_type": "vision_flash"
   },
   {
-    "beat_id": 22,
+    "beat_id": 23,
+    "space": "Mental",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "a blurry vision materializes, colors desaturated",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Mystery",
+    "source_text": "[event: vision_flash]",
+    "event_type": "vision_flash"
+  },
+  {
+    "beat_id": 24,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian blinks rapidly, returning to reality",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Tension",
+    "source_text": "[event: vision_flash]",
+    "event_type": "vision_flash"
+  },
+  {
+    "beat_id": 25,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -384,7 +438,7 @@
     "source_text": "手机响了。\n她没接。"
   },
   {
-    "beat_id": 23,
+    "beat_id": 26,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -400,7 +454,7 @@
     "source_text": "手机又响了。"
   },
   {
-    "beat_id": 24,
+    "beat_id": 27,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -418,7 +472,7 @@
     "source_text": "她站起来，走到吧台后面，拿起手机。屏幕上显示\"林可\"。"
   },
   {
-    "beat_id": 25,
+    "beat_id": 28,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -434,24 +488,41 @@
     "source_text": "\"喂。\"苏念的声音有点哑。"
   },
   {
-    "beat_id": 26,
+    "beat_id": 29,
     "space": "Physical",
     "characters_present": [
-      "Su Nian",
-      "Lin Ke"
+      "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian sees something",
-    "spoken_dialogue": "苏念！",
-    "dialogue_speaker": "Su Nian",
+    "action_visual": "close-up of the changed object",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
     "inner_voice": "",
-    "voice_type": "onscreen",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "\"苏念！\"林可的声音很急，\"你看到新闻了吗？老城区要拆迁了！你们那条巷子——全拆！\""
+    "voice_type": "none",
+    "focus_object": "changed object",
+    "emotion": "Shock",
+    "source_text": "[event: evidence_discover]",
+    "event_type": "evidence_discover"
   },
   {
-    "beat_id": 27,
+    "beat_id": 30,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian freezes, breath catching",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Tension",
+    "source_text": "[event: evidence_discover]",
+    "event_type": "evidence_discover"
+  },
+  {
+    "beat_id": 31,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -469,7 +540,7 @@
     "source_text": "苏念的手攥紧了手机。\n\"我知道。\"她说。"
   },
   {
-    "beat_id": 28,
+    "beat_id": 32,
     "space": "Physical",
     "characters_present": [
       "Lin Ke"
@@ -485,7 +556,7 @@
     "source_text": "\"你——你知道？\"林可的声音顿了一下，\"你怎么知道的？新闻刚出来十分钟！\""
   },
   {
-    "beat_id": 29,
+    "beat_id": 33,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -501,7 +572,7 @@
     "source_text": "苏念没回答。"
   },
   {
-    "beat_id": 30,
+    "beat_id": 34,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -519,7 +590,7 @@
     "source_text": "\"苏念？\"\n\"我在。\"苏念说。她的声音很平，但她的另一只手在发抖。\"林可，我问你一个问题。\"\n\"你说。\"\n\"我爸妈——长什么样？\""
   },
   {
-    "beat_id": 31,
+    "beat_id": 35,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -535,7 +606,7 @@
     "source_text": "电话那头沉默了三秒。\n\"苏念，你在说什么？\""
   },
   {
-    "beat_id": 32,
+    "beat_id": 36,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -556,7 +627,7 @@
     "source_text": "\"我不记得了。\"苏念说。她的声音没有哭腔，但她的手指在手机壳上抠出了痕迹。\"我不记得他们的脸。不记得他们的声音。不记得他们叫什么名字。\"\n\"苏念——\"\n\"我也不"
   },
   {
-    "beat_id": 33,
+    "beat_id": 37,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -574,7 +645,7 @@
     "source_text": "电话那头，林可的呼吸声很重。\n然后她说了一句话。声音很轻，但苏念听得清清楚楚：\n*\"你哥哥当年也是这样。\"*"
   },
   {
-    "beat_id": 34,
+    "beat_id": 38,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -590,7 +661,7 @@
     "source_text": "苏念的手停了。\n\"什么？\""
   },
   {
-    "beat_id": 35,
+    "beat_id": 39,
     "space": "Physical",
     "characters_present": [
       "Gu Shen",
@@ -609,7 +680,7 @@
     "source_text": "\"你哥哥——\"林可的声音在发抖，\"他也有过这种'能力'。他也能听到别人听不到的东西。但代价——\""
   },
   {
-    "beat_id": 36,
+    "beat_id": 40,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -625,27 +696,11 @@
     "source_text": "电话断了。"
   },
   {
-    "beat_id": 37,
+    "beat_id": 41,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
       "Lin Ke"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "the call disconnects",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "苏念看着手机屏幕。通话时长：2分17秒。信号满格。\n不是信号问题。是林可挂了。"
-  },
-  {
-    "beat_id": 38,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian dials the number again",
@@ -655,10 +710,10 @@
     "voice_type": "none",
     "focus_object": "",
     "emotion": "Neutral",
-    "source_text": "苏念回拨。忙音。\n再拨。忙音。\n第三次拨——"
+    "source_text": "苏念看着手机屏幕。通话时长：2分17秒。信号满格。\n不是信号问题。是林可挂了。\n苏念回拨。忙音。\n再拨。忙音。\n第三次拨——"
   },
   {
-    "beat_id": 39,
+    "beat_id": 42,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -674,7 +729,7 @@
     "source_text": "\"您拨打的电话已关机。\""
   },
   {
-    "beat_id": 40,
+    "beat_id": 43,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -692,7 +747,7 @@
     "source_text": "苏念放下手机。她的手在发抖。不是因为读心的代价——她今天没有读心。是因为林可说的那句话。\n*\"你哥哥当年也是这样。\"*"
   },
   {
-    "beat_id": 41,
+    "beat_id": 44,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -710,7 +765,7 @@
     "source_text": "她有哥哥吗？\n她不记得了。"
   },
   {
-    "beat_id": 42,
+    "beat_id": 45,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -728,7 +783,7 @@
     "source_text": "苏念走到墙边，看着外婆的便签。便签上的字又淡了一个笔画。\n她伸手去揭便签——\n便签自己掉了。\n轻飘飘地，像一片落叶，正面朝下，落在地上。"
   },
   {
-    "beat_id": 43,
+    "beat_id": 46,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -744,7 +799,7 @@
     "source_text": "苏念弯腰去捡。\n手指碰到便签的瞬间——"
   },
   {
-    "beat_id": 44,
+    "beat_id": 47,
     "space": "Physical",
     "characters_present": [
       "Su Nian"

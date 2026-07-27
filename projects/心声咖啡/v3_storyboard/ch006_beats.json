@@ -117,7 +117,8 @@
     "voice_type": "none",
     "focus_object": "cup rim",
     "emotion": "Tension",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
     "beat_id": 8,
@@ -133,7 +134,8 @@
     "voice_type": "none",
     "focus_object": "",
     "emotion": "Shock",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
     "beat_id": 9,
@@ -149,7 +151,8 @@
     "voice_type": "none",
     "focus_object": "scar on ring finger",
     "emotion": "Mystery",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
     "beat_id": 10,
@@ -176,25 +179,38 @@
     "beat_id": 11,
     "space": "Physical",
     "characters_present": [
-      "Su Nian",
-      "Gu Shen",
-      "Lin Ke",
-      "Chen Rui",
-      "Su Yuan",
-      "grandmother"
+      "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian sees something",
+    "action_visual": "close-up of the changed object",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
-    "focus_object": "watercolor painting",
-    "emotion": "Neutral",
-    "source_text": "不对——她记得的。是第一次读心他的那天，看到雨中那个女孩的画面。"
+    "focus_object": "changed object",
+    "emotion": "Shock",
+    "source_text": "[event: evidence_discover]",
+    "event_type": "evidence_discover"
   },
   {
     "beat_id": 12,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian freezes, breath catching",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Tension",
+    "source_text": "[event: evidence_discover]",
+    "event_type": "evidence_discover"
+  },
+  {
+    "beat_id": 13,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -212,7 +228,7 @@
     "source_text": "但现在那段记忆正在变淡。她记得\"看到过画面\"，但画面的具体内容——女孩的脸、钥匙的颜色、雨的温度——"
   },
   {
-    "beat_id": 13,
+    "beat_id": 14,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -230,7 +246,7 @@
     "source_text": "模糊了。\n她需要再读一次。"
   },
   {
-    "beat_id": 14,
+    "beat_id": 15,
     "space": "Physical",
     "characters_present": [
       "Gu Shen"
@@ -246,7 +262,7 @@
     "source_text": "顾深喝完了，起身要走。杯子留在桌上，咖啡渣在杯底画着漩涡。"
   },
   {
-    "beat_id": 15,
+    "beat_id": 16,
     "space": "Transition",
     "characters_present": [
       "Su Nian"
@@ -259,10 +275,11 @@
     "voice_type": "none",
     "focus_object": "cup rim",
     "emotion": "Tension",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
-    "beat_id": 16,
+    "beat_id": 17,
     "space": "Mental",
     "characters_present": [
       "Su Nian"
@@ -275,10 +292,11 @@
     "voice_type": "none",
     "focus_object": "",
     "emotion": "Shock",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
-    "beat_id": 17,
+    "beat_id": 18,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -291,10 +309,11 @@
     "voice_type": "none",
     "focus_object": "scar on ring finger",
     "emotion": "Mystery",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
-    "beat_id": 18,
+    "beat_id": 19,
     "space": "Transition",
     "characters_present": [
       "Su Nian",
@@ -312,7 +331,7 @@
     "source_text": "杯壁还有温度。她闭眼。"
   },
   {
-    "beat_id": 19,
+    "beat_id": 20,
     "space": "Transition",
     "characters_present": [
       "Gu Shen"
@@ -325,10 +344,11 @@
     "voice_type": "none",
     "focus_object": "cup rim",
     "emotion": "Tension",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
-    "beat_id": 20,
+    "beat_id": 21,
     "space": "Mental",
     "characters_present": [
       "Gu Shen"
@@ -341,10 +361,11 @@
     "voice_type": "none",
     "focus_object": "",
     "emotion": "Shock",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
-    "beat_id": 21,
+    "beat_id": 22,
     "space": "Physical",
     "characters_present": [
       "Gu Shen"
@@ -357,10 +378,11 @@
     "voice_type": "none",
     "focus_object": "scar on ring finger",
     "emotion": "Mystery",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
-    "beat_id": 22,
+    "beat_id": 23,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -381,23 +403,58 @@
     "source_text": "他用红笔在合同上画了一个圈，然后放下笔，揉了揉太阳穴。\n*\"为什么要亲自来？让小李去谈就行了。但那家店……那个咖啡师……她看我的眼神不像其他人。其他人看我的职位"
   },
   {
-    "beat_id": 23,
+    "beat_id": 24,
     "space": "Mental",
     "characters_present": [
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian gazes at the painting",
+    "action_visual": "Su Nian eyes go blank, staring into distance",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
-    "focus_object": "watercolor painting",
-    "emotion": "Neutral",
-    "source_text": "画面碎了。"
+    "focus_object": "",
+    "emotion": "Shock",
+    "source_text": "[event: vision_flash]",
+    "event_type": "vision_flash"
   },
   {
-    "beat_id": 24,
+    "beat_id": 25,
+    "space": "Mental",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "a blurry vision materializes, colors desaturated",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Mystery",
+    "source_text": "[event: vision_flash]",
+    "event_type": "vision_flash"
+  },
+  {
+    "beat_id": 26,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian blinks rapidly, returning to reality",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Tension",
+    "source_text": "[event: vision_flash]",
+    "event_type": "vision_flash"
+  },
+  {
+    "beat_id": 27,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -418,7 +475,7 @@
     "source_text": "苏念放下杯子，手在发抖。\n他不只是来收购的。\n她低头看自己的手——"
   },
   {
-    "beat_id": 25,
+    "beat_id": 28,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -436,7 +493,7 @@
     "source_text": "左手无名指的疤痕还在。但右手食指——那个她记得是高中时被美工刀划的痕迹——"
   },
   {
-    "beat_id": 26,
+    "beat_id": 29,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -452,7 +509,7 @@
     "source_text": "淡了。像一张被洗过的照片。"
   },
   {
-    "beat_id": 27,
+    "beat_id": 30,
     "space": "Physical",
     "characters_present": [
       "Gu Shen",
@@ -470,7 +527,7 @@
     "source_text": "门口传来雨声。顾深已经走了。\n他的伞还靠在门边。"
   },
   {
-    "beat_id": 28,
+    "beat_id": 31,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -486,7 +543,7 @@
     "source_text": "苏念拿起那把伞，追出去——"
   },
   {
-    "beat_id": 29,
+    "beat_id": 32,
     "space": "Physical",
     "characters_present": [
       "Su Nian",

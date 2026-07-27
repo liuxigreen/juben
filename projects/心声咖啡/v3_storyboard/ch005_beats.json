@@ -103,7 +103,8 @@
     "voice_type": "none",
     "focus_object": "cup rim",
     "emotion": "Tension",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
     "beat_id": 7,
@@ -119,7 +120,8 @@
     "voice_type": "none",
     "focus_object": "",
     "emotion": "Shock",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
     "beat_id": 8,
@@ -135,7 +137,8 @@
     "voice_type": "none",
     "focus_object": "scar on ring finger",
     "emotion": "Mystery",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
     "beat_id": 9,
@@ -159,22 +162,55 @@
     "beat_id": 10,
     "space": "Mental",
     "characters_present": [
-      "Gu Shen",
-      "Chen Rui",
-      "Su Yuan"
+      "Chen Rui"
     ],
     "primary_char": "Chen Rui",
-    "action_visual": "Chen Rui carries a steaming cup",
-    "spoken_dialogue": "锐咖啡",
-    "dialogue_speaker": "Chen Rui",
+    "action_visual": "Chen Rui eyes go blank, staring into distance",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
     "inner_voice": "",
-    "voice_type": "onscreen",
-    "focus_object": "watercolor painting",
-    "emotion": "Neutral",
-    "source_text": "画面闪过：一个更年轻的陈锐，站在一家更小的店门口，招牌写着\"锐咖啡\"。他在笑，手里端着一杯自己冲的拿铁，拉花是一个歪歪扭扭的爱心。"
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Shock",
+    "source_text": "[event: vision_flash]",
+    "event_type": "vision_flash"
   },
   {
     "beat_id": 11,
+    "space": "Mental",
+    "characters_present": [
+      "Chen Rui"
+    ],
+    "primary_char": "Chen Rui",
+    "action_visual": "a blurry vision materializes, colors desaturated",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Mystery",
+    "source_text": "[event: vision_flash]",
+    "event_type": "vision_flash"
+  },
+  {
+    "beat_id": 12,
+    "space": "Physical",
+    "characters_present": [
+      "Chen Rui"
+    ],
+    "primary_char": "Chen Rui",
+    "action_visual": "Chen Rui blinks rapidly, returning to reality",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Tension",
+    "source_text": "[event: vision_flash]",
+    "event_type": "vision_flash"
+  },
+  {
+    "beat_id": 13,
     "space": "Mental",
     "characters_present": [
       "Su Nian"
@@ -190,7 +226,7 @@
     "source_text": "画面碎了。"
   },
   {
-    "beat_id": 12,
+    "beat_id": 14,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -207,7 +243,7 @@
     "source_text": "苏念放下杯子。\n陈锐还在说：\"——你考虑一下。我的名片——\""
   },
   {
-    "beat_id": 13,
+    "beat_id": 15,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -223,7 +259,7 @@
     "source_text": "\"你也开过咖啡店。\"苏念说。"
   },
   {
-    "beat_id": 14,
+    "beat_id": 16,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -240,7 +276,7 @@
     "source_text": "陈锐的笑容凝固了。\n\"什么？\"\n\"锐咖啡。\"苏念说，\"很小的一家店。你自己冲的拿铁，拉花是爱心。\""
   },
   {
-    "beat_id": 15,
+    "beat_id": 17,
     "space": "Physical",
     "characters_present": [
       "Chen Rui"
@@ -256,7 +292,7 @@
     "source_text": "陈锐的脸白了。\n\"你怎么知道的？\""
   },
   {
-    "beat_id": 16,
+    "beat_id": 18,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -274,7 +310,7 @@
     "source_text": "苏念拿起杯子去洗——水龙头打开，热水冲过杯壁。\n她低头看自己的手。\n右手手腕内侧——那道她记得是学拉花时被蒸汽管烫的痕迹——"
   },
   {
-    "beat_id": 17,
+    "beat_id": 19,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -290,7 +326,7 @@
     "source_text": "消失了。皮肤光滑得像从未被烫过。"
   },
   {
-    "beat_id": 18,
+    "beat_id": 20,
     "space": "Physical",
     "characters_present": [
       "Su Nian",

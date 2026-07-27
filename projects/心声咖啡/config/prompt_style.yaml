@@ -1,0 +1,78 @@
+# Prompt渲染风格配置
+
+# 情绪映射
+emotion_map:
+  Shock: ["猛地", "突然", "瞳孔", "愣住", "震惊", "吓"]
+  Tension: ["攥紧", "心跳", "发抖", "紧张", "害怕"]
+  Sadness: ["泪", "哭", "痛", "悲伤"]
+  Warmth: ["微笑", "温暖", "开心", "笑了"]
+  Mystery: ["消失", "淡了", "模糊", "听不清", "神秘"]
+
+space_map:
+  Mental: ["世界安静", "声音消失", "脑海", "画面闪过", "画面碎了"]
+  Transition: ["闭眼", "端起.*?杯"]
+
+# 情绪→景别
+emotion_shot_map:
+  Shock: "CU"
+  Tension: "MCU"
+  Sadness: "MCU"
+  Warmth: "MS"
+  Neutral: "MS"
+  Mystery: "CU"
+
+# 情绪→运镜
+emotion_camera_map:
+  Shock: "rapid_push"
+  Tension: "push"
+  Sadness: "pull"
+  Warmth: "static"
+  Neutral: "static"
+  Mystery: "push"
+
+# 情绪→光影
+emotion_lighting_map:
+  Shock: "High contrast"
+  Tension: "Low key"
+  Sadness: "Low key"
+  Warmth: "Warm"
+  Neutral: "Natural"
+  Mystery: "Low key"
+
+# 运镜语义映射（动作关键词→运镜）
+camera_semantic_map:
+  leaves: "pull"
+  walks out: "pull"
+  exits: "pull"
+  turns and leaves: "pull"
+  opens eyes: "rapid_push"
+  discovers: "rapid_push"
+  notices: "rapid_push"
+  snaps eyes open: "rapid_push"
+  stares: "static"
+  gazes: "static"
+  looks down: "static"
+  looks up: "static"
+  reaches out: "push"
+  touches: "push"
+  picks up: "push"
+  closes eyes: "static"
+  trembles: "handheld"
+
+# 配音情绪
+voice_emotion_map:
+  Neutral: "calm, conversational"
+  Tension: "whispered, restrained, breathing heavy"
+  Shock: "sharp intake of breath, voice breaking"
+  Sadness: "soft, trailing off, voice cracking"
+  Warmth: "gentle, warm tone"
+  Mystery: "low, deliberate, pauses between words"
+
+# Beat合并策略
+beat_merge:
+  max_shots_per_chapter: 22
+  never_merge:
+    - ability_activation     # 能力事件
+    - focus_object_change    # 焦点物变化
+    - location_change        # 场景切换
+    - chapter_end_hook       # 章末钩子

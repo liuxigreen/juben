@@ -1,0 +1,72 @@
+# 事件类型配置
+# 每种事件类型定义：触发条件 + 镜头配方(shot_recipe)
+# 引擎只执行recipe，不关心具体题材
+
+events:
+  - type: "mind_reading"          # 读心术
+    triggers: ["端起", "闭眼", "闭上眼", "世界安静", "声音消失"]
+    shot_recipe:
+      - name: "prop_ecu"
+        space: "Transition"
+        action: "{char} lifts the cup, fingers trembling around the warm rim"
+        shot_type: "ECU"
+        camera: "static"
+        emotion: "Tension"
+        focus: "cup rim"
+      - name: "subject_cu"
+        space: "Mental"
+        action: "{char} closes eyes, eyelashes trembling. Background figures freeze, steam hangs motionless"
+        shot_type: "CU"
+        camera: "rapid_push"
+        emotion: "Shock"
+        focus: ""
+      - name: "cost_ecu"
+        space: "Physical"
+        action: "{char} looks down at left hand, the scar on the ring finger has changed"
+        shot_type: "ECU"
+        camera: "static"
+        emotion: "Mystery"
+        focus: "scar on ring finger"
+
+  - type: "vision_flash"          # 闪回/画面
+    triggers: ["画面闪过", "画面碎了", "浮现", "闪回"]
+    shot_recipe:
+      - name: "reaction_cu"
+        space: "Mental"
+        action: "{char} eyes go blank, staring into distance"
+        shot_type: "CU"
+        camera: "slow_push"
+        emotion: "Shock"
+        focus: ""
+      - name: "vision_ws"
+        space: "Mental"
+        action: "a blurry vision materializes, colors desaturated"
+        shot_type: "WS"
+        camera: "static"
+        emotion: "Mystery"
+        focus: ""
+      - name: "snap_cu"
+        space: "Physical"
+        action: "{char} blinks rapidly, returning to reality"
+        shot_type: "CU"
+        camera: "static"
+        emotion: "Tension"
+        focus: ""
+
+  - type: "evidence_discover"     # 发现证据/痕迹
+    triggers: ["发现", "注意到", "看到", "疤痕消失", "印痕消失"]
+    shot_recipe:
+      - name: "object_ecu"
+        space: "Physical"
+        action: "close-up of the changed object"
+        shot_type: "ECU"
+        camera: "slow_push"
+        emotion: "Shock"
+        focus: "changed object"
+      - name: "reaction_cu"
+        space: "Physical"
+        action: "{char} freezes, breath catching"
+        shot_type: "CU"
+        camera: "static"
+        emotion: "Tension"
+        focus: ""

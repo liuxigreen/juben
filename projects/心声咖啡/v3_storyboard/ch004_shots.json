@@ -4,7 +4,7 @@
     "shot_type": "WS",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 3.8,
+    "duration": 3.5,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -20,6 +20,7 @@
       "watercolor painting"
     ],
     "beat_id": 1,
+    "event_type": "",
     "veo_prompt": "wide shot, static camera, eye level, featuring Lin Ke (25yo Chinese woman, ponytail, colorful nails, large art bag), Lin Ke gazes at the door, close-up detail on watercolor painting, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
@@ -28,7 +29,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.8s"
+      "duration_hint": "3.5s"
     }
   },
   {
@@ -36,7 +37,7 @@
     "shot_type": "ECU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 3.8,
+    "duration": 3.5,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -54,6 +55,7 @@
       "watercolor painting"
     ],
     "beat_id": 2,
+    "event_type": "",
     "veo_prompt": "extreme close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (elderly Chinese woman, white hair, blue apron, kind smile), Su Nian stares intently, close-up detail on watercolor painting, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
@@ -62,7 +64,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.8s"
+      "duration_hint": "3.5s"
     }
   },
   {
@@ -70,7 +72,7 @@
     "shot_type": "MCU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 4.9,
+    "duration": 4.6,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -84,6 +86,7 @@
     "emotion": "Neutral",
     "visual_anchors": [],
     "beat_id": 3,
+    "event_type": "",
     "veo_prompt": "medium close-up, static camera, eye level, featuring grandmother (white hair, blue apron), grandmother gazes at the door, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "外婆的店……门口有这棵树？",
@@ -92,7 +95,7 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "4.9s"
+      "duration_hint": "4.6s"
     }
   },
   {
@@ -100,7 +103,7 @@
     "shot_type": "ECU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 5.5,
+    "duration": 5.1,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -118,6 +121,7 @@
       "watercolor painting"
     ],
     "beat_id": 4,
+    "event_type": "",
     "veo_prompt": "extreme close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian hand pauses mid-motion, close-up detail on watercolor painting, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
@@ -126,7 +130,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "5.5s"
+      "duration_hint": "5.1s"
     }
   },
   {
@@ -134,7 +138,7 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 5.5,
+    "duration": 5.1,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -153,6 +157,7 @@
       "watercolor painting"
     ],
     "beat_id": 5,
+    "event_type": "",
     "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Gu Shen pours water into a cup, close-up detail on watercolor painting, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "你最近太累了。",
@@ -161,7 +166,7 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "5.5s"
+      "duration_hint": "5.1s"
     }
   },
   {
@@ -169,7 +174,7 @@
     "shot_type": "MS",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 3.4,
+    "duration": 3.2,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -183,6 +188,7 @@
     "emotion": "Neutral",
     "visual_anchors": [],
     "beat_id": 6,
+    "event_type": "",
     "veo_prompt": "medium shot, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian nods slowly, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
@@ -191,7 +197,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.4s"
+      "duration_hint": "3.2s"
     }
   },
   {
@@ -199,7 +205,7 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 5.5,
+    "duration": 5.1,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -218,6 +224,7 @@
       "old photo"
     ],
     "beat_id": 7,
+    "event_type": "",
     "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Gu Shen (tall man, silver glasses, dark suit), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Gu Shen turns hand over to inspect, close-up detail on old photo, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
@@ -226,7 +233,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "5.5s"
+      "duration_hint": "5.1s"
     }
   },
   {
@@ -234,7 +241,7 @@
     "shot_type": "MCU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 4.9,
+    "duration": 4.6,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -251,6 +258,7 @@
     "emotion": "Neutral",
     "visual_anchors": [],
     "beat_id": 8,
+    "event_type": "",
     "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Gu Shen (tall man, silver glasses, dark suit), Chen Rui (32yo Chinese man, square jaw, short hair, expensive watch), Su Yuan (young Chinese boy, round face, short hair, warm smile), Su Nian puts away, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "锐见投资。苏念，他是来收购的。",
@@ -259,7 +267,7 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "4.9s"
+      "duration_hint": "4.6s"
     }
   },
   {
@@ -267,7 +275,7 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 3.8,
+    "duration": 3.5,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -286,6 +294,7 @@
       "cup rim"
     ],
     "beat_id": 9,
+    "event_type": "",
     "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Gu Shen (tall man, silver glasses, dark suit), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian gazes at the cup, close-up detail on cup rim, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
@@ -294,7 +303,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.8s"
+      "duration_hint": "3.5s"
     }
   },
   {
@@ -302,7 +311,7 @@
     "shot_type": "CU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 5.5,
+    "duration": 5.1,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -320,6 +329,7 @@
       "watercolor painting"
     ],
     "beat_id": 10,
+    "event_type": "",
     "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Lin Ke unrolls a painting on the counter, close-up detail on watercolor painting, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "这是你外婆。你还记得她冲咖啡的样子吗？",
@@ -328,7 +338,7 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "5.5s"
+      "duration_hint": "5.1s"
     }
   },
   {
@@ -336,7 +346,7 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 3.8,
+    "duration": 3.5,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -354,6 +364,7 @@
       "watercolor painting"
     ],
     "beat_id": 11,
+    "event_type": "",
     "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian gazes at the apron, close-up detail on watercolor painting, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
@@ -362,7 +373,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "low, deliberate, pauses between words",
-      "duration_hint": "3.8s"
+      "duration_hint": "3.5s"
     }
   },
   {
@@ -370,7 +381,7 @@
     "shot_type": "MCU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 3.4,
+    "duration": 3.2,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -384,6 +395,7 @@
     "emotion": "Neutral",
     "visual_anchors": [],
     "beat_id": 12,
+    "event_type": "",
     "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian speaks softly, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "不太记得了。",
@@ -392,7 +404,7 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.4s"
+      "duration_hint": "3.2s"
     }
   },
   {
@@ -400,7 +412,7 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 5.5,
+    "duration": 5.1,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -418,6 +430,7 @@
       "watercolor painting"
     ],
     "beat_id": 13,
+    "event_type": "",
     "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Lin Ke speaks softly the painting, close-up detail on watercolor painting, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
@@ -426,7 +439,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "5.5s"
+      "duration_hint": "5.1s"
     }
   },
   {
@@ -434,7 +447,7 @@
     "shot_type": "MS",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 3.4,
+    "duration": 3.2,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -450,6 +463,7 @@
     "emotion": "Neutral",
     "visual_anchors": [],
     "beat_id": 14,
+    "event_type": "",
     "veo_prompt": "medium shot, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian turns head back, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
@@ -458,7 +472,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.4s"
+      "duration_hint": "3.2s"
     }
   },
   {
@@ -466,7 +480,7 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 3.8,
+    "duration": 3.5,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -485,6 +499,7 @@
       "cup wall"
     ],
     "beat_id": 15,
+    "event_type": "",
     "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Gu Shen (tall man, silver glasses, dark suit), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Gu Shen looks down, close-up detail on cup wall, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
@@ -493,7 +508,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.8s"
+      "duration_hint": "3.5s"
     }
   },
   {
@@ -501,7 +516,7 @@
     "shot_type": "CU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 5.5,
+    "duration": 5.1,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -519,6 +534,7 @@
       "scar on skin"
     ],
     "beat_id": 16,
+    "event_type": "",
     "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Lin Ke draws latte art in the foam, close-up detail on scar on skin, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "送给小念。希望你永远记得。",
@@ -527,47 +543,79 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "5.5s"
+      "duration_hint": "5.1s"
     }
   },
   {
     "shot_id": 17,
-    "shot_type": "MS",
-    "camera_movement": "static",
-    "camera_angle": "eye-level",
-    "duration": 3.4,
+    "shot_type": "CU",
+    "camera_movement": "rapid_push",
+    "camera_angle": "low",
+    "duration": 5.1,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
-      "Su Nian",
-      "Lin Ke",
-      "grandmother"
+      "Su Nian"
     ],
-    "action_visual": "Su Nian wipes a table clean",
+    "action_visual": "close-up of the changed object",
     "dialogue": "",
     "inner_voice": "",
-    "focus_object": "",
-    "lighting": "Natural",
-    "emotion": "Neutral",
-    "visual_anchors": [],
+    "focus_object": "changed object",
+    "lighting": "High contrast",
+    "emotion": "Shock",
+    "visual_anchors": [
+      "changed object"
+    ],
     "beat_id": 17,
-    "veo_prompt": "medium shot, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian wipes a table clean, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "event_type": "evidence_discover",
+    "veo_prompt": "close-up, rapid push-in, low angle looking up, featuring Su Nian (barista, burn scar on ring finger), close-up of the changed object, close-up detail on changed object, in Nianxiang coffee shop, high contrast dramatic lighting, shocked, dramatic, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
       "voiceover_zh": "",
       "voice_type": "none",
       "subtitle": "",
-      "emotion_tag": "calm, conversational",
-      "duration_hint": "3.4s"
+      "emotion_tag": "sharp intake of breath, voice breaking",
+      "duration_hint": "5.1s"
     }
   },
   {
     "shot_id": 18,
     "shot_type": "MCU",
     "camera_movement": "push",
+    "camera_angle": "low",
+    "duration": 4.6,
+    "location": "Nianxiang coffee shop",
+    "space": "Physical",
+    "characters": [
+      "Su Nian"
+    ],
+    "action_visual": "Su Nian freezes, breath catching",
+    "dialogue": "",
+    "inner_voice": "",
+    "focus_object": "",
+    "lighting": "Low key",
+    "emotion": "Tension",
+    "visual_anchors": [],
+    "beat_id": 18,
+    "event_type": "evidence_discover",
+    "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring Su Nian (barista, burn scar on ring finger), Su Nian freezes, breath catching, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "",
+      "dialogue_speaker": "",
+      "voiceover_zh": "",
+      "voice_type": "none",
+      "subtitle": "",
+      "emotion_tag": "whispered, restrained, breathing heavy",
+      "duration_hint": "4.6s"
+    }
+  },
+  {
+    "shot_id": 19,
+    "shot_type": "MS",
+    "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 3.4,
+    "duration": 3.2,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -580,8 +628,9 @@
     "lighting": "Natural",
     "emotion": "Neutral",
     "visual_anchors": [],
-    "beat_id": 18,
-    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), the lights come back on, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "beat_id": 19,
+    "event_type": "",
+    "veo_prompt": "medium shot, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), the lights come back on, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -589,15 +638,15 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.4s"
+      "duration_hint": "3.2s"
     }
   },
   {
-    "shot_id": 19,
+    "shot_id": 20,
     "shot_type": "CU",
-    "camera_movement": "static",
+    "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 5.5,
+    "duration": 5.1,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -612,8 +661,9 @@
     "visual_anchors": [
       "sticky note"
     ],
-    "beat_id": 19,
-    "veo_prompt": "close-up, static camera, eye level, featuring grandmother (white hair, blue apron), grandmother draws latte art in the foam, close-up detail on sticky note, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "beat_id": 20,
+    "event_type": "",
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring grandmother (white hair, blue apron), grandmother draws latte art in the foam, close-up detail on sticky note, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "小念，记住：拉花不是技术，是心意。",
       "dialogue_speaker": "grandmother",
@@ -621,15 +671,15 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "5.5s"
+      "duration_hint": "5.1s"
     }
   },
   {
-    "shot_id": 20,
+    "shot_id": 21,
     "shot_type": "CU",
-    "camera_movement": "push",
+    "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 5.5,
+    "duration": 5.1,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -646,8 +696,9 @@
     "visual_anchors": [
       "sticky note"
     ],
-    "beat_id": 20,
-    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian furrows brow, pressing fingers to temples, close-up detail on sticky note, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "beat_id": 21,
+    "event_type": "",
+    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian furrows brow, pressing fingers to temples, close-up detail on sticky note, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -655,7 +706,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "5.5s"
+      "duration_hint": "5.1s"
     }
   }
 ]

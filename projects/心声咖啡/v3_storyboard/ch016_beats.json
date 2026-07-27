@@ -153,25 +153,38 @@
     "beat_id": 9,
     "space": "Physical",
     "characters_present": [
-      "Su Nian",
-      "Gu Shen",
-      "Lin Ke",
-      "Chen Rui",
-      "Su Yuan",
-      "grandmother"
+      "Gu Shen"
     ],
     "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen sees something",
+    "action_visual": "close-up of the changed object",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "changed object",
+    "emotion": "Shock",
+    "source_text": "[event: evidence_discover]",
+    "event_type": "evidence_discover"
+  },
+  {
+    "beat_id": 10,
+    "space": "Physical",
+    "characters_present": [
+      "Gu Shen"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen freezes, breath catching",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
     "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "如果她喝下这杯咖啡，她会听到顾深此刻最强烈的心声。她会看到他关于她的记忆。"
+    "emotion": "Tension",
+    "source_text": "[event: evidence_discover]",
+    "event_type": "evidence_discover"
   },
   {
-    "beat_id": 10,
+    "beat_id": 11,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -189,7 +202,7 @@
     "source_text": "代价是——她会忘记自己为什么开这家店。外婆的咖啡店、外婆的便签、外婆教她拉花的下午——所有关于\"为什么是咖啡\"的记忆，都会消失。"
   },
   {
-    "beat_id": 11,
+    "beat_id": 12,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -208,7 +221,7 @@
     "source_text": "但她想知道。\n她想知道顾深看她的时候，在想什么。"
   },
   {
-    "beat_id": 12,
+    "beat_id": 13,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -225,7 +238,7 @@
     "source_text": "\"顾深。\"苏念说。\n\"嗯？\"\n\"你的咖啡——我能喝一口吗？\""
   },
   {
-    "beat_id": 13,
+    "beat_id": 14,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -246,7 +259,7 @@
     "source_text": "顾深看着她。他的灰色眼睛在暖光下变成了琥珀色。"
   },
   {
-    "beat_id": 14,
+    "beat_id": 15,
     "space": "Physical",
     "characters_present": [
       "Gu Shen",
@@ -264,7 +277,7 @@
     "source_text": "\"你每次都要喝我的咖啡。\"他说。这不是问句。"
   },
   {
-    "beat_id": 15,
+    "beat_id": 16,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -285,7 +298,7 @@
     "source_text": "苏念没回答。她伸手拿过他的杯子。杯壁上还有他的温度。"
   },
   {
-    "beat_id": 16,
+    "beat_id": 17,
     "space": "Transition",
     "characters_present": [
       "Su Nian"
@@ -298,10 +311,11 @@
     "voice_type": "none",
     "focus_object": "cup rim",
     "emotion": "Tension",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
-    "beat_id": 17,
+    "beat_id": 18,
     "space": "Mental",
     "characters_present": [
       "Su Nian"
@@ -314,10 +328,11 @@
     "voice_type": "none",
     "focus_object": "",
     "emotion": "Shock",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
-    "beat_id": 18,
+    "beat_id": 19,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -330,10 +345,11 @@
     "voice_type": "none",
     "focus_object": "scar on ring finger",
     "emotion": "Mystery",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
-    "beat_id": 19,
+    "beat_id": 20,
     "space": "Mental",
     "characters_present": [
       "Su Nian"
@@ -349,7 +365,7 @@
     "source_text": "世界安静了。"
   },
   {
-    "beat_id": 20,
+    "beat_id": 21,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -368,7 +384,7 @@
     "source_text": "然后——画面涌进来。\n不是独白。是画面。顾深的记忆，像一部电影，在她眼前播放。"
   },
   {
-    "beat_id": 21,
+    "beat_id": 22,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -389,7 +405,7 @@
     "source_text": "*画面一：第一次来咖啡店。他坐在吧台前，点了一杯美式。一个女孩端过来，围裙上沾着咖啡渍。她笑了一下，很小的一下。他想——这个人的笑，像是咖啡拉花失败了，歪歪扭扭"
   },
   {
-    "beat_id": 22,
+    "beat_id": 23,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -410,7 +426,7 @@
     "source_text": "*画面二：第三次来。她喝了他的咖啡。喝完之后，她的表情变了——像是听到了什么。他想——她在听什么？我什么都没说。*\n*画面三：面馆。她坐在对面，筷子夹断了一根面"
   },
   {
-    "beat_id": 23,
+    "beat_id": 24,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -431,8 +447,8 @@
     "source_text": "*画面四：巷子里。月光把她的影子拉到他脚边。他想——我应该说点什么。但我不知道该说什么。我从来不擅长说。*\n*画面五：她站在吧台后面，手在发抖。他想——她在怕什"
   },
   {
-    "beat_id": 24,
-    "space": "Mental",
+    "beat_id": 25,
+    "space": "Physical",
     "characters_present": [
       "Su Nian",
       "Gu Shen",
@@ -442,17 +458,68 @@
       "grandmother"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian snaps eyes open",
+    "action_visual": "Su Nian picks up the light",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "画面七：他站在灯泡货架前。货架上有两种灯泡——冷光和暖光。他拿起暖光的那个。他想——她喜欢暖的。",
     "voice_type": "inner_voice",
-    "focus_object": "cup wall",
+    "focus_object": "watercolor painting",
     "emotion": "Neutral",
-    "source_text": "*画面七：他站在灯泡货架前。货架上有两种灯泡——冷光和暖光。他拿起暖光的那个。他想——她喜欢暖的。*\n画面碎了。\n苏念睁开眼。\n杯子在她手里。咖啡凉了。她的手指"
+    "source_text": "*画面七：他站在灯泡货架前。货架上有两种灯泡——冷光和暖光。他拿起暖光的那个。他想——她喜欢暖的。*"
   },
   {
-    "beat_id": 25,
+    "beat_id": 26,
+    "space": "Mental",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian eyes go blank, staring into distance",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Shock",
+    "source_text": "[event: vision_flash]",
+    "event_type": "vision_flash"
+  },
+  {
+    "beat_id": 27,
+    "space": "Mental",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "a blurry vision materializes, colors desaturated",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Mystery",
+    "source_text": "[event: vision_flash]",
+    "event_type": "vision_flash"
+  },
+  {
+    "beat_id": 28,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian blinks rapidly, returning to reality",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Tension",
+    "source_text": "[event: vision_flash]",
+    "event_type": "vision_flash"
+  },
+  {
+    "beat_id": 29,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -470,7 +537,7 @@
     "source_text": "她记得咖啡怎么冲。记得拉花怎么做。记得外婆的便签。但\"为什么是咖啡\"——这个问题的答案，空了。"
   },
   {
-    "beat_id": 26,
+    "beat_id": 30,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -486,7 +553,7 @@
     "source_text": "像一本书被撕掉了第一页。后面的都在，但开头没了。"
   },
   {
-    "beat_id": 27,
+    "beat_id": 31,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -505,7 +572,7 @@
     "source_text": "\"苏念？\"顾深看着她。"
   },
   {
-    "beat_id": 28,
+    "beat_id": 32,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -523,7 +590,7 @@
     "source_text": "苏念放下杯子。她的手在发抖。"
   },
   {
-    "beat_id": 29,
+    "beat_id": 33,
     "space": "Physical",
     "characters_present": [
       "Gu Shen"
@@ -539,7 +606,7 @@
     "source_text": "\"你喝完之后——\"顾深的声音很轻，\"又变了。\""
   },
   {
-    "beat_id": 30,
+    "beat_id": 34,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -558,25 +625,41 @@
     "source_text": "苏念抬头看着他。他的灰色眼睛里没有质问，只有困惑。"
   },
   {
-    "beat_id": 31,
+    "beat_id": 35,
     "space": "Physical",
     "characters_present": [
-      "Gu Shen",
-      "Chen Rui",
-      "Su Yuan"
+      "Gu Shen"
     ],
     "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen sees something",
-    "spoken_dialogue": "你看到了什么？",
-    "dialogue_speaker": "Gu Shen",
+    "action_visual": "close-up of the changed object",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
     "inner_voice": "",
-    "voice_type": "onscreen",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "\"你看到了什么？\"他问。"
+    "voice_type": "none",
+    "focus_object": "changed object",
+    "emotion": "Shock",
+    "source_text": "[event: evidence_discover]",
+    "event_type": "evidence_discover"
   },
   {
-    "beat_id": 32,
+    "beat_id": 36,
+    "space": "Physical",
+    "characters_present": [
+      "Gu Shen"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen freezes, breath catching",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Tension",
+    "source_text": "[event: evidence_discover]",
+    "event_type": "evidence_discover"
+  },
+  {
+    "beat_id": 37,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -597,7 +680,7 @@
     "source_text": "苏念的嘴唇动了一下。她想说——我看到了你的记忆。我看到了你第一次来的时候在想什么。我看到了你关掉了收购计划。我看到了你挑了一个暖光灯泡。\n但她什么都没说。\n她只"
   },
   {
-    "beat_id": 33,
+    "beat_id": 38,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -615,7 +698,7 @@
     "source_text": "然后她说了一句话。声音很轻，但每个字都清晰：\n\"你为什么不关掉那个收购计划？\""
   },
   {
-    "beat_id": 34,
+    "beat_id": 39,
     "space": "Physical",
     "characters_present": [
       "Gu Shen",
@@ -633,7 +716,7 @@
     "source_text": "顾深的手停在杯子上。\n\"你怎么知道的？\"他的声音没有惊讶，只有平静。像是他一直在等这个问题。"
   },
   {
-    "beat_id": 35,
+    "beat_id": 40,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -654,7 +737,7 @@
     "source_text": "苏念没回答。\n顾深看着她。暖光灯泡的光洒在他的脸上，把他的影子投在吧台上。"
   },
   {
-    "beat_id": 36,
+    "beat_id": 41,
     "space": "Physical",
     "characters_present": [
       "Gu Shen",
@@ -672,7 +755,7 @@
     "source_text": "\"因为我第一次来的时候，\"他说，\"你笑了一下。很小的一下。\""
   },
   {
-    "beat_id": 37,
+    "beat_id": 42,
     "space": "Physical",
     "characters_present": [
       "Gu Shen",
@@ -690,7 +773,7 @@
     "source_text": "他站起来，拿起公文包。\n\"明天见。\"他说。"
   },
   {
-    "beat_id": 38,
+    "beat_id": 43,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -709,7 +792,7 @@
     "source_text": "他走到门口。手推开门——\n风铃掉了。\n清脆的一声响。金属风铃从门框上脱落，砸在地板上，弹了两下，滚到苏念脚边。"
   },
   {
-    "beat_id": 39,
+    "beat_id": 44,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -728,7 +811,7 @@
     "source_text": "顾深转身。他看着地上的风铃，又看着苏念。"
   },
   {
-    "beat_id": 40,
+    "beat_id": 45,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -746,7 +829,7 @@
     "source_text": "苏念蹲下去捡风铃。她的手指碰到金属表面——冰凉的。\n风铃的底部，刻着两个字。\n\"念想\"。"
   },
   {
-    "beat_id": 41,
+    "beat_id": 46,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -763,7 +846,7 @@
     "source_text": "是外婆的字迹。\n苏念把风铃翻过来。背面还有一行小字，刻在金属上，很小，几乎看不见：\n*\"小念，别喝最后一杯。\"*"
   },
   {
-    "beat_id": 42,
+    "beat_id": 47,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -779,7 +862,7 @@
     "source_text": "苏念的手在发抖。"
   },
   {
-    "beat_id": 43,
+    "beat_id": 48,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -798,7 +881,7 @@
     "source_text": "她抬头。门口已经没有人了。顾深走了。\n但门还开着。"
   },
   {
-    "beat_id": 44,
+    "beat_id": 49,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -814,7 +897,7 @@
     "source_text": "门外，雨停了。阳光从云缝里漏下来，照在巷子的青石板上。"
   },
   {
-    "beat_id": 45,
+    "beat_id": 50,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -832,7 +915,7 @@
     "source_text": "苏念站起来，走到门口。她看着那道阳光——暖的，像新换的灯泡。\n她低头看了看手里的风铃。\n然后她把风铃挂回了门框上。\n风铃挂上去的瞬间——\n门框上掉下来一张纸。\n"
   },
   {
-    "beat_id": 46,
+    "beat_id": 51,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -850,7 +933,7 @@
     "source_text": "是外婆的便签。但不是墙上那张——是另一张，苏念从没见过的。\n便签上只有一行字：\n*\"小念，你哥哥的最后一杯，也是顾深的第一杯。\"*"
   },
   {
-    "beat_id": 47,
+    "beat_id": 52,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -866,7 +949,7 @@
     "source_text": "苏念蹲在地上，手指碰着那张便签。纸面冰凉，像是刚从冰箱里拿出来。"
   },
   {
-    "beat_id": 48,
+    "beat_id": 53,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -884,7 +967,7 @@
     "source_text": "她抬头看门外。\n巷子里空无一人。但阳光照在青石板上，把一块石头的影子拉得很长——\n影子的形状，像一个人。\n苏念低头再看。"
   },
   {
-    "beat_id": 49,
+    "beat_id": 54,
     "space": "Physical",
     "characters_present": [
       "Su Nian"

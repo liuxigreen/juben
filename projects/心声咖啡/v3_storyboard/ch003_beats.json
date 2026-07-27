@@ -68,7 +68,8 @@
     "voice_type": "none",
     "focus_object": "cup rim",
     "emotion": "Tension",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
     "beat_id": 5,
@@ -84,7 +85,8 @@
     "voice_type": "none",
     "focus_object": "",
     "emotion": "Shock",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
     "beat_id": 6,
@@ -100,7 +102,8 @@
     "voice_type": "none",
     "focus_object": "scar on ring finger",
     "emotion": "Mystery",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
     "beat_id": 7,
@@ -144,17 +147,52 @@
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian gazes at the painting",
+    "action_visual": "Su Nian eyes go blank, staring into distance",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
-    "focus_object": "watercolor painting",
-    "emotion": "Neutral",
-    "source_text": "画面碎了。"
+    "focus_object": "",
+    "emotion": "Shock",
+    "source_text": "[event: vision_flash]",
+    "event_type": "vision_flash"
   },
   {
     "beat_id": 10,
+    "space": "Mental",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "a blurry vision materializes, colors desaturated",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Mystery",
+    "source_text": "[event: vision_flash]",
+    "event_type": "vision_flash"
+  },
+  {
+    "beat_id": 11,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian blinks rapidly, returning to reality",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Tension",
+    "source_text": "[event: vision_flash]",
+    "event_type": "vision_flash"
+  },
+  {
+    "beat_id": 12,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -172,7 +210,7 @@
     "source_text": "苏念睁开眼，发现自己在流泪。\n不是她的泪——是画面里那个女孩的。但泪水从苏念的眼角滑下来，滴在吧台上。\n她低头看自己的手。"
   },
   {
-    "beat_id": 11,
+    "beat_id": 13,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -190,7 +228,7 @@
     "source_text": "左手无名指——外婆的烫伤疤痕——\n还在。\n但右手无名指——\n空的。\n苏念记得右手无名指上有一个戒指印——不是现在戴的，是很久以前戴过又摘下来的。外婆给她的银戒指"
   },
   {
-    "beat_id": 12,
+    "beat_id": 14,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -208,7 +246,7 @@
     "source_text": "消失了。\n她不记得那枚戒指是什么样子了。\n\"你还好吗？\""
   },
   {
-    "beat_id": 13,
+    "beat_id": 15,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -227,7 +265,7 @@
     "source_text": "顾深回来了。他看着苏念脸上的泪痕，皱了皱眉。"
   },
   {
-    "beat_id": 14,
+    "beat_id": 16,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -243,7 +281,7 @@
     "source_text": "\"没事。\"苏念擦掉眼泪，\"咖啡凉了，我给你换一杯。\""
   },
   {
-    "beat_id": 15,
+    "beat_id": 17,
     "space": "Transition",
     "characters_present": [
       "Gu Shen"
@@ -256,10 +294,11 @@
     "voice_type": "none",
     "focus_object": "cup rim",
     "emotion": "Tension",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
-    "beat_id": 16,
+    "beat_id": 18,
     "space": "Mental",
     "characters_present": [
       "Gu Shen"
@@ -272,10 +311,11 @@
     "voice_type": "none",
     "focus_object": "",
     "emotion": "Shock",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
-    "beat_id": 17,
+    "beat_id": 19,
     "space": "Physical",
     "characters_present": [
       "Gu Shen"
@@ -288,10 +328,11 @@
     "voice_type": "none",
     "focus_object": "scar on ring finger",
     "emotion": "Mystery",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
-    "beat_id": 18,
+    "beat_id": 20,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -310,7 +351,7 @@
     "source_text": "他走了。\n苏念站在空荡荡的吧台后面，看着自己的双手。"
   },
   {
-    "beat_id": 19,
+    "beat_id": 21,
     "space": "Physical",
     "characters_present": [
       "grandmother"
@@ -326,25 +367,41 @@
     "source_text": "疤痕还在的——外婆的烫伤、纸划的伤、小时候摔跤的擦伤。"
   },
   {
-    "beat_id": 20,
+    "beat_id": 22,
     "space": "Physical",
     "characters_present": [
-      "Su Nian",
-      "Lin Ke",
-      "grandmother"
+      "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian furrows brow, pressing fingers to temples",
+    "action_visual": "close-up of the changed object",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
-    "focus_object": "scar on skin",
-    "emotion": "Mystery",
-    "source_text": "疤痕消失的——戒指印、某个她想不起来的针眼、还有一道她甚至不记得什么时候有的划痕。\n她在失去记忆。"
+    "focus_object": "changed object",
+    "emotion": "Shock",
+    "source_text": "[event: evidence_discover]",
+    "event_type": "evidence_discover"
   },
   {
-    "beat_id": 21,
+    "beat_id": 23,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian freezes, breath catching",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Tension",
+    "source_text": "[event: evidence_discover]",
+    "event_type": "evidence_discover"
+  },
+  {
+    "beat_id": 24,
     "space": "Physical",
     "characters_present": [
       "Su Nian"

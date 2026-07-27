@@ -1,0 +1,49 @@
+# 角色配置
+
+苏念:
+  en: "Su Nian"
+  role: "protagonist"
+  gender: "female"
+  full: "26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger"
+  short: "barista, burn scar on ring finger"
+  pronouns: ["她", "姑娘", "女孩", "老板", "围裙"]
+
+顾深:
+  en: "Gu Shen"
+  role: "supporting"
+  gender: "male"
+  full: "30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger"
+  short: "tall man, silver glasses, dark suit"
+  pronouns: ["他", "男人", "西装男", "灰色西装", "顾客", "西装", "领带"]
+
+林可:
+  en: "Lin Ke"
+  role: "supporting"
+  gender: "female"
+  full: "25yo Chinese woman, ponytail, colorful nails, large art bag"
+  short: "ponytail, colorful nails, art bag"
+  pronouns: ["她"]
+
+陈锐:
+  en: "Chen Rui"
+  role: "antagonist"
+  gender: "male"
+  full: "32yo Chinese man, square jaw, short hair, expensive watch"
+  short: "square jaw, expensive watch"
+  pronouns: ["他"]
+
+苏远:
+  en: "Su Yuan"
+  role: "supporting"
+  gender: "male"
+  full: "young Chinese boy, round face, short hair, warm smile"
+  short: "round face boy, warm smile"
+  pronouns: ["他"]
+
+外婆:
+  en: "grandmother"
+  role: "supporting"
+  gender: "female"
+  full: "elderly Chinese woman, white hair, blue apron, kind smile"
+  short: "white hair, blue apron"
+  pronouns: ["她"]

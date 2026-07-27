@@ -61,7 +61,8 @@
     "voice_type": "none",
     "focus_object": "cup rim",
     "emotion": "Tension",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
     "beat_id": 5,
@@ -77,7 +78,8 @@
     "voice_type": "none",
     "focus_object": "",
     "emotion": "Shock",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
     "beat_id": 6,
@@ -93,7 +95,8 @@
     "voice_type": "none",
     "focus_object": "scar on ring finger",
     "emotion": "Mystery",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
     "beat_id": 7,
@@ -252,22 +255,38 @@
     "beat_id": 16,
     "space": "Physical",
     "characters_present": [
-      "Su Nian",
-      "Lin Ke",
-      "grandmother"
+      "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian clears cups from the table",
+    "action_visual": "close-up of the changed object",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
-    "focus_object": "lipstick mark",
-    "emotion": "Neutral",
-    "source_text": "苏念收拾杯子时，注意到——那杯女孩的拿铁杯沿，有一个粉色唇印。\n她刚才喝的时候，没涂口红。\n那是谁的唇印？"
+    "focus_object": "changed object",
+    "emotion": "Shock",
+    "source_text": "[event: evidence_discover]",
+    "event_type": "evidence_discover"
   },
   {
     "beat_id": 17,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian freezes, breath catching",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Tension",
+    "source_text": "[event: evidence_discover]",
+    "event_type": "evidence_discover"
+  },
+  {
+    "beat_id": 18,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -283,7 +302,7 @@
     "source_text": "苏念把杯子放进水池，打开水龙头。"
   },
   {
-    "beat_id": 18,
+    "beat_id": 19,
     "space": "Physical",
     "characters_present": [
       "Su Nian",

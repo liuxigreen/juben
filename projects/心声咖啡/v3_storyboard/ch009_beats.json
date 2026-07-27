@@ -393,52 +393,76 @@
     "beat_id": 23,
     "space": "Transition",
     "characters_present": [
-      "Gu Shen"
+      "Su Nian"
     ],
-    "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen lifts the cup, fingers trembling around the warm rim",
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian lifts the cup, fingers trembling around the warm rim",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
     "focus_object": "cup rim",
     "emotion": "Tension",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
     "beat_id": 24,
     "space": "Mental",
     "characters_present": [
-      "Gu Shen"
+      "Su Nian"
     ],
-    "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen closes eyes, eyelashes trembling. Background figures freeze, steam hangs motionless",
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian closes eyes, eyelashes trembling. Background figures freeze, steam hangs motionless",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
     "focus_object": "",
     "emotion": "Shock",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
     "beat_id": 25,
     "space": "Physical",
     "characters_present": [
-      "Gu Shen"
+      "Su Nian"
     ],
-    "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen looks down at left hand, the scar on the ring finger has changed",
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian looks down at left hand, the scar on the ring finger has changed",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
     "focus_object": "scar on ring finger",
     "emotion": "Mystery",
-    "source_text": "[ability template]"
+    "source_text": "[event: mind_reading]",
+    "event_type": "mind_reading"
   },
   {
     "beat_id": 26,
+    "space": "Mental",
+    "characters_present": [
+      "Su Nian",
+      "Gu Shen",
+      "Lin Ke",
+      "Chen Rui",
+      "Su Yuan",
+      "grandmother"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen sits down",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "她像一个人——我前女友。但又完全不同。",
+    "voice_type": "inner_voice",
+    "focus_object": "watercolor painting",
+    "emotion": "Mystery",
+    "source_text": "一个模糊的画面闪过——面馆的灯，一双灰色的眼睛，一个女人的背影在走廊里越走越远。\n顾深的画面。他刚才坐在对面时，最强烈的那个念头。\n*\"她像一个人——我前女友。"
+  },
+  {
+    "beat_id": 27,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -456,7 +480,7 @@
     "source_text": "苏念放下杯子。茶水溅出来，淌在吧台上，浸湿了一张便签纸。\n她低头看自己的左手手背。"
   },
   {
-    "beat_id": 27,
+    "beat_id": 28,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -474,7 +498,7 @@
     "source_text": "一道浅浅的疤痕——她记得是小时候被外婆的猫抓的。\n还在。"
   },
   {
-    "beat_id": 28,
+    "beat_id": 29,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -492,7 +516,7 @@
     "source_text": "但她突然想不起来，那只猫叫什么名字了。"
   },
   {
-    "beat_id": 29,
+    "beat_id": 30,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -508,7 +532,7 @@
     "source_text": "手机震了一下。"
   },
   {
-    "beat_id": 30,
+    "beat_id": 31,
     "space": "Physical",
     "characters_present": [
       "Gu Shen"
@@ -524,7 +548,7 @@
     "source_text": "顾深的消息：\"到家了。\""
   },
   {
-    "beat_id": 31,
+    "beat_id": 32,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -542,7 +566,7 @@
     "source_text": "苏念看着那三个字。她的手指悬在屏幕上方，还没来得及打字——\n吧台上的灯闪了一下。\n她抬头。灯管嗡嗡响着，光忽明忽暗。然后灭了。\n咖啡店陷入黑暗。\n苏念站在吧台后"
   },
   {
-    "beat_id": 32,
+    "beat_id": 33,
     "space": "Physical",
     "characters_present": [
       "grandmother"
@@ -558,7 +582,7 @@
     "source_text": "吧台上，那张被茶水浸湿的便签纸——外婆写的那张——字迹淡了一个笔画。"
   },
   {
-    "beat_id": 33,
+    "beat_id": 34,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -576,7 +600,7 @@
     "source_text": "苏念盯着那个笔画。她确定，刚才那张便签上，\"念\"字的最后一笔还在。"
   },
   {
-    "beat_id": 34,
+    "beat_id": 35,
     "space": "Physical",
     "characters_present": [
       "Su Nian"

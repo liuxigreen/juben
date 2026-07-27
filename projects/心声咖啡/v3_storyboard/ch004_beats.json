@@ -288,22 +288,38 @@
     "beat_id": 17,
     "space": "Physical",
     "characters_present": [
-      "Su Nian",
-      "Lin Ke",
-      "grandmother"
+      "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian wipes a table clean",
+    "action_visual": "close-up of the changed object",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "changed object",
+    "emotion": "Shock",
+    "source_text": "[event: evidence_discover]",
+    "event_type": "evidence_discover"
+  },
+  {
+    "beat_id": 18,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian freezes, breath catching",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
     "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "苏念没看到那行字。她正在擦桌子。"
+    "emotion": "Tension",
+    "source_text": "[event: evidence_discover]",
+    "event_type": "evidence_discover"
   },
   {
-    "beat_id": 18,
+    "beat_id": 19,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -319,7 +335,7 @@
     "source_text": "窗外的夕阳沉下去了。咖啡店的灯自动亮了。"
   },
   {
-    "beat_id": 19,
+    "beat_id": 20,
     "space": "Physical",
     "characters_present": [
       "grandmother"
@@ -335,7 +351,7 @@
     "source_text": "墙上外婆的便签在灯光下微微发黄：\"小念，记住：拉花不是技术，是心意。\""
   },
   {
-    "beat_id": 20,
+    "beat_id": 21,
     "space": "Physical",
     "characters_present": [
       "Su Nian",

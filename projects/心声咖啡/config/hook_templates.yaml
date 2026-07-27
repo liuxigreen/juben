@@ -1,0 +1,53 @@
+# 钩子模板配置（含冷却机制）
+
+# 章末钩子黑名单（匹配则替换为模板）
+blacklist: ["stands still", "breathing slowly", "gaze lowered", "eyes unfocused",
+            "shoulders tense", "stands behind", "looks down", "stares at", "gazes at",
+            "speaks softly", "sets the cup down", "turns on the faucet", "walks through the door"]
+
+# 模板池（每模板有id和冷却期）
+hook_templates:
+  - id: "sticky_note_crumble"
+    cooldown_chapters: 3
+    text: "{char} places hand on the wall, the sticky note beneath crumbles to dust at the touch"
+
+  - id: "cup_trembling"
+    cooldown_chapters: 2
+    text: "{char} stares at the cup, coffee surface trembling with an unseen vibration"
+
+  - id: "light_switch"
+    cooldown_chapters: 4
+    text: "{char} reaches for the light switch, hand freezing mid-air as a whisper echoes"
+
+  - id: "new_mark"
+    cooldown_chapters: 3
+    text: "{char} examines own hand — a new mark has appeared on the skin, one that was not there before"
+
+  - id: "shadow_outside"
+    cooldown_chapters: 3
+    text: "{char} turns toward the window, a shadow moves outside that should not be there"
+
+  - id: "unknown_message"
+    cooldown_chapters: 2
+    text: "{char} picks up the phone, screen lighting up with a message from an unknown number"
+
+  - id: "face_in_coffee"
+    cooldown_chapters: 4
+    text: "{char} looks into the coffee surface, seeing a face that is not their own"
+
+  - id: "door_half_open"
+    cooldown_chapters: 2
+    text: "{char} notices the front door is half-open, though no one has entered"
+
+  - id: "ink_bleeding"
+    cooldown_chapters: 3
+    text: "{char} stares at the business card, the ink bleeding into new characters on its own"
+
+  - id: "mirror_reflection"
+    cooldown_chapters: 4
+    text: "{char} glances at the mirror — the reflection moves a half-second too late"
+
+# 选择策略
+hook_selection:
+  strategy: "least_recently_used"   # 最久未用优先
+  forbid_repeat_within: 2           # 禁止2章内重复

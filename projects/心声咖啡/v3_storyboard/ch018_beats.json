@@ -333,22 +333,38 @@
     "beat_id": 20,
     "space": "Physical",
     "characters_present": [
-      "Gu Shen",
-      "Chen Rui",
-      "Su Yuan"
+      "Gu Shen"
     ],
     "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen trembles visibly",
-    "spoken_dialogue": "然后我发现——",
-    "dialogue_speaker": "Gu Shen",
+    "action_visual": "close-up of the changed object",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
     "inner_voice": "",
-    "voice_type": "onscreen",
-    "focus_object": "",
-    "emotion": "Tension",
-    "source_text": "\"然后我发现——\"他的声音在发抖，\"每收一家店，我就忘掉一点自己开'锐咖啡'时的感觉。忘掉桂花树下的味道。忘掉老婆在折叠椅上等我的样子。忘掉——\""
+    "voice_type": "none",
+    "focus_object": "changed object",
+    "emotion": "Shock",
+    "source_text": "[event: evidence_discover]",
+    "event_type": "evidence_discover"
   },
   {
     "beat_id": 21,
+    "space": "Physical",
+    "characters_present": [
+      "Gu Shen"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen freezes, breath catching",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Tension",
+    "source_text": "[event: evidence_discover]",
+    "event_type": "evidence_discover"
+  },
+  {
+    "beat_id": 22,
     "space": "Physical",
     "characters_present": [
       "Gu Shen",
@@ -366,7 +382,7 @@
     "source_text": "他停了。\n\"忘掉什么？\"\n\"忘掉我为什么喜欢咖啡。\"陈锐说。"
   },
   {
-    "beat_id": 22,
+    "beat_id": 23,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -383,7 +399,7 @@
     "source_text": "苏念的指甲在吧台上敲了一下。\n\"所以你来收购我的店——\"\n\"是因为我必须完成公司的任务。\"陈锐说。\"但每次来你这里，我都会想起来——我以前也是这样的人。守着一家"
   },
   {
-    "beat_id": 23,
+    "beat_id": 24,
     "space": "Physical",
     "characters_present": [
       "Gu Shen",
@@ -401,7 +417,7 @@
     "source_text": "他把信封又推了一下。\n\"签了吧。\"他说。\"公司不会再来了。我跟他们说了——这条巷子不适合开发。结构不达标，拆迁成本太高。\""
   },
   {
-    "beat_id": 24,
+    "beat_id": 25,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -418,7 +434,7 @@
     "source_text": "苏念看着那个信封。\n\"你跟公司撒了谎。\"\n\"我跟公司说了实话。\"陈锐说。\"这条巷子的楼确实结构不达标。但不达标的原因是——开发商当年偷工减料。我查过了。那个开发"
   },
   {
-    "beat_id": 25,
+    "beat_id": 26,
     "space": "Physical",
     "characters_present": [
       "Gu Shen",
@@ -436,7 +452,7 @@
     "source_text": "他停了。\n\"是谁？\"\n\"是我现在这家公司的母公司。\"陈锐说。\"二十年前的事了。他们当年偷工减料，现在又来收购拆迁——就是为了销毁证据。\""
   },
   {
-    "beat_id": 26,
+    "beat_id": 27,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -455,7 +471,7 @@
     "source_text": "苏念的手攥紧了杯子。\n\"你知道这些——你还帮他们收购？\"\n\"我以前不知道。\"陈锐说。\"是最近才查到的。所以我辞职了。\""
   },
   {
-    "beat_id": 27,
+    "beat_id": 28,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -474,7 +490,7 @@
     "source_text": "苏念的呼吸停了。\n\"你也辞职了？\"\n\"昨天递的辞呈。\"陈锐说。他的声音恢复了平时的平静，但他的眼睛里有一种苏念没见过的表情——像是卸下了一副很重的担子。"
   },
   {
-    "beat_id": 28,
+    "beat_id": 29,
     "space": "Physical",
     "characters_present": [
       "Gu Shen"
@@ -490,7 +506,7 @@
     "source_text": "\"你和顾深——同一天辞职？\""
   },
   {
-    "beat_id": 29,
+    "beat_id": 30,
     "space": "Physical",
     "characters_present": [
       "Gu Shen",
@@ -508,7 +524,7 @@
     "source_text": "\"巧合。\"陈锐说。他的嘴角动了一下——不是笑，是苦笑。\"不过，也许不是巧合。\""
   },
   {
-    "beat_id": 30,
+    "beat_id": 31,
     "space": "Physical",
     "characters_present": [
       "Gu Shen",
@@ -526,7 +542,7 @@
     "source_text": "他站起来，从口袋里掏出钱包，抽出一张二十块钱，放在吧台上。\n\"不用找了。\""
   },
   {
-    "beat_id": 31,
+    "beat_id": 32,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -546,7 +562,7 @@
     "source_text": "他走到门口，停下来。\n\"苏老板。\"\n\"嗯。\"\n\"你外婆的咖啡——是我喝过最好的。\"陈锐的声音在发抖。\"比我自己做的好。\""
   },
   {
-    "beat_id": 32,
+    "beat_id": 33,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -567,7 +583,7 @@
     "source_text": "他走了。门关上。风铃晃了两下——风铃修好了，声音比以前清脆了一点。\n苏念站在吧台后面。她看着那个牛皮纸信封，手指在信封边缘停了三秒。\n她拆开信封。里面是一份文件"
   },
   {
-    "beat_id": 33,
+    "beat_id": 34,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -583,7 +599,7 @@
     "source_text": "苏念把文件折好，放进吧台的抽屉里。"
   },
   {
-    "beat_id": 34,
+    "beat_id": 35,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -601,26 +617,41 @@
     "source_text": "她走到墙边，看着外婆的便签。便签上的字又淡了一个笔画。\n她伸手摸了摸便签。纸面冰凉。"
   },
   {
-    "beat_id": 35,
+    "beat_id": 36,
     "space": "Physical",
     "characters_present": [
-      "Su Nian",
-      "Lin Ke",
-      "Chen Rui",
-      "grandmother"
+      "Chen Rui"
     ],
     "primary_char": "Chen Rui",
-    "action_visual": "Chen Rui sees something",
+    "action_visual": "close-up of the changed object",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
-    "inner_voice": "念想咖啡，值得留下来。",
-    "voice_type": "inner_voice",
-    "focus_object": "sticky note",
-    "emotion": "Neutral",
-    "source_text": "然后她看到——便签旁边，多了一张新的便签。\n不是外婆的字迹。\n是陈锐的字迹。\n*\"念想咖啡，值得留下来。\"*"
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "changed object",
+    "emotion": "Shock",
+    "source_text": "[event: evidence_discover]",
+    "event_type": "evidence_discover"
   },
   {
-    "beat_id": 36,
+    "beat_id": 37,
+    "space": "Physical",
+    "characters_present": [
+      "Chen Rui"
+    ],
+    "primary_char": "Chen Rui",
+    "action_visual": "Chen Rui freezes, breath catching",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Tension",
+    "source_text": "[event: evidence_discover]",
+    "event_type": "evidence_discover"
+  },
+  {
+    "beat_id": 38,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
