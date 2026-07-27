@@ -18,5 +18,10 @@
     "chapter": 15,
     "hook": "反转钩",
     "sub_mode": "身份反转"
+  },
+  {
+    "chapter": 16,
+    "hook": "情绪钩",
+    "sub_mode": "心碎中断"
   }
 ]
