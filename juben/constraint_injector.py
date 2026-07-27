@@ -514,6 +514,21 @@ class ConstraintInjector:
         if motif_injection:
             blocks.append(motif_injection)
 
+        # 5.12 P0-1: 信息获取通道轮换（防止中段同质化）
+        info_channel_injection = self._build_info_channel_injection(chapter_num)
+        if info_channel_injection:
+            blocks.append(info_channel_injection)
+
+        # 5.13 P0-2: 代价表现锁（记忆消失必须有可拍痕迹）
+        cost_anchor_injection = self._build_cost_anchor_injection(chapter_num)
+        if cost_anchor_injection:
+            blocks.append(cost_anchor_injection)
+
+        # 5.14 P0-3: 行为序列冷却（封禁动作模板复读）
+        behavior_seq_injection = self._build_behavior_seq_injection(chapter_num)
+        if behavior_seq_injection:
+            blocks.append(behavior_seq_injection)
+
         # 6. 四段式beat
         beat_text = get_beat_prompt(chapter_num)
         if beat_text:
@@ -1825,6 +1840,38 @@ class ConstraintInjector:
             json.dumps(tracker.history, ensure_ascii=False, indent=2),
             encoding="utf-8",
         )
+
+
+    def _build_info_channel_injection(self, chapter_num: int) -> str:
+        """P0-1: 信息获取通道轮换注入"""
+        from .info_channel import InfoChannelRoulette
+        roulette = InfoChannelRoulette(self.project_dir)
+        return roulette.get_injection_text(chapter_num)
+
+    def _build_cost_anchor_injection(self, chapter_num: int) -> str:
+        """P0-2: 代价表现锁注入"""
+        from .cost_anchor import CostAnchorChecker
+        checker = CostAnchorChecker()
+        return checker.get_injection_text(chapter_num)
+
+    def _build_behavior_seq_injection(self, chapter_num: int) -> str:
+        """P0-3: 行为序列冷却注入"""
+        from .curator import BehaviorSequenceTracker
+        tracker = BehaviorSequenceTracker(self.project_dir)
+        return tracker.get_injection_text(chapter_num)
+
+    def record_behavior_sequences(self, chapter_num: int, text: str):
+        """记录章节的行为序列（章节写完后调用）"""
+        from .curator import BehaviorSequenceTracker
+        tracker = BehaviorSequenceTracker(self.project_dir)
+        tracker.record_chapter(chapter_num, text)
+
+    def check_cost_anchors(self, chapter_num: int, text: str) -> str:
+        """检查代价表现违规（章节写完后调用）"""
+        from .cost_anchor import CostAnchorChecker
+        checker = CostAnchorChecker()
+        violations = checker.check_chapter(chapter_num, text)
+        return checker.format_violations(violations)
 
 
 def _build_critical_checklist(injector: ConstraintInjector, chapter_num: int) -> str:

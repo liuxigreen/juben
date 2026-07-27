@@ -361,3 +361,118 @@ class NarrativeMotifTracker:
 
 **惩罚机制**：如果本章重复使用禁用范式，系统将自动判定任务失败。"""
 
+
+# ============================================================
+# P0-3: Behavior Sequence Cooling
+# ============================================================
+
+BEHAVIOR_TEMPLATES = {
+    "ability_trigger": {
+        "steps": [
+            ["端起", "拿起", "接过", "举杯"],
+            ["闭眼", "闭上眼", "合上眼"],
+            ["安静", "消失了", "声音都", "世界安静"],
+            ["听到", "心声", "声音", "脑海里"],
+            ["放下", "杯子放下", "睁开眼"],
+        ],
+        "description": "端杯-闭眼-世界安静-听心声-放下杯",
+        "cooldown": 3,
+    },
+    "discovery_visit": {
+        "steps": [
+            ["走到", "来到", "走进"],
+            ["看到", "发现", "注意到"],
+            ["转身离开", "走开", "离开了"],
+        ],
+        "description": "走到某处-看到某物-转身离开",
+        "cooldown": 2,
+    },
+    "cost_reaction": {
+        "steps": [
+            ["疼痛", "刺痛", "发麻", "发抖"],
+            ["低头看", "看向自己的", "摸了摸"],
+            ["发现", "注意到", "看到"],
+        ],
+        "description": "身体疼痛-低头查看-发现异常",
+        "cooldown": 2,
+    },
+}
+
+
+class BehaviorSequenceTracker:
+    HISTORY_FILE = "behavior_sequence_history.json"
+
+    def __init__(self, project_dir):
+        from pathlib import Path as _Path
+        self.project_dir = _Path(project_dir)
+        self.history_path = self.project_dir / self.HISTORY_FILE
+        self.history = self._load_history()
+
+    def _load_history(self):
+        import json
+        if self.history_path.exists():
+            try:
+                return json.loads(self.history_path.read_text(encoding="utf-8"))
+            except Exception:
+                pass
+        return []
+
+    def _save_history(self):
+        import json
+        self.history_path.write_text(
+            json.dumps(self.history, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+
+    def detect_sequences(self, text):
+        detected = []
+        for seq_id, seq_info in BEHAVIOR_TEMPLATES.items():
+            steps = seq_info["steps"]
+            matched = 0
+            for step_keywords in steps:
+                if any(kw in text for kw in step_keywords):
+                    matched += 1
+            if matched >= len(steps) - 1:
+                detected.append(seq_id)
+        return detected
+
+    def record_chapter(self, chapter_num, text):
+        sequences = self.detect_sequences(text)
+        if sequences:
+            self.history.append({"chapter": chapter_num, "sequences": sequences})
+            self._save_history()
+
+    def get_banned_sequences(self, chapter_num):
+        banned = set()
+        for seq_id, seq_info in BEHAVIOR_TEMPLATES.items():
+            cooldown = seq_info["cooldown"]
+            recent = [
+                h for h in self.history
+                if h["chapter"] > chapter_num - cooldown
+                and seq_id in h.get("sequences", [])
+            ]
+            if recent:
+                banned.add(seq_id)
+        return sorted(banned)
+
+    def get_injection_text(self, chapter_num):
+        banned = self.get_banned_sequences(chapter_num)
+        if not banned:
+            return ""
+
+        lines = ["### 行为序列冷却 (enforced)\n"]
+        lines.append("Recent chapters used these action templates. This chapter MUST NOT repeat:\n")
+        for seq_id in banned:
+            if seq_id in BEHAVIOR_TEMPLATES:
+                tmpl = BEHAVIOR_TEMPLATES[seq_id]
+                lines.append(f"- BANNED: {tmpl['description']}")
+
+        lines.append("")
+        lines.append("Alternatives:")
+        lines.append("- Ability trigger -> use peripheral vision detail, steam sound, liquid ripple")
+        lines.append("- Discovery+leave -> use interruption, new crisis, character follows")
+        lines.append("- Pain reaction -> use environment change first (light flicker), then discover")
+        lines.append("")
+        lines.append("Violation = task failure.")
+
+        return "\n".join(lines)
