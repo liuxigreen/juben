@@ -45,6 +45,28 @@ from .rhythm import RhythmValidator
 
 logger = logging.getLogger(__name__)
 
+# AI视频模型物理限制
+SHOT_DURATION_MIN = 3.0   # 最短3秒
+SHOT_DURATION_MAX = 8.0   # 最长8秒（Kling/Runway上限）
+TARGET_SHOT_COUNT_MIN = 10  # 90秒最少10个镜头
+TARGET_SHOT_COUNT_MAX = 18  # 90秒最多18个镜头
+
+# 节奏卡点→时长范围（秒）
+PACING_DURATION_MAP = {
+    "3s_Hook":          (3.0, 5.0),
+    "15s_Retention":    (5.0, 7.0),
+    "30s_Explosion":    (5.0, 7.0),
+    "60s_Satisfaction": (5.0, 7.0),
+    "90s_Cliffhanger":  (5.0, 8.0),
+}
+
+# 物理图腾关键词（项目可配置，也可从entity_anchors.json加载）
+DEFAULT_VISUAL_ANCHORS = [
+    "唇印", "疤痕", "便签", "字迹", "钥匙", "手机屏幕",
+    "杯沿", "手背", "左手", "无名指", "猫", "拉花",
+    "灯管", "茶水", "水珠",
+]
+
 
 # ============================================================
 # 数据结构
@@ -542,36 +564,64 @@ class ShotDesigner:
         self,
         scenes: list[SceneUnit],
         target_duration: int = 90,
+        visual_anchors: list[str] | None = None,
     ) -> list[ShotDesign]:
         """从场景列表设计镜头"""
         if not scenes:
             return []
 
-        # 计算目标镜头数（每200字≈1镜头，最少3个，最多8个）
-        total_words = sum(s.word_count for s in scenes)
-        target_shots = max(3, min(8, total_words // 200))
+        anchors = visual_anchors or DEFAULT_VISUAL_ANCHORS
 
-        # 分配节奏卡点
-        pacing_labels = self._assign_pacing(scenes, target_shots)
+        # 目标镜头数：90秒 / 平均6秒 ≈ 15个镜头
+        target_shots = max(
+            TARGET_SHOT_COUNT_MIN,
+            min(TARGET_SHOT_COUNT_MAX, target_duration // 6),
+        )
 
-        # 为每个场景生成镜头
+        # 分配节奏卡点（按镜头数，不是场景数）
+        pacing_labels = self._assign_pacing_by_shot_count(target_shots)
+
+        # 为每个场景生成镜头（用CutPoint切分）
         all_shots = []
         shot_id = 1
 
         for i, scene in enumerate(scenes):
-            n_shots = self._decide_shot_count(scene)
-            segments = self._split_scene(scene.text, n_shots)
-            pacing = pacing_labels[i] if i < len(pacing_labels) else "30s_Explosion"
+            # 用CutPoint切分场景为镜头段落
+            segments = self._split_scene_by_cutpoints(scene)
 
             for j, segment in enumerate(segments):
+                # 节奏卡点
+                pacing_idx = min(shot_id - 1, len(pacing_labels) - 1)
+                pacing = pacing_labels[pacing_idx]
+
+                # 检测视觉图腾
+                matched_anchors = self._match_anchors(segment, anchors)
+
+                # 选景别（图腾强制CU/ECU）
+                if matched_anchors:
+                    shot_type = ShotType.ECU if len(matched_anchors) == 1 else ShotType.CU
+                else:
+                    shot_type = self._choose_shot_type(scene)
+
+                # 章末钩子约束：最后1-2个镜头强制CU+Push
+                is_ending = (i == len(scenes) - 1 and j >= len(segments) - 2)
+                if is_ending:
+                    shot_type = ShotType.CU
+                    camera_move = CameraMovement.PUSH
+                else:
+                    camera_move = self._choose_camera(scene, i, len(scenes))
+
+                # 基础时长（按pacing_label分配）
+                duration = self._base_duration_for_pacing(pacing)
+
                 shot = ShotDesign(
                     shot_id=shot_id,
                     scene_index=i,
-                    shot_type=self._choose_shot_type(scene),
-                    camera_movement=self._choose_camera(scene, i, len(scenes)),
+                    shot_type=shot_type,
+                    camera_movement=camera_move,
                     camera_angle=self._choose_angle(scene),
                     lighting=self._choose_lighting(scene),
-                    duration=0.0,  # 后面统一调整
+                    duration=duration,
                     visual_action=self._extract_visual_action(segment),
                     dialogue=self._extract_dialogue(segment),
                     emotion=scene.emotion,
@@ -579,25 +629,25 @@ class ShotDesigner:
                     location=scene.location,
                     characters=scene.characters,
                     audio_hint=self._choose_audio(scene),
+                    # visual_anchors不在此处存储（Shot对象上存）
                 )
+                # 挂载图腾到shot（通过属性扩展）
+                shot._visual_anchors = matched_anchors
                 all_shots.append(shot)
                 shot_id += 1
 
-        # 调整时长使总时长接近目标
+        # 调整时长使总时长接近目标（带物理钳位）
         self._adjust_durations(all_shots, target_duration)
 
         return all_shots
 
     # --- 节奏卡点分配 ---
 
-    def _assign_pacing(self, scenes: list[SceneUnit], target_shots: int) -> list[str]:
-        """根据场景的叙事位置分配节奏卡点"""
-        n = len(scenes)
+    def _assign_pacing_by_shot_count(self, target_shots: int) -> list[str]:
+        """按镜头数分配节奏卡点（不是场景数）"""
         labels = []
-
-        for i, scene in enumerate(scenes):
-            ratio = i / max(1, n - 1)
-
+        for i in range(target_shots):
+            ratio = i / max(1, target_shots - 1)
             if ratio <= 0.15:
                 labels.append("3s_Hook")
             elif ratio <= 0.35:
@@ -608,42 +658,157 @@ class ShotDesigner:
                 labels.append("60s_Satisfaction")
             else:
                 labels.append("90s_Cliffhanger")
-
-        # 确保最后一个场景是Cliffhanger
-        if scenes and scenes[-1].has_cliffhanger:
+        # 最后一个强制Cliffhanger
+        if labels:
             labels[-1] = "90s_Cliffhanger"
-
         return labels
 
-    # --- 镜头数决策 ---
+    # --- CutPoint切分算法 ---
 
-    def _decide_shot_count(self, scene: SceneUnit) -> int:
-        """决定场景拆几个镜头"""
-        if scene.has_cliffhanger and scene.word_count > 500:
-            return 2
-        if scene.scene_type == "动作" and scene.word_count > 300:
-            return 2
-        if scene.word_count > 800:
-            return 2
-        return 1
+    def _split_scene_by_cutpoints(self, scene: SceneUnit) -> list[str]:
+        """
+        按CutPoint将场景切分为镜头段落。
+        
+        CutPoint优先级：
+        1. 对话→动作切换（最高优先）
+        2. 说话人切换
+        3. 段落边界
+        4. 句号（最低优先）
+        
+        每个场景至少1个镜头，最多4个。
+        """
+        paragraphs = [p.strip() for p in scene.text.split('\n') if p.strip()]
+        
+        if len(paragraphs) <= 1:
+            # 单段落：按句子切
+            return self._split_single_paragraph(scene.text)
+        
+        # 找CutPoint
+        cut_points = []
+        
+        for i in range(1, len(paragraphs)):
+            prev = paragraphs[i - 1]
+            curr = paragraphs[i]
+            priority = 0
+            
+            # 检测对话→动作切换
+            prev_has_dialogue = bool(re.search(r'["「]', prev))
+            curr_has_action = bool(re.search(
+                r'(?:端起|放下|转身|站|推|攥|掏出|摸|走|跑|坐|灯闪|灭了|亮了|震了|溅|碎|裂|断|掉)',
+                curr[:50],
+            ))
+            curr_has_dialogue = bool(re.search(r'["「]', curr))
+            prev_has_action = bool(re.search(
+                r'(?:端起|放下|转身|站|推|攥|掏出|摸|走|跑|坐|灯闪|灭了|亮了|震了|溅|碎|裂|断|掉)',
+                prev[-80:],
+            ))
+            
+            if prev_has_dialogue and curr_has_action:
+                priority = 10  # 对话→动作：最高优先
+            elif prev_has_action and curr_has_dialogue:
+                priority = 9   # 动作→对话
+            elif prev_has_dialogue and curr_has_dialogue:
+                # 检测说话人切换
+                prev_speaker = self._extract_speaker(prev)
+                curr_speaker = self._extract_speaker(curr)
+                if prev_speaker and curr_speaker and prev_speaker != curr_speaker:
+                    priority = 8  # 说话人切换
+            
+            # 段落边界（基础优先级）
+            if priority == 0:
+                priority = 3
+            
+            if priority >= 3:
+                cut_points.append((i, priority))
+        
+        # 按优先级排序，取最强的CutPoint（最多3个）
+        cut_points.sort(key=lambda x: -x[1])
+        max_cuts = min(max(3, scene.word_count // 100), len(cut_points))
+        
+        # 但也要考虑场景大小——每段至少100字
+        selected_cuts = []
+        last_cut = 0
+        for cp_idx, priority in cut_points[:max_cuts * 2]:  # 多取一些候选
+            # 检查与已选cut的距离
+            if cp_idx - last_cut >= 1:  # 至少隔1个段落
+                selected_cuts.append(cp_idx)
+                last_cut = cp_idx
+            if len(selected_cuts) >= max_cuts:
+                break
+        
+        selected_cuts.sort()
+        
+        # 按CutPoint切分
+        if not selected_cuts:
+            return [scene.text]
+        
+        segments = []
+        prev_idx = 0
+        for cp_idx in selected_cuts:
+            segment = '\n'.join(paragraphs[prev_idx:cp_idx])
+            if segment.strip() and len(segment.strip()) >= 30:
+                segments.append(segment.strip())
+            prev_idx = cp_idx
+        
+        # 最后一段
+        tail = '\n'.join(paragraphs[prev_idx:])
+        if tail.strip() and len(tail.strip()) >= 30:
+            segments.append(tail.strip())
+        
+        return segments if segments else [scene.text]
 
-    # --- 场景文本分割 ---
+    def _split_single_paragraph(self, text: str) -> list[str]:
+        """单段落：按对话/动作切换切分"""
+        sentences = re.split(r'(?<=[。！？])', text)
+        sentences = [s.strip() for s in sentences if s.strip()]
+        
+        if len(sentences) <= 3:
+            return [text]
+        
+        # 找切换点
+        best_cut = len(sentences) // 2
+        for i in range(1, len(sentences)):
+            prev = sentences[i - 1]
+            curr = sentences[i]
+            if re.search(r'["「]', prev) and not re.search(r'["「]', curr):
+                best_cut = i
+                break
+            if not re.search(r'["「]', prev) and re.search(r'["「]', curr):
+                best_cut = i
+                break
+        
+        part1 = ''.join(sentences[:best_cut]).strip()
+        part2 = ''.join(sentences[best_cut:]).strip()
+        
+        if part1 and part2 and len(part1) >= 30 and len(part2) >= 30:
+            return [part1, part2]
+        return [text]
 
     @staticmethod
-    def _split_scene(text: str, n_shots: int) -> list[str]:
-        """将场景文本拆分为镜头段落"""
-        if n_shots <= 1:
-            return [text]
+    def _extract_speaker(text: str) -> str:
+        """提取说话人名"""
+        match = re.search(r'(\w{2,4})(?:说|道|问|答|喊|叫|冷笑|叹|低声|开口|声音|语气)', text)
+        return match.group(1) if match else ""
 
-        paragraphs = [p.strip() for p in text.split('\n') if p.strip()]
-        if len(paragraphs) <= 1:
-            sentences = re.split(r'(?<=[。！？])', text)
-            sentences = [s.strip() for s in sentences if s.strip()]
-            mid = len(sentences) // 2
-            return ["".join(sentences[:mid]), "".join(sentences[mid:])]
+    # --- 视觉图腾匹配 ---
 
-        mid = len(paragraphs) // 2
-        return ["\n".join(paragraphs[:mid]), "\n".join(paragraphs[mid:])]
+    @staticmethod
+    def _match_anchors(segment: str, anchors: list[str]) -> list[str]:
+        """检测段落中的视觉图腾"""
+        matched = []
+        for anchor in anchors:
+            if anchor in segment:
+                matched.append(anchor)
+        return matched
+
+    # --- 时长基础值 ---
+
+    @staticmethod
+    def _base_duration_for_pacing(pacing_label: str) -> float:
+        """根据节奏卡点返回基础时长"""
+        duration_range = PACING_DURATION_MAP.get(pacing_label, (5.0, 7.0))
+        # 取中间值作为基础
+        return round((duration_range[0] + duration_range[1]) / 2, 1)
 
     # --- 四大维度选值 ---
 
@@ -752,25 +917,38 @@ class ShotDesigner:
 
         return min(filtered, key=len) if filtered else ""
 
-    # --- 时长调整 ---
+    # --- 时长调整（带物理钳位） ---
 
     @staticmethod
     def _adjust_durations(shots: list[ShotDesign], target_duration: int):
-        """按比例调整镜头时长，使总时长接近目标"""
+        """
+        调整镜头时长使总时长接近目标。
+        
+        算法：
+        1. 理想时长 = target / len(shots)
+        2. 钳位到 [3s, 8s]
+        3. 如果总时长不够，说明镜头数太少→无法修复（由CutPoint保证镜头数够）
+        """
         if not shots:
             return
 
-        current = sum(s.duration for s in shots)
-        if current <= 0:
-            # 全部为0，平均分配
-            avg = target_duration / len(shots)
-            for s in shots:
-                s.duration = round(avg, 1)
-            return
-
-        ratio = target_duration / current
+        n = len(shots)
+        ideal = target_duration / n
+        
+        # 直接用理想时长（钳位后）
         for s in shots:
-            s.duration = round(max(2.0, s.duration * ratio), 1)
+            s.duration = round(
+                max(SHOT_DURATION_MIN, min(SHOT_DURATION_MAX, ideal)), 1
+            )
+        
+        # 微调：如果总时长有偏差，调整最后一个镜头
+        current_total = sum(s.duration for s in shots)
+        diff = target_duration - current_total
+        if abs(diff) > 0.5 and shots:
+            last_new = shots[-1].duration + diff
+            shots[-1].duration = round(
+                max(SHOT_DURATION_MIN, min(SHOT_DURATION_MAX, last_new)), 1
+            )
 
 
 # ============================================================
@@ -795,6 +973,10 @@ class EpisodeAdapter:
         # 加载项目配置
         self.characters = self._load_json("characters.json").get("characters", [])
         self.locations = self._load_json("locations.json")
+        
+        # 加载视觉图腾（优先从项目配置，兜底用默认）
+        anchors_config = self._load_json("entity_anchors.json")
+        self.visual_anchors = anchors_config.get("anchors", DEFAULT_VISUAL_ANCHORS)
 
     def _load_json(self, filename: str) -> dict:
         """加载项目JSON配置"""
@@ -830,7 +1012,10 @@ class EpisodeAdapter:
 
         # Stage 2: 镜头设计
         designer = ShotDesigner()
-        shot_designs = designer.design(scenes, target_duration)
+        shot_designs = designer.design(
+            scenes, target_duration,
+            visual_anchors=self.visual_anchors,
+        )
 
         # Stage 3: 组装Episode
         episode = self._build_episode(
@@ -859,6 +1044,9 @@ class EpisodeAdapter:
         # 构建Shot列表
         shots = []
         for sd in shot_designs:
+            # 获取visual_anchors（从ShotDesign的扩展属性）
+            anchors = getattr(sd, '_visual_anchors', [])
+            
             shot = Shot(
                 shot_id=sd.shot_id,
                 shot_type=sd.shot_type,
@@ -874,6 +1062,7 @@ class EpisodeAdapter:
                 characters_present=sd.characters,
                 audio_prompt=sd.audio_hint,
                 dialogue=sd.dialogue,
+                visual_anchors=anchors,
             )
             shots.append(shot)
 

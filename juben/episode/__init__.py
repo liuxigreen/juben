@@ -27,6 +27,7 @@ from .scribe_prompt import (
     COMEDY_SYSTEM_PERSONA,
 )
 from .parser import EpisodeParser
+from .visual_enhancer import VisualEnhancer
 
 __all__ = [
     "CameraAngle",
@@ -53,4 +54,5 @@ __all__ = [
     "build_scribe_prompt_with_shots",
     "build_episode_prompt",
     "load_character_visual_tags",
+    "VisualEnhancer",
 ]

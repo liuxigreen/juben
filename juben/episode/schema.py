@@ -109,7 +109,7 @@ class Shot(BaseModel):
     shot_type: ShotType
     camera_movement: CameraMovement = CameraMovement.STATIC
     camera_angle: CameraAngle = CameraAngle.EYE_LEVEL
-    duration: float = Field(ge=1.5, le=30.0, description="秒")
+    duration: float = Field(ge=3.0, le=8.0, description="秒（AI视频模型物理限制 3-8s）")
     composition: Composition = Composition.RULE_OF_THIRDS
 
     # 6组件Prompt（英文，可直接喂Kling/Runway/Veo）
@@ -122,6 +122,7 @@ class Shot(BaseModel):
 
     # 角色材质标签（从characters.json查表注入）
     character_tags: str = ""    # "1boy, realistic young asian man, hyper-detailed skin texture..."
+    visual_anchors: list[str] = Field(default_factory=list)  # 物理图腾（杯沿唇印、疤痕等关键道具）
 
     # 风格后缀（根据RenderStyle自动注入）
     style_suffix: str = ""
