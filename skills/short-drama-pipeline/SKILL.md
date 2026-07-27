@@ -46,13 +46,15 @@ vi projects/你的剧名/config/project_config.yaml
 
 ```bash
 # Stage 1: 剧本生成（需LLM）
-python3 pipeline.py --stage 1 --project 你的剧名
+python3 generate_script.py --project 你的剧名 --all --prompt-only
+# 将生成的提示词发送给LLM，保存结果到 chapters/
 
 # Stage 2: 分镜生成（纯算法）
-python3 pipeline.py --stage 2 --project 你的剧名
+python3 smart_adapter_test.py --project projects/你的剧名 --chapters all
+python3 smart_adapter_test.py --project projects/你的剧名 --chapters 1-5
 
 # Stage 3: 提示词生成（纯算法）
-python3 generate_pro_prompts.py --project 你的剧名
+python3 export_pro_prompts.py --project projects/你的剧名
 ```
 
 ## 架构设计
@@ -67,9 +69,9 @@ python3 generate_pro_prompts.py --project 你的剧名
 
 ```
 juben/
-├── pipeline.py                    # 通用分镜引擎（核心）
-├── generate_pro_prompts.py        # 专业提示词生成器
-├── export_flow_prompts.py         # Flow提示词导出
+├── generate_script.py             # Stage 1: 剧本生成器
+├── smart_adapter_test.py          # Stage 2: 分镜生成器
+├── export_pro_prompts.py          # Stage 3: 专业提示词生成器
 ├── skills/
 │   └── short-drama-pipeline/      # 本skill
 │       └── SKILL.md
@@ -100,9 +102,51 @@ juben/
 - 创意大纲（用户提供）
 - `project_config.yaml`（章节结构）
 - `characters.yaml`（角色设定）
+- `locations.yaml`（场景设定）
+- `events.yaml`（事件类型）
 
 ### 输出
 - `chapters/ch001.md` ~ `ch020.md`（20章剧本）
+
+### 生成方式
+
+#### 方式1：使用脚本生成提示词（推荐）
+
+```bash
+# 生成所有章节的提示词
+python3 generate_script.py --project 你的剧名 --all --prompt-only
+
+# 生成指定章节
+python3 generate_script.py --project 你的剧名 --chapters 1-5 --prompt-only
+```
+
+这会生成 `chapters/001_prompt.txt` 等文件，将内容发送给LLM即可。
+
+#### 方式2：直接调用LLM
+
+```python
+from generate_script import load_config, build_chapter_prompt, save_chapter
+
+# 加载配置
+config = load_config(Path("projects/你的剧名"))
+
+# 生成提示词
+prompt = build_chapter_prompt(
+    chapter_num=1,
+    total_chapters=20,
+    config=config
+)
+
+# 调用LLM（需要实现）
+response = your_llm_call(prompt)
+
+# 保存
+save_chapter(Path("projects/你的剧名"), 1, response)
+```
+
+#### 方式3：手动写作
+
+按下方格式要求直接编写Markdown文件，保存到 `chapters/001.md`。
 
 ### 剧本格式要求
 

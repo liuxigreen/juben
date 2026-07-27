@@ -942,4 +942,64 @@ def _generate_storyboard_md(episode: dict, chapter_num: int) -> str:
 
 
 if __name__ == "__main__":
-    run_test(9, str(Path.home() / "juben/projects/心声咖啡"))
+    import argparse
+    
+    parser = argparse.ArgumentParser(description="Stage 2: 分镜生成器")
+    parser.add_argument("--project", required=True, help="项目目录路径")
+    parser.add_argument("--chapters", help="章节范围，如 1-5 或 1,3,5 或 'all'")
+    parser.add_argument("--chapter", type=int, help="单个章节号")
+    
+    args = parser.parse_args()
+    
+    project_dir = Path(args.project)
+    if not project_dir.exists():
+        print(f"错误: 项目目录不存在 {project_dir}")
+        exit(1)
+    
+    # 确定要处理的章节
+    if args.chapter:
+        chapters = [args.chapter]
+    elif args.chapters:
+        if args.chapters == "all":
+            # 自动检测所有章节
+            chapters_dir = project_dir / "chapters"
+            if not chapters_dir.exists():
+                chapters_dir = project_dir / "story"
+            chapters = sorted([int(f.stem) for f in chapters_dir.glob("*.md")])
+        elif "-" in args.chapters:
+            start, end = args.chapters.split("-")
+            chapters = list(range(int(start), int(end) + 1))
+        else:
+            chapters = [int(x) for x in args.chapters.split(",")]
+    else:
+        # 默认处理所有章节
+        chapters_dir = project_dir / "chapters"
+        if not chapters_dir.exists():
+            chapters_dir = project_dir / "story"
+        chapters = sorted([int(f.stem) for f in chapters_dir.glob("*.md")])
+    
+    print(f"项目: {project_dir}")
+    print(f"待处理章节: {chapters}")
+    print()
+    
+    results = []
+    for ch in chapters:
+        try:
+            episode = run_test(ch, str(project_dir))
+            results.append({"chapter": ch, "status": "success", "shots": len(episode["shots"])})
+        except Exception as e:
+            print(f"\n!!! Ch{ch} 失败: {e}\n")
+            results.append({"chapter": ch, "status": "failed", "error": str(e)})
+    
+    # 汇总
+    print("\n" + "=" * 60)
+    print("汇总:")
+    print("=" * 60)
+    success = [r for r in results if r["status"] == "success"]
+    failed = [r for r in results if r["status"] == "failed"]
+    print(f"成功: {len(success)}/{len(results)}")
+    if success:
+        total_shots = sum(r["shots"] for r in success)
+        print(f"总镜头: {total_shots}")
+    if failed:
+        print(f"失败: {[r['chapter'] for r in failed]}")
