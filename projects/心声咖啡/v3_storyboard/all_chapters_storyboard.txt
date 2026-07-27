@@ -1,0 +1,2287 @@
+======================================================================
+《心声咖啡》全20章分镜数据 — SmartAdapter v3
+20/20 PASS | 401 shots | 0 errors | 0 warnings | 0 CN
+======================================================================
+
+--- 第1章 (17 shots, 89s) ---
+
+Shot 1 [WS][static] 6.6s
+  Characters: Su Nian
+  Action: Su Nian wipes the counter with a rag
+  VeoPrompt: wide shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian wipes the counter with a rag, in Nianxiang 
+
+Shot 2 [MCU][push] 4.6s
+  Characters: Su Nian
+  Action: Su Nian walks in
+  Dialogue: 美式，热的。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian walks in, in Nianxiang coffee sh
+
+Shot 3 [ECU][static] 5.1s
+  Characters: Su Nian
+  Action: Su Nian wipes a table
+  VeoPrompt: extreme close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian wipes a table, close-up detail on li
+
+Shot 4 [MS][push] 4.6s
+  Characters: Su Nian
+  Action: Su Nian picks up a cup
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian picks up a cup, in Nianxiang coffee 
+
+Shot 5 [ECU][static] 5.1s
+  Characters: Su Nian
+  Action: Su Nian takes a sip
+  VeoPrompt: extreme close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian takes a sip, close-up detail on cup 
+
+Shot 6 [CU][push] 5.1s
+  Characters: Su Nian
+  Action: all sounds fade to silence
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), all sounds fade to silence, in Nianxiang coffee
+
+Shot 7 [MCU][static] 4.6s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in Nianxiang cof
+
+Shot 8 [MS][push] 6.6s
+  Characters: Su Nian
+  Action: Su Nian walks contract
+  Dialogue: ……这个月KPI又完不成了。老陈说再不签下来就让我走人。那家店……合同都准备好了……
+  InnerVoice: ……这个月KPI又完不成了。老陈说再不签下来就让我走人。那家店……合同都准备好了……
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian walks contract, in Nianxiang coffee 
+
+Shot 9 [CU][rapid_push] 4.6s
+  Characters: Su Nian
+  Action: Su Nian opens eyes
+  VeoPrompt: close-up, rapid push-in, low angle looking up, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian opens eyes, in Nianxiang coffee s
+
+Shot 10 [CU][push] 5.1s
+  Characters: Su Nian
+  Action: all sounds vanish
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), all sounds vanish, in Nianxiang coffee shop, lo
+
+Shot 11 [CU][static] 5.1s
+  Characters: Su Nian
+  Action: Su Nian looks down at
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks down at, close-up detail on scar, in N
+
+Shot 12 [CU][push] 5.1s
+  Characters: Su Nian
+  Action: a faint mark
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), a faint mark, close-up detail on mark, in Nianx
+
+Shot 13 [CU][static] 5.1s
+  Characters: Su Nian
+  Action: Su Nian stands up
+  Dialogue: 多少钱？
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands up, close-up detail on mark, in Nianx
+
+Shot 14 [MS][push] 4.6s
+  Characters: Su Nian
+  Action: Su Nian leaves
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian leaves, in Nianxiang coffee shop, na
+
+Shot 15 [CU][static] 7.3s
+  Characters: Su Nian
+  Action: Su Nian walks in
+  Dialogue: ……那家店……合同都准备好了……
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian walks in, close-up detail on lipstick mark, 
+
+Shot 16 [CU][push] 5.1s
+  Characters: Su Nian
+  Action: a lipstick mark
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), a lipstick mark, close-up detail on lipstick ma
+
+Shot 17 [CU][static] 5.1s
+  Characters: Su Nian
+  Action: the scar is still visible
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), the scar is still visible, close-up detail on scar, 
+
+
+--- 第2章 (18 shots, 89s) ---
+
+Shot 1 [WS][static] 4.8s
+  Characters: Su Nian
+  Action: Su Nian stares at
+  VeoPrompt: wide shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stares at, close-up detail on cup wall, in 
+
+Shot 2 [MS][push] 4.3s
+  Characters: Su Nian
+  Action: Su Nian takes a sip
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian takes a sip, in Nianxiang coffee sho
+
+Shot 3 [CU][static] 6.8s
+  Characters: Su Nian
+  Action: all sounds fade to silence
+  Dialogue: ……前女友说我不懂感情。也许她说得对。但我也不懂为什么隔壁那家破咖啡店的咖啡比星巴克好喝……不对，我在想什么，我是来谈收购的……
+  InnerVoice: ……前女友说我不懂感情。也许她说得对。但我也不懂为什么隔壁那家破咖啡店的咖啡比星巴克好喝……不对，我在想什么，我是来谈收购的……
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), all sounds fade to silence, in Nianxiang coffee shop
+
+Shot 4 [MCU][push] 4.3s
+  Characters: Su Nian
+  Action: Su Nian puts down a cup
+  VeoPrompt: medium close-up, slow dolly forward, low angle looking up, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian puts down a cup, in N
+
+Shot 5 [ECU][static] 4.8s
+  Characters: Su Nian
+  Action: Su Nian looks down at
+  VeoPrompt: extreme close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks down at, close-up detail on sc
+
+Shot 6 [CU][push] 4.3s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in Nianxiang coffe
+
+Shot 7 [MCU][static] 6.2s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  Dialogue: 想不起来什么时候划的
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in Nianxiang cof
+
+Shot 8 [MS][push] 4.3s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in Nianxiang co
+
+Shot 9 [ECU][static] 4.8s
+  Characters: Su Nian
+  Action: a faint mark
+  VeoPrompt: extreme close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), a faint mark, close-up detail on mark, in Ni
+
+Shot 10 [MCU][push] 4.3s
+  Characters: Lin Ke
+  Action: Lin Ke looks at
+  Dialogue: 连看书都能受伤
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Lin Ke (25yo Chinese woman, ponytail, colorful nails, large art bag), Lin Ke looks at, in Nianxiang coffee shop, natural daylight, soft shadow
+
+Shot 11 [MS][static] 4.3s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in Nianxiang coffee 
+
+Shot 12 [MCU][push] 6.2s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  Dialogue: 你好。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in Nianxian
+
+Shot 13 [MS][static] 4.3s
+  Characters: Su Nian
+  Action: Su Nian looks up
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks up, in Nianxiang coffee shop, natur
+
+Shot 14 [MCU][push] 6.2s
+  Characters: Gu Shen
+  Action: Gu Shen asks business card
+  Dialogue: 我叫顾深。对面写字楼的。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen asks business card, in Nianxiang cof
+
+Shot 15 [MS][static] 6.2s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian looks at business card
+  Dialogue: 不考虑。
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-framed gl
+
+Shot 16 [MCU][push] 4.3s
+  Characters: Gu Shen
+  Action: Gu Shen turns around
+  Dialogue: 好吧。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen turns around, in Nianxiang coffee sh
+
+Shot 17 [MS][static] 4.3s
+  Characters: Su Nian
+  Action: Su Nian picks up cup
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian picks up cup, in Nianxiang coffee shop, n
+
+Shot 18 [CU][rapid_push] 4.8s
+  Characters: Su Nian
+  Action: Su Nian turns hand over
+  VeoPrompt: close-up, rapid push-in, low angle looking up, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian turns hand over, close-up detail 
+
+
+--- 第3章 (15 shots, 90s) ---
+
+Shot 1 [WS][static] 5.7s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian says coffee
+  Dialogue: 你记得我喝什么？
+  VeoPrompt: wide shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-framed glas
+
+Shot 2 [MS][push] 5.7s
+  Characters: Gu Shen
+  Action: Gu Shen drinks coffee cup
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen drinks coffee cup, in coffee shop, natur
+
+Shot 3 [MCU][static] 5.7s
+  Characters: Su Nian
+  Action: Su Nian closes eyes
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian closes eyes, in coffee shop, natural 
+
+Shot 4 [CU][pull] 6.2s
+  Characters: Gu Shen
+  Action: Gu Shen cries
+  Dialogue: 为什么你不出来追我？
+  InnerVoice: 为什么你不出来追我？
+  VeoPrompt: close-up, slow dolly backward, high angle looking down, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen cries, close-up detail on ke
+
+Shot 5 [CU][static] 6.2s
+  Characters: Su Nian
+  Action: the vision shatters
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), the vision shatters, in coffee shop, natural dayligh
+
+Shot 6 [MCU][pull] 5.7s
+  Characters: Su Nian
+  Action: Su Nian opens eyes
+  VeoPrompt: medium close-up, slow dolly backward, high angle looking down, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian opens eyes, in co
+
+Shot 7 [ECU][static] 6.2s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  VeoPrompt: extreme close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, close-up detail
+
+Shot 8 [MCU][push] 7.5s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  Dialogue: 你还好吗？
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in coffee s
+
+Shot 9 [MS][pull] 5.7s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian frowns
+  Dialogue: 没事。
+  VeoPrompt: medium shot, slow dolly backward, high angle looking down, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, ta
+
+Shot 10 [MCU][static] 5.7s
+  Characters: Gu Shen
+  Action: Gu Shen picks up a cup
+  Dialogue: 不用。
+  VeoPrompt: medium close-up, static camera, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen picks up a cup, in coffee shop, natural d
+
+Shot 11 [MS][push] 5.7s
+  Characters: Su Nian
+  Action: Su Nian leaves
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian leaves, in coffee shop, natural dayl
+
+Shot 12 [ECU][static] 6.2s
+  Characters: Su Nian
+  Action: the scar is still visible
+  VeoPrompt: extreme close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), the scar is still visible, close-up detail o
+
+Shot 13 [CU][push] 6.2s
+  Characters: Su Nian
+  Action: the scar has vanished
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), the scar has vanished, close-up detail on scar,
+
+Shot 14 [MCU][rapid_push] 5.7s
+  Characters: Su Nian
+  Action: Su Nian sees
+  VeoPrompt: medium close-up, rapid push-in, low angle looking up, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian sees, in coffee shop, high
+
+Shot 15 [MS][static] 5.7s
+  Characters: Su Nian
+  Action: Su Nian interacts with coffee
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian interacts with coffee, in coffee shop, na
+
+
+--- 第4章 (15 shots, 89s) ---
+
+Shot 1 [WS][static] 4.9s
+  Characters: Lin Ke
+  Action: Lin Ke interacts with door
+  VeoPrompt: wide shot, static camera, eye level, featuring Lin Ke (25yo Chinese woman, ponytail, colorful nails, large art bag), Lin Ke interacts with door, in Nianxiang coffee shop, natural daylight, soft shadow
+
+Shot 2 [MCU][push] 7.0s
+  Characters: Su Nian
+  Action: Su Nian stares at
+  Dialogue: 外婆的店……门口有这棵树？
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stares at, in Nianxiang coffee s
+
+Shot 3 [MS][static] 7.0s
+  Characters: Su Nian, Gu Shen, Lin Ke
+  Action: Su Nian finishes drinking
+  Dialogue: 你最近太累了。
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-framed gl
+
+Shot 4 [ECU][push] 5.4s
+  Characters: Su Nian, Gu Shen, Lin Ke
+  Action: Su Nian nods
+  Dialogue: 锐见投资。苏念，他是来收购的。
+  VeoPrompt: extreme close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver
+
+Shot 5 [CU][static] 7.5s
+  Characters: Su Nian, Gu Shen, Lin Ke
+  Action: Su Nian looks at coffee cup
+  Dialogue: 这是你外婆。你还记得她冲咖啡的样子吗？
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-framed glass
+
+Shot 6 [MCU][push] 4.9s
+  Characters: Su Nian
+  Action: Su Nian looks at painting
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks at painting, in Nianxiang 
+
+Shot 7 [MS][static] 4.9s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in Nianxiang coffee 
+
+Shot 8 [MCU][push] 4.9s
+  Characters: Su Nian
+  Action: Su Nian says
+  Dialogue: 不太记得了。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian says, in Nianxiang coffee shop, 
+
+Shot 9 [MS][static] 4.9s
+  Characters: Lin Ke
+  Action: Lin Ke says painting
+  VeoPrompt: medium shot, static camera, eye level, featuring Lin Ke (25yo Chinese woman, ponytail, colorful nails, large art bag), Lin Ke says painting, in Nianxiang coffee shop, natural daylight, soft shadows, n
+
+Shot 10 [MCU][push] 4.9s
+  Characters: Su Nian
+  Action: Su Nian looks at door
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks at door, in Nianxiang coff
+
+Shot 11 [ECU][static] 5.4s
+  Characters: Gu Shen
+  Action: Gu Shen looks down at
+  VeoPrompt: extreme close-up, static camera, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen looks down at, close-up detail on cup wa
+
+Shot 12 [CU][push] 7.5s
+  Characters: Lin Ke
+  Action: the scar is still visible
+  Dialogue: 送给小念。希望你永远记得。
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Lin Ke (25yo Chinese woman, ponytail, colorful nails, large art bag), the scar is still visible, close-up detail on scar, in Nianxiang coffee shop, n
+
+Shot 13 [MS][static] 4.9s
+  Characters: Su Nian
+  Action: Su Nian wipes a table
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian wipes a table, in Nianxiang coffee shop, 
+
+Shot 14 [CU][push] 7.5s
+  Characters: Su Nian
+  Action: the lights come back on
+  Dialogue: 小念，记住：拉花不是技术，是心意。
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), the lights come back on, close-up detail on sti
+
+Shot 15 [CU][static] 7.5s
+  Characters: Su Nian
+  Action: Su Nian looks at coffee sticky note
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks at coffee sticky note, close-up detail
+
+
+--- 第5章 (16 shots, 90s) ---
+
+Shot 1 [WS][static] 6.9s
+  Characters: Gu Shen, Chen Rui
+  Action: Gu Shen looks at contract
+  Dialogue: 苏老板，久仰。
+  VeoPrompt: wide shot, static camera, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Chen Rui (32yo Chinese man, square jaw, short hair, exp
+
+Shot 2 [MCU][push] 6.9s
+  Characters: Su Nian, Chen Rui
+  Action: Su Nian writes coffee contract
+  Dialogue: 不卖。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Chen Rui (32yo Chinese man, square jaw, 
+
+Shot 3 [MS][static] 4.8s
+  Characters: Su Nian, Chen Rui
+  Action: Su Nian takes a sip
+  Dialogue: 你喝什么？
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Chen Rui (32yo Chinese man, square jaw, short hai
+
+Shot 4 [ECU][push] 5.3s
+  Characters: Su Nian
+  Action: Su Nian looks at
+  VeoPrompt: extreme close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks at, close-up detail on cu
+
+Shot 5 [MS][static] 4.8s
+  Characters: Su Nian
+  Action: Su Nian closes eyes
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian closes eyes, in coffee shop, natural dayl
+
+Shot 6 [CU][push] 5.3s
+  Characters: Su Nian
+  Action: all sounds fade to silence
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), all sounds fade to silence, in coffee shop, nat
+
+Shot 7 [MCU][static] 6.9s
+  Characters: Su Nian
+  Action: Su Nian says coffee
+  Dialogue: ……条件开得够高了。她不识货。但老陈说得对，这条街要改造，她的店迟早要拆。不如趁现在给她一个好价钱。不过……这咖啡确实好喝。比我十年前自己开的那家强。那时候……
+  InnerVoice: ……条件开得够高了。她不识货。但老陈说得对，这条街要改造，她的店迟早要拆。不如趁现在给她一个好价钱。不过……这咖啡确实好喝。比我十年前自己开的那家强。那时候……
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian says coffee, in coffee shop, natural 
+
+Shot 8 [CU][push] 5.3s
+  Characters: Chen Rui
+  Action: a vision flashes
+  Dialogue: 锐咖啡
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Chen Rui (32yo Chinese man, square jaw, short hair, expensive watch), a vision flashes, in coffee shop, natural daylight, soft shadows, neutral, obse
+
+Shot 9 [CU][static] 5.3s
+  Characters: Su Nian
+  Action: Su Nian puts down a cup
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian puts down a cup, in coffee shop, natural day
+
+Shot 10 [MCU][push] 6.9s
+  Characters: Chen Rui
+  Action: Chen Rui says business card
+  Dialogue: ——你考虑一下。我的名片——
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Chen Rui (32yo Chinese man, square jaw, short hair, expensive watch), Chen Rui says business card, in coffee shop, natural daylight, soft shad
+
+Shot 11 [MS][static] 4.8s
+  Characters: Su Nian
+  Action: Su Nian says coffee
+  Dialogue: 你也开过咖啡店。
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian says coffee, in coffee shop, natural dayl
+
+Shot 12 [MCU][push] 4.8s
+  Characters: Su Nian, Chen Rui
+  Action: Su Nian picks up coffee
+  Dialogue: 什么？
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Chen Rui (32yo Chinese man, square jaw, 
+
+Shot 13 [MS][static] 4.8s
+  Characters: Chen Rui
+  Action: Chen Rui stands in the scene
+  VeoPrompt: medium shot, static camera, eye level, featuring Chen Rui (32yo Chinese man, square jaw, short hair, expensive watch), Chen Rui stands in the scene, in coffee shop, natural daylight, soft shadows, neu
+
+Shot 14 [MCU][push] 6.9s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  Dialogue: 你怎么知道的？
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in coffee s
+
+Shot 15 [ECU][static] 5.3s
+  Characters: Su Nian
+  Action: Su Nian looks down at
+  VeoPrompt: extreme close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks down at, close-up detail on cu
+
+Shot 16 [CU][rapid_push] 4.8s
+  Characters: Su Nian
+  Action: Su Nian stares at
+  VeoPrompt: close-up, rapid push-in, low angle looking up, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stares at, in coffee shop, high c
+
+
+--- 第6章 (17 shots, 90s) ---
+
+Shot 1 [WS][static] 4.7s
+  Characters: Gu Shen
+  Action: rain falls
+  VeoPrompt: wide shot, static camera, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), rain falls, in Nianxiang coffee shop, natural daylight,
+
+Shot 2 [MCU][push] 6.8s
+  Characters: Su Nian
+  Action: Su Nian puts down door window
+  Dialogue: 美式。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian puts down door window, in Nianxi
+
+Shot 3 [MS][static] 4.7s
+  Characters: Su Nian
+  Action: Su Nian says cup
+  Dialogue: 你每天都来。
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian says cup, in Nianxiang coffee shop, natur
+
+Shot 4 [MCU][push] 4.7s
+  Characters: Gu Shen
+  Action: rain falls
+  Dialogue: 你的咖啡比楼下的好。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), rain falls, in Nianxiang coffee shop, natura
+
+Shot 5 [MS][static] 4.7s
+  Characters: Su Nian
+  Action: Su Nian turns around
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian turns around, in Nianxiang coffee shop, n
+
+Shot 6 [MCU][push] 4.7s
+  Characters: Gu Shen
+  Action: Gu Shen says
+  Dialogue: 等一下。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen says, in Nianxiang coffee shop, natu
+
+Shot 7 [ECU][static] 7.4s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian carries a coffee cup
+  Dialogue: 看到过画面
+  VeoPrompt: extreme close-up, static camera, low angle looking up, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, 
+
+Shot 8 [CU][push] 4.7s
+  Characters: Gu Shen
+  Action: Gu Shen finishes drinking
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen finishes drinking, in Nianxiang coffee shop
+
+Shot 9 [MS][static] 4.7s
+  Characters: Su Nian
+  Action: Su Nian picks up a cup
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian picks up a cup, in Nianxiang coffee shop,
+
+Shot 10 [ECU][push] 5.3s
+  Characters: Su Nian
+  Action: Su Nian closes eyes
+  VeoPrompt: extreme close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian closes eyes, close-up detail on
+
+Shot 11 [CU][static] 5.3s
+  Characters: Gu Shen
+  Action: Gu Shen sits down
+  VeoPrompt: close-up, static camera, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen sits down, in Nianxiang coffee shop, natural day
+
+Shot 12 [MCU][push] 6.8s
+  Characters: Su Nian
+  Action: Su Nian looks at coffee contract
+  Dialogue: 为什么要亲自来？让小李去谈就行了。但那家店……那个咖啡师……她看我的眼神不像其他人。其他人看我的职位、我的公司、我的表。她看的是——
+  InnerVoice: 为什么要亲自来？让小李去谈就行了。但那家店……那个咖啡师……她看我的眼神不像其他人。其他人看我的职位、我的公司、我的表。她看的是——
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks at coffee contract, in Nia
+
+Shot 13 [CU][static] 5.3s
+  Characters: Su Nian
+  Action: Su Nian puts down a cup
+  VeoPrompt: close-up, static camera, low angle looking up, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian puts down a cup, in Nianxiang cof
+
+Shot 14 [CU][push] 5.3s
+  Characters: Su Nian
+  Action: the scar is still visible
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), the scar is still visible, close-up detail on s
+
+Shot 15 [CU][static] 5.3s
+  Characters: Su Nian
+  Action: Su Nian washes photo
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian washes photo, close-up detail on photo, in N
+
+Shot 16 [MS][push] 4.7s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian leaves
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-fram
+
+Shot 17 [CU][static] 4.7s
+  Characters: Su Nian
+  Action: rain falls
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), rain falls, in Nianxiang coffee shop, low key lighti
+
+
+--- 第7章 (10 shots, 75s) ---
+
+Shot 1 [WS][pull] 7.5s
+  Characters: Su Nian
+  Action: Su Nian cries
+  Dialogue: 你从来不听我说话
+  VeoPrompt: wide shot, slow dolly backward, high angle looking down, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian cries, in Nianxiang cof
+
+Shot 2 [MS][static] 7.5s
+  Characters: Su Nian
+  Action: Su Nian takes a sip
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian takes a sip, in Nianxiang coffee shop, na
+
+Shot 3 [MCU][push] 7.5s
+  Characters: Su Nian
+  Action: Su Nian closes eyes
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian closes eyes, in Nianxiang coffee
+
+Shot 4 [CU][static] 7.5s
+  Characters: Su Nian
+  Action: all sounds fade to silence
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), all sounds fade to silence, in Nianxiang coffee shop
+
+Shot 5 [MCU][push] 7.5s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  Dialogue: ……他不知道我为什么生气。他永远不知道。我只是想让他记住我的生日，就一次……
+  InnerVoice: ……他不知道我为什么生气。他永远不知道。我只是想让他记住我的生日，就一次……
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in Nianxian
+
+Shot 6 [CU][static] 7.5s
+  Characters: Su Nian
+  Action: Su Nian puts down a cup
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian puts down a cup, in Nianxiang coffee shop, n
+
+Shot 7 [MCU][push] 7.5s
+  Characters: Su Nian
+  Action: Su Nian looks down at
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks down at, in Nianxiang coff
+
+Shot 8 [MS][static] 7.5s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in Nianxiang coffee 
+
+Shot 9 [MCU][push] 7.5s
+  Characters: Su Nian
+  Action: Su Nian walks
+  Dialogue: 告诉他你为什么生气。不是因为那件事，是因为生日。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian walks, in Nianxiang coffee shop,
+
+Shot 10 [ECU][rapid_push] 7.5s
+  Characters: Su Nian
+  Action: Su Nian finishes drinking
+  VeoPrompt: extreme close-up, rapid push-in, low angle looking up, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian finishes drinking, close-
+
+
+--- 第8章 (11 shots, 82s) ---
+
+Shot 1 [WS][static] 7.5s
+  Characters: Lin Ke
+  Action: Lin Ke interacts with photo
+  Dialogue: 给你。
+  VeoPrompt: wide shot, static camera, eye level, featuring Lin Ke (25yo Chinese woman, ponytail, colorful nails, large art bag), Lin Ke interacts with photo, close-up detail on photo, in Nianxiang coffee shop, na
+
+Shot 2 [ECU][push] 7.5s
+  Characters: Su Nian
+  Action: Su Nian stares at
+  Dialogue: 这是……外婆？
+  VeoPrompt: extreme close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stares at, close-up detail on p
+
+Shot 3 [CU][static] 7.5s
+  Characters: Su Nian, Lin Ke
+  Action: Su Nian looks at photo door
+  Dialogue: 苏念，你认不出来了？
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Lin Ke (25yo Chinese woman, ponytail, colorful nails
+
+Shot 4 [MS][push] 7.3s
+  Characters: Su Nian
+  Action: Su Nian looks at
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks at, in Nianxiang coffee shop, 
+
+Shot 5 [MCU][static] 7.3s
+  Characters: Su Nian
+  Action: Su Nian says coffee
+  Dialogue: 我记得她的名字。
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian says coffee, in Nianxiang coffee shop
+
+Shot 6 [ECU][push] 7.5s
+  Characters: Su Nian, Lin Ke
+  Action: Su Nian interacts with photo
+  Dialogue: 你最近到底怎么了？
+  VeoPrompt: extreme close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Lin Ke (25yo Chinese woman, ponytail, c
+
+Shot 7 [MCU][static] 7.3s
+  Characters: Su Nian, Lin Ke
+  Action: Su Nian stands up
+  Dialogue: 苏念，你哥以前也——
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Lin Ke (25yo Chinese woman, ponytail, colorfu
+
+Shot 8 [MS][rapid_push] 7.3s
+  Characters: Su Nian, Lin Ke
+  Action: Su Nian looks up
+  Dialogue: 我哥怎么了？
+  VeoPrompt: medium shot, rapid push-in, low angle looking up, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Lin Ke (25yo Chinese woman, ponytail, 
+
+Shot 9 [CU][static] 7.5s
+  Characters: Su Nian
+  Action: Su Nian sits down
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian sits down, close-up detail on sticky note, i
+
+Shot 10 [CU][push] 7.5s
+  Characters: Su Nian
+  Action: the lights come back on
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), the lights come back on, close-up detail on pho
+
+Shot 11 [CU][rapid_push] 7.5s
+  Characters: Su Nian
+  Action: Su Nian cries
+  VeoPrompt: close-up, rapid push-in, low angle looking up, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian cries, close-up detail on photo, 
+
+
+--- 第9章 (25 shots, 90s) ---
+
+Shot 1 [WS][static] 4.0s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian sits down
+  Dialogue: 你为什么每次都喝我喝过的咖啡？
+  VeoPrompt: wide shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-framed glas
+
+Shot 2 [MCU][push] 3.3s
+  Characters: Su Nian
+  Action: Su Nian says chopsticks
+  Dialogue: 巧合。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian says chopsticks, in coffee shop,
+
+Shot 3 [CU][static] 4.0s
+  Characters: Su Nian
+  Action: Su Nian interacts with chopsticks
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian interacts with chopsticks, in coffee shop, l
+
+Shot 4 [MCU][push] 3.3s
+  Characters: Gu Shen
+  Action: Gu Shen says
+  Dialogue: 第一次，我以为你口渴。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen says, in coffee shop, natural daylig
+
+Shot 5 [MS][static] 3.3s
+  Characters: Su Nian
+  Action: Su Nian says
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian says, in coffee shop, natural daylight, s
+
+Shot 6 [MCU][push] 3.3s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian looks up
+  VeoPrompt: medium close-up, slow dolly forward, low angle looking up, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, ta
+
+Shot 7 [MS][static] 4.0s
+  Characters: Gu Shen
+  Action: Gu Shen finishes drinking
+  Dialogue: 你喝完之后，
+  VeoPrompt: medium shot, static camera, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen finishes drinking, in coffee shop, natural da
+
+Shot 8 [CU][rapid_push] 3.3s
+  Characters: Su Nian
+  Action: Su Nian wipes chopsticks
+  VeoPrompt: close-up, rapid push-in, low angle looking up, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian wipes chopsticks, in coffee shop,
+
+Shot 9 [MCU][static] 3.3s
+  Characters: Su Nian
+  Action: Su Nian says
+  Dialogue: 你多想了。
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian says, in coffee shop, natural dayligh
+
+Shot 10 [MS][push] 4.0s
+  Characters: Gu Shen
+  Action: Gu Shen interacts with noodle bowl
+  Dialogue: 也许。
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen interacts with noodle bowl, in coffee sh
+
+Shot 11 [MCU][static] 3.3s
+  Characters: Su Nian
+  Action: Su Nian stands up
+  Dialogue: 我送你回去。
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands up, in coffee shop, natural da
+
+Shot 12 [ECU][push] 3.3s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian walks key light
+  Dialogue: 苏念。
+  VeoPrompt: extreme close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver
+
+Shot 13 [MCU][static] 4.0s
+  Characters: Gu Shen
+  Action: Gu Shen turns around
+  Dialogue: 我明天还会来喝咖啡。
+  VeoPrompt: medium close-up, static camera, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen turns around, in coffee shop, natural day
+
+Shot 14 [ECU][push] 3.3s
+  Characters: Su Nian
+  Action: Su Nian clenches fists
+  Dialogue: 你不用——
+  VeoPrompt: extreme close-up, slow dolly forward, low angle looking up, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian clenches fists, clos
+
+Shot 15 [MCU][static] 4.0s
+  Characters: Gu Shen
+  Action: Gu Shen stands in the scene
+  Dialogue: 我不是来收购你的店的。
+  VeoPrompt: medium close-up, static camera, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen stands in the scene, in coffee shop, natu
+
+Shot 16 [MS][push] 3.3s
+  Characters: Su Nian
+  Action: Su Nian looks at
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks at, in coffee shop, natural da
+
+Shot 17 [MCU][static] 3.3s
+  Characters: Su Nian
+  Action: Su Nian says
+  Dialogue: 你让我想起一个人。
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian says, in coffee shop, natural dayligh
+
+Shot 18 [MS][push] 4.0s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  Dialogue: 但又完全不同。
+  VeoPrompt: medium shot, slow dolly forward, low angle looking up, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in c
+
+Shot 19 [CU][static] 3.3s
+  Characters: Su Nian
+  Action: Su Nian turns around
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian turns around, close-up detail on cup wall, i
+
+Shot 20 [CU][push] 3.3s
+  Characters: Su Nian
+  Action: Su Nian reads
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian reads, close-up detail on cup wall, in 
+
+Shot 21 [CU][static] 4.4s
+  Characters: Gu Shen
+  Action: Gu Shen sits down
+  Dialogue: 她像一个人——我前女友。但又完全不同。
+  InnerVoice: 她像一个人——我前女友。但又完全不同。
+  VeoPrompt: close-up, static camera, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen sits down, in coffee shop, low key lighting, dee
+
+Shot 22 [CU][push] 3.3s
+  Characters: Su Nian
+  Action: Su Nian puts down a cup
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian puts down a cup, close-up detail on sti
+
+Shot 23 [CU][static] 3.3s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, close-up detail on scar
+
+Shot 24 [MCU][rapid_push] 4.0s
+  Characters: Gu Shen
+  Action: Gu Shen interacts with phone
+  Dialogue: 到家了。
+  VeoPrompt: medium close-up, rapid push-in, low angle looking up, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen interacts with phone, in coffe
+
+Shot 25 [MS][static] 4.0s
+  Characters: Su Nian
+  Action: Su Nian looks up Su Nian hears
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks up Su Nian hears, in coffee shop, n
+
+
+--- 第10章 (14 shots, 87s) ---
+
+Shot 1 [WS][static] 5.7s
+  Characters: Su Nian
+  Action: Su Nian sits down
+  VeoPrompt: wide shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian sits down, in coffee shop, natural daylight
+
+Shot 2 [ECU][push] 6.3s
+  Characters: Su Nian, Gu Shen, Chen Rui
+  Action: a faint mark
+  VeoPrompt: extreme close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver
+
+Shot 3 [CU][static] 6.3s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, close-up detail on scar
+
+Shot 4 [MCU][push] 7.5s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  Dialogue: 想不起来了
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in coffee s
+
+Shot 5 [MS][static] 7.5s
+  Characters: Su Nian
+  Action: Su Nian looks at coffee mirror
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks at coffee mirror, in coffee shop, n
+
+Shot 6 [MCU][push] 5.7s
+  Characters: Su Nian
+  Action: Su Nian turns hand over
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian turns hand over, in coffee shop,
+
+Shot 7 [ECU][static] 6.3s
+  Characters: Su Nian
+  Action: Su Nian looks at photo
+  VeoPrompt: extreme close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks at photo, close-up detail on p
+
+Shot 8 [MS][push] 5.7s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in coffee shop,
+
+Shot 9 [MCU][static] 5.7s
+  Characters: Su Nian
+  Action: Su Nian reads phone
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian reads phone, in coffee shop, natural 
+
+Shot 10 [MS][push] 5.7s
+  Characters: Su Nian
+  Action: the lights go out
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), the lights go out, in coffee shop, natural d
+
+Shot 11 [CU][static] 7.5s
+  Characters: Gu Shen
+  Action: Gu Shen drinks coffee phone
+  Dialogue: 明天我来喝咖啡。
+  VeoPrompt: close-up, static camera, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen drinks coffee phone, close-up detail on scar, in
+
+Shot 12 [MCU][push] 5.7s
+  Characters: Su Nian
+  Action: Su Nian looks at
+  Dialogue: 别来了。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks at, in coffee shop, natura
+
+Shot 13 [MS][static] 5.7s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in coffee shop, natu
+
+Shot 14 [MCU][push] 5.7s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in coffee s
+
+
+--- 第11章 (22 shots, 90s) ---
+
+Shot 1 [WS][static] 5.2s
+  Characters: Chen Rui
+  Action: Chen Rui looks at
+  Dialogue: 苏老板，这是我们的评估团队。
+  VeoPrompt: wide shot, static camera, eye level, featuring Chen Rui (32yo Chinese man, square jaw, short hair, expensive watch), Chen Rui looks at, in coffee shop, natural daylight, soft shadows, neutral, observa
+
+Shot 2 [MCU][push] 5.2s
+  Characters: Su Nian, Chen Rui
+  Action: Su Nian puts down a cup
+  Dialogue: 公司给了最后期限。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Chen Rui (32yo Chinese man, square jaw, 
+
+Shot 3 [MS][static] 3.8s
+  Characters: Su Nian, Chen Rui
+  Action: Su Nian looks at
+  Dialogue: 你这栋楼的产权——
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Chen Rui (32yo Chinese man, square jaw, short hai
+
+Shot 4 [ECU][push] 3.9s
+  Characters: Su Nian
+  Action: Su Nian interacts with cup
+  VeoPrompt: extreme close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian interacts with cup, close-up de
+
+Shot 5 [MS][static] 3.8s
+  Characters: Su Nian
+  Action: Su Nian closes eyes
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian closes eyes, in coffee shop, natural dayl
+
+Shot 6 [CU][push] 3.9s
+  Characters: Su Nian
+  Action: all sounds fade to silence
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), all sounds fade to silence, in coffee shop, nat
+
+Shot 7 [MCU][static] 5.2s
+  Characters: Su Nian
+  Action: Su Nian says letter
+  Dialogue: ……老陈说的违规是真的。但我也查过——那栋楼的产权问题其实在三年前就解决了，公司故意隐瞒了这个信息。他们就是要逼她低价卖。我不该告诉她。但——
+  InnerVoice: ……老陈说的违规是真的。但我也查过——那栋楼的产权问题其实在三年前就解决了，公司故意隐瞒了这个信息。他们就是要逼她低价卖。我不该告诉她。但——
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian says letter, in coffee shop, natural 
+
+Shot 8 [CU][push] 3.9s
+  Characters: Chen Rui
+  Action: a vision flashes
+  Dialogue: 锐咖啡
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Chen Rui (32yo Chinese man, square jaw, short hair, expensive watch), a vision flashes, in coffee shop, natural daylight, soft shadows, neutral, obse
+
+Shot 9 [CU][static] 3.9s
+  Characters: Su Nian
+  Action: Su Nian puts down a cup
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian puts down a cup, in coffee shop, natural day
+
+Shot 10 [ECU][push] 3.9s
+  Characters: Su Nian, Chen Rui
+  Action: Su Nian looks down at
+  VeoPrompt: extreme close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Chen Rui (32yo Chinese man, square jaw,
+
+Shot 11 [MCU][static] 3.8s
+  Characters: Su Nian
+  Action: Su Nian asks
+  Dialogue: 陈总。
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian asks, in coffee shop, natural dayligh
+
+Shot 12 [MS][push] 3.8s
+  Characters: Su Nian, Chen Rui
+  Action: Su Nian stands up
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Chen Rui (32yo Chinese man, square jaw, shor
+
+Shot 13 [MCU][static] 3.8s
+  Characters: Chen Rui
+  Action: Chen Rui turns around
+  VeoPrompt: medium close-up, static camera, eye level, featuring Chen Rui (32yo Chinese man, square jaw, short hair, expensive watch), Chen Rui turns around, in coffee shop, natural daylight, soft shadows, neutra
+
+Shot 14 [MS][push] 5.2s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  Dialogue: 下周五之前。不管你知道什么。
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in coffee shop,
+
+Shot 15 [MCU][static] 3.8s
+  Characters: Su Nian
+  Action: the wind chimes ring
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), the wind chimes ring, in coffee shop, natural
+
+Shot 16 [CU][push] 3.9s
+  Characters: Su Nian
+  Action: Su Nian looks down at
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks down at, close-up detail on scar,
+
+Shot 17 [MS][static] 3.8s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in coffee shop, natu
+
+Shot 18 [MCU][push] 3.8s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in coffee s
+
+Shot 19 [CU][static] 3.9s
+  Characters: Su Nian
+  Action: Su Nian turns hand over
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian turns hand over, close-up detail on handwrit
+
+Shot 20 [CU][push] 3.9s
+  Characters: Su Nian
+  Action: Su Nian writes photo
+  Dialogue: 文件不存在
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian writes photo, close-up detail on photo,
+
+Shot 21 [MCU][static] 3.8s
+  Characters: Su Nian
+  Action: Su Nian trembles
+  VeoPrompt: medium close-up, static camera, low angle looking up, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian trembles, in coffee shop, 
+
+Shot 22 [CU][push] 3.9s
+  Characters: Su Nian
+  Action: Su Nian writes photo
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian writes photo, close-up detail on photo,
+
+
+--- 第12章 (25 shots, 90s) ---
+
+Shot 1 [WS][static] 3.3s
+  Characters: Su Nian
+  Action: Su Nian grinds coffee beans
+  VeoPrompt: wide shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian grinds coffee beans, in Nianxiang coffee sh
+
+Shot 2 [MS][push] 4.0s
+  Characters: Su Nian
+  Action: Su Nian grinds coffee beans Su Nian grinds coffee beans
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian grinds coffee beans Su Nian grinds c
+
+Shot 3 [MCU][static] 3.3s
+  Characters: Gu Shen
+  Action: Gu Shen stands up
+  Dialogue: 美式。
+  VeoPrompt: medium close-up, static camera, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen stands up, in Nianxiang coffee shop, natu
+
+Shot 4 [ECU][push] 3.3s
+  Characters: Su Nian
+  Action: a lipstick mark
+  VeoPrompt: extreme close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), a lipstick mark, close-up detail on lip
+
+Shot 5 [MCU][static] 3.3s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian picks up a cup
+  Dialogue: 你今天没喝。
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-frame
+
+Shot 6 [MS][push] 3.3s
+  Characters: Su Nian
+  Action: Su Nian interacts with cup
+  Dialogue: 什么？
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian interacts with cup, in Nianxiang cof
+
+Shot 7 [MCU][static] 4.0s
+  Characters: Gu Shen
+  Action: Gu Shen puts down a cup
+  Dialogue: 我放下杯子的时候，
+  VeoPrompt: medium close-up, static camera, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen puts down a cup, in Nianxiang coffee shop
+
+Shot 8 [ECU][push] 3.3s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian looks at painting
+  VeoPrompt: extreme close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver
+
+Shot 9 [MCU][static] 3.3s
+  Characters: Su Nian
+  Action: Su Nian says
+  Dialogue: 我不渴。
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian says, in Nianxiang coffee shop, natur
+
+Shot 10 [MS][push] 4.0s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian wipes the counter with a rag
+  Dialogue: 我查了一下。
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-fram
+
+Shot 11 [MCU][static] 3.3s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian says coffee
+  Dialogue: 你说'查了'什么？
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-frame
+
+Shot 12 [CU][push] 4.4s
+  Characters: Su Nian
+  Action: Su Nian picks up phone photo
+  Dialogue: 这是你外婆的旧照片。我在老城区的社区档案里找到的。
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian picks up phone photo, close-up detail o
+
+Shot 13 [CU][static] 4.4s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian looks at phone photo
+  Dialogue: 你看。
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-framed glass
+
+Shot 14 [CU][push] 3.3s
+  Characters: Su Nian
+  Action: Su Nian picks up coffee phone
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian picks up coffee phone, close-up detail 
+
+Shot 15 [CU][static] 3.3s
+  Characters: Su Nian
+  Action: Su Nian wipes photo
+  Dialogue: 这照片——
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian wipes photo, close-up detail on photo, in Ni
+
+Shot 16 [CU][push] 4.4s
+  Characters: Gu Shen
+  Action: Gu Shen says phone photo
+  Dialogue: 我也不知道。
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen says phone photo, close-up detail on photo,
+
+Shot 17 [MCU][static] 3.3s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian stands up
+  Dialogue: 你不舒服？
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-frame
+
+Shot 18 [MS][push] 3.3s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian looks at
+  Dialogue: 苏念。
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-fram
+
+Shot 19 [MCU][static] 4.0s
+  Characters: Su Nian
+  Action: Su Nian finishes drinking
+  Dialogue: 你每次喝完我的咖啡，都会出现这种表情。
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian finishes drinking, in Nianxiang coffe
+
+Shot 20 [MS][push] 3.3s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian stands up
+  Dialogue: 你在听什么？
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-fram
+
+Shot 21 [MCU][static] 3.3s
+  Characters: Su Nian
+  Action: Su Nian looks up
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks up, in Nianxiang coffee shop, n
+
+Shot 22 [MS][push] 3.3s
+  Characters: Su Nian
+  Action: Su Nian says
+  Dialogue: 我不知道你在说什么。
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian says, in Nianxiang coffee shop, natu
+
+Shot 23 [MCU][static] 4.0s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  Dialogue: 你知道。
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in Nianxiang cof
+
+Shot 24 [MS][push] 4.0s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian looks up Su Nian interacts with coffee Su Nian hears the lights come back on
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-fram
+
+Shot 25 [MCU][static] 3.3s
+  Characters: Gu Shen
+  Action: all sounds return
+  Dialogue: 灯泡老了。
+  VeoPrompt: medium close-up, static camera, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), all sounds return, in Nianxiang coffee shop, natu
+
+
+--- 第13章 (25 shots, 90s) ---
+
+Shot 1 [WS][static] 3.2s
+  Characters: Su Nian
+  Action: Su Nian walks in
+  Dialogue: 美式。
+  VeoPrompt: wide shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian walks in, in Nianxiang coffee shop, natural
+
+Shot 2 [MCU][push] 3.2s
+  Characters: Su Nian
+  Action: Su Nian says cup
+  Dialogue: 你这店，开了多久了？
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian says cup, in Nianxiang coffee sh
+
+Shot 3 [ECU][static] 3.2s
+  Characters: Su Nian
+  Action: Su Nian nods
+  Dialogue: 好地方。
+  VeoPrompt: extreme close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian nods, close-up detail on sticky note
+
+Shot 4 [CU][push] 3.2s
+  Characters: Su Nian
+  Action: Su Nian puts down a cup
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian puts down a cup, close-up detail on lip
+
+Shot 5 [MS][static] 3.2s
+  Characters: Su Nian
+  Action: Su Nian picks up a cup
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian picks up a cup, in Nianxiang coffee shop,
+
+Shot 6 [MCU][push] 3.2s
+  Characters: Su Nian
+  Action: Su Nian closes eyes
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian closes eyes, in Nianxiang coffee
+
+Shot 7 [CU][static] 3.2s
+  Characters: Su Nian
+  Action: all sounds fade to silence
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), all sounds fade to silence, in Nianxiang coffee shop
+
+Shot 8 [MCU][push] 4.6s
+  Characters: Su Nian
+  Action: Su Nian interacts with coffee
+  Dialogue: ……评估报告出来了。这栋楼的结构安全系数不达标，需要整体拆除。念想咖啡店所在的巷子——全部拆。工期三个月。我得把文件送到街道办。但这个消息不能提前泄露，不然那些
+  InnerVoice: ……评估报告出来了。这栋楼的结构安全系数不达标，需要整体拆除。念想咖啡店所在的巷子——全部拆。工期三个月。我得把文件送到街道办。但这个消息不能提前泄露，不然那些商户会闹……
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian interacts with coffee, in Nianxi
+
+Shot 9 [CU][static] 3.2s
+  Characters: Su Nian
+  Action: a vision flashes
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), a vision flashes, in Nianxiang coffee shop, natural 
+
+Shot 10 [ECU][rapid_push] 3.2s
+  Characters: Su Nian
+  Action: Su Nian opens eyes
+  VeoPrompt: extreme close-up, rapid push-in, low angle looking up, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian opens eyes, close-up deta
+
+Shot 11 [MCU][push] 3.2s
+  Characters: Su Nian
+  Action: Su Nian puts down a cup
+  Dialogue: 多少钱？
+  VeoPrompt: medium close-up, slow dolly forward, low angle looking up, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian puts down a cup, in N
+
+Shot 12 [MS][static] 3.9s
+  Characters: Su Nian
+  Action: Su Nian looks at coffee
+  Dialogue: 你这咖啡不错。
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks at coffee, in Nianxiang coffee shop
+
+Shot 13 [MCU][push] 3.2s
+  Characters: Su Nian
+  Action: Su Nian leaves
+  Dialogue: 以后可能喝不到了。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian leaves, in Nianxiang coffee shop
+
+Shot 14 [MS][static] 3.2s
+  Characters: Su Nian
+  Action: Su Nian sees
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian sees, in Nianxiang coffee shop, natural d
+
+Shot 15 [MCU][push] 3.9s
+  Characters: Su Nian
+  Action: Su Nian clenches fists
+  Dialogue: 老城区 街道办 拆迁公告
+  VeoPrompt: medium close-up, slow dolly forward, low angle looking up, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian clenches fists, in Ni
+
+Shot 16 [MS][static] 3.9s
+  Characters: Su Nian
+  Action: Su Nian interacts with coffee
+  Dialogue: 念想咖啡店 产权
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian interacts with coffee, in Nianxiang coffe
+
+Shot 17 [CU][push] 4.3s
+  Characters: Su Nian
+  Action: Su Nian puts down phone painting
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian puts down phone painting, in Nianxiang 
+
+Shot 18 [MCU][static] 3.2s
+  Characters: Su Nian
+  Action: Su Nian walks door window
+  Dialogue: 营业中
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian walks door window, in Nianxiang coffe
+
+Shot 19 [CU][push] 4.3s
+  Characters: Lin Ke
+  Action: Lin Ke looks at sticky note door
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Lin Ke (25yo Chinese woman, ponytail, colorful nails, large art bag), Lin Ke looks at sticky note door, close-up detail on sticky note, in Nianxiang 
+
+Shot 20 [CU][static] 3.2s
+  Characters: Su Nian
+  Action: Su Nian reaches out to touch
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian reaches out to touch, close-up detail on sti
+
+Shot 21 [CU][push] 4.3s
+  Characters: Su Nian
+  Action: Su Nian sees
+  Dialogue: 小念，如果你看到这行字，说明你已经忘了什么。别怕。有些东西不在脑子里，在杯子里。
+  InnerVoice: 小念，如果你看到这行字，说明你已经忘了什么。别怕。有些东西不在脑子里，在杯子里。
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian sees, close-up detail on sticky note, i
+
+Shot 22 [CU][static] 4.3s
+  Characters: Su Nian
+  Action: Su Nian stares at
+  Dialogue: 如果你看到这行字，说明你已经忘了什么
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stares at, close-up detail on handwriting, i
+
+Shot 23 [CU][push] 4.3s
+  Characters: Su Nian
+  Action: Su Nian interacts with sticky note
+  Dialogue: 拉花不是技术，是心意
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian interacts with sticky note, close-up de
+
+Shot 24 [CU][static] 4.3s
+  Characters: Su Nian
+  Action: Su Nian interacts with sticky note
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian interacts with sticky note, close-up detail 
+
+Shot 25 [MS][push] 3.2s
+  Characters: Su Nian
+  Action: rain falls
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), rain falls, in Nianxiang coffee shop, natura
+
+
+--- 第14章 (25 shots, 90s) ---
+
+Shot 1 [WS][static] 4.1s
+  Characters: Su Nian
+  Action: Su Nian reaches out to touch Su Nian picks up phone
+  VeoPrompt: wide shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian reaches out to touch Su Nian picks up phone
+
+Shot 2 [ECU][push] 4.6s
+  Characters: Su Nian
+  Action: Su Nian interacts with photo
+  Dialogue: 小念满月，妈妈抱着。
+  VeoPrompt: extreme close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian interacts with photo, close-up 
+
+Shot 3 [CU][static] 3.4s
+  Characters: Su Nian
+  Action: Su Nian stands photo
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands photo, close-up detail on photo, in N
+
+Shot 4 [ECU][push] 3.4s
+  Characters: Su Nian
+  Action: Su Nian stares at
+  VeoPrompt: extreme close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stares at, close-up detail on p
+
+Shot 5 [MS][static] 3.4s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in Nianxiang coffee 
+
+Shot 6 [CU][push] 3.4s
+  Characters: Su Nian
+  Action: Su Nian interacts with coffee
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian interacts with coffee, close-up detail 
+
+Shot 7 [MS][static] 3.4s
+  Characters: Su Nian, Gu Shen, Lin Ke, Chen Rui
+  Action: Su Nian puts down a cup
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-framed gl
+
+Shot 8 [MCU][pull] 3.4s
+  Characters: Su Nian
+  Action: Su Nian cries
+  Dialogue: 想不起来
+  VeoPrompt: medium close-up, slow dolly backward, high angle looking down, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian cries, in Nianxia
+
+Shot 9 [CU][static] 3.4s
+  Characters: Su Nian, Lin Ke
+  Action: Su Nian carries a coffee cup
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Lin Ke (25yo Chinese woman, ponytail, colorful nails
+
+Shot 10 [CU][push] 3.4s
+  Characters: Su Nian
+  Action: Su Nian reaches out to touch
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian reaches out to touch, close-up detail o
+
+Shot 11 [CU][static] 4.6s
+  Characters: Su Nian
+  Action: Su Nian sees
+  Dialogue: 小念，如果你看到这行字，说明你已经忘了什么。别怕。有些东西不在脑子里，在杯子里。
+  InnerVoice: 小念，如果你看到这行字，说明你已经忘了什么。别怕。有些东西不在脑子里，在杯子里。
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian sees, close-up detail on sticky note, in Nia
+
+Shot 12 [CU][push] 3.4s
+  Characters: Su Nian
+  Action: Su Nian sits down
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian sits down, close-up detail on cup wall,
+
+Shot 13 [CU][static] 3.4s
+  Characters: Su Nian
+  Action: Su Nian looks at painting
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks at painting, close-up detail on cup wa
+
+Shot 14 [MCU][push] 3.4s
+  Characters: Su Nian
+  Action: Su Nian hears
+  Dialogue: 小念，别再喝了。
+  InnerVoice: 小念，别再喝了。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian hears, in Nianxiang coffee shop,
+
+Shot 15 [MS][static] 3.4s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in Nianxiang coffee 
+
+Shot 16 [MCU][push] 4.1s
+  Characters: Su Nian
+  Action: Su Nian hears
+  Dialogue: 你喝得越多，忘得越多。忘得越多，喝得越多。停下来。
+  InnerVoice: 你喝得越多，忘得越多。忘得越多，喝得越多。停下来。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian hears, in Nianxiang coffee shop,
+
+Shot 17 [CU][static] 3.4s
+  Characters: Su Nian, Lin Ke
+  Action: Su Nian stands up
+  Dialogue: 苏念！
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Lin Ke (25yo Chinese woman, ponytail, colorful nails
+
+Shot 18 [MCU][push] 3.4s
+  Characters: Su Nian
+  Action: Su Nian clenches fists
+  VeoPrompt: medium close-up, slow dolly forward, low angle looking up, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian clenches fists, in Ni
+
+Shot 19 [MS][static] 3.4s
+  Characters: Su Nian
+  Action: Su Nian says
+  Dialogue: 我知道。
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian says, in Nianxiang coffee shop, natural d
+
+Shot 20 [MCU][push] 4.1s
+  Characters: Lin Ke
+  Action: Lin Ke stands in the scene
+  Dialogue: 你——你知道？
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Lin Ke (25yo Chinese woman, ponytail, colorful nails, large art bag), Lin Ke stands in the scene, in Nianxiang coffee shop, natural daylight, 
+
+Shot 21 [MS][static] 3.4s
+  Characters: Su Nian
+  Action: Su Nian answers
+  Dialogue: 苏念？
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian answers, in Nianxiang coffee shop, natura
+
+Shot 22 [MCU][push] 3.4s
+  Characters: Su Nian, Lin Ke
+  Action: Su Nian trembles
+  Dialogue: 我在。
+  VeoPrompt: medium close-up, slow dolly forward, low angle looking up, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Lin Ke (25yo Chinese woman, p
+
+Shot 23 [MS][static] 3.4s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in Nianxiang coffee 
+
+Shot 24 [MCU][push] 3.4s
+  Characters: Su Nian
+  Action: Su Nian says
+  Dialogue: 苏念，你在说什么？
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian says, in Nianxiang coffee shop, 
+
+Shot 25 [MS][pull] 3.4s
+  Characters: Su Nian
+  Action: Su Nian cries
+  Dialogue: 我不记得了。
+  VeoPrompt: medium shot, slow dolly backward, high angle looking down, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian cries, in Nianxiang c
+
+
+--- 第15章 (25 shots, 89s) ---
+
+Shot 1 [WS][static] 3.4s
+  Characters: Lin Ke
+  Action: Lin Ke stands in the scene
+  VeoPrompt: wide shot, static camera, eye level, featuring Lin Ke (25yo Chinese woman, ponytail, colorful nails, large art bag), Lin Ke stands in the scene, in Nianxiang coffee shop, natural daylight, soft shadow
+
+Shot 2 [MCU][push] 3.4s
+  Characters: Su Nian
+  Action: rain falls
+  Dialogue: 进来。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), rain falls, in Nianxiang coffee shop, na
+
+Shot 3 [MS][static] 3.4s
+  Characters: Su Nian, Lin Ke
+  Action: Su Nian walks in
+  Dialogue: 你昨天挂了。
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Lin Ke (25yo Chinese woman, ponytail, colorful na
+
+Shot 4 [MCU][push] 3.4s
+  Characters: Lin Ke
+  Action: Lin Ke sits down
+  Dialogue: 我知道。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Lin Ke (25yo Chinese woman, ponytail, colorful nails, large art bag), Lin Ke sits down, in Nianxiang coffee shop, natural daylight, soft shado
+
+Shot 5 [CU][static] 3.4s
+  Characters: Su Nian, Lin Ke
+  Action: Su Nian puts down
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Lin Ke (25yo Chinese woman, ponytail, colorful nails
+
+Shot 6 [MCU][push] 3.4s
+  Characters: Su Nian
+  Action: Su Nian says
+  Dialogue: 你说——我哥哥当年也是这样。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian says, in Nianxiang coffee shop, 
+
+Shot 7 [ECU][static] 4.6s
+  Characters: Lin Ke
+  Action: Lin Ke interacts with painting
+  VeoPrompt: extreme close-up, static camera, eye level, featuring Lin Ke (25yo Chinese woman, ponytail, colorful nails, large art bag), Lin Ke interacts with painting, close-up detail on cup wall, in Nianxiang co
+
+Shot 8 [MCU][push] 3.4s
+  Characters: Lin Ke, Su Yuan
+  Action: Lin Ke says
+  Dialogue: 你有哥哥。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Lin Ke (25yo Chinese woman, ponytail, colorful nails, large art bag), Su Yuan (young Chinese boy, round face, short hair, warm smile), Lin Ke 
+
+Shot 9 [MS][static] 3.4s
+  Characters: Su Nian
+  Action: Su Nian says
+  Dialogue: 我不记得。
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian says, in Nianxiang coffee shop, natural d
+
+Shot 10 [MCU][pull] 3.4s
+  Characters: Lin Ke
+  Action: Lin Ke looks up
+  Dialogue: 我知道你不记得。
+  VeoPrompt: medium close-up, slow dolly backward, high angle looking down, featuring Lin Ke (25yo Chinese woman, ponytail, colorful nails, large art bag), Lin Ke looks up, in Nianxiang coffee shop, low key lighti
+
+Shot 11 [MS][static] 4.1s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  Dialogue: 什么意思？
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in Nianxiang coffee 
+
+Shot 12 [ECU][push] 3.4s
+  Characters: Lin Ke
+  Action: Lin Ke turns hand over
+  VeoPrompt: extreme close-up, slow dolly forward, eye level, featuring Lin Ke (25yo Chinese woman, ponytail, colorful nails, large art bag), Lin Ke turns hand over, close-up detail on photo, in Nianxiang coffee s
+
+Shot 13 [MCU][static] 3.4s
+  Characters: Lin Ke, Su Yuan
+  Action: Lin Ke says door
+  Dialogue: 这是你和苏远。
+  VeoPrompt: medium close-up, static camera, eye level, featuring Lin Ke (25yo Chinese woman, ponytail, colorful nails, large art bag), Su Yuan (young Chinese boy, round face, short hair, warm smile), Lin Ke says 
+
+Shot 14 [CU][push] 4.6s
+  Characters: Su Nian, Su Yuan
+  Action: Su Nian looks at photo door
+  Dialogue: 苏远——
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Yuan (young Chinese boy, round face, short h
+
+Shot 15 [CU][static] 4.6s
+  Characters: Lin Ke, Su Yuan
+  Action: Lin Ke puts down phone photo
+  Dialogue: 苏远之墓
+  VeoPrompt: close-up, static camera, eye level, featuring Lin Ke (25yo Chinese woman, ponytail, colorful nails, large art bag), Su Yuan (young Chinese boy, round face, short hair, warm smile), Lin Ke puts down ph
+
+Shot 16 [MCU][push] 3.4s
+  Characters: Su Nian
+  Action: Su Nian looks at
+  Dialogue: 怎么死的？
+  VeoPrompt: medium close-up, slow dolly forward, low angle looking up, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks at, in Nianxian
+
+Shot 17 [MS][static] 3.4s
+  Characters: Lin Ke
+  Action: Lin Ke trembles
+  VeoPrompt: medium shot, static camera, low angle looking up, featuring Lin Ke (25yo Chinese woman, ponytail, colorful nails, large art bag), Lin Ke trembles, in Nianxiang coffee shop, low key lighting, deep shad
+
+Shot 18 [CU][push] 3.4s
+  Characters: Lin Ke
+  Action: Lin Ke hears
+  Dialogue: 他也有'能力'。
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Lin Ke (25yo Chinese woman, ponytail, colorful nails, large art bag), Lin Ke hears, in Nianxiang coffee shop, natural daylight, soft shadows, neutral
+
+Shot 19 [MCU][static] 3.4s
+  Characters: Su Nian
+  Action: Su Nian taps fingers
+  Dialogue: 代价呢？
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian taps fingers, in Nianxiang coffee sho
+
+Shot 20 [MS][push] 3.4s
+  Characters: Lin Ke
+  Action: Lin Ke hears
+  Dialogue: 代价——
+  VeoPrompt: medium shot, slow dolly forward, low angle looking up, featuring Lin Ke (25yo Chinese woman, ponytail, colorful nails, large art bag), Lin Ke hears, in Nianxiang coffee shop, low key lighting, deep sh
+
+Shot 21 [MCU][static] 3.4s
+  Characters: Su Nian, Lin Ke
+  Action: Su Nian says
+  Dialogue: 他忘掉了什么？
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Lin Ke (25yo Chinese woman, ponytail, colorfu
+
+Shot 22 [MS][push] 3.4s
+  Characters: Su Nian
+  Action: rain falls
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), rain falls, in Nianxiang coffee shop, natura
+
+Shot 23 [MCU][static] 3.4s
+  Characters: Su Nian
+  Action: Su Nian asks
+  Dialogue: 然后呢？
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian asks, in Nianxiang coffee shop, natur
+
+Shot 24 [MS][push] 3.4s
+  Characters: Lin Ke
+  Action: Lin Ke hears
+  Dialogue: 然后——
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Lin Ke (25yo Chinese woman, ponytail, colorful nails, large art bag), Lin Ke hears, in Nianxiang coffee shop, natural daylight, soft shadows, neut
+
+Shot 25 [MCU][static] 3.4s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in Nianxiang cof
+
+
+--- 第16章 (25 shots, 90s) ---
+
+Shot 1 [WS][static] 3.4s
+  Characters: Gu Shen
+  Action: Gu Shen puts down light
+  Dialogue: 灯泡。
+  VeoPrompt: wide shot, static camera, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen puts down light, in Nianxiang coffee shop, natu
+
+Shot 2 [MCU][push] 3.4s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian looks at light
+  Dialogue: 我自己换。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-
+
+Shot 3 [MS][static] 3.4s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian looks down at
+  Dialogue: 好了。
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-framed gl
+
+Shot 4 [MCU][push] 3.4s
+  Characters: Su Nian
+  Action: Su Nian looks at
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks at, in Nianxiang coffee sh
+
+Shot 5 [MS][static] 3.4s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian looks up
+  Dialogue: 顾深。
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-framed gl
+
+Shot 6 [ECU][push] 3.4s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian grinds coffee beans
+  VeoPrompt: extreme close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver
+
+Shot 7 [MS][static] 3.4s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in Nianxiang coffee 
+
+Shot 8 [CU][push] 3.4s
+  Characters: Gu Shen
+  Action: Gu Shen sees
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen sees, in Nianxiang coffee shop, natural day
+
+Shot 9 [ECU][static] 4.5s
+  Characters: Su Nian
+  Action: Su Nian interacts with coffee
+  Dialogue: 为什么是咖啡
+  VeoPrompt: extreme close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian interacts with coffee, close-up deta
+
+Shot 10 [MS][push] 4.1s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene Gu Shen looks at
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene Gu Shen looks at
+
+Shot 11 [MCU][static] 3.4s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian says coffee
+  Dialogue: 顾深。
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-frame
+
+Shot 12 [MS][push] 3.4s
+  Characters: Gu Shen
+  Action: Gu Shen looks at
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen looks at, in Nianxiang coffee shop, natu
+
+Shot 13 [MCU][static] 4.1s
+  Characters: Su Nian
+  Action: Su Nian says coffee
+  Dialogue: 你每次都要喝我的咖啡。
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian says coffee, in Nianxiang coffee shop
+
+Shot 14 [CU][push] 3.4s
+  Characters: Su Nian
+  Action: Su Nian picks up cup
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian picks up cup, close-up detail on cup wa
+
+Shot 15 [MS][static] 3.4s
+  Characters: Su Nian
+  Action: Su Nian closes eyes
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian closes eyes, in Nianxiang coffee shop, na
+
+Shot 16 [CU][push] 3.4s
+  Characters: Gu Shen
+  Action: Gu Shen carries a coffee cup
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen carries a coffee cup, in Nianxiang coffee s
+
+Shot 17 [MS][static] 4.1s
+  Characters: Su Nian
+  Action: Su Nian finishes drinking Su Nian says painting
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian finishes drinking Su Nian says painting, 
+
+Shot 18 [MCU][push] 3.4s
+  Characters: Su Nian
+  Action: Su Nian sits down
+  Dialogue: 念想咖啡店收购计划
+  VeoPrompt: medium close-up, slow dolly forward, low angle looking up, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian sits down, in Nianxia
+
+Shot 19 [CU][static] 3.4s
+  Characters: Su Nian
+  Action: the vision shatters
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), the vision shatters, in Nianxiang coffee shop, natur
+
+Shot 20 [CU][push] 3.4s
+  Characters: Su Nian
+  Action: Su Nian opens eyes
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian opens eyes, close-up detail on cup wall
+
+Shot 21 [CU][static] 4.5s
+  Characters: Su Nian
+  Action: Su Nian asks coffee sticky note
+  Dialogue: 为什么是咖啡
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian asks coffee sticky note, close-up detail on 
+
+Shot 22 [MCU][push] 3.4s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian looks at
+  Dialogue: 苏念？
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-
+
+Shot 23 [MS][static] 4.1s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian puts down a cup
+  Dialogue: 你喝完之后——
+  VeoPrompt: medium shot, static camera, low angle looking up, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silve
+
+Shot 24 [MCU][push] 3.4s
+  Characters: Su Nian
+  Action: Su Nian looks up
+  Dialogue: 你看到了什么？
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks up, in Nianxiang coffee sh
+
+Shot 25 [MS][static] 3.4s
+  Characters: Su Nian
+  Action: Su Nian sees Su Nian looks at
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian sees Su Nian looks at, in Nianxiang coffe
+
+
+--- 第17章 (25 shots, 90s) ---
+
+Shot 1 [WS][static] 4.0s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian looks at coffee door
+  Dialogue: 去哪？
+  VeoPrompt: wide shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-framed glas
+
+Shot 2 [MS][push] 3.3s
+  Characters: Su Nian
+  Action: Su Nian interacts with coffee
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian interacts with coffee, in Nianxiang 
+
+Shot 3 [MCU][static] 3.3s
+  Characters: Su Nian, Gu Shen
+  Action: rain falls
+  Dialogue: 这里。
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-frame
+
+Shot 4 [MS][push] 4.0s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian carries a coffee cup
+  Dialogue: 那天你穿了一件灰色西装。
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-fram
+
+Shot 5 [MCU][static] 3.3s
+  Characters: Su Nian
+  Action: Su Nian looks down at
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks down at, in Nianxiang coffee sh
+
+Shot 6 [MS][push] 3.3s
+  Characters: Gu Shen
+  Action: Gu Shen walks door
+  Dialogue: 装修中，暂停营业。
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen walks door, in Nianxiang coffee shop, na
+
+Shot 7 [MCU][static] 3.3s
+  Characters: Su Nian
+  Action: Su Nian looks at
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks at, in Nianxiang coffee shop, n
+
+Shot 8 [MS][push] 3.3s
+  Characters: Gu Shen
+  Action: Gu Shen says
+  Dialogue: 然后你问我——为什么想收购你的店。
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen says, in Nianxiang coffee shop, natural 
+
+Shot 9 [MCU][static] 4.0s
+  Characters: Su Nian
+  Action: Su Nian interacts with umbrella
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian interacts with umbrella, in Nianxiang
+
+Shot 10 [MS][push] 3.3s
+  Characters: Su Nian
+  Action: Su Nian asks
+  Dialogue: 你现在能回答吗？
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian asks, in Nianxiang coffee shop, natu
+
+Shot 11 [MCU][static] 3.3s
+  Characters: Gu Shen
+  Action: Gu Shen looks at
+  Dialogue: 我的决定是——
+  VeoPrompt: medium close-up, static camera, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen looks at, in Nianxiang coffee shop, natur
+
+Shot 12 [MS][push] 4.0s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  Dialogue: 但公司——
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in Nianxiang co
+
+Shot 13 [MCU][static] 3.3s
+  Characters: Gu Shen
+  Action: Gu Shen says
+  Dialogue: 我已经辞职了。
+  VeoPrompt: medium close-up, static camera, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen says, in Nianxiang coffee shop, natural d
+
+Shot 14 [MS][push] 3.3s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian sits down
+  Dialogue: 你为什么辞职？
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-fram
+
+Shot 15 [MCU][static] 4.0s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene Gu Shen walks
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene Gu Shen walks, in
+
+Shot 16 [MS][push] 3.3s
+  Characters: Gu Shen
+  Action: Gu Shen sees
+  Dialogue: 你在这里读过我一次。
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen sees, in Nianxiang coffee shop, natural 
+
+Shot 17 [MCU][static] 4.0s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian finishes drinking
+  Dialogue: 你看到了什么？
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-frame
+
+Shot 18 [MS][push] 3.3s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian trembles
+  Dialogue: 你从来没用那种眼神看过我。
+  VeoPrompt: medium shot, slow dolly forward, low angle looking up, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, 
+
+Shot 19 [MCU][static] 4.0s
+  Characters: Su Nian
+  Action: Su Nian interacts with umbrella
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian interacts with umbrella, in Nianxiang
+
+Shot 20 [MS][push] 3.3s
+  Characters: Su Nian
+  Action: Su Nian says
+  Dialogue: 你知道我在听什么。
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian says, in Nianxiang coffee shop, natu
+
+Shot 21 [MCU][static] 4.0s
+  Characters: Gu Shen
+  Action: Gu Shen finishes drinking
+  Dialogue: 我不确定。
+  VeoPrompt: medium close-up, static camera, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen finishes drinking, in Nianxiang coffee sh
+
+Shot 22 [MS][push] 3.3s
+  Characters: Su Nian
+  Action: Su Nian sees
+  Dialogue: 你看到了？
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian sees, in Nianxiang coffee shop, natu
+
+Shot 23 [ECU][static] 3.3s
+  Characters: Gu Shen
+  Action: Gu Shen finishes drinking
+  Dialogue: 你的手。
+  VeoPrompt: extreme close-up, static camera, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen finishes drinking, close-up detail on ba
+
+Shot 24 [MCU][push] 4.8s
+  Characters: Su Nian
+  Action: Su Nian looks down at Su Nian says Gu Shen says Su Nian cries Su Nian hears Su Nian picks up
+  Dialogue: 你知道代价是什么。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks down at Su Nian says Gu Sh
+
+Shot 25 [ECU][static] 3.3s
+  Characters: Su Nian
+  Action: Su Nian interacts with photo
+  VeoPrompt: extreme close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian interacts with photo, close-up detai
+
+
+--- 第18章 (25 shots, 89s) ---
+
+Shot 1 [WS][static] 3.4s
+  Characters: Chen Rui
+  Action: Chen Rui sits down
+  Dialogue: 意式浓缩。
+  VeoPrompt: wide shot, static camera, eye level, featuring Chen Rui (32yo Chinese man, square jaw, short hair, expensive watch), Chen Rui sits down, in Nianxiang coffee shop, natural daylight, soft shadows, neutr
+
+Shot 2 [MCU][push] 3.4s
+  Characters: Su Nian, Chen Rui
+  Action: Su Nian puts down a cup
+  Dialogue: 什么？
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Chen Rui (32yo Chinese man, square jaw, 
+
+Shot 3 [MS][static] 3.4s
+  Characters: Su Nian, Chen Rui
+  Action: Su Nian looks at letter
+  Dialogue: 为什么？
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Chen Rui (32yo Chinese man, square jaw, short hai
+
+Shot 4 [ECU][push] 3.4s
+  Characters: Chen Rui
+  Action: Chen Rui takes a sip
+  VeoPrompt: extreme close-up, slow dolly forward, eye level, featuring Chen Rui (32yo Chinese man, square jaw, short hair, expensive watch), Chen Rui takes a sip, close-up detail on cup wall, in Nianxiang coffee 
+
+Shot 5 [MCU][static] 3.4s
+  Characters: Su Nian
+  Action: Su Nian asks
+  Dialogue: 你知道我以前是做什么的吗？
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian asks, in Nianxiang coffee shop, natur
+
+Shot 6 [ECU][push] 3.4s
+  Characters: Su Nian, Chen Rui
+  Action: Su Nian shakes head
+  Dialogue: 锐咖啡
+  VeoPrompt: extreme close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Chen Rui (32yo Chinese man, square jaw,
+
+Shot 7 [MCU][static] 3.4s
+  Characters: Chen Rui
+  Action: Chen Rui says
+  Dialogue: 这是我开的。
+  VeoPrompt: medium close-up, static camera, eye level, featuring Chen Rui (32yo Chinese man, square jaw, short hair, expensive watch), Chen Rui says, in Nianxiang coffee shop, natural daylight, soft shadows, neut
+
+Shot 8 [CU][push] 3.4s
+  Characters: Su Nian
+  Action: Su Nian looks at photo door
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks at photo door, close-up detail on
+
+Shot 9 [MCU][static] 3.4s
+  Characters: Su Nian
+  Action: Su Nian asks
+  Dialogue: 生意好吗？
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian asks, in Nianxiang coffee shop, natur
+
+Shot 10 [MS][push] 3.4s
+  Characters: Chen Rui
+  Action: Chen Rui says
+  Dialogue: 不好。
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Chen Rui (32yo Chinese man, square jaw, short hair, expensive watch), Chen Rui says, in Nianxiang coffee shop, natural daylight, soft shadows, neu
+
+Shot 11 [CU][static] 4.6s
+  Characters: Chen Rui
+  Action: Chen Rui puts down phone photo
+  Dialogue: 这是我老婆。
+  VeoPrompt: close-up, static camera, eye level, featuring Chen Rui (32yo Chinese man, square jaw, short hair, expensive watch), Chen Rui puts down phone photo, close-up detail on photo, in Nianxiang coffee shop, 
+
+Shot 12 [MCU][push] 3.4s
+  Characters: Su Nian, Chen Rui
+  Action: Su Nian looks at
+  Dialogue: 我卖了。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Chen Rui (32yo Chinese man, square jaw, 
+
+Shot 13 [MS][static] 3.4s
+  Characters: Su Nian
+  Action: Su Nian interacts with phone
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian interacts with phone, in Nianxiang coffee
+
+Shot 14 [MCU][push] 3.4s
+  Characters: Su Nian, Chen Rui
+  Action: Su Nian sits coffee phone
+  Dialogue: 后来呢？
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Chen Rui (32yo Chinese man, square jaw, 
+
+Shot 15 [MS][static] 3.4s
+  Characters: Su Nian
+  Action: Su Nian takes a sip
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian takes a sip, in Nianxiang coffee shop, na
+
+Shot 16 [MCU][push] 3.4s
+  Characters: Su Nian
+  Action: Su Nian trembles
+  Dialogue: 然后我发现——
+  VeoPrompt: medium close-up, slow dolly forward, low angle looking up, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian trembles, in Nianxian
+
+Shot 17 [MS][static] 4.1s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  Dialogue: 忘掉什么？
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in Nianxiang coffee 
+
+Shot 18 [MCU][push] 4.1s
+  Characters: Chen Rui
+  Action: Chen Rui says coffee
+  Dialogue: 忘掉我为什么喜欢咖啡。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Chen Rui (32yo Chinese man, square jaw, short hair, expensive watch), Chen Rui says coffee, in Nianxiang coffee shop, natural daylight, soft s
+
+Shot 19 [MS][static] 3.4s
+  Characters: Su Nian, Chen Rui
+  Action: Su Nian says
+  Dialogue: 所以你来收购我的店——
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Chen Rui (32yo Chinese man, square jaw, short hai
+
+Shot 20 [MCU][push] 3.4s
+  Characters: Su Nian
+  Action: Su Nian interacts with letter
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian interacts with letter, in Nianxi
+
+Shot 21 [MS][static] 3.4s
+  Characters: Su Nian
+  Action: Su Nian says
+  Dialogue: 签了吧。
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian says, in Nianxiang coffee shop, natural d
+
+Shot 22 [MCU][push] 4.1s
+  Characters: Su Nian
+  Action: Su Nian looks at letter
+  Dialogue: 你跟公司撒了谎。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks at letter, in Nianxiang co
+
+Shot 23 [MS][static] 3.4s
+  Characters: Chen Rui
+  Action: Chen Rui says
+  Dialogue: 我跟公司说了实话。
+  VeoPrompt: medium shot, static camera, eye level, featuring Chen Rui (32yo Chinese man, square jaw, short hair, expensive watch), Chen Rui says, in Nianxiang coffee shop, natural daylight, soft shadows, neutral,
+
+Shot 24 [MCU][push] 4.1s
+  Characters: Su Nian
+  Action: Su Nian stands in the scene
+  Dialogue: 是谁？
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in Nianxian
+
+Shot 25 [MS][static] 3.4s
+  Characters: Chen Rui
+  Action: Chen Rui says
+  Dialogue: 是我现在这家公司的母公司。
+  VeoPrompt: medium shot, static camera, eye level, featuring Chen Rui (32yo Chinese man, square jaw, short hair, expensive watch), Chen Rui says, in Nianxiang coffee shop, natural daylight, soft shadows, neutral,
+
+
+--- 第19章 (21 shots, 90s) ---
+
+Shot 1 [WS][static] 5.8s
+  Characters: Su Nian
+  Action: Su Nian looks at sticky note
+  Dialogue: 小念，美式要九十二度，不多不少。
+  VeoPrompt: wide shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks at sticky note, close-up detail on st
+
+Shot 2 [ECU][push] 5.8s
+  Characters: Su Nian
+  Action: rain falls
+  Dialogue: 小念，有些味道，不是用舌头记住的。是用心。你忘了的东西，都在咖啡里。
+  InnerVoice: 小念，有些味道，不是用舌头记住的。是用心。你忘了的东西，都在咖啡里。
+  VeoPrompt: extreme close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), rain falls, close-up detail on sticky n
+
+Shot 3 [CU][static] 4.1s
+  Characters: Su Nian
+  Action: Su Nian stares at
+  Dialogue: 都在咖啡里
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stares at, close-up detail on handwriting, i
+
+Shot 4 [MS][push] 3.7s
+  Characters: Su Nian
+  Action: Su Nian picks up coffee
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian picks up coffee, in narrow alley, na
+
+Shot 5 [MCU][static] 3.7s
+  Characters: Su Nian
+  Action: Su Nian grinds coffee beans
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian grinds coffee beans, in narrow alley,
+
+Shot 6 [MS][push] 3.7s
+  Characters: Su Nian
+  Action: Su Nian grinds coffee beans
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian grinds coffee beans, in narrow alley
+
+Shot 7 [ECU][static] 4.1s
+  Characters: Su Nian
+  Action: Su Nian picks up a cup
+  VeoPrompt: extreme close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian picks up a cup, close-up detail on c
+
+Shot 8 [CU][push] 5.8s
+  Characters: Su Nian
+  Action: Su Nian puts down a cup
+  Dialogue: 有些味道，不是用舌头记住的
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian puts down a cup, close-up detail on sti
+
+Shot 9 [CU][static] 4.1s
+  Characters: Su Nian
+  Action: Su Nian reaches out to touch
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian reaches out to touch, close-up detail on sti
+
+Shot 10 [MS][push] 3.7s
+  Characters: Su Nian
+  Action: Su Nian closes eyes
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian closes eyes, in narrow alley, natura
+
+Shot 11 [MCU][static] 3.7s
+  Characters: Su Nian
+  Action: Su Nian grinds coffee beans
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian grinds coffee beans, in narrow alley,
+
+Shot 12 [MS][push] 3.7s
+  Characters: Su Nian
+  Action: Su Nian opens eyes
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian opens eyes, in narrow alley, natural
+
+Shot 13 [CU][pull] 5.8s
+  Characters: Su Nian
+  Action: Su Nian cries
+  Dialogue: 小念，你第一次拉花的时候才五岁。奶泡洒了一桌子，你哭了。我告诉你——拉花不是技术，是心意。
+  InnerVoice: 小念，你第一次拉花的时候才五岁。奶泡洒了一桌子，你哭了。我告诉你——拉花不是技术，是心意。
+  VeoPrompt: close-up, slow dolly backward, high angle looking down, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian cries, close-up detail o
+
+Shot 14 [CU][static] 4.1s
+  Characters: Su Nian
+  Action: Su Nian cries
+  VeoPrompt: close-up, static camera, high angle looking down, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian cries, close-up detail on cup 
+
+Shot 15 [MS][push] 3.7s
+  Characters: Su Nian
+  Action: Su Nian grinds coffee beans
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian grinds coffee beans, in narrow alley
+
+Shot 16 [MCU][static] 3.7s
+  Characters: Su Nian
+  Action: Su Nian turns around
+  Dialogue: 休息中
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian turns around, in narrow alley, natura
+
+Shot 17 [MS][push] 3.7s
+  Characters: Su Nian
+  Action: Su Nian interacts with door
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian interacts with door, in narrow alley
+
+Shot 18 [CU][static] 5.8s
+  Characters: Su Nian
+  Action: Su Nian drinks coffee sticky note
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian drinks coffee sticky note, close-up detail o
+
+Shot 19 [MCU][push] 3.7s
+  Characters: Su Nian
+  Action: Su Nian interacts with coffee
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian interacts with coffee, in narrow
+
+Shot 20 [MS][static] 3.7s
+  Characters: Su Nian
+  Action: Su Nian looks at
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks at, in narrow alley, natural daylig
+
+Shot 21 [CU][push] 4.1s
+  Characters: Su Nian
+  Action: Su Nian interacts with coffee
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian interacts with coffee, close-up detail 
+
+
+--- 第20章 (25 shots, 89s) ---
+
+Shot 1 [WS][static] 3.3s
+  Characters: Su Nian
+  Action: Su Nian interacts with coffee
+  VeoPrompt: wide shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian interacts with coffee, in Nianxiang coffee 
+
+Shot 2 [ECU][push] 4.5s
+  Characters: Su Nian
+  Action: Su Nian interacts with sticky note
+  Dialogue: 营业中
+  VeoPrompt: extreme close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian interacts with sticky note, clo
+
+Shot 3 [MS][static] 3.3s
+  Characters: Su Nian
+  Action: Su Nian grinds coffee beans
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian grinds coffee beans, in Nianxiang coffee 
+
+Shot 4 [ECU][push] 3.3s
+  Characters: Su Nian
+  Action: Su Nian carries a coffee cup
+  VeoPrompt: extreme close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian carries a coffee cup, close-up 
+
+Shot 5 [MCU][static] 3.3s
+  Characters: Gu Shen
+  Action: Gu Shen walks in
+  Dialogue: 美式。
+  VeoPrompt: medium close-up, static camera, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen walks in, in Nianxiang coffee shop, natur
+
+Shot 6 [CU][push] 3.3s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian grinds coffee beans
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-framed 
+
+Shot 7 [MS][static] 4.0s
+  Characters: Su Nian
+  Action: Su Nian wipes the counter with a rag
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian wipes the counter with a rag, in Nianxian
+
+Shot 8 [MCU][push] 3.3s
+  Characters: Gu Shen
+  Action: Gu Shen says
+  Dialogue: 你今天没喝。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen says, in Nianxiang coffee shop, natu
+
+Shot 9 [MS][static] 3.3s
+  Characters: Su Nian
+  Action: Su Nian says
+  Dialogue: 为什么？
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian says, in Nianxiang coffee shop, natural d
+
+Shot 10 [CU][push] 3.3s
+  Characters: Su Nian
+  Action: Su Nian looks at
+  Dialogue: 因为——
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks at, close-up detail on scar, in N
+
+Shot 11 [MS][static] 3.3s
+  Characters: Gu Shen
+  Action: Gu Shen puts down a cup
+  VeoPrompt: medium shot, static camera, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen puts down a cup, in Nianxiang coffee shop, na
+
+Shot 12 [MCU][push] 3.3s
+  Characters: Su Nian
+  Action: Su Nian says
+  Dialogue: 你已经忘了很多。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian says, in Nianxiang coffee shop, 
+
+Shot 13 [MS][static] 4.0s
+  Characters: Su Nian
+  Action: Su Nian says
+  Dialogue: 我不记得我爸妈。不记得我外婆的声音。不记得我哥哥。
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian says, in Nianxiang coffee shop, natural d
+
+Shot 14 [MCU][push] 4.0s
+  Characters: Su Nian
+  Action: Su Nian interacts with coffee
+  Dialogue: 但我记得怎么冲咖啡。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian interacts with coffee, in Nianxi
+
+Shot 15 [MS][static] 3.3s
+  Characters: Gu Shen
+  Action: Gu Shen looks at
+  Dialogue: 那够吗？
+  VeoPrompt: medium shot, static camera, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen looks at, in Nianxiang coffee shop, natural d
+
+Shot 16 [MCU][push] 4.0s
+  Characters: Su Nian
+  Action: Su Nian says coffee
+  Dialogue: 因为咖啡不在脑子里。在手里。
+  VeoPrompt: medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian says coffee, in Nianxiang coffee
+
+Shot 17 [CU][static] 3.3s
+  Characters: Gu Shen
+  Action: Gu Shen takes a sip
+  Dialogue: 我明天还来。
+  VeoPrompt: close-up, static camera, eye level, featuring Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Gu Shen takes a sip, close-up detail on cup wall, in Nia
+
+Shot 18 [MS][push] 3.3s
+  Characters: Su Nian
+  Action: Su Nian looks at
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks at, in Nianxiang coffee shop, 
+
+Shot 19 [MCU][static] 3.3s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian stands up
+  Dialogue: 苏念。
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-frame
+
+Shot 20 [CU][push] 3.3s
+  Characters: Su Nian, Gu Shen
+  Action: Su Nian leaves
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Gu Shen (30yo Chinese man, tall, silver-framed 
+
+Shot 21 [MS][static] 3.3s
+  Characters: Su Nian
+  Action: Su Nian picks up a cup
+  VeoPrompt: medium shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian picks up a cup, in Nianxiang coffee shop,
+
+Shot 22 [CU][push] 3.3s
+  Characters: Su Nian
+  Action: Su Nian puts down a cup
+  VeoPrompt: close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian puts down a cup, close-up detail on cup
+
+Shot 23 [CU][static] 4.5s
+  Characters: Su Nian
+  Action: Su Nian looks at sticky note painting
+  VeoPrompt: close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks at sticky note painting, close-up deta
+
+Shot 24 [MS][push] 4.0s
+  Characters: Su Nian
+  Action: Su Nian wipes the counter with a rag
+  VeoPrompt: medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian wipes the counter with a rag, in Nia
+
+Shot 25 [MCU][static] 4.0s
+  Characters: Su Nian
+  Action: Su Nian looks at coffee window Su Nian stands in the scene
+  VeoPrompt: medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks at coffee window Su Nian stands
+

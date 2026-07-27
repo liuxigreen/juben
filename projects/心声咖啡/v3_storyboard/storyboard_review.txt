@@ -1,0 +1,649 @@
+============================================================
+《心声咖啡》全20章分镜数据
+SmartAdapter v3 | 20/20 PASS | 401 shots
+0 errors | 0 warnings | 0 Chinese chars in prompts
+============================================================
+
+=== Ch1 (17 shots, 89s) ===
+   1. [WS][static]6.6s Su Nian | Su Nian wipes the counter with a rag
+   2. [MCU][push]4.6s Su Nian | Su Nian walks in
+      dlg:美式，热的。
+   3. [ECU][static]5.1s Su Nian | Su Nian wipes a table
+   4. [MS][push]4.6s Su Nian | Su Nian picks up a cup
+   5. [ECU][static]5.1s Su Nian | Su Nian takes a sip
+   6. [CU][push]5.1s Su Nian | all sounds fade to silence
+   7. [MCU][static]4.6s Su Nian | Su Nian stands in the scene
+   8. [MS][push]6.6s Su Nian | Su Nian walks contract
+      dlg:……这个月KPI又完不成了。老陈说再不签下来就让我走人。那家 | voice:……这个月KPI又完不成了。老陈说再不签下来就让我走人。那家
+   9. [CU][rapid_push]4.6s Su Nian | Su Nian opens eyes
+  10. [CU][push]5.1s Su Nian | all sounds vanish
+  11. [CU][static]5.1s Su Nian | Su Nian looks down at
+  12. [CU][push]5.1s Su Nian | a faint mark
+  13. [CU][static]5.1s Su Nian | Su Nian stands up
+      dlg:多少钱？
+  14. [MS][push]4.6s Su Nian | Su Nian leaves
+  15. [CU][static]7.3s Su Nian | Su Nian walks in
+      dlg:……那家店……合同都准备好了……
+  16. [CU][push]5.1s Su Nian | a lipstick mark
+  17. [CU][static]5.1s Su Nian | the scar is still visible
+
+=== Ch2 (18 shots, 89s) ===
+   1. [WS][static]4.8s Su Nian | Su Nian stares at
+   2. [MS][push]4.3s Su Nian | Su Nian takes a sip
+   3. [CU][static]6.8s Su Nian | all sounds fade to silence
+      dlg:……前女友说我不懂感情。也许她说得对。但我也不懂为什么隔壁那 | voice:……前女友说我不懂感情。也许她说得对。但我也不懂为什么隔壁那
+   4. [MCU][push]4.3s Su Nian | Su Nian puts down a cup
+   5. [ECU][static]4.8s Su Nian | Su Nian looks down at
+   6. [CU][push]4.3s Su Nian | Su Nian stands in the scene
+   7. [MCU][static]6.2s Su Nian | Su Nian stands in the scene
+      dlg:想不起来什么时候划的
+   8. [MS][push]4.3s Su Nian | Su Nian stands in the scene
+   9. [ECU][static]4.8s Su Nian | a faint mark
+  10. [MCU][push]4.3s Lin Ke | Lin Ke looks at
+      dlg:连看书都能受伤
+  11. [MS][static]4.3s Su Nian | Su Nian stands in the scene
+  12. [MCU][push]6.2s Su Nian | Su Nian stands in the scene
+      dlg:你好。
+  13. [MS][static]4.3s Su Nian | Su Nian looks up
+  14. [MCU][push]6.2s Gu Shen | Gu Shen asks business card
+      dlg:我叫顾深。对面写字楼的。
+  15. [MS][static]6.2s Su Nian,Gu Shen | Su Nian looks at business card
+      dlg:不考虑。
+  16. [MCU][push]4.3s Gu Shen | Gu Shen turns around
+      dlg:好吧。
+  17. [MS][static]4.3s Su Nian | Su Nian picks up cup
+  18. [CU][rapid_push]4.8s Su Nian | Su Nian turns hand over
+
+=== Ch3 (15 shots, 90s) ===
+   1. [WS][static]5.7s Su Nian,Gu Shen | Su Nian says coffee
+      dlg:你记得我喝什么？
+   2. [MS][push]5.7s Gu Shen | Gu Shen drinks coffee cup
+   3. [MCU][static]5.7s Su Nian | Su Nian closes eyes
+   4. [CU][pull]6.2s Gu Shen | Gu Shen cries
+      dlg:为什么你不出来追我？ | voice:为什么你不出来追我？
+   5. [CU][static]6.2s Su Nian | the vision shatters
+   6. [MCU][pull]5.7s Su Nian | Su Nian opens eyes
+   7. [ECU][static]6.2s Su Nian | Su Nian stands in the scene
+   8. [MCU][push]7.5s Su Nian | Su Nian stands in the scene
+      dlg:你还好吗？
+   9. [MS][pull]5.7s Su Nian,Gu Shen | Su Nian frowns
+      dlg:没事。
+  10. [MCU][static]5.7s Gu Shen | Gu Shen picks up a cup
+      dlg:不用。
+  11. [MS][push]5.7s Su Nian | Su Nian leaves
+  12. [ECU][static]6.2s Su Nian | the scar is still visible
+  13. [CU][push]6.2s Su Nian | the scar has vanished
+  14. [MCU][rapid_push]5.7s Su Nian | Su Nian sees
+  15. [MS][static]5.7s Su Nian | Su Nian interacts with coffee
+
+=== Ch4 (15 shots, 89s) ===
+   1. [WS][static]4.9s Lin Ke | Lin Ke interacts with door
+   2. [MCU][push]7.0s Su Nian | Su Nian stares at
+      dlg:外婆的店……门口有这棵树？
+   3. [MS][static]7.0s Su Nian,Gu Shen,Lin Ke | Su Nian finishes drinking
+      dlg:你最近太累了。
+   4. [ECU][push]5.4s Su Nian,Gu Shen,Lin Ke | Su Nian nods
+      dlg:锐见投资。苏念，他是来收购的。
+   5. [CU][static]7.5s Su Nian,Gu Shen,Lin Ke | Su Nian looks at coffee cup
+      dlg:这是你外婆。你还记得她冲咖啡的样子吗？
+   6. [MCU][push]4.9s Su Nian | Su Nian looks at painting
+   7. [MS][static]4.9s Su Nian | Su Nian stands in the scene
+   8. [MCU][push]4.9s Su Nian | Su Nian says
+      dlg:不太记得了。
+   9. [MS][static]4.9s Lin Ke | Lin Ke says painting
+  10. [MCU][push]4.9s Su Nian | Su Nian looks at door
+  11. [ECU][static]5.4s Gu Shen | Gu Shen looks down at
+  12. [CU][push]7.5s Lin Ke | the scar is still visible
+      dlg:送给小念。希望你永远记得。
+  13. [MS][static]4.9s Su Nian | Su Nian wipes a table
+  14. [CU][push]7.5s Su Nian | the lights come back on
+      dlg:小念，记住：拉花不是技术，是心意。
+  15. [CU][static]7.5s Su Nian | Su Nian looks at coffee sticky note
+
+=== Ch5 (16 shots, 90s) ===
+   1. [WS][static]6.9s Gu Shen,Chen Rui | Gu Shen looks at contract
+      dlg:苏老板，久仰。
+   2. [MCU][push]6.9s Su Nian,Chen Rui | Su Nian writes coffee contract
+      dlg:不卖。
+   3. [MS][static]4.8s Su Nian,Chen Rui | Su Nian takes a sip
+      dlg:你喝什么？
+   4. [ECU][push]5.3s Su Nian | Su Nian looks at
+   5. [MS][static]4.8s Su Nian | Su Nian closes eyes
+   6. [CU][push]5.3s Su Nian | all sounds fade to silence
+   7. [MCU][static]6.9s Su Nian | Su Nian says coffee
+      dlg:……条件开得够高了。她不识货。但老陈说得对，这条街要改造，她 | voice:……条件开得够高了。她不识货。但老陈说得对，这条街要改造，她
+   8. [CU][push]5.3s Chen Rui | a vision flashes
+      dlg:锐咖啡
+   9. [CU][static]5.3s Su Nian | Su Nian puts down a cup
+  10. [MCU][push]6.9s Chen Rui | Chen Rui says business card
+      dlg:——你考虑一下。我的名片——
+  11. [MS][static]4.8s Su Nian | Su Nian says coffee
+      dlg:你也开过咖啡店。
+  12. [MCU][push]4.8s Su Nian,Chen Rui | Su Nian picks up coffee
+      dlg:什么？
+  13. [MS][static]4.8s Chen Rui | Chen Rui stands in the scene
+  14. [MCU][push]6.9s Su Nian | Su Nian stands in the scene
+      dlg:你怎么知道的？
+  15. [ECU][static]5.3s Su Nian | Su Nian looks down at
+  16. [CU][rapid_push]4.8s Su Nian | Su Nian stares at
+
+=== Ch6 (17 shots, 90s) ===
+   1. [WS][static]4.7s Gu Shen | rain falls
+   2. [MCU][push]6.8s Su Nian | Su Nian puts down door window
+      dlg:美式。
+   3. [MS][static]4.7s Su Nian | Su Nian says cup
+      dlg:你每天都来。
+   4. [MCU][push]4.7s Gu Shen | rain falls
+      dlg:你的咖啡比楼下的好。
+   5. [MS][static]4.7s Su Nian | Su Nian turns around
+   6. [MCU][push]4.7s Gu Shen | Gu Shen says
+      dlg:等一下。
+   7. [ECU][static]7.4s Su Nian,Gu Shen | Su Nian carries a coffee cup
+      dlg:看到过画面
+   8. [CU][push]4.7s Gu Shen | Gu Shen finishes drinking
+   9. [MS][static]4.7s Su Nian | Su Nian picks up a cup
+  10. [ECU][push]5.3s Su Nian | Su Nian closes eyes
+  11. [CU][static]5.3s Gu Shen | Gu Shen sits down
+  12. [MCU][push]6.8s Su Nian | Su Nian looks at coffee contract
+      dlg:为什么要亲自来？让小李去谈就行了。但那家店……那个咖啡师…… | voice:为什么要亲自来？让小李去谈就行了。但那家店……那个咖啡师……
+  13. [CU][static]5.3s Su Nian | Su Nian puts down a cup
+  14. [CU][push]5.3s Su Nian | the scar is still visible
+  15. [CU][static]5.3s Su Nian | Su Nian washes photo
+  16. [MS][push]4.7s Su Nian,Gu Shen | Su Nian leaves
+  17. [CU][static]4.7s Su Nian | rain falls
+
+=== Ch7 (10 shots, 75s) ===
+   1. [WS][pull]7.5s Su Nian | Su Nian cries
+      dlg:你从来不听我说话
+   2. [MS][static]7.5s Su Nian | Su Nian takes a sip
+   3. [MCU][push]7.5s Su Nian | Su Nian closes eyes
+   4. [CU][static]7.5s Su Nian | all sounds fade to silence
+   5. [MCU][push]7.5s Su Nian | Su Nian stands in the scene
+      dlg:……他不知道我为什么生气。他永远不知道。我只是想让他记住我的 | voice:……他不知道我为什么生气。他永远不知道。我只是想让他记住我的
+   6. [CU][static]7.5s Su Nian | Su Nian puts down a cup
+   7. [MCU][push]7.5s Su Nian | Su Nian looks down at
+   8. [MS][static]7.5s Su Nian | Su Nian stands in the scene
+   9. [MCU][push]7.5s Su Nian | Su Nian walks
+      dlg:告诉他你为什么生气。不是因为那件事，是因为生日。
+  10. [ECU][rapid_push]7.5s Su Nian | Su Nian finishes drinking
+
+=== Ch8 (11 shots, 82s) ===
+   1. [WS][static]7.5s Lin Ke | Lin Ke interacts with photo
+      dlg:给你。
+   2. [ECU][push]7.5s Su Nian | Su Nian stares at
+      dlg:这是……外婆？
+   3. [CU][static]7.5s Su Nian,Lin Ke | Su Nian looks at photo door
+      dlg:苏念，你认不出来了？
+   4. [MS][push]7.3s Su Nian | Su Nian looks at
+   5. [MCU][static]7.3s Su Nian | Su Nian says coffee
+      dlg:我记得她的名字。
+   6. [ECU][push]7.5s Su Nian,Lin Ke | Su Nian interacts with photo
+      dlg:你最近到底怎么了？
+   7. [MCU][static]7.3s Su Nian,Lin Ke | Su Nian stands up
+      dlg:苏念，你哥以前也——
+   8. [MS][rapid_push]7.3s Su Nian,Lin Ke | Su Nian looks up
+      dlg:我哥怎么了？
+   9. [CU][static]7.5s Su Nian | Su Nian sits down
+  10. [CU][push]7.5s Su Nian | the lights come back on
+  11. [CU][rapid_push]7.5s Su Nian | Su Nian cries
+
+=== Ch9 (25 shots, 90s) ===
+   1. [WS][static]4.0s Su Nian,Gu Shen | Su Nian sits down
+      dlg:你为什么每次都喝我喝过的咖啡？
+   2. [MCU][push]3.3s Su Nian | Su Nian says chopsticks
+      dlg:巧合。
+   3. [CU][static]4.0s Su Nian | Su Nian interacts with chopsticks
+   4. [MCU][push]3.3s Gu Shen | Gu Shen says
+      dlg:第一次，我以为你口渴。
+   5. [MS][static]3.3s Su Nian | Su Nian says
+   6. [MCU][push]3.3s Su Nian,Gu Shen | Su Nian looks up
+   7. [MS][static]4.0s Gu Shen | Gu Shen finishes drinking
+      dlg:你喝完之后，
+   8. [CU][rapid_push]3.3s Su Nian | Su Nian wipes chopsticks
+   9. [MCU][static]3.3s Su Nian | Su Nian says
+      dlg:你多想了。
+  10. [MS][push]4.0s Gu Shen | Gu Shen interacts with noodle bowl
+      dlg:也许。
+  11. [MCU][static]3.3s Su Nian | Su Nian stands up
+      dlg:我送你回去。
+  12. [ECU][push]3.3s Su Nian,Gu Shen | Su Nian walks key light
+      dlg:苏念。
+  13. [MCU][static]4.0s Gu Shen | Gu Shen turns around
+      dlg:我明天还会来喝咖啡。
+  14. [ECU][push]3.3s Su Nian | Su Nian clenches fists
+      dlg:你不用——
+  15. [MCU][static]4.0s Gu Shen | Gu Shen stands in the scene
+      dlg:我不是来收购你的店的。
+  16. [MS][push]3.3s Su Nian | Su Nian looks at
+  17. [MCU][static]3.3s Su Nian | Su Nian says
+      dlg:你让我想起一个人。
+  18. [MS][push]4.0s Su Nian | Su Nian stands in the scene
+      dlg:但又完全不同。
+  19. [CU][static]3.3s Su Nian | Su Nian turns around
+  20. [CU][push]3.3s Su Nian | Su Nian reads
+  21. [CU][static]4.4s Gu Shen | Gu Shen sits down
+      dlg:她像一个人——我前女友。但又完全不同。 | voice:她像一个人——我前女友。但又完全不同。
+  22. [CU][push]3.3s Su Nian | Su Nian puts down a cup
+  23. [CU][static]3.3s Su Nian | Su Nian stands in the scene
+  24. [MCU][rapid_push]4.0s Gu Shen | Gu Shen interacts with phone
+      dlg:到家了。
+  25. [MS][static]4.0s Su Nian | Su Nian looks up Su Nian hears
+
+=== Ch10 (14 shots, 87s) ===
+   1. [WS][static]5.7s Su Nian | Su Nian sits down
+   2. [ECU][push]6.3s Su Nian,Gu Shen,Chen Rui | a faint mark
+   3. [CU][static]6.3s Su Nian | Su Nian stands in the scene
+   4. [MCU][push]7.5s Su Nian | Su Nian stands in the scene
+      dlg:想不起来了
+   5. [MS][static]7.5s Su Nian | Su Nian looks at coffee mirror
+   6. [MCU][push]5.7s Su Nian | Su Nian turns hand over
+   7. [ECU][static]6.3s Su Nian | Su Nian looks at photo
+   8. [MS][push]5.7s Su Nian | Su Nian stands in the scene
+   9. [MCU][static]5.7s Su Nian | Su Nian reads phone
+  10. [MS][push]5.7s Su Nian | the lights go out
+  11. [CU][static]7.5s Gu Shen | Gu Shen drinks coffee phone
+      dlg:明天我来喝咖啡。
+  12. [MCU][push]5.7s Su Nian | Su Nian looks at
+      dlg:别来了。
+  13. [MS][static]5.7s Su Nian | Su Nian stands in the scene
+  14. [MCU][push]5.7s Su Nian | Su Nian stands in the scene
+
+=== Ch11 (22 shots, 90s) ===
+   1. [WS][static]5.2s Chen Rui | Chen Rui looks at
+      dlg:苏老板，这是我们的评估团队。
+   2. [MCU][push]5.2s Su Nian,Chen Rui | Su Nian puts down a cup
+      dlg:公司给了最后期限。
+   3. [MS][static]3.8s Su Nian,Chen Rui | Su Nian looks at
+      dlg:你这栋楼的产权——
+   4. [ECU][push]3.9s Su Nian | Su Nian interacts with cup
+   5. [MS][static]3.8s Su Nian | Su Nian closes eyes
+   6. [CU][push]3.9s Su Nian | all sounds fade to silence
+   7. [MCU][static]5.2s Su Nian | Su Nian says letter
+      dlg:……老陈说的违规是真的。但我也查过——那栋楼的产权问题其实在 | voice:……老陈说的违规是真的。但我也查过——那栋楼的产权问题其实在
+   8. [CU][push]3.9s Chen Rui | a vision flashes
+      dlg:锐咖啡
+   9. [CU][static]3.9s Su Nian | Su Nian puts down a cup
+  10. [ECU][push]3.9s Su Nian,Chen Rui | Su Nian looks down at
+  11. [MCU][static]3.8s Su Nian | Su Nian asks
+      dlg:陈总。
+  12. [MS][push]3.8s Su Nian,Chen Rui | Su Nian stands up
+  13. [MCU][static]3.8s Chen Rui | Chen Rui turns around
+  14. [MS][push]5.2s Su Nian | Su Nian stands in the scene
+      dlg:下周五之前。不管你知道什么。
+  15. [MCU][static]3.8s Su Nian | the wind chimes ring
+  16. [CU][push]3.9s Su Nian | Su Nian looks down at
+  17. [MS][static]3.8s Su Nian | Su Nian stands in the scene
+  18. [MCU][push]3.8s Su Nian | Su Nian stands in the scene
+  19. [CU][static]3.9s Su Nian | Su Nian turns hand over
+  20. [CU][push]3.9s Su Nian | Su Nian writes photo
+      dlg:文件不存在
+  21. [MCU][static]3.8s Su Nian | Su Nian trembles
+  22. [CU][push]3.9s Su Nian | Su Nian writes photo
+
+=== Ch12 (25 shots, 90s) ===
+   1. [WS][static]3.3s Su Nian | Su Nian grinds coffee beans
+   2. [MS][push]4.0s Su Nian | Su Nian grinds coffee beans Su Nian grinds coffee beans
+   3. [MCU][static]3.3s Gu Shen | Gu Shen stands up
+      dlg:美式。
+   4. [ECU][push]3.3s Su Nian | a lipstick mark
+   5. [MCU][static]3.3s Su Nian,Gu Shen | Su Nian picks up a cup
+      dlg:你今天没喝。
+   6. [MS][push]3.3s Su Nian | Su Nian interacts with cup
+      dlg:什么？
+   7. [MCU][static]4.0s Gu Shen | Gu Shen puts down a cup
+      dlg:我放下杯子的时候，
+   8. [ECU][push]3.3s Su Nian,Gu Shen | Su Nian looks at painting
+   9. [MCU][static]3.3s Su Nian | Su Nian says
+      dlg:我不渴。
+  10. [MS][push]4.0s Su Nian,Gu Shen | Su Nian wipes the counter with a rag
+      dlg:我查了一下。
+  11. [MCU][static]3.3s Su Nian,Gu Shen | Su Nian says coffee
+      dlg:你说'查了'什么？
+  12. [CU][push]4.4s Su Nian | Su Nian picks up phone photo
+      dlg:这是你外婆的旧照片。我在老城区的社区档案里找到的。
+  13. [CU][static]4.4s Su Nian,Gu Shen | Su Nian looks at phone photo
+      dlg:你看。
+  14. [CU][push]3.3s Su Nian | Su Nian picks up coffee phone
+  15. [CU][static]3.3s Su Nian | Su Nian wipes photo
+      dlg:这照片——
+  16. [CU][push]4.4s Gu Shen | Gu Shen says phone photo
+      dlg:我也不知道。
+  17. [MCU][static]3.3s Su Nian,Gu Shen | Su Nian stands up
+      dlg:你不舒服？
+  18. [MS][push]3.3s Su Nian,Gu Shen | Su Nian looks at
+      dlg:苏念。
+  19. [MCU][static]4.0s Su Nian | Su Nian finishes drinking
+      dlg:你每次喝完我的咖啡，都会出现这种表情。
+  20. [MS][push]3.3s Su Nian,Gu Shen | Su Nian stands up
+      dlg:你在听什么？
+  21. [MCU][static]3.3s Su Nian | Su Nian looks up
+  22. [MS][push]3.3s Su Nian | Su Nian says
+      dlg:我不知道你在说什么。
+  23. [MCU][static]4.0s Su Nian | Su Nian stands in the scene
+      dlg:你知道。
+  24. [MS][push]4.0s Su Nian,Gu Shen | Su Nian looks up Su Nian interacts with coffee Su Nian hears
+  25. [MCU][static]3.3s Gu Shen | all sounds return
+      dlg:灯泡老了。
+
+=== Ch13 (25 shots, 90s) ===
+   1. [WS][static]3.2s Su Nian | Su Nian walks in
+      dlg:美式。
+   2. [MCU][push]3.2s Su Nian | Su Nian says cup
+      dlg:你这店，开了多久了？
+   3. [ECU][static]3.2s Su Nian | Su Nian nods
+      dlg:好地方。
+   4. [CU][push]3.2s Su Nian | Su Nian puts down a cup
+   5. [MS][static]3.2s Su Nian | Su Nian picks up a cup
+   6. [MCU][push]3.2s Su Nian | Su Nian closes eyes
+   7. [CU][static]3.2s Su Nian | all sounds fade to silence
+   8. [MCU][push]4.6s Su Nian | Su Nian interacts with coffee
+      dlg:……评估报告出来了。这栋楼的结构安全系数不达标，需要整体拆除 | voice:……评估报告出来了。这栋楼的结构安全系数不达标，需要整体拆除
+   9. [CU][static]3.2s Su Nian | a vision flashes
+  10. [ECU][rapid_push]3.2s Su Nian | Su Nian opens eyes
+  11. [MCU][push]3.2s Su Nian | Su Nian puts down a cup
+      dlg:多少钱？
+  12. [MS][static]3.9s Su Nian | Su Nian looks at coffee
+      dlg:你这咖啡不错。
+  13. [MCU][push]3.2s Su Nian | Su Nian leaves
+      dlg:以后可能喝不到了。
+  14. [MS][static]3.2s Su Nian | Su Nian sees
+  15. [MCU][push]3.9s Su Nian | Su Nian clenches fists
+      dlg:老城区 街道办 拆迁公告
+  16. [MS][static]3.9s Su Nian | Su Nian interacts with coffee
+      dlg:念想咖啡店 产权
+  17. [CU][push]4.3s Su Nian | Su Nian puts down phone painting
+  18. [MCU][static]3.2s Su Nian | Su Nian walks door window
+      dlg:营业中
+  19. [CU][push]4.3s Lin Ke | Lin Ke looks at sticky note door
+  20. [CU][static]3.2s Su Nian | Su Nian reaches out to touch
+  21. [CU][push]4.3s Su Nian | Su Nian sees
+      dlg:小念，如果你看到这行字，说明你已经忘了什么。别怕。有些东西不 | voice:小念，如果你看到这行字，说明你已经忘了什么。别怕。有些东西不
+  22. [CU][static]4.3s Su Nian | Su Nian stares at
+      dlg:如果你看到这行字，说明你已经忘了什么
+  23. [CU][push]4.3s Su Nian | Su Nian interacts with sticky note
+      dlg:拉花不是技术，是心意
+  24. [CU][static]4.3s Su Nian | Su Nian interacts with sticky note
+  25. [MS][push]3.2s Su Nian | rain falls
+
+=== Ch14 (25 shots, 90s) ===
+   1. [WS][static]4.1s Su Nian | Su Nian reaches out to touch Su Nian picks up phone
+   2. [ECU][push]4.6s Su Nian | Su Nian interacts with photo
+      dlg:小念满月，妈妈抱着。
+   3. [CU][static]3.4s Su Nian | Su Nian stands photo
+   4. [ECU][push]3.4s Su Nian | Su Nian stares at
+   5. [MS][static]3.4s Su Nian | Su Nian stands in the scene
+   6. [CU][push]3.4s Su Nian | Su Nian interacts with coffee
+   7. [MS][static]3.4s Su Nian,Gu Shen,Lin Ke,Chen Rui | Su Nian puts down a cup
+   8. [MCU][pull]3.4s Su Nian | Su Nian cries
+      dlg:想不起来
+   9. [CU][static]3.4s Su Nian,Lin Ke | Su Nian carries a coffee cup
+  10. [CU][push]3.4s Su Nian | Su Nian reaches out to touch
+  11. [CU][static]4.6s Su Nian | Su Nian sees
+      dlg:小念，如果你看到这行字，说明你已经忘了什么。别怕。有些东西不 | voice:小念，如果你看到这行字，说明你已经忘了什么。别怕。有些东西不
+  12. [CU][push]3.4s Su Nian | Su Nian sits down
+  13. [CU][static]3.4s Su Nian | Su Nian looks at painting
+  14. [MCU][push]3.4s Su Nian | Su Nian hears
+      dlg:小念，别再喝了。 | voice:小念，别再喝了。
+  15. [MS][static]3.4s Su Nian | Su Nian stands in the scene
+  16. [MCU][push]4.1s Su Nian | Su Nian hears
+      dlg:你喝得越多，忘得越多。忘得越多，喝得越多。停下来。 | voice:你喝得越多，忘得越多。忘得越多，喝得越多。停下来。
+  17. [CU][static]3.4s Su Nian,Lin Ke | Su Nian stands up
+      dlg:苏念！
+  18. [MCU][push]3.4s Su Nian | Su Nian clenches fists
+  19. [MS][static]3.4s Su Nian | Su Nian says
+      dlg:我知道。
+  20. [MCU][push]4.1s Lin Ke | Lin Ke stands in the scene
+      dlg:你——你知道？
+  21. [MS][static]3.4s Su Nian | Su Nian answers
+      dlg:苏念？
+  22. [MCU][push]3.4s Su Nian,Lin Ke | Su Nian trembles
+      dlg:我在。
+  23. [MS][static]3.4s Su Nian | Su Nian stands in the scene
+  24. [MCU][push]3.4s Su Nian | Su Nian says
+      dlg:苏念，你在说什么？
+  25. [MS][pull]3.4s Su Nian | Su Nian cries
+      dlg:我不记得了。
+
+=== Ch15 (25 shots, 89s) ===
+   1. [WS][static]3.4s Lin Ke | Lin Ke stands in the scene
+   2. [MCU][push]3.4s Su Nian | rain falls
+      dlg:进来。
+   3. [MS][static]3.4s Su Nian,Lin Ke | Su Nian walks in
+      dlg:你昨天挂了。
+   4. [MCU][push]3.4s Lin Ke | Lin Ke sits down
+      dlg:我知道。
+   5. [CU][static]3.4s Su Nian,Lin Ke | Su Nian puts down
+   6. [MCU][push]3.4s Su Nian | Su Nian says
+      dlg:你说——我哥哥当年也是这样。
+   7. [ECU][static]4.6s Lin Ke | Lin Ke interacts with painting
+   8. [MCU][push]3.4s Lin Ke,Su Yuan | Lin Ke says
+      dlg:你有哥哥。
+   9. [MS][static]3.4s Su Nian | Su Nian says
+      dlg:我不记得。
+  10. [MCU][pull]3.4s Lin Ke | Lin Ke looks up
+      dlg:我知道你不记得。
+  11. [MS][static]4.1s Su Nian | Su Nian stands in the scene
+      dlg:什么意思？
+  12. [ECU][push]3.4s Lin Ke | Lin Ke turns hand over
+  13. [MCU][static]3.4s Lin Ke,Su Yuan | Lin Ke says door
+      dlg:这是你和苏远。
+  14. [CU][push]4.6s Su Nian,Su Yuan | Su Nian looks at photo door
+      dlg:苏远——
+  15. [CU][static]4.6s Lin Ke,Su Yuan | Lin Ke puts down phone photo
+      dlg:苏远之墓
+  16. [MCU][push]3.4s Su Nian | Su Nian looks at
+      dlg:怎么死的？
+  17. [MS][static]3.4s Lin Ke | Lin Ke trembles
+  18. [CU][push]3.4s Lin Ke | Lin Ke hears
+      dlg:他也有'能力'。
+  19. [MCU][static]3.4s Su Nian | Su Nian taps fingers
+      dlg:代价呢？
+  20. [MS][push]3.4s Lin Ke | Lin Ke hears
+      dlg:代价——
+  21. [MCU][static]3.4s Su Nian,Lin Ke | Su Nian says
+      dlg:他忘掉了什么？
+  22. [MS][push]3.4s Su Nian | rain falls
+  23. [MCU][static]3.4s Su Nian | Su Nian asks
+      dlg:然后呢？
+  24. [MS][push]3.4s Lin Ke | Lin Ke hears
+      dlg:然后——
+  25. [MCU][static]3.4s Su Nian | Su Nian stands in the scene
+
+=== Ch16 (25 shots, 90s) ===
+   1. [WS][static]3.4s Gu Shen | Gu Shen puts down light
+      dlg:灯泡。
+   2. [MCU][push]3.4s Su Nian,Gu Shen | Su Nian looks at light
+      dlg:我自己换。
+   3. [MS][static]3.4s Su Nian,Gu Shen | Su Nian looks down at
+      dlg:好了。
+   4. [MCU][push]3.4s Su Nian | Su Nian looks at
+   5. [MS][static]3.4s Su Nian,Gu Shen | Su Nian looks up
+      dlg:顾深。
+   6. [ECU][push]3.4s Su Nian,Gu Shen | Su Nian grinds coffee beans
+   7. [MS][static]3.4s Su Nian | Su Nian stands in the scene
+   8. [CU][push]3.4s Gu Shen | Gu Shen sees
+   9. [ECU][static]4.5s Su Nian | Su Nian interacts with coffee
+      dlg:为什么是咖啡
+  10. [MS][push]4.1s Su Nian | Su Nian stands in the scene Gu Shen looks at
+  11. [MCU][static]3.4s Su Nian,Gu Shen | Su Nian says coffee
+      dlg:顾深。
+  12. [MS][push]3.4s Gu Shen | Gu Shen looks at
+  13. [MCU][static]4.1s Su Nian | Su Nian says coffee
+      dlg:你每次都要喝我的咖啡。
+  14. [CU][push]3.4s Su Nian | Su Nian picks up cup
+  15. [MS][static]3.4s Su Nian | Su Nian closes eyes
+  16. [CU][push]3.4s Gu Shen | Gu Shen carries a coffee cup
+  17. [MS][static]4.1s Su Nian | Su Nian finishes drinking Su Nian says painting
+  18. [MCU][push]3.4s Su Nian | Su Nian sits down
+      dlg:念想咖啡店收购计划
+  19. [CU][static]3.4s Su Nian | the vision shatters
+  20. [CU][push]3.4s Su Nian | Su Nian opens eyes
+  21. [CU][static]4.5s Su Nian | Su Nian asks coffee sticky note
+      dlg:为什么是咖啡
+  22. [MCU][push]3.4s Su Nian,Gu Shen | Su Nian looks at
+      dlg:苏念？
+  23. [MS][static]4.1s Su Nian,Gu Shen | Su Nian puts down a cup
+      dlg:你喝完之后——
+  24. [MCU][push]3.4s Su Nian | Su Nian looks up
+      dlg:你看到了什么？
+  25. [MS][static]3.4s Su Nian | Su Nian sees Su Nian looks at
+
+=== Ch17 (25 shots, 90s) ===
+   1. [WS][static]4.0s Su Nian,Gu Shen | Su Nian looks at coffee door
+      dlg:去哪？
+   2. [MS][push]3.3s Su Nian | Su Nian interacts with coffee
+   3. [MCU][static]3.3s Su Nian,Gu Shen | rain falls
+      dlg:这里。
+   4. [MS][push]4.0s Su Nian,Gu Shen | Su Nian carries a coffee cup
+      dlg:那天你穿了一件灰色西装。
+   5. [MCU][static]3.3s Su Nian | Su Nian looks down at
+   6. [MS][push]3.3s Gu Shen | Gu Shen walks door
+      dlg:装修中，暂停营业。
+   7. [MCU][static]3.3s Su Nian | Su Nian looks at
+   8. [MS][push]3.3s Gu Shen | Gu Shen says
+      dlg:然后你问我——为什么想收购你的店。
+   9. [MCU][static]4.0s Su Nian | Su Nian interacts with umbrella
+  10. [MS][push]3.3s Su Nian | Su Nian asks
+      dlg:你现在能回答吗？
+  11. [MCU][static]3.3s Gu Shen | Gu Shen looks at
+      dlg:我的决定是——
+  12. [MS][push]4.0s Su Nian | Su Nian stands in the scene
+      dlg:但公司——
+  13. [MCU][static]3.3s Gu Shen | Gu Shen says
+      dlg:我已经辞职了。
+  14. [MS][push]3.3s Su Nian,Gu Shen | Su Nian sits down
+      dlg:你为什么辞职？
+  15. [MCU][static]4.0s Su Nian | Su Nian stands in the scene Gu Shen walks
+  16. [MS][push]3.3s Gu Shen | Gu Shen sees
+      dlg:你在这里读过我一次。
+  17. [MCU][static]4.0s Su Nian,Gu Shen | Su Nian finishes drinking
+      dlg:你看到了什么？
+  18. [MS][push]3.3s Su Nian,Gu Shen | Su Nian trembles
+      dlg:你从来没用那种眼神看过我。
+  19. [MCU][static]4.0s Su Nian | Su Nian interacts with umbrella
+  20. [MS][push]3.3s Su Nian | Su Nian says
+      dlg:你知道我在听什么。
+  21. [MCU][static]4.0s Gu Shen | Gu Shen finishes drinking
+      dlg:我不确定。
+  22. [MS][push]3.3s Su Nian | Su Nian sees
+      dlg:你看到了？
+  23. [ECU][static]3.3s Gu Shen | Gu Shen finishes drinking
+      dlg:你的手。
+  24. [MCU][push]4.8s Su Nian | Su Nian looks down at Su Nian says Gu Shen says Su Nian crie
+      dlg:你知道代价是什么。
+  25. [ECU][static]3.3s Su Nian | Su Nian interacts with photo
+
+=== Ch18 (25 shots, 89s) ===
+   1. [WS][static]3.4s Chen Rui | Chen Rui sits down
+      dlg:意式浓缩。
+   2. [MCU][push]3.4s Su Nian,Chen Rui | Su Nian puts down a cup
+      dlg:什么？
+   3. [MS][static]3.4s Su Nian,Chen Rui | Su Nian looks at letter
+      dlg:为什么？
+   4. [ECU][push]3.4s Chen Rui | Chen Rui takes a sip
+   5. [MCU][static]3.4s Su Nian | Su Nian asks
+      dlg:你知道我以前是做什么的吗？
+   6. [ECU][push]3.4s Su Nian,Chen Rui | Su Nian shakes head
+      dlg:锐咖啡
+   7. [MCU][static]3.4s Chen Rui | Chen Rui says
+      dlg:这是我开的。
+   8. [CU][push]3.4s Su Nian | Su Nian looks at photo door
+   9. [MCU][static]3.4s Su Nian | Su Nian asks
+      dlg:生意好吗？
+  10. [MS][push]3.4s Chen Rui | Chen Rui says
+      dlg:不好。
+  11. [CU][static]4.6s Chen Rui | Chen Rui puts down phone photo
+      dlg:这是我老婆。
+  12. [MCU][push]3.4s Su Nian,Chen Rui | Su Nian looks at
+      dlg:我卖了。
+  13. [MS][static]3.4s Su Nian | Su Nian interacts with phone
+  14. [MCU][push]3.4s Su Nian,Chen Rui | Su Nian sits coffee phone
+      dlg:后来呢？
+  15. [MS][static]3.4s Su Nian | Su Nian takes a sip
+  16. [MCU][push]3.4s Su Nian | Su Nian trembles
+      dlg:然后我发现——
+  17. [MS][static]4.1s Su Nian | Su Nian stands in the scene
+      dlg:忘掉什么？
+  18. [MCU][push]4.1s Chen Rui | Chen Rui says coffee
+      dlg:忘掉我为什么喜欢咖啡。
+  19. [MS][static]3.4s Su Nian,Chen Rui | Su Nian says
+      dlg:所以你来收购我的店——
+  20. [MCU][push]3.4s Su Nian | Su Nian interacts with letter
+  21. [MS][static]3.4s Su Nian | Su Nian says
+      dlg:签了吧。
+  22. [MCU][push]4.1s Su Nian | Su Nian looks at letter
+      dlg:你跟公司撒了谎。
+  23. [MS][static]3.4s Chen Rui | Chen Rui says
+      dlg:我跟公司说了实话。
+  24. [MCU][push]4.1s Su Nian | Su Nian stands in the scene
+      dlg:是谁？
+  25. [MS][static]3.4s Chen Rui | Chen Rui says
+      dlg:是我现在这家公司的母公司。
+
+=== Ch19 (21 shots, 90s) ===
+   1. [WS][static]5.8s Su Nian | Su Nian looks at sticky note
+      dlg:小念，美式要九十二度，不多不少。
+   2. [ECU][push]5.8s Su Nian | rain falls
+      dlg:小念，有些味道，不是用舌头记住的。是用心。你忘了的东西，都在 | voice:小念，有些味道，不是用舌头记住的。是用心。你忘了的东西，都在
+   3. [CU][static]4.1s Su Nian | Su Nian stares at
+      dlg:都在咖啡里
+   4. [MS][push]3.7s Su Nian | Su Nian picks up coffee
+   5. [MCU][static]3.7s Su Nian | Su Nian grinds coffee beans
+   6. [MS][push]3.7s Su Nian | Su Nian grinds coffee beans
+   7. [ECU][static]4.1s Su Nian | Su Nian picks up a cup
+   8. [CU][push]5.8s Su Nian | Su Nian puts down a cup
+      dlg:有些味道，不是用舌头记住的
+   9. [CU][static]4.1s Su Nian | Su Nian reaches out to touch
+  10. [MS][push]3.7s Su Nian | Su Nian closes eyes
+  11. [MCU][static]3.7s Su Nian | Su Nian grinds coffee beans
+  12. [MS][push]3.7s Su Nian | Su Nian opens eyes
+  13. [CU][pull]5.8s Su Nian | Su Nian cries
+      dlg:小念，你第一次拉花的时候才五岁。奶泡洒了一桌子，你哭了。我告 | voice:小念，你第一次拉花的时候才五岁。奶泡洒了一桌子，你哭了。我告
+  14. [CU][static]4.1s Su Nian | Su Nian cries
+  15. [MS][push]3.7s Su Nian | Su Nian grinds coffee beans
+  16. [MCU][static]3.7s Su Nian | Su Nian turns around
+      dlg:休息中
+  17. [MS][push]3.7s Su Nian | Su Nian interacts with door
+  18. [CU][static]5.8s Su Nian | Su Nian drinks coffee sticky note
+  19. [MCU][push]3.7s Su Nian | Su Nian interacts with coffee
+  20. [MS][static]3.7s Su Nian | Su Nian looks at
+  21. [CU][push]4.1s Su Nian | Su Nian interacts with coffee
+
+=== Ch20 (25 shots, 89s) ===
+   1. [WS][static]3.3s Su Nian | Su Nian interacts with coffee
+   2. [ECU][push]4.5s Su Nian | Su Nian interacts with sticky note
+      dlg:营业中
+   3. [MS][static]3.3s Su Nian | Su Nian grinds coffee beans
+   4. [ECU][push]3.3s Su Nian | Su Nian carries a coffee cup
+   5. [MCU][static]3.3s Gu Shen | Gu Shen walks in
+      dlg:美式。
+   6. [CU][push]3.3s Su Nian,Gu Shen | Su Nian grinds coffee beans
+   7. [MS][static]4.0s Su Nian | Su Nian wipes the counter with a rag
+   8. [MCU][push]3.3s Gu Shen | Gu Shen says
+      dlg:你今天没喝。
+   9. [MS][static]3.3s Su Nian | Su Nian says
+      dlg:为什么？
+  10. [CU][push]3.3s Su Nian | Su Nian looks at
+      dlg:因为——
+  11. [MS][static]3.3s Gu Shen | Gu Shen puts down a cup
+  12. [MCU][push]3.3s Su Nian | Su Nian says
+      dlg:你已经忘了很多。
+  13. [MS][static]4.0s Su Nian | Su Nian says
+      dlg:我不记得我爸妈。不记得我外婆的声音。不记得我哥哥。
+  14. [MCU][push]4.0s Su Nian | Su Nian interacts with coffee
+      dlg:但我记得怎么冲咖啡。
+  15. [MS][static]3.3s Gu Shen | Gu Shen looks at
+      dlg:那够吗？
+  16. [MCU][push]4.0s Su Nian | Su Nian says coffee
+      dlg:因为咖啡不在脑子里。在手里。
+  17. [CU][static]3.3s Gu Shen | Gu Shen takes a sip
+      dlg:我明天还来。
+  18. [MS][push]3.3s Su Nian | Su Nian looks at
+  19. [MCU][static]3.3s Su Nian,Gu Shen | Su Nian stands up
+      dlg:苏念。
+  20. [CU][push]3.3s Su Nian,Gu Shen | Su Nian leaves
+  21. [MS][static]3.3s Su Nian | Su Nian picks up a cup
+  22. [CU][push]3.3s Su Nian | Su Nian puts down a cup
+  23. [CU][static]4.5s Su Nian | Su Nian looks at sticky note painting
+  24. [MS][push]4.0s Su Nian | Su Nian wipes the counter with a rag
+  25. [MCU][static]4.0s Su Nian | Su Nian looks at coffee window Su Nian stands in the scene
