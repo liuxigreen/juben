@@ -163,6 +163,24 @@
       "realm_change": " [身体接近极限]",
       "foreshadow_planted": [],
       "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 18,
+      "body_costs": [
+        "发抖"
+      ],
+      "setting_elements_used": [
+        "咖啡杯",
+        "照片模糊",
+        "念想",
+        "外婆",
+        "顾深",
+        "陈锐"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": " [身体接近极限]",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
     }
   ],
   "accumulated_costs": [
@@ -190,7 +208,10 @@
     "发抖",
     "代价",
     "发抖",
-    "代价"
+    "代价",
+    "发抖",
+    "发抖",
+    "发抖"
   ],
   "accumulated_banned": [],
   "current_realm": "",
