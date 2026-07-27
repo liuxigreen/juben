@@ -559,29 +559,81 @@ class PromptRenderer:
 
     def __init__(self, config: dict):
         self.chars = config.get("characters", {})
+        style = config.get("prompt_style", {})
+        active = style.get("active_renderer", "flow_v1")
+        renderers = style.get("renderers", {})
+        self.renderer_cfg = renderers.get(active, {})
+        self.renderer_style = self.renderer_cfg.get("style", "hybrid")
+        self.suffix = self.renderer_cfg.get("suffix", "cinematic, 9:16 vertical, photorealistic, 4K")
+        self.char_first = self.renderer_cfg.get("character_first", True)
         self._count = {}
 
     def reset(self):
         self._count.clear()
 
     def render(self, shot: dict, location: str = "") -> str:
+        if self.renderer_style == "keyword":
+            return self._render_keyword(shot, location)
+        elif self.renderer_style == "concise":
+            return self._render_concise(shot, location)
+        else:
+            return self._render_narrative(shot, location)
+
+    def _render_narrative(self, shot, location):
+        """叙事型（Veo/Flow）：完整句子描述"""
         parts = []
         st, cm, ca = shot.get("shot_type", "MS"), shot.get("camera_movement", "static"), shot.get("camera_angle", "eye-level")
         parts.append(f"{self.SHOT_EN.get(st, 'medium shot')}, {self.CAM_EN.get(cm, 'static camera')}, {self.ANG_EN.get(ca, 'eye level')}")
-        cp = []
-        for ce in shot.get("characters", []):
-            self._count[ce] = self._count.get(ce, 0) + 1
-            tag = self._tag(ce)
-            cp.append(f"{ce} ({tag})")
-        if cp: parts.append(f"featuring {', '.join(cp)}")
+        if self.char_first:
+            cp = []
+            for ce in shot.get("characters", []):
+                self._count[ce] = self._count.get(ce, 0) + 1
+                cp.append(f"{ce} ({self._tag(ce)})")
+            if cp: parts.append(f"featuring {', '.join(cp)}")
         act = shot.get("action_visual", "")
         if act: parts.append(act)
+        if not self.char_first:
+            cp = []
+            for ce in shot.get("characters", []):
+                self._count[ce] = self._count.get(ce, 0) + 1
+                cp.append(f"{ce} ({self._tag(ce)})")
+            if cp: parts.append(f"featuring {', '.join(cp)}")
         anchors = shot.get("visual_anchors", [])
         if anchors: parts.append(f"close-up detail on {', '.join(anchors)}")
         if location: parts.append(f"in {location}")
         parts.append(self.LIGHT_EN.get(shot.get("lighting", "Natural"), "natural daylight"))
         parts.append(self.MOOD_EN.get(shot.get("emotion", "Neutral"), "neutral, observational"))
-        parts.append("cinematic, 9:16 vertical, photorealistic, 4K")
+        parts.append(self.suffix)
+        return ", ".join(parts)
+
+    def _render_keyword(self, shot, location):
+        """关键词型（Kling）：逗号分隔关键词"""
+        parts = []
+        st = shot.get("shot_type", "MS")
+        parts.append(self.SHOT_EN.get(st, "medium shot"))
+        act = shot.get("action_visual", "")
+        if act: parts.append(act)
+        for ce in shot.get("characters", []):
+            self._count[ce] = self._count.get(ce, 0) + 1
+            parts.append(ce)
+        anchors = shot.get("visual_anchors", [])
+        if anchors: parts.extend(anchors)
+        if location: parts.append(location)
+        parts.append(self.LIGHT_EN.get(shot.get("lighting", "Natural"), "").split(",")[0])
+        parts.append(self.suffix)
+        return ", ".join(parts)
+
+    def _render_concise(self, shot, location):
+        """简洁型（Runway）：主体+动作+风格"""
+        parts = []
+        act = shot.get("action_visual", "")
+        chars = ", ".join(shot.get("characters", []))
+        if chars and act:
+            parts.append(f"{chars}: {act}")
+        elif act:
+            parts.append(act)
+        if location: parts.append(f"in {location}")
+        parts.append(self.suffix)
         return ", ".join(parts)
 
     def _tag(self, ce):

@@ -21,7 +21,7 @@
     "visual_anchors": [],
     "beat_id": 1,
     "event_type": "",
-    "veo_prompt": "wide shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Lin Ke (25yo Chinese woman, ponytail, colorful nails, large art bag), grandmother (elderly Chinese woman, white hair, blue apron, kind smile), Su Nian sits down, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "wide shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Lin Ke (25yo Chinese woman, ponytail, colorful nails, large art bag), grandmother (elderly Chinese woman, white hair, blue apron, kind smile), Su Nian sits down, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -59,7 +59,7 @@
     ],
     "beat_id": 2,
     "event_type": "",
-    "veo_prompt": "extreme close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Lin Ke (ponytail, colorful nails, art bag), Chen Rui (32yo Chinese man, square jaw, short hair, expensive watch), Su Yuan (young Chinese boy, round face, short hair, warm smile), grandmother (white hair, blue apron), Su Nian draws latte art in the foam, close-up detail on faint mark, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "extreme close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Gu Shen (30yo Chinese man, tall, silver-framed glasses, dark suit, callus on right index finger), Lin Ke (ponytail, colorful nails, art bag), Chen Rui (32yo Chinese man, square jaw, short hair, expensive watch), Su Yuan (young Chinese boy, round face, short hair, warm smile), grandmother (white hair, blue apron), Su Nian draws latte art in the foam, close-up detail on faint mark, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -92,7 +92,7 @@
     ],
     "beat_id": 3,
     "event_type": "",
-    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian stands still, shoulders slightly tense, eyes unfocused, close-up detail on scar on skin, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian stands still, shoulders slightly tense, eyes unfocused, close-up detail on scar on skin, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -123,7 +123,7 @@
     "visual_anchors": [],
     "beat_id": 4,
     "event_type": "",
-    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian furrows brow, pressing fingers to temples, in coffee shop, low key lighting, deep shadows, mysterious, intriguing, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian furrows brow, pressing fingers to temples, in coffee shop, low key lighting, deep shadows, mysterious, intriguing, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field",
     "audio": {
       "dialogue_zh": "想不起来了",
       "dialogue_speaker": "Su Nian",
@@ -156,7 +156,7 @@
     "visual_anchors": [],
     "beat_id": 5,
     "event_type": "",
-    "veo_prompt": "medium shot, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian furrows brow, pressing fingers to temples, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "medium shot, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian furrows brow, pressing fingers to temples, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -189,7 +189,7 @@
     "visual_anchors": [],
     "beat_id": 6,
     "event_type": "",
-    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian turns hand over to inspect, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian turns hand over to inspect, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -225,7 +225,7 @@
     ],
     "beat_id": 7,
     "event_type": "",
-    "veo_prompt": "extreme close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Gu Shen (tall man, silver glasses, dark suit), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian furrows brow, pressing fingers to temples, close-up detail on old photo, in coffee shop, low key lighting, deep shadows, mysterious, intriguing, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "extreme close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Gu Shen (tall man, silver glasses, dark suit), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian furrows brow, pressing fingers to temples, close-up detail on old photo, in coffee shop, low key lighting, deep shadows, mysterious, intriguing, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -258,7 +258,7 @@
     "visual_anchors": [],
     "beat_id": 8,
     "event_type": "",
-    "veo_prompt": "medium shot, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian gazes at the phone, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "medium shot, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian gazes at the phone, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -289,7 +289,7 @@
     "visual_anchors": [],
     "beat_id": 9,
     "event_type": "",
-    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), the lights flicker and go out, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), the lights flicker and go out, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -324,7 +324,7 @@
     ],
     "beat_id": 10,
     "event_type": "",
-    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian stands still, shoulders slightly tense, eyes unfocused, close-up detail on scar on skin, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian stands still, shoulders slightly tense, eyes unfocused, close-up detail on scar on skin, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -355,7 +355,7 @@
     "visual_anchors": [],
     "beat_id": 11,
     "event_type": "",
-    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Gu Shen (tall man, silver glasses, dark suit), the phone buzzes on the counter, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Gu Shen (tall man, silver glasses, dark suit), the phone buzzes on the counter, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field",
     "audio": {
       "dialogue_zh": "明天我来喝咖啡。",
       "dialogue_speaker": "Gu Shen",
@@ -388,7 +388,7 @@
     "visual_anchors": [],
     "beat_id": 12,
     "event_type": "",
-    "veo_prompt": "medium shot, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian gazes at, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "medium shot, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian gazes at, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field",
     "audio": {
       "dialogue_zh": "别来了。",
       "dialogue_speaker": "Su Nian",
@@ -419,7 +419,7 @@
     "visual_anchors": [],
     "beat_id": 13,
     "event_type": "",
-    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian stands still, shoulders slightly tense, eyes unfocused, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian stands still, shoulders slightly tense, eyes unfocused, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -450,7 +450,7 @@
     "visual_anchors": [],
     "beat_id": 14,
     "event_type": "",
-    "veo_prompt": "medium shot, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian stands still, shoulders slightly tense, eyes unfocused, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "medium shot, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian stands still, shoulders slightly tense, eyes unfocused, in coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",

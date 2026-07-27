@@ -1,5 +1,34 @@
 # Prompt渲染风格配置
 
+# 当前使用的renderer
+active_renderer: "flow_v1"
+
+# 多renderer定义
+renderers:
+  veo_v1:
+    description: "Google Veo — 叙事型，完整句子"
+    style: "narrative"
+    character_first: true
+    suffix: "cinematic, 9:16 vertical, photorealistic, 4K"
+
+  kling_v1:
+    description: "Kling — 关键词型，逗号分隔"
+    style: "keyword"
+    character_first: false
+    suffix: "9:16, cinematic, high quality"
+
+  flow_v1:
+    description: "Google Flow — 混合型，叙事+技术参数"
+    style: "hybrid"
+    character_first: true
+    suffix: "cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field"
+
+  runway_v1:
+    description: "Runway — 简洁型"
+    style: "concise"
+    character_first: false
+    suffix: "cinematic, vertical format"
+
 # 情绪映射
 emotion_map:
   Shock: ["猛地", "突然", "瞳孔", "愣住", "震惊", "吓"]
@@ -39,7 +68,7 @@ emotion_lighting_map:
   Neutral: "Natural"
   Mystery: "Low key"
 
-# 运镜语义映射（动作关键词→运镜）
+# 运镜语义映射
 camera_semantic_map:
   leaves: "pull"
   walks out: "pull"
@@ -72,7 +101,7 @@ voice_emotion_map:
 beat_merge:
   max_shots_per_chapter: 22
   never_merge:
-    - ability_activation     # 能力事件
-    - focus_object_change    # 焦点物变化
-    - location_change        # 场景切换
-    - chapter_end_hook       # 章末钩子
+    - ability_activation
+    - focus_object_change
+    - location_change
+    - chapter_end_hook
