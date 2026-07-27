@@ -5,7 +5,7 @@
     "shot_type": "WS",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 6.6,
+    "duration": 5.9,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -18,7 +18,16 @@
     "lighting": "Natural",
     "emotion": "Neutral",
     "visual_anchors": [],
-    "veo_prompt": "wide shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian wipes the counter with a rag, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "veo_prompt": "wide shot, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian wipes the counter with a rag, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "",
+      "dialogue_speaker": "",
+      "voiceover_zh": "",
+      "voice_type": "none",
+      "subtitle": "",
+      "emotion_tag": "calm, conversational",
+      "duration_hint": "5.9s"
+    }
   },
   {
     "shot_id": 2,
@@ -26,20 +35,29 @@
     "shot_type": "MCU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 4.6,
+    "duration": 5.9,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
       "Su Nian"
     ],
-    "action_visual": "Su Nian walks in",
+    "action_visual": "Gu Shen walks through the door",
     "dialogue": "美式，热的。",
     "inner_voice": "",
     "focus_object": "",
     "lighting": "Natural",
     "emotion": "Neutral",
     "visual_anchors": [],
-    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian walks in, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Gu Shen walks through the door, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "美式，热的。",
+      "dialogue_speaker": "Gu Shen",
+      "voiceover_zh": "",
+      "voice_type": "onscreen",
+      "subtitle": "",
+      "emotion_tag": "calm, conversational",
+      "duration_hint": "5.9s"
+    }
   },
   {
     "shot_id": 3,
@@ -47,13 +65,13 @@
     "shot_type": "ECU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 5.1,
+    "duration": 4.5,
     "location": "Nianxiang coffee shop",
-    "space": "Transition",
+    "space": "Physical",
     "characters": [
       "Su Nian"
     ],
-    "action_visual": "Su Nian wipes a table",
+    "action_visual": "Su Nian wipes a table clean",
     "dialogue": "",
     "inner_voice": "",
     "focus_object": "lipstick mark",
@@ -62,260 +80,342 @@
     "visual_anchors": [
       "lipstick mark"
     ],
-    "veo_prompt": "extreme close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian wipes a table, close-up detail on lipstick mark, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "veo_prompt": "extreme close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian wipes a table clean, close-up detail on lipstick mark, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "",
+      "dialogue_speaker": "",
+      "voiceover_zh": "",
+      "voice_type": "none",
+      "subtitle": "",
+      "emotion_tag": "calm, conversational",
+      "duration_hint": "4.5s"
+    }
   },
   {
     "shot_id": 4,
     "pacing_label": "15s_Retention",
-    "shot_type": "MS",
+    "shot_type": "CU",
     "camera_movement": "push",
-    "camera_angle": "eye-level",
-    "duration": 4.6,
-    "location": "Nianxiang coffee shop",
-    "space": "Physical",
-    "characters": [
-      "Su Nian"
-    ],
-    "action_visual": "Su Nian picks up a cup",
-    "dialogue": "",
-    "inner_voice": "",
-    "focus_object": "",
-    "lighting": "Natural",
-    "emotion": "Neutral",
-    "visual_anchors": [],
-    "veo_prompt": "medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian picks up a cup, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
-  },
-  {
-    "shot_id": 5,
-    "pacing_label": "15s_Retention",
-    "shot_type": "ECU",
-    "camera_movement": "static",
-    "camera_angle": "eye-level",
-    "duration": 5.1,
+    "camera_angle": "low",
+    "duration": 6.5,
     "location": "Nianxiang coffee shop",
     "space": "Transition",
     "characters": [
       "Su Nian"
     ],
-    "action_visual": "Su Nian takes a sip",
+    "action_visual": "Su Nian lifts the cup, fingers trembling around the warm rim",
     "dialogue": "",
     "inner_voice": "",
-    "focus_object": "cup wall",
-    "lighting": "Natural",
-    "emotion": "Neutral",
+    "focus_object": "cup rim",
+    "lighting": "Low key",
+    "emotion": "Tension",
     "visual_anchors": [
-      "cup wall"
+      "cup rim"
     ],
-    "veo_prompt": "extreme close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian takes a sip, close-up detail on cup wall, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "veo_prompt": "close-up, slow dolly forward, low angle looking up, featuring Su Nian (barista, burn scar on ring finger), Su Nian lifts the cup, fingers trembling around the warm rim, close-up detail on cup rim, in Nianxiang coffee shop, low key lighting, deep shadows, dim atmosphere, tense, suspenseful, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "",
+      "dialogue_speaker": "",
+      "voiceover_zh": "",
+      "voice_type": "none",
+      "subtitle": "",
+      "emotion_tag": "whispered, restrained, breathing heavy",
+      "duration_hint": "6.5s"
+    }
   },
   {
-    "shot_id": 6,
+    "shot_id": 5,
     "pacing_label": "15s_Retention",
     "shot_type": "CU",
-    "camera_movement": "push",
-    "camera_angle": "eye-level",
-    "duration": 5.1,
+    "camera_movement": "static",
+    "camera_angle": "low",
+    "duration": 6.5,
     "location": "Nianxiang coffee shop",
     "space": "Mental",
     "characters": [
       "Su Nian"
     ],
-    "action_visual": "all sounds fade to silence",
-    "dialogue": "",
-    "inner_voice": "",
-    "focus_object": "",
-    "lighting": "Natural",
-    "emotion": "Neutral",
-    "visual_anchors": [],
-    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), all sounds fade to silence, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
-  },
-  {
-    "shot_id": 7,
-    "pacing_label": "30s_Explosion",
-    "shot_type": "MCU",
-    "camera_movement": "static",
-    "camera_angle": "eye-level",
-    "duration": 4.6,
-    "location": "Nianxiang coffee shop",
-    "space": "Physical",
-    "characters": [
-      "Su Nian"
-    ],
-    "action_visual": "Su Nian stands in the scene",
-    "dialogue": "",
-    "inner_voice": "",
-    "focus_object": "",
-    "lighting": "Low key",
-    "emotion": "Mystery",
-    "visual_anchors": [],
-    "veo_prompt": "medium close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands in the scene, in Nianxiang coffee shop, low key lighting, deep shadows, dim atmosphere, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
-  },
-  {
-    "shot_id": 8,
-    "pacing_label": "30s_Explosion",
-    "shot_type": "MS",
-    "camera_movement": "push",
-    "camera_angle": "eye-level",
-    "duration": 6.6,
-    "location": "Nianxiang coffee shop",
-    "space": "Physical",
-    "characters": [
-      "Su Nian"
-    ],
-    "action_visual": "Su Nian walks contract",
-    "dialogue": "……这个月KPI又完不成了。老陈说再不签下来就让我走人。那家店……合同都准备好了……",
-    "inner_voice": "……这个月KPI又完不成了。老陈说再不签下来就让我走人。那家店……合同都准备好了……",
-    "focus_object": "",
-    "lighting": "Natural",
-    "emotion": "Neutral",
-    "visual_anchors": [],
-    "veo_prompt": "medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian walks contract, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
-  },
-  {
-    "shot_id": 9,
-    "pacing_label": "30s_Explosion",
-    "shot_type": "CU",
-    "camera_movement": "rapid_push",
-    "camera_angle": "low",
-    "duration": 4.6,
-    "location": "Nianxiang coffee shop",
-    "space": "Physical",
-    "characters": [
-      "Su Nian"
-    ],
-    "action_visual": "Su Nian opens eyes",
+    "action_visual": "Su Nian closes eyes, eyelashes trembling. Background figures freeze, steam hangs motionless",
     "dialogue": "",
     "inner_voice": "",
     "focus_object": "",
     "lighting": "High contrast",
     "emotion": "Shock",
     "visual_anchors": [],
-    "veo_prompt": "close-up, rapid push-in, low angle looking up, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian opens eyes, in Nianxiang coffee shop, high contrast dramatic lighting, harsh shadows, shocked, dramatic, cinematic, 9:16 vertical, photorealistic, 4K"
+    "veo_prompt": "close-up, static camera, low angle looking up, featuring Su Nian (barista, burn scar on ring finger), Su Nian closes eyes, eyelashes trembling. Background figures freeze, steam hangs motionless, in Nianxiang coffee shop, high contrast dramatic lighting, harsh shadows, shocked, dramatic, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "",
+      "dialogue_speaker": "",
+      "voiceover_zh": "",
+      "voice_type": "none",
+      "subtitle": "",
+      "emotion_tag": "sharp intake of breath, voice breaking",
+      "duration_hint": "6.5s"
+    }
   },
   {
-    "shot_id": 10,
-    "pacing_label": "60s_Satisfaction",
+    "shot_id": 6,
+    "pacing_label": "15s_Retention",
+    "shot_type": "ECU",
+    "camera_movement": "static",
+    "camera_angle": "eye-level",
+    "duration": 6.5,
+    "location": "Nianxiang coffee shop",
+    "space": "Physical",
+    "characters": [
+      "Su Nian"
+    ],
+    "action_visual": "Su Nian looks down at left hand, the scar on the ring finger has changed",
+    "dialogue": "",
+    "inner_voice": "",
+    "focus_object": "scar on ring finger",
+    "lighting": "Low key",
+    "emotion": "Mystery",
+    "visual_anchors": [
+      "scar on ring finger"
+    ],
+    "veo_prompt": "extreme close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian looks down at left hand, the scar on the ring finger has changed, close-up detail on scar on ring finger, in Nianxiang coffee shop, low key lighting, deep shadows, dim atmosphere, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "",
+      "dialogue_speaker": "",
+      "voiceover_zh": "",
+      "voice_type": "none",
+      "subtitle": "",
+      "emotion_tag": "low, deliberate, pauses between words",
+      "duration_hint": "6.5s"
+    }
+  },
+  {
+    "shot_id": 7,
+    "pacing_label": "30s_Explosion",
+    "shot_type": "CU",
+    "camera_movement": "static",
+    "camera_angle": "eye-level",
+    "duration": 6.5,
+    "location": "Nianxiang coffee shop",
+    "space": "Physical",
+    "characters": [
+      "Su Nian"
+    ],
+    "action_visual": "Su Nian walks slowly the contract",
+    "dialogue": "",
+    "inner_voice": "……这个月KPI又完不成了。老陈说再不签下来就让我走人。那家店……合同都准备好了……",
+    "focus_object": "contract",
+    "lighting": "Low key",
+    "emotion": "Mystery",
+    "visual_anchors": [
+      "contract"
+    ],
+    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian walks slowly the contract, close-up detail on contract, in Nianxiang coffee shop, low key lighting, deep shadows, dim atmosphere, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "",
+      "dialogue_speaker": "",
+      "voiceover_zh": "……这个月KPI又完不成了。老陈说再不签下来就让我走人。那家店……合同都准备好了……",
+      "voice_type": "inner_voice",
+      "subtitle": "……这个月KPI又完不成了。老陈说再不签下来就让我走人。那家",
+      "emotion_tag": "low, deliberate, pauses between words",
+      "duration_hint": "6.5s"
+    }
+  },
+  {
+    "shot_id": 8,
+    "pacing_label": "30s_Explosion",
+    "shot_type": "MCU",
+    "camera_movement": "rapid_push",
+    "camera_angle": "low",
+    "duration": 4.1,
+    "location": "Nianxiang coffee shop",
+    "space": "Physical",
+    "characters": [
+      "Su Nian"
+    ],
+    "action_visual": "Su Nian snaps eyes open",
+    "dialogue": "",
+    "inner_voice": "",
+    "focus_object": "",
+    "lighting": "High contrast",
+    "emotion": "Shock",
+    "visual_anchors": [],
+    "veo_prompt": "medium close-up, rapid push-in, low angle looking up, featuring Su Nian (barista, burn scar on ring finger), Su Nian snaps eyes open, in Nianxiang coffee shop, high contrast dramatic lighting, harsh shadows, shocked, dramatic, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "",
+      "dialogue_speaker": "",
+      "voiceover_zh": "",
+      "voice_type": "none",
+      "subtitle": "",
+      "emotion_tag": "sharp intake of breath, voice breaking",
+      "duration_hint": "4.1s"
+    }
+  },
+  {
+    "shot_id": 9,
+    "pacing_label": "30s_Explosion",
     "shot_type": "CU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 5.1,
+    "duration": 6.5,
     "location": "Nianxiang coffee shop",
     "space": "Mental",
     "characters": [
       "Su Nian"
     ],
-    "action_visual": "all sounds vanish",
+    "action_visual": "Su Nian stands behind counter, breathing slowly, eyes cast down",
     "dialogue": "",
     "inner_voice": "",
     "focus_object": "",
     "lighting": "Low key",
     "emotion": "Mystery",
     "visual_anchors": [],
-    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), all sounds vanish, in Nianxiang coffee shop, low key lighting, deep shadows, dim atmosphere, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian stands behind counter, breathing slowly, eyes cast down, in Nianxiang coffee shop, low key lighting, deep shadows, dim atmosphere, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "",
+      "dialogue_speaker": "",
+      "voiceover_zh": "",
+      "voice_type": "none",
+      "subtitle": "",
+      "emotion_tag": "low, deliberate, pauses between words",
+      "duration_hint": "6.5s"
+    }
+  },
+  {
+    "shot_id": 10,
+    "pacing_label": "60s_Satisfaction",
+    "shot_type": "CU",
+    "camera_movement": "static",
+    "camera_angle": "eye-level",
+    "duration": 4.5,
+    "location": "Nianxiang coffee shop",
+    "space": "Physical",
+    "characters": [
+      "Su Nian"
+    ],
+    "action_visual": "Su Nian looks down",
+    "dialogue": "",
+    "inner_voice": "",
+    "focus_object": "scar on skin",
+    "lighting": "Natural",
+    "emotion": "Neutral",
+    "visual_anchors": [
+      "scar on skin"
+    ],
+    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian looks down, close-up detail on scar on skin, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "",
+      "dialogue_speaker": "",
+      "voiceover_zh": "",
+      "voice_type": "none",
+      "subtitle": "",
+      "emotion_tag": "calm, conversational",
+      "duration_hint": "4.5s"
+    }
   },
   {
     "shot_id": 11,
     "pacing_label": "60s_Satisfaction",
     "shot_type": "CU",
-    "camera_movement": "static",
+    "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 5.1,
+    "duration": 4.5,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
       "Su Nian"
     ],
-    "action_visual": "Su Nian looks down at",
+    "action_visual": "Su Nian struggles to remember",
     "dialogue": "",
     "inner_voice": "",
-    "focus_object": "scar",
+    "focus_object": "faint mark",
     "lighting": "Natural",
     "emotion": "Neutral",
     "visual_anchors": [
-      "scar"
+      "faint mark"
     ],
-    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian looks down at, close-up detail on scar, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian struggles to remember, close-up detail on faint mark, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "",
+      "dialogue_speaker": "",
+      "voiceover_zh": "",
+      "voice_type": "none",
+      "subtitle": "",
+      "emotion_tag": "calm, conversational",
+      "duration_hint": "4.5s"
+    }
   },
   {
     "shot_id": 12,
     "pacing_label": "60s_Satisfaction",
     "shot_type": "CU",
-    "camera_movement": "push",
+    "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 5.1,
+    "duration": 6.5,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
       "Su Nian"
     ],
-    "action_visual": "a faint mark",
-    "dialogue": "",
+    "action_visual": "Gu Shen stands up from the seat",
+    "dialogue": "多少钱？",
     "inner_voice": "",
-    "focus_object": "mark",
+    "focus_object": "faint mark",
     "lighting": "Natural",
     "emotion": "Neutral",
     "visual_anchors": [
-      "mark"
+      "faint mark"
     ],
-    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), a faint mark, close-up detail on mark, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Gu Shen stands up from the seat, close-up detail on faint mark, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "多少钱？",
+      "dialogue_speaker": "Gu Shen",
+      "voiceover_zh": "",
+      "voice_type": "onscreen",
+      "subtitle": "",
+      "emotion_tag": "calm, conversational",
+      "duration_hint": "6.5s"
+    }
   },
   {
     "shot_id": 13,
-    "pacing_label": "60s_Satisfaction",
-    "shot_type": "CU",
-    "camera_movement": "static",
-    "camera_angle": "eye-level",
-    "duration": 5.1,
-    "location": "Nianxiang coffee shop",
-    "space": "Physical",
-    "characters": [
-      "Su Nian"
-    ],
-    "action_visual": "Su Nian stands up",
-    "dialogue": "多少钱？",
-    "inner_voice": "",
-    "focus_object": "mark",
-    "lighting": "Natural",
-    "emotion": "Neutral",
-    "visual_anchors": [
-      "mark"
-    ],
-    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian stands up, close-up detail on mark, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
-  },
-  {
-    "shot_id": 14,
     "pacing_label": "90s_Cliffhanger",
     "shot_type": "MS",
-    "camera_movement": "push",
+    "camera_movement": "pull",
     "camera_angle": "eye-level",
-    "duration": 4.6,
+    "duration": 4.1,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
       "Su Nian"
     ],
-    "action_visual": "Su Nian leaves",
+    "action_visual": "Gu Shen turns and leaves",
     "dialogue": "",
     "inner_voice": "",
     "focus_object": "",
     "lighting": "Natural",
     "emotion": "Neutral",
     "visual_anchors": [],
-    "veo_prompt": "medium shot, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian leaves, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "veo_prompt": "medium shot, slow dolly backward, eye level, featuring Su Nian (barista, burn scar on ring finger), Gu Shen turns and leaves, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "",
+      "dialogue_speaker": "",
+      "voiceover_zh": "",
+      "voice_type": "none",
+      "subtitle": "",
+      "emotion_tag": "calm, conversational",
+      "duration_hint": "4.1s"
+    }
   },
   {
-    "shot_id": 15,
+    "shot_id": 14,
     "pacing_label": "90s_Cliffhanger",
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 7.3,
+    "duration": 6.5,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
       "Su Nian"
     ],
-    "action_visual": "Su Nian walks in",
+    "action_visual": "Su Nian walks through the door",
     "dialogue": "……那家店……合同都准备好了……",
     "inner_voice": "",
     "focus_object": "lipstick mark",
@@ -324,21 +424,30 @@
     "visual_anchors": [
       "lipstick mark"
     ],
-    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), Su Nian walks in, close-up detail on lipstick mark, in Nianxiang coffee shop, low key lighting, deep shadows, dim atmosphere, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian walks through the door, close-up detail on lipstick mark, in Nianxiang coffee shop, low key lighting, deep shadows, dim atmosphere, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "……那家店……合同都准备好了……",
+      "dialogue_speaker": "Su Nian",
+      "voiceover_zh": "",
+      "voice_type": "onscreen",
+      "subtitle": "",
+      "emotion_tag": "low, deliberate, pauses between words",
+      "duration_hint": "6.5s"
+    }
   },
   {
-    "shot_id": 16,
+    "shot_id": 15,
     "pacing_label": "90s_Cliffhanger",
     "shot_type": "CU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 5.1,
+    "duration": 4.5,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
       "Su Nian"
     ],
-    "action_visual": "a lipstick mark",
+    "action_visual": "Su Nian turns on the faucet",
     "dialogue": "",
     "inner_voice": "",
     "focus_object": "lipstick mark",
@@ -347,29 +456,47 @@
     "visual_anchors": [
       "lipstick mark"
     ],
-    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), a lipstick mark, close-up detail on lipstick mark, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian turns on the faucet, close-up detail on lipstick mark, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "",
+      "dialogue_speaker": "",
+      "voiceover_zh": "",
+      "voice_type": "none",
+      "subtitle": "",
+      "emotion_tag": "calm, conversational",
+      "duration_hint": "4.5s"
+    }
   },
   {
-    "shot_id": 17,
+    "shot_id": 16,
     "pacing_label": "90s_Cliffhanger",
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 5.1,
+    "duration": 6.5,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
       "Su Nian"
     ],
-    "action_visual": "the scar is still visible",
+    "action_visual": "Su Nian stands behind counter, breathing slowly, eyes cast down",
     "dialogue": "",
     "inner_voice": "",
-    "focus_object": "scar",
+    "focus_object": "scar on skin",
     "lighting": "Natural",
     "emotion": "Neutral",
     "visual_anchors": [
-      "scar"
+      "scar on skin"
     ],
-    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on left ring finger), the scar is still visible, close-up detail on scar, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K"
+    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian stands behind counter, breathing slowly, eyes cast down, close-up detail on scar on skin, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "",
+      "dialogue_speaker": "",
+      "voiceover_zh": "",
+      "voice_type": "none",
+      "subtitle": "",
+      "emotion_tag": "calm, conversational",
+      "duration_hint": "6.5s"
+    }
   }
 ]

@@ -1,0 +1,196 @@
+[
+  {
+    "beat_id": 1,
+    "space": "Physical",
+    "characters_present": [
+      "Lin Ke"
+    ],
+    "primary_char": "Lin Ke",
+    "action_visual": "Lin Ke gazes at the photo",
+    "spoken_dialogue": "给你。",
+    "dialogue_speaker": "Lin Ke",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "old photo",
+    "emotion": "Neutral",
+    "source_text": "林可又来了。这次没带画，带了一个信封。\n\"给你。\"她把信封推到吧台上，\"外婆的旧照片。我从我妈那里翻出来的。\""
+  },
+  {
+    "beat_id": 2,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian stares intently",
+    "spoken_dialogue": "这是……外婆？",
+    "dialogue_speaker": "Su Nian",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "old photo",
+    "emotion": "Neutral",
+    "source_text": "苏念打开信封。一张泛黄的照片——一个白发老太太站在咖啡店门口，围裙上沾着咖啡渍，笑得眼睛眯成一条缝。\n苏念盯着照片看了很久。\n\"这是……外婆？\""
+  },
+  {
+    "beat_id": 3,
+    "space": "Physical",
+    "characters_present": [
+      "Lin Ke"
+    ],
+    "primary_char": "Lin Ke",
+    "action_visual": "Lin Ke stands behind counter, breathing slowly, eyes cast down",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "林可的脸色变了。"
+  },
+  {
+    "beat_id": 4,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian gazes at the photo",
+    "spoken_dialogue": "苏念，你认不出来了？",
+    "dialogue_speaker": "Su Nian",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "old photo",
+    "emotion": "Neutral",
+    "source_text": "\"苏念，你认不出来了？\"\n苏念看着照片里那张脸。她知道这应该是外婆——照片背景就是\"念想\"的门面，门上的木牌还是手写的。"
+  },
+  {
+    "beat_id": 5,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian struggles to remember",
+    "spoken_dialogue": "我记得她的名字。",
+    "dialogue_speaker": "Su Nian",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "但那张脸——她看不出来了。\n\"我记得她的名字。\"苏念说，声音很轻，\"我记得她喜欢穿蓝色围裙。我记得她冲咖啡时会哼歌。但我想不起来她长什么样了。\""
+  },
+  {
+    "beat_id": 6,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "Lin Ke"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian clenches fists tightly",
+    "spoken_dialogue": "你最近到底怎么了？",
+    "dialogue_speaker": "Su Nian",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "old photo",
+    "emotion": "Neutral",
+    "source_text": "林可的手在吧台上握紧。\n\"你最近到底怎么了？\"\n\"没事。\"\n\"苏念——\"\n\"真的没事。\"苏念把照片收回信封，\"谢谢你。\""
+  },
+  {
+    "beat_id": 7,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "Lin Ke"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian turns head back",
+    "spoken_dialogue": "苏念，你哥以前也——",
+    "dialogue_speaker": "Su Nian",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "林可看着她，嘴唇动了动，最后什么也没说。她站起来，走到门口，又回头——\n\"苏念，你哥以前也——\""
+  },
+  {
+    "beat_id": 8,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian looks up",
+    "spoken_dialogue": "我哥怎么了？",
+    "dialogue_speaker": "Su Nian",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Shock",
+    "source_text": "她突然闭嘴。\n苏念抬头：\"我哥怎么了？\""
+  },
+  {
+    "beat_id": 9,
+    "space": "Physical",
+    "characters_present": [
+      "Lin Ke"
+    ],
+    "primary_char": "Lin Ke",
+    "action_visual": "Lin Ke turns and leaves",
+    "spoken_dialogue": "没什么。",
+    "dialogue_speaker": "Lin Ke",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "\"没什么。\"林可推开玻璃门，\"我走了。\""
+  },
+  {
+    "beat_id": 10,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian sits down",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "sticky note",
+    "emotion": "Neutral",
+    "source_text": "门关上了。风铃晃了两下。\n苏念独自坐在空荡荡的店里，把信封里的照片拿出来，贴在墙上外婆便签的旁边。\n照片里的老太太在笑。\n苏念看着那张笑脸，伸手摸了摸——照片表"
+  },
+  {
+    "beat_id": 11,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "the lights come back on",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "old photo",
+    "emotion": "Neutral",
+    "source_text": "窗外，一辆外卖摩托车呼啸而过。车灯的光从窗户扫进来，照亮了照片上的灰尘。\n灰尘在光柱里飞舞——"
+  },
+  {
+    "beat_id": 12,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian tears roll down cheeks",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "old photo",
+    "emotion": "Shock",
+    "source_text": "然后窗外传来一声猫叫。尖锐，刺耳，像婴儿哭。\n苏念猛地转头。窗户外面，一只黑猫蹲在空调外机上，眼睛在黑暗中发着绿光。\n照片从墙上滑落，落在地上，面朝下。"
+  }
+]

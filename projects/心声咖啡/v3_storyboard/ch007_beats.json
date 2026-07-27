@@ -1,0 +1,130 @@
+[
+  {
+    "beat_id": 1,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian tears roll down cheeks",
+    "spoken_dialogue": "你从来不听我说话",
+    "dialogue_speaker": "Su Nian",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Sadness",
+    "source_text": "一对年轻情侣在吧台前吵起来了。\n女孩哭着说\"你从来不听我说话\"，男孩说\"你每次都这样\"。苏念站在吧台后面，不知道该不该插嘴。"
+  },
+  {
+    "beat_id": 2,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian finishes preparing and carries the cup over",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "男孩点了两杯拿铁，摔了钱包在桌上。\n苏念做好端过去。女孩低着头，不喝。\n男孩喝了一口，站起来去洗手间。\n苏念看着那杯还在冒热气的拿铁——女孩的那杯。"
+  },
+  {
+    "beat_id": 3,
+    "space": "Transition",
+    "characters_present": [
+      "Gu Shen"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen lifts the cup, fingers trembling around the warm rim",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "cup rim",
+    "emotion": "Tension",
+    "source_text": "[reading mind template]"
+  },
+  {
+    "beat_id": 4,
+    "space": "Mental",
+    "characters_present": [
+      "Gu Shen"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen closes eyes, eyelashes trembling. Background figures freeze, steam hangs motionless",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Shock",
+    "source_text": "[reading mind template]"
+  },
+  {
+    "beat_id": 5,
+    "space": "Physical",
+    "characters_present": [
+      "Gu Shen"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen looks down at left hand, the scar on the ring finger has changed",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "scar on ring finger",
+    "emotion": "Mystery",
+    "source_text": "[reading mind template]"
+  },
+  {
+    "beat_id": 6,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian sets the cup down on the counter",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "简单的心声。浅层的委屈。\n苏念放下杯子。代价应该很小——读心一个陌生人，失去的是一段无关紧要的记忆。"
+  },
+  {
+    "beat_id": 7,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian bends down",
+    "spoken_dialogue": "告诉他你为什么生气。不是因为那件事，是因为生日。",
+    "dialogue_speaker": "Su Nian",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Mystery",
+    "source_text": "她低头看手。左手手腕内侧——一道她不记得什么时候有的小划痕——消失了。\n无所谓。她甚至不记得那道划痕存在过。\n男孩回来了。苏念走过去，弯腰在女孩耳边轻声说了一句"
+  },
+  {
+    "beat_id": 8,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian drains the cup in one gulp",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "lipstick mark",
+    "emotion": "Shock",
+    "source_text": "女孩愣住了。\n苏念回到吧台后面。十分钟后，男孩红着脸在女孩面前跪下来，从口袋里掏出一张皱巴巴的电影票——两张，下周二，女孩生日那天。\n女孩哭着笑了。\n他们走了。"
+  }
+]

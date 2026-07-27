@@ -1,0 +1,310 @@
+[
+  {
+    "beat_id": 1,
+    "space": "Physical",
+    "characters_present": [
+      "Lin Ke"
+    ],
+    "primary_char": "Lin Ke",
+    "action_visual": "Lin Ke gazes at the door",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "watercolor painting",
+    "emotion": "Neutral",
+    "source_text": "林可来的时候带着一幅画，展开在吧台上——水彩的，暖色调，小巷深处的老店，门口挂着\"念想\"的木牌。"
+  },
+  {
+    "beat_id": 2,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian stares intently",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "watercolor painting",
+    "emotion": "Neutral",
+    "source_text": "苏念盯着画里的门口。那棵桂花树——她应该记得的，但脑子里一片空白。"
+  },
+  {
+    "beat_id": 3,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian gazes at the door",
+    "spoken_dialogue": "外婆的店……门口有这棵树？",
+    "dialogue_speaker": "grandmother",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "\"外婆的店……门口有这棵树？\""
+  },
+  {
+    "beat_id": 4,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "Lin Ke"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian hand pauses mid-motion",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "watercolor painting",
+    "emotion": "Neutral",
+    "source_text": "林可的手停在半空。她看了苏念三秒，慢慢收起画。"
+  },
+  {
+    "beat_id": 5,
+    "space": "Physical",
+    "characters_present": [
+      "Gu Shen"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen pours water into a cup",
+    "spoken_dialogue": "你最近太累了。",
+    "dialogue_speaker": "Gu Shen",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "watercolor painting",
+    "emotion": "Neutral",
+    "source_text": "\"你最近太累了。\"她把画塞进包里，转身去吧台后面给自己倒了杯水。喝完才开口：\"那个顾深，又来了？\""
+  },
+  {
+    "beat_id": 6,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "Gu Shen",
+      "Lin Ke"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian nods slowly",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "old photo",
+    "emotion": "Neutral",
+    "source_text": "苏念点头。\n林可掏出手机，翻出一张照片——顾深的LinkedIn页面。她把手机拍在吧台上，手指点着屏幕上的公司名。"
+  },
+  {
+    "beat_id": 7,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian stands behind counter, breathing slowly, eyes cast down",
+    "spoken_dialogue": "锐见投资。苏念，他是来收购的。",
+    "dialogue_speaker": "Su Nian",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "\"锐见投资。苏念，他是来收购的。\"\n\"我知道。\"\n\"那你还让他天天来？\""
+  },
+  {
+    "beat_id": 8,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "Gu Shen"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian gazes at the cup",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "cup rim",
+    "emotion": "Neutral",
+    "source_text": "苏念没回答。她看着吧台上顾深刚用过的杯子——杯沿还有温度。她的手伸过去，又缩回来。"
+  },
+  {
+    "beat_id": 9,
+    "space": "Physical",
+    "characters_present": [
+      "Lin Ke"
+    ],
+    "primary_char": "Lin Ke",
+    "action_visual": "Lin Ke unrolls a painting on the counter",
+    "spoken_dialogue": "这是你外婆。你还记得她冲咖啡的样子吗？",
+    "dialogue_speaker": "Lin Ke",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "watercolor painting",
+    "emotion": "Neutral",
+    "source_text": "林可把手机收起来，从包里翻出那幅画，重新展开。她指着画面里桂花树下的一个小人影：\"这是你外婆。你还记得她冲咖啡的样子吗？\""
+  },
+  {
+    "beat_id": 10,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian gazes at, motionless",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "watercolor painting",
+    "emotion": "Mystery",
+    "source_text": "苏念看着画里那个模糊的身影。齐肩白发，围裙，手里端着一个铜壶。\n她记得参数——耶加雪菲，水温88度，闷蒸30秒。\n但那个味道——焦糖？坚果？还是桂花？"
+  },
+  {
+    "beat_id": 11,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian speaks softly, motionless",
+    "spoken_dialogue": "不太记得了。",
+    "dialogue_speaker": "Su Nian",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "\"不太记得了。\"苏念小声说。"
+  },
+  {
+    "beat_id": 12,
+    "space": "Physical",
+    "characters_present": [
+      "Lin Ke"
+    ],
+    "primary_char": "Lin Ke",
+    "action_visual": "Lin Ke speaks softly, motionless",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "watercolor painting",
+    "emotion": "Neutral",
+    "source_text": "林可的手指在画纸上收紧，纸面微微凹陷。她没再说话，把画卷起来，用橡皮筋绑好，塞进包里。"
+  },
+  {
+    "beat_id": 13,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian turns head back",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "临走时她在门口停了一下，回头看了苏念一眼。嘴唇动了动，像是想说什么，最后只挥了挥手。\n苏念独自站在空荡荡的店里。"
+  },
+  {
+    "beat_id": 14,
+    "space": "Physical",
+    "characters_present": [
+      "Gu Shen"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen looks down",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "cup wall",
+    "emotion": "Neutral",
+    "source_text": "窗外，对面写字楼的玻璃幕墙反射着夕阳。她拿起顾深的杯子去洗——水龙头打开，热水冲过杯壁。\n她低头看自己的手。"
+  },
+  {
+    "beat_id": 15,
+    "space": "Physical",
+    "characters_present": [
+      "Lin Ke"
+    ],
+    "primary_char": "Lin Ke",
+    "action_visual": "Lin Ke draws latte art in the foam",
+    "spoken_dialogue": "送给小念。希望你永远记得。",
+    "dialogue_speaker": "Lin Ke",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "scar on skin",
+    "emotion": "Neutral",
+    "source_text": "疤痕还在。\n但她想不起来——外婆教她拉花时，咖啡的香气是什么样的？\n吧台上，林可留下的画纸角被风吹起来，露出画背面一行铅笔小字：\n\"送给小念。希望你永远记得。\""
+  },
+  {
+    "beat_id": 16,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian wipes a table clean",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "苏念没看到那行字。她正在擦桌子。"
+  },
+  {
+    "beat_id": 17,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "the lights come back on",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "窗外的夕阳沉下去了。咖啡店的灯自动亮了。"
+  },
+  {
+    "beat_id": 18,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian draws latte art in the foam",
+    "spoken_dialogue": "小念，记住：拉花不是技术，是心意。",
+    "dialogue_speaker": "grandmother",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "sticky note",
+    "emotion": "Neutral",
+    "source_text": "墙上外婆的便签在灯光下微微发黄：\"小念，记住：拉花不是技术，是心意。\""
+  },
+  {
+    "beat_id": 19,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian struggles to remember",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "sticky note",
+    "emotion": "Neutral",
+    "source_text": "苏念看着那张便签，字迹熟悉。\n但她不记得写这张便签的人，冲咖啡时是什么表情了。"
+  }
+]

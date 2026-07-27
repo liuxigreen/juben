@@ -1,0 +1,517 @@
+[
+  {
+    "beat_id": 1,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian gazes at the coffee",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "早上七点，苏念打开咖啡店的门。"
+  },
+  {
+    "beat_id": 2,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "the handwriting on the sticky note fades by one stroke",
+    "spoken_dialogue": "营业中",
+    "dialogue_speaker": "Su Nian",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "sticky note",
+    "emotion": "Mystery",
+    "source_text": "阳光从巷子里涌进来，照在吧台上，照在墙上的便签上。便签上的字比昨天又淡了一点——但还在。\n她把\"营业中\"的牌子挂好，开始准备。"
+  },
+  {
+    "beat_id": 3,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian grinds coffee beans, the grinder humming",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "cup wall",
+    "emotion": "Neutral",
+    "source_text": "磨豆机转了三圈。豆子碎了，空气里弥漫着焦糖和坚果的味道。九十二度的水，研磨度二点五，萃取时间二十五秒。这些数字刻在她手指上，比她的名字还清楚。\n第一杯咖啡冲好了"
+  },
+  {
+    "beat_id": 4,
+    "space": "Physical",
+    "characters_present": [
+      "Gu Shen"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen walks through the door",
+    "spoken_dialogue": "美式。",
+    "dialogue_speaker": "Gu Shen",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "门口的风铃响了。\n顾深走进来。今天他穿了一件浅灰色的衬衫，没打领带。他的右手拎着一个纸袋——里面是灯泡，暖光的那种。\n\"美式。\"他坐到吧台前的老位置上。"
+  },
+  {
+    "beat_id": 5,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "Gu Shen"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian grinds coffee beans, the grinder humming",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "cup rim",
+    "emotion": "Mystery",
+    "source_text": "苏念开始做。手在动，磨豆、压粉、萃取。咖啡液流出来，深棕色的，带着一层薄薄的油脂。\n她把咖啡端过去。\n顾深接过杯子，喝了一口。他的嘴唇碰到杯沿，留下一个模糊的印"
+  },
+  {
+    "beat_id": 6,
+    "space": "Transition",
+    "characters_present": [
+      "Gu Shen"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen lifts the cup, fingers trembling around the warm rim",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "cup rim",
+    "emotion": "Tension",
+    "source_text": "[reading mind template]"
+  },
+  {
+    "beat_id": 7,
+    "space": "Mental",
+    "characters_present": [
+      "Gu Shen"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen closes eyes, eyelashes trembling. Background figures freeze, steam hangs motionless",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Shock",
+    "source_text": "[reading mind template]"
+  },
+  {
+    "beat_id": 8,
+    "space": "Physical",
+    "characters_present": [
+      "Gu Shen"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen looks down at left hand, the scar on the ring finger has changed",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "scar on ring finger",
+    "emotion": "Mystery",
+    "source_text": "[reading mind template]"
+  },
+  {
+    "beat_id": 9,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian speaks softly, motionless",
+    "spoken_dialogue": "为什么？",
+    "dialogue_speaker": "Su Nian",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "\"嗯。\"苏念说。\n\"为什么？\""
+  },
+  {
+    "beat_id": 10,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian hand pauses mid-motion",
+    "spoken_dialogue": "因为——",
+    "dialogue_speaker": "Su Nian",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "scar on skin",
+    "emotion": "Neutral",
+    "source_text": "苏念的手停在吧台上。她看着自己的左手手背——光滑的，什么都没有。疤痕、痣、印记，全没了。\n\"因为——\"她说，\"我怕再忘掉什么。\""
+  },
+  {
+    "beat_id": 11,
+    "space": "Physical",
+    "characters_present": [
+      "Gu Shen"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen sets the cup down on the counter",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "顾深放下杯子。他的灰色眼睛在晨光里变成了琥珀色。"
+  },
+  {
+    "beat_id": 12,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen speaks softly, motionless",
+    "spoken_dialogue": "你已经忘了很多。",
+    "dialogue_speaker": "Gu Shen",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "\"你已经忘了很多。\"他说。这不是问句。"
+  },
+  {
+    "beat_id": 13,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian struggles to remember",
+    "spoken_dialogue": "我不记得我爸妈。不记得我外婆的声音。不记得我哥哥。",
+    "dialogue_speaker": "Su Nian",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "\"嗯。\"苏念说。\"我不记得我爸妈。不记得我外婆的声音。不记得我哥哥。\""
+  },
+  {
+    "beat_id": 14,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian gazes at the coffee",
+    "spoken_dialogue": "但我记得怎么冲咖啡。",
+    "dialogue_speaker": "Su Nian",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "她停了一下。\n\"但我记得怎么冲咖啡。\""
+  },
+  {
+    "beat_id": 15,
+    "space": "Physical",
+    "characters_present": [
+      "Gu Shen"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen gazes at, motionless",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "顾深看着她。他的表情像是在做一道数学题——每一步都精确，但答案怎么都凑不齐。"
+  },
+  {
+    "beat_id": 16,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen stands behind counter, breathing slowly, eyes cast down",
+    "spoken_dialogue": "那够吗？",
+    "dialogue_speaker": "Gu Shen",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "\"那够吗？\"他问。"
+  },
+  {
+    "beat_id": 17,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian stands behind counter, breathing slowly, eyes cast down",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "苏念想了想。"
+  },
+  {
+    "beat_id": 18,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian speaks softly the coffee",
+    "spoken_dialogue": "因为咖啡不在脑子里。在手里。",
+    "dialogue_speaker": "Su Nian",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "\"够。\"她说。\"因为咖啡不在脑子里。在手里。\""
+  },
+  {
+    "beat_id": 19,
+    "space": "Physical",
+    "characters_present": [
+      "Gu Shen"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen takes a slow sip",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "cup wall",
+    "emotion": "Neutral",
+    "source_text": "顾深喝了一口咖啡。他的手指在杯壁上画了一个圈。"
+  },
+  {
+    "beat_id": 20,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen speaks softly, motionless",
+    "spoken_dialogue": "我明天还来。",
+    "dialogue_speaker": "Gu Shen",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "\"我明天还来。\"他说。\n\"嗯。\"\n\"后天也来。\"\n\"嗯。\"\n\"每天都来。\""
+  },
+  {
+    "beat_id": 21,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian draws latte art in the foam",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "苏念的嘴角弯起来——很小的一下，像拉花失败了，歪歪扭扭的，但很好看。"
+  },
+  {
+    "beat_id": 22,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian speaks softly, motionless",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "\"好。\"她说。"
+  },
+  {
+    "beat_id": 23,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "Gu Shen"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian stands up from the seat",
+    "spoken_dialogue": "苏念。",
+    "dialogue_speaker": "Su Nian",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "顾深站起来，把钱放在吧台上。他走到门口，停下来。\n\"苏念。\"\n\"嗯。\""
+  },
+  {
+    "beat_id": 24,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen speaks softly, motionless",
+    "spoken_dialogue": "你笑的样子——",
+    "dialogue_speaker": "Gu Shen",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "\"你笑的样子——\"他说，\"和我第一次来的时候一样。\""
+  },
+  {
+    "beat_id": 25,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "Gu Shen"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian carries a steaming cup",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "lipstick mark",
+    "emotion": "Neutral",
+    "source_text": "他走了。风铃晃了两下，发出清脆的叮当声。\n苏念站在吧台后面。她看着那杯顾深喝过的咖啡——杯壁上还有他的唇印，杯底还剩一点冷掉的咖啡液。\n她端起杯子。\n杯壁是温的"
+  },
+  {
+    "beat_id": 26,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "the handwriting on the sticky note fades by one stroke",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "sticky note",
+    "emotion": "Mystery",
+    "source_text": "她走到墙边，看着外婆的便签。便签上的字又淡了一个笔画——\"念\"字的最后一笔，几乎看不见了。"
+  },
+  {
+    "beat_id": 27,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian wipes the counter with a rag",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "但她知道那个字是什么。\n念。\n想念的念。\n苏念转身，走回吧台后面。她拿起一块抹布，擦了擦吧台。然后她给自己倒了一杯水，喝了一口。\n水是凉的。顺着喉咙滑下去。"
+  },
+  {
+    "beat_id": 28,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian struggles to remember",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "窗外，阳光照在巷子里的青石板上。一个老人牵着一只橘猫走过。猫停下来，看着咖啡店的窗户，叫了一声。\n苏念看着那只猫。\n她想不起来——外婆养的那只橘猫叫什么名字。"
+  },
+  {
+    "beat_id": 29,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian turns and leaves",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "但她记得——那只猫喜欢蹲在咖啡店门口的台阶上，晒太阳。\n猫走了。老人也走了。"
+  },
+  {
+    "beat_id": 30,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian pours water into a cup",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "cup wall",
+    "emotion": "Mystery",
+    "source_text": "苏念回到吧台后面，拿起那杯没喝的咖啡。她看着杯壁上的倒影——自己的脸，模糊的，但嘴角弯起来。\n她把咖啡倒进水槽里。\n咖啡液顺着下水道流走了。\n苏念把杯子洗干净，"
+  },
+  {
+    "beat_id": 31,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian draws latte art in the foam",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "小念，拉花不是技术，是心意。",
+    "voice_type": "inner_voice",
+    "focus_object": "sticky note",
+    "emotion": "Mystery",
+    "source_text": "她拿起下一张便签——墙上的，外婆写的。字迹淡了，但她还记得内容：\n*\"小念，拉花不是技术，是心意。\"*"
+  },
+  {
+    "beat_id": 32,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian pours water into a cup",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "watercolor painting",
+    "emotion": "Warmth",
+    "source_text": "苏念走到咖啡机前，拿起拉花缸。\n她开始打奶泡。\n奶泡从缸里倒出来，在咖啡表面画了一个歪歪扭扭的爱心。\n她看着那个爱心。\n和五岁时画的一模一样。\n苏念笑了。\n很小"
+  }
+]
