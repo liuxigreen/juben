@@ -50,8 +50,8 @@ python3 generate_script.py --project 你的剧名 --all --prompt-only
 # 将生成的提示词发送给LLM，保存结果到 chapters/
 
 # Stage 2: 分镜生成（纯算法）
-python3 smart_adapter_test.py --project projects/你的剧名 --chapters all
-python3 smart_adapter_test.py --project projects/你的剧名 --chapters 1-5
+python3 pipeline_v3.py projects/你的剧名
+python3 pipeline_v3.py projects/你的剧名 --chapters 1-5
 
 # Stage 3: 提示词生成（纯算法）
 python3 export_pro_prompts.py --project projects/你的剧名
@@ -69,8 +69,14 @@ python3 export_pro_prompts.py --project projects/你的剧名
 
 ```
 juben/
+├── juben/                         # 核心引擎模块（22个Python文件）
+│   ├── pipeline.py                # v3分镜引擎主逻辑
+│   ├── adapter_v3.py              # 剧本适配器
+│   ├── visual_beat_chunker.py     # Beat分块器
+│   ├── prompt_renderer.py         # 提示词渲染器
+│   └── ...                        # 其他模块
 ├── generate_script.py             # Stage 1: 剧本生成器
-├── smart_adapter_test.py          # Stage 2: 分镜生成器
+├── pipeline_v3.py                 # Stage 2: 分镜生成器（调用juben/pipeline.py）
 ├── export_pro_prompts.py          # Stage 3: 专业提示词生成器
 ├── skills/
 │   └── short-drama-pipeline/      # 本skill
