@@ -3,7 +3,9 @@
     "beat_id": 1,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian sits down",
@@ -21,14 +23,17 @@
     "characters_present": [
       "Su Nian",
       "Gu Shen",
-      "Chen Rui"
+      "Lin Ke",
+      "Chen Rui",
+      "Su Yuan",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian draws latte art in the foam",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
+    "inner_voice": "第1天：读心灰色西装男（顾深）。失去——手背上一道印痕。原因不明。",
+    "voice_type": "inner_voice",
     "focus_object": "faint mark",
     "emotion": "Neutral",
     "source_text": "*第1天：读心灰色西装男（顾深）。失去——手背上一道印痕。原因不明。*\n*第2天：读心顾深。失去——右手手背小痣。*\n*第3天：读心顾深。失去——右手无名指戒指"
@@ -40,7 +45,7 @@
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian stands behind counter, breathing slowly, eyes cast down",
+    "action_visual": "Su Nian stands still, shoulders slightly tense, eyes unfocused",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
@@ -69,7 +74,27 @@
     "beat_id": 5,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian struggles to remember",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "苏念合上笔记本，走到镜子前。\n她看着镜子里的自己。齐肩短发，圆脸，围裙。\n她记得自己的名字。记得咖啡店的名字。记得外婆的名字。\n但她不记得——\n父母的样子。"
+  },
+  {
+    "beat_id": 6,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian turns hand over to inspect",
@@ -79,13 +104,16 @@
     "voice_type": "none",
     "focus_object": "",
     "emotion": "Neutral",
-    "source_text": "苏念合上笔记本，走到镜子前。\n她看着镜子里的自己。齐肩短发，圆脸，围裙。\n她记得自己的名字。记得咖啡店的名字。记得外婆的名字。\n但她不记得——\n父母的样子。\n她"
+    "source_text": "她翻出手机相册。有一个相册叫\"家人\"。她点开——"
   },
   {
-    "beat_id": 6,
+    "beat_id": 7,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Gu Shen",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian struggles to remember",
@@ -98,23 +126,25 @@
     "source_text": "第一张：一个年轻女人抱着婴儿。女人的脸模糊得像被水泡过。\n第二张：一个男人站在公园里，背景是一棵大榕树。男人的脸——完全空白。不是被遮挡，是不存在。照片上只有衣"
   },
   {
-    "beat_id": 7,
+    "beat_id": 8,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian gazes at the phone",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
+    "inner_voice": "规律：读心次数越多，失去的记忆越重要。从无关紧要的印记，到重要的人。",
+    "voice_type": "inner_voice",
     "focus_object": "",
     "emotion": "Neutral",
     "source_text": "她关掉手机。\n笔记本上，她又加了一行：\n*规律：读心次数越多，失去的记忆越重要。从无关紧要的印记，到重要的人。*\n*如果继续下去——我会忘记谁？*\n*如果全部忘"
   },
   {
-    "beat_id": 8,
+    "beat_id": 9,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -130,7 +160,25 @@
     "source_text": "窗外，天已经黑了。对面写字楼的灯一层层亮起来，又一层层灭掉。\n咖啡店里只剩下一盏吧台灯。灯光照在笔记本上，照在苏念握着笔的手上。"
   },
   {
-    "beat_id": 9,
+    "beat_id": 10,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian stands still, shoulders slightly tense, eyes unfocused",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "scar on skin",
+    "emotion": "Neutral",
+    "source_text": "她的手背上，已经没有任何疤痕和印记了。\n光滑得像一张白纸。"
+  },
+  {
+    "beat_id": 11,
     "space": "Physical",
     "characters_present": [
       "Gu Shen"
@@ -141,18 +189,20 @@
     "dialogue_speaker": "Gu Shen",
     "inner_voice": "",
     "voice_type": "onscreen",
-    "focus_object": "scar on skin",
+    "focus_object": "",
     "emotion": "Neutral",
-    "source_text": "她的手背上，已经没有任何疤痕和印记了。\n光滑得像一张白纸。\n手机响了。顾深的消息：\n\"明天我来喝咖啡。\""
+    "source_text": "手机响了。顾深的消息：\n\"明天我来喝咖啡。\""
   },
   {
-    "beat_id": 10,
+    "beat_id": 12,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian gazes at, motionless",
+    "action_visual": "Su Nian gazes at",
     "spoken_dialogue": "别来了。",
     "dialogue_speaker": "Su Nian",
     "inner_voice": "",
@@ -162,13 +212,13 @@
     "source_text": "苏念看着那行字，手指在屏幕上悬了很久。\n她打了一行字：\"别来了。\""
   },
   {
-    "beat_id": 11,
+    "beat_id": 13,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian stands behind counter, breathing slowly, eyes cast down",
+    "action_visual": "Su Nian stands still, shoulders slightly tense, eyes unfocused",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
@@ -178,13 +228,13 @@
     "source_text": "然后删掉。\n又打了一行：\"好。\""
   },
   {
-    "beat_id": 12,
+    "beat_id": 14,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian stands behind counter, breathing slowly, eyes cast down",
+    "action_visual": "Su Nian stands still, shoulders slightly tense, eyes unfocused",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",

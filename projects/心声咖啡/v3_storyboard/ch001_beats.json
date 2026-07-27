@@ -21,6 +21,24 @@
     "characters_present": [
       "Su Nian"
     ],
+    "primary_char": "Su Nian",
+    "action_visual": "the doorbell chimes",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "门铃响了。"
+  },
+  {
+    "beat_id": 3,
+    "space": "Physical",
+    "characters_present": [
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
+    ],
     "primary_char": "Gu Shen",
     "action_visual": "Gu Shen walks through the door",
     "spoken_dialogue": "美式，热的。",
@@ -29,10 +47,49 @@
     "voice_type": "onscreen",
     "focus_object": "",
     "emotion": "Neutral",
-    "source_text": "门铃响了。\n一个穿灰色西装的男人走进来，径直坐到吧台前。他没看菜单，掏出手机放桌上，屏幕朝下。\n\"美式，热的。\""
+    "source_text": "一个穿灰色西装的男人走进来，径直坐到吧台前。他没看菜单，掏出手机放桌上，屏幕朝下。\n\"美式，热的。\""
   },
   {
-    "beat_id": 3,
+    "beat_id": 4,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "Gu Shen",
+      "Lin Ke",
+      "Chen Rui",
+      "Su Yuan",
+      "grandmother"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian grinds coffee beans, the grinder humming",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "ink stain",
+    "emotion": "Neutral",
+    "source_text": "苏念点头，转身磨豆。男人的手指在桌面上敲——食指，中指，无名指，循环。她以前没见过这个人，但他西装袖口有一道细小的墨渍，像是签字时蹭的。对面写字楼的人。"
+  },
+  {
+    "beat_id": 5,
+    "space": "Physical",
+    "characters_present": [
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen carries a steaming cup",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "lipstick mark",
+    "emotion": "Neutral",
+    "source_text": "咖啡端上去。男人喝了一口，杯子放下时，杯沿留着一圈干净的唇印——他没有涂唇膏，那是杯壁上残留的水汽凝成的弧形。"
+  },
+  {
+    "beat_id": 6,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -43,12 +100,31 @@
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
-    "focus_object": "lipstick mark",
+    "focus_object": "",
     "emotion": "Neutral",
-    "source_text": "苏念点头，转身磨豆。男人的手指在桌面上敲——食指，中指，无名指，循环。她以前没见过这个人，但他西装袖口有一道细小的墨渍，像是签字时蹭的。对面写字楼的人。\n咖啡端"
+    "source_text": "苏念转身去擦第二张桌子。"
   },
   {
-    "beat_id": 4,
+    "beat_id": 7,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "Gu Shen",
+      "Lin Ke",
+      "grandmother"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian sets the cup down on the counter",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "然后她注意到——杯子还在冒热气，但男人已经放下了。"
+  },
+  {
+    "beat_id": 8,
     "space": "Transition",
     "characters_present": [
       "Su Nian"
@@ -61,10 +137,10 @@
     "voice_type": "none",
     "focus_object": "cup rim",
     "emotion": "Tension",
-    "source_text": "[reading mind template]"
+    "source_text": "[ability template]"
   },
   {
-    "beat_id": 5,
+    "beat_id": 9,
     "space": "Mental",
     "characters_present": [
       "Su Nian"
@@ -77,10 +153,10 @@
     "voice_type": "none",
     "focus_object": "",
     "emotion": "Shock",
-    "source_text": "[reading mind template]"
+    "source_text": "[ability template]"
   },
   {
-    "beat_id": 6,
+    "beat_id": 10,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -93,10 +169,76 @@
     "voice_type": "none",
     "focus_object": "scar on ring finger",
     "emotion": "Mystery",
-    "source_text": "[reading mind template]"
+    "source_text": "[ability template]"
   },
   {
-    "beat_id": 7,
+    "beat_id": 11,
+    "space": "Transition",
+    "characters_present": [
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian takes a slow sip",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "cup wall",
+    "emotion": "Neutral",
+    "source_text": "杯壁烫手。她闭眼喝了一口。"
+  },
+  {
+    "beat_id": 12,
+    "space": "Transition",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian lifts the cup, fingers trembling around the warm rim",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "cup rim",
+    "emotion": "Tension",
+    "source_text": "[ability template]"
+  },
+  {
+    "beat_id": 13,
+    "space": "Mental",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian closes eyes, eyelashes trembling. Background figures freeze, steam hangs motionless",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Shock",
+    "source_text": "[ability template]"
+  },
+  {
+    "beat_id": 14,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian looks down at left hand, the scar on the ring finger has changed",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "scar on ring finger",
+    "emotion": "Mystery",
+    "source_text": "[ability template]"
+  },
+  {
+    "beat_id": 15,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -112,7 +254,7 @@
     "source_text": "不是安静——是所有的声音都消失了。老大爷的鼾声、女孩键盘的敲击声、街上汽车的喇叭声，全部被抽空。取而代之的是一个声音，低沉，像是隔着一面墙：\n*\"……这个月KP"
   },
   {
-    "beat_id": 8,
+    "beat_id": 16,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -128,29 +270,63 @@
     "source_text": "苏念猛地睁开眼。"
   },
   {
-    "beat_id": 9,
+    "beat_id": 17,
+    "space": "Transition",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian lifts the cup, fingers trembling around the warm rim",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "cup rim",
+    "emotion": "Tension",
+    "source_text": "[ability template]"
+  },
+  {
+    "beat_id": 18,
     "space": "Mental",
     "characters_present": [
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian stands behind counter, breathing slowly, eyes cast down",
+    "action_visual": "Su Nian closes eyes, eyelashes trembling. Background figures freeze, steam hangs motionless",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
     "focus_object": "",
-    "emotion": "Mystery",
-    "source_text": "声音消失了。老大爷翻了个身，女孩的键盘还在响。"
+    "emotion": "Shock",
+    "source_text": "[ability template]"
   },
   {
-    "beat_id": 10,
+    "beat_id": 19,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian looks down",
+    "action_visual": "Su Nian looks down at left hand, the scar on the ring finger has changed",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "scar on ring finger",
+    "emotion": "Mystery",
+    "source_text": "[ability template]"
+  },
+  {
+    "beat_id": 20,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
+    ],
+    "primary_char": "grandmother",
+    "action_visual": "grandmother looks down",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
@@ -160,10 +336,12 @@
     "source_text": "她低头看自己的手。左手无名指——那个从小就在的疤痕，外婆说是她两岁时被热牛奶烫的——还在。"
   },
   {
-    "beat_id": 11,
+    "beat_id": 21,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian struggles to remember",
@@ -176,10 +354,30 @@
     "source_text": "但旁边多了一道浅浅的、她不记得什么时候出现的印痕。"
   },
   {
-    "beat_id": 12,
+    "beat_id": 22,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian struggles to remember",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "faint mark",
+    "emotion": "Neutral",
+    "source_text": "不对。那道印痕一直在吗？\n她想不起来。"
+  },
+  {
+    "beat_id": 23,
+    "space": "Physical",
+    "characters_present": [
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Gu Shen",
     "action_visual": "Gu Shen stands up from the seat",
@@ -187,15 +385,17 @@
     "dialogue_speaker": "Gu Shen",
     "inner_voice": "",
     "voice_type": "onscreen",
-    "focus_object": "faint mark",
+    "focus_object": "",
     "emotion": "Neutral",
-    "source_text": "不对。那道印痕一直在吗？\n她想不起来。\n男人已经站起来，在手机上打字。他头也不抬：\"多少钱？\"\n\"二十八。\""
+    "source_text": "男人已经站起来，在手机上打字。他头也不抬：\"多少钱？\"\n\"二十八。\""
   },
   {
-    "beat_id": 13,
+    "beat_id": 24,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Gu Shen",
     "action_visual": "Gu Shen turns and leaves",
@@ -208,26 +408,49 @@
     "source_text": "他扫了码，走了。"
   },
   {
-    "beat_id": 14,
+    "beat_id": 25,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Gu Shen",
+      "Lin Ke",
+      "Chen Rui",
+      "Su Yuan",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian walks through the door",
-    "spoken_dialogue": "……那家店……合同都准备好了……",
-    "dialogue_speaker": "Su Nian",
-    "inner_voice": "",
-    "voice_type": "onscreen",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "……那家店……合同都准备好了……",
+    "voice_type": "inner_voice",
     "focus_object": "lipstick mark",
     "emotion": "Mystery",
     "source_text": "苏念看着他走进对面写字楼的旋转门，消失在玻璃幕墙后面。\n她低头再看那杯美式。杯沿有一个淡淡的口红印——不是她的，她今天没涂口红。\n那是谁的？\n她想不起来刚才发生"
   },
   {
-    "beat_id": 15,
+    "beat_id": 26,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian speaks softly",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "说的是哪家店？"
+  },
+  {
+    "beat_id": 27,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian turns on the faucet",
@@ -237,16 +460,16 @@
     "voice_type": "none",
     "focus_object": "lipstick mark",
     "emotion": "Neutral",
-    "source_text": "说的是哪家店？\n苏念把杯子放进水池。水龙头打开，热水冲掉口红印，冲掉水汽，冲掉一切。\n她擦干手，看了看左手无名指。"
+    "source_text": "苏念把杯子放进水池。水龙头打开，热水冲掉口红印，冲掉水汽，冲掉一切。\n她擦干手，看了看左手无名指。"
   },
   {
-    "beat_id": 16,
+    "beat_id": 28,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian stands behind counter, breathing slowly, eyes cast down",
+    "action_visual": "Su Nian stands still, shoulders slightly tense, eyes unfocused",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",

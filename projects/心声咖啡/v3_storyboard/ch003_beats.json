@@ -4,10 +4,14 @@
     "space": "Physical",
     "characters_present": [
       "Su Nian",
-      "Gu Shen"
+      "Gu Shen",
+      "Lin Ke",
+      "Chen Rui",
+      "Su Yuan",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian speaks softly the coffee",
+    "action_visual": "Su Nian speaks softly the coffee cup",
     "spoken_dialogue": "你记得我喝什么？",
     "dialogue_speaker": "Su Nian",
     "inner_voice": "",
@@ -20,6 +24,24 @@
     "beat_id": 2,
     "space": "Physical",
     "characters_present": [
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian stands still, shoulders slightly tense, eyes unfocused",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "但她想再试一次。"
+  },
+  {
+    "beat_id": 3,
+    "space": "Physical",
+    "characters_present": [
       "Gu Shen"
     ],
     "primary_char": "Gu Shen",
@@ -30,10 +52,10 @@
     "voice_type": "none",
     "focus_object": "",
     "emotion": "Neutral",
-    "source_text": "但她想再试一次。\n顾深喝了半杯，起身去接电话。杯子留在吧台上，咖啡还冒着热气。"
+    "source_text": "顾深喝了半杯，起身去接电话。杯子留在吧台上，咖啡还冒着热气。"
   },
   {
-    "beat_id": 3,
+    "beat_id": 4,
     "space": "Transition",
     "characters_present": [
       "Su Nian"
@@ -46,10 +68,10 @@
     "voice_type": "none",
     "focus_object": "cup rim",
     "emotion": "Tension",
-    "source_text": "[reading mind template]"
+    "source_text": "[ability template]"
   },
   {
-    "beat_id": 4,
+    "beat_id": 5,
     "space": "Mental",
     "characters_present": [
       "Su Nian"
@@ -62,10 +84,10 @@
     "voice_type": "none",
     "focus_object": "",
     "emotion": "Shock",
-    "source_text": "[reading mind template]"
+    "source_text": "[ability template]"
   },
   {
-    "beat_id": 5,
+    "beat_id": 6,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -78,13 +100,66 @@
     "voice_type": "none",
     "focus_object": "scar on ring finger",
     "emotion": "Mystery",
-    "source_text": "[reading mind template]"
+    "source_text": "[ability template]"
   },
   {
-    "beat_id": 6,
+    "beat_id": 7,
     "space": "Mental",
     "characters_present": [
       "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian gazes at the painting",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "watercolor painting",
+    "emotion": "Neutral",
+    "source_text": "世界安静了。\n这次没有声音。\n取而代之的是画面——像老电影的胶片，一帧一帧闪过："
+  },
+  {
+    "beat_id": 8,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "Gu Shen",
+      "Lin Ke",
+      "grandmother"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen walks out the door",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "为什么你不出来追我？",
+    "voice_type": "inner_voice",
+    "focus_object": "key",
+    "emotion": "Sadness",
+    "source_text": "一个女孩站在雨里，头发贴在脸上，手里攥着一把钥匙。她在哭。面前的男人——年轻时的顾深——站在门内，手搭在门框上，没有走出去。\n*\"为什么你不出来追我？\"*"
+  },
+  {
+    "beat_id": 9,
+    "space": "Mental",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian gazes at the painting",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "watercolor painting",
+    "emotion": "Neutral",
+    "source_text": "画面碎了。"
+  },
+  {
+    "beat_id": 10,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian snaps eyes open",
@@ -94,16 +169,18 @@
     "voice_type": "none",
     "focus_object": "watercolor painting",
     "emotion": "Sadness",
-    "source_text": "画面碎了。\n苏念睁开眼，发现自己在流泪。\n不是她的泪——是画面里那个女孩的。但泪水从苏念的眼角滑下来，滴在吧台上。\n她低头看自己的手。"
+    "source_text": "苏念睁开眼，发现自己在流泪。\n不是她的泪——是画面里那个女孩的。但泪水从苏念的眼角滑下来，滴在吧台上。\n她低头看自己的手。"
   },
   {
-    "beat_id": 7,
+    "beat_id": 11,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian stands behind counter, breathing slowly, eyes cast down",
+    "action_visual": "Su Nian puts away",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
@@ -113,10 +190,12 @@
     "source_text": "左手无名指——外婆的烫伤疤痕——\n还在。\n但右手无名指——\n空的。\n苏念记得右手无名指上有一个戒指印——不是现在戴的，是很久以前戴过又摘下来的。外婆给她的银戒指"
   },
   {
-    "beat_id": 8,
+    "beat_id": 12,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian struggles to remember",
@@ -129,11 +208,13 @@
     "source_text": "消失了。\n她不记得那枚戒指是什么样子了。\n\"你还好吗？\""
   },
   {
-    "beat_id": 9,
+    "beat_id": 13,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
-      "Gu Shen"
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian frowns",
@@ -146,7 +227,7 @@
     "source_text": "顾深回来了。他看着苏念脸上的泪痕，皱了皱眉。"
   },
   {
-    "beat_id": 10,
+    "beat_id": 14,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -162,26 +243,61 @@
     "source_text": "\"没事。\"苏念擦掉眼泪，\"咖啡凉了，我给你换一杯。\""
   },
   {
-    "beat_id": 11,
+    "beat_id": 15,
+    "space": "Transition",
+    "characters_present": [
+      "Gu Shen"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen lifts the cup, fingers trembling around the warm rim",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "cup rim",
+    "emotion": "Tension",
+    "source_text": "[ability template]"
+  },
+  {
+    "beat_id": 16,
+    "space": "Mental",
+    "characters_present": [
+      "Gu Shen"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen closes eyes, eyelashes trembling. Background figures freeze, steam hangs motionless",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Shock",
+    "source_text": "[ability template]"
+  },
+  {
+    "beat_id": 17,
     "space": "Physical",
     "characters_present": [
       "Gu Shen"
     ],
     "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen carries a steaming cup",
-    "spoken_dialogue": "不用。",
-    "dialogue_speaker": "Gu Shen",
+    "action_visual": "Gu Shen looks down at left hand, the scar on the ring finger has changed",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
     "inner_voice": "",
-    "voice_type": "onscreen",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "\"不用。\"顾深端起杯子，把剩下的半杯一饮而尽，\"凉的也行。\""
+    "voice_type": "none",
+    "focus_object": "scar on ring finger",
+    "emotion": "Mystery",
+    "source_text": "[ability template]"
   },
   {
-    "beat_id": 12,
+    "beat_id": 18,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian turns and leaves",
@@ -194,13 +310,13 @@
     "source_text": "他走了。\n苏念站在空荡荡的吧台后面，看着自己的双手。"
   },
   {
-    "beat_id": 13,
+    "beat_id": 19,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "grandmother"
     ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian wipes, motionless",
+    "primary_char": "grandmother",
+    "action_visual": "grandmother wipes",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
@@ -210,10 +326,12 @@
     "source_text": "疤痕还在的——外婆的烫伤、纸划的伤、小时候摔跤的擦伤。"
   },
   {
-    "beat_id": 14,
+    "beat_id": 20,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian struggles to remember",
@@ -226,7 +344,7 @@
     "source_text": "疤痕消失的——戒指印、某个她想不起来的针眼、还有一道她甚至不记得什么时候有的划痕。\n她在失去记忆。"
   },
   {
-    "beat_id": 15,
+    "beat_id": 21,
     "space": "Physical",
     "characters_present": [
       "Su Nian"

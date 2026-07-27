@@ -19,7 +19,9 @@
     "beat_id": 2,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian stares intently",
@@ -35,10 +37,10 @@
     "beat_id": 3,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "grandmother"
     ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian gazes at the door",
+    "primary_char": "grandmother",
+    "action_visual": "grandmother gazes at the door",
     "spoken_dialogue": "外婆的店……门口有这棵树？",
     "dialogue_speaker": "grandmother",
     "inner_voice": "",
@@ -52,7 +54,8 @@
     "space": "Physical",
     "characters_present": [
       "Su Nian",
-      "Lin Ke"
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian hand pauses mid-motion",
@@ -68,7 +71,10 @@
     "beat_id": 5,
     "space": "Physical",
     "characters_present": [
-      "Gu Shen"
+      "Su Nian",
+      "Gu Shen",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Gu Shen",
     "action_visual": "Gu Shen pours water into a cup",
@@ -84,9 +90,7 @@
     "beat_id": 6,
     "space": "Physical",
     "characters_present": [
-      "Su Nian",
-      "Gu Shen",
-      "Lin Ke"
+      "Su Nian"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian nods slowly",
@@ -94,18 +98,40 @@
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
-    "focus_object": "old photo",
+    "focus_object": "",
     "emotion": "Neutral",
-    "source_text": "苏念点头。\n林可掏出手机，翻出一张照片——顾深的LinkedIn页面。她把手机拍在吧台上，手指点着屏幕上的公司名。"
+    "source_text": "苏念点头。"
   },
   {
     "beat_id": 7,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Gu Shen",
+      "Lin Ke",
+      "grandmother"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen turns hand over to inspect",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "old photo",
+    "emotion": "Neutral",
+    "source_text": "林可掏出手机，翻出一张照片——顾深的LinkedIn页面。她把手机拍在吧台上，手指点着屏幕上的公司名。"
+  },
+  {
+    "beat_id": 8,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian stands behind counter, breathing slowly, eyes cast down",
+    "action_visual": "Su Nian puts away",
     "spoken_dialogue": "锐见投资。苏念，他是来收购的。",
     "dialogue_speaker": "Su Nian",
     "inner_voice": "",
@@ -115,11 +141,13 @@
     "source_text": "\"锐见投资。苏念，他是来收购的。\"\n\"我知道。\"\n\"那你还让他天天来？\""
   },
   {
-    "beat_id": 8,
+    "beat_id": 9,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
-      "Gu Shen"
+      "Gu Shen",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian gazes at the cup",
@@ -132,10 +160,12 @@
     "source_text": "苏念没回答。她看着吧台上顾深刚用过的杯子——杯沿还有温度。她的手伸过去，又缩回来。"
   },
   {
-    "beat_id": 9,
+    "beat_id": 10,
     "space": "Physical",
     "characters_present": [
-      "Lin Ke"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Lin Ke",
     "action_visual": "Lin Ke unrolls a painting on the counter",
@@ -148,13 +178,15 @@
     "source_text": "林可把手机收起来，从包里翻出那幅画，重新展开。她指着画面里桂花树下的一个小人影：\"这是你外婆。你还记得她冲咖啡的样子吗？\""
   },
   {
-    "beat_id": 10,
+    "beat_id": 11,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian gazes at, motionless",
+    "action_visual": "Su Nian gazes at the apron",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
@@ -164,13 +196,13 @@
     "source_text": "苏念看着画里那个模糊的身影。齐肩白发，围裙，手里端着一个铜壶。\n她记得参数——耶加雪菲，水温88度，闷蒸30秒。\n但那个味道——焦糖？坚果？还是桂花？"
   },
   {
-    "beat_id": 11,
+    "beat_id": 12,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian speaks softly, motionless",
+    "action_visual": "Su Nian speaks softly",
     "spoken_dialogue": "不太记得了。",
     "dialogue_speaker": "Su Nian",
     "inner_voice": "",
@@ -180,13 +212,15 @@
     "source_text": "\"不太记得了。\"苏念小声说。"
   },
   {
-    "beat_id": 12,
+    "beat_id": 13,
     "space": "Physical",
     "characters_present": [
-      "Lin Ke"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Lin Ke",
-    "action_visual": "Lin Ke speaks softly, motionless",
+    "action_visual": "Lin Ke speaks softly the painting",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
@@ -196,10 +230,12 @@
     "source_text": "林可的手指在画纸上收紧，纸面微微凹陷。她没再说话，把画卷起来，用橡皮筋绑好，塞进包里。"
   },
   {
-    "beat_id": 13,
+    "beat_id": 14,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian turns head back",
@@ -212,10 +248,13 @@
     "source_text": "临走时她在门口停了一下，回头看了苏念一眼。嘴唇动了动，像是想说什么，最后只挥了挥手。\n苏念独自站在空荡荡的店里。"
   },
   {
-    "beat_id": 14,
+    "beat_id": 15,
     "space": "Physical",
     "characters_present": [
-      "Gu Shen"
+      "Su Nian",
+      "Gu Shen",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Gu Shen",
     "action_visual": "Gu Shen looks down",
@@ -228,10 +267,12 @@
     "source_text": "窗外，对面写字楼的玻璃幕墙反射着夕阳。她拿起顾深的杯子去洗——水龙头打开，热水冲过杯壁。\n她低头看自己的手。"
   },
   {
-    "beat_id": 15,
+    "beat_id": 16,
     "space": "Physical",
     "characters_present": [
-      "Lin Ke"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Lin Ke",
     "action_visual": "Lin Ke draws latte art in the foam",
@@ -244,10 +285,12 @@
     "source_text": "疤痕还在。\n但她想不起来——外婆教她拉花时，咖啡的香气是什么样的？\n吧台上，林可留下的画纸角被风吹起来，露出画背面一行铅笔小字：\n\"送给小念。希望你永远记得。\""
   },
   {
-    "beat_id": 16,
+    "beat_id": 17,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian wipes a table clean",
@@ -260,7 +303,7 @@
     "source_text": "苏念没看到那行字。她正在擦桌子。"
   },
   {
-    "beat_id": 17,
+    "beat_id": 18,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -276,13 +319,13 @@
     "source_text": "窗外的夕阳沉下去了。咖啡店的灯自动亮了。"
   },
   {
-    "beat_id": 18,
+    "beat_id": 19,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "grandmother"
     ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian draws latte art in the foam",
+    "primary_char": "grandmother",
+    "action_visual": "grandmother draws latte art in the foam",
     "spoken_dialogue": "小念，记住：拉花不是技术，是心意。",
     "dialogue_speaker": "grandmother",
     "inner_voice": "",
@@ -292,10 +335,12 @@
     "source_text": "墙上外婆的便签在灯光下微微发黄：\"小念，记住：拉花不是技术，是心意。\""
   },
   {
-    "beat_id": 19,
+    "beat_id": 20,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian struggles to remember",

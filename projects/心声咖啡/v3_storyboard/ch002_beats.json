@@ -1,6 +1,41 @@
 [
   {
     "beat_id": 1,
+    "space": "Physical",
+    "characters_present": [
+      "Gu Shen"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen stands still, shoulders slightly tense, eyes unfocused",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "第二天，灰色西装的男人又来了。"
+  },
+  {
+    "beat_id": 2,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian stares intently",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "cup wall",
+    "emotion": "Neutral",
+    "source_text": "同样的位置，同样的美式。这次他多要了一份可颂，咬了两口就放下了。\n苏念盯着那杯咖啡。杯壁上的水汽正在凝结，像昨天一样。"
+  },
+  {
+    "beat_id": 3,
     "space": "Transition",
     "characters_present": [
       "Su Nian"
@@ -13,10 +48,10 @@
     "voice_type": "none",
     "focus_object": "cup rim",
     "emotion": "Tension",
-    "source_text": "[reading mind template]"
+    "source_text": "[ability template]"
   },
   {
-    "beat_id": 2,
+    "beat_id": 4,
     "space": "Mental",
     "characters_present": [
       "Su Nian"
@@ -29,10 +64,10 @@
     "voice_type": "none",
     "focus_object": "",
     "emotion": "Shock",
-    "source_text": "[reading mind template]"
+    "source_text": "[ability template]"
   },
   {
-    "beat_id": 3,
+    "beat_id": 5,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -45,13 +80,34 @@
     "voice_type": "none",
     "focus_object": "scar on ring finger",
     "emotion": "Mystery",
-    "source_text": "[reading mind template]"
+    "source_text": "[ability template]"
   },
   {
-    "beat_id": 4,
+    "beat_id": 6,
+    "space": "Mental",
+    "characters_present": [
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian speaks softly the coffee cup",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "……前女友说我不懂感情。也许她说得对。但我也不懂为什么隔壁那家破咖啡店的咖啡比星巴克好喝……不对，我在想什么，我是来谈收购的……",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "世界安静了。\n*\"……前女友说我不懂感情。也许她说得对。但我也不懂为什么隔壁那家破咖啡店的咖啡比星巴克好喝……不对，我在想什么，我是来谈收购的……\"*"
+  },
+  {
+    "beat_id": 7,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian sets the cup down on the counter",
@@ -64,10 +120,12 @@
     "source_text": "苏念放下杯子，心跳加速。\n收购。他要收购\"念想\"。"
   },
   {
-    "beat_id": 5,
+    "beat_id": 8,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian looks down",
@@ -80,7 +138,7 @@
     "source_text": "她低头看左手。无名指的疤痕——还在。但食指侧面，那个她记得是大学时被纸划伤的小痕迹——"
   },
   {
-    "beat_id": 6,
+    "beat_id": 9,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -96,13 +154,13 @@
     "source_text": "消失了。\n不是\"想不起来什么时候划的\"——是那道痕迹本身不存在了。食指侧面光滑得像从未受过伤。"
   },
   {
-    "beat_id": 7,
+    "beat_id": 10,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian stands behind counter, breathing slowly, eyes cast down",
+    "action_visual": "Su Nian stands still, shoulders slightly tense, eyes unfocused",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
@@ -112,10 +170,12 @@
     "source_text": "苏念的胃缩紧了。"
   },
   {
-    "beat_id": 8,
+    "beat_id": 11,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "the mark has disappeared",
@@ -128,13 +188,15 @@
     "source_text": "她记得昨天也发生了类似的事。昨天那道印痕——就是现在消失的这道。"
   },
   {
-    "beat_id": 9,
+    "beat_id": 12,
     "space": "Physical",
     "characters_present": [
-      "Lin Ke"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Lin Ke",
-    "action_visual": "Lin Ke gazes at, motionless",
+    "action_visual": "Lin Ke gazes at",
     "spoken_dialogue": "连看书都能受伤",
     "dialogue_speaker": "Lin Ke",
     "inner_voice": "",
@@ -144,13 +206,13 @@
     "source_text": "她失去了一段记忆。关于这道伤痕的记忆——大学图书馆，期末复习，不小心被新书的纸页划破，林可笑她\"连看书都能受伤\"——"
   },
   {
-    "beat_id": 10,
+    "beat_id": 13,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian stands behind counter, breathing slowly, eyes cast down",
+    "action_visual": "Su Nian stands still, shoulders slightly tense, eyes unfocused",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
@@ -160,13 +222,13 @@
     "source_text": "这段记忆还在。"
   },
   {
-    "beat_id": 11,
+    "beat_id": 14,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian stands behind counter, breathing slowly, eyes cast down",
+    "action_visual": "Su Nian stands still, shoulders slightly tense, eyes unfocused",
     "spoken_dialogue": "你好。",
     "dialogue_speaker": "Su Nian",
     "inner_voice": "",
@@ -176,10 +238,11 @@
     "source_text": "但伤痕本身没了。\n这不对。\n\"你好。\""
   },
   {
-    "beat_id": 12,
+    "beat_id": 15,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Gu Shen"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian looks up",
@@ -192,13 +255,15 @@
     "source_text": "苏念抬头。男人站在吧台前，手里拿着一张名片。"
   },
   {
-    "beat_id": 13,
+    "beat_id": 16,
     "space": "Physical",
     "characters_present": [
-      "Gu Shen"
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen gazes at the card",
+    "action_visual": "Gu Shen writes the card",
     "spoken_dialogue": "我叫顾深。对面写字楼的。",
     "dialogue_speaker": "Gu Shen",
     "inner_voice": "",
@@ -208,11 +273,15 @@
     "source_text": "\"我叫顾深。对面写字楼的。\"他把名片推过来，\"我想问一下——你们店有没有考虑过……合作？\""
   },
   {
-    "beat_id": 14,
+    "beat_id": 17,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
-      "Gu Shen"
+      "Gu Shen",
+      "Lin Ke",
+      "Chen Rui",
+      "Su Yuan",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian takes the envelope",
@@ -225,13 +294,15 @@
     "source_text": "苏念接过名片。烫金的字：顾深，合伙人，锐见投资。\n她看着他的眼睛。灰色的，像阴天的天空。"
   },
   {
-    "beat_id": 15,
+    "beat_id": 18,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian speaks softly, motionless",
+    "action_visual": "Su Nian speaks softly",
     "spoken_dialogue": "不考虑。",
     "dialogue_speaker": "Su Nian",
     "inner_voice": "",
@@ -241,10 +312,28 @@
     "source_text": "\"不考虑。\"她说。"
   },
   {
-    "beat_id": 16,
+    "beat_id": 19,
     "space": "Physical",
     "characters_present": [
       "Gu Shen"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen smiles faintly",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Warmth",
+    "source_text": "顾深愣了一下，然后笑了——很浅，嘴角只动了一毫米。"
+  },
+  {
+    "beat_id": 20,
+    "space": "Physical",
+    "characters_present": [
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Gu Shen",
     "action_visual": "Gu Shen turns around",
@@ -253,11 +342,11 @@
     "inner_voice": "",
     "voice_type": "onscreen",
     "focus_object": "",
-    "emotion": "Warmth",
-    "source_text": "顾深愣了一下，然后笑了——很浅，嘴角只动了一毫米。\n\"好吧。\"他转身走了。"
+    "emotion": "Neutral",
+    "source_text": "\"好吧。\"他转身走了。"
   },
   {
-    "beat_id": 17,
+    "beat_id": 21,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -273,10 +362,12 @@
     "source_text": "苏念低头，左手端着刚洗好的杯子，右手去拿抹布。\n手指碰到一个光滑的平面。"
   },
   {
-    "beat_id": 18,
+    "beat_id": 22,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian turns hand over to inspect",
@@ -285,7 +376,23 @@
     "inner_voice": "",
     "voice_type": "none",
     "focus_object": "back of hand",
+    "emotion": "Neutral",
+    "source_text": "她翻过右手手背——那颗从小就在的小痣，不见了。\n取而代之的是一片光滑的皮肤，像从未长过任何东西。\n水龙头还在流。水声填满了整个咖啡店。"
+  },
+  {
+    "beat_id": 23,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian turns on the faucet",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
     "emotion": "Shock",
-    "source_text": "她翻过右手手背——那颗从小就在的小痣，不见了。\n取而代之的是一片光滑的皮肤，像从未长过任何东西。\n水龙头还在流。水声填满了整个咖啡店。\n苏念关掉水龙头。店里突然"
+    "source_text": "苏念关掉水龙头。店里突然安静得像隔了一面墙。"
   }
 ]

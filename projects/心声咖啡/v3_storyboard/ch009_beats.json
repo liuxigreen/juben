@@ -4,7 +4,9 @@
     "space": "Physical",
     "characters_present": [
       "Su Nian",
-      "Gu Shen"
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian sits down",
@@ -36,23 +38,43 @@
     "beat_id": 3,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
-    "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen speaks softly, motionless",
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian speaks softly",
     "spoken_dialogue": "巧合。",
-    "dialogue_speaker": "Gu Shen",
+    "dialogue_speaker": "Su Nian",
     "inner_voice": "",
     "voice_type": "onscreen",
     "focus_object": "",
     "emotion": "Neutral",
-    "source_text": "\"巧合。\"她说。\n\"三次都是巧合？\"\n面馆里很吵。旁边桌的男人在打电话，声音大得像在吵架。后厨的铁锅\"咣\"地一声被掀起来，油星子溅在灶台上。"
+    "source_text": "\"巧合。\"她说。\n\"三次都是巧合？\""
   },
   {
     "beat_id": 4,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Gu Shen"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen stands still, shoulders slightly tense, eyes unfocused",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "面馆里很吵。旁边桌的男人在打电话，声音大得像在吵架。后厨的铁锅\"咣\"地一声被掀起来，油星子溅在灶台上。"
+  },
+  {
+    "beat_id": 5,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian looks down",
@@ -65,13 +87,15 @@
     "source_text": "苏念的筷子终于拆开了。她低头吃面，面汤的热气扑在脸上，模糊了对面那个人的表情。"
   },
   {
-    "beat_id": 5,
+    "beat_id": 6,
     "space": "Physical",
     "characters_present": [
-      "Gu Shen"
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen speaks softly, motionless",
+    "action_visual": "Gu Shen speaks softly",
     "spoken_dialogue": "第一次，我以为你口渴。",
     "dialogue_speaker": "Gu Shen",
     "inner_voice": "",
@@ -81,46 +105,86 @@
     "source_text": "\"第一次，我以为你口渴。\"顾深说。他的语速比平时更慢，像在拆一个包裹——每拆一层，都在确认里面有没有碎。\"第二次，我以为你习惯。第三次——\""
   },
   {
-    "beat_id": 6,
+    "beat_id": 7,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
-      "Gu Shen"
+      "Gu Shen",
+      "Lin Ke",
+      "Chen Rui",
+      "Su Yuan",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian drains the cup in one gulp",
-    "spoken_dialogue": "你喝完之后，",
-    "dialogue_speaker": "Su Nian",
+    "action_visual": "Su Nian looks up",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
     "inner_voice": "",
-    "voice_type": "onscreen",
+    "voice_type": "none",
     "focus_object": "",
     "emotion": "Tension",
     "source_text": "他没说完。\n苏念抬头。顾深正看着她，灰色的眼睛在面馆的黄灯下变成深棕色。他的左手放在桌下，膝盖上——苏念看不到，但她知道那只手在发抖。\n因为他喝咖啡时，右手从来"
   },
   {
-    "beat_id": 7,
+    "beat_id": 8,
+    "space": "Physical",
+    "characters_present": [
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen drains the cup in one gulp",
+    "spoken_dialogue": "你喝完之后，",
+    "dialogue_speaker": "Gu Shen",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "\"你喝完之后，\"顾深说，\"脸上的表情会变。像是——\"他停顿了两秒，找到一个词，\"——听到了什么。\""
+  },
+  {
+    "beat_id": 9,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian wipes, motionless",
+    "action_visual": "Su Nian wipes the bowl",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
     "focus_object": "",
     "emotion": "Shock",
-    "source_text": "排风扇突然卡了一下，发出一声尖锐的金属摩擦。苏念的筷子夹断了一根面条，掉回碗里，溅起一滴汤。\n她的围裙口袋里有一张纸巾。她掏出来擦手，纸巾被攥成了一团。"
+    "source_text": "排风扇突然卡了一下，发出一声尖锐的金属摩擦。苏念的筷子夹断了一根面条，掉回碗里，溅起一滴汤。"
   },
   {
-    "beat_id": 8,
+    "beat_id": 10,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian wipes the apron",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "她的围裙口袋里有一张纸巾。她掏出来擦手，纸巾被攥成了一团。"
+  },
+  {
+    "beat_id": 11,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian speaks softly, motionless",
+    "action_visual": "Su Nian speaks softly",
     "spoken_dialogue": "你多想了。",
     "dialogue_speaker": "Su Nian",
     "inner_voice": "",
@@ -130,13 +194,13 @@
     "source_text": "\"你多想了。\"苏念说。"
   },
   {
-    "beat_id": 9,
+    "beat_id": 12,
     "space": "Physical",
     "characters_present": [
       "Gu Shen"
     ],
     "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen stands behind counter, breathing slowly, eyes cast down",
+    "action_visual": "Gu Shen gazes at the bowl",
     "spoken_dialogue": "也许。",
     "dialogue_speaker": "Gu Shen",
     "inner_voice": "",
@@ -146,10 +210,12 @@
     "source_text": "\"也许。\"顾深把面碗推到一边。碗底在桌面上划出一道湿痕。\"但我从来不'多想'。\""
   },
   {
-    "beat_id": 10,
+    "beat_id": 13,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Gu Shen",
     "action_visual": "Gu Shen stands up from the seat",
@@ -162,11 +228,13 @@
     "source_text": "他站起来，把钱压在碗下面。\n\"我送你回去。\""
   },
   {
-    "beat_id": 11,
+    "beat_id": 14,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
-      "Gu Shen"
+      "Gu Shen",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian walks slowly the key",
@@ -179,13 +247,13 @@
     "source_text": "巷子里没有路灯。月光从两栋楼之间的缝隙漏下来，把青石板照成灰色。苏念走在前面，顾深走在后面，两个人的脚步声在窄巷里撞来撞去。\n苏念的钥匙在口袋里。她摸了三次才摸"
   },
   {
-    "beat_id": 12,
+    "beat_id": 15,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian stands behind counter, breathing slowly, eyes cast down",
+    "action_visual": "Su Nian stands still, shoulders slightly tense, eyes unfocused",
     "spoken_dialogue": "苏念。",
     "dialogue_speaker": "Su Nian",
     "inner_voice": "",
@@ -195,10 +263,15 @@
     "source_text": "\"苏念。\""
   },
   {
-    "beat_id": 13,
+    "beat_id": 16,
     "space": "Physical",
     "characters_present": [
-      "Gu Shen"
+      "Su Nian",
+      "Gu Shen",
+      "Lin Ke",
+      "Chen Rui",
+      "Su Yuan",
+      "grandmother"
     ],
     "primary_char": "Gu Shen",
     "action_visual": "Gu Shen turns around",
@@ -211,13 +284,15 @@
     "source_text": "她转身。顾深站在两米外，月光把他的影子拉得很长，一直延伸到她的脚边。"
   },
   {
-    "beat_id": 14,
+    "beat_id": 17,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen speaks softly the coffee",
+    "action_visual": "Gu Shen speaks softly the coffee cup",
     "spoken_dialogue": "我明天还会来喝咖啡。",
     "dialogue_speaker": "Gu Shen",
     "inner_voice": "",
@@ -227,7 +302,7 @@
     "source_text": "\"我明天还会来喝咖啡。\"他说。"
   },
   {
-    "beat_id": 15,
+    "beat_id": 18,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -243,13 +318,13 @@
     "source_text": "苏念的手攥紧了钥匙。齿痕陷进掌心。\n\"你不用——\""
   },
   {
-    "beat_id": 16,
+    "beat_id": 19,
     "space": "Physical",
     "characters_present": [
       "Gu Shen"
     ],
     "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen stands behind counter, breathing slowly, eyes cast down",
+    "action_visual": "Gu Shen puts away",
     "spoken_dialogue": "我不是来收购你的店的。",
     "dialogue_speaker": "Gu Shen",
     "inner_voice": "",
@@ -259,13 +334,16 @@
     "source_text": "\"我不是来收购你的店的。\"顾深的声音在巷子里回荡了一下，被墙壁吸收了。\"我只是——\""
   },
   {
-    "beat_id": 17,
+    "beat_id": 20,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian gazes at, motionless",
+    "action_visual": "Su Nian gazes at",
     "spoken_dialogue": "你让我想起一个人。",
     "dialogue_speaker": "Su Nian",
     "inner_voice": "",
@@ -275,13 +353,13 @@
     "source_text": "他停了。\n苏念看着他。月光下，他的表情像是在做一个很难的数学题——每一步都精确，但答案怎么都凑不齐。\n\"你让我想起一个人。\"他终于说。"
   },
   {
-    "beat_id": 18,
+    "beat_id": 21,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian stands behind counter, breathing slowly, eyes cast down",
+    "action_visual": "Su Nian stands still, shoulders slightly tense, eyes unfocused",
     "spoken_dialogue": "但又完全不同。",
     "dialogue_speaker": "Su Nian",
     "inner_voice": "",
@@ -291,27 +369,81 @@
     "source_text": "苏念的心跳了一下。\n\"但又完全不同。\""
   },
   {
-    "beat_id": 19,
-    "space": "Mental",
+    "beat_id": 22,
+    "space": "Physical",
     "characters_present": [
       "Su Nian",
-      "Gu Shen"
+      "Gu Shen",
+      "Lin Ke",
+      "Chen Rui",
+      "Su Yuan",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian brews coffee, steam rising",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
-    "inner_voice": "她像一个人——我前女友。但又完全不同。",
-    "voice_type": "inner_voice",
+    "inner_voice": "",
+    "voice_type": "none",
     "focus_object": "cup wall",
     "emotion": "Mystery",
     "source_text": "他转身走了。脚步声在巷子里渐渐变远，最后消失在拐角。\n苏念靠在门框上。钥匙还攥在手里，掌心被齿痕硌得发红。\n她推开门，走进空荡荡的咖啡店。吧台上有一杯下午泡的红"
   },
   {
-    "beat_id": 20,
+    "beat_id": 23,
+    "space": "Transition",
+    "characters_present": [
+      "Gu Shen"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen lifts the cup, fingers trembling around the warm rim",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "cup rim",
+    "emotion": "Tension",
+    "source_text": "[ability template]"
+  },
+  {
+    "beat_id": 24,
+    "space": "Mental",
+    "characters_present": [
+      "Gu Shen"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen closes eyes, eyelashes trembling. Background figures freeze, steam hangs motionless",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Shock",
+    "source_text": "[ability template]"
+  },
+  {
+    "beat_id": 25,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Gu Shen"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen looks down at left hand, the scar on the ring finger has changed",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "scar on ring finger",
+    "emotion": "Mystery",
+    "source_text": "[ability template]"
+  },
+  {
+    "beat_id": 26,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian sets the cup down on the counter",
@@ -324,26 +456,80 @@
     "source_text": "苏念放下杯子。茶水溅出来，淌在吧台上，浸湿了一张便签纸。\n她低头看自己的左手手背。"
   },
   {
-    "beat_id": 21,
+    "beat_id": 27,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
+    ],
+    "primary_char": "grandmother",
+    "action_visual": "grandmother stands still, shoulders slightly tense, eyes unfocused",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "scar on skin",
+    "emotion": "Neutral",
+    "source_text": "一道浅浅的疤痕——她记得是小时候被外婆的猫抓的。\n还在。"
+  },
+  {
+    "beat_id": 28,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian struggles to remember",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Shock",
+    "source_text": "但她突然想不起来，那只猫叫什么名字了。"
+  },
+  {
+    "beat_id": 29,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "the phone buzzes on the counter",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "手机震了一下。"
+  },
+  {
+    "beat_id": 30,
     "space": "Physical",
     "characters_present": [
       "Gu Shen"
     ],
     "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen struggles to remember",
+    "action_visual": "a message notification on screen",
     "spoken_dialogue": "到家了。",
     "dialogue_speaker": "Gu Shen",
     "inner_voice": "",
     "voice_type": "onscreen",
-    "focus_object": "scar on skin",
-    "emotion": "Shock",
-    "source_text": "一道浅浅的疤痕——她记得是小时候被外婆的猫抓的。\n还在。\n但她突然想不起来，那只猫叫什么名字了。\n手机震了一下。\n顾深的消息：\"到家了。\""
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "顾深的消息：\"到家了。\""
   },
   {
-    "beat_id": 22,
+    "beat_id": 31,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian carries a steaming cup",
@@ -352,16 +538,16 @@
     "inner_voice": "",
     "voice_type": "none",
     "focus_object": "",
-    "emotion": "Neutral",
+    "emotion": "Mystery",
     "source_text": "苏念看着那三个字。她的手指悬在屏幕上方，还没来得及打字——\n吧台上的灯闪了一下。\n她抬头。灯管嗡嗡响着，光忽明忽暗。然后灭了。\n咖啡店陷入黑暗。\n苏念站在吧台后"
   },
   {
-    "beat_id": 23,
+    "beat_id": 32,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "grandmother"
     ],
-    "primary_char": "Su Nian",
+    "primary_char": "grandmother",
     "action_visual": "the handwriting on the sticky note fades by one stroke",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
@@ -372,10 +558,12 @@
     "source_text": "吧台上，那张被茶水浸湿的便签纸——外婆写的那张——字迹淡了一个笔画。"
   },
   {
-    "beat_id": 24,
+    "beat_id": 33,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian stares intently",
@@ -388,13 +576,13 @@
     "source_text": "苏念盯着那个笔画。她确定，刚才那张便签上，\"念\"字的最后一笔还在。"
   },
   {
-    "beat_id": 25,
+    "beat_id": 34,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian stands behind counter, breathing slowly, eyes cast down",
+    "action_visual": "Su Nian stands still, shoulders slightly tense, eyes unfocused",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",

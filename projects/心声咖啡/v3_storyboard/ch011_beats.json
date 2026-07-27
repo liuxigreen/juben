@@ -3,10 +3,13 @@
     "beat_id": 1,
     "space": "Physical",
     "characters_present": [
-      "Chen Rui"
+      "Su Nian",
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Chen Rui",
-    "action_visual": "Chen Rui gazes at, motionless",
+    "action_visual": "Chen Rui gazes at",
     "spoken_dialogue": "苏老板，这是我们的评估团队。",
     "dialogue_speaker": "Chen Rui",
     "inner_voice": "",
@@ -19,8 +22,28 @@
     "beat_id": 2,
     "space": "Physical",
     "characters_present": [
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
+    ],
+    "primary_char": "Chen Rui",
+    "action_visual": "Chen Rui sits down",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陈锐叹了口气。他示意两人去旁边坐着，自己坐到吧台前。"
+  },
+  {
+    "beat_id": 3,
+    "space": "Physical",
+    "characters_present": [
       "Su Nian",
-      "Chen Rui"
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian carries a steaming cup",
@@ -30,17 +53,21 @@
     "voice_type": "onscreen",
     "focus_object": "",
     "emotion": "Neutral",
-    "source_text": "陈锐叹了口气。他示意两人去旁边坐着，自己坐到吧台前。\n苏念做好一杯意式浓缩端过去。陈锐喝了一口，放下。杯子在吧台上发出一声轻响。\n他从公文包里抽出一份文件，推到"
+    "source_text": "苏念做好一杯意式浓缩端过去。陈锐喝了一口，放下。杯子在吧台上发出一声轻响。\n他从公文包里抽出一份文件，推到苏念面前。A4纸，三页，右下角有红色的公章。\n\"公司给"
   },
   {
-    "beat_id": 3,
+    "beat_id": 4,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
-      "Chen Rui"
+      "Gu Shen",
+      "Lin Ke",
+      "Chen Rui",
+      "Su Yuan",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian gazes at, motionless",
+    "action_visual": "Su Nian gazes at",
     "spoken_dialogue": "你这栋楼的产权——",
     "dialogue_speaker": "Su Nian",
     "inner_voice": "",
@@ -50,10 +77,15 @@
     "source_text": "苏念没看文件。她看着陈锐的手——他的右手食指在纸面上敲了两下，指甲修得很短。\n\"你这栋楼的产权——\"陈锐的语速比平时快了一点，\"你外婆是从开发商手里买的，但开发"
   },
   {
-    "beat_id": 4,
+    "beat_id": 5,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Gu Shen",
+      "Lin Ke",
+      "Chen Rui",
+      "Su Yuan",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian clenches fists tightly",
@@ -66,7 +98,7 @@
     "source_text": "苏念的手握紧了杯子。杯壁上的水珠被她的掌心温度蒸发了。\n他的杯子还在冒热气。"
   },
   {
-    "beat_id": 5,
+    "beat_id": 6,
     "space": "Transition",
     "characters_present": [
       "Su Nian"
@@ -79,10 +111,10 @@
     "voice_type": "none",
     "focus_object": "cup rim",
     "emotion": "Tension",
-    "source_text": "[reading mind template]"
+    "source_text": "[ability template]"
   },
   {
-    "beat_id": 6,
+    "beat_id": 7,
     "space": "Mental",
     "characters_present": [
       "Su Nian"
@@ -95,10 +127,10 @@
     "voice_type": "none",
     "focus_object": "",
     "emotion": "Shock",
-    "source_text": "[reading mind template]"
+    "source_text": "[ability template]"
   },
   {
-    "beat_id": 7,
+    "beat_id": 8,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -111,16 +143,39 @@
     "voice_type": "none",
     "focus_object": "scar on ring finger",
     "emotion": "Mystery",
-    "source_text": "[reading mind template]"
+    "source_text": "[ability template]"
   },
   {
-    "beat_id": 8,
+    "beat_id": 9,
     "space": "Mental",
     "characters_present": [
-      "Chen Rui"
+      "Su Nian",
+      "Gu Shen",
+      "Lin Ke",
+      "Chen Rui",
+      "Su Yuan",
+      "grandmother"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian speaks softly the letter",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "……老陈说的违规是真的。但我也查过——那栋楼的产权问题其实在三年前就解决了，公司故意隐瞒了这个信息。他们就是要逼她低价卖。我不该告诉她。但——",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "世界安静了。\n*\"……老陈说的违规是真的。但我也查过——那栋楼的产权问题其实在三年前就解决了，公司故意隐瞒了这个信息。他们就是要逼她低价卖。我不该告诉她。但——"
+  },
+  {
+    "beat_id": 10,
+    "space": "Mental",
+    "characters_present": [
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Chen Rui",
-    "action_visual": "Chen Rui stands still the coffee",
+    "action_visual": "Chen Rui gazes at the coffee cup",
     "spoken_dialogue": "锐咖啡",
     "dialogue_speaker": "Chen Rui",
     "inner_voice": "",
@@ -130,8 +185,24 @@
     "source_text": "画面闪过：十年前的陈锐，站在一家更小的店门口。\"锐咖啡\"的招牌被工人拆下来，扔在卡车上。他站在旁边，手插在口袋里，脸上什么表情都没有。"
   },
   {
-    "beat_id": 9,
+    "beat_id": 11,
     "space": "Mental",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian gazes at the painting",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "那时候也没人站在我这边。",
+    "voice_type": "inner_voice",
+    "focus_object": "watercolor painting",
+    "emotion": "Neutral",
+    "source_text": "*那时候也没人站在我这边。*\n画面碎了。"
+  },
+  {
+    "beat_id": 12,
+    "space": "Physical",
     "characters_present": [
       "Su Nian"
     ],
@@ -141,16 +212,17 @@
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
-    "focus_object": "watercolor painting",
+    "focus_object": "",
     "emotion": "Neutral",
-    "source_text": "*那时候也没人站在我这边。*\n画面碎了。\n苏念放下杯子。"
+    "source_text": "苏念放下杯子。"
   },
   {
-    "beat_id": 10,
+    "beat_id": 13,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
-      "Chen Rui"
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian looks down",
@@ -160,13 +232,56 @@
     "voice_type": "none",
     "focus_object": "back of hand",
     "emotion": "Mystery",
-    "source_text": "代价——她低头看手。左手手背上，一道她记得是小时候被猫抓的痕迹，消失了。皮肤光滑得像从未被抓过。\n陈锐正低头翻文件，没注意到她的变化。\n苏念从吧台下面拿出一块抹"
+    "source_text": "代价——她低头看手。左手手背上，一道她记得是小时候被猫抓的痕迹，消失了。皮肤光滑得像从未被抓过。"
   },
   {
-    "beat_id": 11,
+    "beat_id": 14,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Lin Ke",
+      "Chen Rui",
+      "grandmother"
+    ],
+    "primary_char": "Chen Rui",
+    "action_visual": "Chen Rui looks down",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陈锐正低头翻文件，没注意到她的变化。"
+  },
+  {
+    "beat_id": 15,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "Gu Shen",
+      "Lin Ke",
+      "Chen Rui",
+      "Su Yuan",
+      "grandmother"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian picks up the rag",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "watercolor painting",
+    "emotion": "Neutral",
+    "source_text": "苏念从吧台下面拿出一块抹布，擦了擦他面前的水渍。她的动作很慢，手指在木质台面上画了一个圈。"
+  },
+  {
+    "beat_id": 16,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian bends down",
@@ -179,11 +294,31 @@
     "source_text": "\"陈总。\"苏念弯腰，嘴唇几乎贴着他的耳朵，\"三年前那栋楼的产权问题，解决了。你们公司知道。\""
   },
   {
-    "beat_id": 12,
+    "beat_id": 17,
+    "space": "Physical",
+    "characters_present": [
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
+    ],
+    "primary_char": "Chen Rui",
+    "action_visual": "Chen Rui looks up",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陈锐的手指停在文件上。纸被他的指甲掐出一个小缺口。\n他没抬头。沉默了五秒。"
+  },
+  {
+    "beat_id": 18,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
-      "Chen Rui"
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian stands up from the seat",
@@ -193,13 +328,15 @@
     "voice_type": "none",
     "focus_object": "",
     "emotion": "Neutral",
-    "source_text": "陈锐的手指停在文件上。纸被他的指甲掐出一个小缺口。\n他没抬头。沉默了五秒。\n然后他站起来，对旁边的两个人使了个眼色。两人收起平板电脑，先走了。\n陈锐站在吧台前，"
+    "source_text": "然后他站起来，对旁边的两个人使了个眼色。两人收起平板电脑，先走了。\n陈锐站在吧台前，盯着苏念看了五秒。他的下颌肌肉在动——在磨牙。\n苏念把抹布叠好，放回吧台下面"
   },
   {
-    "beat_id": 13,
+    "beat_id": 19,
     "space": "Physical",
     "characters_present": [
-      "Chen Rui"
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Chen Rui",
     "action_visual": "Chen Rui turns around",
@@ -212,7 +349,7 @@
     "source_text": "陈锐深吸一口气，转身走了。走到门口时他停了一下，头也不回地说：\n\"下周五之前。不管你知道什么。\""
   },
   {
-    "beat_id": 14,
+    "beat_id": 20,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -228,13 +365,15 @@
     "source_text": "门关上了。门框上的风铃晃了两下，发出清脆的叮当声。\n苏念独自站在吧台后面。"
   },
   {
-    "beat_id": 15,
+    "beat_id": 21,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian looks down",
+    "primary_char": "grandmother",
+    "action_visual": "grandmother looks down",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
@@ -244,13 +383,13 @@
     "source_text": "她低头看左手手背。那道猫抓的疤痕——五岁时被外婆养的橘猫抓的，外婆一边给她贴创可贴一边骂猫——"
   },
   {
-    "beat_id": 16,
+    "beat_id": 22,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "grandmother"
     ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian stands behind counter, breathing slowly, eyes cast down",
+    "primary_char": "grandmother",
+    "action_visual": "grandmother stands still, shoulders slightly tense, eyes unfocused",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
@@ -260,10 +399,12 @@
     "source_text": "没了。\n外婆的猫叫什么名字？"
   },
   {
-    "beat_id": 17,
+    "beat_id": 23,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian turns hand over to inspect",
@@ -276,13 +417,29 @@
     "source_text": "她翻出手机相册，找到一张老照片。照片里有一只橘猫，蹲在咖啡店门口的台阶上。照片背面有外婆的字迹，写着一个名字——\n但那个名字的最后一个字，像是被水泡过，模糊得看"
   },
   {
-    "beat_id": 18,
+    "beat_id": 24,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian gazes at the photo",
+    "action_visual": "Su Nian gazes at the phone",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "手机屏幕闪了一下。"
+  },
+  {
+    "beat_id": 25,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian writes the photo",
     "spoken_dialogue": "文件不存在",
     "dialogue_speaker": "Su Nian",
     "inner_voice": "",
@@ -292,10 +449,12 @@
     "source_text": "照片消失了。相册里只剩下一个灰色的占位符，上面写着\"文件不存在\"。"
   },
   {
-    "beat_id": 19,
+    "beat_id": 26,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian trembles visibly",
@@ -308,13 +467,13 @@
     "source_text": "苏念的手在发抖。她退出相册，又点进去。\n还是灰色。"
   },
   {
-    "beat_id": 20,
+    "beat_id": 27,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "grandmother"
     ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian gazes at the photo",
+    "primary_char": "grandmother",
+    "action_visual": "grandmother writes the photo",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",

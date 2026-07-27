@@ -3,8 +3,10 @@
     "beat_id": 1,
     "space": "Physical",
     "characters_present": [
+      "Su Nian",
       "Gu Shen",
-      "Chen Rui"
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Gu Shen",
     "action_visual": "Gu Shen gazes at the contract",
@@ -21,7 +23,9 @@
     "space": "Physical",
     "characters_present": [
       "Su Nian",
-      "Chen Rui"
+      "Lin Ke",
+      "Chen Rui",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian flips through contract pages",
@@ -37,10 +41,13 @@
     "beat_id": 3,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian speaks softly, motionless",
+    "action_visual": "Su Nian speaks softly",
     "spoken_dialogue": "你喝什么？",
     "dialogue_speaker": "Su Nian",
     "inner_voice": "",
@@ -73,7 +80,7 @@
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian gazes at, motionless",
+    "action_visual": "Su Nian gazes at",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
@@ -96,7 +103,7 @@
     "voice_type": "none",
     "focus_object": "cup rim",
     "emotion": "Tension",
-    "source_text": "[reading mind template]"
+    "source_text": "[ability template]"
   },
   {
     "beat_id": 7,
@@ -112,7 +119,7 @@
     "voice_type": "none",
     "focus_object": "",
     "emotion": "Shock",
-    "source_text": "[reading mind template]"
+    "source_text": "[ability template]"
   },
   {
     "beat_id": 8,
@@ -128,13 +135,33 @@
     "voice_type": "none",
     "focus_object": "scar on ring finger",
     "emotion": "Mystery",
-    "source_text": "[reading mind template]"
+    "source_text": "[ability template]"
   },
   {
     "beat_id": 9,
     "space": "Mental",
     "characters_present": [
-      "Chen Rui"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian speaks softly the coffee cup",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "……条件开得够高了。她不识货。但老陈说得对，这条街要改造，她的店迟早要拆。不如趁现在给她一个好价钱。不过……这咖啡确实好喝。比我十年前自己开的那家强。那时候……",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "世界安静了。\n*\"……条件开得够高了。她不识货。但老陈说得对，这条街要改造，她的店迟早要拆。不如趁现在给她一个好价钱。不过……这咖啡确实好喝。比我十年前自己开的"
+  },
+  {
+    "beat_id": 10,
+    "space": "Mental",
+    "characters_present": [
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Chen Rui",
     "action_visual": "Chen Rui carries a steaming cup",
@@ -147,8 +174,24 @@
     "source_text": "画面闪过：一个更年轻的陈锐，站在一家更小的店门口，招牌写着\"锐咖啡\"。他在笑，手里端着一杯自己冲的拿铁，拉花是一个歪歪扭扭的爱心。"
   },
   {
-    "beat_id": 10,
+    "beat_id": 11,
     "space": "Mental",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian gazes at the painting",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "watercolor painting",
+    "emotion": "Neutral",
+    "source_text": "画面碎了。"
+  },
+  {
+    "beat_id": 12,
+    "space": "Physical",
     "characters_present": [
       "Su Nian",
       "Chen Rui"
@@ -159,18 +202,18 @@
     "dialogue_speaker": "Su Nian",
     "inner_voice": "",
     "voice_type": "onscreen",
-    "focus_object": "watercolor painting",
+    "focus_object": "business card",
     "emotion": "Neutral",
-    "source_text": "画面碎了。\n苏念放下杯子。\n陈锐还在说：\"——你考虑一下。我的名片——\""
+    "source_text": "苏念放下杯子。\n陈锐还在说：\"——你考虑一下。我的名片——\""
   },
   {
-    "beat_id": 11,
+    "beat_id": 13,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian speaks softly the coffee",
+    "action_visual": "Su Nian speaks softly the coffee cup",
     "spoken_dialogue": "你也开过咖啡店。",
     "dialogue_speaker": "Su Nian",
     "inner_voice": "",
@@ -180,7 +223,7 @@
     "source_text": "\"你也开过咖啡店。\"苏念说。"
   },
   {
-    "beat_id": 12,
+    "beat_id": 14,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
@@ -197,7 +240,7 @@
     "source_text": "陈锐的笑容凝固了。\n\"什么？\"\n\"锐咖啡。\"苏念说，\"很小的一家店。你自己冲的拿铁，拉花是爱心。\""
   },
   {
-    "beat_id": 13,
+    "beat_id": 15,
     "space": "Physical",
     "characters_present": [
       "Chen Rui"
@@ -213,10 +256,12 @@
     "source_text": "陈锐的脸白了。\n\"你怎么知道的？\""
   },
   {
-    "beat_id": 14,
+    "beat_id": 16,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian draws latte art in the foam",
@@ -229,10 +274,28 @@
     "source_text": "苏念拿起杯子去洗——水龙头打开，热水冲过杯壁。\n她低头看自己的手。\n右手手腕内侧——那道她记得是学拉花时被蒸汽管烫的痕迹——"
   },
   {
-    "beat_id": 15,
+    "beat_id": 17,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian stands still, shoulders slightly tense, eyes unfocused",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Mystery",
+    "source_text": "消失了。皮肤光滑得像从未被烫过。"
+  },
+  {
+    "beat_id": 18,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian draws latte art in the foam",
@@ -242,6 +305,6 @@
     "voice_type": "none",
     "focus_object": "",
     "emotion": "Shock",
-    "source_text": "消失了。皮肤光滑得像从未被烫过。\n水龙头的热水溅在手腕上，温度刺痛。苏念猛地缩手——\n杯子从手里滑落，砸在水池底部。\n碎片飞溅。水花溅在她的围裙上。\n苏念盯着碎"
+    "source_text": "水龙头的热水溅在手腕上，温度刺痛。苏念猛地缩手——\n杯子从手里滑落，砸在水池底部。\n碎片飞溅。水花溅在她的围裙上。\n苏念盯着碎成三瓣的杯子，手指在发抖。\n她曾经"
   }
 ]

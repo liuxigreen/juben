@@ -3,7 +3,9 @@
     "beat_id": 1,
     "space": "Physical",
     "characters_present": [
-      "Chen Rui"
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Chen Rui",
     "action_visual": "Chen Rui sits down",
@@ -20,7 +22,9 @@
     "space": "Physical",
     "characters_present": [
       "Su Nian",
-      "Chen Rui"
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian carries a steaming cup",
@@ -39,7 +43,7 @@
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian stands behind counter, breathing slowly, eyes cast down",
+    "action_visual": "Su Nian stands still, shoulders slightly tense, eyes unfocused",
     "spoken_dialogue": "什么？",
     "dialogue_speaker": "Su Nian",
     "inner_voice": "",
@@ -55,7 +59,7 @@
       "Chen Rui"
     ],
     "primary_char": "Chen Rui",
-    "action_visual": "Chen Rui stands behind counter, breathing slowly, eyes cast down",
+    "action_visual": "Chen Rui puts away",
     "spoken_dialogue": "收购终止协议。",
     "dialogue_speaker": "Chen Rui",
     "inner_voice": "",
@@ -69,10 +73,14 @@
     "space": "Physical",
     "characters_present": [
       "Su Nian",
-      "Chen Rui"
+      "Gu Shen",
+      "Lin Ke",
+      "Chen Rui",
+      "Su Yuan",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian gazes at, motionless",
+    "action_visual": "Su Nian gazes at the letter",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
@@ -88,7 +96,7 @@
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian stands behind counter, breathing slowly, eyes cast down",
+    "action_visual": "Su Nian stands still, shoulders slightly tense, eyes unfocused",
     "spoken_dialogue": "为什么？",
     "dialogue_speaker": "Su Nian",
     "inner_voice": "",
@@ -101,7 +109,9 @@
     "beat_id": 7,
     "space": "Physical",
     "characters_present": [
-      "Chen Rui"
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Chen Rui",
     "action_visual": "Chen Rui takes a slow sip",
@@ -117,10 +127,12 @@
     "beat_id": 8,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen stands behind counter, breathing slowly, eyes cast down",
+    "action_visual": "Gu Shen stands still, shoulders slightly tense, eyes unfocused",
     "spoken_dialogue": "你知道我以前是做什么的吗？",
     "dialogue_speaker": "Gu Shen",
     "inner_voice": "",
@@ -152,33 +164,17 @@
       "Chen Rui"
     ],
     "primary_char": "Chen Rui",
-    "action_visual": "Chen Rui picks up the coffee",
+    "action_visual": "Chen Rui picks up the coffee cup",
     "spoken_dialogue": "锐咖啡",
     "dialogue_speaker": "Chen Rui",
     "inner_voice": "",
     "voice_type": "onscreen",
     "focus_object": "old photo",
     "emotion": "Neutral",
-    "source_text": "陈锐从口袋里拿出手机，翻到一张照片。照片里是一家很小的咖啡店——比念想还小，只有四张桌子。招牌上写着两个字：\"锐咖啡\"。"
+    "source_text": "陈锐从口袋里拿出手机，翻到一张照片。照片里是一家很小的咖啡店——比念想还小，只有四张桌子。招牌上写着两个字：\"锐咖啡\"。\n\"这是我开的。\"陈锐说。\"十年前。在城"
   },
   {
     "beat_id": 11,
-    "space": "Physical",
-    "characters_present": [
-      "Chen Rui"
-    ],
-    "primary_char": "Chen Rui",
-    "action_visual": "Chen Rui speaks softly, motionless",
-    "spoken_dialogue": "这是我开的。",
-    "dialogue_speaker": "Chen Rui",
-    "inner_voice": "",
-    "voice_type": "onscreen",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "\"这是我开的。\"陈锐说。\"十年前。在城南的一条小巷子里。\""
-  },
-  {
-    "beat_id": 12,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
@@ -194,13 +190,13 @@
     "source_text": "苏念看着那张照片。店门口有一棵桂花树，树下放着一张折叠椅。"
   },
   {
-    "beat_id": 13,
+    "beat_id": 12,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian stands behind counter, breathing slowly, eyes cast down",
+    "action_visual": "Su Nian stands still, shoulders slightly tense, eyes unfocused",
     "spoken_dialogue": "生意好吗？",
     "dialogue_speaker": "Su Nian",
     "inner_voice": "",
@@ -210,13 +206,13 @@
     "source_text": "\"生意好吗？\"苏念问。"
   },
   {
-    "beat_id": 14,
+    "beat_id": 13,
     "space": "Physical",
     "characters_present": [
       "Chen Rui"
     ],
     "primary_char": "Chen Rui",
-    "action_visual": "Chen Rui speaks softly, motionless",
+    "action_visual": "Chen Rui speaks softly",
     "spoken_dialogue": "不好。",
     "dialogue_speaker": "Chen Rui",
     "inner_voice": "",
@@ -226,10 +222,15 @@
     "source_text": "\"不好。\"陈锐说。\"亏了两年。第三年，有人来收购。出价很高。我——\""
   },
   {
-    "beat_id": 15,
+    "beat_id": 14,
     "space": "Physical",
     "characters_present": [
-      "Chen Rui"
+      "Su Nian",
+      "Gu Shen",
+      "Lin Ke",
+      "Chen Rui",
+      "Su Yuan",
+      "grandmother"
     ],
     "primary_char": "Chen Rui",
     "action_visual": "Chen Rui hand pauses mid-motion",
@@ -242,14 +243,16 @@
     "source_text": "他停了。他的手指在手机屏幕上停了一下，照片放大了——门口的折叠椅上，坐着一个年轻女人。\n\"这是我老婆。\"陈锐说。\"当时还是女朋友。她在这张椅子上等我关店，等到睡"
   },
   {
-    "beat_id": 16,
+    "beat_id": 15,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
-      "Chen Rui"
+      "Lin Ke",
+      "Chen Rui",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian gazes at, motionless",
+    "action_visual": "Su Nian leans against",
     "spoken_dialogue": "我卖了。",
     "dialogue_speaker": "Su Nian",
     "inner_voice": "",
@@ -259,10 +262,12 @@
     "source_text": "苏念看着那个女人。她侧着头，靠在椅背上，眼睛闭着。阳光从桂花树的缝隙里漏下来，落在她的脸上。\n\"我卖了。\"陈锐说。\"第三年年底，我卖了。用那笔钱，我买了房子，结"
   },
   {
-    "beat_id": 17,
+    "beat_id": 16,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Gu Shen",
     "action_visual": "Gu Shen gazes at the phone",
@@ -275,13 +280,13 @@
     "source_text": "他的声音没有起伏，但他的手指在手机边缘掐出了痕迹。"
   },
   {
-    "beat_id": 18,
+    "beat_id": 17,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian stands behind counter, breathing slowly, eyes cast down",
+    "action_visual": "Su Nian stands still, shoulders slightly tense, eyes unfocused",
     "spoken_dialogue": "后来呢？",
     "dialogue_speaker": "Su Nian",
     "inner_voice": "",
@@ -291,13 +296,13 @@
     "source_text": "\"后来呢？\"苏念问。"
   },
   {
-    "beat_id": 19,
+    "beat_id": 18,
     "space": "Physical",
     "characters_present": [
       "Chen Rui"
     ],
     "primary_char": "Chen Rui",
-    "action_visual": "Chen Rui sits quietly the coffee",
+    "action_visual": "Chen Rui sits quietly the coffee cup",
     "spoken_dialogue": "后来——",
     "dialogue_speaker": "Chen Rui",
     "inner_voice": "",
@@ -307,29 +312,51 @@
     "source_text": "\"后来——\"陈锐把手机收起来，\"公司让我去收购别人的小店。一家一家收。我收了十几家。每次签完合同，我都会去那家店坐一会儿，喝最后一杯咖啡。\""
   },
   {
-    "beat_id": 20,
+    "beat_id": 19,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Gu Shen",
     "action_visual": "Gu Shen takes a slow sip",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "他喝了一口意式浓缩。"
+  },
+  {
+    "beat_id": 20,
+    "space": "Physical",
+    "characters_present": [
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
+    ],
+    "primary_char": "Gu Shen",
+    "action_visual": "Gu Shen trembles visibly",
     "spoken_dialogue": "然后我发现——",
     "dialogue_speaker": "Gu Shen",
     "inner_voice": "",
     "voice_type": "onscreen",
     "focus_object": "",
     "emotion": "Tension",
-    "source_text": "他喝了一口意式浓缩。\n\"然后我发现——\"他的声音在发抖，\"每收一家店，我就忘掉一点自己开'锐咖啡'时的感觉。忘掉桂花树下的味道。忘掉老婆在折叠椅上等我的样子。忘"
+    "source_text": "\"然后我发现——\"他的声音在发抖，\"每收一家店，我就忘掉一点自己开'锐咖啡'时的感觉。忘掉桂花树下的味道。忘掉老婆在折叠椅上等我的样子。忘掉——\""
   },
   {
     "beat_id": 21,
     "space": "Physical",
     "characters_present": [
-      "Chen Rui"
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Chen Rui",
-    "action_visual": "Chen Rui speaks softly the coffee",
+    "action_visual": "Chen Rui speaks softly the coffee cup",
     "spoken_dialogue": "忘掉什么？",
     "dialogue_speaker": "Chen Rui",
     "inner_voice": "",
@@ -359,10 +386,12 @@
     "beat_id": 23,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen speaks softly, motionless",
+    "action_visual": "Gu Shen speaks softly the letter",
     "spoken_dialogue": "签了吧。",
     "dialogue_speaker": "Gu Shen",
     "inner_voice": "",
@@ -379,7 +408,7 @@
       "Chen Rui"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian gazes at, motionless",
+    "action_visual": "Su Nian gazes at the letter",
     "spoken_dialogue": "你跟公司撒了谎。",
     "dialogue_speaker": "Su Nian",
     "inner_voice": "",
@@ -392,10 +421,12 @@
     "beat_id": 25,
     "space": "Physical",
     "characters_present": [
-      "Chen Rui"
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Chen Rui",
-    "action_visual": "Chen Rui speaks softly, motionless",
+    "action_visual": "Chen Rui speaks softly",
     "spoken_dialogue": "是谁？",
     "dialogue_speaker": "Chen Rui",
     "inner_voice": "",
@@ -409,7 +440,9 @@
     "space": "Physical",
     "characters_present": [
       "Su Nian",
-      "Chen Rui"
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian clenches fists tightly",
@@ -426,10 +459,12 @@
     "space": "Physical",
     "characters_present": [
       "Su Nian",
-      "Chen Rui"
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian speaks softly, motionless",
+    "action_visual": "Su Nian speaks softly",
     "spoken_dialogue": "你也辞职了？",
     "dialogue_speaker": "Su Nian",
     "inner_voice": "",
@@ -445,7 +480,7 @@
       "Gu Shen"
     ],
     "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen stands behind counter, breathing slowly, eyes cast down",
+    "action_visual": "Gu Shen stands still, shoulders slightly tense, eyes unfocused",
     "spoken_dialogue": "你和顾深——同一天辞职？",
     "dialogue_speaker": "Gu Shen",
     "inner_voice": "",
@@ -458,10 +493,12 @@
     "beat_id": 29,
     "space": "Physical",
     "characters_present": [
-      "Chen Rui"
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Chen Rui",
-    "action_visual": "Chen Rui speaks softly, motionless",
+    "action_visual": "Chen Rui speaks softly",
     "spoken_dialogue": "巧合。",
     "dialogue_speaker": "Chen Rui",
     "inner_voice": "",
@@ -474,7 +511,9 @@
     "beat_id": 30,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan"
     ],
     "primary_char": "Gu Shen",
     "action_visual": "Gu Shen stands up from the seat",
@@ -490,7 +529,11 @@
     "beat_id": 31,
     "space": "Physical",
     "characters_present": [
-      "Chen Rui"
+      "Su Nian",
+      "Gu Shen",
+      "Chen Rui",
+      "Su Yuan",
+      "grandmother"
     ],
     "primary_char": "Chen Rui",
     "action_visual": "Chen Rui trembles visibly",
@@ -507,7 +550,11 @@
     "space": "Physical",
     "characters_present": [
       "Su Nian",
-      "Chen Rui"
+      "Gu Shen",
+      "Lin Ke",
+      "Chen Rui",
+      "Su Yuan",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian turns and leaves",
@@ -526,7 +573,7 @@
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian places down, motionless",
+    "action_visual": "Su Nian places down",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
@@ -539,24 +586,47 @@
     "beat_id": 34,
     "space": "Physical",
     "characters_present": [
-      "Chen Rui"
+      "Su Nian",
+      "Lin Ke",
+      "grandmother"
     ],
-    "primary_char": "Chen Rui",
-    "action_visual": "Chen Rui reaches out to touch gently",
+    "primary_char": "grandmother",
+    "action_visual": "grandmother reaches out to touch gently",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
-    "inner_voice": "念想咖啡，值得留下来。",
-    "voice_type": "inner_voice",
+    "inner_voice": "",
+    "voice_type": "none",
     "focus_object": "sticky note",
     "emotion": "Mystery",
-    "source_text": "她走到墙边，看着外婆的便签。便签上的字又淡了一个笔画。\n她伸手摸了摸便签。纸面冰凉。\n然后她看到——便签旁边，多了一张新的便签。\n不是外婆的字迹。\n是陈锐的字迹"
+    "source_text": "她走到墙边，看着外婆的便签。便签上的字又淡了一个笔画。\n她伸手摸了摸便签。纸面冰凉。"
   },
   {
     "beat_id": 35,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
-      "Chen Rui"
+      "Lin Ke",
+      "Chen Rui",
+      "grandmother"
+    ],
+    "primary_char": "Chen Rui",
+    "action_visual": "Chen Rui sees something",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "念想咖啡，值得留下来。",
+    "voice_type": "inner_voice",
+    "focus_object": "sticky note",
+    "emotion": "Neutral",
+    "source_text": "然后她看到——便签旁边，多了一张新的便签。\n不是外婆的字迹。\n是陈锐的字迹。\n*\"念想咖啡，值得留下来。\"*"
+  },
+  {
+    "beat_id": 36,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "Lin Ke",
+      "Chen Rui",
+      "grandmother"
     ],
     "primary_char": "Su Nian",
     "action_visual": "Su Nian struggles to remember",

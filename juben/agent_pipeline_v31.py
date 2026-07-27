@@ -161,11 +161,24 @@ READING_MIND_TEMPLATE = [
 ]
 
 
+# 指代词→角色映射（修复灰色西装→Gu Shen等）
+PRONOUN_MAP = [
+    (r"灰色西装|西装男|男人|顾客|他(?!的)", "Gu Shen"),
+    (r"姑娘|女孩|女(?!人)", "Su Nian"),
+]
+
 def detect_chars(text):
     chars = []
+    # 显式角色名
     for zh, en in CHAR_EN.items():
         if zh in text and en in CHAR_TAGS_FULL:
-            chars.append(en)
+            if en not in chars:
+                chars.append(en)
+    # 指代词推断
+    for pattern, en_name in PRONOUN_MAP:
+        if re.search(pattern, text) and en_name in CHAR_TAGS_FULL:
+            if en_name not in chars:
+                chars.append(en_name)
     return chars if chars else ["Su Nian"]
 
 
@@ -187,12 +200,21 @@ def detect_speaker(paragraph, prev_speaker=""):
 
 
 def detect_action_subject(text, default="Su Nian"):
+    # 1. 显式角色名
     for zh_name, en_name in CHAR_EN.items():
         if zh_name in text and en_name in CHAR_TAGS_FULL:
             return en_name
-    if any(kw in text for kw in ["男人", "他", "西装", "顾深", "灰色西装"]):
+    # 2. 男性指代词（灰色西装、男人、顾客等）
+    male_kw = ["灰色西装", "西装男", "男人", "顾客", "西装", "领带"]
+    if any(kw in text for kw in male_kw):
         return "Gu Shen"
-    if any(kw in text for kw in ["苏念", "她", "姑娘", "女孩", "老板"]):
+    # 3. 代词"他"（需要上下文，默认Gu Shen）
+    if re.search(r"他(?!的)", text) and not re.search(r"她", text):
+        # 如果前面有男性角色上下文
+        if any(kw in text for kw in ["说", "道", "问", "喝", "坐", "站", "走", "掏"]):
+            return "Gu Shen"
+    # 4. 女性指代词
+    if any(kw in text for kw in ["苏念", "她", "姑娘", "女孩", "老板", "围裙"]):
         return "Su Nian"
     return default
 
@@ -236,23 +258,53 @@ def translate_action(text, char="Su Nian"):
     for pattern, template in ACTION_TEMPLATES:
         if re.search(pattern, text):
             return template.replace("{char}", char) if "{char}" in template else template
-    nouns = {"咖啡": "coffee", "杯子": "cup", "手机": "phone", "便签": "sticky note",
+    # 提取微动作（比模板更细粒度）
+    micro = {
+        "盯着": "stares intently at", "注视": "gazes at",
+        "皱眉": "frowns slightly", "微笑": "smiles faintly",
+        "叹气": "sighs quietly", "吸气": "breathes in sharply",
+        "吞咽": "swallows hard", "眨眼": "blinks slowly",
+        "侧头": "tilts head", "垂眼": "lowers gaze",
+        "抿嘴": "presses lips together", "咬唇": "bites lower lip",
+        "攥拳": "clenches fist", "松手": "releases grip",
+        "触碰": "touches gently", "抚摸": "traces finger across",
+        "靠近": "leans closer", "后退": "steps back",
+        "靠在": "leans against", "倚着": "rests against",
+        "端详": "examines closely", "翻看": "flips through",
+        "凝视": "gazes steadily", "扫视": "glances around",
+    }
+    for zh, en in micro.items():
+        if zh in text:
+            return f"{char} {en}"
+    nouns = {"咖啡": "coffee cup", "杯子": "cup", "手机": "phone", "便签": "sticky note",
              "照片": "photo", "镜子": "mirror", "门": "door", "窗": "window",
              "伞": "umbrella", "钥匙": "key", "合同": "contract", "名片": "card",
-             "茶": "tea", "抹布": "rag", "水龙头": "faucet", "水池": "sink"}
+             "茶": "tea cup", "抹布": "rag", "水龙头": "faucet", "水池": "sink",
+             "围裙": "apron", "灯": "light", "信": "letter", "画": "painting",
+             "钱包": "wallet", "筷子": "chopsticks", "碗": "bowl"}
     verbs = {"看": "gazes at", "拿": "picks up", "放": "places down",
-             "走": "walks slowly", "站": "stands still", "坐": "sits quietly",
+             "走": "walks slowly", "坐": "sits quietly",
              "说": "speaks softly", "洗": "rinses", "擦": "wipes",
-             "端": "holds carefully", "喝": "sips", "摸": "touches gently"}
+             "端": "holds carefully", "喝": "sips", "摸": "touches gently",
+             "翻": "flips through", "写": "writes", "收": "puts away"}
     fn = [nouns[k] for k in nouns if k in text]
     fv = [verbs[k] for k in verbs if k in text]
     if fv and fn:
         return f"{char} {fv[0]} the {fn[0]}"
     if fv:
-        return f"{char} {fv[0]}, motionless"
+        return f"{char} {fv[0]}"
     if fn:
-        return f"{char} gazes at the {fn[0]}"
-    return f"{char} stands behind counter, breathing slowly, eyes cast down"
+        return f"{char} stares at the {fn[0]}"
+    # 最终兜底：根据上下文生成具体微动作
+    if "杯" in text or "咖啡" in text:
+        return f"{char} holds the cup with both hands, staring at the surface"
+    if "门" in text or "窗" in text:
+        return f"{char} stands by the door, gazing outward"
+    if "墙" in text or "便签" in text:
+        return f"{char} reaches toward the wall, fingers hovering over the note"
+    if "手" in text or "指" in text:
+        return f"{char} examines own hands, turning them over slowly"
+    return f"{char} stands still, shoulders slightly tense, eyes unfocused"
 
 
 def extract_dialogue(text):
@@ -311,8 +363,24 @@ def should_cut(prev_text, curr_text, prev_speaker, curr_speaker):
         return True
     if re.search(r'["\u300c]', prev_text) and not re.search(r'["\u300c]', curr_text):
         return True
-    scene_kw = ["窗外", "门口", "门外", "巷子里", "浴室", "镜子前"]
+    scene_kw = ["窗外", "门口", "门外", "巷子里", "浴室", "镜子前", "镜子里", "墙上", "照片里"]
     if any(kw in curr_text for kw in scene_kw) and not any(kw in prev_text for kw in scene_kw):
+        return True
+    # 动作切换切分
+    action_kw = ["端起", "放下", "站起来", "坐下", "走过去", "走过来", "转过身", "转身",
+                 "掏出", "拿出", "打开", "关上", "锁上", "揭下来", "贴回去", "收起来",
+                 "回来", "回到", "走到", "离开", "进来", "出去", "追出去",
+                 "弯腰", "跪下来", "蹲下", "起身",
+                 "收拾", "放进", "冲掉", "注意到", "看到", "发现",
+                 "哭了", "笑了", "擦掉", "洗完", "喝完"]
+    if any(kw in curr_text for kw in action_kw):
+        return True
+    # 情绪切换切分
+    emotion_kw = ["愣住", "震惊", "突然", "猛地", "忽然", "一下子", "吓了一跳"]
+    if any(kw in curr_text for kw in emotion_kw):
+        return True
+    # 手机/通讯切分
+    if re.search(r"手机|消息|电话|来电|挂断|拨打", curr_text):
         return True
     return False
 
@@ -328,9 +396,23 @@ def make_beat(beat_id, paragraphs, primary_char=None):
     dialogue_text, dialogue_speaker, inner_text, voice_type = "", "", "", "none"
     if inner:
         inner_text = inner[0][:100]
+    if dialogues:
+        raw_dlg = dialogues[0][:80]
+        if raw_dlg.startswith("……") or raw_dlg.startswith("...") or            any(kw in raw_dlg for kw in ["KPI", "合同", "想不起来", "为什么", "她说得对", "不记得"]):
+            inner_text = inner_text or raw_dlg
+        elif not inner_text:
+            dialogue_text = raw_dlg
+            for zh_name, en_name in CHAR_EN.items():
+                if zh_name in text:
+                    dialogue_speaker = en_name
+                    break
+            if not dialogue_speaker:
+                dialogue_speaker = primary_char
+    # 设置voice_type
+    if inner_text:
         voice_type = "inner_voice"
-    elif dialogues:
-        dialogue_text = dialogues[0][:80]
+    elif dialogue_text:
+        voice_type = "onscreen"
         for zh_name, en_name in CHAR_EN.items():
             if zh_name in text:
                 dialogue_speaker = en_name
