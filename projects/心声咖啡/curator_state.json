@@ -1,0 +1,28 @@
+{
+  "chapters": [
+    {
+      "chapter_num": 9,
+      "body_costs": [
+        "发抖"
+      ],
+      "setting_elements_used": [
+        "读心",
+        "疤痕消失",
+        "吧台",
+        "外婆",
+        "顾深",
+        "收购"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    }
+  ],
+  "accumulated_costs": [
+    "发抖"
+  ],
+  "accumulated_banned": [],
+  "current_realm": "",
+  "realm_progress": {}
+}

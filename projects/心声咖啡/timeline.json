@@ -1,0 +1,35 @@
+{
+  "total_chapters": 20,
+  "tension_budget": {
+    "description": "20章短篇，节奏紧凑，每章必须有信息增量或代价升级",
+    "chapters_per_act": 5,
+    "acts": [
+      {"name": "入局", "chapters": "1-5", "tension_range": "3-6", "focus": "发现能力、建立关系、第一次代价"},
+      {"name": "复杂化", "chapters": "6-10", "tension_range": "5-7", "focus": "深入使用、关系发展、代价累积"},
+      {"name": "危机", "chapters": "11-15", "tension_range": "7-9", "focus": "记忆大量流失、关系危机、真相浮现"},
+      {"name": "高潮与落幕", "chapters": "16-20", "tension_range": "8-3", "focus": "最终选择、代价兑现、新的开始"}
+    ]
+  },
+  "chapters": [
+    {"chapter": 1, "tension": 3, "rhythm": "Discovery", "key_event": "苏念发现读心能力——喝下客人的咖啡听到了心声"},
+    {"chapter": 2, "tension": 4, "rhythm": "Discovery", "key_event": "验证能力——第二次读心，代价初现（手背疤痕消失）"},
+    {"chapter": 3, "tension": 5, "rhythm": "Investigation", "key_event": "顾深第一次来咖啡店，苏念读心他——听到的不是声音而是画面"},
+    {"chapter": 4, "tension": 4, "rhythm": "Cooldown_Breathing", "key_event": "苏念和林可聊天，回忆外婆。苏念发现自己想不起外婆做咖啡的味道"},
+    {"chapter": 5, "tension": 6, "rhythm": "Confrontation", "key_event": "陈锐来谈收购，苏念读心他——发现他也是咖啡爱好者。第一次大代价：忘记外婆教她拉花的场景"},
+    {"chapter": 6, "tension": 5, "rhythm": "Investigation", "key_event": "顾深成为常客。苏念读心他时看到他前女友离开的画面"},
+    {"chapter": 7, "tension": 6, "rhythm": "Confrontation", "key_event": "苏念用读心帮一对吵架的情侣和好。代价：忘记自己大学时的一段恋爱"},
+    {"chapter": 8, "tension": 5, "rhythm": "Investigation", "key_event": "林可画了一幅苏念外婆的画像，苏念认不出画中人"},
+    {"chapter": 9, "tension": 7, "rhythm": "Confrontation", "key_event": "顾深约苏念出去。苏念读心他——听到'她好像我前女友，但又完全不同'"},
+    {"chapter": 10, "tension": 6, "rhythm": "Discovery", "key_event": "苏念发现规律：读心顾深时，失去的总是与他相关的记忆。她开始害怕靠近他"},
+    {"chapter": 11, "tension": 7, "rhythm": "Confrontation", "key_event": "陈锐加大收购压力。苏念读心他——发现公司高层威胁他。代价：忘记咖啡店开业那天"},
+    {"chapter": 12, "tension": 8, "rhythm": "Confrontation", "key_event": "顾深发现苏念总是在他喝咖啡后表情变化。他开始怀疑"},
+    {"chapter": 13, "tension": 8, "rhythm": "Storm_Climax", "key_event": "苏念读心一个陌生客人——听到'这个店要拆了'。代价极小但她震惊"},
+    {"chapter": 14, "tension": 9, "rhythm": "Storm_Climax", "key_event": "苏念发现自己忘记了很多事——不记得父母的样子，不记得外婆的声音。她对着镜子，想不起自己是谁"},
+    {"chapter": 15, "tension": 8, "rhythm": "Confrontation", "key_event": "林可告诉苏念真相：苏念哥哥当年也有一种'能力'，代价是生命。林可一直保守这个秘密"},
+    {"chapter": 16, "tension": 9, "rhythm": "Storm_Climax", "key_event": "苏念最后一次读心——喝下顾深的咖啡。看到他所有关于她的记忆。代价：忘记自己为什么开这家店"},
+    {"chapter": 17, "tension": 7, "rhythm": "Cooldown_Breathing", "key_event": "顾深带苏念重走他们认识以来的路线。她不记得但能感受到"},
+    {"chapter": 18, "tension": 6, "rhythm": "Resolution_Arc", "key_event": "陈锐放弃收购——他告诉苏念，他曾经也有想守护的小店"},
+    {"chapter": 19, "tension": 4, "rhythm": "Resolution_Arc", "key_event": "苏念在咖啡店墙上找到外婆留下的便签：'有些味道，不是用舌头记住的'"},
+    {"chapter": 20, "tension": 3, "rhythm": "Resolution_Arc", "key_event": "苏念重新开店。她不记得过去，但她记得怎么冲咖啡。顾深坐在老位置，她端上一杯——这次，她没有喝"}
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "characters": [
+    {
+      "id": "char_001",
+      "name": "苏念",
+      "aliases": [],
+      "role": "protagonist",
+      "gender": "female",
+      "appearance": {
+        "age": 26,
+        "height": "",
+        "build": "",
+        "hair": "",
+        "eyes": "",
+        "distinguishing": "圆脸，齐肩短发，总是穿着围裙，左手无名指有一个旧伤疤",
+        "clothing_default": ""
+      },
+      "personality": {
+        "ocean": {
+          "openness": 5,
+          "conscientiousness": 5,
+          "extraversion": 5,
+          "agreeableness": 5,
+          "neuroticism": 5
+        },
+        "speech_pattern": "说话简短，喜欢用咖啡术语比喻人生。紧张时会不自觉擦杯子",
+        "habits": [],
+        "fears": [],
+        "desires": "保住外婆的咖啡店，理解每一个走进来的客人"
+      },
+      "background": {
+        "origin": "",
+        "family": "",
+        "education": "",
+        "key_event": "",
+        "secret": ""
+      },
+      "abilities": {
+        "skills": [],
+        "special": ""
+      },
+      "relationships": {},
+      "arc": {
+        "start": "",
+        "midpoint": "",
+        "end": "",
+        "internal_conflict": ""
+      },
+      "state": {
+        "health": "healthy",
+        "emotion": "neutral",
+        "location": "念想咖啡店",
+        "awareness": []
+      },
+      "hidden_motivation": "",
+      "personal_goal": ""
+    },
+    {
+      "id": "char_002",
+      "name": "顾深",
+      "aliases": [],
+      "role": "supporting",
+      "gender": "male",
+      "appearance": {
+        "age": 30,
+        "height": "",
+        "build": "",
+        "hair": "",
+        "eyes": "",
+        "distinguishing": "高瘦，戴银框眼镜，永远穿深色西装。右手食指有常年握笔的茧",
+        "clothing_default": ""
+      },
+      "personality": {
+        "ocean": {
+          "openness": 5,
+          "conscientiousness": 5,
+          "extraversion": 5,
+          "agreeableness": 5,
+          "neuroticism": 5
+        },
+        "speech_pattern": "语速慢，用词精确，从不说废话。生气时反而更安静",
+        "habits": [],
+        "fears": [],
+        "desires": "理解为什么苏念能看穿他的外壳"
+      },
+      "background": {
+        "origin": "",
+        "family": "",
+        "education": "",
+        "key_event": "",
+        "secret": ""
+      },
+      "abilities": {
+        "skills": [],
+        "special": ""
+      },
+      "relationships": {},
+      "arc": {
+        "start": "",
+        "midpoint": "",
+        "end": "",
+        "internal_conflict": ""
+      },
+      "state": {
+        "health": "healthy",
+        "emotion": "neutral",
+        "location": "写字楼12楼",
+        "awareness": []
+      },
+      "hidden_motivation": "",
+      "personal_goal": ""
+    },
+    {
+      "id": "char_003",
+      "name": "林可",
+      "aliases": [],
+      "role": "supporting",
+      "gender": "female",
+      "appearance": {
+        "age": 25,
+        "height": "",
+        "build": "",
+        "hair": "",
+        "eyes": "",
+        "distinguishing": "马尾辫，彩色指甲，永远背着一个装满画材的大包",
+        "clothing_default": ""
+      },
+      "personality": {
+        "ocean": {
+          "openness": 5,
+          "conscientiousness": 5,
+          "extraversion": 5,
+          "agreeableness": 5,
+          "neuroticism": 5
+        },
+        "speech_pattern": "语速快，爱用网络用语，情绪激动时会中英混杂",
+        "habits": [],
+        "fears": [],
+        "desires": "保护苏念，弥补对苏念哥哥的遗憾"
+      },
+      "background": {
+        "origin": "",
+        "family": "",
+        "education": "",
+        "key_event": "",
+        "secret": ""
+      },
+      "abilities": {
+        "skills": [],
+        "special": ""
+      },
+      "relationships": {},
+      "arc": {
+        "start": "",
+        "midpoint": "",
+        "end": "",
+        "internal_conflict": ""
+      },
+      "state": {
+        "health": "healthy",
+        "emotion": "neutral",
+        "location": "",
+        "awareness": []
+      },
+      "hidden_motivation": "",
+      "personal_goal": ""
+    },
+    {
+      "id": "char_004",
+      "name": "陈锐",
+      "aliases": [],
+      "role": "antagonist",
+      "gender": "male",
+      "appearance": {
+        "age": 32,
+        "height": "",
+        "build": "",
+        "hair": "",
+        "eyes": "",
+        "distinguishing": "方脸，短发，穿着休闲但手表昂贵。笑起来眼角有纹",
+        "clothing_default": ""
+      },
+      "personality": {
+        "ocean": {
+          "openness": 5,
+          "conscientiousness": 5,
+          "extraversion": 5,
+          "agreeableness": 5,
+          "neuroticism": 5
+        },
+        "speech_pattern": "谈判时温和有礼，私下粗犷直接。压力大时会磨牙",
+        "habits": [],
+        "fears": [],
+        "desires": "完成公司收购任务，但内心渴望回到当初开咖啡店的纯粹"
+      },
+      "background": {
+        "origin": "",
+        "family": "",
+        "education": "",
+        "key_event": "",
+        "secret": ""
+      },
+      "abilities": {
+        "skills": [],
+        "special": ""
+      },
+      "relationships": {},
+      "arc": {
+        "start": "",
+        "midpoint": "",
+        "end": "",
+        "internal_conflict": ""
+      },
+      "state": {
+        "health": "healthy",
+        "emotion": "neutral",
+        "location": "",
+        "awareness": []
+      },
+      "hidden_motivation": "",
+      "personal_goal": ""
+    }
+  ]
+}
