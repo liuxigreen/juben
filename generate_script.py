@@ -98,9 +98,18 @@ def build_chapter_prompt(
     
     # 构建事件描述
     event_desc = ""
-    for event_name, event_data in events.get("events", {}).items():
-        if event_data.get("enabled", False):
+    events_list = events.get("events", [])
+    if isinstance(events_list, list):
+        for event in events_list:
+            event_type = event.get("type", "unknown")
+            triggers = event.get("triggers", [])
             event_desc += f"""
+- {event_type}: 触发词={', '.join(triggers[:3])}...
+"""
+    elif isinstance(events_list, dict):
+        for event_name, event_data in events_list.items():
+            if event_data.get("enabled", False):
+                event_desc += f"""
 - {event_data.get('name', event_name)}: 视觉提示={event_data.get('visual_cue', '无')}, 时长={event_data.get('duration_range', [3,6])}秒
 """
     
