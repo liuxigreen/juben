@@ -1,0 +1,76 @@
+{
+  "episode_number": 8,
+  "duration_estimate_seconds": 90,
+  "word_count_estimate": 692,
+  "pacing_checkpoints": [
+    {
+      "label": "3s_Hook",
+      "time_range": [
+        0,
+        45.0
+      ],
+      "visual_action": "一张泛黄的照片——一个白发老太太站在咖啡店门口，围裙上沾着咖啡渍，笑得眼睛眯成一……",
+      "dialogue": "给你。",
+      "emotion": "悬疑"
+    },
+    {
+      "label": "90s_Cliffhanger",
+      "time_range": [
+        0,
+        45.0
+      ],
+      "visual_action": "她站起来，走到门口，又回头——\n\"苏念，你哥以前也——\"\n她突然闭嘴。",
+      "dialogue": "没什么。",
+      "emotion": "震惊"
+    }
+  ],
+  "shots": [
+    {
+      "shot_id": 1,
+      "shot_type": "MCU",
+      "camera_movement": "Static",
+      "camera_angle": "Eye Level",
+      "duration": 45.0,
+      "visual_action": "一张泛黄的照片——一个白发老太太站在咖啡店门口，围裙上沾着咖啡渍，笑得眼睛眯成一……",
+      "dialogue": "给你。",
+      "emotion": "悬疑",
+      "pacing_label": "3s_Hook",
+      "location": "念想咖啡店",
+      "characters_present": [
+        "苏念",
+        "林可"
+      ],
+      "lighting": "Low key",
+      "audio_hint": "ambient conversation noise"
+    },
+    {
+      "shot_id": 2,
+      "shot_type": "CU",
+      "camera_movement": "Push",
+      "camera_angle": "Eye Level",
+      "duration": 45.0,
+      "visual_action": "她站起来，走到门口，又回头——\n\"苏念，你哥以前也——\"\n她突然闭嘴。",
+      "dialogue": "没什么。",
+      "emotion": "震惊",
+      "pacing_label": "90s_Cliffhanger",
+      "location": "窗户",
+      "characters_present": [
+        "林可",
+        "苏念"
+      ],
+      "lighting": "High contrast",
+      "audio_hint": "light flickering on"
+    }
+  ],
+  "cliffhanger": {
+    "type": "shock",
+    "line": "她站起来，走到门口，又回头——\n\"苏念，你哥以前也——\"\n她突然闭嘴。",
+    "unanswered_question": "接下来会发生什么？"
+  },
+  "hook_density": "high",
+  "scene_count": 2,
+  "characters_involved": [
+    "林可",
+    "苏念"
+  ]
+}

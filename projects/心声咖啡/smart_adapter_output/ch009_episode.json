@@ -1,0 +1,188 @@
+{
+  "episode_number": 9,
+  "duration_estimate_seconds": 90,
+  "word_count_estimate": 1580,
+  "pacing_checkpoints": [
+    {
+      "label": "3s_Hook",
+      "time_range": [
+        0,
+        15.0
+      ],
+      "visual_action": "苏念坐在对面，手里攥着一双没拆封的一次性筷子。",
+      "dialogue": "巧合。",
+      "emotion": "日常"
+    },
+    {
+      "label": "15s_Retention",
+      "time_range": [
+        0,
+        15.0
+      ],
+      "visual_action": "顾深正看着她，灰色的眼睛在面馆的黄灯下变成深棕色。",
+      "dialogue": "你喝完之后，",
+      "emotion": "日常"
+    },
+    {
+      "label": "30s_Explosion",
+      "time_range": [
+        0,
+        15.0
+      ],
+      "visual_action": "她掏出来擦手，纸巾被攥成了一团。",
+      "dialogue": "也许。",
+      "emotion": "紧张"
+    },
+    {
+      "label": "60s_Satisfaction",
+      "time_range": [
+        0,
+        15.0
+      ],
+      "visual_action": "苏念的手攥紧了钥匙。",
+      "dialogue": "你不用——",
+      "emotion": "悲伤"
+    },
+    {
+      "label": "90s_Cliffhanger",
+      "time_range": [
+        0,
+        15.0
+      ],
+      "visual_action": "一个模糊的画面闪过——面馆的灯，一双灰色的眼睛，一个女人的背影在走廊里越走越远。",
+      "dialogue": "到家了。",
+      "emotion": "悬疑"
+    },
+    {
+      "label": "90s_Cliffhanger",
+      "time_range": [
+        0,
+        15.0
+      ],
+      "visual_action": "吧台上的灯闪了一下。",
+      "dialogue": "",
+      "emotion": "悬疑"
+    }
+  ],
+  "shots": [
+    {
+      "shot_id": 1,
+      "shot_type": "CU",
+      "camera_movement": "Static",
+      "camera_angle": "Eye Level",
+      "duration": 15.0,
+      "visual_action": "苏念坐在对面，手里攥着一双没拆封的一次性筷子。",
+      "dialogue": "巧合。",
+      "emotion": "日常",
+      "pacing_label": "3s_Hook",
+      "location": "面馆",
+      "characters_present": [
+        "顾深",
+        "苏念"
+      ],
+      "lighting": "Natural",
+      "audio_hint": "electrical hum"
+    },
+    {
+      "shot_id": 2,
+      "shot_type": "MCU",
+      "camera_movement": "Static",
+      "camera_angle": "Eye Level",
+      "duration": 15.0,
+      "visual_action": "顾深正看着她，灰色的眼睛在面馆的黄灯下变成深棕色。",
+      "dialogue": "你喝完之后，",
+      "emotion": "日常",
+      "pacing_label": "15s_Retention",
+      "location": "念想咖啡店",
+      "characters_present": [
+        "顾深",
+        "苏念"
+      ],
+      "lighting": "Natural",
+      "audio_hint": "glass shattering"
+    },
+    {
+      "shot_id": 3,
+      "shot_type": "MS",
+      "camera_movement": "Static",
+      "camera_angle": "Eye Level",
+      "duration": 15.0,
+      "visual_action": "她掏出来擦手，纸巾被攥成了一团。",
+      "dialogue": "也许。",
+      "emotion": "紧张",
+      "pacing_label": "30s_Explosion",
+      "location": "巷子",
+      "characters_present": [
+        "顾深",
+        "苏念"
+      ],
+      "lighting": "High contrast",
+      "audio_hint": "footsteps on stone"
+    },
+    {
+      "shot_id": 4,
+      "shot_type": "CU",
+      "camera_movement": "Pull",
+      "camera_angle": "High Angle",
+      "duration": 15.0,
+      "visual_action": "苏念的手攥紧了钥匙。",
+      "dialogue": "你不用——",
+      "emotion": "悲伤",
+      "pacing_label": "60s_Satisfaction",
+      "location": "念想咖啡店",
+      "characters_present": [
+        "顾深",
+        "苏念"
+      ],
+      "lighting": "Low key",
+      "audio_hint": "footsteps on stone"
+    },
+    {
+      "shot_id": 5,
+      "shot_type": "MS",
+      "camera_movement": "Push",
+      "camera_angle": "Eye Level",
+      "duration": 15.0,
+      "visual_action": "一个模糊的画面闪过——面馆的灯，一双灰色的眼睛，一个女人的背影在走廊里越走越远。",
+      "dialogue": "到家了。",
+      "emotion": "悬疑",
+      "pacing_label": "90s_Cliffhanger",
+      "location": "念想咖啡店",
+      "characters_present": [
+        "顾深",
+        "苏念"
+      ],
+      "lighting": "Low key",
+      "audio_hint": "phone vibration"
+    },
+    {
+      "shot_id": 6,
+      "shot_type": "MS",
+      "camera_movement": "Push",
+      "camera_angle": "Eye Level",
+      "duration": 15.0,
+      "visual_action": "吧台上的灯闪了一下。",
+      "dialogue": "",
+      "emotion": "悬疑",
+      "pacing_label": "90s_Cliffhanger",
+      "location": "念想咖啡店",
+      "characters_present": [
+        "顾深",
+        "苏念"
+      ],
+      "lighting": "Low key",
+      "audio_hint": "electrical hum"
+    }
+  ],
+  "cliffhanger": {
+    "type": "shock",
+    "line": "吧台上的灯闪了一下。",
+    "unanswered_question": "接下来会发生什么？"
+  },
+  "hook_density": "high",
+  "scene_count": 5,
+  "characters_involved": [
+    "顾深",
+    "苏念"
+  ]
+}

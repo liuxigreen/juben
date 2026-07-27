@@ -1,0 +1,103 @@
+{
+  "episode_number": 20,
+  "duration_estimate_seconds": 90,
+  "word_count_estimate": 1654,
+  "pacing_checkpoints": [
+    {
+      "label": "3s_Hook",
+      "time_range": [
+        0,
+        25.0
+      ],
+      "visual_action": "豆子碎了，空气里弥漫着焦糖和坚果的味道。",
+      "dialogue": "营业中",
+      "emotion": "紧张"
+    },
+    {
+      "label": "90s_Cliffhanger",
+      "time_range": [
+        0,
+        32.5
+      ],
+      "visual_action": "她想端起他的杯子，闭上眼，听他此刻在想什么。",
+      "dialogue": "美式。",
+      "emotion": "悬疑"
+    },
+    {
+      "label": "90s_Cliffhanger",
+      "time_range": [
+        0,
+        32.5
+      ],
+      "visual_action": "苏念转身，走回吧台后面。",
+      "dialogue": "你笑的样子——",
+      "emotion": "悬疑"
+    }
+  ],
+  "shots": [
+    {
+      "shot_id": 1,
+      "shot_type": "MS",
+      "camera_movement": "Static",
+      "camera_angle": "Eye Level",
+      "duration": 25.0,
+      "visual_action": "豆子碎了，空气里弥漫着焦糖和坚果的味道。",
+      "dialogue": "营业中",
+      "emotion": "紧张",
+      "pacing_label": "3s_Hook",
+      "location": "念想咖啡店",
+      "characters_present": [
+        "苏念"
+      ],
+      "lighting": "High contrast",
+      "audio_hint": "liquid pouring"
+    },
+    {
+      "shot_id": 2,
+      "shot_type": "MCU",
+      "camera_movement": "Static",
+      "camera_angle": "Eye Level",
+      "duration": 32.5,
+      "visual_action": "她想端起他的杯子，闭上眼，听他此刻在想什么。",
+      "dialogue": "美式。",
+      "emotion": "悬疑",
+      "pacing_label": "90s_Cliffhanger",
+      "location": "念想咖啡店",
+      "characters_present": [
+        "顾深",
+        "苏念"
+      ],
+      "lighting": "Low key",
+      "audio_hint": "ambient conversation noise"
+    },
+    {
+      "shot_id": 3,
+      "shot_type": "MCU",
+      "camera_movement": "Push",
+      "camera_angle": "Eye Level",
+      "duration": 32.5,
+      "visual_action": "苏念转身，走回吧台后面。",
+      "dialogue": "你笑的样子——",
+      "emotion": "悬疑",
+      "pacing_label": "90s_Cliffhanger",
+      "location": "念想咖啡店",
+      "characters_present": [
+        "顾深",
+        "苏念"
+      ],
+      "lighting": "Low key",
+      "audio_hint": "notification sound"
+    }
+  ],
+  "cliffhanger": {
+    "type": "shock",
+    "line": "苏念转身，走回吧台后面。",
+    "unanswered_question": "接下来会发生什么？"
+  },
+  "hook_density": "high",
+  "scene_count": 2,
+  "characters_involved": [
+    "顾深",
+    "苏念"
+  ]
+}

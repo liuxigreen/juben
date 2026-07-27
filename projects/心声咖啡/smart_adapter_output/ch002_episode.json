@@ -1,0 +1,77 @@
+{
+  "episode_number": 2,
+  "duration_estimate_seconds": 90,
+  "word_count_estimate": 746,
+  "pacing_checkpoints": [
+    {
+      "label": "3s_Hook",
+      "time_range": [
+        0,
+        50.9
+      ],
+      "visual_action": "这次他多要了一份可颂，咬了两口就放下了。",
+      "dialogue": "你好。",
+      "emotion": "悬疑"
+    },
+    {
+      "label": "90s_Cliffhanger",
+      "time_range": [
+        0,
+        39.1
+      ],
+      "visual_action": "手指碰到一个光滑的平面。",
+      "dialogue": "好吧。",
+      "emotion": "紧张"
+    }
+  ],
+  "shots": [
+    {
+      "shot_id": 1,
+      "shot_type": "CU",
+      "camera_movement": "Static",
+      "camera_angle": "Eye Level",
+      "duration": 50.9,
+      "visual_action": "这次他多要了一份可颂，咬了两口就放下了。",
+      "dialogue": "你好。",
+      "emotion": "悬疑",
+      "pacing_label": "3s_Hook",
+      "location": "念想咖啡店",
+      "characters_present": [
+        "林可",
+        "苏念"
+      ],
+      "lighting": "Low key",
+      "audio_hint": "liquid pouring"
+    },
+    {
+      "shot_id": 2,
+      "shot_type": "MS",
+      "camera_movement": "Push",
+      "camera_angle": "Eye Level",
+      "duration": 39.1,
+      "visual_action": "手指碰到一个光滑的平面。",
+      "dialogue": "好吧。",
+      "emotion": "紧张",
+      "pacing_label": "90s_Cliffhanger",
+      "location": "念想咖啡店",
+      "characters_present": [
+        "顾深",
+        "苏念"
+      ],
+      "lighting": "High contrast",
+      "audio_hint": "liquid pouring"
+    }
+  ],
+  "cliffhanger": {
+    "type": "reveal",
+    "line": "手指碰到一个光滑的平面。",
+    "unanswered_question": "接下来会发生什么？"
+  },
+  "hook_density": "high",
+  "scene_count": 2,
+  "characters_involved": [
+    "顾深",
+    "林可",
+    "苏念"
+  ]
+}

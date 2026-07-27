@@ -1,0 +1,137 @@
+{
+  "episode_number": 4,
+  "duration_estimate_seconds": 90,
+  "word_count_estimate": 853,
+  "pacing_checkpoints": [
+    {
+      "label": "3s_Hook",
+      "time_range": [
+        0,
+        23.7
+      ],
+      "visual_action": "\"她把画塞进包里，转身去吧台后面给自己倒了杯水。",
+      "dialogue": "你最近太累了。",
+      "emotion": "紧张"
+    },
+    {
+      "label": "3s_Hook",
+      "time_range": [
+        0,
+        23.7
+      ],
+      "visual_action": "林可的手指在画纸上收紧，纸面微微凹陷。",
+      "dialogue": "我知道。",
+      "emotion": "紧张"
+    },
+    {
+      "label": "90s_Cliffhanger",
+      "time_range": [
+        0,
+        18.9
+      ],
+      "visual_action": "临走时她在门口停了一下，回头看了苏念一眼。",
+      "dialogue": "",
+      "emotion": "悬疑"
+    },
+    {
+      "label": "90s_Cliffhanger",
+      "time_range": [
+        0,
+        23.7
+      ],
+      "visual_action": "咖啡店的灯自动亮了。",
+      "dialogue": "送给小念。希望你永远记得。",
+      "emotion": "悬疑"
+    }
+  ],
+  "shots": [
+    {
+      "shot_id": 1,
+      "shot_type": "MS",
+      "camera_movement": "Static",
+      "camera_angle": "Eye Level",
+      "duration": 23.7,
+      "visual_action": "\"她把画塞进包里，转身去吧台后面给自己倒了杯水。",
+      "dialogue": "你最近太累了。",
+      "emotion": "紧张",
+      "pacing_label": "3s_Hook",
+      "location": "念想咖啡店",
+      "characters_present": [
+        "顾深",
+        "林可",
+        "苏念"
+      ],
+      "lighting": "High contrast",
+      "audio_hint": "liquid pouring"
+    },
+    {
+      "shot_id": 2,
+      "shot_type": "MS",
+      "camera_movement": "Push",
+      "camera_angle": "Eye Level",
+      "duration": 23.7,
+      "visual_action": "林可的手指在画纸上收紧，纸面微微凹陷。",
+      "dialogue": "我知道。",
+      "emotion": "紧张",
+      "pacing_label": "3s_Hook",
+      "location": "念想咖啡店",
+      "characters_present": [
+        "顾深",
+        "林可",
+        "苏念"
+      ],
+      "lighting": "High contrast",
+      "audio_hint": "liquid pouring"
+    },
+    {
+      "shot_id": 3,
+      "shot_type": "MS",
+      "camera_movement": "Push",
+      "camera_angle": "Eye Level",
+      "duration": 18.9,
+      "visual_action": "临走时她在门口停了一下，回头看了苏念一眼。",
+      "dialogue": "",
+      "emotion": "悬疑",
+      "pacing_label": "90s_Cliffhanger",
+      "location": "念想咖啡店",
+      "characters_present": [
+        "顾深",
+        "林可",
+        "苏念"
+      ],
+      "lighting": "Low key",
+      "audio_hint": "liquid pouring"
+    },
+    {
+      "shot_id": 4,
+      "shot_type": "MS",
+      "camera_movement": "Push",
+      "camera_angle": "Eye Level",
+      "duration": 23.7,
+      "visual_action": "咖啡店的灯自动亮了。",
+      "dialogue": "送给小念。希望你永远记得。",
+      "emotion": "悬疑",
+      "pacing_label": "90s_Cliffhanger",
+      "location": "念想咖啡店",
+      "characters_present": [
+        "顾深",
+        "林可",
+        "苏念"
+      ],
+      "lighting": "Low key",
+      "audio_hint": "light flickering on"
+    }
+  ],
+  "cliffhanger": {
+    "type": "shock",
+    "line": "咖啡店的灯自动亮了。",
+    "unanswered_question": "接下来会发生什么？"
+  },
+  "hook_density": "high",
+  "scene_count": 2,
+  "characters_involved": [
+    "顾深",
+    "林可",
+    "苏念"
+  ]
+}

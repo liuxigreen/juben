@@ -1,0 +1,154 @@
+{
+  "episode_number": 19,
+  "duration_estimate_seconds": 86,
+  "word_count_estimate": 1424,
+  "pacing_checkpoints": [
+    {
+      "label": "3s_Hook",
+      "time_range": [
+        0,
+        18.0
+      ],
+      "visual_action": "墙皮有点潮，昨晚的雨渗进来了。",
+      "dialogue": "都在咖啡里",
+      "emotion": "紧张"
+    },
+    {
+      "label": "3s_Hook",
+      "time_range": [
+        0,
+        18.0
+      ],
+      "visual_action": "她放下杯子，走到墙边。",
+      "dialogue": "有些味道，不是用舌头记住的",
+      "emotion": "紧张"
+    },
+    {
+      "label": "30s_Explosion",
+      "time_range": [
+        0,
+        14.4
+      ],
+      "visual_action": "二十年前，这个位置，这面墙。",
+      "dialogue": "",
+      "emotion": "悬疑"
+    },
+    {
+      "label": "30s_Explosion",
+      "time_range": [
+        0,
+        18.0
+      ],
+      "visual_action": "苏念的手指在字迹上停了三秒。",
+      "dialogue": "小念，你第一次拉花的时候才五岁。奶泡洒了一桌子，你哭了。我告诉你——拉花不是技术，是心意。",
+      "emotion": "悬疑"
+    },
+    {
+      "label": "90s_Cliffhanger",
+      "time_range": [
+        0,
+        18.0
+      ],
+      "visual_action": "苏念转身，走到门口。",
+      "dialogue": "休息中",
+      "emotion": "悬疑"
+    }
+  ],
+  "shots": [
+    {
+      "shot_id": 1,
+      "shot_type": "MS",
+      "camera_movement": "Static",
+      "camera_angle": "Eye Level",
+      "duration": 18.0,
+      "visual_action": "墙皮有点潮，昨晚的雨渗进来了。",
+      "dialogue": "都在咖啡里",
+      "emotion": "紧张",
+      "pacing_label": "3s_Hook",
+      "location": "念想咖啡店",
+      "characters_present": [
+        "苏念"
+      ],
+      "lighting": "High contrast",
+      "audio_hint": "glass shattering"
+    },
+    {
+      "shot_id": 2,
+      "shot_type": "MS",
+      "camera_movement": "Push",
+      "camera_angle": "Eye Level",
+      "duration": 18.0,
+      "visual_action": "她放下杯子，走到墙边。",
+      "dialogue": "有些味道，不是用舌头记住的",
+      "emotion": "紧张",
+      "pacing_label": "3s_Hook",
+      "location": "念想咖啡店",
+      "characters_present": [
+        "苏念"
+      ],
+      "lighting": "High contrast",
+      "audio_hint": "phone vibration"
+    },
+    {
+      "shot_id": 3,
+      "shot_type": "MS",
+      "camera_movement": "Push",
+      "camera_angle": "Eye Level",
+      "duration": 14.4,
+      "visual_action": "二十年前，这个位置，这面墙。",
+      "dialogue": "",
+      "emotion": "悬疑",
+      "pacing_label": "30s_Explosion",
+      "location": "念想咖啡店",
+      "characters_present": [
+        "苏念"
+      ],
+      "lighting": "Low key",
+      "audio_hint": "ambient room tone"
+    },
+    {
+      "shot_id": 4,
+      "shot_type": "MS",
+      "camera_movement": "Push",
+      "camera_angle": "Eye Level",
+      "duration": 18.0,
+      "visual_action": "苏念的手指在字迹上停了三秒。",
+      "dialogue": "小念，你第一次拉花的时候才五岁。奶泡洒了一桌子，你哭了。我告诉你——拉花不是技术，是心意。",
+      "emotion": "悬疑",
+      "pacing_label": "30s_Explosion",
+      "location": "念想咖啡店",
+      "characters_present": [
+        "苏念"
+      ],
+      "lighting": "Low key",
+      "audio_hint": "ambient room tone"
+    },
+    {
+      "shot_id": 5,
+      "shot_type": "CU",
+      "camera_movement": "Push",
+      "camera_angle": "Eye Level",
+      "duration": 18.0,
+      "visual_action": "苏念转身，走到门口。",
+      "dialogue": "休息中",
+      "emotion": "悬疑",
+      "pacing_label": "90s_Cliffhanger",
+      "location": "念想咖啡店",
+      "characters_present": [
+        "苏念"
+      ],
+      "lighting": "Low key",
+      "audio_hint": "silence, subtle tension"
+    }
+  ],
+  "cliffhanger": {
+    "type": "shock",
+    "line": "苏念转身，走到门口。",
+    "unanswered_question": "接下来会发生什么？"
+  },
+  "hook_density": "high",
+  "scene_count": 3,
+  "characters_involved": [
+    "苏念"
+  ]
+}

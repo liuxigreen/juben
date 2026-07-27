@@ -1,0 +1,76 @@
+{
+  "episode_number": 5,
+  "duration_estimate_seconds": 90,
+  "word_count_estimate": 739,
+  "pacing_checkpoints": [
+    {
+      "label": "90s_Cliffhanger",
+      "time_range": [
+        0,
+        50.9
+      ],
+      "visual_action": "对面写字楼的咖啡机一天出三百杯。",
+      "dialogue": "不卖。",
+      "emotion": "紧张"
+    },
+    {
+      "label": "90s_Cliffhanger",
+      "time_range": [
+        0,
+        39.1
+      ],
+      "visual_action": "苏念盯着碎成三瓣的杯子，手指在发抖。",
+      "dialogue": "什么？",
+      "emotion": "紧张"
+    }
+  ],
+  "shots": [
+    {
+      "shot_id": 1,
+      "shot_type": "MCU",
+      "camera_movement": "Static",
+      "camera_angle": "Eye Level",
+      "duration": 50.9,
+      "visual_action": "对面写字楼的咖啡机一天出三百杯。",
+      "dialogue": "不卖。",
+      "emotion": "紧张",
+      "pacing_label": "90s_Cliffhanger",
+      "location": "念想咖啡店",
+      "characters_present": [
+        "苏念",
+        "陈锐"
+      ],
+      "lighting": "High contrast",
+      "audio_hint": "liquid pouring"
+    },
+    {
+      "shot_id": 2,
+      "shot_type": "MCU",
+      "camera_movement": "Push",
+      "camera_angle": "Eye Level",
+      "duration": 39.1,
+      "visual_action": "苏念盯着碎成三瓣的杯子，手指在发抖。",
+      "dialogue": "什么？",
+      "emotion": "紧张",
+      "pacing_label": "90s_Cliffhanger",
+      "location": "念想咖啡店",
+      "characters_present": [
+        "苏念",
+        "陈锐"
+      ],
+      "lighting": "High contrast",
+      "audio_hint": "liquid pouring"
+    }
+  ],
+  "cliffhanger": {
+    "type": "reveal",
+    "line": "苏念盯着碎成三瓣的杯子，手指在发抖。",
+    "unanswered_question": "接下来会发生什么？"
+  },
+  "hook_density": "medium",
+  "scene_count": 1,
+  "characters_involved": [
+    "陈锐",
+    "苏念"
+  ]
+}

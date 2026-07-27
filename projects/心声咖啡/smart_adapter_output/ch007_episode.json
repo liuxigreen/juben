@@ -1,0 +1,73 @@
+{
+  "episode_number": 7,
+  "duration_estimate_seconds": 90,
+  "word_count_estimate": 666,
+  "pacing_checkpoints": [
+    {
+      "label": "90s_Cliffhanger",
+      "time_range": [
+        0,
+        45.0
+      ],
+      "visual_action": "男孩喝了一口，站起来去洗手间。",
+      "dialogue": "你每次都这样",
+      "emotion": "悲伤"
+    },
+    {
+      "label": "90s_Cliffhanger",
+      "time_range": [
+        0,
+        45.0
+      ],
+      "visual_action": "十分钟后，男孩红着脸在女孩面前跪下来，从口袋里掏出一张皱巴巴的电影票——两张，下……",
+      "dialogue": "",
+      "emotion": "悲伤"
+    }
+  ],
+  "shots": [
+    {
+      "shot_id": 1,
+      "shot_type": "CU",
+      "camera_movement": "Static",
+      "camera_angle": "High Angle",
+      "duration": 45.0,
+      "visual_action": "男孩喝了一口，站起来去洗手间。",
+      "dialogue": "你每次都这样",
+      "emotion": "悲伤",
+      "pacing_label": "90s_Cliffhanger",
+      "location": "念想咖啡店",
+      "characters_present": [
+        "苏念"
+      ],
+      "lighting": "Low key",
+      "audio_hint": "ambient room tone"
+    },
+    {
+      "shot_id": 2,
+      "shot_type": "CU",
+      "camera_movement": "Push",
+      "camera_angle": "High Angle",
+      "duration": 45.0,
+      "visual_action": "十分钟后，男孩红着脸在女孩面前跪下来，从口袋里掏出一张皱巴巴的电影票——两张，下……",
+      "dialogue": "",
+      "emotion": "悲伤",
+      "pacing_label": "90s_Cliffhanger",
+      "location": "念想咖啡店",
+      "characters_present": [
+        "苏念"
+      ],
+      "lighting": "Low key",
+      "audio_hint": "liquid pouring"
+    }
+  ],
+  "cliffhanger": {
+    "type": "reveal",
+    "line": "十分钟后，男孩红着脸在女孩面前跪下来，从口袋里掏出一张皱巴巴的电影票——两张，下……",
+    "unanswered_question": "接下来会发生什么？"
+  },
+  "hook_density": "medium",
+  "scene_count": 1,
+  "characters_involved": [
+    "苏念"
+  ]
+}
