@@ -18,5 +18,21 @@
   {
     "chapter": 16,
     "cost": "指甲断裂"
+  },
+  {
+    "chapter": 17,
+    "cost": "呼吸困难"
+  },
+  {
+    "chapter": 18,
+    "cost": "心跳紊乱"
+  },
+  {
+    "chapter": 19,
+    "cost": "吐血"
+  },
+  {
+    "chapter": 20,
+    "cost": "短暂失聪"
   }
 ]

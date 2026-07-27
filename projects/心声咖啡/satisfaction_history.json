@@ -28,5 +28,29 @@
     "type": "身份碾压",
     "sub_mode": "能力碾压",
     "stage": "风暴段"
+  },
+  {
+    "chapter": 17,
+    "type": "打脸复仇",
+    "sub_mode": "实力碾压",
+    "stage": "决战段"
+  },
+  {
+    "chapter": 18,
+    "type": "情感爆发",
+    "sub_mode": "告白爆发",
+    "stage": "决战段"
+  },
+  {
+    "chapter": 19,
+    "type": "身份碾压",
+    "sub_mode": "身份证明碾压",
+    "stage": "决战段"
+  },
+  {
+    "chapter": 20,
+    "type": "打脸复仇",
+    "sub_mode": "局中局",
+    "stage": "决战段"
   }
 ]

@@ -18,5 +18,21 @@
   {
     "chapter": 16,
     "type": "investigation"
+  },
+  {
+    "chapter": 17,
+    "type": "reveal"
+  },
+  {
+    "chapter": 18,
+    "type": "chase"
+  },
+  {
+    "chapter": 19,
+    "type": "suspense"
+  },
+  {
+    "chapter": 20,
+    "type": "investigation"
   }
 ]
