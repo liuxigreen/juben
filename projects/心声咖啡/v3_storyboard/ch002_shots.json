@@ -268,7 +268,7 @@
     "characters": [
       "Su Nian"
     ],
-    "action_visual": "Su Nian struggles to remember",
+    "action_visual": "Su Nian furrows brow, pressing fingers to temples",
     "dialogue": "想不起来什么时候划的",
     "inner_voice": "",
     "focus_object": "",
@@ -276,7 +276,7 @@
     "emotion": "Mystery",
     "visual_anchors": [],
     "beat_id": 9,
-    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian struggles to remember, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian furrows brow, pressing fingers to temples, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "想不起来什么时候划的",
       "dialogue_speaker": "Su Nian",
@@ -716,7 +716,7 @@
     "characters": [
       "Su Nian"
     ],
-    "action_visual": "Su Nian turns on the faucet",
+    "action_visual": "Su Nian turns toward the window, a shadow moves outside that should not be there",
     "dialogue": "",
     "inner_voice": "",
     "focus_object": "",

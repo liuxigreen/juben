@@ -4,7 +4,7 @@
     "shot_type": "WS",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 3.9,
+    "duration": 3.8,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -28,7 +28,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.9s"
+      "duration_hint": "3.8s"
     }
   },
   {
@@ -36,7 +36,7 @@
     "shot_type": "ECU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 3.9,
+    "duration": 3.8,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -62,7 +62,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.9s"
+      "duration_hint": "3.8s"
     }
   },
   {
@@ -70,7 +70,7 @@
     "shot_type": "MCU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 5.0,
+    "duration": 4.9,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -92,7 +92,7 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "5.0s"
+      "duration_hint": "4.9s"
     }
   },
   {
@@ -100,7 +100,7 @@
     "shot_type": "ECU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 5.6,
+    "duration": 5.5,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -126,7 +126,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "5.6s"
+      "duration_hint": "5.5s"
     }
   },
   {
@@ -134,7 +134,7 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 5.6,
+    "duration": 5.5,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -161,7 +161,7 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "5.6s"
+      "duration_hint": "5.5s"
     }
   },
   {
@@ -169,7 +169,7 @@
     "shot_type": "MS",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 3.5,
+    "duration": 3.4,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -191,7 +191,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.5s"
+      "duration_hint": "3.4s"
     }
   },
   {
@@ -199,7 +199,7 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 5.6,
+    "duration": 5.5,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -226,7 +226,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "5.6s"
+      "duration_hint": "5.5s"
     }
   },
   {
@@ -234,7 +234,7 @@
     "shot_type": "MCU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 5.0,
+    "duration": 4.9,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -259,7 +259,7 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "5.0s"
+      "duration_hint": "4.9s"
     }
   },
   {
@@ -267,7 +267,7 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 3.9,
+    "duration": 3.8,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -294,7 +294,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.9s"
+      "duration_hint": "3.8s"
     }
   },
   {
@@ -302,7 +302,7 @@
     "shot_type": "CU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 5.6,
+    "duration": 5.5,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -328,7 +328,7 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "5.6s"
+      "duration_hint": "5.5s"
     }
   },
   {
@@ -336,7 +336,7 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 3.9,
+    "duration": 3.8,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -362,7 +362,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "low, deliberate, pauses between words",
-      "duration_hint": "3.9s"
+      "duration_hint": "3.8s"
     }
   },
   {
@@ -370,7 +370,7 @@
     "shot_type": "MCU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 3.5,
+    "duration": 3.4,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -392,7 +392,7 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.5s"
+      "duration_hint": "3.4s"
     }
   },
   {
@@ -400,7 +400,7 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 5.6,
+    "duration": 5.5,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -426,7 +426,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "5.6s"
+      "duration_hint": "5.5s"
     }
   },
   {
@@ -434,7 +434,7 @@
     "shot_type": "MS",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 3.5,
+    "duration": 3.4,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -458,7 +458,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.5s"
+      "duration_hint": "3.4s"
     }
   },
   {
@@ -466,7 +466,7 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 3.9,
+    "duration": 3.8,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -493,7 +493,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.9s"
+      "duration_hint": "3.8s"
     }
   },
   {
@@ -501,7 +501,7 @@
     "shot_type": "CU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 5.6,
+    "duration": 5.5,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -527,7 +527,7 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "5.6s"
+      "duration_hint": "5.5s"
     }
   },
   {
@@ -535,7 +535,7 @@
     "shot_type": "MS",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 3.5,
+    "duration": 3.4,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -559,7 +559,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.5s"
+      "duration_hint": "3.4s"
     }
   },
   {
@@ -567,7 +567,7 @@
     "shot_type": "MCU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 3.5,
+    "duration": 3.4,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -589,7 +589,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.5s"
+      "duration_hint": "3.4s"
     }
   },
   {
@@ -597,7 +597,7 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 5.6,
+    "duration": 5.5,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -621,7 +621,7 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "5.6s"
+      "duration_hint": "5.5s"
     }
   },
   {
@@ -629,7 +629,7 @@
     "shot_type": "CU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 3.9,
+    "duration": 5.5,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -637,7 +637,7 @@
       "Lin Ke",
       "grandmother"
     ],
-    "action_visual": "Su Nian struggles to remember",
+    "action_visual": "Su Nian furrows brow, pressing fingers to temples",
     "dialogue": "",
     "inner_voice": "",
     "focus_object": "sticky note",
@@ -647,7 +647,7 @@
       "sticky note"
     ],
     "beat_id": 20,
-    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian struggles to remember, close-up detail on sticky note, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian furrows brow, pressing fingers to temples, close-up detail on sticky note, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -655,7 +655,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.9s"
+      "duration_hint": "5.5s"
     }
   }
 ]

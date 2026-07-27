@@ -681,7 +681,7 @@
       "Su Nian",
       "Chen Rui"
     ],
-    "action_visual": "Su Nian suddenly remembers",
+    "action_visual": "Su Nian eyes widen, body stiffens, breath catches",
     "dialogue": "所以你来收购我的店——",
     "inner_voice": "",
     "focus_object": "",
@@ -689,7 +689,7 @@
     "emotion": "Neutral",
     "visual_anchors": [],
     "beat_id": 22,
-    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Chen Rui (square jaw, expensive watch), Su Nian suddenly remembers, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Chen Rui (square jaw, expensive watch), Su Nian eyes widen, body stiffens, breath catches, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "所以你来收购我的店——",
       "dialogue_speaker": "Su Nian",
@@ -744,7 +744,7 @@
       "Su Nian",
       "Chen Rui"
     ],
-    "action_visual": "Su Nian reaches for the light switch, hand freezing mid-air as a whisper echoes",
+    "action_visual": "Su Nian turns toward the window, a shadow moves outside that should not be there",
     "dialogue": "你跟公司撒了谎。",
     "inner_voice": "",
     "focus_object": "",
@@ -776,7 +776,7 @@
       "Chen Rui",
       "Su Yuan"
     ],
-    "action_visual": "Gu Shen turns toward the window, a shadow moves outside that should not be there",
+    "action_visual": "Gu Shen stares at the cup, coffee surface trembling with an unseen vibration",
     "dialogue": "是谁？",
     "inner_voice": "",
     "focus_object": "",

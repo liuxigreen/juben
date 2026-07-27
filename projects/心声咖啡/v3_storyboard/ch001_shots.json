@@ -4,7 +4,7 @@
     "shot_type": "WS",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 3.6,
+    "duration": 3.5,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -26,7 +26,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.6s"
+      "duration_hint": "3.5s"
     }
   },
   {
@@ -64,7 +64,7 @@
     "shot_type": "MCU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 3.6,
+    "duration": 3.5,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -88,7 +88,7 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.6s"
+      "duration_hint": "3.5s"
     }
   },
   {
@@ -96,7 +96,7 @@
     "shot_type": "ECU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 4.0,
+    "duration": 3.9,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -125,7 +125,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "4.0s"
+      "duration_hint": "3.9s"
     }
   },
   {
@@ -133,7 +133,7 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 4.0,
+    "duration": 3.9,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -159,7 +159,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "4.0s"
+      "duration_hint": "3.9s"
     }
   },
   {
@@ -197,7 +197,7 @@
     "shot_type": "MCU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 3.6,
+    "duration": 3.5,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -222,7 +222,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.6s"
+      "duration_hint": "3.5s"
     }
   },
   {
@@ -230,7 +230,7 @@
     "shot_type": "ECU",
     "camera_movement": "push",
     "camera_angle": "low",
-    "duration": 4.0,
+    "duration": 3.9,
     "location": "Nianxiang coffee shop",
     "space": "Transition",
     "characters": [
@@ -254,7 +254,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "whispered, restrained, breathing heavy",
-      "duration_hint": "4.0s"
+      "duration_hint": "3.9s"
     }
   },
   {
@@ -262,7 +262,7 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "low",
-    "duration": 4.0,
+    "duration": 3.9,
     "location": "Nianxiang coffee shop",
     "space": "Mental",
     "characters": [
@@ -284,7 +284,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "sharp intake of breath, voice breaking",
-      "duration_hint": "4.0s"
+      "duration_hint": "3.9s"
     }
   },
   {
@@ -292,7 +292,7 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 4.0,
+    "duration": 3.9,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -316,7 +316,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "low, deliberate, pauses between words",
-      "duration_hint": "4.0s"
+      "duration_hint": "3.9s"
     }
   },
   {
@@ -358,7 +358,7 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "low",
-    "duration": 4.0,
+    "duration": 3.9,
     "location": "Nianxiang coffee shop",
     "space": "Transition",
     "characters": [
@@ -382,7 +382,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "whispered, restrained, breathing heavy",
-      "duration_hint": "4.0s"
+      "duration_hint": "3.9s"
     }
   },
   {
@@ -390,7 +390,7 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "low",
-    "duration": 4.0,
+    "duration": 3.9,
     "location": "Nianxiang coffee shop",
     "space": "Mental",
     "characters": [
@@ -412,15 +412,15 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "sharp intake of breath, voice breaking",
-      "duration_hint": "4.0s"
+      "duration_hint": "3.9s"
     }
   },
   {
     "shot_id": 14,
     "shot_type": "CU",
-    "camera_movement": "static",
+    "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 4.0,
+    "duration": 3.9,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -436,7 +436,7 @@
       "scar on ring finger"
     ],
     "beat_id": 14,
-    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian looks down at left hand, the scar on the ring finger has changed, close-up detail on scar on ring finger, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian looks down at left hand, the scar on the ring finger has changed, close-up detail on scar on ring finger, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -444,15 +444,15 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "low, deliberate, pauses between words",
-      "duration_hint": "4.0s"
+      "duration_hint": "3.9s"
     }
   },
   {
     "shot_id": 15,
     "shot_type": "CU",
-    "camera_movement": "push",
+    "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 4.0,
+    "duration": 3.9,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -468,7 +468,7 @@
       "contract"
     ],
     "beat_id": 15,
-    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian walks slowly the contract, close-up detail on contract, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian walks slowly the contract, close-up detail on contract, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -476,7 +476,7 @@
       "voice_type": "inner_voice",
       "subtitle": "……这个月KPI又完不成了。老陈说再不签下来就让我走人。那家",
       "emotion_tag": "low, deliberate, pauses between words",
-      "duration_hint": "4.0s"
+      "duration_hint": "3.9s"
     }
   },
   {
@@ -514,7 +514,7 @@
     "shot_type": "CU",
     "camera_movement": "push",
     "camera_angle": "low",
-    "duration": 4.0,
+    "duration": 3.9,
     "location": "Nianxiang coffee shop",
     "space": "Transition",
     "characters": [
@@ -538,7 +538,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "whispered, restrained, breathing heavy",
-      "duration_hint": "4.0s"
+      "duration_hint": "3.9s"
     }
   },
   {
@@ -546,7 +546,7 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "low",
-    "duration": 4.0,
+    "duration": 3.9,
     "location": "Nianxiang coffee shop",
     "space": "Mental",
     "characters": [
@@ -568,7 +568,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "sharp intake of breath, voice breaking",
-      "duration_hint": "4.0s"
+      "duration_hint": "3.9s"
     }
   },
   {
@@ -576,7 +576,7 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 4.0,
+    "duration": 3.9,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -600,13 +600,13 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "low, deliberate, pauses between words",
-      "duration_hint": "4.0s"
+      "duration_hint": "3.9s"
     }
   },
   {
     "shot_id": 20,
     "shot_type": "CU",
-    "camera_movement": "static",
+    "camera_movement": "push",
     "camera_angle": "eye-level",
     "duration": 3.0,
     "location": "Nianxiang coffee shop",
@@ -626,7 +626,7 @@
       "scar on skin"
     ],
     "beat_id": 20,
-    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), grandmother looks down, close-up detail on scar on skin, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), grandmother looks down, close-up detail on scar on skin, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -640,9 +640,9 @@
   {
     "shot_id": 21,
     "shot_type": "CU",
-    "camera_movement": "push",
+    "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 3.0,
+    "duration": 3.9,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -650,7 +650,7 @@
       "Lin Ke",
       "grandmother"
     ],
-    "action_visual": "Su Nian struggles to remember",
+    "action_visual": "Su Nian furrows brow, pressing fingers to temples",
     "dialogue": "",
     "inner_voice": "",
     "focus_object": "faint mark",
@@ -660,7 +660,7 @@
       "faint mark"
     ],
     "beat_id": 21,
-    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian struggles to remember, close-up detail on faint mark, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian furrows brow, pressing fingers to temples, close-up detail on faint mark, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -668,15 +668,15 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.0s"
+      "duration_hint": "3.9s"
     }
   },
   {
     "shot_id": 22,
     "shot_type": "CU",
-    "camera_movement": "static",
+    "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 3.0,
+    "duration": 3.9,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -684,7 +684,7 @@
       "Lin Ke",
       "grandmother"
     ],
-    "action_visual": "Su Nian struggles to remember",
+    "action_visual": "Su Nian furrows brow, pressing fingers to temples",
     "dialogue": "",
     "inner_voice": "",
     "focus_object": "faint mark",
@@ -694,7 +694,7 @@
       "faint mark"
     ],
     "beat_id": 22,
-    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian struggles to remember, close-up detail on faint mark, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian furrows brow, pressing fingers to temples, close-up detail on faint mark, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -702,15 +702,15 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.0s"
+      "duration_hint": "3.9s"
     }
   },
   {
     "shot_id": 23,
     "shot_type": "MCU",
-    "camera_movement": "push",
+    "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 3.6,
+    "duration": 3.5,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -726,7 +726,7 @@
     "emotion": "Neutral",
     "visual_anchors": [],
     "beat_id": 23,
-    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Gu Shen (tall man, silver glasses, dark suit), Chen Rui (square jaw, expensive watch), Su Yuan (round face boy, warm smile), Gu Shen stands up from the seat, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "medium close-up, static camera, eye level, featuring Gu Shen (tall man, silver glasses, dark suit), Chen Rui (square jaw, expensive watch), Su Yuan (round face boy, warm smile), Gu Shen stands up from the seat, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "多少钱？",
       "dialogue_speaker": "Gu Shen",
@@ -734,7 +734,7 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.6s"
+      "duration_hint": "3.5s"
     }
   },
   {
@@ -774,7 +774,7 @@
     "shot_type": "CU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 4.0,
+    "duration": 3.9,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -785,7 +785,7 @@
       "Su Yuan",
       "grandmother"
     ],
-    "action_visual": "Su Nian walks through the door",
+    "action_visual": "Su Nian places hand on the wall, the sticky note beneath crumbles to dust at the touch",
     "dialogue": "",
     "inner_voice": "……那家店……合同都准备好了……",
     "focus_object": "lipstick mark",
@@ -803,7 +803,7 @@
       "voice_type": "inner_voice",
       "subtitle": "……那家店……合同都准备好了……",
       "emotion_tag": "low, deliberate, pauses between words",
-      "duration_hint": "4.0s"
+      "duration_hint": "3.9s"
     }
   }
 ]

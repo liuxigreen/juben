@@ -355,7 +355,7 @@
   {
     "shot_id": 12,
     "shot_type": "CU",
-    "camera_movement": "static",
+    "camera_movement": "push",
     "camera_angle": "eye-level",
     "duration": 3.9,
     "location": "Nianxiang coffee shop",
@@ -373,7 +373,7 @@
       "scar on ring finger"
     ],
     "beat_id": 13,
-    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian looks down at left hand, the scar on the ring finger has changed, close-up detail on scar on ring finger, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian looks down at left hand, the scar on the ring finger has changed, close-up detail on scar on ring finger, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -387,7 +387,7 @@
   {
     "shot_id": 13,
     "shot_type": "MCU",
-    "camera_movement": "push",
+    "camera_movement": "static",
     "camera_angle": "eye-level",
     "duration": 3.5,
     "location": "Nianxiang coffee shop",
@@ -406,7 +406,7 @@
     "emotion": "Neutral",
     "visual_anchors": [],
     "beat_id": 14,
-    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Gu Shen (tall man, silver glasses, dark suit), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Gu Shen wipes the counter with a rag, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "medium close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Gu Shen (tall man, silver glasses, dark suit), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Gu Shen wipes the counter with a rag, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -420,7 +420,7 @@
   {
     "shot_id": 14,
     "shot_type": "MS",
-    "camera_movement": "static",
+    "camera_movement": "push",
     "camera_angle": "eye-level",
     "duration": 3.0,
     "location": "Nianxiang coffee shop",
@@ -436,7 +436,7 @@
     "emotion": "Neutral",
     "visual_anchors": [],
     "beat_id": 15,
-    "veo_prompt": "medium shot, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian speaks softly, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "medium shot, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian speaks softly, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "你今天没喝。",
       "dialogue_speaker": "Gu Shen",
@@ -450,7 +450,7 @@
   {
     "shot_id": 15,
     "shot_type": "CU",
-    "camera_movement": "push",
+    "camera_movement": "static",
     "camera_angle": "eye-level",
     "duration": 3.9,
     "location": "Nianxiang coffee shop",
@@ -470,7 +470,7 @@
       "scar on skin"
     ],
     "beat_id": 16,
-    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian hand pauses mid-motion, close-up detail on scar on skin, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian hand pauses mid-motion, close-up detail on scar on skin, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "为什么？",
       "dialogue_speaker": "Su Nian",
@@ -484,7 +484,7 @@
   {
     "shot_id": 16,
     "shot_type": "MS",
-    "camera_movement": "static",
+    "camera_movement": "push",
     "camera_angle": "eye-level",
     "duration": 3.5,
     "location": "Nianxiang coffee shop",
@@ -502,7 +502,7 @@
     "emotion": "Neutral",
     "visual_anchors": [],
     "beat_id": 17,
-    "veo_prompt": "medium shot, static camera, eye level, featuring Gu Shen (tall man, silver glasses, dark suit), Chen Rui (square jaw, expensive watch), Su Yuan (round face boy, warm smile), Gu Shen sets the cup down on the counter, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "medium shot, slow dolly forward, eye level, featuring Gu Shen (tall man, silver glasses, dark suit), Chen Rui (square jaw, expensive watch), Su Yuan (round face boy, warm smile), Gu Shen sets the cup down on the counter, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "因为——",
       "dialogue_speaker": "Su Nian",
@@ -516,7 +516,7 @@
   {
     "shot_id": 17,
     "shot_type": "MCU",
-    "camera_movement": "push",
+    "camera_movement": "static",
     "camera_angle": "eye-level",
     "duration": 3.0,
     "location": "Nianxiang coffee shop",
@@ -534,7 +534,7 @@
     "emotion": "Neutral",
     "visual_anchors": [],
     "beat_id": 18,
-    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Gu Shen (tall man, silver glasses, dark suit), Chen Rui (square jaw, expensive watch), Su Yuan (round face boy, warm smile), Gu Shen speaks softly, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "medium close-up, static camera, eye level, featuring Gu Shen (tall man, silver glasses, dark suit), Chen Rui (square jaw, expensive watch), Su Yuan (round face boy, warm smile), Gu Shen speaks softly, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -548,7 +548,7 @@
   {
     "shot_id": 18,
     "shot_type": "MS",
-    "camera_movement": "static",
+    "camera_movement": "push",
     "camera_angle": "eye-level",
     "duration": 3.5,
     "location": "Nianxiang coffee shop",
@@ -557,7 +557,7 @@
       "Su Nian",
       "grandmother"
     ],
-    "action_visual": "Su Nian struggles to remember",
+    "action_visual": "Su Nian furrows brow, pressing fingers to temples",
     "dialogue": "我不记得我爸妈。不记得我外婆的声音。不记得我哥哥。",
     "inner_voice": "",
     "focus_object": "",
@@ -565,7 +565,7 @@
     "emotion": "Neutral",
     "visual_anchors": [],
     "beat_id": 19,
-    "veo_prompt": "medium shot, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), grandmother (white hair, blue apron), Su Nian struggles to remember, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "medium shot, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), grandmother (white hair, blue apron), Su Nian furrows brow, pressing fingers to temples, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "你已经忘了很多。",
       "dialogue_speaker": "Gu Shen",
@@ -752,7 +752,7 @@
       "Chen Rui",
       "Su Yuan"
     ],
-    "action_visual": "Gu Shen places hand on the wall, the sticky note beneath crumbles to dust at the touch",
+    "action_visual": "Gu Shen examines own hand — a new mark has appeared on the skin, one that was not there before",
     "dialogue": "我明天还来。",
     "inner_voice": "",
     "focus_object": "",

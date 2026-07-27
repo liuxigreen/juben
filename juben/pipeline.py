@@ -202,31 +202,36 @@ class BeatExtractor:
 
     def _translate_action(self, text: str, char: str) -> str:
         """将中文动作翻译为英文（模板从config读）"""
-        # 黑名单改写
-        for bad, rewrite in self.action_rewrite.items():
-            if bad in text.lower():
-                return rewrite.replace("{char}", char)
         # 模板匹配
         for tpl in self.action_templates:
             if re.search(tpl["pattern"], text):
                 result = tpl["en"]
-                return result.replace("{char}", char) if "{char}" in result else result
+                translated = result.replace("{char}", char) if "{char}" in result else result
+                return self._apply_rewrite(translated, char)
         # 微动作匹配（从config读）
         for zh, en in self.micro_actions.items():
             if zh in text:
-                return f"{char} {en}"
+                return self._apply_rewrite(f"{char} {en}", char)
         # 名词+动词组合兜底
         fn = [self.nouns[k] for k in self.nouns if k in text]
         fv = [self.verbs[k] for k in self.verbs if k in text]
         if fv and fn:
-            return f"{char} {fv[0]} the {fn[0]}"
+            return self._apply_rewrite(f"{char} {fv[0]} the {fn[0]}", char)
         if fv:
-            return f"{char} {fv[0]}"
+            return self._apply_rewrite(f"{char} {fv[0]}", char)
         if fn:
-            return f"{char} gazes at the {fn[0]}"
+            return self._apply_rewrite(f"{char} gazes at the {fn[0]}", char)
         # 最终兜底（从config读）
         fallback = self.cfg.get("action_fallback", "{char} stands still")
-        return fallback.replace("{char}", char)
+        return self._apply_rewrite(fallback.replace("{char}", char), char)
+
+    def _apply_rewrite(self, action: str, char: str) -> str:
+        """翻译后应用黑名单改写（英文→英文）"""
+        action_lower = action.lower()
+        for bad, rewrite in self.action_rewrite.items():
+            if bad in action_lower:
+                return rewrite.replace("{char}", char)
+        return action
 
     # --- 辅助提取 ---
 
@@ -378,10 +383,21 @@ class ShotCompiler:
         last_shot_type = None
         last_camera = None
         ecu_count = 0
+        recent_pairs = []  # 最近3个(shot_type, camera)组合，防复读
 
         for i, beat in enumerate(beats):
             shot_type = self._choose_shot_type(beat, i, last_shot_type, ecu_count)
             camera = self._choose_camera(beat, shot_type, last_camera)
+            # 连续3镜防复读：如果最近2个都是同一组合，强制换
+            pair = (shot_type, camera)
+            if len(recent_pairs) >= 2 and recent_pairs[-1] == pair and recent_pairs[-2] == pair:
+                # 强制换运镜
+                alt_cam = {"static": "push", "push": "static", "pull": "static", "rapid_push": "push", "handheld": "static"}
+                camera = alt_cam.get(camera, "push")
+                pair = (shot_type, camera)
+            recent_pairs.append(pair)
+            if len(recent_pairs) > 3:
+                recent_pairs.pop(0)
             duration = self._calc_duration(beat, total, target_duration)
             emotion = beat.get("emotion", "Neutral")
             lighting = self.emotion_lighting.get(emotion, "Natural")

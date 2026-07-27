@@ -329,7 +329,7 @@
   {
     "shot_id": 11,
     "shot_type": "CU",
-    "camera_movement": "static",
+    "camera_movement": "push",
     "camera_angle": "eye-level",
     "duration": 4.0,
     "location": "Nianxiang coffee shop",
@@ -349,7 +349,7 @@
       "sticky note"
     ],
     "beat_id": 14,
-    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Lin Ke gazes at the sticky note, close-up detail on sticky note, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Lin Ke gazes at the sticky note, close-up detail on sticky note, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -783,7 +783,7 @@
     "characters": [
       "Su Nian"
     ],
-    "action_visual": "Su Nian looks down — a new mark has appeared on the skin, one that was not there before",
+    "action_visual": "Su Nian turns toward the window, a shadow moves outside that should not be there",
     "dialogue": "苏念，你在说什么？",
     "inner_voice": "",
     "focus_object": "",

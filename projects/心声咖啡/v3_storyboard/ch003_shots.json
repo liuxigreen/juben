@@ -4,7 +4,7 @@
     "shot_type": "WS",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 4.7,
+    "duration": 4.6,
     "location": "coffee shop",
     "space": "Physical",
     "characters": [
@@ -31,7 +31,7 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "4.7s"
+      "duration_hint": "4.6s"
     }
   },
   {
@@ -39,7 +39,7 @@
     "shot_type": "MS",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 4.7,
+    "duration": 4.6,
     "location": "coffee shop",
     "space": "Physical",
     "characters": [
@@ -63,7 +63,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "4.7s"
+      "duration_hint": "4.6s"
     }
   },
   {
@@ -71,7 +71,7 @@
     "shot_type": "MCU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 4.7,
+    "duration": 4.6,
     "location": "coffee shop",
     "space": "Physical",
     "characters": [
@@ -93,7 +93,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "4.7s"
+      "duration_hint": "4.6s"
     }
   },
   {
@@ -370,7 +370,7 @@
       "Lin Ke",
       "grandmother"
     ],
-    "action_visual": "Su Nian struggles to remember",
+    "action_visual": "Su Nian furrows brow, pressing fingers to temples",
     "dialogue": "你还好吗？",
     "inner_voice": "",
     "focus_object": "ring",
@@ -380,7 +380,7 @@
       "ring"
     ],
     "beat_id": 12,
-    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian struggles to remember, close-up detail on ring, in coffee shop, low key lighting, deep shadows, mysterious, intriguing, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian furrows brow, pressing fingers to temples, close-up detail on ring, in coffee shop, low key lighting, deep shadows, mysterious, intriguing, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "你还好吗？",
       "dialogue_speaker": "Su Nian",
@@ -396,7 +396,7 @@
     "shot_type": "MCU",
     "camera_movement": "pull",
     "camera_angle": "high",
-    "duration": 3.3,
+    "duration": 3.2,
     "location": "coffee shop",
     "space": "Physical",
     "characters": [
@@ -421,7 +421,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "soft, trailing off, voice cracking",
-      "duration_hint": "3.3s"
+      "duration_hint": "3.2s"
     }
   },
   {
@@ -429,7 +429,7 @@
     "shot_type": "MS",
     "camera_movement": "static",
     "camera_angle": "high",
-    "duration": 4.7,
+    "duration": 4.6,
     "location": "coffee shop",
     "space": "Physical",
     "characters": [
@@ -451,7 +451,7 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "soft, trailing off, voice cracking",
-      "duration_hint": "4.7s"
+      "duration_hint": "4.6s"
     }
   },
   {
@@ -553,7 +553,7 @@
     "shot_type": "MS",
     "camera_movement": "pull",
     "camera_angle": "eye-level",
-    "duration": 3.3,
+    "duration": 3.2,
     "location": "coffee shop",
     "space": "Physical",
     "characters": [
@@ -578,7 +578,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.3s"
+      "duration_hint": "3.2s"
     }
   },
   {
@@ -618,7 +618,7 @@
     "shot_type": "CU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 3.6,
+    "duration": 5.1,
     "location": "coffee shop",
     "space": "Physical",
     "characters": [
@@ -626,7 +626,7 @@
       "Lin Ke",
       "grandmother"
     ],
-    "action_visual": "Su Nian struggles to remember",
+    "action_visual": "Su Nian furrows brow, pressing fingers to temples",
     "dialogue": "",
     "inner_voice": "",
     "focus_object": "scar on skin",
@@ -636,7 +636,7 @@
       "scar on skin"
     ],
     "beat_id": 20,
-    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian struggles to remember, close-up detail on scar on skin, in coffee shop, low key lighting, deep shadows, mysterious, intriguing, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian furrows brow, pressing fingers to temples, close-up detail on scar on skin, in coffee shop, low key lighting, deep shadows, mysterious, intriguing, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -644,7 +644,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "low, deliberate, pauses between words",
-      "duration_hint": "3.6s"
+      "duration_hint": "5.1s"
     }
   },
   {
@@ -652,7 +652,7 @@
     "shot_type": "MCU",
     "camera_movement": "rapid_push",
     "camera_angle": "low",
-    "duration": 3.3,
+    "duration": 3.2,
     "location": "coffee shop",
     "space": "Physical",
     "characters": [
@@ -674,7 +674,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "sharp intake of breath, voice breaking",
-      "duration_hint": "3.3s"
+      "duration_hint": "3.2s"
     }
   }
 ]

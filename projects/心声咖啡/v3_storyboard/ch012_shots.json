@@ -359,7 +359,7 @@
   {
     "shot_id": 12,
     "shot_type": "CU",
-    "camera_movement": "static",
+    "camera_movement": "push",
     "camera_angle": "eye-level",
     "duration": 3.0,
     "location": "Nianxiang coffee shop",
@@ -382,7 +382,7 @@
       "cup wall"
     ],
     "beat_id": 15,
-    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Gu Shen (tall man, silver glasses, dark suit), Lin Ke (ponytail, colorful nails, art bag), Chen Rui (square jaw, expensive watch), Su Yuan (round face boy, warm smile), grandmother (white hair, blue apron), Su Nian gazes at the painting, close-up detail on cup wall, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Gu Shen (tall man, silver glasses, dark suit), Lin Ke (ponytail, colorful nails, art bag), Chen Rui (square jaw, expensive watch), Su Yuan (round face boy, warm smile), grandmother (white hair, blue apron), Su Nian gazes at the painting, close-up detail on cup wall, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -396,7 +396,7 @@
   {
     "shot_id": 13,
     "shot_type": "MCU",
-    "camera_movement": "push",
+    "camera_movement": "static",
     "camera_angle": "eye-level",
     "duration": 3.0,
     "location": "Nianxiang coffee shop",
@@ -412,7 +412,7 @@
     "emotion": "Neutral",
     "visual_anchors": [],
     "beat_id": 16,
-    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian speaks softly, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "medium close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian speaks softly, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -426,7 +426,7 @@
   {
     "shot_id": 14,
     "shot_type": "MS",
-    "camera_movement": "static",
+    "camera_movement": "push",
     "camera_angle": "eye-level",
     "duration": 3.6,
     "location": "Nianxiang coffee shop",
@@ -444,7 +444,7 @@
     "emotion": "Neutral",
     "visual_anchors": [],
     "beat_id": 17,
-    "veo_prompt": "medium shot, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian wipes the counter with a rag Gu Shen drains the cup in one gulp, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "medium shot, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian wipes the counter with a rag Gu Shen drains the cup in one gulp, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -458,7 +458,7 @@
   {
     "shot_id": 15,
     "shot_type": "MCU",
-    "camera_movement": "push",
+    "camera_movement": "static",
     "camera_angle": "eye-level",
     "duration": 3.0,
     "location": "Nianxiang coffee shop",
@@ -476,7 +476,7 @@
     "emotion": "Neutral",
     "visual_anchors": [],
     "beat_id": 19,
-    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Gu Shen (tall man, silver glasses, dark suit), Chen Rui (square jaw, expensive watch), Su Yuan (round face boy, warm smile), Gu Shen speaks softly, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "medium close-up, static camera, eye level, featuring Gu Shen (tall man, silver glasses, dark suit), Chen Rui (square jaw, expensive watch), Su Yuan (round face boy, warm smile), Gu Shen speaks softly, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -490,7 +490,7 @@
   {
     "shot_id": 16,
     "shot_type": "MS",
-    "camera_movement": "static",
+    "camera_movement": "push",
     "camera_angle": "eye-level",
     "duration": 3.6,
     "location": "Nianxiang coffee shop",
@@ -509,7 +509,7 @@
     "emotion": "Neutral",
     "visual_anchors": [],
     "beat_id": 20,
-    "veo_prompt": "medium shot, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Gu Shen (tall man, silver glasses, dark suit), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian speaks softly the coffee cup, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "medium shot, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Gu Shen (tall man, silver glasses, dark suit), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian speaks softly the coffee cup, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "我不渴。",
       "dialogue_speaker": "Su Nian",
@@ -765,7 +765,7 @@
       "Lin Ke",
       "grandmother"
     ],
-    "action_visual": "Su Nian picks up the phone, screen lighting up with a message from an unknown number",
+    "action_visual": "Su Nian reaches for the light switch, hand freezing mid-air as a whisper echoes",
     "dialogue": "",
     "inner_voice": "",
     "focus_object": "",

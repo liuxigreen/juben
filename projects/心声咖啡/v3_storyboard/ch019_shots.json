@@ -4,7 +4,7 @@
     "shot_type": "WS",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 4.1,
+    "duration": 4.0,
     "location": "narrow alley",
     "space": "Physical",
     "characters": [
@@ -30,7 +30,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "4.1s"
+      "duration_hint": "4.0s"
     }
   },
   {
@@ -38,7 +38,7 @@
     "shot_type": "ECU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 4.1,
+    "duration": 4.0,
     "location": "narrow alley",
     "space": "Physical",
     "characters": [
@@ -64,7 +64,7 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "4.1s"
+      "duration_hint": "4.0s"
     }
   },
   {
@@ -102,7 +102,7 @@
     "shot_type": "ECU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 4.1,
+    "duration": 4.0,
     "location": "narrow alley",
     "space": "Physical",
     "characters": [
@@ -128,7 +128,7 @@
       "voice_type": "inner_voice",
       "subtitle": "小念，有些味道，不是用舌头记住的。是用心。你忘了的东西，都在",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "4.1s"
+      "duration_hint": "4.0s"
     }
   },
   {
@@ -169,7 +169,7 @@
     "shot_type": "MS",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 3.8,
+    "duration": 3.7,
     "location": "narrow alley",
     "space": "Physical",
     "characters": [
@@ -193,7 +193,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.8s"
+      "duration_hint": "3.7s"
     }
   },
   {
@@ -201,7 +201,7 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "low",
-    "duration": 4.1,
+    "duration": 4.0,
     "location": "narrow alley",
     "space": "Transition",
     "characters": [
@@ -225,7 +225,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "whispered, restrained, breathing heavy",
-      "duration_hint": "4.1s"
+      "duration_hint": "4.0s"
     }
   },
   {
@@ -233,7 +233,7 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "low",
-    "duration": 4.1,
+    "duration": 4.0,
     "location": "narrow alley",
     "space": "Mental",
     "characters": [
@@ -255,15 +255,15 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "sharp intake of breath, voice breaking",
-      "duration_hint": "4.1s"
+      "duration_hint": "4.0s"
     }
   },
   {
     "shot_id": 9,
     "shot_type": "CU",
-    "camera_movement": "static",
+    "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 4.1,
+    "duration": 4.0,
     "location": "narrow alley",
     "space": "Physical",
     "characters": [
@@ -279,7 +279,7 @@
       "scar on ring finger"
     ],
     "beat_id": 9,
-    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian looks down at left hand, the scar on the ring finger has changed, close-up detail on scar on ring finger, in narrow alley, low key lighting, deep shadows, mysterious, intriguing, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Su Nian looks down at left hand, the scar on the ring finger has changed, close-up detail on scar on ring finger, in narrow alley, low key lighting, deep shadows, mysterious, intriguing, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -287,15 +287,15 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "low, deliberate, pauses between words",
-      "duration_hint": "4.1s"
+      "duration_hint": "4.0s"
     }
   },
   {
     "shot_id": 10,
     "shot_type": "CU",
-    "camera_movement": "push",
+    "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 4.1,
+    "duration": 4.0,
     "location": "narrow alley",
     "space": "Physical",
     "characters": [
@@ -313,7 +313,7 @@
       "sticky note"
     ],
     "beat_id": 10,
-    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), grandmother sets the cup down on the counter, close-up detail on sticky note, in narrow alley, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), grandmother sets the cup down on the counter, close-up detail on sticky note, in narrow alley, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "有些味道，不是用舌头记住的",
       "dialogue_speaker": "grandmother",
@@ -321,7 +321,7 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "4.1s"
+      "duration_hint": "4.0s"
     }
   },
   {
@@ -329,7 +329,7 @@
     "shot_type": "CU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 4.1,
+    "duration": 4.0,
     "location": "narrow alley",
     "space": "Physical",
     "characters": [
@@ -355,7 +355,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "gentle, warm tone",
-      "duration_hint": "4.1s"
+      "duration_hint": "4.0s"
     }
   },
   {
@@ -363,7 +363,7 @@
     "shot_type": "MS",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 3.8,
+    "duration": 3.7,
     "location": "narrow alley",
     "space": "Physical",
     "characters": [
@@ -385,7 +385,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.8s"
+      "duration_hint": "3.7s"
     }
   },
   {
@@ -393,7 +393,7 @@
     "shot_type": "CU",
     "camera_movement": "push",
     "camera_angle": "low",
-    "duration": 4.1,
+    "duration": 4.0,
     "location": "narrow alley",
     "space": "Transition",
     "characters": [
@@ -417,7 +417,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "whispered, restrained, breathing heavy",
-      "duration_hint": "4.1s"
+      "duration_hint": "4.0s"
     }
   },
   {
@@ -425,7 +425,7 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "low",
-    "duration": 4.1,
+    "duration": 4.0,
     "location": "narrow alley",
     "space": "Mental",
     "characters": [
@@ -447,7 +447,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "sharp intake of breath, voice breaking",
-      "duration_hint": "4.1s"
+      "duration_hint": "4.0s"
     }
   },
   {
@@ -455,7 +455,7 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 4.1,
+    "duration": 4.0,
     "location": "narrow alley",
     "space": "Physical",
     "characters": [
@@ -479,7 +479,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "low, deliberate, pauses between words",
-      "duration_hint": "4.1s"
+      "duration_hint": "4.0s"
     }
   },
   {
@@ -487,7 +487,7 @@
     "shot_type": "CU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 4.1,
+    "duration": 4.0,
     "location": "narrow alley",
     "space": "Physical",
     "characters": [
@@ -511,7 +511,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "low, deliberate, pauses between words",
-      "duration_hint": "4.1s"
+      "duration_hint": "4.0s"
     }
   },
   {
@@ -551,7 +551,7 @@
     "shot_type": "MCU",
     "camera_movement": "pull",
     "camera_angle": "high",
-    "duration": 3.8,
+    "duration": 3.7,
     "location": "narrow alley",
     "space": "Physical",
     "characters": [
@@ -573,7 +573,7 @@
       "voice_type": "inner_voice",
       "subtitle": "小念，你第一次拉花的时候才五岁。奶泡洒了一桌子，你哭了。我告",
       "emotion_tag": "soft, trailing off, voice cracking",
-      "duration_hint": "3.8s"
+      "duration_hint": "3.7s"
     }
   },
   {
@@ -581,7 +581,7 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "high",
-    "duration": 4.1,
+    "duration": 4.0,
     "location": "narrow alley",
     "space": "Physical",
     "characters": [
@@ -607,7 +607,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "soft, trailing off, voice cracking",
-      "duration_hint": "4.1s"
+      "duration_hint": "4.0s"
     }
   },
   {
@@ -615,7 +615,7 @@
     "shot_type": "MS",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 3.8,
+    "duration": 3.7,
     "location": "narrow alley",
     "space": "Physical",
     "characters": [
@@ -639,7 +639,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.8s"
+      "duration_hint": "3.7s"
     }
   },
   {
@@ -711,13 +711,13 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 4.1,
+    "duration": 4.0,
     "location": "narrow alley",
     "space": "Physical",
     "characters": [
       "Su Nian"
     ],
-    "action_visual": "Su Nian turns toward the window, a shadow moves outside that should not be there",
+    "action_visual": "Su Nian examines own hand — a new mark has appeared on the skin, one that was not there before",
     "dialogue": "",
     "inner_voice": "",
     "focus_object": "sticky note",
@@ -735,7 +735,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "low, deliberate, pauses between words",
-      "duration_hint": "4.1s"
+      "duration_hint": "4.0s"
     }
   },
   {
@@ -743,7 +743,7 @@
     "shot_type": "CU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 3.0,
+    "duration": 4.0,
     "location": "narrow alley",
     "space": "Physical",
     "characters": [
@@ -751,7 +751,7 @@
       "Lin Ke",
       "grandmother"
     ],
-    "action_visual": "Su Nian struggles to remember",
+    "action_visual": "Su Nian furrows brow, pressing fingers to temples",
     "dialogue": "",
     "inner_voice": "",
     "focus_object": "sticky note",
@@ -761,7 +761,7 @@
       "sticky note"
     ],
     "beat_id": 24,
-    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian struggles to remember, close-up detail on sticky note, in narrow alley, low key lighting, deep shadows, mysterious, intriguing, cinematic, 9:16 vertical, photorealistic, 4K",
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian (barista, burn scar on ring finger), Lin Ke (ponytail, colorful nails, art bag), grandmother (white hair, blue apron), Su Nian furrows brow, pressing fingers to temples, close-up detail on sticky note, in narrow alley, low key lighting, deep shadows, mysterious, intriguing, cinematic, 9:16 vertical, photorealistic, 4K",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -769,7 +769,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "low, deliberate, pauses between words",
-      "duration_hint": "3.0s"
+      "duration_hint": "4.0s"
     }
   }
 ]

@@ -226,6 +226,8 @@ action_rewrite:
   "a vision flashes": "{char} pupils contract, body freezes mid-motion"
   "the scar is still visible": "{char} traces finger across the burn scar on left ring finger"
   "walks contract": "{char} slides contract across counter"
+  "suddenly remembers": "{char} eyes widen, body stiffens, breath catches"
+  "struggles to remember": "{char} furrows brow, pressing fingers to temples"
 
 # ============================================================
 # 微动作（兜底用）
@@ -400,11 +402,11 @@ voice_emotion_map:
 chapter_hook:
   blacklist: ["stands still", "breathing slowly", "gaze lowered", "eyes unfocused",
               "shoulders tense", "stands behind", "looks down", "stares at", "gazes at",
-              "speaks softly"]
+              "speaks softly", "sets the cup down", "turns on the faucet", "walks through the door"]
   templates:
     - "{char} stares at the cup, coffee surface trembling with an unseen vibration"
     - "{char} reaches for the light switch, hand freezing mid-air as a whisper echoes"
-    - "{char} looks down — a new mark has appeared on the skin, one that was not there before"
+    - "{char} examines own hand — a new mark has appeared on the skin, one that was not there before"
     - "{char} turns toward the window, a shadow moves outside that should not be there"
     - "{char} picks up the phone, screen lighting up with a message from an unknown number"
     - "{char} places hand on the wall, the sticky note beneath crumbles to dust at the touch"
