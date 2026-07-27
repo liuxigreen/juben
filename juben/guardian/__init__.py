@@ -1162,7 +1162,7 @@ def guardian_check(
             ))
 
     # 12. 对话比例检查（动态阈值）
-    v = check_dialogue_ratio(chapter_text, structure_type)
+    v = check_dialogue_ratio(chapter_text, structure_type, project_dir=project_dir)
     if v:
         result.add(v)
 
@@ -1254,35 +1254,48 @@ from .location_tracker import LocationTracker, LocationJumpResult, LocationRecor
 # 新增：对话比例检查
 # ============================================================
 
-def _detect_dialogue_content_type(chapter_text: str) -> list[str]:
-    """检测章节中的对话内容类型（对峙/揭露/调查等），用于动态调整对话上限"""
+def _detect_dialogue_content_type(chapter_text: str, project_dir: str | Path | None = None) -> list[str]:
+    """检测章节中的对话内容类型（对峙/揭露/调查等），用于动态调整对话上限
+
+    优先从项目级 dialogue_content_indicators.json 加载指标，
+    回退到内置默认指标（通用型，不绑定特定题材）。
+    """
     types = []
 
-    # 对峙指标：角色间直接冲突、情绪对抗
-    confrontation_indicators = [
-        "杀了", "死了", "代价", "自首", "报仇", "恨", "原谅",
-        "你骗", "你知道", "我告诉你", "真相", "秘密",
-        "我老伴", "我妻子", "我丈夫", "我孩子",
-        "遗体", "遗骨", "墙壁里", "封在", "活埋",
-        "你跑了", "你没救", "你选择", "赎罪",
-        "选择了", "不改", "改了会死",
-    ]
-    if sum(1 for w in confrontation_indicators if w in chapter_text) >= 3:
-        types.append("confrontation")
+    # 尝试从项目配置加载
+    indicators = {}
+    if project_dir:
+        indicators_path = Path(project_dir) / "dialogue_content_indicators.json"
+        if indicators_path.exists():
+            try:
+                indicators = json.loads(indicators_path.read_text(encoding="utf-8"))
+            except Exception as e:
+                logger.warning(f"加载dialogue_content_indicators.json失败: {e}")
 
-    # 揭露指标：信息炸弹、真相揭示
-    reveal_indicators = [
-        "遗书", "日记", "报告", "名单", "证据", "档案",
-        "十五年前", "坍塌事故", "偷工减料", "封在墙壁",
-        "死亡指数", "结构性死亡概率", "事故调查", "竣工",
-    ]
-    if sum(1 for w in reveal_indicators if w in chapter_text) >= 3:
-        types.append("reveal")
+    # 回退到内置默认指标（通用型）
+    if not indicators:
+        indicators = {
+            "confrontation": [
+                "杀了", "死了", "代价", "自首", "报仇", "恨", "原谅",
+                "你骗", "你知道", "真相", "秘密", "威胁", "逼",
+                "对不起", "放弃了", "选择", "背叛", "欺骗",
+            ],
+            "reveal": [
+                "遗书", "日记", "报告", "名单", "证据", "档案",
+                "原来", "发现", "没想到", "竟然是", "真相是",
+                "照片", "便签", "信", "笔记本", "记录",
+            ],
+        }
+
+    # 检测每种内容类型
+    for content_type, keywords in indicators.items():
+        if sum(1 for w in keywords if w in chapter_text) >= 3:
+            types.append(content_type)
 
     return types
 
 
-def check_dialogue_ratio(chapter_text: str, structure_type: str | None = None) -> GuardianViolation | None:
+def check_dialogue_ratio(chapter_text: str, structure_type: str | None = None, project_dir: str | Path | None = None) -> GuardianViolation | None:
     """检查对话占比是否超标（动态阈值，混合结构自适应）"""
     import re
     
@@ -1314,7 +1327,7 @@ def check_dialogue_ratio(chapter_text: str, structure_type: str | None = None) -
     base_cap = DIALOGUE_CAPS.get(structure_type or "", 0.35)
 
     # 混合结构自适应：检测章节实际内容，如果包含对峙/揭露元素则放宽上限
-    content_types = _detect_dialogue_content_type(chapter_text)
+    content_types = _detect_dialogue_content_type(chapter_text, project_dir)
     if content_types:
         # 取所有匹配内容类型的上限中的最大值
         content_caps = [DIALOGUE_CAPS.get(ct, 0.35) for ct in content_types]

@@ -19,6 +19,10 @@ import random
 from pathlib import Path
 from typing import Any
 
+from .validate.structure_diversity import (
+    extract_event_fingerprint,
+    load_event_fingerprints_from_project,
+)
 from .validate.dynamic_blacklist import (
     check_ai_flavor,
     scan_chapter_for_blacklist,
@@ -42,6 +46,37 @@ STRUCTURE_TYPES = [
     "chase",             # 追逐/逃跑/紧迫感
     "suspense",          # 悬疑/压迫/环境恐惧
 ]
+
+# ============================================================
+# 事件指纹 → 结构类型映射（跨题材通用）
+# ============================================================
+# 项目自定义事件类型通过 event_fingerprints.json 定义
+# 这里是通用映射：事件类型关键词 → 推荐结构类型
+# 不在映射中的事件类型会 fallback 到 rhythm type
+
+EVENT_STRUCTURE_KEYWORDS = {
+    # 高信号事件 → 结构类型（只映射有区分度的事件）
+    # 泛化事件（physical_action/tension/environmental/dialogue_heavy）不映射，
+    # 因为它们每章都出现，会淹没真正的信号
+    "confrontation": "confrontation",
+    "investigation": "investigation",
+    "reveal": "reveal",
+    "revelation": "reveal",
+    "chase": "chase",
+    "combat": "action_heavy",
+    "suspense": "suspense",
+    "escape": "chase",
+}
+
+# 节奏类型 → 结构类型映射（tier 2 fallback）
+RHYTHM_STRUCTURE_MAP = {
+    "Discovery": "investigation",
+    "Investigation": "investigation",
+    "Confrontation": "confrontation",
+    "Storm_Climax": "action_heavy",
+    "Cooldown_Breathing": "reveal",
+    "Resolution_Arc": "reveal",
+}
 
 # 每种结构的具体要求
 # ============================================================
@@ -581,18 +616,81 @@ class ConstraintInjector:
 - 引入"第三物理介质"（手机屏幕/门后异响/倒计时/环境异常）"""
 
     def _pick_structure_type(self, chapter_num: int, history: list[dict]) -> str:
-        """选择本章结构类型，避免连续重复"""
-        recent_types = [h["type"] for h in history[-2:]]  # 最近2章的类型
+        """选择本章结构类型（内容感知，非随机）
 
-        # 过滤掉最近使用过的类型
+        三层推断：
+        Tier 1: 从项目 event_fingerprints.json 提取本章事件指纹 → 映射到结构类型
+        Tier 2: 从 timeline.json 读取本章节奏类型 → 映射到结构类型
+        Tier 3: 随机（避免连续重复）
+        """
+        recent_types = [h["type"] for h in history[-2:]]
+
+        # === Tier 1: 事件指纹推断 ===
+        structure_from_events = self._infer_structure_from_events(chapter_num)
+        if structure_from_events and structure_from_events not in recent_types:
+            return structure_from_events
+
+        # === Tier 2: 节奏类型推断 ===
+        structure_from_rhythm = self._infer_structure_from_rhythm(chapter_num)
+        if structure_from_rhythm and structure_from_rhythm not in recent_types:
+            return structure_from_rhythm
+
+        # === Tier 3: 随机（避免连续重复）===
         available = [t for t in STRUCTURE_TYPES if t not in recent_types]
-
         if not available:
             available = STRUCTURE_TYPES
-
-        # 根据章节号轮转，加入随机性
         idx = (chapter_num + random.randint(0, 1)) % len(available)
         return available[idx]
+
+    def _infer_structure_from_events(self, chapter_num: int) -> str | None:
+        """从项目 event_fingerprints.json 推断结构类型"""
+        try:
+            event_fps_path = self.project_dir / "event_fingerprints.json"
+            if not event_fps_path.exists():
+                return None
+
+            event_fps = json.loads(event_fps_path.read_text(encoding="utf-8"))
+
+            # 读取本章文本
+            ch_file = self.project_dir / "chapters" / f"{chapter_num:03d}.md"
+            if not ch_file.exists():
+                return None
+
+            text = ch_file.read_text(encoding="utf-8")
+            events = extract_event_fingerprint(text, event_fps)
+
+            # 映射事件到结构类型，统计票数
+            votes: dict[str, int] = {}
+            for event in events:
+                structure = EVENT_STRUCTURE_KEYWORDS.get(event)
+                if structure:
+                    votes[structure] = votes.get(structure, 0) + 1
+
+            if not votes:
+                return None
+
+            # 返回票数最高的结构类型
+            return max(votes, key=votes.get)
+        except Exception as e:
+            logger.warning(f"从事件指纹推断结构类型失败: {e}")
+            return None
+
+    def _infer_structure_from_rhythm(self, chapter_num: int) -> str | None:
+        """从 timeline.json 的节奏类型推断结构类型"""
+        try:
+            timeline_path = self.project_dir / "timeline.json"
+            if not timeline_path.exists():
+                return None
+
+            timeline = json.loads(timeline_path.read_text(encoding="utf-8"))
+            for ch in timeline.get("chapters", []):
+                if ch.get("chapter") == chapter_num:
+                    rhythm = ch.get("rhythm", "")
+                    return RHYTHM_STRUCTURE_MAP.get(rhythm)
+            return None
+        except Exception as e:
+            logger.warning(f"从节奏类型推断结构类型失败: {e}")
+            return None
 
     def _load_structure_history(self) -> list[dict]:
         if self.structure_history_path.exists():
