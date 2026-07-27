@@ -74,8 +74,13 @@ class SmartShotCompiler:
         beats: list[dict],
         target_duration: int = 90,
         location: str = "",
+        max_shots: int = 25,
     ) -> list[dict]:
         """编译所有beat为镜头列表"""
+        # 镜头数硬上限：合并相邻非关键beat
+        if len(beats) > max_shots:
+            beats = self._merge_beats(beats, max_shots)
+
         shots = []
         total_beats = len(beats)
 
@@ -83,13 +88,70 @@ class SmartShotCompiler:
             shot = self._compile_beat(beat, i, total_beats, target_duration, location)
             shots.append(shot)
 
-        # 调整总时长
+        # 调整总时长（硬上限：不超过target的110%）
         self._adjust_duration(shots, target_duration)
+
+        # 时长二次钳位：如果仍超标，强制压缩
+        total = sum(s["duration"] for s in shots)
+        if total > target_duration * 1.1:
+            ratio = target_duration / total
+            for s in shots:
+                s["duration"] = round(max(SHOT_DUR_MIN, s["duration"] * ratio), 1)
 
         # 重置状态（每章独立）
         self.__init__()
 
         return shots
+
+    @staticmethod
+    def _merge_beats(beats: list[dict], max_count: int) -> list[dict]:
+        """合并相邻非关键beat，使总数不超过max_count"""
+        if len(beats) <= max_count:
+            return beats
+
+        # 优先保留：ability类型、有focus_object的、有dialogue的
+        priority = []
+        for i, beat in enumerate(beats):
+            score = 0
+            if beat.get("space") in ("Mental", "Transition"):
+                score += 3
+            if beat.get("focus_object"):
+                score += 2
+            if beat.get("spoken_dialogue"):
+                score += 1
+            priority.append((i, score))
+
+        # 标记哪些beat必须独立保留（高优先级）
+        keep = set()
+        for i, score in sorted(priority, key=lambda x: -x[1]):
+            if len(keep) >= max_count:
+                break
+            keep.add(i)
+
+        # 合并未保留的beat到相邻beat
+        merged = []
+        buffer = None
+        for i, beat in enumerate(beats):
+            if i in keep:
+                if buffer:
+                    merged.append(buffer)
+                    buffer = None
+                merged.append(beat)
+            else:
+                if buffer:
+                    # 合并到buffer
+                    buffer["action_visual"] += " " + beat.get("action_visual", "")
+                    if beat.get("spoken_dialogue") and not buffer.get("spoken_dialogue"):
+                        buffer["spoken_dialogue"] = beat["spoken_dialogue"]
+                    if beat.get("focus_object") and not buffer.get("focus_object"):
+                        buffer["focus_object"] = beat["focus_object"]
+                else:
+                    buffer = dict(beat)  # copy
+
+        if buffer:
+            merged.append(buffer)
+
+        return merged[:max_count]
 
     def _compile_beat(
         self,
@@ -352,7 +414,11 @@ class SmartAdapterV3:
         logger.info(f"Ch{chapter_num}: {len(shots)} shots compiled")
 
         # --- Step 3: 英文Prompt渲染 ---
+        # 先翻译location
+        raw_loc = shots[0].get("location", "") if shots else ""
+        location_en = self._translate_location(raw_loc)
         for shot in shots:
+            shot["location_en"] = location_en
             rendered = self.renderer.render_with_dialogue(shot)
             shot["veo_prompt"] = rendered["veo_prompt"]
 
@@ -449,6 +515,22 @@ class SmartAdapterV3:
             "shot_count": len(shots),
             "beat_count": len(beats),
         }
+
+    def _translate_location(self, location: str) -> str:
+        """将中文location翻译为英文"""
+        translations = {
+            "念想咖啡店": "Nianxiang coffee shop",
+            "念想咖啡店吧台": "Nianxiang coffee shop bar counter",
+            "面馆": "noodle shop",
+            "巷子": "narrow alley",
+            "苏念的公寓": "Su Nian's apartment",
+            "写字楼": "office building",
+            "公园": "small park",
+        }
+        for zh, en in translations.items():
+            if zh in location:
+                return en
+        return location
 
     def _empty_result(self, chapter_num: int, chapter_text: str) -> dict:
         return {

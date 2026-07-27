@@ -234,11 +234,12 @@ class VisualBeatChunker:
         elif any(kw in text for kw in ["消失", "淡了", "模糊", "听不清"]):
             emotion = "Mystery"
 
-        # 提取在场角色
+        # 提取在场角色（宽松匹配）
         chars = []
         char_names = self.char_names
         for name in char_names:
-            if re.search(rf'{re.escape(name)}(?:用|把|端|走|站|坐|转|看|说|道|问|答|闭|睁|攥|摸)', text):
+            # 宽松：只要名字出现在文本中（不限于动作主语）
+            if name in text:
                 chars.append(name)
 
         return {

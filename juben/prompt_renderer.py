@@ -148,7 +148,7 @@ class PromptRenderer:
             parts.append(f"close-up detail on {anchor_desc}")
 
         # 5. Location
-        location = shot_data.get("location", "")
+        location = shot_data.get("location_en", "") or shot_data.get("location", "")
         if location:
             parts.append(f"in {location}")
 
@@ -195,7 +195,7 @@ class PromptRenderer:
         duration = shot_data.get("duration", 0)
         shot_type = shot_data.get("shot_type", "MS")
         camera = shot_data.get("camera_movement", "static")
-        location = shot_data.get("location", "")
+        location = shot_data.get("location_en", "") or shot_data.get("location", "")
         characters = shot_data.get("characters", [])
         action = shot_data.get("action_visual", "")
         dialogue = shot_data.get("dialogue", "")

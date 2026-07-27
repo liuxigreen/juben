@@ -173,9 +173,11 @@ class StoryboardLint:
                     suggestion="移到inner_voice字段",
                 ))
 
-        # 4. 可拍动作检查
+        # 4. 可拍动作检查（排除引号内的对话内容）
         if action:
-            abstract_found = [kw for kw in ABSTRACT_KEYWORDS if kw in action]
+            # 去掉引号内的内容再检查
+            action_no_quotes = re.sub(r'["「][^"」]*["」]', '', action)
+            abstract_found = [kw for kw in ABSTRACT_KEYWORDS if kw in action_no_quotes]
             if abstract_found:
                 violations.append(LintViolation(
                     shot_id=shot_id,
