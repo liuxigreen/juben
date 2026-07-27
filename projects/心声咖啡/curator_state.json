@@ -17,10 +17,50 @@
       "realm_change": "",
       "foreshadow_planted": [],
       "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 10,
+      "body_costs": [
+        "白发"
+      ],
+      "setting_elements_used": [
+        "读心",
+        "疤痕消失",
+        "吧台",
+        "外婆",
+        "顾深",
+        "陈锐"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 11,
+      "body_costs": [
+        "发抖",
+        "代价"
+      ],
+      "setting_elements_used": [
+        "闭眼",
+        "疤痕消失",
+        "吧台",
+        "外婆",
+        "陈锐"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": " [身体负担中等]",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
     }
   ],
   "accumulated_costs": [
-    "发抖"
+    "发抖",
+    "白发",
+    "代价",
+    "发抖",
+    "代价"
   ],
   "accumulated_banned": [],
   "current_realm": "",
