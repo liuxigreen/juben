@@ -39,10 +39,17 @@ total_shots = sum(len(c["shots"]) for c in chapters)
 # ---------- HTML 构建 ----------
 def esc(s): return html.escape(str(s or ""))
 
-# Flow 时长只有 4/6/8 秒三档，把剧情时长吸附到最近档
-def snap_dur(d):
+# Flow 时长只有 4/6/8 秒三档。台词镜头必须"向上取档"保证念得完，
+# 无台词镜头按剧情时长就近取档。Veo开头有~0.8s铺垫，故台词需求要加余量。
+def snap_dur(d, line_en=""):
     try: d = float(d)
     except: return "8"
+    # 有台词：按念白所需时长(3词/秒)+1s头尾余量，向上取到 4/6/8
+    if line_en:
+        need = len(line_en.split()) / 3.0 + 1.0
+        target = max(d, need)
+        return "4" if target <= 4 else ("6" if target <= 6 else "8")
+    # 无台词：就近取档
     return "4" if d <= 5 else ("6" if d <= 7 else "8")
 
 VOICE_BADGE = {

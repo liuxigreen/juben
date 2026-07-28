@@ -72,7 +72,7 @@ def run(project_dir: Path = PROJECT_DIR, chapters: range = range(1, 21)):
             if b.get("dialogue_speaker"):
                 b["dialogue_speaker"] = zh_to_en.get(b["dialogue_speaker"], b["dialogue_speaker"])
 
-        shots = compiler.compile(beats, 90, loc)
+        shots = compiler.compile(beats, None, loc)
         renderer.reset()
         for shot in shots:
             bd = beats[shot["shot_id"] - 1] if shot["shot_id"] <= len(beats) else {}

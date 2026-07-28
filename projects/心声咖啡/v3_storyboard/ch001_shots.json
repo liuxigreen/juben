@@ -4,7 +4,8 @@
     "shot_type": "ECU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 4.9,
+    "duration": 6.6,
+    "_speech_floor": 3.0,
     "location": "Nianxiang coffee shop",
     "space": "Transition",
     "characters": [
@@ -33,7 +34,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "low, deliberate, pauses between words",
-      "duration_hint": "4.9s"
+      "duration_hint": "6.6s"
     }
   },
   {
@@ -41,7 +42,8 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 4.9,
+    "duration": 6.6,
+    "_speech_floor": 4.3,
     "location": "Nianxiang coffee shop",
     "space": "Mental",
     "characters": [
@@ -68,7 +70,7 @@
       "voice_type": "inner_voice",
       "subtitle": "……那家店，合同都准备好了。签不下来我就得走人……",
       "emotion_tag": "low, deliberate, pauses between words",
-      "duration_hint": "4.9s"
+      "duration_hint": "6.6s"
     }
   },
   {
@@ -76,7 +78,8 @@
     "shot_type": "ECU",
     "camera_movement": "rapid_push",
     "camera_angle": "low",
-    "duration": 4.5,
+    "duration": 6.0,
+    "_speech_floor": 3.0,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -103,7 +106,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "sharp intake of breath, voice breaking",
-      "duration_hint": "4.5s"
+      "duration_hint": "6.0s"
     }
   },
   {
@@ -111,7 +114,8 @@
     "shot_type": "ECU",
     "camera_movement": "push",
     "camera_angle": "low",
-    "duration": 4.9,
+    "duration": 6.6,
+    "_speech_floor": 5.3,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -140,7 +144,7 @@
       "voice_type": "inner_voice",
       "subtitle": "喝别人的咖啡，能听见他的心。代价是——忘了我是谁。",
       "emotion_tag": "sharp intake of breath, voice breaking",
-      "duration_hint": "4.9s"
+      "duration_hint": "6.6s"
     }
   },
   {
@@ -148,7 +152,8 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 4.9,
+    "duration": 6.6,
+    "_speech_floor": 3.0,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -177,7 +182,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "4.9s"
+      "duration_hint": "6.6s"
     }
   },
   {
@@ -185,7 +190,8 @@
     "shot_type": "WS",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 4.5,
+    "duration": 6.0,
+    "_speech_floor": 3.0,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -212,7 +218,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "4.5s"
+      "duration_hint": "6.0s"
     }
   },
   {
@@ -220,7 +226,8 @@
     "shot_type": "MS",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 4.9,
+    "duration": 6.6,
+    "_speech_floor": 1.3,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -249,7 +256,7 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "4.9s"
+      "duration_hint": "6.6s"
     }
   },
   {
@@ -257,7 +264,8 @@
     "shot_type": "CU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 4.9,
+    "duration": 6.6,
+    "_speech_floor": 3.0,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -287,7 +295,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "4.9s"
+      "duration_hint": "6.6s"
     }
   },
   {
@@ -295,7 +303,8 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 4.9,
+    "duration": 6.6,
+    "_speech_floor": 3.0,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -325,7 +334,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "4.9s"
+      "duration_hint": "6.6s"
     }
   },
   {
@@ -333,7 +342,8 @@
     "shot_type": "CU",
     "camera_movement": "rapid_push",
     "camera_angle": "low",
-    "duration": 4.9,
+    "duration": 6.6,
+    "_speech_floor": 3.0,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -362,7 +372,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "whispered, restrained, breathing heavy",
-      "duration_hint": "4.9s"
+      "duration_hint": "6.6s"
     }
   },
   {
@@ -370,7 +380,8 @@
     "shot_type": "CU",
     "camera_movement": "push",
     "camera_angle": "low",
-    "duration": 4.9,
+    "duration": 6.6,
+    "_speech_floor": 3.0,
     "location": "Nianxiang coffee shop",
     "space": "Transition",
     "characters": [
@@ -399,7 +410,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "whispered, restrained, breathing heavy",
-      "duration_hint": "4.9s"
+      "duration_hint": "6.6s"
     }
   },
   {
@@ -407,7 +418,8 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 4.9,
+    "duration": 6.6,
+    "_speech_floor": 4.6,
     "location": "Nianxiang coffee shop",
     "space": "Mental",
     "characters": [
@@ -434,7 +446,7 @@
       "voice_type": "inner_voice",
       "subtitle": "……这个月KPI又完不成了。老陈说再不签下来就让我走人。那家",
       "emotion_tag": "low, deliberate, pauses between words",
-      "duration_hint": "4.9s"
+      "duration_hint": "6.6s"
     }
   },
   {
@@ -442,7 +454,8 @@
     "shot_type": "MCU",
     "camera_movement": "rapid_push",
     "camera_angle": "low",
-    "duration": 4.5,
+    "duration": 6.0,
+    "_speech_floor": 3.0,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -469,7 +482,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "sharp intake of breath, voice breaking",
-      "duration_hint": "4.5s"
+      "duration_hint": "6.0s"
     }
   },
   {
@@ -477,7 +490,8 @@
     "shot_type": "CU",
     "camera_movement": "rapid_push",
     "camera_angle": "eye-level",
-    "duration": 4.9,
+    "duration": 6.6,
+    "_speech_floor": 3.0,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -506,7 +520,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "low, deliberate, pauses between words",
-      "duration_hint": "4.9s"
+      "duration_hint": "6.6s"
     }
   },
   {
@@ -514,7 +528,8 @@
     "shot_type": "MS",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 3.7,
+    "duration": 5.0,
+    "_speech_floor": 1.3,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -542,7 +557,7 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.7s"
+      "duration_hint": "5.0s"
     }
   },
   {
@@ -550,7 +565,8 @@
     "shot_type": "MCU",
     "camera_movement": "pull",
     "camera_angle": "eye-level",
-    "duration": 3.7,
+    "duration": 5.0,
+    "_speech_floor": 0.9,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -578,7 +594,7 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "calm, conversational",
-      "duration_hint": "3.7s"
+      "duration_hint": "5.0s"
     }
   },
   {
@@ -586,7 +602,8 @@
     "shot_type": "CU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 4.9,
+    "duration": 6.6,
+    "_speech_floor": 3.0,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -615,7 +632,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "low, deliberate, pauses between words",
-      "duration_hint": "4.9s"
+      "duration_hint": "6.6s"
     }
   },
   {
@@ -623,7 +640,8 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 4.9,
+    "duration": 6.6,
+    "_speech_floor": 3.0,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -652,7 +670,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "low, deliberate, pauses between words",
-      "duration_hint": "4.9s"
+      "duration_hint": "6.6s"
     }
   },
   {
@@ -660,7 +678,8 @@
     "shot_type": "CU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 4.9,
+    "duration": 6.6,
+    "_speech_floor": 3.0,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -689,7 +708,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "low, deliberate, pauses between words",
-      "duration_hint": "4.9s"
+      "duration_hint": "6.6s"
     }
   }
 ]

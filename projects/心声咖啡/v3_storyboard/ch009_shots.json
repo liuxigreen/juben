@@ -4,7 +4,8 @@
     "shot_type": "WS",
     "camera_movement": "push",
     "camera_angle": "low",
-    "duration": 7.5,
+    "duration": 6.6,
+    "_speech_floor": 3.0,
     "location": "cramped noodle restaurant",
     "space": "Physical",
     "characters": [
@@ -34,7 +35,7 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "whispered, restrained, breathing heavy",
-      "duration_hint": "7.5s"
+      "duration_hint": "6.6s"
     }
   },
   {
@@ -42,7 +43,8 @@
     "shot_type": "MCU",
     "camera_movement": "static",
     "camera_angle": "low",
-    "duration": 7.5,
+    "duration": 6.0,
+    "_speech_floor": 3.0,
     "location": "cramped noodle restaurant",
     "space": "Physical",
     "characters": [
@@ -70,7 +72,7 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "whispered, restrained, breathing heavy",
-      "duration_hint": "7.5s"
+      "duration_hint": "6.0s"
     }
   },
   {
@@ -78,7 +80,8 @@
     "shot_type": "MS",
     "camera_movement": "handheld",
     "camera_angle": "low",
-    "duration": 7.5,
+    "duration": 6.6,
+    "_speech_floor": 3.0,
     "location": "cramped noodle restaurant",
     "space": "Physical",
     "characters": [
@@ -108,7 +111,7 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "whispered, restrained, breathing heavy",
-      "duration_hint": "7.5s"
+      "duration_hint": "6.6s"
     }
   },
   {
@@ -116,7 +119,8 @@
     "shot_type": "MCU",
     "camera_movement": "push",
     "camera_angle": "low",
-    "duration": 7.5,
+    "duration": 6.6,
+    "_speech_floor": 3.0,
     "location": "cramped noodle restaurant",
     "space": "Physical",
     "characters": [
@@ -146,7 +150,7 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "whispered, restrained, breathing heavy",
-      "duration_hint": "7.5s"
+      "duration_hint": "6.6s"
     }
   },
   {
@@ -154,7 +158,8 @@
     "shot_type": "MS",
     "camera_movement": "static",
     "camera_angle": "low",
-    "duration": 7.5,
+    "duration": 6.6,
+    "_speech_floor": 3.0,
     "location": "cramped noodle restaurant",
     "space": "Physical",
     "characters": [
@@ -184,7 +189,7 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "whispered, restrained, breathing heavy",
-      "duration_hint": "7.5s"
+      "duration_hint": "6.6s"
     }
   },
   {
@@ -192,7 +197,8 @@
     "shot_type": "ECU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 7.5,
+    "duration": 6.6,
+    "_speech_floor": 3.0,
     "location": "dark narrow alley at night",
     "space": "Physical",
     "characters": [
@@ -222,7 +228,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "low, deliberate, pauses between words",
-      "duration_hint": "7.5s"
+      "duration_hint": "6.6s"
     }
   },
   {
@@ -230,7 +236,8 @@
     "shot_type": "MCU",
     "camera_movement": "static",
     "camera_angle": "low",
-    "duration": 7.5,
+    "duration": 6.6,
+    "_speech_floor": 3.0,
     "location": "dark narrow alley at night",
     "space": "Physical",
     "characters": [
@@ -260,7 +267,7 @@
       "voice_type": "onscreen",
       "subtitle": "",
       "emotion_tag": "whispered, restrained, breathing heavy",
-      "duration_hint": "7.5s"
+      "duration_hint": "6.6s"
     }
   },
   {
@@ -268,7 +275,8 @@
     "shot_type": "ECU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 7.5,
+    "duration": 6.6,
+    "_speech_floor": 3.0,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -297,7 +305,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "low, deliberate, pauses between words",
-      "duration_hint": "7.5s"
+      "duration_hint": "6.6s"
     }
   },
   {
@@ -305,7 +313,8 @@
     "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
-    "duration": 7.5,
+    "duration": 6.6,
+    "_speech_floor": 3.0,
     "location": "Nianxiang coffee shop",
     "space": "Mental",
     "characters": [
@@ -334,7 +343,7 @@
       "voice_type": "inner_voice",
       "subtitle": "她像一个人——我前女友。但又完全不同。",
       "emotion_tag": "low, deliberate, pauses between words",
-      "duration_hint": "7.5s"
+      "duration_hint": "6.6s"
     }
   },
   {
@@ -342,7 +351,8 @@
     "shot_type": "CU",
     "camera_movement": "pull",
     "camera_angle": "high",
-    "duration": 7.5,
+    "duration": 6.6,
+    "_speech_floor": 3.0,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -371,7 +381,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "soft, trailing off, voice cracking",
-      "duration_hint": "7.5s"
+      "duration_hint": "6.6s"
     }
   },
   {
@@ -379,7 +389,8 @@
     "shot_type": "CU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
-    "duration": 7.5,
+    "duration": 6.6,
+    "_speech_floor": 3.0,
     "location": "Nianxiang coffee shop",
     "space": "Physical",
     "characters": [
@@ -408,7 +419,7 @@
       "voice_type": "none",
       "subtitle": "",
       "emotion_tag": "low, deliberate, pauses between words",
-      "duration_hint": "7.5s"
+      "duration_hint": "6.6s"
     }
   }
 ]

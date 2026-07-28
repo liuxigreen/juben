@@ -410,7 +410,9 @@ class ShotCompiler:
         self.voice_emotion = self.style.get("voice_emotion_map", {})
         self.merge_cfg = self.style.get("beat_merge", {})
 
-    def compile(self, beats: list[dict], target: int = 90, location: str = "") -> list[dict]:
+    def compile(self, beats: list[dict], target: int | None = 90, location: str = "") -> list[dict]:
+        """target=总时长目标(秒)做整体缩放；target=None 时不限制总时长，
+        每镜头按剧情+台词自然长度走（适合逐镜头生成后剪成长视频）。"""
         max_shots = self.merge_cfg.get("max_shots_per_chapter", 25)
         if len(beats) > max_shots:
             beats = self._merge_beats(beats, max_shots)
@@ -439,9 +441,15 @@ class ShotCompiler:
                 ecu_count += 1
             last_st, last_cam = st, cam
 
+            # 台词念白保底时长（供_adjust保护，不被缩放击穿）
+            vt = beat.get("voice_type", "none")
+            line_en = beat.get("inner_voice_en", "") if vt == "inner_voice" else beat.get("line_en", "")
+            sfloor = round(len(line_en.split()) / 3.0 + 0.6, 1) if line_en else 3.0
+
             shots.append({
                 "shot_id": i + 1, "shot_type": st, "camera_movement": cam,
                 "camera_angle": self._angle(emotion), "duration": dur,
+                "_speech_floor": sfloor,
                 "location": location, "space": beat.get("space", "Physical"),
                 "characters": beat.get("characters_present", []),
                 "action_visual": beat.get("action_visual", ""),
@@ -455,7 +463,8 @@ class ShotCompiler:
                 "event_type": beat.get("event_type", ""),
             })
 
-        self._adjust(shots, target)
+        if target:
+            self._adjust(shots, target)
         return shots
 
     # 动作文本显式指定景别时的识别（服从剧本，避免机位与动作描述打架）
@@ -517,13 +526,21 @@ class ShotCompiler:
 
     @staticmethod
     def _calc_duration(beat, total, target):
-        base = target / max(1, total)
+        # target=None：不限总时长，每镜给自然基准5s，再按台词/内容微调
+        base = (target / max(1, total)) if target else 5.0
         wc = len(beat.get("action_visual", "")) + len(beat.get("spoken_dialogue", ""))
         if wc > 100: base *= 1.2
         elif wc < 30: base *= 0.7
         if beat.get("space") == "Mental" or beat.get("focus_object"):
             base *= 1.1
-        return round(max(3.0, min(7.5, base)), 1)
+        # 台词保底：有英文台词时，时长必须够念完（英文约3词/秒 + 0.6s头尾停顿）
+        # 否则配音会被截断（"I'm out"丢失）。取 line_en 或按语音类型选源
+        vt = beat.get("voice_type", "none")
+        line_en = beat.get("inner_voice_en", "") if vt == "inner_voice" else beat.get("line_en", "")
+        speech_floor = 0.0
+        if line_en:
+            speech_floor = len(line_en.split()) / 3.0 + 0.6
+        return round(max(3.0, speech_floor, min(7.5, base)), 1)
 
     def _merge_beats(self, beats, max_count):
         never_merge = set(self.merge_cfg.get("never_merge", []))
@@ -557,16 +574,24 @@ class ShotCompiler:
     @staticmethod
     def _adjust(shots, target):
         if not shots: return
+        # 台词镜头的念白保底时长(speech_floor)不可被缩放击穿，否则配音截断
+        def floor(s):
+            return s.get("_speech_floor", 3.0)
         cur = sum(s["duration"] for s in shots)
         if cur <= 0: return
         r = target / cur
         for s in shots:
-            s["duration"] = round(max(3.0, min(7.5, s["duration"] * r)), 1)
+            s["duration"] = round(max(floor(s), min(8.0, s["duration"] * r)), 1)
+        # 若因保底导致总时长超标，只压缩"无台词、超过3s"的镜头，保护念白镜头
         t = sum(s["duration"] for s in shots)
-        if t > target * 1.1:
-            r2 = target / t
-            for s in shots:
-                s["duration"] = round(max(3.0, s["duration"] * r2), 1)
+        if t > target * 1.15:
+            flex = [s for s in shots if floor(s) <= 3.0 and s["duration"] > 3.0]
+            excess = t - target
+            flex_total = sum(s["duration"] - 3.0 for s in flex)
+            if flex_total > 0:
+                r2 = max(0.0, 1 - excess / flex_total)
+                for s in flex:
+                    s["duration"] = round(max(3.0, 3.0 + (s["duration"] - 3.0) * r2), 1)
 
 
 # ============================================================
