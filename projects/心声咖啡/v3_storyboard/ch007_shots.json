@@ -23,7 +23,7 @@
     "voice_type": "onscreen",
     "dialogue_speaker": "young couple",
     "line_en": "",
-    "veo_prompt": "wide shot, slow dolly forward, low angle looking up, featuring Su Nian, young couple, a young couple argues at the counter, the girl crying that he never listens, the boy saying she is always like this, while Su Nian stands behind the counter unsure whether to interject, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "wide shot, slow dolly forward, low angle looking up, featuring Su Nian, young couple, a young couple argues at the counter, the girl crying that he never listens, the boy saying she is always like this, while Su Nian stands behind the counter unsure whether to interject, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, the characters: jaw tight, eyes narrowed and darting, brow furrowed, shallow breathing, barely holding composure, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "你从来不听我说话。",
       "dialogue_speaker": "young couple",
@@ -61,7 +61,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "extreme close-up, static camera, low angle looking up, featuring Su Nian, young couple, the young man orders two lattes, slams his wallet on the table; Su Nian serves them, the girl lowers her head and does not drink, then the boy stands and goes to the restroom, close-up detail on two lattes on the table, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "extreme close-up, static camera, low angle looking up, featuring Su Nian, young couple, the young man orders two lattes, slams his wallet on the table; Su Nian serves them, the girl lowers her head and does not drink, then the boy stands and goes to the restroom, close-up detail on two lattes on the table, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, the characters: jaw tight, eyes narrowed and darting, brow furrowed, shallow breathing, barely holding composure, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -98,7 +98,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "close-up, slow dolly forward, low angle looking up, featuring Su Nian, Su Nian looks at the girl's still-steaming latte, picks it up and closes her eyes, close-up detail on the girl's steaming latte, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "close-up, slow dolly forward, low angle looking up, featuring Su Nian, Su Nian looks at the girl's still-steaming latte, picks it up and closes her eyes, close-up detail on the girl's steaming latte, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, Su Nian: jaw tight, eyes narrowed and darting, brow furrowed, shallow breathing, barely holding composure, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -133,7 +133,7 @@
     "voice_type": "inner_voice",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "close-up, slow dolly backward, high angle looking down, featuring Su Nian, the world falls silent; a shallow, simple grievance surfaces — the girl only wanted him to remember her birthday, just once, in Nianxiang coffee shop, low key lighting, deep shadows, sad, melancholic, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "close-up, slow dolly backward, high angle looking down, featuring Su Nian, the world falls silent; a shallow, simple grievance surfaces — the girl only wanted him to remember her birthday, just once, in Nianxiang coffee shop, low key lighting, deep shadows, sad, melancholic, Su Nian: eyes glistening, downturned mouth, a slight tremble in the chin, gaze lowered, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -170,7 +170,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "extreme close-up, static camera, eye level, featuring Su Nian, Su Nian sets the cup down; the cost is small — reading a stranger only loses a trivial memory; she looks at her left inner wrist where a small scratch she never recalled has vanished, close-up detail on vanished scratch on left wrist, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "extreme close-up, static camera, eye level, featuring Su Nian, Su Nian sets the cup down; the cost is small — reading a stranger only loses a trivial memory; she looks at her left inner wrist where a small scratch she never recalled has vanished, close-up detail on vanished scratch on left wrist, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, Su Nian: composed expression, natural micro-expressions, subtle eye movement, present and alive, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -206,7 +206,7 @@
     "voice_type": "onscreen",
     "dialogue_speaker": "Su Nian",
     "line_en": "",
-    "veo_prompt": "medium shot, slow dolly forward, eye level, featuring Su Nian, young couple, the boy returns; Su Nian leans to whisper in the girl's ear to tell him the real reason she's angry — the birthday, in Nianxiang coffee shop, warm golden light, warm, heartwarming, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "medium shot, slow dolly forward, eye level, featuring Su Nian, young couple, the boy returns; Su Nian leans to whisper in the girl's ear to tell him the real reason she's angry — the birthday, in Nianxiang coffee shop, warm golden light, warm, heartwarming, the characters: soft warm smile reaching the eyes, relaxed brow, gentle affectionate gaze, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "告诉他你为什么生气。不是因为那件事，是因为生日。",
       "dialogue_speaker": "Su Nian",
@@ -244,7 +244,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian, young couple, ten minutes later the boy kneels before the girl, pulling a crumpled pair of movie tickets from his pocket — next Tuesday, her birthday — and the girl laughs through her tears, close-up detail on crumpled movie tickets, in Nianxiang coffee shop, warm golden light, warm, heartwarming, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian, young couple, ten minutes later the boy kneels before the girl, pulling a crumpled pair of movie tickets from his pocket — next Tuesday, her birthday — and the girl laughs through her tears, close-up detail on crumpled movie tickets, in Nianxiang coffee shop, warm golden light, warm, heartwarming, the characters: soft warm smile reaching the eyes, relaxed brow, gentle affectionate gaze, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -281,7 +281,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "close-up, rapid push-in, eye level, featuring Su Nian, clearing up, Su Nian notices a pink lipstick print on the girl's latte cup rim — but she wore no lipstick when she drank it, close-up detail on pink lipstick print on the cup rim, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "close-up, rapid push-in, eye level, featuring Su Nian, clearing up, Su Nian notices a pink lipstick print on the girl's latte cup rim — but she wore no lipstick when she drank it, close-up detail on pink lipstick print on the cup rim, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, Su Nian: guarded expression, eyes searching, a flicker of unease crossing the face, lips pressed, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -318,7 +318,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "close-up, slow dolly backward, high angle looking down, featuring Su Nian, Su Nian washes the cup, hot water erasing the print; she looks at her hands — nothing missing — but feels a tiny hollow inside, like a pulled tooth the tongue keeps seeking, close-up detail on hot water erasing the lipstick print, in Nianxiang coffee shop, low key lighting, deep shadows, sad, melancholic, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "close-up, slow dolly backward, high angle looking down, featuring Su Nian, Su Nian washes the cup, hot water erasing the print; she looks at her hands — nothing missing — but feels a tiny hollow inside, like a pulled tooth the tongue keeps seeking, close-up detail on hot water erasing the lipstick print, in Nianxiang coffee shop, low key lighting, deep shadows, sad, melancholic, Su Nian: eyes glistening, downturned mouth, a slight tremble in the chin, gaze lowered, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",

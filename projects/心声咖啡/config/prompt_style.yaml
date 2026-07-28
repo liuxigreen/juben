@@ -158,11 +158,20 @@ audio_control:
     "rain-soaked alley outside the coffee shop": "steady rain, water dripping from eaves"
     "small park": "birdsong, rustling leaves, distant children"
   default_ambient: "quiet room tone"
-  # 情绪→英文语气词（配音语气）
+  # 情绪→英文语气词（配音语气）。统一加轻微提速，念白利落不拖沓，塞得下更多词
   tone_map:
-    Shock: "startled, sharp"
-    Tension: "tense, low"
-    Sadness: "soft, wavering"
-    Warmth: "warm, gentle"
-    Mystery: "hushed, uneasy"
-    Neutral: "calm, even"
+    Shock: "startled, sharp, quick pace"
+    Tension: "tense, low, clipped, brisk pace"
+    Sadness: "soft, wavering, unhurried but flowing"
+    Warmth: "warm, gentle, easy flowing pace"
+    Mystery: "hushed, uneasy, slightly brisk"
+    Neutral: "calm, brisk natural pace"
+  # 情绪→具体面部表演指令（注入画面，解决"表情不丰富"）。
+  # 描述的是演员脸上/身体的可见微表情，Veo 会照做，比单纯氛围词丰富得多。
+  expression_map:
+    Shock: "eyes wide, eyebrows raised, lips parting in shock, a sharp intake of breath, subtle flinch"
+    Tension: "jaw tight, eyes narrowed and darting, brow furrowed, shallow breathing, barely holding composure"
+    Sadness: "eyes glistening, downturned mouth, a slight tremble in the chin, gaze lowered"
+    Warmth: "soft warm smile reaching the eyes, relaxed brow, gentle affectionate gaze"
+    Mystery: "guarded expression, eyes searching, a flicker of unease crossing the face, lips pressed"
+    Neutral: "composed expression, natural micro-expressions, subtle eye movement, present and alive"

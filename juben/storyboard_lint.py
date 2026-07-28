@@ -218,6 +218,24 @@ class StoryboardLint:
                     suggestion="翻译为英文",
                 ))
 
+        # 7. 台词时长校验（英文配音念白是否念得完）
+        #    Veo英文语速约3.0词/秒(已在tone加brisk提速)；所需时长 > 镜头时长 → 会被截断
+        au = shot.get("audio", {})
+        line_en = au.get("line_en", "") if isinstance(au, dict) else ""
+        dur = shot.get("duration", 0)
+        if line_en and dur:
+            wc = len(line_en.split())
+            need = wc / 3.0
+            if need > dur:
+                rec = 4 if need <= 4 else (6 if need <= 6 else 8)
+                violations.append(LintViolation(
+                    shot_id=shot_id,
+                    rule="dialogue_pacing",
+                    severity="warning",
+                    message=f"台词偏长: {wc}词需约{need:.1f}s > 镜头{dur}s，配音可能被截断",
+                    suggestion=f"缩短台词，或生成时选{rec}秒档",
+                ))
+
         return violations
 
     def format_report(self, violations: list[LintViolation]) -> str:

@@ -25,7 +25,7 @@
     "voice_type": "onscreen",
     "dialogue_speaker": "Gu Shen",
     "line_en": "",
-    "veo_prompt": "wide shot, static camera, eye level, featuring Su Nian, Gu Shen, on the third day Su Nian has already prepared Gu Shen's americano before he sits down, close-up detail on ready-made americano, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "wide shot, static camera, eye level, featuring Su Nian, Gu Shen, on the third day Su Nian has already prepared Gu Shen's americano before he sits down, close-up detail on ready-made americano, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, the characters: composed expression, natural micro-expressions, subtle eye movement, present and alive, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "你记得我喝什么？",
       "dialogue_speaker": "Gu Shen",
@@ -61,7 +61,7 @@
     "voice_type": "onscreen",
     "dialogue_speaker": "Su Nian",
     "line_en": "",
-    "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring Su Nian, Gu Shen, Su Nian lies that he is a regular, hiding that she read his mind before he even drank, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring Su Nian, Gu Shen, Su Nian lies that he is a regular, hiding that she read his mind before he even drank, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, the characters: jaw tight, eyes narrowed and darting, brow furrowed, shallow breathing, barely holding composure, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "常客。",
       "dialogue_speaker": "Su Nian",
@@ -99,7 +99,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "extreme close-up, static camera, eye level, featuring Su Nian, Gu Shen, Gu Shen drinks half the cup then stands to take a phone call, leaving the steaming cup on the counter, close-up detail on steaming cup left on counter, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "extreme close-up, static camera, eye level, featuring Su Nian, Gu Shen, Gu Shen drinks half the cup then stands to take a phone call, leaving the steaming cup on the counter, close-up detail on steaming cup left on counter, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, the characters: composed expression, natural micro-expressions, subtle eye movement, present and alive, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -134,7 +134,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring Su Nian, Su Nian picks up the cup and closes her eyes, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring Su Nian, Su Nian picks up the cup and closes her eyes, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, Su Nian: jaw tight, eyes narrowed and darting, brow furrowed, shallow breathing, barely holding composure, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -171,7 +171,7 @@
     "voice_type": "inner_voice",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "close-up, slow dolly backward, high angle looking down, featuring Su Nian, the world falls silent; instead of a voice, images flicker like old film frames — a girl standing in the rain, hair plastered to her face, clutching a key, crying, facing a young man inside a doorway who does not step out to chase her, close-up detail on key clutched in the rain, in Nianxiang coffee shop, low key lighting, deep shadows, sad, melancholic, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "close-up, slow dolly backward, high angle looking down, featuring Su Nian, the world falls silent; instead of a voice, images flicker like old film frames — a girl standing in the rain, hair plastered to her face, clutching a key, crying, facing a young man inside a doorway who does not step out to chase her, close-up detail on key clutched in the rain, in Nianxiang coffee shop, low key lighting, deep shadows, sad, melancholic, Su Nian: eyes glistening, downturned mouth, a slight tremble in the chin, gaze lowered, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -208,7 +208,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "extreme close-up, static camera, high angle looking down, featuring Su Nian, Su Nian opens her eyes to find herself crying — not her own tears but the girl's from the vision — tears sliding down onto the counter, close-up detail on tears dripping on the counter, in Nianxiang coffee shop, low key lighting, deep shadows, sad, melancholic, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "extreme close-up, static camera, high angle looking down, featuring Su Nian, Su Nian opens her eyes to find herself crying — not her own tears but the girl's from the vision — tears sliding down onto the counter, close-up detail on tears dripping on the counter, in Nianxiang coffee shop, low key lighting, deep shadows, sad, melancholic, Su Nian: eyes glistening, downturned mouth, a slight tremble in the chin, gaze lowered, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -245,7 +245,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian, Su Nian looks at her hands; the burn scar on her left ring finger remains, but on her right ring finger the faint white ring-mark from a silver ring given by her grandmother is gone, close-up detail on bare right ring finger where the ring mark vanished, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian, Su Nian looks at her hands; the burn scar on her left ring finger remains, but on her right ring finger the faint white ring-mark from a silver ring given by her grandmother is gone, close-up detail on bare right ring finger where the ring mark vanished, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, Su Nian: guarded expression, eyes searching, a flicker of unease crossing the face, lips pressed, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -281,7 +281,7 @@
     "voice_type": "onscreen",
     "dialogue_speaker": "Gu Shen",
     "line_en": "",
-    "veo_prompt": "medium close-up, static camera, low angle looking up, featuring Su Nian, Gu Shen, Gu Shen returns, sees the tear tracks on Su Nian's face and frowns, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "medium close-up, static camera, low angle looking up, featuring Su Nian, Gu Shen, Gu Shen returns, sees the tear tracks on Su Nian's face and frowns, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, the characters: jaw tight, eyes narrowed and darting, brow furrowed, shallow breathing, barely holding composure, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "你还好吗？",
       "dialogue_speaker": "Gu Shen",
@@ -317,7 +317,7 @@
     "voice_type": "onscreen",
     "dialogue_speaker": "Su Nian",
     "line_en": "",
-    "veo_prompt": "medium shot, slow dolly backward, eye level, featuring Su Nian, Gu Shen, Su Nian wipes her tears and offers a fresh cup; Gu Shen downs the cold half-cup in one go and leaves, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "medium shot, slow dolly backward, eye level, featuring Su Nian, Gu Shen, Su Nian wipes her tears and offers a fresh cup; Gu Shen downs the cold half-cup in one go and leaves, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, the characters: composed expression, natural micro-expressions, subtle eye movement, present and alive, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "咖啡凉了，我给你换一杯。",
       "dialogue_speaker": "Su Nian",
@@ -354,7 +354,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian, Su Nian stands behind the empty counter looking at her two hands, cataloguing which scars remain and which have vanished, realizing she is losing memories, close-up detail on her two open hands, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian, Su Nian stands behind the empty counter looking at her two hands, cataloguing which scars remain and which have vanished, realizing she is losing memories, close-up detail on her two open hands, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, Su Nian: guarded expression, eyes searching, a flicker of unease crossing the face, lips pressed, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -391,7 +391,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "close-up, rapid push-in, low angle looking up, featuring Su Nian, a sharp screech of brakes outside; Su Nian whips her head around to see a delivery motorbike skid to a stop at the door then vanish down the alley, the residue in the cup rippling, close-up detail on ripple in the coffee residue, in Nianxiang coffee shop, high contrast dramatic lighting, shocked, dramatic, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "close-up, rapid push-in, low angle looking up, featuring Su Nian, a sharp screech of brakes outside; Su Nian whips her head around to see a delivery motorbike skid to a stop at the door then vanish down the alley, the residue in the cup rippling, close-up detail on ripple in the coffee residue, in Nianxiang coffee shop, high contrast dramatic lighting, shocked, dramatic, Su Nian: eyes wide, eyebrows raised, lips parting in shock, a sharp intake of breath, subtle flinch, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",

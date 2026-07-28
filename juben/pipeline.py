@@ -598,6 +598,8 @@ class PromptRenderer:
         self.char_mode = self.renderer_cfg.get("character_mode", "inline")
         # 音频/口型控制（Veo 3.1 适配）
         self.audio_cfg = style.get("audio_control", {})
+        # 情绪→面部表演指令（有角色时注入，解决表情不丰富）
+        self.expression_map = self.audio_cfg.get("expression_map", {})
         self._count = {}
 
     def reset(self):
@@ -635,6 +637,12 @@ class PromptRenderer:
         if location: parts.append(f"in {location}")
         parts.append(self.LIGHT_EN.get(shot.get("lighting", "Natural"), "natural daylight"))
         parts.append(self.MOOD_EN.get(shot.get("emotion", "Neutral"), "neutral, observational"))
+        # 面部表演层：有角色出镜才注入具体微表情（空镜/道具特写不加）
+        if shot.get("characters"):
+            expr = self.expression_map.get(shot.get("emotion", "Neutral"), "")
+            if expr:
+                subj = shot["characters"][0] if len(shot["characters"]) == 1 else "the characters"
+                parts.append(f"{subj}: {expr}")
         # 口型 + 音轨控制层（Veo 3.1）
         mouth, audio = self._audio_parts(shot, location)
         if mouth: parts.append(mouth)

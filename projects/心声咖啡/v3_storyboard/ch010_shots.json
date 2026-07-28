@@ -24,7 +24,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "wide shot, slow dolly forward, low angle looking up, featuring Su Nian, Su Nian sits behind the counter with a notebook open before her, beginning to record every memory lost after each mind-reading, close-up detail on open notebook, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "wide shot, slow dolly forward, low angle looking up, featuring Su Nian, Su Nian sits behind the counter with a notebook open before her, beginning to record every memory lost after each mind-reading, close-up detail on open notebook, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, Su Nian: jaw tight, eyes narrowed and darting, brow furrowed, shallow breathing, barely holding composure, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -61,7 +61,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "extreme close-up, static camera, low angle looking up, featuring Su Nian, close on the notebook, her handwriting listing dates and losses — Day 1 a hand mark, Day 2 the mole, Day 3 the ring mark, Day 5 the latte burn, Day 6 the utility-knife scar, Day 7 a stranger's wrist scratch, close-up detail on handwritten list of losses, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "extreme close-up, static camera, low angle looking up, featuring Su Nian, close on the notebook, her handwriting listing dates and losses — Day 1 a hand mark, Day 2 the mole, Day 3 the ring mark, Day 5 the latte burn, Day 6 the utility-knife scar, Day 7 a stranger's wrist scratch, close-up detail on handwritten list of losses, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, Su Nian: jaw tight, eyes narrowed and darting, brow furrowed, shallow breathing, barely holding composure, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -98,7 +98,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian, Su Nian studies the pattern — reading Gu Shen loses memories tied to him, reading Chen Rui loses coffee memories, reading strangers loses trivia, but always a physical mark that vanishes entirely, close-up detail on the pattern in the notebook, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian, Su Nian studies the pattern — reading Gu Shen loses memories tied to him, reading Chen Rui loses coffee memories, reading strangers loses trivia, but always a physical mark that vanishes entirely, close-up detail on the pattern in the notebook, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, Su Nian: guarded expression, eyes searching, a flicker of unease crossing the face, lips pressed, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -135,7 +135,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "extreme close-up, static camera, low angle looking up, featuring Su Nian, Su Nian closes the notebook and walks to the mirror, looking at herself — shoulder-length hair, round face, apron — she remembers her name, the shop, grandmother's name, close-up detail on her reflection in the mirror, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "extreme close-up, static camera, low angle looking up, featuring Su Nian, Su Nian closes the notebook and walks to the mirror, looking at herself — shoulder-length hair, round face, apron — she remembers her name, the shop, grandmother's name, close-up detail on her reflection in the mirror, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, Su Nian: jaw tight, eyes narrowed and darting, brow furrowed, shallow breathing, barely holding composure, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -172,7 +172,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "close-up, rapid push-in, low angle looking up, featuring Su Nian, Su Nian opens the phone album 'Family' — a young woman holding a baby, her face blurred as if water-soaked; a man by a banyan tree, his face completely blank, not obscured but nonexistent, close-up detail on blank-faced photos in the album, in Nianxiang coffee shop, high contrast dramatic lighting, shocked, dramatic, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "close-up, rapid push-in, low angle looking up, featuring Su Nian, Su Nian opens the phone album 'Family' — a young woman holding a baby, her face blurred as if water-soaked; a man by a banyan tree, his face completely blank, not obscured but nonexistent, close-up detail on blank-faced photos in the album, in Nianxiang coffee shop, high contrast dramatic lighting, shocked, dramatic, Su Nian: eyes wide, eyebrows raised, lips parting in shock, a sharp intake of breath, subtle flinch, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -209,7 +209,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "close-up, slow dolly backward, high angle looking down, featuring Su Nian, the third photo is grandmother, clear — white hair, blue apron, smiling eyes — but Su Nian cannot recall the sound of her voice calling 'Xiao Nian', close-up detail on the clear photo of grandmother, in Nianxiang coffee shop, low key lighting, deep shadows, sad, melancholic, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "close-up, slow dolly backward, high angle looking down, featuring Su Nian, the third photo is grandmother, clear — white hair, blue apron, smiling eyes — but Su Nian cannot recall the sound of her voice calling 'Xiao Nian', close-up detail on the clear photo of grandmother, in Nianxiang coffee shop, low key lighting, deep shadows, sad, melancholic, Su Nian: eyes glistening, downturned mouth, a slight tremble in the chin, gaze lowered, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -246,7 +246,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian, Su Nian writes another line in the notebook — the more she reads, the more important the memories she loses; if she forgets everything, is she still herself?, close-up detail on new line in the notebook, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian, Su Nian writes another line in the notebook — the more she reads, the more important the memories she loses; if she forgets everything, is she still herself?, close-up detail on new line in the notebook, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, Su Nian: guarded expression, eyes searching, a flicker of unease crossing the face, lips pressed, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -283,7 +283,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "close-up, slow dolly backward, high angle looking down, featuring Su Nian, night has fallen, office lights across the street flicking on and off floor by floor; a single counter lamp lights the notebook and her hand, its back now smooth as white paper with no scars at all, close-up detail on her scarless hand under the lamp, in Nianxiang coffee shop, low key lighting, deep shadows, sad, melancholic, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "close-up, slow dolly backward, high angle looking down, featuring Su Nian, night has fallen, office lights across the street flicking on and off floor by floor; a single counter lamp lights the notebook and her hand, its back now smooth as white paper with no scars at all, close-up detail on her scarless hand under the lamp, in Nianxiang coffee shop, low key lighting, deep shadows, sad, melancholic, Su Nian: eyes glistening, downturned mouth, a slight tremble in the chin, gaze lowered, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -320,7 +320,7 @@
     "voice_type": "onscreen",
     "dialogue_speaker": "Su Nian",
     "line_en": "",
-    "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring Su Nian, her phone lights with Gu Shen's message 'I'll come for coffee tomorrow'; Su Nian types 'don't come', deletes it, types 'okay' and sends, close-up detail on phone screen with the message, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "medium close-up, slow dolly forward, low angle looking up, featuring Su Nian, her phone lights with Gu Shen's message 'I'll come for coffee tomorrow'; Su Nian types 'don't come', deletes it, types 'okay' and sends, close-up detail on phone screen with the message, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, Su Nian: jaw tight, eyes narrowed and darting, brow furrowed, shallow breathing, barely holding composure, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "好。",
       "dialogue_speaker": "Su Nian",

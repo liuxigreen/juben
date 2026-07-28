@@ -25,7 +25,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "wide shot, static camera, eye level, featuring Su Nian, Lin Ke, Lin Ke arrives and unrolls a watercolor painting on the counter — warm tones, an old shop deep in an alley with a wooden Nianxiang sign at the door, close-up detail on watercolor painting of the shop, in Nianxiang coffee shop, warm golden light, warm, heartwarming, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "wide shot, static camera, eye level, featuring Su Nian, Lin Ke, Lin Ke arrives and unrolls a watercolor painting on the counter — warm tones, an old shop deep in an alley with a wooden Nianxiang sign at the door, close-up detail on watercolor painting of the shop, in Nianxiang coffee shop, warm golden light, warm, heartwarming, the characters: soft warm smile reaching the eyes, relaxed brow, gentle affectionate gaze, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -63,7 +63,7 @@
     "voice_type": "onscreen",
     "dialogue_speaker": "Su Nian",
     "line_en": "",
-    "veo_prompt": "medium close-up, static camera, low angle looking up, featuring Su Nian, Lin Ke, Su Nian stares at the doorway in the painting, at the osmanthus tree she should remember, but her mind is blank, close-up detail on osmanthus tree in the painting, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "medium close-up, static camera, low angle looking up, featuring Su Nian, Lin Ke, Su Nian stares at the doorway in the painting, at the osmanthus tree she should remember, but her mind is blank, close-up detail on osmanthus tree in the painting, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, the characters: jaw tight, eyes narrowed and darting, brow furrowed, shallow breathing, barely holding composure, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "外婆的店……门口有这棵树？",
       "dialogue_speaker": "Su Nian",
@@ -99,7 +99,7 @@
     "voice_type": "onscreen",
     "dialogue_speaker": "Lin Ke",
     "line_en": "",
-    "veo_prompt": "medium shot, slow dolly forward, low angle looking up, featuring Su Nian, Lin Ke, Lin Ke's hand freezes mid-air, she studies Su Nian for three seconds, slowly rolls up the painting and pours herself a glass of water, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "medium shot, slow dolly forward, low angle looking up, featuring Su Nian, Lin Ke, Lin Ke's hand freezes mid-air, she studies Su Nian for three seconds, slowly rolls up the painting and pours herself a glass of water, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, the characters: jaw tight, eyes narrowed and darting, brow furrowed, shallow breathing, barely holding composure, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "你最近太累了。",
       "dialogue_speaker": "Lin Ke",
@@ -137,7 +137,7 @@
     "voice_type": "onscreen",
     "dialogue_speaker": "Lin Ke",
     "line_en": "",
-    "veo_prompt": "medium close-up, static camera, low angle looking up, featuring Su Nian, Lin Ke, Lin Ke pulls out her phone showing Gu Shen's LinkedIn page and slaps it on the counter, pointing at the company name, close-up detail on phone showing LinkedIn page, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "medium close-up, static camera, low angle looking up, featuring Su Nian, Lin Ke, Lin Ke pulls out her phone showing Gu Shen's LinkedIn page and slaps it on the counter, pointing at the company name, close-up detail on phone showing LinkedIn page, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, the characters: jaw tight, eyes narrowed and darting, brow furrowed, shallow breathing, barely holding composure, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "锐见投资。苏念，他是来收购的。",
       "dialogue_speaker": "Lin Ke",
@@ -175,7 +175,7 @@
     "voice_type": "onscreen",
     "dialogue_speaker": "Su Nian",
     "line_en": "",
-    "veo_prompt": "medium shot, slow dolly forward, low angle looking up, featuring Su Nian, Lin Ke, Su Nian does not answer; she looks at the cup Gu Shen just used, still warm, reaches for it then pulls her hand back, close-up detail on Gu Shen's used cup still warm, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "medium shot, slow dolly forward, low angle looking up, featuring Su Nian, Lin Ke, Su Nian does not answer; she looks at the cup Gu Shen just used, still warm, reaches for it then pulls her hand back, close-up detail on Gu Shen's used cup still warm, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, the characters: jaw tight, eyes narrowed and darting, brow furrowed, shallow breathing, barely holding composure, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "我知道。",
       "dialogue_speaker": "Su Nian",
@@ -213,7 +213,7 @@
     "voice_type": "onscreen",
     "dialogue_speaker": "Lin Ke",
     "line_en": "",
-    "veo_prompt": "medium close-up, static camera, eye level, featuring Su Nian, Lin Ke, Lin Ke re-unrolls the painting and points at a small figure under the osmanthus tree — white hair, apron, holding a copper kettle, close-up detail on small painted figure of grandmother under the tree, in Nianxiang coffee shop, warm golden light, warm, heartwarming, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "medium close-up, static camera, eye level, featuring Su Nian, Lin Ke, Lin Ke re-unrolls the painting and points at a small figure under the osmanthus tree — white hair, apron, holding a copper kettle, close-up detail on small painted figure of grandmother under the tree, in Nianxiang coffee shop, warm golden light, warm, heartwarming, the characters: soft warm smile reaching the eyes, relaxed brow, gentle affectionate gaze, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "这是你外婆。你还记得她冲咖啡的样子吗？",
       "dialogue_speaker": "Lin Ke",
@@ -248,7 +248,7 @@
     "voice_type": "onscreen",
     "dialogue_speaker": "Su Nian",
     "line_en": "",
-    "veo_prompt": "medium shot, slow dolly backward, high angle looking down, featuring Su Nian, Su Nian recalls the parameters — Yirgacheffe, 88 degrees, 30-second bloom — but the taste, caramel or nuts or osmanthus, is gone, in Nianxiang coffee shop, low key lighting, deep shadows, sad, melancholic, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "medium shot, slow dolly backward, high angle looking down, featuring Su Nian, Su Nian recalls the parameters — Yirgacheffe, 88 degrees, 30-second bloom — but the taste, caramel or nuts or osmanthus, is gone, in Nianxiang coffee shop, low key lighting, deep shadows, sad, melancholic, Su Nian: eyes glistening, downturned mouth, a slight tremble in the chin, gaze lowered, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "不太记得了。",
       "dialogue_speaker": "Su Nian",
@@ -286,7 +286,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "extreme close-up, static camera, high angle looking down, featuring Su Nian, Lin Ke, Lin Ke's fingers tighten on the paper, denting it; she says nothing more, rolls up the painting, binds it with a rubber band and stuffs it in her bag, close-up detail on rolled-up painting bound with rubber band, in Nianxiang coffee shop, low key lighting, deep shadows, sad, melancholic, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "extreme close-up, static camera, high angle looking down, featuring Su Nian, Lin Ke, Lin Ke's fingers tighten on the paper, denting it; she says nothing more, rolls up the painting, binds it with a rubber band and stuffs it in her bag, close-up detail on rolled-up painting bound with rubber band, in Nianxiang coffee shop, low key lighting, deep shadows, sad, melancholic, the characters: eyes glistening, downturned mouth, a slight tremble in the chin, gaze lowered, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -322,7 +322,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "medium close-up, slow dolly backward, high angle looking down, featuring Su Nian, Lin Ke, at the door Lin Ke pauses, turns to look at Su Nian, her lips move as if to speak, but she only waves, in Nianxiang coffee shop, low key lighting, deep shadows, sad, melancholic, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "medium close-up, slow dolly backward, high angle looking down, featuring Su Nian, Lin Ke, at the door Lin Ke pauses, turns to look at Su Nian, her lips move as if to speak, but she only waves, in Nianxiang coffee shop, low key lighting, deep shadows, sad, melancholic, the characters: eyes glistening, downturned mouth, a slight tremble in the chin, gaze lowered, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -359,7 +359,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "extreme close-up, static camera, high angle looking down, featuring Su Nian, Su Nian alone washes Gu Shen's cup under hot water, then looks at her hands — the scars remain but she cannot recall the aroma of grandmother's coffee, close-up detail on hot water over the cup, in Nianxiang coffee shop, low key lighting, deep shadows, sad, melancholic, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "extreme close-up, static camera, high angle looking down, featuring Su Nian, Su Nian alone washes Gu Shen's cup under hot water, then looks at her hands — the scars remain but she cannot recall the aroma of grandmother's coffee, close-up detail on hot water over the cup, in Nianxiang coffee shop, low key lighting, deep shadows, sad, melancholic, Su Nian: eyes glistening, downturned mouth, a slight tremble in the chin, gaze lowered, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -396,7 +396,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "close-up, slow dolly backward, high angle looking down, featuring Su Nian, the corner of Lin Ke's abandoned painting lifts in the breeze, revealing a pencil line on the back — 'For Xiao Nian, may you always remember' — but Su Nian, wiping tables, does not see it, close-up detail on pencil words on the back of the painting, in Nianxiang coffee shop, low key lighting, deep shadows, sad, melancholic, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "close-up, slow dolly backward, high angle looking down, featuring Su Nian, the corner of Lin Ke's abandoned painting lifts in the breeze, revealing a pencil line on the back — 'For Xiao Nian, may you always remember' — but Su Nian, wiping tables, does not see it, close-up detail on pencil words on the back of the painting, in Nianxiang coffee shop, low key lighting, deep shadows, sad, melancholic, Su Nian: eyes glistening, downturned mouth, a slight tremble in the chin, gaze lowered, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -433,7 +433,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian, dusk sinks, the shop lights come on automatically; Su Nian looks at grandmother's yellowing sticky note on the wall, the handwriting familiar, but she cannot recall the expression of the person who wrote it, close-up detail on grandmother's yellowed sticky note on the wall, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian, dusk sinks, the shop lights come on automatically; Su Nian looks at grandmother's yellowing sticky note on the wall, the handwriting familiar, but she cannot recall the expression of the person who wrote it, close-up detail on grandmother's yellowed sticky note on the wall, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, Su Nian: guarded expression, eyes searching, a flicker of unease crossing the face, lips pressed, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
