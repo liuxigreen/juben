@@ -73,7 +73,7 @@
   },
   {
     "shot_id": 3,
-    "shot_type": "MCU",
+    "shot_type": "ECU",
     "camera_movement": "rapid_push",
     "camera_angle": "low",
     "duration": 4.5,
@@ -82,7 +82,7 @@
     "characters": [
       "Su Nian"
     ],
-    "action_visual": "COLD OPEN, camera pushes hard into her face: Su Nian's eyes snap open in shock, she has heard something she should not have",
+    "action_visual": "COLD OPEN, extreme close-up on her face as the camera pushes hard: Su Nian's eyes snap open in shock, she has heard something she should not have",
     "dialogue": "",
     "inner_voice": "",
     "focus_object": "",
@@ -94,7 +94,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "medium close-up, rapid push-in, low angle looking up, featuring Su Nian, COLD OPEN, camera pushes hard into her face: Su Nian's eyes snap open in shock, she has heard something she should not have, in Nianxiang coffee shop, high contrast dramatic lighting, shocked, dramatic, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "extreme close-up, rapid push-in, low angle looking up, featuring Su Nian, COLD OPEN, extreme close-up on her face as the camera pushes hard: Su Nian's eyes snap open in shock, she has heard something she should not have, in Nianxiang coffee shop, high contrast dramatic lighting, shocked, dramatic, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
