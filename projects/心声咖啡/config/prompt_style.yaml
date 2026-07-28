@@ -6,11 +6,11 @@ active_renderer: "flow_character_v2"
 # 多renderer定义
 renderers:
   flow_character_v2:
-    description: "Google Flow — 角色引用型：长相由 Flow 角色系统保证，提示词只引用角色名"
+    description: "Google Flow — 角色引用型：长相由 Flow 角色系统保证，提示词只引用角色名。动漫仿真人风格(绕开真人审核)"
     style: "hybrid"
     character_first: true
     character_mode: "reference"
-    suffix: "cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field"
+    suffix: "modern anime style, semi-realistic 2.5D rendering, cel-shaded with soft realistic lighting, clean detailed linework, cinematic vertical short-drama look, 9:16 vertical, high detail, 24fps, shallow depth of field"
 
   veo_v1:
     description: "Google Veo — 叙事型，完整句子"

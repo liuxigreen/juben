@@ -23,7 +23,7 @@
     around 165cm. Wears a faded oatmeal-beige linen apron over a plain white long-sleeve
     tee, sleeves pushed to the elbows. A thin burn scar on her left ring finger.
     Quiet, watchful, a little melancholic; the look of someone who listens more than
-    she speaks. Soft natural lighting, photorealistic, cinematic portrait.
+    she speaks. Soft natural lighting, modern anime style, semi-realistic 2.5D character art, cel-shaded with soft realistic lighting, clean detailed linework, cinematic portrait.
   short: "young barista, beige linen apron, burn scar on ring finger"
   flow_voice: "Soft, low, slightly husky female voice, measured and quiet, a subtle weariness beneath, American accent"
   pronouns: ["她", "姑娘", "女孩", "老板", "围裙"]
@@ -39,7 +39,7 @@
     Wears a well-tailored charcoal-grey wool suit, a deep navy tie slightly loosened,
     a crisp white shirt. A visible callus on his right index finger. Composed, precise,
     emotionally reserved — like a mathematician who never shows his cards.
-    Soft window light, photorealistic, cinematic portrait.
+    Soft window light, modern anime style, semi-realistic 2.5D character art, cel-shaded with soft realistic lighting, clean detailed linework, cinematic portrait.
   short: "tall man, charcoal suit, calm grey eyes"
   flow_voice: "Calm, deep, controlled male voice, precise and clipped, emotionally restrained, American accent"
   pronouns: ["他", "男人", "西装男", "灰色西装", "顾客", "西装", "领带"]
@@ -55,7 +55,7 @@
     (each a different pastel shade, some with tiny stars), edges slightly bitten.
     Casual layered style — an oversized mustard cardigan over a graphic tee, a large
     canvas art bag slung across her body. Warm, protective, talks fast.
-    Natural daylight, photorealistic, cinematic portrait.
+    Natural daylight, modern anime style, semi-realistic 2.5D character art, cel-shaded with soft realistic lighting, clean detailed linework, cinematic portrait.
   short: "ponytail, colorful nails, mustard cardigan, art bag"
   flow_voice: "Bright, warm, fast-paced female voice, energetic and expressive, American accent"
   pronouns: ["她"]
@@ -71,7 +71,7 @@
     polo shirt under a slate-grey blazer, an expensive steel-and-leather watch on
     his left wrist. Grinds his jaw when tense. Outwardly hard and transactional, but
     carries the weariness of a man who gave something up long ago.
-    Cool office lighting, photorealistic, cinematic portrait.
+    Cool office lighting, modern anime style, semi-realistic 2.5D character art, cel-shaded with soft realistic lighting, clean detailed linework, cinematic portrait.
   short: "square jaw, cropped hair, navy polo, expensive watch"
   flow_voice: "Gruff, low, hard-edged male voice, transactional and world-weary, American accent"
   pronouns: ["他"]
@@ -86,7 +86,7 @@
     is missing, short neat black hair. Wears a simple striped cotton tee. Warm,
     gentle, protective older-brother energy. In older references, a faint echo of
     the same features aged into late teens. Soft nostalgic lighting, slightly faded
-    film look, photorealistic portrait.
+    film look, modern anime style, semi-realistic 2.5D character art, cel-shaded, clean detailed linework.
   short: "young boy, round face, gap tooth, warm crescent-eyed smile"
   flow_voice: "Young boy's voice around 8 years old, soft and gentle, American accent"
   pronouns: ["他"]
@@ -100,7 +100,7 @@
     crinkled smiling eyes, silver-white hair pinned back neatly. Wears a well-worn
     cornflower-blue cotton apron over a soft grey cardigan, sleeves rolled. Often
     holds a copper coffee kettle. Kind, unhurried, radiates the warmth of an old
-    coffee shop. Golden warm light, soft focus, nostalgic photorealistic portrait.
+    coffee shop. Golden warm light, soft focus, nostalgic modern anime style, semi-realistic 2.5D character art, cel-shaded, soft detailed linework.
   short: "elderly woman, white hair, blue apron"
   flow_voice: "Elderly female voice in her 70s, gentle, unhurried, warm, American accent"
   pronouns: ["她"]
