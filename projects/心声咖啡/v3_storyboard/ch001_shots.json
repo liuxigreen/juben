@@ -61,7 +61,7 @@
     "voice_type": "inner_voice",
     "dialogue_speaker": "",
     "line_en": "The lease is ready. If I can't close it, I'm done.",
-    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian, COLD OPEN: Su Nian closes her eyes, the world snaps into total silence, a low male inner voice crashes in as if through a wall, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, Su Nian: guarded expression, eyes searching, a flicker of unease crossing the face, lips pressed, Su Nian stays silent with lips closed, a hushed, uneasy, slightly brisk inner-monologue voiceover: \"The lease is ready. If I can't close it, I'm done.\", American accent, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, near silence, ambient sound fading out, voiceover only, no music",
+    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian, COLD OPEN: Su Nian closes her eyes, the world snaps into total silence, a low male inner voice crashes in as if through a wall, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, Su Nian: guarded expression, eyes searching, a flicker of unease crossing the face, lips pressed, Su Nian stays silent with lips closed, her inner thoughts as a hushed, uneasy, slightly brisk intimate close-miked interior monologue voiceover, softer and breathier than her speaking voice, with a subtle reverberant dreamlike quality as if heard inside her head: \"The lease is ready. If I can't close it, I'm done.\", same voice as Su Nian but internalized, American accent, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, near silence, ambient sound fading out, voiceover only, no music",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -85,7 +85,7 @@
     "characters": [
       "Su Nian"
     ],
-    "action_visual": "COLD OPEN, extreme close-up on her face as the camera pushes hard: Su Nian's eyes snap open in shock, she has heard something she should not have",
+    "action_visual": "COLD OPEN, extreme close-up on her face as the camera pushes hard: Su Nian's eyes open wide with a stunned expression, she has just heard something impossible",
     "dialogue": "",
     "inner_voice": "",
     "focus_object": "",
@@ -97,7 +97,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "extreme close-up, rapid push-in, low angle looking up, featuring Su Nian, COLD OPEN, extreme close-up on her face as the camera pushes hard: Su Nian's eyes snap open in shock, she has heard something she should not have, in Nianxiang coffee shop, high contrast dramatic lighting, shocked, dramatic, Su Nian: eyes wide, eyebrows raised, lips parting in shock, a sharp intake of breath, subtle flinch, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "extreme close-up, rapid push-in, low angle looking up, featuring Su Nian, COLD OPEN, extreme close-up on her face as the camera pushes hard: Su Nian's eyes open wide with a stunned expression, she has just heard something impossible, in Nianxiang coffee shop, high contrast dramatic lighting, shocked, dramatic, Su Nian: eyes wide open, eyebrows raised high, lips parting in astonishment, a look of disbelief, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -121,21 +121,21 @@
     "characters": [
       "Su Nian"
     ],
-    "action_visual": "COLD OPEN, extreme close-up on the back of her hand: a scar visibly fades and dissolves into smooth skin before our eyes, as if erased",
+    "action_visual": "COLD OPEN, extreme close-up on the back of her hand: a faint mark on her skin gently smooths away and vanishes, leaving flawless skin, like magic fading",
     "dialogue": "",
     "inner_voice": "喝别人的咖啡，能听见他的心。代价是——忘了我是谁。",
-    "focus_object": "scar dissolving on the back of her hand",
+    "focus_object": "a faint mark smoothing away on the back of her hand",
     "lighting": "High contrast",
     "emotion": "Shock",
     "visual_anchors": [
-      "scar dissolving on the back of her hand"
+      "a faint mark smoothing away on the back of her hand"
     ],
     "beat_id": 4,
     "event_type": "focus_object_change",
     "voice_type": "inner_voice",
     "dialogue_speaker": "",
     "line_en": "Drink your coffee, I hear your heart. The price? I forget who I am.",
-    "veo_prompt": "extreme close-up, slow dolly forward, low angle looking up, featuring Su Nian, COLD OPEN, extreme close-up on the back of her hand: a scar visibly fades and dissolves into smooth skin before our eyes, as if erased, close-up detail on scar dissolving on the back of her hand, in Nianxiang coffee shop, high contrast dramatic lighting, shocked, dramatic, Su Nian: eyes wide, eyebrows raised, lips parting in shock, a sharp intake of breath, subtle flinch, Su Nian stays silent with lips closed, a startled, sharp, quick pace inner-monologue voiceover: \"Drink your coffee, I hear your heart. The price? I forget who I am.\", American accent, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, near silence, ambient sound fading out, voiceover only, no music",
+    "veo_prompt": "extreme close-up, slow dolly forward, low angle looking up, featuring Su Nian, COLD OPEN, extreme close-up on the back of her hand: a faint mark on her skin gently smooths away and vanishes, leaving flawless skin, like magic fading, close-up detail on a faint mark smoothing away on the back of her hand, in Nianxiang coffee shop, high contrast dramatic lighting, shocked, dramatic, Su Nian: eyes wide open, eyebrows raised high, lips parting in astonishment, a look of disbelief, Su Nian stays silent with lips closed, her inner thoughts as a startled, sharp, quick pace intimate close-miked interior monologue voiceover, softer and breathier than her speaking voice, with a subtle reverberant dreamlike quality as if heard inside her head: \"Drink your coffee, I hear your heart. The price? I forget who I am.\", same voice as Su Nian but internalized, American accent, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, near silence, ambient sound fading out, voiceover only, no music",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -437,7 +437,7 @@
     "voice_type": "inner_voice",
     "dialogue_speaker": "",
     "line_en": "Missed my numbers again. Chen said close the deal, or I'm gone.",
-    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian, the world falls silent, all ambient sound drains away — the snoring, the keyboard, the traffic — leaving only one low voice as if heard through a wall, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, Su Nian: guarded expression, eyes searching, a flicker of unease crossing the face, lips pressed, Su Nian stays silent with lips closed, a hushed, uneasy, slightly brisk inner-monologue voiceover: \"Missed my numbers again. Chen said close the deal, or I'm gone.\", American accent, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, near silence, ambient sound fading out, voiceover only, no music",
+    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian, the world falls silent, all ambient sound drains away — the snoring, the keyboard, the traffic — leaving only one low voice as if heard through a wall, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, Su Nian: guarded expression, eyes searching, a flicker of unease crossing the face, lips pressed, Su Nian stays silent with lips closed, her inner thoughts as a hushed, uneasy, slightly brisk intimate close-miked interior monologue voiceover, softer and breathier than her speaking voice, with a subtle reverberant dreamlike quality as if heard inside her head: \"Missed my numbers again. Chen said close the deal, or I'm gone.\", same voice as Su Nian but internalized, American accent, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, near silence, ambient sound fading out, voiceover only, no music",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -473,7 +473,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "medium close-up, rapid push-in, low angle looking up, featuring Su Nian, Su Nian snaps her eyes open; the sound rushes back, the old man rolls over, the girl's keyboard clatters again, in Nianxiang coffee shop, high contrast dramatic lighting, shocked, dramatic, Su Nian: eyes wide, eyebrows raised, lips parting in shock, a sharp intake of breath, subtle flinch, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "medium close-up, rapid push-in, low angle looking up, featuring Su Nian, Su Nian snaps her eyes open; the sound rushes back, the old man rolls over, the girl's keyboard clatters again, in Nianxiang coffee shop, high contrast dramatic lighting, shocked, dramatic, Su Nian: eyes wide open, eyebrows raised high, lips parting in astonishment, a look of disbelief, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",

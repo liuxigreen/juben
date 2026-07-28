@@ -132,7 +132,8 @@ audio_control:
     # 多角色：只让说话者开口，其他人静默倾听（Veo多人对话易乱）
     onscreen_multi_tpl: "{speaker} speaks, saying: \"{line_en}\", {tone} delivery, natural lip sync, {accent}; {others} stay silent with closed lips, listening"
     # inner_voice：心声=画外音(voiceover)，人物不动嘴，世界骤静
-    inner_voice_tpl: "{speaker} stays silent with lips closed, a {tone} inner-monologue voiceover: \"{line_en}\", {accent}"
+    # 音色同角色本人，但加声学处理(贴耳/亲密/轻微混响/内化)，一听就知是"想"不是"说"
+    inner_voice_tpl: "{speaker} stays silent with lips closed, her inner thoughts as a {tone} intimate close-miked interior monologue voiceover, softer and breathier than her speaking voice, with a subtle reverberant dreamlike quality as if heard inside her head: \"{line_en}\", same voice as {speaker} but internalized, {accent}"
     none_mouth: "lips closed, no speaking"
     # 音轨：说话镜头压环境音突出人声；无台词镜头给环境音
     dialogue_audio: "clean dialogue, minimal room tone, no music"
@@ -169,7 +170,7 @@ audio_control:
   # 情绪→具体面部表演指令（注入画面，解决"表情不丰富"）。
   # 描述的是演员脸上/身体的可见微表情，Veo 会照做，比单纯氛围词丰富得多。
   expression_map:
-    Shock: "eyes wide, eyebrows raised, lips parting in shock, a sharp intake of breath, subtle flinch"
+    Shock: "eyes wide open, eyebrows raised high, lips parting in astonishment, a look of disbelief"
     Tension: "jaw tight, eyes narrowed and darting, brow furrowed, shallow breathing, barely holding composure"
     Sadness: "eyes glistening, downturned mouth, a slight tremble in the chin, gaze lowered"
     Warmth: "soft warm smile reaching the eyes, relaxed brow, gentle affectionate gaze"
