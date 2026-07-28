@@ -116,23 +116,41 @@ beat_merge:
 # ═══════════════════════════════════════════════════════════
 # 音频 / 口型控制（Veo 3.1 适配）
 # ═══════════════════════════════════════════════════════════
-# 背景：Veo 默认会给人物配英文语音+乱动嘴。中文配音在剪映后期做。
-# 策略：三类镜头分别控制口型 + 音轨，避免"只出声嘴不动"或"说英文乱语"。
+# mode 切换（通用化，换项目只改这一行）：
+#   dubbed_en : 出海模式——Veo 直接生成英文配音+英文口型(sub-10ms最强)，字幕另配
+#   post_dub  : 后期配音模式——嘴动不吐词/锁嘴，配音在剪映后期做(适合中文等弱势语言)
 audio_control:
   enabled: true
-  # voice_type → 口型/表演指令 + 音轨指令
-  # onscreen   : 角色在说台词（后期配中文）→ 嘴要动，但不吐具体词
-  # inner_voice: 心声/读心（世界骤静）→ 锁嘴
-  # none       : 无人说话 → 锁嘴
-  mouth_map:
-    onscreen: "speaking naturally, visible mouth movement, no discernible words"
-    inner_voice: "lips closed, silent, contemplative expression"
-    none: "lips closed, silent"
-  # 音轨：统一无音乐（音乐后期加），给正向环境音
-  audio_suffix: "ambient sound only, no music, no spoken words"
-  # 心声镜头专属：读心=世界骤静，符合剧情设定
-  inner_voice_audio: "near silence, ambient sound fading out, no music, no voices"
-  # location → 环境音（正向填充音轨，避免 Veo 塞废话）
+  mode: dubbed_en
+  accent: "American accent"
+
+  # ---- dubbed_en：英文口播模式 ----
+  dubbed_en:
+    # onscreen：引用英文台词，要求自然口型 + 情绪语气
+    # 说话镜头景别下限 MCU（近景利于展示口型对齐，Veo英文lip-sync够强）
+    onscreen_tpl: "{speaker} looks and speaks, saying: \"{line_en}\", {tone} delivery, natural lip sync, {accent}"
+    # 多角色：只让说话者开口，其他人静默倾听（Veo多人对话易乱）
+    onscreen_multi_tpl: "{speaker} speaks, saying: \"{line_en}\", {tone} delivery, natural lip sync, {accent}; {others} stay silent with closed lips, listening"
+    # inner_voice：心声=画外音(voiceover)，人物不动嘴，世界骤静
+    inner_voice_tpl: "{speaker} stays silent with lips closed, a {tone} inner-monologue voiceover: \"{line_en}\", {accent}"
+    none_mouth: "lips closed, no speaking"
+    # 音轨：说话镜头压环境音突出人声；无台词镜头给环境音
+    dialogue_audio: "clean dialogue, minimal room tone, no music"
+    inner_voice_audio: "near silence, ambient sound fading out, voiceover only, no music"
+    ambient_suffix: "ambient sound only, no music, no dialogue"
+    dialogue_shot_floor: "MCU"
+
+  # ---- post_dub：后期配音模式（保留，切换用）----
+  post_dub:
+    mouth_map:
+      onscreen: "speaking naturally, visible mouth movement, no discernible words"
+      inner_voice: "lips closed, silent, contemplative expression"
+      none: "lips closed, silent"
+    audio_suffix: "ambient sound only, no music, no spoken words"
+    inner_voice_audio: "near silence, ambient sound fading out, no music, no voices"
+    dialogue_shot_floor: "MCU"
+
+  # location → 环境音（两模式共用）
   ambient_map:
     "Nianxiang coffee shop": "faint espresso machine hum, distant street traffic"
     "cramped noodle restaurant": "sizzling wok, exhaust fan droning, clinking bowls"
@@ -140,5 +158,11 @@ audio_control:
     "rain-soaked alley outside the coffee shop": "steady rain, water dripping from eaves"
     "small park": "birdsong, rustling leaves, distant children"
   default_ambient: "quiet room tone"
-  # 有台词镜头强制景别下限（避免怼脸对不上口型）；ECU→MCU
-  dialogue_shot_floor: "MCU"
+  # 情绪→英文语气词（配音语气）
+  tone_map:
+    Shock: "startled, sharp"
+    Tension: "tense, low"
+    Sadness: "soft, wavering"
+    Warmth: "warm, gentle"
+    Mystery: "hushed, uneasy"
+    Neutral: "calm, even"

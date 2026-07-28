@@ -25,6 +25,7 @@
     Quiet, watchful, a little melancholic; the look of someone who listens more than
     she speaks. Soft natural lighting, photorealistic, cinematic portrait.
   short: "young barista, beige linen apron, burn scar on ring finger"
+  flow_voice: "Soft, low, slightly husky female voice, measured and quiet, a subtle weariness beneath, American accent"
   pronouns: ["她", "姑娘", "女孩", "老板", "围裙"]
 
 顾深:
@@ -40,6 +41,7 @@
     emotionally reserved — like a mathematician who never shows his cards.
     Soft window light, photorealistic, cinematic portrait.
   short: "tall man, charcoal suit, calm grey eyes"
+  flow_voice: "Calm, deep, controlled male voice, precise and clipped, emotionally restrained, American accent"
   pronouns: ["他", "男人", "西装男", "灰色西装", "顾客", "西装", "领带"]
 
 林可:
@@ -55,6 +57,7 @@
     canvas art bag slung across her body. Warm, protective, talks fast.
     Natural daylight, photorealistic, cinematic portrait.
   short: "ponytail, colorful nails, mustard cardigan, art bag"
+  flow_voice: "Bright, warm, fast-paced female voice, energetic and expressive, American accent"
   pronouns: ["她"]
 
 陈锐:
@@ -70,6 +73,7 @@
     carries the weariness of a man who gave something up long ago.
     Cool office lighting, photorealistic, cinematic portrait.
   short: "square jaw, cropped hair, navy polo, expensive watch"
+  flow_voice: "Gruff, low, hard-edged male voice, transactional and world-weary, American accent"
   pronouns: ["他"]
 
 苏远:
@@ -84,6 +88,7 @@
     the same features aged into late teens. Soft nostalgic lighting, slightly faded
     film look, photorealistic portrait.
   short: "young boy, round face, gap tooth, warm crescent-eyed smile"
+  flow_voice: "Young boy's voice around 8 years old, soft and gentle, American accent"
   pronouns: ["他"]
 
 外婆:
@@ -97,4 +102,5 @@
     holds a copper coffee kettle. Kind, unhurried, radiates the warmth of an old
     coffee shop. Golden warm light, soft focus, nostalgic photorealistic portrait.
   short: "elderly woman, white hair, blue apron"
+  flow_voice: "Elderly female voice in her 70s, gentle, unhurried, warm, American accent"
   pronouns: ["她"]

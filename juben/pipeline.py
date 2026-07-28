@@ -617,21 +617,67 @@ class PromptRenderer:
         if audio: parts.append(audio)
         return ", ".join(parts)
 
+    def _spk_en(self, shot):
+        """dialogue_speaker → 英文名（已是英文则原样返回）"""
+        chars = shot.get("characters", [])
+        spk = shot.get("dialogue_speaker", "")
+        if spk in chars:
+            return spk
+        info = self.chars.get(spk)
+        return info.get("en", "") if isinstance(info, dict) else ""
+
     def _audio_parts(self, shot, location):
-        """返回 (口型指令, 音轨指令)；无角色时不加口型。
-        多角色 onscreen：只有说话者(dialogue_speaker)嘴动，其他人锁嘴，避免 Veo 多人对话混乱。"""
+        """返回 (表演/口型指令, 音轨指令)。支持两种模式：
+        dubbed_en : Veo 直接出英文配音+口型（出海）
+        post_dub  : 嘴动不吐词/锁嘴，后期配音"""
         if not self.audio_cfg.get("enabled"):
             return "", ""
+        mode = self.audio_cfg.get("mode", "post_dub")
         vt = shot.get("voice_type", "none")
         chars = shot.get("characters", [])
-        mm = self.audio_cfg.get("mouth_map", {})
+        ambient = self.audio_cfg.get("ambient_map", {}).get(
+            location, self.audio_cfg.get("default_ambient", ""))
+        if mode == "dubbed_en":
+            return self._audio_dubbed_en(shot, vt, chars, ambient)
+        return self._audio_post_dub(shot, vt, chars, ambient)
+
+    def _audio_dubbed_en(self, shot, vt, chars, ambient):
+        cfg = self.audio_cfg.get("dubbed_en", {})
+        accent = self.audio_cfg.get("accent", "American accent")
+        tone = self.audio_cfg.get("tone_map", {}).get(shot.get("emotion", "Neutral"), "calm, even")
+        spk_en = self._spk_en(shot)
+        line_en = shot.get("line_en", "")
+        mouth, audio = "", ""
+        if vt == "onscreen" and line_en and spk_en:
+            if len(chars) > 1:
+                others = [c for c in chars if c != spk_en]
+                mouth = cfg.get("onscreen_multi_tpl", "").format(
+                    speaker=spk_en, line_en=line_en, tone=tone, accent=accent,
+                    others=", ".join(others))
+            else:
+                mouth = cfg.get("onscreen_tpl", "").format(
+                    speaker=spk_en, line_en=line_en, tone=tone, accent=accent)
+            audio = cfg.get("dialogue_audio", "")
+        elif vt == "inner_voice" and line_en:
+            spk = spk_en or (chars[0] if chars else "the character")
+            mouth = cfg.get("inner_voice_tpl", "").format(
+                speaker=spk, line_en=line_en, tone=tone, accent=accent)
+            iva = cfg.get("inner_voice_audio", "")
+            audio = f"{ambient}, {iva}" if ambient else iva
+        else:
+            if chars:
+                mouth = cfg.get("none_mouth", "lips closed, no speaking")
+            suffix = cfg.get("ambient_suffix", "")
+            audio = f"{ambient}, {suffix}" if ambient else suffix
+        return mouth, audio
+
+    def _audio_post_dub(self, shot, vt, chars, ambient):
+        cfg = self.audio_cfg.get("post_dub", {})
+        mm = cfg.get("mouth_map", {})
         mouth = ""
         if chars:
             if vt == "onscreen" and len(chars) > 1:
-                # dialogue_speaker 可能已是英文名，或中文名(需映射到 en)
-                spk = shot.get("dialogue_speaker", "")
-                spk_en = spk if spk in chars else (
-                    self.chars.get(spk, {}).get("en", "") if isinstance(self.chars.get(spk), dict) else "")
+                spk_en = self._spk_en(shot)
                 if spk_en and spk_en in chars:
                     others = [c for c in chars if c != spk_en]
                     mouth = f"{spk_en} {mm.get('onscreen','')}; {', '.join(others)} listening with lips closed"
@@ -639,13 +685,10 @@ class PromptRenderer:
                     mouth = mm.get("onscreen", "")
             else:
                 mouth = mm.get(vt, "")
-        # 音轨：心声镜头用"骤静"，其余用环境音
-        ambient = self.audio_cfg.get("ambient_map", {}).get(
-            location, self.audio_cfg.get("default_ambient", ""))
         if vt == "inner_voice":
-            audio = self.audio_cfg.get("inner_voice_audio", "")
+            audio = cfg.get("inner_voice_audio", "")
         else:
-            suffix = self.audio_cfg.get("audio_suffix", "")
+            suffix = cfg.get("audio_suffix", "")
             audio = f"{ambient}, {suffix}" if ambient else suffix
         return mouth, audio
 

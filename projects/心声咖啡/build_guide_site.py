@@ -46,8 +46,8 @@ def snap_dur(d):
     return "4" if d <= 5 else ("6" if d <= 7 else "8")
 
 VOICE_BADGE = {
-    "onscreen":   ("🗣 说话·嘴动", "vspeak"),
-    "inner_voice":("🧠 心声·锁嘴", "vinner"),
+    "onscreen":   ("🗣 说英文台词", "vspeak"),
+    "inner_voice":("🧠 心声·英文旁白", "vinner"),
     "none":       ("🤐 无台词·锁嘴", "vnone"),
 }
 
@@ -63,17 +63,25 @@ for name, info in chars.items():
         continue
     en = info.get("en", "")
     portrait = info.get("flow_portrait", "") or info.get("short", "")
+    voice = info.get("flow_voice", "")
     role = role_cn.get(info.get("role", ""), info.get("role", ""))
+    voice_block = f"""
+      <div class="vlabel">🔊 声音描述（填进 Flow「自定义声音效果」）</div>
+      <div class="prow">
+        <pre>{esc(voice)}</pre>
+        <button class="copy" onclick="cp(this, this.previousElementSibling.textContent)">📋 复制声音</button>
+      </div>""" if voice else ""
     char_cards += f"""<div class="ccard">
       <div class="chead">
         <span class="cn">{esc(name)}</span>
         <span class="cen">🎬 Flow 命名：<b>{esc(en)}</b></span>
         <span class="badge">{esc(role)}</span>
       </div>
+      <div class="vlabel">🎨 定妆提示词（生成角色参考图）</div>
       <div class="prow">
         <pre id="c_{esc(en).replace(' ','_')}">{esc(portrait)}</pre>
         <button class="copy" onclick="cp(this, this.previousElementSibling.textContent)">📋 复制定妆</button>
-      </div>
+      </div>{voice_block}
     </div>"""
 
 nav = "".join(f'<a href="#ch{c["num"]}">第{c["num"]}章</a>' for c in chapters)
@@ -94,12 +102,16 @@ for c in chapters:
         au = s.get("audio", {})
         dlg_zh = au.get("dialogue_zh", "")
         vo_zh = au.get("voiceover_zh", "")
+        line_en = au.get("line_en", "")
         spk = au.get("dialogue_speaker", "")
         line_html = ""
+        if line_en:
+            tag_cn = "🇬🇧 英文台词" if dlg_zh else "🇬🇧 英文旁白"
+            line_html += f'<div class="dlg en">{tag_cn}（{esc(spk)}）：{esc(line_en)}</div>'
         if dlg_zh:
-            line_html += f'<div class="dlg">🗣 台词（{esc(spk)}）：{esc(dlg_zh)}</div>'
+            line_html += f'<div class="dlg">🀄 中文原台词：{esc(dlg_zh)}</div>'
         if vo_zh:
-            line_html += f'<div class="dlg vo">🧠 心声：{esc(vo_zh)}</div>'
+            line_html += f'<div class="dlg vo">🀄 中文原心声：{esc(vo_zh)}</div>'
         char_html = f'<span class="tag ch">🎭 {esc(chars_in)}</span>' if chars_in else ""
         pid = f'p{c["num"]}_{sid}'
         rows += f"""<div class="shot">
@@ -149,6 +161,7 @@ page = f"""<!DOCTYPE html>
   .cen {{ color:var(--dim); font-size:13px; }}
   .cen b {{ color:var(--acc); }}
   .badge {{ background:#2a2e38; border-radius:20px; padding:2px 10px; font-size:12px; color:var(--acc); }}
+  .vlabel {{ font-size:12px; color:var(--dim); margin:10px 0 4px; }}
   nav {{ position:sticky; top:0; background:rgba(15,17,21,.95); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); padding:10px; z-index:10; overflow-x:auto; white-space:nowrap; }}
   nav a {{ color:var(--dim); text-decoration:none; padding:4px 9px; font-size:13px; border-radius:6px; }}
   nav a:hover {{ background:var(--card); color:var(--acc); }}
@@ -165,6 +178,7 @@ page = f"""<!DOCTYPE html>
   .tag.vnone {{ background:#22262f; color:var(--dim); }}
   .dlg {{ background:#1e2530; border-left:3px solid var(--acc2); padding:6px 10px; border-radius:5px; font-size:14px; margin-bottom:8px; }}
   .dlg.vo {{ border-left-color:#9090e0; }}
+  .dlg.en {{ background:#1a2a1e; border-left-color:#5fd18f; color:#d8f0e0; font-weight:500; }}
   .prow {{ position:relative; }}
   pre {{ background:#0b0d11; border:1px solid var(--line); border-radius:8px; padding:12px 14px; padding-right:80px; white-space:pre-wrap; word-break:break-word; font-size:13px; margin:0; font-family:ui-monospace,Menlo,Consolas,monospace; color:#cdd3db; }}
   .copy {{ position:absolute; top:8px; right:8px; background:var(--acc); color:#000; border:none; border-radius:6px; padding:6px 10px; font-size:12px; cursor:pointer; font-weight:bold; }}
@@ -192,24 +206,24 @@ page = f"""<!DOCTYPE html>
   <ol class="steps">
     <li><b>第一步 · 建角色（只做一次）</b>：打开 <span class="kbd">Google Flow</span>（labs.google/flow），在 <b>Ingredients / 角色</b> 里为 6 个角色各建一个，粘贴下面「🎭 先建角色」区的<b>定妆提示词</b>生成参考图，命名用<b>英文名</b>（Su Nian、Gu Shen…，<b>必须一字不差</b>）。</li>
     <li><b>第二步 · 逐镜头生成</b>：找到章节里的镜头，点 <span class="kbd">📋 复制</span> 复制提示词，粘贴到 Flow，<b>选中该镜头出现的角色 Ingredient</b>，模型选 <b>Veo 3.1</b>、比例 <b>9:16 竖屏</b>、时长按镜头上的 <span class="kbd">⏱ x秒档</span>，生成。</li>
-    <li><b>第三步 · 后期</b>：所有镜头导入 <b>剪映</b> 按顺序拼接，配<b>中文配音</b> + <b>中文字幕</b>（SRT 在 <span class="kbd">srt_subtitles/</span>），加音乐。</li>
+    <li><b>第三步 · 后期</b>：镜头导入 <b>剪映</b> 按顺序拼接。英文语音 Veo 已生成好，<b>无需再配音</b>；只需加 <b>英文字幕</b>（SRT 在 <span class="kbd">srt_subtitles/</span>，用于 YouTube CC）+ 音乐/音效。想做中文版就另配中文音轨。</li>
   </ol>
   <div class="warn">
-    <b>⚠️ 关于「嘴」和「配音」——务必理解</b><br>
-    Veo 生成中文语音很烂（成功率约30%），所以<b>配音一律在剪映后期做</b>，Flow 只出画面。提示词里已按镜头自动写好口型控制：<br>
-    • <span class="tag vspeak">🗣 说话·嘴动</span>角色嘴会自然张合但不吐英文词 → 剪映配中文台词，嘴动对得上；<br>
-    • <span class="tag vinner">🧠 心声·锁嘴</span>读心/心声镜头，嘴<b>不动</b>（世界骤静）→ 剪映配中文心声旁白；<br>
+    <b>🌍 出海模式：Veo 直接出美式英文配音</b><br>
+    这是英文出海版，<b>Veo 3.1 直接生成角色的英文语音+精准口型</b>（这是它最强的能力），提示词里已按镜头写好台词和口型：<br>
+    • <span class="tag vspeak">🗣 说英文台词</span>角色开口说提示词里的英文台词，口型自动对齐（美式口音）；双人镜头只让说话者开口，另一个闭嘴听；<br>
+    • <span class="tag vinner">🧠 心声·英文旁白</span>读心镜头，嘴<b>不动</b>（世界骤静），英文台词作为画外音旁白；<br>
     • <span class="tag vnone">🤐 无台词·锁嘴</span>没人说话，嘴<b>不动</b>。<br>
-    双人对话镜头只让<b>说话的那个人</b>嘴动，另一个闭嘴听。
+    <b>建角色时记得填「声音描述」</b>（自定义声音效果），美式口音，声线见剧本设定。生成后如果语音不满意，重 roll 几次或微调台词。
   </div>
   <div class="info">
-    <b>💡 时长档</b>：Flow 每段只能生成 4/6/8 秒。镜头上的 <span class="tag fdur">⏱ x秒档</span> 已按剧情把时长吸附到最近档，照着选即可。需要更长的连续镜头用 Flow 的 <b>Extend</b>；换机位就新建镜头。
+    <b>💡 时长档</b>：Flow 每段只能生成 4/6/8 秒。镜头上的 <span class="tag fdur">⏱ x秒档</span> 已按剧情吸附到最近档，照着选即可。台词长的镜头选大一档留出说话时间。需要更长连续镜头用 <b>Extend</b>；换机位就新建镜头。
   </div>
 </section>
 
 <section id="chars" class="card">
-  <h2>🎭 先建角色（第一步 · 定妆参考图）</h2>
-  <p class="sub">在 Flow 的 Ingredients/角色里各建一个，粘贴定妆提示词生成参考图，用英文名命名。之后每个镜头选中对应角色即可保持长相一致——所以镜头提示词里<b>只写角色名</b>，不再重复长相。</p>
+  <h2>🎭 先建角色（第一步 · 定妆图 + 声音）</h2>
+  <p class="sub">在 Flow 的 Ingredients/角色里各建一个，粘贴定妆提示词生成参考图，用英文名命名，并填「声音描述」（美式口音）。之后每个镜头选中对应角色即可保持长相+声线一致——镜头提示词里<b>只写角色名</b>，不重复长相。</p>
   {char_cards}
 </section>
 

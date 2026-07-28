@@ -83,11 +83,18 @@ def run(project_dir: Path = PROJECT_DIR, chapters: range = range(1, 21)):
             # voice_type 供渲染器做口型/音轨控制（onscreen嘴动/inner_voice锁嘴/none锁嘴）
             shot["voice_type"] = bd.get("voice_type", "none")
             shot["dialogue_speaker"] = bd.get("dialogue_speaker", "")
+            # 英文台词(出海配音)：onscreen取line_en，inner_voice取inner_voice_en
+            vt = bd.get("voice_type", "none")
+            if vt == "inner_voice":
+                shot["line_en"] = bd.get("inner_voice_en", "")
+            else:
+                shot["line_en"] = bd.get("line_en", "")
             shot["veo_prompt"] = renderer.render(shot, shot_loc)
             shot["audio"] = {
                 "dialogue_zh": bd.get("spoken_dialogue", ""),
                 "dialogue_speaker": bd.get("dialogue_speaker", ""),
                 "voiceover_zh": bd.get("inner_voice", ""),
+                "line_en": shot["line_en"],
                 "voice_type": bd.get("voice_type", "none"),
                 "subtitle": bd.get("inner_voice", "")[:30] if bd.get("inner_voice") else "",
                 "emotion_tag": compiler.voice_emotion.get(shot.get("emotion", "Neutral"), "calm"),
