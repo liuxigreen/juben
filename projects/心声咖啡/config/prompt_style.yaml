@@ -1,10 +1,17 @@
 # Prompt渲染风格配置
 
 # 当前使用的renderer
-active_renderer: "flow_v1"
+active_renderer: "flow_character_v2"
 
 # 多renderer定义
 renderers:
+  flow_character_v2:
+    description: "Google Flow — 角色引用型：长相由 Flow 角色系统保证，提示词只引用角色名"
+    style: "hybrid"
+    character_first: true
+    character_mode: "reference"
+    suffix: "cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field"
+
   veo_v1:
     description: "Google Veo — 叙事型，完整句子"
     style: "narrative"
@@ -105,3 +112,33 @@ beat_merge:
     - focus_object_change
     - location_change
     - chapter_end_hook
+
+# ═══════════════════════════════════════════════════════════
+# 音频 / 口型控制（Veo 3.1 适配）
+# ═══════════════════════════════════════════════════════════
+# 背景：Veo 默认会给人物配英文语音+乱动嘴。中文配音在剪映后期做。
+# 策略：三类镜头分别控制口型 + 音轨，避免"只出声嘴不动"或"说英文乱语"。
+audio_control:
+  enabled: true
+  # voice_type → 口型/表演指令 + 音轨指令
+  # onscreen   : 角色在说台词（后期配中文）→ 嘴要动，但不吐具体词
+  # inner_voice: 心声/读心（世界骤静）→ 锁嘴
+  # none       : 无人说话 → 锁嘴
+  mouth_map:
+    onscreen: "speaking naturally, visible mouth movement, no discernible words"
+    inner_voice: "lips closed, silent, contemplative expression"
+    none: "lips closed, silent"
+  # 音轨：统一无音乐（音乐后期加），给正向环境音
+  audio_suffix: "ambient sound only, no music, no spoken words"
+  # 心声镜头专属：读心=世界骤静，符合剧情设定
+  inner_voice_audio: "near silence, ambient sound fading out, no music, no voices"
+  # location → 环境音（正向填充音轨，避免 Veo 塞废话）
+  ambient_map:
+    "Nianxiang coffee shop": "faint espresso machine hum, distant street traffic"
+    "cramped noodle restaurant": "sizzling wok, exhaust fan droning, clinking bowls"
+    "dark narrow alley at night": "distant city hum, dripping water, faint wind"
+    "rain-soaked alley outside the coffee shop": "steady rain, water dripping from eaves"
+    "small park": "birdsong, rustling leaves, distant children"
+  default_ambient: "quiet room tone"
+  # 有台词镜头强制景别下限（避免怼脸对不上口型）；ECU→MCU
+  dialogue_shot_floor: "MCU"

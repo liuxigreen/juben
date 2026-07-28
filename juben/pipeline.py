@@ -463,6 +463,9 @@ class ShotCompiler:
             return "WS"
         if beat.get("space") == "Mental":
             return "CU"
+        # onscreen 对话优先于 focus_object：宁可放弃道具特写，也不要怼脸(ECU)说话对不上口型
+        if beat.get("spoken_dialogue") and beat.get("voice_type") == "onscreen":
+            return "MS" if last == "MCU" else "MCU"
         focus = beat.get("focus_object", "")
         if focus:
             return "CU" if (last == "ECU" or ecu >= 2) else "ECU"
@@ -566,6 +569,10 @@ class PromptRenderer:
         self.renderer_style = self.renderer_cfg.get("style", "hybrid")
         self.suffix = self.renderer_cfg.get("suffix", "cinematic, 9:16 vertical, photorealistic, 4K")
         self.char_first = self.renderer_cfg.get("character_first", True)
+        # character_mode: "reference"=只引用角色名(配合Flow角色系统) | "inline"=每镜头塞长相描述
+        self.char_mode = self.renderer_cfg.get("character_mode", "inline")
+        # 音频/口型控制（Veo 3.1 适配）
+        self.audio_cfg = style.get("audio_control", {})
         self._count = {}
 
     def reset(self):
@@ -588,7 +595,7 @@ class PromptRenderer:
             cp = []
             for ce in shot.get("characters", []):
                 self._count[ce] = self._count.get(ce, 0) + 1
-                cp.append(f"{ce} ({self._tag(ce)})")
+                cp.append(self._char_phrase(ce))
             if cp: parts.append(f"featuring {', '.join(cp)}")
         act = shot.get("action_visual", "")
         if act: parts.append(act)
@@ -596,15 +603,51 @@ class PromptRenderer:
             cp = []
             for ce in shot.get("characters", []):
                 self._count[ce] = self._count.get(ce, 0) + 1
-                cp.append(f"{ce} ({self._tag(ce)})")
+                cp.append(self._char_phrase(ce))
             if cp: parts.append(f"featuring {', '.join(cp)}")
         anchors = shot.get("visual_anchors", [])
         if anchors: parts.append(f"close-up detail on {', '.join(anchors)}")
         if location: parts.append(f"in {location}")
         parts.append(self.LIGHT_EN.get(shot.get("lighting", "Natural"), "natural daylight"))
         parts.append(self.MOOD_EN.get(shot.get("emotion", "Neutral"), "neutral, observational"))
+        # 口型 + 音轨控制层（Veo 3.1）
+        mouth, audio = self._audio_parts(shot, location)
+        if mouth: parts.append(mouth)
         parts.append(self.suffix)
+        if audio: parts.append(audio)
         return ", ".join(parts)
+
+    def _audio_parts(self, shot, location):
+        """返回 (口型指令, 音轨指令)；无角色时不加口型。
+        多角色 onscreen：只有说话者(dialogue_speaker)嘴动，其他人锁嘴，避免 Veo 多人对话混乱。"""
+        if not self.audio_cfg.get("enabled"):
+            return "", ""
+        vt = shot.get("voice_type", "none")
+        chars = shot.get("characters", [])
+        mm = self.audio_cfg.get("mouth_map", {})
+        mouth = ""
+        if chars:
+            if vt == "onscreen" and len(chars) > 1:
+                # dialogue_speaker 可能已是英文名，或中文名(需映射到 en)
+                spk = shot.get("dialogue_speaker", "")
+                spk_en = spk if spk in chars else (
+                    self.chars.get(spk, {}).get("en", "") if isinstance(self.chars.get(spk), dict) else "")
+                if spk_en and spk_en in chars:
+                    others = [c for c in chars if c != spk_en]
+                    mouth = f"{spk_en} {mm.get('onscreen','')}; {', '.join(others)} listening with lips closed"
+                else:
+                    mouth = mm.get("onscreen", "")
+            else:
+                mouth = mm.get(vt, "")
+        # 音轨：心声镜头用"骤静"，其余用环境音
+        ambient = self.audio_cfg.get("ambient_map", {}).get(
+            location, self.audio_cfg.get("default_ambient", ""))
+        if vt == "inner_voice":
+            audio = self.audio_cfg.get("inner_voice_audio", "")
+        else:
+            suffix = self.audio_cfg.get("audio_suffix", "")
+            audio = f"{ambient}, {suffix}" if ambient else suffix
+        return mouth, audio
 
     def _render_keyword(self, shot, location):
         """关键词型（Kling）：逗号分隔关键词"""
@@ -636,7 +679,15 @@ class PromptRenderer:
         parts.append(self.suffix)
         return ", ".join(parts)
 
+    def _char_phrase(self, ce):
+        # reference 模式：只输出角色名（无括号描述），配合 Flow 角色系统
+        tag = self._tag(ce)
+        return f"{ce} ({tag})" if tag else ce
+
     def _tag(self, ce):
+        # reference 模式：只用角色名，长相由 Flow 角色系统保证一致（不塞描述）
+        if self.char_mode == "reference":
+            return ""
         for info in self.chars.values():
             if info.get("en") == ce:
                 return info.get("full", ce) if self._count.get(ce, 0) <= 1 else info.get("short", ce)

@@ -3,118 +3,124 @@
     "beat_id": 1,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "young couple"
     ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian tears roll down cheeks",
-    "spoken_dialogue": "你从来不听我说话",
-    "dialogue_speaker": "Su Nian",
+    "primary_char": "young couple",
+    "action_visual": "a young couple argues at the counter, the girl crying that he never listens, the boy saying she is always like this, while Su Nian stands behind the counter unsure whether to interject",
+    "spoken_dialogue": "你从来不听我说话。",
+    "dialogue_speaker": "young couple",
     "inner_voice": "",
     "voice_type": "onscreen",
     "focus_object": "",
-    "emotion": "Sadness",
-    "source_text": "一对年轻情侣在吧台前吵起来了。\n女孩哭着说\"你从来不听我说话\"，男孩说\"你每次都这样\"。苏念站在吧台后面，不知道该不该插嘴。"
+    "emotion": "Tension",
+    "location": "Nianxiang coffee shop",
+    "source_text": "一对年轻情侣在吧台前吵起来了。你从来不听我说话"
   },
   {
     "beat_id": 2,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
+      "Su Nian",
+      "young couple"
     ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian finishes preparing and carries the cup over",
+    "primary_char": "young couple",
+    "action_visual": "the young man orders two lattes, slams his wallet on the table; Su Nian serves them, the girl lowers her head and does not drink, then the boy stands and goes to the restroom",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "男孩点了两杯拿铁，摔了钱包在桌上。\n苏念做好端过去。女孩低着头，不喝。"
+    "focus_object": "two lattes on the table",
+    "emotion": "Tension",
+    "location": "Nianxiang coffee shop",
+    "source_text": "男孩点了两杯拿铁，摔了钱包。男孩去洗手间"
   },
   {
     "beat_id": 3,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian takes a slow sip",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "男孩喝了一口，站起来去洗手间。\n苏念看着那杯还在冒热气的拿铁——女孩的那杯。"
-  },
-  {
-    "beat_id": 4,
     "space": "Transition",
     "characters_present": [
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian lifts the cup, fingers trembling around the warm rim",
+    "action_visual": "Su Nian looks at the girl's still-steaming latte, picks it up and closes her eyes",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
-    "focus_object": "cup rim",
+    "focus_object": "the girl's steaming latte",
     "emotion": "Tension",
-    "source_text": "[event: mind_reading]",
-    "event_type": "mind_reading"
+    "location": "Nianxiang coffee shop",
+    "source_text": "她端起来，闭眼"
   },
   {
-    "beat_id": 5,
+    "beat_id": 4,
     "space": "Mental",
     "characters_present": [
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian closes eyes, eyelashes trembling. Background figures freeze, steam hangs motionless",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Shock",
-    "source_text": "[event: mind_reading]",
-    "event_type": "mind_reading"
-  },
-  {
-    "beat_id": 6,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian looks down at left hand, the scar on the ring finger has changed",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "scar on ring finger",
-    "emotion": "Mystery",
-    "source_text": "[event: mind_reading]",
-    "event_type": "mind_reading"
-  },
-  {
-    "beat_id": 7,
-    "space": "Mental",
-    "characters_present": [
-      "Gu Shen",
-      "Chen Rui",
-      "Su Yuan"
-    ],
-    "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen stands still, shoulders slightly tense, eyes unfocused",
+    "action_visual": "the world falls silent; a shallow, simple grievance surfaces — the girl only wanted him to remember her birthday, just once",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "……他不知道我为什么生气。他永远不知道。我只是想让他记住我的生日，就一次……",
     "voice_type": "inner_voice",
     "focus_object": "",
+    "emotion": "Sadness",
+    "location": "Nianxiang coffee shop",
+    "source_text": "他不知道我为什么生气。我只是想让他记住我的生日"
+  },
+  {
+    "beat_id": 5,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian sets the cup down; the cost is small — reading a stranger only loses a trivial memory; she looks at her left inner wrist where a small scratch she never recalled has vanished",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "vanished scratch on left wrist",
     "emotion": "Neutral",
-    "source_text": "世界安静了。\n*\"……他不知道我为什么生气。他永远不知道。我只是想让他记住我的生日，就一次……\"*"
+    "location": "Nianxiang coffee shop",
+    "source_text": "代价应该很小。左手手腕内侧一道小划痕消失了。无所谓"
+  },
+  {
+    "beat_id": 6,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "young couple"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "the boy returns; Su Nian leans to whisper in the girl's ear to tell him the real reason she's angry — the birthday",
+    "spoken_dialogue": "告诉他你为什么生气。不是因为那件事，是因为生日。",
+    "dialogue_speaker": "Su Nian",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Warmth",
+    "location": "Nianxiang coffee shop",
+    "source_text": "苏念在女孩耳边轻声说：告诉他你为什么生气，是因为生日"
+  },
+  {
+    "beat_id": 7,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "young couple"
+    ],
+    "primary_char": "young couple",
+    "action_visual": "ten minutes later the boy kneels before the girl, pulling a crumpled pair of movie tickets from his pocket — next Tuesday, her birthday — and the girl laughs through her tears",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "crumpled movie tickets",
+    "emotion": "Warmth",
+    "location": "Nianxiang coffee shop",
+    "source_text": "男孩跪下来，掏出两张电影票，女孩生日那天。女孩哭着笑了"
   },
   {
     "beat_id": 8,
@@ -123,14 +129,15 @@
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian stands still, shoulders slightly tense, eyes unfocused",
+    "action_visual": "clearing up, Su Nian notices a pink lipstick print on the girl's latte cup rim — but she wore no lipstick when she drank it",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "简单的心声。浅层的委屈。"
+    "focus_object": "pink lipstick print on the cup rim",
+    "emotion": "Mystery",
+    "location": "Nianxiang coffee shop",
+    "source_text": "女孩的拿铁杯沿有一个粉色唇印。她刚才喝的时候没涂口红"
   },
   {
     "beat_id": 9,
@@ -139,184 +146,14 @@
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian sets the cup down on the counter",
+    "action_visual": "Su Nian washes the cup, hot water erasing the print; she looks at her hands — nothing missing — but feels a tiny hollow inside, like a pulled tooth the tongue keeps seeking",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "苏念放下杯子。代价应该很小——读心一个陌生人，失去的是一段无关紧要的记忆。"
-  },
-  {
-    "beat_id": 10,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian",
-      "Lin Ke",
-      "grandmother"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian looks down",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Mystery",
-    "source_text": "她低头看手。左手手腕内侧——一道她不记得什么时候有的小划痕——消失了。\n无所谓。她甚至不记得那道划痕存在过。"
-  },
-  {
-    "beat_id": 11,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian",
-      "Gu Shen",
-      "Chen Rui",
-      "Su Yuan"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian bends down",
-    "spoken_dialogue": "告诉他你为什么生气。不是因为那件事，是因为生日。",
-    "dialogue_speaker": "Su Nian",
-    "inner_voice": "",
-    "voice_type": "onscreen",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "男孩回来了。苏念走过去，弯腰在女孩耳边轻声说了一句：\"告诉他你为什么生气。不是因为那件事，是因为生日。\""
-  },
-  {
-    "beat_id": 12,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian freezes mid-motion",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Shock",
-    "source_text": "女孩愣住了。"
-  },
-  {
-    "beat_id": 13,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian kneels down",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "苏念回到吧台后面。十分钟后，男孩红着脸在女孩面前跪下来，从口袋里掏出一张皱巴巴的电影票——两张，下周二，女孩生日那天。"
-  },
-  {
-    "beat_id": 14,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian smiles faintly",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
+    "focus_object": "hot water erasing the lipstick print",
     "emotion": "Sadness",
-    "source_text": "女孩哭着笑了。"
-  },
-  {
-    "beat_id": 15,
-    "space": "Physical",
-    "characters_present": [
-      "Gu Shen",
-      "Chen Rui",
-      "Su Yuan"
-    ],
-    "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen drains the cup in one gulp",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "他们走了。两杯拿铁都喝完了，小费留了二十块。"
-  },
-  {
-    "beat_id": 16,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "close-up of the changed object",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "changed object",
-    "emotion": "Shock",
-    "source_text": "[event: evidence_discover]",
-    "event_type": "evidence_discover"
-  },
-  {
-    "beat_id": 17,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian freezes, breath catching",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Tension",
-    "source_text": "[event: evidence_discover]",
-    "event_type": "evidence_discover"
-  },
-  {
-    "beat_id": 18,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian turns on the faucet",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "苏念把杯子放进水池，打开水龙头。"
-  },
-  {
-    "beat_id": 19,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian",
-      "Lin Ke",
-      "grandmother"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian looks down",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "lipstick mark",
-    "emotion": "Neutral",
-    "source_text": "热水冲掉唇印。她低头看自己的手——\n什么都没少。\n但她心里有一个微小的空洞，像一颗牙被拔掉后舌头总是不自觉去舔的那个位置。\n她刚才读了一个陌生人的心。\n代价小到"
+    "location": "Nianxiang coffee shop",
+    "source_text": "热水冲掉唇印。她心里有一个微小的空洞。积少成多"
   }
 ]

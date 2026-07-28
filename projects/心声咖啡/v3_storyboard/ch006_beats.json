@@ -6,561 +6,170 @@
       "Gu Shen"
     ],
     "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen stands still, shoulders slightly tense, eyes unfocused",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
+    "action_visual": "on the sixth day it rains outside; Gu Shen leaves his wet umbrella at the door, dark water stains on his suit shoulders, and chooses a window seat instead of the counter",
+    "spoken_dialogue": "美式。",
+    "dialogue_speaker": "Gu Shen",
     "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
+    "voice_type": "onscreen",
+    "focus_object": "wet umbrella at the door",
     "emotion": "Neutral",
-    "source_text": "顾深第六天来的时候，外面在下雨。"
+    "location": "Nianxiang coffee shop",
+    "source_text": "顾深第六天来，外面在下雨。他选了靠窗的位子。美式"
   },
   {
     "beat_id": 2,
     "space": "Physical",
     "characters_present": [
-      "Gu Shen",
-      "Chen Rui",
-      "Su Yuan"
+      "Su Nian",
+      "Gu Shen"
     ],
     "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen places down the door",
-    "spoken_dialogue": "美式。",
+    "action_visual": "Su Nian brings the cup; Gu Shen holds it without drinking, gazing at the rain, saying her coffee is better than downstairs and it is quiet here",
+    "spoken_dialogue": "你的咖啡比楼下的好。而且……安静。",
     "dialogue_speaker": "Gu Shen",
     "inner_voice": "",
     "voice_type": "onscreen",
     "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "他把湿伞放在门口，西装肩膀上有深色的水渍。这次他没坐吧台，而是选了靠窗的位子。\n\"美式。\""
+    "emotion": "Warmth",
+    "location": "Nianxiang coffee shop",
+    "source_text": "你的咖啡比楼下的好。而且安静"
   },
   {
     "beat_id": 3,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
-      "Gu Shen",
-      "Chen Rui",
-      "Su Yuan"
+      "Gu Shen"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian carries a steaming cup",
-    "spoken_dialogue": "你每天都来。",
+    "action_visual": "Gu Shen calls her back to ask why she won't consider cooperation; Su Nian answers that this shop was left to her by her grandmother, who has passed away",
+    "spoken_dialogue": "因为这是外婆留给我的。她去世了。",
     "dialogue_speaker": "Su Nian",
     "inner_voice": "",
     "voice_type": "onscreen",
     "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "苏念端过去。他接过杯子，没喝，只是握着。\n\"你每天都来。\"苏念说。"
+    "emotion": "Sadness",
+    "location": "Nianxiang coffee shop",
+    "source_text": "上次你说不考虑合作。因为这是外婆留给我的。去世了"
   },
   {
     "beat_id": 4,
     "space": "Physical",
     "characters_present": [
+      "Su Nian",
       "Gu Shen"
     ],
-    "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen gazes at the coffee cup",
-    "spoken_dialogue": "你的咖啡比楼下的好。",
-    "dialogue_speaker": "Gu Shen",
+    "primary_char": "Su Nian",
+    "action_visual": "Gu Shen falls silent and drinks, leaving his lip print on the rim; behind the counter Su Nian's hands tremble, remembering their fingers touched when she served him",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
     "inner_voice": "",
-    "voice_type": "onscreen",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "\"你的咖啡比楼下的好。\"顾深看着窗外的雨，\"而且……安静。\""
+    "voice_type": "none",
+    "focus_object": "his lip print on the cup rim",
+    "emotion": "Tension",
+    "location": "Nianxiang coffee shop",
+    "source_text": "顾深沉默了。杯沿留着他的唇印。苏念的手在发抖，她的手指碰到了顾深的手指"
   },
   {
     "beat_id": 5,
     "space": "Physical",
     "characters_present": [
-      "Su Nian",
-      "Gu Shen",
-      "Lin Ke",
-      "grandmother"
+      "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian turns around",
-    "spoken_dialogue": "等一下。",
-    "dialogue_speaker": "Su Nian",
+    "action_visual": "Su Nian realizes the earlier memory of the rain-girl vision is fading — she remembers seeing it but not the details — and knows she needs to read him again",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
     "inner_voice": "",
-    "voice_type": "onscreen",
+    "voice_type": "none",
     "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "苏念转身要走。\n\"等一下。\"顾深叫住她，\"上次你说不考虑合作。我想知道为什么。\""
+    "emotion": "Tension",
+    "location": "Nianxiang coffee shop",
+    "source_text": "那段记忆正在变淡。她需要再读一次"
   },
   {
     "beat_id": 6,
-    "space": "Physical",
+    "space": "Transition",
     "characters_present": [
-      "grandmother"
+      "Su Nian"
     ],
-    "primary_char": "grandmother",
-    "action_visual": "grandmother stands still, shoulders slightly tense, eyes unfocused",
-    "spoken_dialogue": "因为这是外婆留给我的。",
-    "dialogue_speaker": "grandmother",
+    "primary_char": "Su Nian",
+    "action_visual": "Gu Shen finishes and leaves; Su Nian walks over, picks up the still-warm cup and closes her eyes",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
     "inner_voice": "",
-    "voice_type": "onscreen",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "\"因为这是外婆留给我的。\"\n\"你外婆——\"\n\"去世了。\""
+    "voice_type": "none",
+    "focus_object": "coffee grounds swirling in the cup",
+    "emotion": "Tension",
+    "location": "Nianxiang coffee shop",
+    "source_text": "顾深起身要走。苏念端起杯子。杯壁还有温度。她闭眼"
   },
   {
     "beat_id": 7,
-    "space": "Transition",
+    "space": "Mental",
     "characters_present": [
-      "Gu Shen"
+      "Su Nian"
     ],
-    "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen lifts the cup, fingers trembling around the warm rim",
+    "primary_char": "Su Nian",
+    "action_visual": "the world falls silent; a clearer vision comes — Gu Shen in his office before a contract, the address 'Old Town Alley No.17' — Nianxiang's address — circled in red pen, then he rubs his temples",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "cup rim",
-    "emotion": "Tension",
-    "source_text": "[event: mind_reading]",
-    "event_type": "mind_reading"
+    "inner_voice": "为什么要亲自来？让小李去谈就行了。但那家店……那个咖啡师……她看我的眼神不像其他人。其他人看我的职位、我的公司、我的表。她看的是——",
+    "voice_type": "inner_voice",
+    "focus_object": "red pen circle on the contract",
+    "emotion": "Mystery",
+    "location": "Nianxiang coffee shop",
+    "source_text": "画面：顾深在办公室，合同地址老城区巷子17号。她看我的眼神不像其他人"
   },
   {
     "beat_id": 8,
-    "space": "Mental",
+    "space": "Physical",
     "characters_present": [
-      "Gu Shen"
+      "Su Nian"
     ],
-    "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen closes eyes, eyelashes trembling. Background figures freeze, steam hangs motionless",
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian sets the cup down, hands trembling, realizing he is not only here to acquire; she looks at her hands — the burn scar remains but the utility-knife scar on her right index finger has faded like a washed photograph",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
-    "focus_object": "",
+    "focus_object": "faded scar on right index finger",
     "emotion": "Shock",
-    "source_text": "[event: mind_reading]",
-    "event_type": "mind_reading"
+    "location": "Nianxiang coffee shop",
+    "source_text": "他不只是来收购的。右手食指那个美工刀划的痕迹淡了"
   },
   {
     "beat_id": 9,
     "space": "Physical",
     "characters_present": [
-      "Gu Shen"
+      "Su Nian"
     ],
-    "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen looks down at left hand, the scar on the ring finger has changed",
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian notices Gu Shen left his umbrella by the door, grabs it and chases out into the alley",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
-    "focus_object": "scar on ring finger",
-    "emotion": "Mystery",
-    "source_text": "[event: mind_reading]",
-    "event_type": "mind_reading"
+    "focus_object": "his umbrella left by the door",
+    "emotion": "Tension",
+    "location": "Nianxiang coffee shop",
+    "source_text": "他的伞还靠在门边。苏念拿起那把伞，追出去"
   },
   {
     "beat_id": 10,
     "space": "Physical",
     "characters_present": [
-      "Su Nian",
-      "Gu Shen",
-      "Lin Ke",
-      "Chen Rui",
-      "Su Yuan",
-      "grandmother"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian carries a steaming cup",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Tension",
-    "source_text": "苏念回到吧台后面，擦杯子。她的手在发抖——不是因为冷，是因为她想起来了：刚才端咖啡过去的时候，她的手指碰到了顾深的手指。\n她不记得什么时候开始，他的触碰会让她心"
-  },
-  {
-    "beat_id": 11,
-    "space": "Physical",
-    "characters_present": [
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "close-up of the changed object",
+    "action_visual": "the alley is empty, rain hitting the flagstones; Su Nian stands in the rain holding his umbrella, raindrops running down onto her wrist, blurring the fading scar further",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
-    "focus_object": "changed object",
-    "emotion": "Shock",
-    "source_text": "[event: evidence_discover]",
-    "event_type": "evidence_discover"
-  },
-  {
-    "beat_id": 12,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian freezes, breath catching",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Tension",
-    "source_text": "[event: evidence_discover]",
-    "event_type": "evidence_discover"
-  },
-  {
-    "beat_id": 13,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian",
-      "Lin Ke",
-      "grandmother"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian sees something",
-    "spoken_dialogue": "看到过画面",
-    "dialogue_speaker": "Su Nian",
-    "inner_voice": "",
-    "voice_type": "onscreen",
-    "focus_object": "key",
-    "emotion": "Neutral",
-    "source_text": "但现在那段记忆正在变淡。她记得\"看到过画面\"，但画面的具体内容——女孩的脸、钥匙的颜色、雨的温度——"
-  },
-  {
-    "beat_id": 14,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian",
-      "Lin Ke",
-      "grandmother"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian stands still, shoulders slightly tense, eyes unfocused",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Mystery",
-    "source_text": "模糊了。\n她需要再读一次。"
-  },
-  {
-    "beat_id": 15,
-    "space": "Physical",
-    "characters_present": [
-      "Gu Shen"
-    ],
-    "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen drains the cup in one gulp",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "watercolor painting",
-    "emotion": "Neutral",
-    "source_text": "顾深喝完了，起身要走。杯子留在桌上，咖啡渣在杯底画着漩涡。"
-  },
-  {
-    "beat_id": 16,
-    "space": "Transition",
-    "characters_present": [
-      "Su Nian"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian lifts the cup, fingers trembling around the warm rim",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "cup rim",
-    "emotion": "Tension",
-    "source_text": "[event: mind_reading]",
-    "event_type": "mind_reading"
-  },
-  {
-    "beat_id": 17,
-    "space": "Mental",
-    "characters_present": [
-      "Su Nian"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian closes eyes, eyelashes trembling. Background figures freeze, steam hangs motionless",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Shock",
-    "source_text": "[event: mind_reading]",
-    "event_type": "mind_reading"
-  },
-  {
-    "beat_id": 18,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian looks down at left hand, the scar on the ring finger has changed",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "scar on ring finger",
-    "emotion": "Mystery",
-    "source_text": "[event: mind_reading]",
-    "event_type": "mind_reading"
-  },
-  {
-    "beat_id": 19,
-    "space": "Transition",
-    "characters_present": [
-      "Su Nian",
-      "Lin Ke",
-      "grandmother"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian stands still, shoulders slightly tense, eyes unfocused",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "cup wall",
-    "emotion": "Neutral",
-    "source_text": "杯壁还有温度。她闭眼。"
-  },
-  {
-    "beat_id": 20,
-    "space": "Transition",
-    "characters_present": [
-      "Gu Shen"
-    ],
-    "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen lifts the cup, fingers trembling around the warm rim",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "cup rim",
-    "emotion": "Tension",
-    "source_text": "[event: mind_reading]",
-    "event_type": "mind_reading"
-  },
-  {
-    "beat_id": 21,
-    "space": "Mental",
-    "characters_present": [
-      "Gu Shen"
-    ],
-    "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen closes eyes, eyelashes trembling. Background figures freeze, steam hangs motionless",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Shock",
-    "source_text": "[event: mind_reading]",
-    "event_type": "mind_reading"
-  },
-  {
-    "beat_id": 22,
-    "space": "Physical",
-    "characters_present": [
-      "Gu Shen"
-    ],
-    "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen looks down at left hand, the scar on the ring finger has changed",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "scar on ring finger",
-    "emotion": "Mystery",
-    "source_text": "[event: mind_reading]",
-    "event_type": "mind_reading"
-  },
-  {
-    "beat_id": 23,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian",
-      "Gu Shen",
-      "Lin Ke",
-      "Chen Rui",
-      "Su Yuan",
-      "grandmother"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian gazes at the coffee cup",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "为什么要亲自来？让小李去谈就行了。但那家店……那个咖啡师……她看我的眼神不像其他人。其他人看我的职位、我的公司、我的表。她看的是——",
-    "voice_type": "inner_voice",
-    "focus_object": "watercolor painting",
-    "emotion": "Neutral",
-    "source_text": "他用红笔在合同上画了一个圈，然后放下笔，揉了揉太阳穴。\n*\"为什么要亲自来？让小李去谈就行了。但那家店……那个咖啡师……她看我的眼神不像其他人。其他人看我的职位"
-  },
-  {
-    "beat_id": 24,
-    "space": "Mental",
-    "characters_present": [
-      "Su Nian"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian eyes go blank, staring into distance",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Shock",
-    "source_text": "[event: vision_flash]",
-    "event_type": "vision_flash"
-  },
-  {
-    "beat_id": 25,
-    "space": "Mental",
-    "characters_present": [
-      "Su Nian"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "a blurry vision materializes, colors desaturated",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Mystery",
-    "source_text": "[event: vision_flash]",
-    "event_type": "vision_flash"
-  },
-  {
-    "beat_id": 26,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian blinks rapidly, returning to reality",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Tension",
-    "source_text": "[event: vision_flash]",
-    "event_type": "vision_flash"
-  },
-  {
-    "beat_id": 27,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian",
-      "Gu Shen",
-      "Lin Ke",
-      "Chen Rui",
-      "Su Yuan",
-      "grandmother"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian sets the cup down on the counter",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Tension",
-    "source_text": "苏念放下杯子，手在发抖。\n他不只是来收购的。\n她低头看自己的手——"
-  },
-  {
-    "beat_id": 28,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian",
-      "Lin Ke",
-      "grandmother"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian stands still, shoulders slightly tense, eyes unfocused",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "scar on skin",
-    "emotion": "Neutral",
-    "source_text": "左手无名指的疤痕还在。但右手食指——那个她记得是高中时被美工刀划的痕迹——"
-  },
-  {
-    "beat_id": 29,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian rinses the photo",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "old photo",
-    "emotion": "Mystery",
-    "source_text": "淡了。像一张被洗过的照片。"
-  },
-  {
-    "beat_id": 30,
-    "space": "Physical",
-    "characters_present": [
-      "Gu Shen",
-      "Chen Rui",
-      "Su Yuan"
-    ],
-    "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen turns and leaves",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "门口传来雨声。顾深已经走了。\n他的伞还靠在门边。"
-  },
-  {
-    "beat_id": 31,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian runs out after someone",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "苏念拿起那把伞，追出去——"
-  },
-  {
-    "beat_id": 32,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian",
-      "Gu Shen",
-      "Lin Ke",
-      "Chen Rui",
-      "Su Yuan",
-      "grandmother"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian gazes at the umbrella",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Mystery",
-    "source_text": "巷子里空无一人。雨打在青石板上，溅起细密的水花。\n她站在雨里，手里握着他的伞。\n雨水顺着伞骨滴下来，打在她的手腕上——那道正在变淡的痕迹，被雨水冲得更模糊了。"
+    "focus_object": "raindrops on her fading wrist scar",
+    "emotion": "Sadness",
+    "location": "rain-soaked alley outside the coffee shop",
+    "source_text": "巷子里空无一人。她站在雨里，手里握着他的伞。雨水打在她的手腕上"
   }
 ]

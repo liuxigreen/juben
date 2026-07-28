@@ -3,40 +3,35 @@
     "beat_id": 1,
     "space": "Physical",
     "characters_present": [
-      "Su Nian",
-      "Lin Ke",
-      "grandmother"
+      "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian sits down",
+    "action_visual": "Su Nian sits behind the counter with a notebook open before her, beginning to record every memory lost after each mind-reading",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "苏念坐在吧台后面，面前摊着一个笔记本。\n她开始记录了。\n每次读心后失去的记忆，她都写下来："
+    "focus_object": "open notebook",
+    "emotion": "Tension",
+    "location": "Nianxiang coffee shop",
+    "source_text": "苏念坐在吧台后面，面前摊着一个笔记本。她开始记录了"
   },
   {
     "beat_id": 2,
     "space": "Physical",
     "characters_present": [
-      "Su Nian",
-      "Gu Shen",
-      "Lin Ke",
-      "Chen Rui",
-      "Su Yuan",
-      "grandmother"
+      "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian draws latte art in the foam",
+    "action_visual": "close on the notebook, her handwriting listing dates and losses — Day 1 a hand mark, Day 2 the mole, Day 3 the ring mark, Day 5 the latte burn, Day 6 the utility-knife scar, Day 7 a stranger's wrist scratch",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
-    "inner_voice": "第1天：读心灰色西装男（顾深）。失去——手背上一道印痕。原因不明。",
-    "voice_type": "inner_voice",
-    "focus_object": "faint mark",
-    "emotion": "Neutral",
-    "source_text": "*第1天：读心灰色西装男（顾深）。失去——手背上一道印痕。原因不明。*\n*第2天：读心顾深。失去——右手手背小痣。*\n*第3天：读心顾深。失去——右手无名指戒指"
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "handwritten list of losses",
+    "emotion": "Tension",
+    "location": "Nianxiang coffee shop",
+    "source_text": "每次读心后失去的记忆，她都写下来"
   },
   {
     "beat_id": 3,
@@ -45,14 +40,16 @@
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian stands still, shoulders slightly tense, eyes unfocused",
+    "action_visual": "Su Nian studies the pattern — reading Gu Shen loses memories tied to him, reading Chen Rui loses coffee memories, reading strangers loses trivia, but always a physical mark that vanishes entirely",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
-    "focus_object": "scar on skin",
-    "emotion": "Neutral",
-    "source_text": "但有一个共同点——每次失去的，都是身体上的痕迹。疤痕、痣、印记。"
+    "focus_object": "the pattern in the notebook",
+    "emotion": "Mystery",
+    "location": "Nianxiang coffee shop",
+    "source_text": "规律很明显。每次失去的都是身体上的痕迹。它们是物理性地消失了",
+    "event_type": "focus_object_change"
   },
   {
     "beat_id": 4,
@@ -61,87 +58,85 @@
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian furrows brow, pressing fingers to temples",
-    "spoken_dialogue": "想不起来了",
-    "dialogue_speaker": "Su Nian",
+    "action_visual": "Su Nian closes the notebook and walks to the mirror, looking at herself — shoulder-length hair, round face, apron — she remembers her name, the shop, grandmother's name",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
     "inner_voice": "",
-    "voice_type": "onscreen",
-    "focus_object": "",
-    "emotion": "Mystery",
-    "source_text": "它们不是\"想不起来了\"——是物理性地消失了。连痕迹本身都不在了。"
+    "voice_type": "none",
+    "focus_object": "her reflection in the mirror",
+    "emotion": "Tension",
+    "location": "Nianxiang coffee shop",
+    "source_text": "苏念走到镜子前。她记得自己的名字。记得外婆的名字"
   },
   {
     "beat_id": 5,
     "space": "Physical",
     "characters_present": [
-      "Su Nian",
-      "Lin Ke",
-      "grandmother"
+      "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian furrows brow, pressing fingers to temples",
+    "action_visual": "Su Nian opens the phone album 'Family' — a young woman holding a baby, her face blurred as if water-soaked; a man by a banyan tree, his face completely blank, not obscured but nonexistent",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "苏念合上笔记本，走到镜子前。\n她看着镜子里的自己。齐肩短发，圆脸，围裙。\n她记得自己的名字。记得咖啡店的名字。记得外婆的名字。\n但她不记得——\n父母的样子。"
+    "focus_object": "blank-faced photos in the album",
+    "emotion": "Shock",
+    "location": "Nianxiang coffee shop",
+    "source_text": "相册叫家人。女人的脸模糊。男人的脸完全空白，是不存在",
+    "event_type": "focus_object_change"
   },
   {
     "beat_id": 6,
     "space": "Physical",
     "characters_present": [
-      "Su Nian",
-      "Lin Ke",
-      "grandmother"
+      "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian turns hand over to inspect",
+    "action_visual": "the third photo is grandmother, clear — white hair, blue apron, smiling eyes — but Su Nian cannot recall the sound of her voice calling 'Xiao Nian'",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "她翻出手机相册。有一个相册叫\"家人\"。她点开——"
+    "focus_object": "the clear photo of grandmother",
+    "emotion": "Sadness",
+    "location": "Nianxiang coffee shop",
+    "source_text": "第三张：外婆。照片是清晰的。但想不起来外婆叫她小念时声音是什么样"
   },
   {
     "beat_id": 7,
     "space": "Physical",
     "characters_present": [
-      "Su Nian",
-      "Gu Shen",
-      "Lin Ke",
-      "grandmother"
+      "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian furrows brow, pressing fingers to temples",
+    "action_visual": "Su Nian writes another line in the notebook — the more she reads, the more important the memories she loses; if she forgets everything, is she still herself?",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
-    "focus_object": "old photo",
+    "focus_object": "new line in the notebook",
     "emotion": "Mystery",
-    "source_text": "第一张：一个年轻女人抱着婴儿。女人的脸模糊得像被水泡过。\n第二张：一个男人站在公园里，背景是一棵大榕树。男人的脸——完全空白。不是被遮挡，是不存在。照片上只有衣"
+    "location": "Nianxiang coffee shop",
+    "source_text": "读心次数越多，失去的记忆越重要。如果全部忘记——我还是我吗",
+    "event_type": "focus_object_change"
   },
   {
     "beat_id": 8,
     "space": "Physical",
     "characters_present": [
-      "Su Nian",
-      "Lin Ke",
-      "grandmother"
+      "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian gazes at the phone",
+    "action_visual": "night has fallen, office lights across the street flicking on and off floor by floor; a single counter lamp lights the notebook and her hand, its back now smooth as white paper with no scars at all",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
-    "inner_voice": "规律：读心次数越多，失去的记忆越重要。从无关紧要的印记，到重要的人。",
-    "voice_type": "inner_voice",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "她关掉手机。\n笔记本上，她又加了一行：\n*规律：读心次数越多，失去的记忆越重要。从无关紧要的印记，到重要的人。*\n*如果继续下去——我会忘记谁？*\n*如果全部忘"
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "her scarless hand under the lamp",
+    "emotion": "Sadness",
+    "location": "Nianxiang coffee shop",
+    "source_text": "她的手背上，已经没有任何疤痕和印记了。光滑得像一张白纸"
   },
   {
     "beat_id": 9,
@@ -150,97 +145,14 @@
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "the lights flicker and go out",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "窗外，天已经黑了。对面写字楼的灯一层层亮起来，又一层层灭掉。\n咖啡店里只剩下一盏吧台灯。灯光照在笔记本上，照在苏念握着笔的手上。"
-  },
-  {
-    "beat_id": 10,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian",
-      "Lin Ke",
-      "grandmother"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian stands still, shoulders slightly tense, eyes unfocused",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "scar on skin",
-    "emotion": "Neutral",
-    "source_text": "她的手背上，已经没有任何疤痕和印记了。\n光滑得像一张白纸。"
-  },
-  {
-    "beat_id": 11,
-    "space": "Physical",
-    "characters_present": [
-      "Gu Shen"
-    ],
-    "primary_char": "Gu Shen",
-    "action_visual": "the phone buzzes on the counter",
-    "spoken_dialogue": "明天我来喝咖啡。",
-    "dialogue_speaker": "Gu Shen",
-    "inner_voice": "",
-    "voice_type": "onscreen",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "手机响了。顾深的消息：\n\"明天我来喝咖啡。\""
-  },
-  {
-    "beat_id": 12,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian",
-      "Lin Ke",
-      "grandmother"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian gazes at",
-    "spoken_dialogue": "别来了。",
+    "action_visual": "her phone lights with Gu Shen's message 'I'll come for coffee tomorrow'; Su Nian types 'don't come', deletes it, types 'okay' and sends",
+    "spoken_dialogue": "好。",
     "dialogue_speaker": "Su Nian",
     "inner_voice": "",
     "voice_type": "onscreen",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "苏念看着那行字，手指在屏幕上悬了很久。\n她打了一行字：\"别来了。\""
-  },
-  {
-    "beat_id": 13,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian stands still, shoulders slightly tense, eyes unfocused",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "然后删掉。\n又打了一行：\"好。\""
-  },
-  {
-    "beat_id": 14,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian stands still, shoulders slightly tense, eyes unfocused",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "发送。"
+    "focus_object": "phone screen with the message",
+    "emotion": "Tension",
+    "location": "Nianxiang coffee shop",
+    "source_text": "顾深的消息：明天我来喝咖啡。她打了别来了，删掉。又打了好。发送"
   }
 ]

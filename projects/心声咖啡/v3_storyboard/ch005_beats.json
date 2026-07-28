@@ -4,57 +4,54 @@
     "space": "Physical",
     "characters_present": [
       "Su Nian",
-      "Gu Shen",
-      "Chen Rui",
-      "Su Yuan"
+      "Chen Rui"
     ],
-    "primary_char": "Gu Shen",
-    "action_visual": "Gu Shen gazes at the contract",
-    "spoken_dialogue": "苏老板，久仰。",
-    "dialogue_speaker": "Gu Shen",
+    "primary_char": "Chen Rui",
+    "action_visual": "Chen Rui arrives in a polo shirt, an even more expensive watch than Gu Shen's on his wrist, and pushes a contract onto the counter",
+    "spoken_dialogue": "苏老板，久仰。看看条件。",
+    "dialogue_speaker": "Chen Rui",
     "inner_voice": "",
     "voice_type": "onscreen",
-    "focus_object": "contract",
-    "emotion": "Neutral",
-    "source_text": "陈锐来的时候穿了一件polo衫，手腕上那块表比顾深的还贵。\n\"苏老板，久仰。\"他把一份合同推到吧台上，\"看看条件。\""
+    "focus_object": "contract on the counter",
+    "emotion": "Tension",
+    "location": "Nianxiang coffee shop",
+    "source_text": "陈锐来的时候穿了polo衫。看看条件"
   },
   {
     "beat_id": 2,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
-      "Lin Ke",
-      "Chen Rui",
-      "grandmother"
+      "Chen Rui"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian flips through contract pages",
+    "action_visual": "Su Nian opens the contract, the figure large enough to buy an apartment, and refuses flatly",
     "spoken_dialogue": "不卖。",
     "dialogue_speaker": "Su Nian",
     "inner_voice": "",
     "voice_type": "onscreen",
-    "focus_object": "contract",
-    "emotion": "Neutral",
-    "source_text": "苏念翻开合同。数字不小——足够她在这个城市买一套房。\n\"不卖。\"\n\"先别急。\"陈锐笑起来，眼角的纹很深，\"你这家店，月流水不到两万。对面写字楼的咖啡机一天出三百"
+    "focus_object": "large number on the contract",
+    "emotion": "Tension",
+    "location": "Nianxiang coffee shop",
+    "source_text": "数字不小。不卖"
   },
   {
     "beat_id": 3,
     "space": "Physical",
     "characters_present": [
       "Su Nian",
-      "Gu Shen",
-      "Chen Rui",
-      "Su Yuan"
+      "Chen Rui"
     ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian speaks softly",
-    "spoken_dialogue": "你喝什么？",
-    "dialogue_speaker": "Su Nian",
+    "primary_char": "Chen Rui",
+    "action_visual": "Chen Rui laughs, deep crow's feet at his eyes, arguing her shop cannot compete with the office building's coffee machine",
+    "spoken_dialogue": "你这家店月流水不到两万。你拼不过的。你喝什么？",
+    "dialogue_speaker": "Chen Rui",
     "inner_voice": "",
     "voice_type": "onscreen",
     "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "苏念知道他说的是事实。\n\"你喝什么？\"\n\"意式浓缩。\""
+    "emotion": "Tension",
+    "location": "Nianxiang coffee shop",
+    "source_text": "你拼不过的。你喝什么。意式浓缩"
   },
   {
     "beat_id": 4,
@@ -64,283 +61,135 @@
       "Chen Rui"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian finishes preparing and carries the cup over",
+    "action_visual": "Su Nian makes an espresso and serves it; Chen Rui takes a sip and raises an eyebrow, the cup still warm with a single mouthful left",
     "spoken_dialogue": "豆子不错。",
-    "dialogue_speaker": "Su Nian",
+    "dialogue_speaker": "Chen Rui",
     "inner_voice": "",
     "voice_type": "onscreen",
-    "focus_object": "",
+    "focus_object": "espresso cup with one mouthful left",
     "emotion": "Neutral",
-    "source_text": "苏念做好端上去。陈锐喝了一口，挑眉：\"豆子不错。\""
+    "location": "Nianxiang coffee shop",
+    "source_text": "苏念做好端上去。豆子不错。只有一小口，但足够了"
   },
   {
     "beat_id": 5,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian gazes at",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "cup wall",
-    "emotion": "Neutral",
-    "source_text": "杯壁还有温度。苏念看着那杯浓缩——只有一小口，但足够了。"
-  },
-  {
-    "beat_id": 6,
     "space": "Transition",
     "characters_present": [
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian lifts the cup, fingers trembling around the warm rim",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "cup rim",
-    "emotion": "Tension",
-    "source_text": "[event: mind_reading]",
-    "event_type": "mind_reading"
-  },
-  {
-    "beat_id": 7,
-    "space": "Mental",
-    "characters_present": [
-      "Su Nian"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian closes eyes, eyelashes trembling. Background figures freeze, steam hangs motionless",
+    "action_visual": "Su Nian picks up the cup and closes her eyes",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
     "focus_object": "",
+    "emotion": "Tension",
+    "location": "Nianxiang coffee shop",
+    "source_text": "她端起来，闭眼"
+  },
+  {
+    "beat_id": 6,
+    "space": "Mental",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "the world falls silent; Chen Rui's inner voice surfaces, then an image flickers — a younger Chen Rui standing before a smaller shop with a 'Rui Coffee' sign, smiling, holding a latte with a crooked heart in the foam",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "……条件开得够高了。她不识货。但老陈说得对，这条街要改造，她的店迟早要拆。不过……这咖啡确实好喝。比我十年前自己开的那家强……",
+    "voice_type": "inner_voice",
+    "focus_object": "crooked heart latte art in the vision",
+    "emotion": "Mystery",
+    "location": "Nianxiang coffee shop",
+    "source_text": "她的店迟早要拆。比我十年前自己开的那家强。画面：更年轻的陈锐，锐咖啡，拉花是爱心"
+  },
+  {
+    "beat_id": 7,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian",
+      "Chen Rui"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian sets the cup down and cuts through his sales pitch, revealing she knows about his old shop 'Rui Coffee' and his heart latte art",
+    "spoken_dialogue": "你也开过咖啡店。锐咖啡。你自己冲的拿铁，拉花是爱心。",
+    "dialogue_speaker": "Su Nian",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
     "emotion": "Shock",
-    "source_text": "[event: mind_reading]",
-    "event_type": "mind_reading"
+    "location": "Nianxiang coffee shop",
+    "source_text": "你也开过咖啡店。锐咖啡。你自己冲的拿铁，拉花是爱心"
   },
   {
     "beat_id": 8,
     "space": "Physical",
     "characters_present": [
-      "Su Nian"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian looks down at left hand, the scar on the ring finger has changed",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "scar on ring finger",
-    "emotion": "Mystery",
-    "source_text": "[event: mind_reading]",
-    "event_type": "mind_reading"
-  },
-  {
-    "beat_id": 9,
-    "space": "Mental",
-    "characters_present": [
-      "Su Nian",
-      "Lin Ke",
-      "grandmother"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian speaks softly the coffee cup",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "……条件开得够高了。她不识货。但老陈说得对，这条街要改造，她的店迟早要拆。不如趁现在给她一个好价钱。不过……这咖啡确实好喝。比我十年前自己开的那家强。那时候……",
-    "voice_type": "inner_voice",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "世界安静了。\n*\"……条件开得够高了。她不识货。但老陈说得对，这条街要改造，她的店迟早要拆。不如趁现在给她一个好价钱。不过……这咖啡确实好喝。比我十年前自己开的"
-  },
-  {
-    "beat_id": 10,
-    "space": "Mental",
-    "characters_present": [
-      "Chen Rui"
-    ],
-    "primary_char": "Chen Rui",
-    "action_visual": "Chen Rui eyes go blank, staring into distance",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Shock",
-    "source_text": "[event: vision_flash]",
-    "event_type": "vision_flash"
-  },
-  {
-    "beat_id": 11,
-    "space": "Mental",
-    "characters_present": [
-      "Chen Rui"
-    ],
-    "primary_char": "Chen Rui",
-    "action_visual": "a blurry vision materializes, colors desaturated",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Mystery",
-    "source_text": "[event: vision_flash]",
-    "event_type": "vision_flash"
-  },
-  {
-    "beat_id": 12,
-    "space": "Physical",
-    "characters_present": [
-      "Chen Rui"
-    ],
-    "primary_char": "Chen Rui",
-    "action_visual": "Chen Rui blinks rapidly, returning to reality",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "",
-    "emotion": "Tension",
-    "source_text": "[event: vision_flash]",
-    "event_type": "vision_flash"
-  },
-  {
-    "beat_id": 13,
-    "space": "Mental",
-    "characters_present": [
-      "Su Nian"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian gazes at the painting",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "watercolor painting",
-    "emotion": "Neutral",
-    "source_text": "画面碎了。"
-  },
-  {
-    "beat_id": 14,
-    "space": "Physical",
-    "characters_present": [
       "Su Nian",
       "Chen Rui"
     ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian sets the cup down on the counter",
-    "spoken_dialogue": "——你考虑一下。我的名片——",
-    "dialogue_speaker": "Su Nian",
-    "inner_voice": "",
-    "voice_type": "onscreen",
-    "focus_object": "business card",
-    "emotion": "Neutral",
-    "source_text": "苏念放下杯子。\n陈锐还在说：\"——你考虑一下。我的名片——\""
-  },
-  {
-    "beat_id": 15,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian speaks softly the coffee cup",
-    "spoken_dialogue": "你也开过咖啡店。",
-    "dialogue_speaker": "Su Nian",
-    "inner_voice": "",
-    "voice_type": "onscreen",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "\"你也开过咖啡店。\"苏念说。"
-  },
-  {
-    "beat_id": 16,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian",
-      "Chen Rui"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian draws latte art in the foam",
-    "spoken_dialogue": "什么？",
-    "dialogue_speaker": "Su Nian",
-    "inner_voice": "",
-    "voice_type": "onscreen",
-    "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "陈锐的笑容凝固了。\n\"什么？\"\n\"锐咖啡。\"苏念说，\"很小的一家店。你自己冲的拿铁，拉花是爱心。\""
-  },
-  {
-    "beat_id": 17,
-    "space": "Physical",
-    "characters_present": [
-      "Chen Rui"
-    ],
     "primary_char": "Chen Rui",
-    "action_visual": "Chen Rui goes pale",
+    "action_visual": "Chen Rui's smile freezes and his face goes pale as he demands to know how she knows",
     "spoken_dialogue": "你怎么知道的？",
     "dialogue_speaker": "Chen Rui",
     "inner_voice": "",
     "voice_type": "onscreen",
     "focus_object": "",
-    "emotion": "Neutral",
-    "source_text": "陈锐的脸白了。\n\"你怎么知道的？\""
+    "emotion": "Shock",
+    "location": "Nianxiang coffee shop",
+    "source_text": "陈锐的脸白了。你怎么知道的"
   },
   {
-    "beat_id": 18,
-    "space": "Physical",
-    "characters_present": [
-      "Su Nian",
-      "Lin Ke",
-      "grandmother"
-    ],
-    "primary_char": "Su Nian",
-    "action_visual": "Su Nian draws latte art in the foam",
-    "spoken_dialogue": "",
-    "dialogue_speaker": "",
-    "inner_voice": "",
-    "voice_type": "none",
-    "focus_object": "cup wall",
-    "emotion": "Neutral",
-    "source_text": "苏念拿起杯子去洗——水龙头打开，热水冲过杯壁。\n她低头看自己的手。\n右手手腕内侧——那道她记得是学拉花时被蒸汽管烫的痕迹——"
-  },
-  {
-    "beat_id": 19,
+    "beat_id": 9,
     "space": "Physical",
     "characters_present": [
       "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian stands still, shoulders slightly tense, eyes unfocused",
+    "action_visual": "Su Nian washes the cup under hot water and looks at her right inner wrist — the steam-wand burn scar from learning latte art is gone, the skin smooth as if never scalded",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
-    "focus_object": "",
+    "focus_object": "smooth wrist where the burn scar vanished",
     "emotion": "Mystery",
-    "source_text": "消失了。皮肤光滑得像从未被烫过。"
+    "location": "Nianxiang coffee shop",
+    "source_text": "右手手腕内侧那道拉花烫伤消失了。皮肤光滑得像从未被烫过"
   },
   {
-    "beat_id": 20,
+    "beat_id": 10,
     "space": "Physical",
     "characters_present": [
-      "Su Nian",
-      "Lin Ke",
-      "grandmother"
+      "Su Nian"
     ],
     "primary_char": "Su Nian",
-    "action_visual": "Su Nian draws latte art in the foam",
+    "action_visual": "hot water splashes her wrist, the sting makes her jerk back, the cup slips from her hand and smashes into the sink, shards flying, water splashing her apron",
     "spoken_dialogue": "",
     "dialogue_speaker": "",
     "inner_voice": "",
     "voice_type": "none",
-    "focus_object": "",
+    "focus_object": "cup shattering in the sink",
     "emotion": "Shock",
-    "source_text": "水龙头的热水溅在手腕上，温度刺痛。苏念猛地缩手——\n杯子从手里滑落，砸在水池底部。\n碎片飞溅。水花溅在她的围裙上。\n苏念盯着碎成三瓣的杯子，手指在发抖。\n她曾经"
+    "location": "Nianxiang coffee shop",
+    "source_text": "杯子从手里滑落，砸在水池底部。碎片飞溅"
+  },
+  {
+    "beat_id": 11,
+    "space": "Physical",
+    "characters_present": [
+      "Su Nian"
+    ],
+    "primary_char": "Su Nian",
+    "action_visual": "Su Nian stares at the cup broken into three pieces, her fingers trembling, realizing she once knew how to make latte art but no longer remembers learning it",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "cup broken into three pieces",
+    "emotion": "Sadness",
+    "location": "Nianxiang coffee shop",
+    "source_text": "她曾经会拉花。现在她不记得自己学过了"
   }
 ]
