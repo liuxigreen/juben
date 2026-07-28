@@ -77,7 +77,7 @@
   },
   {
     "shot_id": 3,
-    "shot_type": "MS",
+    "shot_type": "CU",
     "camera_movement": "rapid_push",
     "camera_angle": "low",
     "duration": 7.5,
@@ -99,7 +99,7 @@
     "voice_type": "onscreen",
     "dialogue_speaker": "Lin Ke",
     "line_en": "",
-    "veo_prompt": "medium shot, rapid push-in, low angle looking up, featuring Su Nian, Lin Ke, Lin Ke's face changes as she realizes Su Nian cannot recognize her own grandmother, in Nianxiang coffee shop, high contrast dramatic lighting, shocked, dramatic, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "close-up, rapid push-in, low angle looking up, featuring Su Nian, Lin Ke, Lin Ke's face changes as she realizes Su Nian cannot recognize her own grandmother, in Nianxiang coffee shop, high contrast dramatic lighting, shocked, dramatic, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "苏念，你认不出来了？",
       "dialogue_speaker": "Lin Ke",
@@ -187,7 +187,7 @@
   },
   {
     "shot_id": 6,
-    "shot_type": "MCU",
+    "shot_type": "CU",
     "camera_movement": "static",
     "camera_angle": "eye-level",
     "duration": 7.5,
@@ -209,7 +209,7 @@
     "voice_type": "onscreen",
     "dialogue_speaker": "Lin Ke",
     "line_en": "",
-    "veo_prompt": "medium close-up, static camera, eye level, featuring Su Nian, Lin Ke, at the door Lin Ke turns back, starts to say 'your brother used to also—' then abruptly stops herself, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "close-up, static camera, eye level, featuring Su Nian, Lin Ke, at the door Lin Ke turns back, starts to say 'your brother used to also—' then abruptly stops herself, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "苏念，你哥以前也——",
       "dialogue_speaker": "Lin Ke",
@@ -223,7 +223,7 @@
   },
   {
     "shot_id": 7,
-    "shot_type": "MS",
+    "shot_type": "MCU",
     "camera_movement": "pull",
     "camera_angle": "low",
     "duration": 7.5,
@@ -245,7 +245,7 @@
     "voice_type": "onscreen",
     "dialogue_speaker": "Su Nian",
     "line_en": "",
-    "veo_prompt": "medium shot, slow dolly backward, low angle looking up, featuring Su Nian, Lin Ke, Su Nian looks up asking what about her brother; Lin Ke says nothing, pushes open the glass door and leaves, the wind chime swaying twice, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "medium close-up, slow dolly backward, low angle looking up, featuring Su Nian, Lin Ke, Su Nian looks up asking what about her brother; Lin Ke says nothing, pushes open the glass door and leaves, the wind chime swaying twice, in Nianxiang coffee shop, low key lighting, deep shadows, tense, suspenseful, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "我哥怎么了？",
       "dialogue_speaker": "Su Nian",

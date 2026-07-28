@@ -1,7 +1,7 @@
 [
   {
     "shot_id": 1,
-    "shot_type": "WS",
+    "shot_type": "ECU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
     "duration": 4.9,
@@ -24,7 +24,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "wide shot, slow dolly forward, eye level, featuring Su Nian, COLD OPEN, extreme close-up: a woman's hand lifts a coffee cup, a faint stranger's lipstick print on the rim, steam curling in the light, close-up detail on lipstick print on the cup rim, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "extreme close-up, slow dolly forward, eye level, featuring Su Nian, COLD OPEN, extreme close-up: a woman's hand lifts a coffee cup, a faint stranger's lipstick print on the rim, steam curling in the light, close-up detail on lipstick print on the cup rim, in Nianxiang coffee shop, low key lighting, deep shadows, mysterious, intriguing, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -182,7 +182,7 @@
   },
   {
     "shot_id": 6,
-    "shot_type": "MS",
+    "shot_type": "WS",
     "camera_movement": "push",
     "camera_angle": "eye-level",
     "duration": 4.5,
@@ -203,7 +203,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "medium shot, slow dolly forward, eye level, featuring Su Nian, wide shot of the half-empty afternoon coffee shop, an old man dozing by the window, a girl frowning at her laptop in the corner, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "wide shot, slow dolly forward, eye level, featuring Su Nian, wide shot of the half-empty afternoon coffee shop, an old man dozing by the window, a girl frowning at her laptop in the corner, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -217,7 +217,7 @@
   },
   {
     "shot_id": 7,
-    "shot_type": "MCU",
+    "shot_type": "MS",
     "camera_movement": "static",
     "camera_angle": "eye-level",
     "duration": 4.9,
@@ -240,7 +240,7 @@
     "voice_type": "onscreen",
     "dialogue_speaker": "Gu Shen",
     "line_en": "Americano. Hot.",
-    "veo_prompt": "medium close-up, static camera, eye level, featuring Gu Shen, the door chime rings, Gu Shen in a grey suit walks in and sits directly at the counter, placing his phone face-down without looking at the menu, close-up detail on phone face-down on counter, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, Gu Shen looks and speaks, saying: \"Americano. Hot.\", calm, even delivery, natural lip sync, American accent, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, clean dialogue, minimal room tone, no music",
+    "veo_prompt": "medium shot, static camera, eye level, featuring Gu Shen, the door chime rings, Gu Shen in a grey suit walks in and sits directly at the counter, placing his phone face-down without looking at the menu, close-up detail on phone face-down on counter, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, Gu Shen looks and speaks, saying: \"Americano. Hot.\", calm, even delivery, natural lip sync, American accent, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, clean dialogue, minimal room tone, no music",
     "audio": {
       "dialogue_zh": "美式，热的。",
       "dialogue_speaker": "Gu Shen",
@@ -254,7 +254,7 @@
   },
   {
     "shot_id": 8,
-    "shot_type": "ECU",
+    "shot_type": "CU",
     "camera_movement": "push",
     "camera_angle": "eye-level",
     "duration": 4.9,
@@ -278,7 +278,7 @@
     "voice_type": "none",
     "dialogue_speaker": "",
     "line_en": "",
-    "veo_prompt": "extreme close-up, slow dolly forward, eye level, featuring Su Nian, Gu Shen, Su Nian nods and turns to grind beans; Gu Shen taps his fingers on the counter in a loop — index, middle, ring finger, close-up detail on ink stain on his suit cuff, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "close-up, slow dolly forward, eye level, featuring Su Nian, Gu Shen, Su Nian nods and turns to grind beans; Gu Shen taps his fingers on the counter in a loop — index, middle, ring finger, close-up detail on ink stain on his suit cuff, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "",
       "dialogue_speaker": "",
@@ -511,7 +511,7 @@
   },
   {
     "shot_id": 15,
-    "shot_type": "MCU",
+    "shot_type": "MS",
     "camera_movement": "static",
     "camera_angle": "eye-level",
     "duration": 3.7,
@@ -533,7 +533,7 @@
     "voice_type": "onscreen",
     "dialogue_speaker": "Gu Shen",
     "line_en": "How much?",
-    "veo_prompt": "medium close-up, static camera, eye level, featuring Su Nian, Gu Shen, Gu Shen has already stood up, typing on his phone without lifting his head, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, Gu Shen speaks, saying: \"How much?\", calm, even delivery, natural lip sync, American accent; Su Nian stay silent with closed lips, listening, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, clean dialogue, minimal room tone, no music",
+    "veo_prompt": "medium shot, static camera, eye level, featuring Su Nian, Gu Shen, Gu Shen has already stood up, typing on his phone without lifting his head, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, Gu Shen speaks, saying: \"How much?\", calm, even delivery, natural lip sync, American accent; Su Nian stay silent with closed lips, listening, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, clean dialogue, minimal room tone, no music",
     "audio": {
       "dialogue_zh": "多少钱？",
       "dialogue_speaker": "Gu Shen",
@@ -547,7 +547,7 @@
   },
   {
     "shot_id": 16,
-    "shot_type": "MS",
+    "shot_type": "MCU",
     "camera_movement": "pull",
     "camera_angle": "eye-level",
     "duration": 3.7,
@@ -569,7 +569,7 @@
     "voice_type": "onscreen",
     "dialogue_speaker": "Su Nian",
     "line_en": "Twenty-eight.",
-    "veo_prompt": "medium shot, slow dolly backward, eye level, featuring Su Nian, Gu Shen, Su Nian answers; Gu Shen scans the QR code to pay and leaves, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, Su Nian speaks, saying: \"Twenty-eight.\", calm, even delivery, natural lip sync, American accent; Gu Shen stay silent with closed lips, listening, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, clean dialogue, minimal room tone, no music",
+    "veo_prompt": "medium close-up, slow dolly backward, eye level, featuring Su Nian, Gu Shen, Su Nian answers; Gu Shen scans the QR code to pay and leaves, in Nianxiang coffee shop, natural daylight, soft shadows, neutral, observational, Su Nian speaks, saying: \"Twenty-eight.\", calm, even delivery, natural lip sync, American accent; Gu Shen stay silent with closed lips, listening, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, clean dialogue, minimal room tone, no music",
     "audio": {
       "dialogue_zh": "二十八。",
       "dialogue_speaker": "Su Nian",

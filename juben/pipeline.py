@@ -458,14 +458,39 @@ class ShotCompiler:
         self._adjust(shots, target)
         return shots
 
+    # 动作文本显式指定景别时的识别（服从剧本，避免机位与动作描述打架）
+    SHOT_KEYWORDS = [
+        ("ECU", ["extreme close-up", "extreme closeup", "macro", "怼脸", "大特写"]),
+        ("CU",  ["close-up", "close up", "closeup", "特写"]),
+        ("WS",  ["wide shot", "wide angle", "establishing shot", "远景", "全景"]),
+        ("MS",  ["medium shot", "中景"]),
+        ("MCU", ["medium close-up", "medium closeup", "中近景"]),
+    ]
+
+    def _explicit_shot(self, beat):
+        """动作描述里显式写了景别就返回它，否则 None。ECU/CU 优先匹配。"""
+        act = beat.get("action_visual", "").lower()
+        for st, kws in self.SHOT_KEYWORDS:
+            if any(kw in act for kw in kws):
+                return st
+        return None
+
     def _choose_shot_type(self, beat, idx, last, ecu):
+        # 动作文本显式指定景别 → 服从剧本（冷开场特写钩子等，优先级最高）
+        # 出海英文配音模式下口型由Veo跟台词生成，说话镜头也可怼脸(ECU)秀口型对齐
+        explicit = self._explicit_shot(beat)
+        if explicit:
+            return explicit
         if idx == 0:
             return "WS"
         if beat.get("space") == "Mental":
             return "CU"
-        # onscreen 对话优先于 focus_object：宁可放弃道具特写，也不要怼脸(ECU)说话对不上口型
+        # onscreen 对话：按情绪给景别（激烈情绪可怼脸CU秀口型），优先于道具特写
         if beat.get("spoken_dialogue") and beat.get("voice_type") == "onscreen":
-            return "MS" if last == "MCU" else "MCU"
+            pref = self.emotion_shot.get(beat.get("emotion", "Neutral"), "MCU")
+            if pref == last:
+                pref = {"ECU": "CU", "CU": "MCU", "MCU": "MS", "MS": "MCU"}.get(pref, "MCU")
+            return pref
         focus = beat.get("focus_object", "")
         if focus:
             return "CU" if (last == "ECU" or ecu >= 2) else "ECU"

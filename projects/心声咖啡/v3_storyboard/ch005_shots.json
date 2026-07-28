@@ -259,7 +259,7 @@
   },
   {
     "shot_id": 8,
-    "shot_type": "MS",
+    "shot_type": "CU",
     "camera_movement": "push",
     "camera_angle": "low",
     "duration": 7.5,
@@ -281,7 +281,7 @@
     "voice_type": "onscreen",
     "dialogue_speaker": "Chen Rui",
     "line_en": "",
-    "veo_prompt": "medium shot, slow dolly forward, low angle looking up, featuring Su Nian, Chen Rui, Chen Rui's smile freezes and his face goes pale as he demands to know how she knows, in Nianxiang coffee shop, high contrast dramatic lighting, shocked, dramatic, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "close-up, slow dolly forward, low angle looking up, featuring Su Nian, Chen Rui, Chen Rui's smile freezes and his face goes pale as he demands to know how she knows, in Nianxiang coffee shop, high contrast dramatic lighting, shocked, dramatic, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "你怎么知道的？",
       "dialogue_speaker": "Chen Rui",

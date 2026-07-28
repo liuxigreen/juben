@@ -184,7 +184,7 @@
   },
   {
     "shot_id": 6,
-    "shot_type": "MCU",
+    "shot_type": "MS",
     "camera_movement": "push",
     "camera_angle": "eye-level",
     "duration": 7.5,
@@ -206,7 +206,7 @@
     "voice_type": "onscreen",
     "dialogue_speaker": "Su Nian",
     "line_en": "",
-    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Su Nian, young couple, the boy returns; Su Nian leans to whisper in the girl's ear to tell him the real reason she's angry — the birthday, in Nianxiang coffee shop, warm golden light, warm, heartwarming, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
+    "veo_prompt": "medium shot, slow dolly forward, eye level, featuring Su Nian, young couple, the boy returns; Su Nian leans to whisper in the girl's ear to tell him the real reason she's angry — the birthday, in Nianxiang coffee shop, warm golden light, warm, heartwarming, lips closed, no speaking, cinematic, 9:16 vertical, photorealistic, 4K, 24fps, shallow depth of field, faint espresso machine hum, distant street traffic, ambient sound only, no music, no dialogue",
     "audio": {
       "dialogue_zh": "告诉他你为什么生气。不是因为那件事，是因为生日。",
       "dialogue_speaker": "Su Nian",
