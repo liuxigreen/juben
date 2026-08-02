@@ -1,13 +1,40 @@
-# .gitignore
+# Python
 __pycache__/
 *.py[cod]
+*$py.class
+*.so
+.Python
 *.egg-info/
-dist/
-build/
-.eggs/
 *.egg
-.venv/
+build/
+dist/
+
+# Virtual environments
 venv/
-.env
+.venv/
+env/
+ENV/
+venv.bak/
+.venv.bak/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Project artifacts
 *.bak
-.backups/
+*.tmp
+*.log
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local secrets
+.env
+.env.local
