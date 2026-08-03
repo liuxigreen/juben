@@ -55,6 +55,20 @@
       "realm_change": "",
       "foreshadow_planted": [],
       "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 5,
+      "body_costs": [
+        "出血"
+      ],
+      "setting_elements_used": [
+        "算卦",
+        "算卦山"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": " [身体接近极限]",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
     }
   ],
   "accumulated_costs": [
@@ -67,7 +81,8 @@
     "触觉",
     "绝望",
     "出血",
-    "发抖"
+    "发抖",
+    "出血"
   ],
   "accumulated_banned": [],
   "current_realm": "",

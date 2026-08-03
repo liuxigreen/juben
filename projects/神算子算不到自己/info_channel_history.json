@@ -14,5 +14,9 @@
   {
     "chapter": 4,
     "channel": "body_warning"
+  },
+  {
+    "chapter": 5,
+    "channel": "residue"
   }
 ]
