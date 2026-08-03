@@ -2,5 +2,9 @@
   {
     "chapter": 1,
     "type": "investigation"
+  },
+  {
+    "chapter": 2,
+    "type": "chase"
   }
 ]

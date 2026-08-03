@@ -2,5 +2,9 @@
   {
     "chapter": 1,
     "channel": "ability_use"
+  },
+  {
+    "chapter": 2,
+    "channel": "being_seen"
   }
 ]

@@ -13,10 +13,33 @@
       "realm_change": "",
       "foreshadow_planted": [],
       "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 2,
+      "body_costs": [
+        "触觉",
+        "绝望",
+        "出血"
+      ],
+      "setting_elements_used": [
+        "算卦",
+        "城外有九座"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": " [身体负担中等]",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
     }
   ],
   "accumulated_costs": [
     "出血",
+    "出血",
+    "触觉",
+    "出血",
+    "触觉",
+    "出血",
+    "触觉",
+    "绝望",
     "出血"
   ],
   "accumulated_banned": [],
