@@ -1,0 +1,84 @@
+{
+  "title": "神算子算不到自己",
+  "genre": "古代历史常识限制锁 — 杜绝现代元素穿越 + 男频核心反套路 — 爽要有逻辑，不是无脑碾压",
+  "sub_genres": [],
+  "premise": "乾元大陆第一算师陆九，能算天算地算尽苍生，唯独算不到自己在意的人。某日推演发现三日后自己头顶要绿——其实是他命中注定的'神女降世劫'开始：枕边人(实为上界神女转世)被天机阁追杀，被算卦盘碎裂的命格开始全面反噬。他靠'算不准自己'的反讽金手指，苟着破局。",
+  "logline": "他算尽天下却算不到自己——因为他的命格里，藏着一个等他二十四年的魂。",
+  "target_chapters": 50,
+  "target_word_count_per_chapter": 2000,
+  "pov": "third_person_limited",
+  "language": "zh-CN",
+  "last_chapter_written": 0,
+  "disruption_variable": "算卦盘碎裂，命格反噬——他算不到自己，成了他在死局中最大的金手指",
+  "pacing_cards": [
+    {
+      "label": "3s_Hook",
+      "word_range": [
+        0,
+        100
+      ],
+      "rule": "开局即冲突。第一句话必须是有人在看不起/羞辱/威胁主角，或者主角正在面对一个不可能的困境",
+      "emotion": "愤怒/憋屈",
+      "cliffhanger_type": null
+    },
+    {
+      "label": "15s_Retention",
+      "word_range": [
+        300,
+        500
+      ],
+      "rule": "主角亮出一张底牌（不是全部实力，只是一个信号）。让读者知道'好戏要来了'",
+      "emotion": "期待/暗爽",
+      "cliffhanger_type": null
+    },
+    {
+      "label": "Face_Slap",
+      "word_range": [
+        600,
+        900
+      ],
+      "rule": "第一次打脸。但不能太轻松——主角需要付出一定代价或动用一定资源，让读者觉得'值'",
+      "emotion": "爽/解气",
+      "cliffhanger_type": null
+    },
+    {
+      "label": "Escalation",
+      "word_range": [
+        1000,
+        1300
+      ],
+      "rule": "打脸引出更大的敌人/更深的危机。小爽之后必须有大坑，否则读者没有继续看的理由",
+      "emotion": "紧张/担忧",
+      "cliffhanger_type": null
+    },
+    {
+      "label": "50s_Cliffhanger",
+      "word_range": [
+        1700,
+        2000
+      ],
+      "rule": "断崖。主角刚解决一个问题，更大的威胁浮现——或者一个关键信息暴露，改变整个局面",
+      "emotion": "震惊/紧迫",
+      "cliffhanger_type": "Reveal"
+    }
+  ],
+  "template": "universal",
+  "narrative_skeleton": "mixins:power-fantasy",
+  "global_hook_density": "high",
+  "themes": [
+    "算与不算的悖论（精算 vs 留白）",
+    "苟道求活 vs 主动入局（被动自保 vs 为爱赴死）",
+    "看见 vs 算见（真正的关心不是算对方会怎样，而是真的陪在对方身边）"
+  ],
+  "target_audience": {},
+  "high_concept": {
+    "enabled": false,
+    "anomaly": "",
+    "visual_core": "",
+    "personal_cost": "",
+    "why_new": "",
+    "banned_patterns": [],
+    "visual_anchor_prop": "",
+    "visual_anchor_keywords": []
+  }
+}
