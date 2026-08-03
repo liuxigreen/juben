@@ -10,5 +10,9 @@
   {
     "chapter": 3,
     "channel": "external_pressure"
+  },
+  {
+    "chapter": 4,
+    "channel": "body_warning"
   }
 ]
