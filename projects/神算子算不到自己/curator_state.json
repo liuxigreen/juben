@@ -104,7 +104,11 @@
       "body_costs": [],
       "setting_elements_used": [
         "算卦",
-        "算卦山"
+        "神女",
+        "临安城",
+        "白无垢",
+        "右眼",
+        "师妹"
       ],
       "new_banned_phrases": [],
       "realm_change": "",
@@ -184,7 +188,12 @@
     {
       "chapter_num": 15,
       "body_costs": [],
-      "setting_elements_used": [],
+      "setting_elements_used": [
+        "算筹",
+        "临安城",
+        "铁算筹",
+        "麻"
+      ],
       "new_banned_phrases": [],
       "realm_change": "",
       "foreshadow_planted": [],

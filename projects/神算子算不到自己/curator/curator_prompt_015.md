@@ -1,3 +1,10 @@
+# Curator状态更新任务 — 第15章
+
+你是一个剧本状态管理员。根据第15章的正文，生成状态变更提案。
+
+## 第15章正文
+
+```
 # 第十五章 临安城隍庙的铁算筹
 
 吐——
@@ -155,3 +162,98 @@
 "**你**这**一**卦**——"
 
 声**音**还**没**落**地**——**陆**九**的**肚**脐**——**裂**了**。
+
+```
+
+## 当前角色状态
+
+- char_pro (陆九, protagonist): location=江南·临安城·城隍庙破摊子, health=左眼盲；右眼每算 3 卦会剧痛一次；常年咳血（命格反噬）, goal=找出三日后'头顶发绿'这一卦的真正含义
+- char_ant (白无垢, antagonist): location=天机阁总舵·临安分舵, health=右手代价累积，已失双臂；寿元剩三年, goal=三日内找到神女转世，在她觉醒前炼化
+- char_ally (沈小碗, supporting): location=江南·临安城·醉仙楼外, health=轻伤（被天机阁小角色追过）, goal=找到城里那个'只有一只眼亮的算卦瞎子'
+- char_mystery (陆小妹, supporting): location=陆九命格深处（被他的'算不到自己'保护着）, health=极弱。每次陆九算卦都会让她'消磨'一点, goal=阻止陆九算那个'头顶发绿'的卦——因为那卦会暴露她的存在
+
+## 未解决的伏笔
+
+- thread_1: 【主线：神女劫】白无垢追杀神女（其实是陆九命格里的师妹），三日内必须找到并炼化。陆九算到自己'头顶发绿'的卦象其实是师妹觉醒的信号 (status=open)
+- thread_2: 【支线：师妹之谜】陆九要找的'师妹下落'，其实就是他自己命格里的盲区——他每算一次，师妹的寿元就少一年，但他不知道 (status=open)
+- thread_3: 【支线：神女半身】沈小碗是神女的'魂'，师妹是神女的'命'。两人必须同时在场才能'合'——但天机阁已经追了小碗三年 (status=open)
+- thread_4: 【伏笔：瞎子白无垢】白无垢的真实身份是'当年陆九给过馒头的女孩的儿子'——他不知道陆九就是那个'给馒头的瞎眼先生'，他以为他被施舍过 (status=open)
+- thread_5: 【伏笔：右眼里的她】陆九每次算卦右眼剧痛，其实是师妹在'挤出来'——右眼是他唯一能'看见'她的窗口，但他以为是反噬 (status=open)
+- thread_6: 【伏笔：二十四年的孝】小师妹给陆九守了二十四年孝，但她没有'死'——她以'反制锁'的形式寄生在他命格里。陆九以为她死了，每年在她忌日烧纸 (status=open)
+
+## 信息对称性矩阵
+
+- info_1: 陆九的命格里藏着师妹的命格 (known_by=['char_ant'])
+- info_2: 陆九左眼盲是因为他'算死'了师妹的命格 (known_by=['char_ant', 'char_mystery'])
+- info_3: 沈小碗是神女'魂'的一半 (known_by=['char_ant'])
+- info_4: 白无垢亲手挖掉了自己的双眼，炼入右手 (known_by=['char_pro'])
+- info_5: 白无垢的真实母亲就是当年给陆九馒头的小女孩 (known_by=[])
+- info_6: 小师妹每次陆九算卦时右眼剧痛是她在'挤出来' (known_by=['char_mystery'])
+
+## 你的任务
+
+生成一个JSON对象，包含以下变更提案：
+
+```json
+{
+  "changes": [
+    {
+      "entity_type": "character",
+      "entity_id": "char_xxx",
+      "field_path": "state.location",
+      "old_value": "旧值",
+      "new_value": "新值",
+      "chapter": 15,
+      "machine_verifiable": true,
+      "reason": "变更原因"
+    }
+  ],
+  "new_events": [
+    {
+      "id": "evt_xxx",
+      "chapter": 15,
+      "timestamp": "故事内时间",
+      "description": "事件描述",
+      "characters_involved": ["char_xxx"],
+      "location": "地点",
+      "impact": "影响",
+      "type": "事件类型"
+    }
+  ],
+  "new_plot_threads": [
+    {
+      "id": "thread_xxx",
+      "description": "新伏笔描述",
+      "planted_chapter": 15,
+      "importance": "major/minor"
+    }
+  ],
+  "plot_thread_updates": [
+    {
+      "id": "thread_xxx",
+      "status": "payoff",
+      "payoff_chapter": 15,
+      "resolution": "如何收束"
+    }
+  ],
+  "info_asymmetry_updates": [
+    {
+      "info_id": "info_xxx",
+      "description": "新信息描述",
+      "known_by": ["char_xxx"],
+      "chapter_revealed": 15,
+      "is_protagonist_advantage": true/false
+    }
+  ]
+}
+```
+
+## 规则
+
+1. 只报告本章实际发生的变更，不要推测未来
+2. machine_verifiable=true 的变更才写入硬约束（位置、生死、数值变化）
+3. 角色的情感变化、态度变化标记为 machine_verifiable=false（软状态）
+4. 伏笔状态：open→planted（埋下）→payoff（收束）→abandoned（放弃）
+5. 信息差更新：谁在本章知道了什么新信息
+
+只输出JSON，不要输出其他文字。
