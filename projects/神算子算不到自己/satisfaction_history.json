@@ -34,5 +34,65 @@
     "type": "情感爆发",
     "sub_mode": "告白爆发",
     "stage": "起势段"
+  },
+  {
+    "chapter": 7,
+    "type": "悬念揭秘",
+    "sub_mode": "关系揭秘",
+    "stage": "起势段"
+  },
+  {
+    "chapter": 7,
+    "type": "逆袭翻盘",
+    "sub_mode": "逆风翻盘",
+    "stage": "起势段"
+  },
+  {
+    "chapter": 8,
+    "type": "情感爆发",
+    "sub_mode": "误会冰释",
+    "stage": "攀升段"
+  },
+  {
+    "chapter": 9,
+    "type": "悬念揭秘",
+    "sub_mode": "历史揭秘",
+    "stage": "攀升段"
+  },
+  {
+    "chapter": 10,
+    "type": "逆袭翻盘",
+    "sub_mode": "绝境翻盘",
+    "stage": "攀升段"
+  },
+  {
+    "chapter": 11,
+    "type": "情感爆发",
+    "sub_mode": "爆发哭诉",
+    "stage": "攀升段"
+  },
+  {
+    "chapter": 12,
+    "type": "悬念揭秘",
+    "sub_mode": "关系揭秘",
+    "stage": "攀升段"
+  },
+  {
+    "chapter": 13,
+    "type": "逆袭翻盘",
+    "sub_mode": "连环翻盘",
+    "stage": "攀升段"
+  },
+  {
+    "chapter": 14,
+    "type": "情感爆发",
+    "sub_mode": "误会冰释",
+    "stage": "攀升段"
+  },
+  {
+    "chapter": 15,
+    "type": "悬念揭秘",
+    "sub_mode": "身份揭秘",
+    "stage": "攀升段"
   }
 ]

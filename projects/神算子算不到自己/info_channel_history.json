@@ -22,5 +22,45 @@
   {
     "chapter": 6,
     "channel": "ability_use"
+  },
+  {
+    "chapter": 7,
+    "channel": "body_warning"
+  },
+  {
+    "chapter": 7,
+    "channel": "body_warning"
+  },
+  {
+    "chapter": 8,
+    "channel": "external_pressure"
+  },
+  {
+    "chapter": 9,
+    "channel": "ability_use"
+  },
+  {
+    "chapter": 10,
+    "channel": "refuse_or_fail"
+  },
+  {
+    "chapter": 11,
+    "channel": "ability_use"
+  },
+  {
+    "chapter": 12,
+    "channel": "being_seen"
+  },
+  {
+    "chapter": 13,
+    "channel": "ability_use"
+  },
+  {
+    "chapter": 14,
+    "channel": "residue"
+  },
+  {
+    "chapter": 15,
+    "channel": "ability_use"
   }
 ]

@@ -22,5 +22,41 @@
   {
     "chapter": 6,
     "type": "reveal"
+  },
+  {
+    "chapter": 7,
+    "type": "action_heavy"
+  },
+  {
+    "chapter": 8,
+    "type": "investigation"
+  },
+  {
+    "chapter": 9,
+    "type": "reveal"
+  },
+  {
+    "chapter": 10,
+    "type": "suspense"
+  },
+  {
+    "chapter": 11,
+    "type": "chase"
+  },
+  {
+    "chapter": 12,
+    "type": "action_heavy"
+  },
+  {
+    "chapter": 13,
+    "type": "confrontation"
+  },
+  {
+    "chapter": 14,
+    "type": "chase"
+  },
+  {
+    "chapter": 15,
+    "type": "action_heavy"
   }
 ]

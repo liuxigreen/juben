@@ -10,7 +10,7 @@
         "算卦山"
       ],
       "new_banned_phrases": [],
-      "realm_change": "",
+      "realm_change": " [身体接近极限]",
       "foreshadow_planted": [],
       "foreshadow_resolved": []
     },
@@ -83,6 +83,112 @@
       "realm_change": " [身体接近极限]",
       "foreshadow_planted": [],
       "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 7,
+      "body_costs": [
+        "发麻",
+        "发抖"
+      ],
+      "setting_elements_used": [
+        "算卦",
+        "算卦山"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": " [身体接近极限]",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 8,
+      "body_costs": [],
+      "setting_elements_used": [
+        "算卦",
+        "算卦山"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 9,
+      "body_costs": [],
+      "setting_elements_used": [
+        "大衍",
+        "士族门阀与江",
+        "江南水乡临安"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 10,
+      "body_costs": [
+        "抽搐"
+      ],
+      "setting_elements_used": [],
+      "new_banned_phrases": [],
+      "realm_change": " [身体接近极限]",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 11,
+      "body_costs": [],
+      "setting_elements_used": [
+        "算卦",
+        "算卦山"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 12,
+      "body_costs": [],
+      "setting_elements_used": [
+        "算卦",
+        "算卦山"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 13,
+      "body_costs": [],
+      "setting_elements_used": [
+        "突火枪"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 14,
+      "body_costs": [],
+      "setting_elements_used": [
+        "城外有九座"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 15,
+      "body_costs": [],
+      "setting_elements_used": [],
+      "new_banned_phrases": [],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
     }
   ],
   "accumulated_costs": [
@@ -98,7 +204,14 @@
     "发抖",
     "出血",
     "出血",
-    "出血"
+    "出血",
+    "出血",
+    "发麻",
+    "发抖",
+    "心跳紊乱",
+    "发麻",
+    "发抖",
+    "抽搐"
   ],
   "accumulated_banned": [],
   "current_realm": "",
