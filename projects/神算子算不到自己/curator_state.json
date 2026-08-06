@@ -198,6 +198,37 @@
       "realm_change": "",
       "foreshadow_planted": [],
       "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 16,
+      "body_costs": [],
+      "setting_elements_used": [
+        "算筹",
+        "神女",
+        "白无垢",
+        "右眼",
+        "师妹"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 17,
+      "body_costs": [],
+      "setting_elements_used": [
+        "算卦",
+        "神女",
+        "城隍庙",
+        "白无垢",
+        "右眼",
+        "师妹"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
     }
   ],
   "accumulated_costs": [
