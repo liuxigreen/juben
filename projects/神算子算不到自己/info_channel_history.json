@@ -98,5 +98,9 @@
   {
     "chapter": 24,
     "channel": "residue"
+  },
+  {
+    "chapter": 25,
+    "channel": "refuse_or_fail"
   }
 ]
