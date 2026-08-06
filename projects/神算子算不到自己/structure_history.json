@@ -70,5 +70,9 @@
   {
     "chapter": 18,
     "type": "reveal"
+  },
+  {
+    "chapter": 19,
+    "type": "suspense"
   }
 ]

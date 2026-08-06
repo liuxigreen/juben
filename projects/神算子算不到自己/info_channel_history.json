@@ -74,5 +74,9 @@
   {
     "chapter": 18,
     "channel": "ability_use"
+  },
+  {
+    "chapter": 19,
+    "channel": "ability_use"
   }
 ]
