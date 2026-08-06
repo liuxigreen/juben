@@ -118,5 +118,9 @@
   {
     "chapter": 29,
     "channel": "ability_use"
+  },
+  {
+    "chapter": 30,
+    "channel": "residue"
   }
 ]

@@ -114,5 +114,9 @@
   {
     "chapter": 29,
     "type": "chase"
+  },
+  {
+    "chapter": 30,
+    "type": "reveal"
   }
 ]
