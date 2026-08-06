@@ -86,5 +86,9 @@
   {
     "chapter": 21,
     "channel": "body_warning"
+  },
+  {
+    "chapter": 22,
+    "channel": "ability_use"
   }
 ]
