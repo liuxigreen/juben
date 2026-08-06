@@ -126,5 +126,9 @@
   {
     "chapter": 31,
     "channel": "being_seen"
+  },
+  {
+    "chapter": 32,
+    "channel": "ability_use"
   }
 ]
