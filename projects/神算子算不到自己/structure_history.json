@@ -118,5 +118,9 @@
   {
     "chapter": 30,
     "type": "reveal"
+  },
+  {
+    "chapter": 31,
+    "type": "action_heavy"
   }
 ]
