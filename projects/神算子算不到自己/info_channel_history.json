@@ -106,5 +106,9 @@
   {
     "chapter": 26,
     "channel": "body_warning"
+  },
+  {
+    "chapter": 27,
+    "channel": "residue"
   }
 ]
