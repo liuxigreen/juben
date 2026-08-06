@@ -1,0 +1,322 @@
+[
+  {
+    "shot_id": 1,
+    "shot_type": "WS",
+    "camera_movement": "static",
+    "camera_angle": "eye-level",
+    "duration": 8.0,
+    "_speech_floor": 3.0,
+    "location": "揽月阁",
+    "space": "Physical",
+    "characters": [
+      "Character"
+    ],
+    "action_visual": "Character stands still",
+    "dialogue": "",
+    "inner_voice": "*借**到左眼上的）的余光扫过骨头——骨头的",
+    "focus_object": "",
+    "lighting": "Natural",
+    "emotion": "Neutral",
+    "visual_anchors": [],
+    "beat_id": 1,
+    "event_type": "",
+    "veo_prompt": "wide shot, static camera, eye level, featuring Character (Character), Character stands still, in 揽月阁, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "",
+      "dialogue_speaker": "",
+      "voiceover_zh": "*借**到左眼上的）的余光扫过骨头——骨头的",
+      "voice_type": "inner_voice",
+      "subtitle": "*借**到左眼上的）的余光扫过骨头——骨头的",
+      "emotion_tag": "calm",
+      "duration_hint": "8.0s"
+    }
+  },
+  {
+    "shot_id": 2,
+    "shot_type": "MCU",
+    "camera_movement": "push",
+    "camera_angle": "eye-level",
+    "duration": 8.0,
+    "_speech_floor": 3.0,
+    "location": "揽月阁",
+    "space": "Physical",
+    "characters": [
+      "Character"
+    ],
+    "action_visual": "Character stands still",
+    "dialogue": "别拔。",
+    "inner_voice": "",
+    "focus_object": "",
+    "lighting": "Natural",
+    "emotion": "Neutral",
+    "visual_anchors": [],
+    "beat_id": 2,
+    "event_type": "",
+    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Character (Character), Character stands still, in 揽月阁, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "别拔。",
+      "dialogue_speaker": "Character",
+      "voiceover_zh": "",
+      "voice_type": "onscreen",
+      "subtitle": "",
+      "emotion_tag": "calm",
+      "duration_hint": "8.0s"
+    }
+  },
+  {
+    "shot_id": 3,
+    "shot_type": "MS",
+    "camera_movement": "static",
+    "camera_angle": "eye-level",
+    "duration": 8.0,
+    "_speech_floor": 3.0,
+    "location": "揽月阁",
+    "space": "Physical",
+    "characters": [
+      "Character"
+    ],
+    "action_visual": "Character stands still",
+    "dialogue": "你四师兄。",
+    "inner_voice": "",
+    "focus_object": "",
+    "lighting": "Natural",
+    "emotion": "Neutral",
+    "visual_anchors": [],
+    "beat_id": 3,
+    "event_type": "",
+    "veo_prompt": "medium shot, static camera, eye level, featuring Character (Character), Character stands still, in 揽月阁, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "你四师兄。",
+      "dialogue_speaker": "Character",
+      "voiceover_zh": "",
+      "voice_type": "onscreen",
+      "subtitle": "",
+      "emotion_tag": "calm",
+      "duration_hint": "8.0s"
+    }
+  },
+  {
+    "shot_id": 4,
+    "shot_type": "MCU",
+    "camera_movement": "push",
+    "camera_angle": "eye-level",
+    "duration": 8.0,
+    "_speech_floor": 3.0,
+    "location": "揽月阁",
+    "space": "Physical",
+    "characters": [
+      "Character"
+    ],
+    "action_visual": "Character stands still",
+    "dialogue": "",
+    "inner_voice": "*没有**武器。但骨头的",
+    "focus_object": "",
+    "lighting": "Natural",
+    "emotion": "Neutral",
+    "visual_anchors": [],
+    "beat_id": 4,
+    "event_type": "",
+    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Character (Character), Character stands still, in 揽月阁, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "",
+      "dialogue_speaker": "",
+      "voiceover_zh": "*没有**武器。但骨头的",
+      "voice_type": "inner_voice",
+      "subtitle": "*没有**武器。但骨头的",
+      "emotion_tag": "calm",
+      "duration_hint": "8.0s"
+    }
+  },
+  {
+    "shot_id": 5,
+    "shot_type": "MS",
+    "camera_movement": "static",
+    "camera_angle": "eye-level",
+    "duration": 8.0,
+    "_speech_floor": 3.0,
+    "location": "揽月阁",
+    "space": "Physical",
+    "characters": [
+      "Character"
+    ],
+    "action_visual": "Character stands still",
+    "dialogue": "",
+    "inner_voice": "*算筹**。算筹极细，",
+    "focus_object": "",
+    "lighting": "Natural",
+    "emotion": "Neutral",
+    "visual_anchors": [],
+    "beat_id": 5,
+    "event_type": "",
+    "veo_prompt": "medium shot, static camera, eye level, featuring Character (Character), Character stands still, in 揽月阁, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "",
+      "dialogue_speaker": "",
+      "voiceover_zh": "*算筹**。算筹极细，",
+      "voice_type": "inner_voice",
+      "subtitle": "*算筹**。算筹极细，",
+      "emotion_tag": "calm",
+      "duration_hint": "8.0s"
+    }
+  },
+  {
+    "shot_id": 6,
+    "shot_type": "MCU",
+    "camera_movement": "push",
+    "camera_angle": "eye-level",
+    "duration": 8.0,
+    "_speech_floor": 3.0,
+    "location": "揽月阁",
+    "space": "Physical",
+    "characters": [
+      "Character"
+    ],
+    "action_visual": "Character stands still",
+    "dialogue": "",
+    "inner_voice": "*退**了",
+    "focus_object": "",
+    "lighting": "Natural",
+    "emotion": "Neutral",
+    "visual_anchors": [],
+    "beat_id": 6,
+    "event_type": "",
+    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Character (Character), Character stands still, in 揽月阁, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "",
+      "dialogue_speaker": "",
+      "voiceover_zh": "*退**了",
+      "voice_type": "inner_voice",
+      "subtitle": "*退**了",
+      "emotion_tag": "calm",
+      "duration_hint": "8.0s"
+    }
+  },
+  {
+    "shot_id": 7,
+    "shot_type": "MS",
+    "camera_movement": "static",
+    "camera_angle": "eye-level",
+    "duration": 8.0,
+    "_speech_floor": 3.0,
+    "location": "揽月阁",
+    "space": "Physical",
+    "characters": [
+      "Character"
+    ],
+    "action_visual": "Character stands still",
+    "dialogue": "",
+    "inner_voice": "*师兄**。\" 骨头说，\"白无垢",
+    "focus_object": "",
+    "lighting": "Natural",
+    "emotion": "Neutral",
+    "visual_anchors": [],
+    "beat_id": 7,
+    "event_type": "",
+    "veo_prompt": "medium shot, static camera, eye level, featuring Character (Character), Character stands still, in 揽月阁, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "",
+      "dialogue_speaker": "",
+      "voiceover_zh": "*师兄**。\" 骨头说，\"白无垢",
+      "voice_type": "inner_voice",
+      "subtitle": "*师兄**。\" 骨头说，\"白无垢",
+      "emotion_tag": "calm",
+      "duration_hint": "8.0s"
+    }
+  },
+  {
+    "shot_id": 8,
+    "shot_type": "MCU",
+    "camera_movement": "push",
+    "camera_angle": "eye-level",
+    "duration": 8.0,
+    "_speech_floor": 3.0,
+    "location": "揽月阁",
+    "space": "Physical",
+    "characters": [
+      "Character"
+    ],
+    "action_visual": "Character stands still",
+    "dialogue": "",
+    "inner_voice": "*掉**了。算筹",
+    "focus_object": "",
+    "lighting": "Natural",
+    "emotion": "Neutral",
+    "visual_anchors": [],
+    "beat_id": 8,
+    "event_type": "",
+    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Character (Character), Character stands still, in 揽月阁, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "",
+      "dialogue_speaker": "",
+      "voiceover_zh": "*掉**了。算筹",
+      "voice_type": "inner_voice",
+      "subtitle": "*掉**了。算筹",
+      "emotion_tag": "calm",
+      "duration_hint": "8.0s"
+    }
+  },
+  {
+    "shot_id": 9,
+    "shot_type": "MS",
+    "camera_movement": "static",
+    "camera_angle": "eye-level",
+    "duration": 8.0,
+    "_speech_floor": 3.0,
+    "location": "揽月阁",
+    "space": "Physical",
+    "characters": [
+      "Character"
+    ],
+    "action_visual": "Character stands still",
+    "dialogue": "",
+    "inner_voice": "*没**看",
+    "focus_object": "",
+    "lighting": "Natural",
+    "emotion": "Neutral",
+    "visual_anchors": [],
+    "beat_id": 9,
+    "event_type": "",
+    "veo_prompt": "medium shot, static camera, eye level, featuring Character (Character), Character stands still, in 揽月阁, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "",
+      "dialogue_speaker": "",
+      "voiceover_zh": "*没**看",
+      "voice_type": "inner_voice",
+      "subtitle": "*没**看",
+      "emotion_tag": "calm",
+      "duration_hint": "8.0s"
+    }
+  },
+  {
+    "shot_id": 10,
+    "shot_type": "MCU",
+    "camera_movement": "push",
+    "camera_angle": "eye-level",
+    "duration": 8.0,
+    "_speech_floor": 3.0,
+    "location": "揽月阁",
+    "space": "Physical",
+    "characters": [
+      "Character"
+    ],
+    "action_visual": "Character stands still",
+    "dialogue": "",
+    "inner_voice": "*渗**进",
+    "focus_object": "",
+    "lighting": "Natural",
+    "emotion": "Neutral",
+    "visual_anchors": [],
+    "beat_id": 10,
+    "event_type": "",
+    "veo_prompt": "medium close-up, slow dolly forward, eye level, featuring Character (Character), Character stands still, in 揽月阁, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "",
+      "dialogue_speaker": "",
+      "voiceover_zh": "*渗**进",
+      "voice_type": "inner_voice",
+      "subtitle": "*渗**进",
+      "emotion_tag": "calm",
+      "duration_hint": "8.0s"
+    }
+  }
+]

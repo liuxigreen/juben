@@ -1,0 +1,66 @@
+[
+  {
+    "beat_id": 1,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆九从破庙出发时是辰时。\n他从秦淮河的柳树底下走过。临安八月的河水是淡粉的——上游九座算卦山每个月流下来的命格，把水染成这种颜色。陆九不用眼睛看，他用鼻闻。河水"
+  },
+  {
+    "beat_id": 2,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "白子虚站起来。船身晃了一下。\n白子虚的右手——白骨做的，也是白无垢做的——往秦淮河水里一探。水是粉的。白骨手在粉水里捞了一下。\n捞出一根头发。\n头发是黑色的。不"
+  },
+  {
+    "beat_id": 3,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "师妹——我来了。",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "但不是白子虚的骨头。是老阁主的骨头。\n老阁主的骨头在白树的根里。\n白树的根是老阁主的新身体。\n老阁主死了二十四年，藏了二十四年——今日——借了白树——还阳了。\n"
+  },
+  {
+    "beat_id": 4,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*神女降世了。",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "白花摇了。摇的方向是陆九的方向。白花中心师妹的脸——笑得更大。\n笑到——临安城算卦山钟——第十下。\n第十下钟声从正北传过来。是师妹敲的。是师妹借了算卦山的钟敲了"
+  }
+]

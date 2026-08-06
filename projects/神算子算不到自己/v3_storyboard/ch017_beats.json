@@ -1,0 +1,354 @@
+[
+  {
+    "beat_id": 1,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "你这一卦——",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "第17章 城隍庙里的粉红雪\n那朵白花从肚脐里钻出来的时候，陆九听见自己的肋骨响了一声。\n不是断。是裂。像冬天的竹竿被炭火烤到半熟，从里往外迸开。花瓣极薄，边缘卷"
+  },
+  {
+    "beat_id": 2,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "——算得准。",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "木屐点地三下。城隍庙破摊前的青石板被点出三道白印，每一道都冒着青烟。\n\"——算得准。\""
+  },
+  {
+    "beat_id": 3,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "你怎么找到这儿的。",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆九的左手已经攥住腰间龟壳。龟壳烫手。不是算卦的烫，是被火烤过的烫——龟壳里那枚铜钱在抖，抖得铜钱边缘刮出细碎的响。\n\"你怎么找到这儿的。\"陆九说。嗓子眼里有血"
+  },
+  {
+    "beat_id": 4,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "二十四年。",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "白无垢的右手从袖口里伸出来。\n不是手。\n是十二根铁算筹。每根算筹的尖端都穿着粉红色的血珠——和陆九肚脐里流出来的同一种颜色。算筹在指缝间错开，像蜈蚣的脚。\n\"二"
+  },
+  {
+    "beat_id": 5,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "我找了二十四年。",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "他歪了一下头。左边脸颊的酒窝凹下去。\n\"我找了二十四年。\"\n城隍庙的香炉倒了。香灰洒在破摊的木板上，灰里有未烧尽的香头，红得像血。陆九的左眼——那只被白无垢的「"
+  },
+  {
+    "beat_id": 6,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "师兄——",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆九的右眼开始疼。\n不是反噬。是师妹在往外挤。\n他能「看见」她——不是用眼睛，是用命格。师妹蜷缩在他命格的某处，像一粒被咽下的种子，根须已经缠上他的脊椎。她在哭"
+  },
+  {
+    "beat_id": 7,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆九的龟壳在手里转了半圈。铜钱从龟壳缝里漏出来，砸在青石板上，弹了三下，滚进香灰里。\n他没去捡。\n他盯着白无垢袖口里那十二根铁算筹。每根算筹代表一个「死卦」。十"
+  },
+  {
+    "beat_id": 8,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "你把我师妹——",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "其中一根，穿着一缕头发。\n黑的。长的。女孩子的头发。\n\"你把我师妹——\"陆九说。声音从牙缝里挤出来，带着血沫。\n\"算到你自己肚子里了。\"白无垢替他把话说完。"
+  },
+  {
+    "beat_id": 9,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "此卦——",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "木屐又点地三下。城隍庙的墙皮簌簌往下落。\n陆九伸手去摸自己的肚脐。指尖碰到花瓣——花瓣是温的，比体温高，像刚出锅的馒头。他的手指在花瓣上停了一息。\n\"此卦——\""
+  },
+  {
+    "beat_id": 10,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "别算。",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "白无垢的右手动了。十二根铁算筹同时从袖口射出。\n陆九往后一仰。算筹从他鼻尖前三寸掠过，钉进城隍庙的木柱。十二根算筹排成一列，每根入木三分，露在外面的部分还在嗡嗡"
+  },
+  {
+    "beat_id": 11,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "神女降世。",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆九的肚脐上那朵白花猛地一开。\n整朵花从皮肉里绽出来——不是一瓣一瓣地开，是整朵炸开。花心正中有一张脸。极小。眉眼模糊。像用针尖在米粒上刻出来的人像。\n是师妹的"
+  },
+  {
+    "beat_id": 12,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "师妹。",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆九的左手终于从龟壳上松开。龟壳啪的一声炸成两半。铜钱从两半龟壳里弹出来，在青石板上跳了三跳，滚进白无垢的木屐底下。\n陆九用左手抠住自己的肚脐。\n他的指甲陷进花"
+  },
+  {
+    "beat_id": 13,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "别——",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "不是叫师妹。是问师妹。\n花心里的脸动了动。嘴张开。没声音。但陆九看见她的口型——\n\"别——\"\n她说的是「别」。"
+  },
+  {
+    "beat_id": 14,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "你这一卦——",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆九的手停了。\n白无垢的笑意又浮上来。这次笑意没落到底，挂在嘴角，像挂在屋檐下的冰溜子。\n\"你这一卦——\"他往前走了一步。木屐在青石板上点出第四下，\"——算还是"
+  },
+  {
+    "beat_id": 15,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "师兄——",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "城隍庙外传来马蹄声。\n不是一匹马。是三匹。蹄铁敲在青石板上，节奏整齐得像算盘珠子。\n陆九的左眼又流下白色的泪。他的右眼开始剧痛——不是反噬，是师妹又在往外挤。他"
+  },
+  {
+    "beat_id": 16,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "我赌。",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆九的手从肚脐上松开。\n他的指尖全是粉色的血。\n\"我赌。\"他说。"
+  },
+  {
+    "beat_id": 17,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "赌什么？",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "白无垢的左脸颊酒窝又凹了一下。\n\"赌什么？\"\n\"赌你算错一卦。\"陆九说。"
+  },
+  {
+    "beat_id": 18,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "此卦——",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "他用沾着粉色血的手指，在城隍庙的木柱上画了一道。那道血痕歪歪扭扭，从柱子顶部一直拉到柱子底部。\n\"此卦——\"他开口，\"——你白无垢，找了二十四年——\"\n\"找的不"
+  },
+  {
+    "beat_id": 19,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "瞎子。",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "白无垢的木屐停在空中，没落下去。\n他的笑意僵在脸上。左边脸颊的酒窝不再凹，右边脸颊——从来不会笑的那半边——抽了一下。\n陆九咳出一口血。粉色的。落到地上的香灰里"
+  },
+  {
+    "beat_id": 20,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "当年给你馒头的瞎眼先生——",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "白无垢的右手袖口里，那十二根铁算筹同时震了一下。\n\"当年给你馒头的瞎眼先生——\"\n\"就是我。\""
+  },
+  {
+    "beat_id": 21,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "师兄——我把他们骨灰都带回来了——",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "城隍庙外，马蹄声停在庙门口。\n有人从马背上跳下来。靴子踩在青石板上，声音清脆。\n女孩子的脚步。\n腰间有酒葫芦——空的——走路拍人肩膀拍得生疼的——\n沈小碗的嗓音"
+  },
+  {
+    "beat_id": 22,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "",
+    "voice_type": "none",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "她一脚踢开庙门。\n阳光从门口涌进来。阳光里飞着粉尘。粉尘里有三只酒葫芦的影子。\n陆九的肚脐上，第九朵白花，开了。"
+  }
+]

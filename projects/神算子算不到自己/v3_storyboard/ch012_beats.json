@@ -1,0 +1,66 @@
+[
+  {
+    "beat_id": 1,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*屐**的",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "冰**炸**开时，瞎子没动。\n木**屐**的**铁**皮**包**边**锈**穿**了**两**个**洞**，**洞**里**长**出**两**根**白**骨*"
+  },
+  {
+    "beat_id": 2,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*九**的",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆**九**的**左**手**按**上**去**。**白**骨**的**根**从**冰**面**下**钻**出**来**，**绕**着**陆**九**的**左*"
+  },
+  {
+    "beat_id": 3,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*是**陆",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "不**是**陆**九**说**的**。**是**瞎**子**说**的**。\n瞎**子**说**话**的**时**候**——**木**屐**点**了**三**下*"
+  },
+  {
+    "beat_id": 4,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*九**的",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆**九**的**左**腿**踩**上**去**。**第**三**座**山**的**白**骨**根**从**冰**面**下**钻**出**来**，**绕**着*"
+  }
+]

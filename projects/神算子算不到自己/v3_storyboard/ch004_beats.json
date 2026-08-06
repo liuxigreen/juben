@@ -1,0 +1,162 @@
+[
+  {
+    "beat_id": 1,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*借**到左眼上的）的余光扫过骨头——骨头的",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "沈小碗跑进醉仙楼后厨时，灶上的火已经烧了三遍。\n她没进正堂。后厨的灶台是大师兄当年用过的——大师兄是酒楼的二厨，二厨的活是切墩、熬汤、看火。大师兄死后她再没回过"
+  },
+  {
+    "beat_id": 2,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "别拔。",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "但那不是今天的事。\n沈小碗的右手摸到腰间的竹筒。竹筒里还有**十九**根透骨钉。她抽出第一根时手是稳的。\n\"别拔。\" 骨头的声音从灶台前传出来。少年的声音是干的"
+  },
+  {
+    "beat_id": 3,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "你四师兄。",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "沈小碗的手在竹筒上停了。\n骨头没回头。\n\"你四师兄。\" 骨头说。\n\"我没有四师兄。\" 沈小碗说。"
+  },
+  {
+    "beat_id": 4,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*没有**武器。但骨头的",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "骨头慢慢从灶台前站起来。\n他转身时，沈小碗看清楚了——骨头腰里**没有**武器。但骨头的**鞋**上——左脚鞋底**画**着**一朵白花**。\n是师父的画。\n师"
+  },
+  {
+    "beat_id": 5,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*算筹**。算筹极细，",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "骨头从袖里抽出一根**算筹**。算筹极细，**铁**的，不是白无垢那十二根算筹——是**老**的。算筹表面布满**绿锈**。\n\"师父算我**二十四年**后回来。"
+  },
+  {
+    "beat_id": 6,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*退**了",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "沈小碗的脚步——**退**了**三**步。\n\"你今年——\"\n\"二十四。\" 骨头说，\"我今年**二十四**。\"\n\"你是**孤儿**——\"\n\"是**老阁主**的儿子"
+  },
+  {
+    "beat_id": 7,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*师兄**。\" 骨头说，\"白无垢",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "沈小碗的右手**按**在竹筒上。\n\"老阁主——**是**你父亲。\"\n\"是。\" 骨头说。\n\"白无垢——\"\n\"是我**师兄**。\" 骨头说，\"白无垢**杀**了我父"
+  },
+  {
+    "beat_id": 8,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*掉**了。算筹",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "骨头把那根绿锈算筹**插**进灶台底下的地砖缝里。\n算筹的绿锈**掉**了。算筹**变**了**新**的。\n算筹**新**的——上面**刻**着字。\n沈小碗**"
+  },
+  {
+    "beat_id": 9,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*没**看",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "沈小碗**没**看**懂**。\n骨头把算筹从地砖缝里**拔**出来。算筹**尖**端**滴**着一滴**血**。血是**红**色**的**。\n骨头**用**那*"
+  },
+  {
+    "beat_id": 10,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*渗**进",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "骨头的血字在砧板上**渗**进**木**头**里**。\n木头**吸**了**血**。\n木头**开**了**花**。\n是**白**花**。\n**极**小**。\n*"
+  }
+]

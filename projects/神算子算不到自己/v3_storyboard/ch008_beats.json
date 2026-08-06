@@ -1,0 +1,194 @@
+[
+  {
+    "beat_id": 1,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*粉船**把他",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆九是从粉船上下来的。\n不是他自己下的——是**粉船**把他**送**下来的。粉船在红河水面上**退**了七步,每退一步,船尾的粉色就**淡**一分。退到第七步"
+  },
+  {
+    "beat_id": 2,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*没**转身。陆九的左眼",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆九**没**转身。陆九的左眼**看**着秦淮河。\n\"陆先生的左眼——\"白无垢的木屐**踩**在红河上——**不**湿——\"陆先生的左眼——是新长的。\"\n\"是。"
+  },
+  {
+    "beat_id": 3,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*点**了红河——",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆九**没**说话。\n\"陆先生的神女——\"白无垢的木屐**点**了红河——**响**了一声,\"陆先生的神女——是**三**个女人。\""
+  },
+  {
+    "beat_id": 4,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*转**身了。陆九的左眼",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆九**转**身了。陆九的左眼**看**着白无垢。\n白无垢的右手——是**新**的**白骨**。新白骨**不**像旧白骨。旧白骨**裂**成了**十**二片。新"
+  },
+  {
+    "beat_id": 5,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*点**了红河——",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "白无垢的木屐**点**了红河——**响**了**三**声。\n\"陆先生——\"白无垢的嘴**说**,\"我母亲的**心**——**等**的**是**陆先生。\"\n\"我母"
+  },
+  {
+    "beat_id": 6,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*左**手",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆九的**左**手**按**在**肚脐**上。\n陆九的**左**手**按**不**住**了。\n陆九的**肚脐**——**又**开**花**了。\n这次开的是**粉"
+  },
+  {
+    "beat_id": 7,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*无**垢",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "白**无**垢**的**木**屐**——**在**红**河**上**——**不**点**了**。\n白**无**垢**的**木**屐**——**在**红**河**"
+  },
+  {
+    "beat_id": 8,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "**我**是**你**母**亲**",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "白**无**垢**的**嘴**——**说**完**了**。\n白**无**垢**的**嘴**——**闭**了**。\n白**无**垢**的**笑**——**不**笑"
+  },
+  {
+    "beat_id": 9,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*小**妹",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "白**小**妹**的**笑**——**停**了**。\n白**小**妹**的**笑**——**变**成**了**白**色**的**泪**。\n白**色**的**泪*"
+  },
+  {
+    "beat_id": 10,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*九**的",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆**九**的**左**手**——**在**肚**脐**上**——**按**着**。\n陆**九**的**左**手**——**按**不**住**了**。\n陆**九"
+  },
+  {
+    "beat_id": 11,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*女**的",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "神**女**的**大**嘴**——**说**完**了**。\n神**女**的**大**嘴**——**闭**了**。\n神**女**的**大**笑**——**不**笑"
+  },
+  {
+    "beat_id": 12,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*卦**山",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "算**卦**山**钟**——**第**九**下**。\n算**卦**山**钟**——**第**十**下**。\n算**卦**山**钟**——**第**十**一**下"
+  }
+]

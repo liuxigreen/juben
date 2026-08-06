@@ -70,5 +70,9 @@
   {
     "chapter": 17,
     "channel": "being_seen"
+  },
+  {
+    "chapter": 18,
+    "channel": "ability_use"
   }
 ]

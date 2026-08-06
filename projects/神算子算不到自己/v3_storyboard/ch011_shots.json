@@ -1,0 +1,162 @@
+[
+  {
+    "shot_id": 1,
+    "shot_type": "WS",
+    "camera_movement": "static",
+    "camera_angle": "eye-level",
+    "duration": 8.0,
+    "_speech_floor": 3.0,
+    "location": "揽月阁",
+    "space": "Physical",
+    "characters": [
+      "Character"
+    ],
+    "action_visual": "Character stands still",
+    "dialogue": "",
+    "inner_voice": "**师**兄**",
+    "focus_object": "",
+    "lighting": "Natural",
+    "emotion": "Neutral",
+    "visual_anchors": [],
+    "beat_id": 1,
+    "event_type": "",
+    "veo_prompt": "wide shot, static camera, eye level, featuring Character (Character), Character stands still, in 揽月阁, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "",
+      "dialogue_speaker": "",
+      "voiceover_zh": "**师**兄**",
+      "voice_type": "inner_voice",
+      "subtitle": "**师**兄**",
+      "emotion_tag": "calm",
+      "duration_hint": "8.0s"
+    }
+  },
+  {
+    "shot_id": 2,
+    "shot_type": "MS",
+    "camera_movement": "push",
+    "camera_angle": "eye-level",
+    "duration": 8.0,
+    "_speech_floor": 3.0,
+    "location": "揽月阁",
+    "space": "Physical",
+    "characters": [
+      "Character"
+    ],
+    "action_visual": "Character stands still",
+    "dialogue": "",
+    "inner_voice": "*音**是",
+    "focus_object": "",
+    "lighting": "Natural",
+    "emotion": "Neutral",
+    "visual_anchors": [],
+    "beat_id": 2,
+    "event_type": "",
+    "veo_prompt": "medium shot, slow dolly forward, eye level, featuring Character (Character), Character stands still, in 揽月阁, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "",
+      "dialogue_speaker": "",
+      "voiceover_zh": "*音**是",
+      "voice_type": "inner_voice",
+      "subtitle": "*音**是",
+      "emotion_tag": "calm",
+      "duration_hint": "8.0s"
+    }
+  },
+  {
+    "shot_id": 3,
+    "shot_type": "MCU",
+    "camera_movement": "static",
+    "camera_angle": "eye-level",
+    "duration": 8.0,
+    "_speech_floor": 3.0,
+    "location": "揽月阁",
+    "space": "Physical",
+    "characters": [
+      "Character"
+    ],
+    "action_visual": "Character stands still",
+    "dialogue": "",
+    "inner_voice": "*九**的",
+    "focus_object": "",
+    "lighting": "Natural",
+    "emotion": "Neutral",
+    "visual_anchors": [],
+    "beat_id": 3,
+    "event_type": "",
+    "veo_prompt": "medium close-up, static camera, eye level, featuring Character (Character), Character stands still, in 揽月阁, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "",
+      "dialogue_speaker": "",
+      "voiceover_zh": "*九**的",
+      "voice_type": "inner_voice",
+      "subtitle": "*九**的",
+      "emotion_tag": "calm",
+      "duration_hint": "8.0s"
+    }
+  },
+  {
+    "shot_id": 4,
+    "shot_type": "MS",
+    "camera_movement": "push",
+    "camera_angle": "eye-level",
+    "duration": 8.0,
+    "_speech_floor": 3.0,
+    "location": "揽月阁",
+    "space": "Physical",
+    "characters": [
+      "Character"
+    ],
+    "action_visual": "Character stands still",
+    "dialogue": "",
+    "inner_voice": "*说**话",
+    "focus_object": "",
+    "lighting": "Natural",
+    "emotion": "Neutral",
+    "visual_anchors": [],
+    "beat_id": 4,
+    "event_type": "",
+    "veo_prompt": "medium shot, slow dolly forward, eye level, featuring Character (Character), Character stands still, in 揽月阁, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "",
+      "dialogue_speaker": "",
+      "voiceover_zh": "*说**话",
+      "voice_type": "inner_voice",
+      "subtitle": "*说**话",
+      "emotion_tag": "calm",
+      "duration_hint": "8.0s"
+    }
+  },
+  {
+    "shot_id": 5,
+    "shot_type": "MCU",
+    "camera_movement": "static",
+    "camera_angle": "eye-level",
+    "duration": 8.0,
+    "_speech_floor": 3.0,
+    "location": "揽月阁",
+    "space": "Physical",
+    "characters": [
+      "Character"
+    ],
+    "action_visual": "Character stands still",
+    "dialogue": "",
+    "inner_voice": "*九**的",
+    "focus_object": "",
+    "lighting": "Natural",
+    "emotion": "Neutral",
+    "visual_anchors": [],
+    "beat_id": 5,
+    "event_type": "",
+    "veo_prompt": "medium close-up, static camera, eye level, featuring Character (Character), Character stands still, in 揽月阁, natural daylight, soft shadows, neutral, observational, cinematic, 9:16 vertical, photorealistic, 4K",
+    "audio": {
+      "dialogue_zh": "",
+      "dialogue_speaker": "",
+      "voiceover_zh": "*九**的",
+      "voice_type": "inner_voice",
+      "subtitle": "*九**的",
+      "emotion_tag": "calm",
+      "duration_hint": "8.0s"
+    }
+  }
+]

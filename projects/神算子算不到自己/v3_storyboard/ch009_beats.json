@@ -1,0 +1,162 @@
+[
+  {
+    "beat_id": 1,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*透**的,透得能看见底。秦淮河冻成了一整块",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆九睁开眼时,看见的第一样东西是白。\n不是天——是**冰**。\n冰是**透**的,透得能看见底。秦淮河冻成了一整块**白冰**,冰面下方是**大衍**朝**二百"
+  },
+  {
+    "beat_id": 2,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*沈小碗*",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "第三个人——**沈小碗**。她手里握着一只**空**酒葫芦。\n三个人围成**一**个**圈**。圈的中心有一颗**粉**豆。粉豆是神女的**核**。\n陆九的左眼"
+  },
+  {
+    "beat_id": 3,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*九**师",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "声音是从肚脐里**冒**出来的。\n陆**九**师**妹**的**声**音。\n陆**九**的**左**手**按**在**肚**脐**上**——**按**不**住*"
+  },
+  {
+    "beat_id": 4,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*音**——",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "声**音**——**说**了**第**三**句**话**：\n\"师**兄**——**你**的**左**眼**——**本**该**瞎**了**二**十**三**年*"
+  },
+  {
+    "beat_id": 5,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*音**——",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "声**音**——**说**了**第**四**句**话**：\n\"师**兄**——**你**用**左**眼**——**算**死**了**我**。\""
+  },
+  {
+    "beat_id": 6,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*音**——",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "声**音**——**说**了**第**五**句**话**：\n\"师**兄**——**我**在**肚**脐**里**——**等**了**你**——**二**十**四"
+  },
+  {
+    "beat_id": 7,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*音**——",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "声**音**——**说**完**了**。\n陆**九**的**肚**脐**——**又**开**花**了**。是**白**花**。白**花**从**肚**脐**——"
+  },
+  {
+    "beat_id": 8,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*九**的",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆**九**的**左**手**——**在**肚**脐**上**——**按**着**。\n陆**九**的**左**手**——**松**了**。\n白**花**——**"
+  },
+  {
+    "beat_id": 9,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*九**的",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆**九**的**左**手**——**在**肚**脐**上**——**按**着**。\n陆**九**的**左**手**——**抖**了**。\n陆**九**的**左"
+  },
+  {
+    "beat_id": 10,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*绳**——",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "红**绳**——**系**上**了**。\n红**绳**——**不**是**褪**色**的**红**绳**。红**绳**——**是**新**的**红**绳**。新"
+  }
+]

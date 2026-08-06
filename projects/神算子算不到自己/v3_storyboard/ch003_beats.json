@@ -1,0 +1,434 @@
+[
+  {
+    "beat_id": 1,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "我头顶发绿这一卦——",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆九是被冷醒的。\n不是空气冷——是**胃**冷。他昨晚吞下龟壳断片的胃里，有一颗极小的、硬的、凉的东西，正在被那根从肚脐钻出来的嫩芽一点点顶出来。\n他睁开眼。\n"
+  },
+  {
+    "beat_id": 2,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*乳白色*",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "他站起来。左手按着供桌——右眼瞎了，他只能用左眼。瞎了二十三年的左眼昨日开过，今日的视线是**乳白色**的。能看见轮廓，看不清细节。\n他能看见庙门外那把红伞的伞"
+  },
+  {
+    "beat_id": 3,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "师妹——",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "没回应。\n他用左眼（乳白色的视线）扫了一圈庙里——供桌上昨夜那根燃尽的引魂香灰还在。香灰的形状不是散的——是**盘**的。盘成一个极小的\"九\"字。\n陆九的右手在"
+  },
+  {
+    "beat_id": 4,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*她跑了*",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆九低头。\n供桌底下的泥地——被他自己的血泡软了。泥里——有一只手。\n不是真手。是**画**。是用血画的手。五指张开。食指上写着\"九\"。\n\"师妹——\" 陆九又说"
+  },
+  {
+    "beat_id": 5,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*门**的形状——庙门，\"门外有",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "血手摇了摇。摇得**很慢**——像是画这血的人已经没力气了。\n\"师兄——\" 血手在泥里又画了一笔，画的是一个**门**的形状——庙门，\"门外有**客**。\""
+  },
+  {
+    "beat_id": 6,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*来人是谁",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆九的耳朵竖了一下。\n庙门外——真的有人。脚步声。不是木屐，是布鞋。极轻。极慢。像怕惊着谁。\n陆九的右手从血手上挪开，按到了自己肚脐的绿疤上。\n\"师妹——\" 他"
+  },
+  {
+    "beat_id": 7,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "**日**",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "血手在泥里又画了——画了一个极小的**圆圈**。圆圈中间一个点。\n陆九的左眼瞳孔缩了一下。\n是\"**日**\"。"
+  },
+  {
+    "beat_id": 8,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "几个人？",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "来人是**白**字头的人——白无垢的人。\n\"几个人？\""
+  },
+  {
+    "beat_id": 9,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "是白无垢本人？",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "血手伸出一根手指。\n一个。\n\"是白无垢本人？\""
+  },
+  {
+    "beat_id": 10,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "是他的人？",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "血手摇了摇。\n不是。\n\"是他的人？\""
+  },
+  {
+    "beat_id": 11,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "什么品级？",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "血手点了点头。\n\"什么品级？\"\n血手画了一个字——\"**死**\"。"
+  },
+  {
+    "beat_id": 12,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "十二筹？",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆九的嘴角动了一下。\n\"十二筹？\""
+  },
+  {
+    "beat_id": 13,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "那是谁？",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "血手摇了摇。\n\"那是谁？\"\n血手画了一笔——画的是一个极小的\"**骨**\"字。"
+  },
+  {
+    "beat_id": 14,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*最不听话",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆九的左眼瞳孔缩到了极小。\n骨——是白无垢身边**最不听话**的那个。不属于十二筹。不是杀手。是白无垢的**师弟**——骨头。\n传说白无垢篡位时，是骨头帮他把老"
+  },
+  {
+    "beat_id": 15,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*骨头是来抓你的",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆九的右手从绿疤上挪开了。\n\"师妹——\" 他说，\"**骨头是来抓你的**。\""
+  },
+  {
+    "beat_id": 16,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "**走**",
+    "dialogue_speaker": "Character",
+    "inner_voice": "",
+    "voice_type": "onscreen",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "血手停了。\n停了**三息**。\n然后血手又动了。食指画了一个字——\"**走**\"。\n\"我不能走。\" 陆九说。\n血手又画了一笔——\"**走**\"。\n\"我走了你怎么"
+  },
+  {
+    "beat_id": 17,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*化开了*",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "血手没再画。血手**化开了**——血融进泥里。供桌底下的泥被血染成一片暗红。\n\"师妹——\" 陆九叫了一声。"
+  },
+  {
+    "beat_id": 18,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*没有人*",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "没回应。\n他的手按在泥里。泥是冷的——**没有人**。\n他妹妹**走了**。\n是从命格里**挤出来**的那一刹那走的。她用了力气——**最后**的力气。\n陆九的"
+  },
+  {
+    "beat_id": 19,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*供桌底下",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆九没回应。\n他蹲下来——供桌底下的空间极小，他得猫着腰。他的左手在供桌的横档上摸了一下——横档的木头在发抖。不是因为风。是因为**供桌底下**的泥在抖。\n有什"
+  },
+  {
+    "beat_id": 20,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*陷**进了泥里。陷了",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "没声音。\n他不叫了。他**笑**了。\n他从供桌底下钻出来。\n他的左眼——乳白色——看着庙门外的方向。庙门外的少年**骨头**还没进来，还在等。\n陆九往庙门走了三"
+  },
+  {
+    "beat_id": 21,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*没回应*",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "泥里**没回应**。\n但那只九指手——**松开**了陆九的脚踝。\n手从泥底**翻**上来。手背朝上。手心朝下。手里**托**着一样东西。\n是一根**算筹**。\n"
+  },
+  {
+    "beat_id": 22,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*乳白色的眼珠",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆九的左手把那根算筹**拿**起来。\n算筹极轻。但极**烫**。\n烫到他的左手指尖**麻**了。\n麻从指尖往上——爬到手腕——爬到手臂——爬到肩膀——爬到脖颈—"
+  },
+  {
+    "beat_id": 23,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*瞎**。算到陆九会",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "老阁主死前算卦——最后一卦——是**陆九**。\n老阁主算到陆九会来。算到陆九会**瞎**。算到陆九会**碎**龟壳。算到陆九会**吞**断片。算到陆九会**长*"
+  },
+  {
+    "beat_id": 24,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*肚脐的绿疤",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆九的左手握紧了那根算筹。\n算筹在他掌心里**化**了。\n化成一股水。\n水流进他**肚脐的绿疤**里。\n疤——**不疼了**。\n但**痒**。\n极痒。\n从疤的位"
+  },
+  {
+    "beat_id": 25,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*睁到极大",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆九的左眼**睁到极大**。\n他低头看。\n庙门外的泥——**裂开**了。\n不是普通的裂。是**缝**。\n一条极细的缝——从庙门槛正中间——**往下**裂。\n裂缝"
+  },
+  {
+    "beat_id": 26,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*没回应*",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "陆九**没回应**。\n他蹲在那棵草龟壳旁边。\n他的左手——\n他用左手的**食指**——\n在草龟壳的**中心**——**点**了一下。\n点的那一刹那——\n草龟壳*"
+  },
+  {
+    "beat_id": 27,
+    "space": "Physical",
+    "characters_present": [
+      "Character"
+    ],
+    "primary_char": "Character",
+    "action_visual": "Character stands still",
+    "spoken_dialogue": "",
+    "dialogue_speaker": "",
+    "inner_voice": "*白无垢*",
+    "voice_type": "inner_voice",
+    "focus_object": "",
+    "emotion": "Neutral",
+    "source_text": "骨头没回应。\n骨头的手——从泥里**收**回去了。\n骨头**跑**了。\n不是向**白无垢**跑。\n是向**醉仙楼**跑。\n骨头知道**沈小碗**在那。\n骨头是*"
+  }
+]
