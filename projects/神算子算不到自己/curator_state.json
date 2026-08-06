@@ -413,6 +413,24 @@
       "realm_change": " [身体接近极限]",
       "foreshadow_planted": [],
       "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 29,
+      "body_costs": [
+        "代价"
+      ],
+      "setting_elements_used": [
+        "算卦",
+        "神女",
+        "临安城",
+        "白无垢",
+        "右眼",
+        "神女转世"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": " [身体接近极限]",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
     }
   ],
   "accumulated_costs": [
@@ -436,6 +454,11 @@
     "发麻",
     "发抖",
     "抽搐",
+    "代价",
+    "代价",
+    "代价",
+    "代价",
+    "代价",
     "代价",
     "代价",
     "代价",

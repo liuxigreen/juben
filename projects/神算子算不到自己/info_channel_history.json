@@ -114,5 +114,9 @@
   {
     "chapter": 28,
     "channel": "ability_use"
+  },
+  {
+    "chapter": 29,
+    "channel": "ability_use"
   }
 ]

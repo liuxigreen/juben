@@ -110,5 +110,9 @@
   {
     "chapter": 28,
     "type": "action_heavy"
+  },
+  {
+    "chapter": 29,
+    "type": "chase"
   }
 ]
