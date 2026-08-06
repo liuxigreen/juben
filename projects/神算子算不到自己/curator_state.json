@@ -313,6 +313,22 @@
       "realm_change": " [身体接近极限]",
       "foreshadow_planted": [],
       "foreshadow_resolved": []
+    },
+    {
+      "chapter_num": 23,
+      "body_costs": [],
+      "setting_elements_used": [
+        "算卦",
+        "神女",
+        "粉雪",
+        "白无垢",
+        "右眼",
+        "师妹"
+      ],
+      "new_banned_phrases": [],
+      "realm_change": "",
+      "foreshadow_planted": [],
+      "foreshadow_resolved": []
     }
   ],
   "accumulated_costs": [
