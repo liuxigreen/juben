@@ -12,7 +12,7 @@ from __future__ import annotations
 from juben.genre_templates.registry import register
 from juben.state.schema import (
     Abilities, Appearance, Background, Character, CharacterArc,
-    CharacterRole, CharacterState, OCEAN, PacingCard, Personality,
+    CharacterRole, CharacterState, HighConcept, OCEAN, PacingCard, Personality,
     RelationshipGraph, Relationship, StoryMeta, WorldRules,
     CliffhangerType,
 )
@@ -48,6 +48,32 @@ def init_rebirth_revenge(premise: str = "", language: str = "zh-CN") -> dict:
             "他把每个背叛者当作一个'用户画像'，用A/B测试思维验证谁可信、"
             "用'最小可行信任'策略逐步收紧包围圈。"
             "这不是爽文式的碾压，而是产品经理式的精密操盘。"
+        ),
+        # === v1.1.0: 高概念模式默认开 (防退化核心) ===
+        high_concept=HighConcept(
+            enabled=True,
+            anomaly=(
+                "主角前世是顶级产品经理，重生后最大的金手指不是预知股价，"
+                "而是【用互联网产品思维拆解人际关系】"
+            ),
+            visual_core=(
+                "会议室白板上贴满便签，每张写一个背叛者的'用户画像'，"
+                "中间用箭头连成'信任衰减曲线'"
+            ),
+            personal_cost=(
+                "每用一次产品思维拆解一个人，主角就会梦到自己前世坠楼的瞬间"
+            ),
+            why_new=(
+                "不是爽文式碾压,而是产品经理式的精密操盘;不是金手指开挂,而是认知重构"
+            ),
+            banned_patterns=[
+                "主角当众揭穿背叛者,对方下跪求饶",
+                "靠系统签到获得无敌奖励",
+                "主角真实身份是隐退兵王/隐藏首富",
+                "重生后利用前世记忆碾压所有人",
+            ],
+            visual_anchor_prop="白板便签",
+            visual_anchor_keywords=["便签", "白板", "用户画像", "A/B测试"],
         ),
         # === 算法时间轴卡点 ===
         pacing_cards=[

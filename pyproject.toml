@@ -4,15 +4,36 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "juben"
-version = "0.3.2"
-description = "AI剧本/小说创作引擎 — Python控世界观+LLM写正文"
+version = "1.1.0"
+description = "AI剧本/小说创作引擎 — Python控世界观+LLM写正文, v1.1.0 新增项目级资源预算"
 requires-python = ">=3.10"
+readme = "README.md"
+keywords = ["screenwriting", "novel", "ai-writing", "story-engine", "narrative"]
+license = {text = "MIT"}
+authors = [
+    {name = "liuxigreen", email = "liuxigreen@users.noreply.github.com"},
+]
 dependencies = [
     "click>=8.0",
     "pydantic>=2.0",
     "rich>=13.0",
     "pyyaml>=6.0",
 ]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+llm = [
+    "openai>=1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/liuxigreen/juben"
+Repository = "https://github.com/liuxigreen/juben.git"
+Issues = "https://github.com/liuxigreen/juben/issues"
+Changelog = "https://github.com/liuxigreen/juben/blob/main/CHANGELOG.md"
 
 [project.scripts]
 juben = "juben.cli:main"

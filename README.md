@@ -139,18 +139,49 @@ story-project/
 
 ## 题材模板
 
+### 完整模板 (2 个 — 端到端验证过)
+
 | 模板 | 骨架 | 适用场景 |
 |---|---|---|
-| `rebirth-revenge` | 身份落差+命运逆转 | 重生复仇文 |
-| `system-leveling` | 能力反差+系统升级 | 系统流/LitRPG |
-| `apocalypse-survival` | 命运逆转+生存 | 末世文 |
-| `ceo-romance` | 身份落差+契约关系 | 霸总言情 |
-| `xianxia-cultivation` | 能力反差+境界突破 | 修仙玄幻 |
-| `werewolf-supernatural` | 身份逆转变+超自然 | 狼人/吸血鬼 |
-| `mystery-thriller` | 悬念+反转 | 推理/惊悚 |
-| `comedy-satire` | 反套路+荒诞 | 沙雕/搞笑 |
-| `historical-court` | 权谋+宫斗 | 古代宫廷 |
-| `cross-world` | 穿越+异世界 | 穿越文 |
+| `rebirth-revenge` | 身份落差+命运逆转 | 重生复仇文 (神算子验证) |
+| `universal` | Mixin 自由组合 | 任意题材 (用 mixin 拼) |
+
+### Mixin 组合 (14 个 YAML, 推荐路径)
+
+| 类型 | Mixin | 用途 |
+|---|---|---|
+| genre | `female-lead` / `male-lead` | 主角性别 |
+| genre | `historical-base` / `modern` | 时代背景 |
+| genre | `horror` / `urban-revenge` | 类型基调 |
+| skeleton | `power-fantasy` | 爽文/逆袭 |
+| skeleton | `rebirth-revenge` | 重生复仇 |
+| skeleton | `female-power` | 女强大女主 |
+| skeleton | `court-intrigue` | 宫斗权谋 |
+| skeleton | `vertical-drama` | 短剧/竖屏 |
+| visual | `visual-styles` | 视觉风格 |
+
+使用示例:
+```bash
+juben init -t universal --premise "废材逆袭,被未婚妻退婚,发现自己是隐世大能" \
+  --mixin male-lead,modern,urban-revenge \
+  --skeleton power-fantasy
+```
+
+### 路线图 (待实现)
+
+| 模板 | 状态 |
+|---|---|
+| `system-leveling` | 📋 v1.2 计划 |
+| `apocalypse-survival` | 📋 v1.2 计划 |
+| `ceo-romance` | 📋 v1.2 计划 |
+| `xianxia-cultivation` | 📋 v1.2 计划 |
+| `werewolf-supernatural` | 📋 v1.2 计划 |
+| `mystery-thriller` | 📋 v1.3 计划 |
+| `comedy-satire` | 📋 v1.3 计划 |
+| `historical-court` | 📋 v1.3 计划 |
+| `cross-world` | 📋 v1.3 计划 |
+
+> 当前推荐: **universal + mixin 组合** 覆盖 80% 题材需求。
 
 ## 🛡 v1.0 — 项目级资源预算层（防"故事已死但引擎不知道"）
 

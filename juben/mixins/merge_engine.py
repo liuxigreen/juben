@@ -21,7 +21,7 @@ from typing import Any, Optional
 import yaml
 
 from juben.state.schema import (
-    PacingCard, StoryMeta, WorldRules, CliffhangerType,
+    PacingCard, StoryMeta, WorldRules, CliffhangerType, HighConcept,
 )
 
 logger = logging.getLogger(__name__)
@@ -310,6 +310,23 @@ class MergeEngine:
             narrative_skeleton="mixins:" + ",".join(skeleton_mixins),
             global_hook_density="high",
             themes=themes[:5],
+            # === v1.1.0: 高概念模式默认开 ===
+            high_concept=HighConcept(
+                enabled=True,
+                anomaly=disruption_variable or "[待LLM填充] 这个故事世界多出来的一条异常规则",
+                visual_core="[待LLM填充] 一个能拍下来的核心画面",
+                personal_cost="[待LLM填充] 主角必须持续付出的代价",
+                why_new="[待LLM填充] 为什么它不像常见短剧",
+                banned_patterns=[
+                    "主角真实身份是隐退兵王/前刑警/隐世神医/隐藏首富",
+                    "主角因为车祸/意外失忆",
+                    "靠系统打卡/签到直接获得无敌奖励",
+                    "重生后利用前世记忆碾压所有人",
+                    "主角是天选之人,天赋异禀",
+                ],
+                visual_anchor_prop="[待LLM填充] 视觉锚点道具",
+                visual_anchor_keywords=[],
+            ),
         )
 
     def generate_init_report(
