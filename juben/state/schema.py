@@ -162,6 +162,23 @@ class CharacterArc(BaseModel):
     midpoint: str = ""
     end: str = ""
     internal_conflict: str = ""
+    # === v1.0 新增：arc状态机（防"故事已死但引擎不知道"） ===
+    state: str = Field(
+        default="pending",
+        description="arc状态: pending/active/climax/resolved",
+    )
+    unfinished_business: list[str] = Field(
+        default_factory=list,
+        description="驱动负债清单（角色还有哪些事没做完）",
+    )
+    activation_chapter: Optional[int] = Field(
+        default=None,
+        description="从pending转为active的章节",
+    )
+    resolved_chapter: Optional[int] = Field(
+        default=None,
+        description="arc结束的章节",
+    )
 
 
 class CharacterState(BaseModel):

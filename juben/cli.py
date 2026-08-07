@@ -426,6 +426,24 @@ def write(chapter: int, dir: str, chars: str):
 
     console.print(f"[cyan]正在为第{chapter}章生成prompt...[/cyan]")
 
+    # === v1.0+ 可行性检查（防"故事已死但还在写"） ===
+    from juben.budget import check_chapter_feasibility
+    feasibility = check_chapter_feasibility(project_dir, chapter)
+    if not feasibility.feasible:
+        # RED: 拒绝生成
+        console.print(Panel(
+            feasibility.summary() + "\n\n[red]引擎拒绝继续。故事线已耗尽。[/red]",
+            title="[red]❌ 第{}章不可行[/red]".format(chapter),
+        ))
+        sys.exit(1)
+    elif feasibility.severity == "YELLOW":
+        # YELLOW: 警告但继续
+        console.print(f"[yellow]⚠ 可行性检查 - 警告:[/yellow]")
+        for w in feasibility.warnings:
+            console.print(f"  [yellow]- {w}[/yellow]")
+        for s in feasibility.suggestions:
+            console.print(f"  [dim]→ {s}[/dim]")
+
     # === 使用统一约束注入器（v2）===
     from juben.constraint_injector import ConstraintInjector, build_constrained_scribe_prompt
 
@@ -767,6 +785,284 @@ def info(dir: str):
         for c in characters:
             t2.add_row(c.id, c.name, c.role.value, "✓" if c.state.alive else "✗")
         console.print(t2)
+
+
+# ============================================================
+# budget — 查看/管理项目级资源预算（v1.0+）
+# ============================================================
+
+@main.command()
+@click.option("--dir", "-d", default=".", help="项目目录")
+@click.option("--consume", "-c", default="", help="手动记录一次消费: '实体名 章节号'")
+def budget(dir: str, consume: str):
+    """查看/管理项目级资源预算（实体消耗、角色弧状态、世界符号库）"""
+    from juben.budget import StoryBudget, ArcStateTracker, check_chapter_feasibility
+
+    project_dir = Path(dir).resolve()
+
+    if consume:
+        # 模式: 手动消费
+        parts = consume.split()
+        if len(parts) != 2:
+            console.print("[red]格式: --consume '实体名 章节号'[/red]")
+            sys.exit(1)
+        name, ch = parts[0], int(parts[1])
+        budget_obj = StoryBudget(project_dir)
+        result = budget_obj.consume(name, ch)
+        if result["exhausted"]:
+            console.print(f"[yellow]⚠ {result['warning']}[/yellow]")
+        elif result["warning"]:
+            console.print(f"[yellow]⚠ {result['warning']}[/yellow]")
+        else:
+            console.print(f"[green]✓ 记录消费: {name} 第{ch}章 (剩余{result['remaining']}次)[/green]")
+        return
+
+    # 模式: 查看状态
+    budget_obj = StoryBudget(project_dir)
+    entities = budget_obj.list_all()
+
+    if entities:
+        t = Table(title="📊 实体消费预算")
+        t.add_column("实体", style="cyan")
+        t.add_column("类型")
+        t.add_column("配额", justify="right")
+        t.add_column("已用", justify="right")
+        t.add_column("剩余", justify="right")
+        t.add_column("耗尽于")
+        t.add_column("备注")
+
+        for e in entities:
+            remaining_style = "red" if e["remaining"] <= 0 else ("yellow" if e["remaining"] <= max(1, e["quota"] * 0.2) else "green")
+            t.add_row(
+                e["name"],
+                e["type"],
+                str(e["quota"]),
+                str(e["consumed"]),
+                f"[{remaining_style}]{e['remaining']}[/{remaining_style}]",
+                str(e["exhausted_at"]) if e["exhausted_at"] else "-",
+                e.get("note", "")[:30],
+            )
+        console.print(t)
+    else:
+        console.print("[dim]暂无实体预算数据。请在Curator/Commit时自动注册，或手动 --consume 添加[/dim]")
+
+    # 角色弧状态
+    arc_tracker = ArcStateTracker(project_dir)
+    chars = arc_tracker._load_characters()
+    if chars:
+        t2 = Table(title="🎭 角色弧状态")
+        t2.add_column("角色", style="cyan")
+        t2.add_column("职能")
+        t2.add_column("状态")
+        t2.add_column("未完成事项", style="dim")
+        t2.add_column("解决章节")
+
+        for c in chars:
+            arc = c.get("arc") or {}
+            state = arc.get("state", "pending")
+            state_style = {
+                "pending": "dim",
+                "active": "cyan",
+                "climax": "yellow",
+                "resolved": "green",
+            }.get(state, "white")
+            unfinished = arc.get("unfinished_business", [])
+            t2.add_row(
+                c.get("name", "?"),
+                c.get("role", "?"),
+                f"[{state_style}]{state}[/{state_style}]",
+                ", ".join(unfinished[:2]) + ("..." if len(unfinished) > 2 else ""),
+                str(arc.get("resolved_chapter", "-")),
+            )
+        console.print(t2)
+
+    # 世界符号库
+    try:
+        from juben.budget import WorldInventory
+        inv = WorldInventory(project_dir)
+        all_inv = inv.list_all()
+        if all_inv["locations"] or all_inv["symbols"] or all_inv["banned"]:
+            t3 = Table(title="🌍 世界符号库")
+            t3.add_column("类型", style="cyan")
+            t3.add_column("名称")
+            t3.add_column("含义/原因")
+            t3.add_column("首现")
+            for loc in all_inv["locations"]:
+                t3.add_row("地点", loc["name"], loc.get("symbol", ""), str(loc.get("first_appear", "?")))
+            for sym in all_inv["symbols"]:
+                t3.add_row("符号", sym["name"], sym.get("meaning", ""), str(sym.get("first_appear", "?")))
+            for b in all_inv["banned"]:
+                t3.add_row("[red]禁用[/red]", b["name"], b.get("reason", ""), "-")
+            console.print(t3)
+    except Exception as e:
+        logger.debug(f"world inventory加载失败: {e}")
+
+
+# ============================================================
+# trend — 查看质量趋势
+# ============================================================
+
+@main.command()
+@click.option("--dir", "-d", default=".", help="项目目录")
+def trend(dir: str):
+    """查看跨章质量趋势（防"故事已死但单章还9.0"）"""
+    from juben.guardian.trend import detect_trend_from_project, load_chapter_audit_history, _lexical_overlap
+
+    project_dir = Path(dir).resolve()
+    chapters_dir = project_dir / "chapters"
+    if not chapters_dir.exists():
+        console.print("[red]没有找到chapters目录[/red]")
+        sys.exit(1)
+
+    # 收集章节
+    chapters = []
+    for p in sorted(chapters_dir.glob("*.md")):
+        try:
+            num = int(p.stem)
+            text = p.read_text(encoding="utf-8")
+            chapters.append({"num": num, "text": text})
+        except (ValueError, OSError):
+            pass
+
+    if not chapters:
+        console.print("[yellow]还没有章节[/yellow]")
+        return
+
+    # 计算相邻章的重叠度
+    overlap_data = []
+    for i in range(1, len(chapters)):
+        ov = _lexical_overlap(chapters[i]["text"], chapters[i-1]["text"])
+        overlap_data.append((chapters[i]["num"], chapters[i-1]["num"], ov))
+
+    # 趋势判定
+    severity = detect_trend_from_project(project_dir)
+
+    color = {"GREEN": "green", "YELLOW": "yellow", "RED": "red"}.get(severity, "white")
+    console.print(Panel(
+        f"[{color}]{severity}[/{color}] - "
+        + {
+            "GREEN": "质量正常",
+            "YELLOW": "警告: 连续auto-fix或复读趋势",
+            "RED": "危险: 故事线已耗尽,建议收尾",
+        }.get(severity, ""),
+        title="📈 质量趋势",
+    ))
+
+    # 显示最近5章的尾部重叠度
+    if overlap_data:
+        t = Table(title="相邻章尾部重叠度(越低越好)")
+        t.add_column("本章", justify="right")
+        t.add_column("上一章", justify="right")
+        t.add_column("重叠度", justify="right")
+        t.add_column("状态")
+        for curr, prev, ov in overlap_data[-10:]:
+            color_ov = "red" if ov > 0.35 else ("yellow" if ov > 0.30 else "green")
+            t.add_row(
+                str(curr), str(prev),
+                f"[{color_ov}]{ov:.2%}[/{color_ov}]",
+                "复读" if ov > 0.35 else ("注意" if ov > 0.30 else "正常"),
+            )
+        console.print(t)
+
+
+# ============================================================
+# world — 管理世界符号库（注册地点/符号，禁用未建立的）
+# ============================================================
+
+@main.group()
+def world():
+    """管理世界符号库（地理/视觉符号的中央登记簿）"""
+    pass
+
+
+@world.command("register")
+@click.argument("kind", type=click.Choice(["location", "symbol"]))
+@click.argument("name")
+@click.option("--meaning", "-m", default="", help="象征意义")
+@click.option("--chapter", "-c", default=0, type=int, help="首现章节")
+@click.option("--quota", "-q", default=3, type=int, help="使用配额(仅symbol)")
+@click.option("--dir", "-d", default=".", help="项目目录")
+def world_register(kind: str, name: str, meaning: str, chapter: int,
+                   quota: int, dir: str):
+    """注册一个新地点或符号"""
+    from juben.budget import WorldInventory
+    project_dir = Path(dir).resolve()
+    inv = WorldInventory(project_dir)
+
+    if kind == "location":
+        inv.register_location(name, symbol_meaning=meaning, first_chapter=chapter)
+        console.print(f"[green]✓ 注册地点: {name} (含义: {meaning or '无'})[/green]")
+    else:
+        inv.register_symbol(name, meaning=meaning, first_chapter=chapter, usage_quota=quota)
+        console.print(f"[green]✓ 注册符号: {name} (含义: {meaning or '无'}, 配额: {quota})[/green]")
+
+
+@world.command("ban")
+@click.argument("name")
+@click.option("--reason", "-r", default="", help="禁用原因")
+@click.option("--dir", "-d", default=".", help="项目目录")
+def world_ban(name: str, reason: str, dir: str):
+    """禁用一个名称(防止LLM使用)"""
+    from juben.budget import WorldInventory
+    project_dir = Path(dir).resolve()
+    inv = WorldInventory(project_dir)
+    inv.ban(name, reason=reason)
+    console.print(f"[yellow]✓ 已禁用: {name} (原因: {reason or '未提供'})[/yellow]")
+
+
+@world.command("unban")
+@click.argument("name")
+@click.option("--dir", "-d", default=".", help="项目目录")
+def world_unban(name: str, dir: str):
+    """解除禁用"""
+    from juben.budget import WorldInventory
+    project_dir = Path(dir).resolve()
+    inv = WorldInventory(project_dir)
+    inv.unban(name)
+    console.print(f"[green]✓ 已解除禁用: {name}[/green]")
+
+
+@world.command("list")
+@click.option("--dir", "-d", default=".", help="项目目录")
+def world_list(dir: str):
+    """列出所有注册的地点/符号/禁用项"""
+    from juben.budget import WorldInventory
+    project_dir = Path(dir).resolve()
+    inv = WorldInventory(project_dir)
+    all_inv = inv.list_all()
+
+    for loc in all_inv["locations"]:
+        console.print(f"  📍 [cyan]{loc['name']}[/cyan] - {loc.get('symbol', '')} (ch{loc.get('first_appear', '?')})")
+    for sym in all_inv["symbols"]:
+        console.print(f"  🔮 [cyan]{sym['name']}[/cyan] - {sym.get('meaning', '')} (ch{sym.get('first_appear', '?')}, 配额{sym.get('usage_quota', '?')})")
+    for b in all_inv["banned"]:
+        console.print(f"  [red]🚫 {b['name']}[/red] - {b.get('reason', '')}")
+    if not (all_inv["locations"] or all_inv["symbols"] or all_inv["banned"]):
+        console.print("[dim]空[/dim]")
+
+
+# ============================================================
+# check — 写下一章前的可行性检查（也可直接调用 feasibility）
+# ============================================================
+
+@main.command()
+@click.argument("chapter", type=int)
+@click.option("--dir", "-d", default=".", help="项目目录")
+def feasibility(chapter: int, dir: str):
+    """写第N章前调用: 综合检查资源预算/角色弧/质量趋势"""
+    from juben.budget import check_chapter_feasibility
+
+    project_dir = Path(dir).resolve()
+    result = check_chapter_feasibility(project_dir, chapter)
+
+    color = {"GREEN": "green", "YELLOW": "yellow", "RED": "red"}.get(result.severity, "white")
+    console.print(Panel(
+        result.summary(),
+        title=f"[{color}]📋 第{chapter}章可行性检查[/{color}]",
+    ))
+
+    if not result.feasible:
+        sys.exit(1)
 
 
 if __name__ == "__main__":

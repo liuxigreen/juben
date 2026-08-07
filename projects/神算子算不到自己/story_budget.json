@@ -1,0 +1,360 @@
+{
+  "entities": {
+    "神女": {
+      "type": "symbol",
+      "first_appear": 1,
+      "quota": 5,
+      "consumed": 13,
+      "exhausted_at": 22,
+      "consume_history": [
+        {
+          "chapter": 18,
+          "count": 1
+        },
+        {
+          "chapter": 19,
+          "count": 1
+        },
+        {
+          "chapter": 20,
+          "count": 1
+        },
+        {
+          "chapter": 21,
+          "count": 1
+        },
+        {
+          "chapter": 22,
+          "count": 1
+        },
+        {
+          "chapter": 23,
+          "count": 1
+        },
+        {
+          "chapter": 24,
+          "count": 1
+        },
+        {
+          "chapter": 25,
+          "count": 1
+        },
+        {
+          "chapter": 26,
+          "count": 1
+        },
+        {
+          "chapter": 27,
+          "count": 1
+        },
+        {
+          "chapter": 28,
+          "count": 1
+        },
+        {
+          "chapter": 29,
+          "count": 1
+        },
+        {
+          "chapter": 30,
+          "count": 1
+        }
+      ],
+      "note": ""
+    },
+    "奶奶": {
+      "type": "symbol",
+      "first_appear": 1,
+      "quota": 3,
+      "consumed": 13,
+      "exhausted_at": 20,
+      "consume_history": [
+        {
+          "chapter": 18,
+          "count": 1
+        },
+        {
+          "chapter": 19,
+          "count": 1
+        },
+        {
+          "chapter": 20,
+          "count": 1
+        },
+        {
+          "chapter": 21,
+          "count": 1
+        },
+        {
+          "chapter": 22,
+          "count": 1
+        },
+        {
+          "chapter": 23,
+          "count": 1
+        },
+        {
+          "chapter": 24,
+          "count": 1
+        },
+        {
+          "chapter": 25,
+          "count": 1
+        },
+        {
+          "chapter": 26,
+          "count": 1
+        },
+        {
+          "chapter": 27,
+          "count": 1
+        },
+        {
+          "chapter": 28,
+          "count": 1
+        },
+        {
+          "chapter": 29,
+          "count": 1
+        },
+        {
+          "chapter": 30,
+          "count": 1
+        }
+      ],
+      "note": ""
+    },
+    "瞎眼先生": {
+      "type": "symbol",
+      "first_appear": 1,
+      "quota": 3,
+      "consumed": 13,
+      "exhausted_at": 20,
+      "consume_history": [
+        {
+          "chapter": 18,
+          "count": 1
+        },
+        {
+          "chapter": 19,
+          "count": 1
+        },
+        {
+          "chapter": 20,
+          "count": 1
+        },
+        {
+          "chapter": 21,
+          "count": 1
+        },
+        {
+          "chapter": 22,
+          "count": 1
+        },
+        {
+          "chapter": 23,
+          "count": 1
+        },
+        {
+          "chapter": 24,
+          "count": 1
+        },
+        {
+          "chapter": 25,
+          "count": 1
+        },
+        {
+          "chapter": 26,
+          "count": 1
+        },
+        {
+          "chapter": 27,
+          "count": 1
+        },
+        {
+          "chapter": 28,
+          "count": 1
+        },
+        {
+          "chapter": 29,
+          "count": 1
+        },
+        {
+          "chapter": 30,
+          "count": 1
+        }
+      ],
+      "note": ""
+    },
+    "白无垢": {
+      "type": "symbol",
+      "first_appear": 1,
+      "quota": 4,
+      "consumed": 13,
+      "exhausted_at": 21,
+      "consume_history": [
+        {
+          "chapter": 18,
+          "count": 1
+        },
+        {
+          "chapter": 19,
+          "count": 1
+        },
+        {
+          "chapter": 20,
+          "count": 1
+        },
+        {
+          "chapter": 21,
+          "count": 1
+        },
+        {
+          "chapter": 22,
+          "count": 1
+        },
+        {
+          "chapter": 23,
+          "count": 1
+        },
+        {
+          "chapter": 24,
+          "count": 1
+        },
+        {
+          "chapter": 25,
+          "count": 1
+        },
+        {
+          "chapter": 26,
+          "count": 1
+        },
+        {
+          "chapter": 27,
+          "count": 1
+        },
+        {
+          "chapter": 28,
+          "count": 1
+        },
+        {
+          "chapter": 29,
+          "count": 1
+        },
+        {
+          "chapter": 30,
+          "count": 1
+        }
+      ],
+      "note": ""
+    },
+    "馒头": {
+      "type": "symbol",
+      "first_appear": 1,
+      "quota": 3,
+      "consumed": 0,
+      "exhausted_at": null,
+      "consume_history": [],
+      "note": ""
+    },
+    "白豆": {
+      "type": "symbol",
+      "first_appear": 1,
+      "quota": 3,
+      "consumed": 0,
+      "exhausted_at": null,
+      "consume_history": [],
+      "note": ""
+    },
+    "12算筹": {
+      "type": "symbol",
+      "first_appear": 1,
+      "quota": 1,
+      "consumed": 0,
+      "exhausted_at": null,
+      "consume_history": [],
+      "note": ""
+    },
+    "陆九": {
+      "type": "symbol",
+      "first_appear": 1,
+      "quota": 6,
+      "consumed": 13,
+      "exhausted_at": 23,
+      "consume_history": [
+        {
+          "chapter": 18,
+          "count": 1
+        },
+        {
+          "chapter": 19,
+          "count": 1
+        },
+        {
+          "chapter": 20,
+          "count": 1
+        },
+        {
+          "chapter": 21,
+          "count": 1
+        },
+        {
+          "chapter": 22,
+          "count": 1
+        },
+        {
+          "chapter": 23,
+          "count": 1
+        },
+        {
+          "chapter": 24,
+          "count": 1
+        },
+        {
+          "chapter": 25,
+          "count": 1
+        },
+        {
+          "chapter": 26,
+          "count": 1
+        },
+        {
+          "chapter": 27,
+          "count": 1
+        },
+        {
+          "chapter": 28,
+          "count": 1
+        },
+        {
+          "chapter": 29,
+          "count": 1
+        },
+        {
+          "chapter": 30,
+          "count": 1
+        }
+      ],
+      "note": ""
+    },
+    "沈小碗": {
+      "type": "symbol",
+      "first_appear": 1,
+      "quota": 3,
+      "consumed": 0,
+      "exhausted_at": null,
+      "consume_history": [],
+      "note": ""
+    },
+    "师妹": {
+      "type": "symbol",
+      "first_appear": 1,
+      "quota": 3,
+      "consumed": 0,
+      "exhausted_at": null,
+      "consume_history": [],
+      "note": ""
+    }
+  },
+  "version": "1.0"
+}

@@ -57,7 +57,10 @@
         "start": "算尽天下，独善其身。靠'苟'活到三十六，靠'冷'拒绝所有人靠近",
         "midpoint": "发现师妹没死，而是被天机阁炼成了'神女降世'的器皿；他的'算不到自己'是师妹当年布下的反制手段——为的就是今天他能救她",
         "end": "不再'苟'，主动用自己这条命去'换'；右眼看清了三十年的真相——师妹一直藏在他命格里没离开",
-        "internal_conflict": "Want: 算到安全，独自活命 vs Need: 看清自己在乎的人，主动入局"
+        "internal_conflict": "Want: 算到安全，独自活命 vs Need: 看清自己在乎的人，主动入局",
+        "state": "resolved",
+        "resolved_chapter": 30,
+        "unfinished_business": []
       },
       "state": {
         "alive": true,
