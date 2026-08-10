@@ -114,9 +114,15 @@ def research(query: str, dir: str, fetch_n: int):
 @click.option("--timeline-skeleton", "-ts", default="50chap-standard", help="Timeline Lock骨架类型 (20chap-fast/50chap-standard/100chap-epic)")
 @click.option("--title", default="", help="故事标题")
 @click.option("--disruption", default="", help="意外变量")
+@click.option("--high-concept", "high_concept", is_flag=True,
+              help="启用高概念模式 (推荐短剧/网文, bootstrap 时生成异常规则+核心画面+持续代价)")
+@click.option("--no-high-concept", "no_high_concept", is_flag=True,
+              help="显式关闭高概念模式 (即使模板默认启用)")
 @click.option("--yes", "-y", is_flag=True, help="跳过确认，直接初始化")
 def init(premise: str, template: str, dir: str, mixin: str, skeleton: str,
-         timeline_skeleton: str, title: str, disruption: str, yes: bool):
+         timeline_skeleton: str, title: str, disruption: str,
+         high_concept: bool, no_high_concept: bool,
+         yes: bool):
     """初始化一个新故事项目"""
     from juben.genre_templates import get_template, list_templates
 
@@ -176,6 +182,15 @@ def init(premise: str, template: str, dir: str, mixin: str, skeleton: str,
     else:
         result = tpl_fn(premise=premise)
 
+    # === v1.1.2: 高概念模式 (CLI 入口) ===
+    # --no-high-concept 显式关闭 > --high-concept 显式开启 > 模板默认
+    if no_high_concept and hasattr(result["meta"], "high_concept"):
+        result["meta"].high_concept.enabled = False
+        console.print("[dim]⚪ 高概念模式已显式关闭[/dim]")
+    elif high_concept and hasattr(result["meta"], "high_concept"):
+        result["meta"].high_concept.enabled = True
+        console.print("[cyan]🧠 高概念模式已启用[/cyan] — bootstrap 时将生成异常规则+核心画面+持续代价")
+
     mgr = StateManager(project_dir)
     mgr.init_project(
         meta=result["meta"],
@@ -203,7 +218,8 @@ def init(premise: str, template: str, dir: str, mixin: str, skeleton: str,
         f"目录: {project_dir}\n"
         f"模板: {template}\n"
         f"主角: {result['characters'][0].name}\n"
-        f"前提: {result['meta'].premise[:80]}...\n\n"
+        f"前提: {result['meta'].premise[:80]}...\n"
+        f"高概念模式: {'🟢 启用 (bootstrap 将生成异常规则)' if getattr(result['meta'], 'high_concept', None) and result['meta'].high_concept.enabled else '⚪ 关闭'}\n\n"
         f"[yellow]下一步:[/yellow]\n"
         f"  1. juben bootstrap --dir {project_dir}  (生成LLM填充prompt)\n"
         f"  2. 把prompt喂给LLM，保存输出为 bootstrap_response.json\n"
@@ -443,6 +459,29 @@ def bootstrap(dir: str, do_apply: bool, response: str):
         except ValidationError as e:
             console.print(f"[red]验证失败: {e}[/red]")
             sys.exit(1)
+
+        # === v1.1.2: 高概念模式字段验证 ===
+        # 启用了高概念模式但 LLM 没填 7 个核心字段 → 警告 (不阻断, 但强烈提示)
+        try:
+            meta = mgr.load_meta()
+            hc = getattr(meta, "high_concept", None)
+            if hc and getattr(hc, "enabled", False):
+                missing = []
+                for field in ["anomaly", "visual_core", "personal_cost", "why_new",
+                              "visual_anchor_prop", "visual_anchor_keywords"]:
+                    val = getattr(hc, field, None)
+                    if not val or (isinstance(val, list) and len(val) == 0):
+                        missing.append(field)
+                if missing:
+                    console.print(f"[yellow]⚠ 高概念模式已启用但 LLM 响应缺字段: {missing}[/yellow]")
+                    console.print(f"[yellow]   可手动编辑 story_meta.json 的 high_concept 节点补全, 或重跑 bootstrap[/yellow]")
+                else:
+                    console.print(f"[green]🧠 高概念模式: 7 字段完整[/green]")
+                    console.print(f"   异常: {hc.anomaly[:60]}...")
+                    console.print(f"   视觉锚点: {hc.visual_anchor_prop} (关键词: {', '.join(hc.visual_anchor_keywords[:3])})")
+        except Exception as e:
+            # 验证失败不阻断主流程
+            console.print(f"[dim]高概念验证跳过: {e}[/dim]")
 
         # 显示结果
         table = Table(title="🎬 Bootstrap 应用结果")

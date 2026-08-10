@@ -1306,13 +1306,22 @@ class ConstraintInjector:
         anchor_section = ""
         if visual_anchor_prop and visual_anchor_keywords:
             kw_str = "、".join(visual_anchor_keywords[:3])
-            # 每3-5章检查一次
-            if chapter_num % 3 == 0 or chapter_num % 5 == 0:
-                anchor_section = f"""
-### 视觉锚点（本章必须出现）
+            # v1.1.2: 视觉锚点每章必出, 强度递减 (前 1/3 强制, 中 1/3 强调, 后 1/3 提示)
+            # 之前: chapter_num % 3 == 0 or % 5 == 0 → ch1/2/4/7/8/11/13/14... 漏检, 剧情漂移
+            # 现在: 始终插入, 但首章最强, 后续章节用"重申"软化
+            if chapter_num == 1:
+                intensity = "🚨 本章首次登场, 必须详细描写 (≥ 1 个完整镜头)"
+            elif chapter_num <= 10:
+                intensity = "⚠️ 前 10 章强化期, 必须出现且参与剧情推进"
+            elif chapter_num <= 30:
+                intensity = "本章应出现, 可作为过渡或背景, 但不能消失"
+            else:
+                intensity = "本章可仅作为符号/隐喻出现, 不必每次详细展开"
+            anchor_section = f"""
+### 视觉锚点（{intensity}）
 **道具**：{visual_anchor_prop}
 **关键词**：{kw_str}
-**要求**：本章必须出现{visual_anchor_prop}的描写，且必须参与剧情推进（不能只是背景板）。"""
+**要求**：本章必须出现 {visual_anchor_prop} 的描写。"""
 
         return f"""### 🧠 高概念核心（全剧最高优先级）
 

@@ -163,7 +163,17 @@ BOOTSTRAP_PROMPT_TEMPLATE = """\
     "title": "建议标题",
     "logline": "一句话概括（50字以内）",
     "themes": ["主题1", "主题2", "主题3"],
-    "disruption_variable": "如果用户没提供，你来设计一个有创意的意外变量"
+    "disruption_variable": "如果用户没提供，你来设计一个有创意的意外变量",
+    "high_concept": {{  // v1.1.2: 仅当高概念模式启用时填写
+      "enabled": true,
+      "anomaly": "这个世界多出来的那条异常规则（一句话, 例: 主角能看见每栋楼的死亡指数）",
+      "visual_core": "一个能拍下来的核心画面（例: 红色发光数字飘在建筑物上方）",
+      "personal_cost": "主角必须持续付出的代价（例: 每看见一个死亡数字, 寿命-1分钟）",
+      "why_new": "为什么不像常见短剧（例: 机制异象而非金手指开挂）",
+      "banned_patterns": ["禁止的故事结构1", "禁止的故事结构2"],
+      "visual_anchor_prop": "视觉锚点道具（从异常中长出的可拍摄物品）",
+      "visual_anchor_keywords": ["关键词1", "关键词2", "关键词3"]
+    }}
   }},
   "plot_threads": [
     {{
@@ -460,6 +470,19 @@ def apply_bootstrap_response(mgr: StateManager, response_data: dict) -> dict:
             meta.themes = update["themes"]
         if "disruption_variable" in update and not meta.disruption_variable:
             meta.disruption_variable = update["disruption_variable"]
+        # === v1.1.2: 接入 LLM 响应的高概念模式 7 字段 ===
+        # 之前 v1.1.1 设计遗漏: apply_bootstrap_response 只更新了 4 个字段, 完全忽略 high_concept
+        # 后果: LLM 生成的 anomaly/visual_core/personal_cost 等从未被写入 story_meta.json
+        if "high_concept" in update and isinstance(update["high_concept"], dict):
+            hc_update = update["high_concept"]
+            # 7 字段: anomaly/visual_core/personal_cost/why_new/banned_patterns/visual_anchor_prop/visual_anchor_keywords
+            for field in ["anomaly", "visual_core", "personal_cost", "why_new",
+                          "banned_patterns", "visual_anchor_prop", "visual_anchor_keywords"]:
+                if field in hc_update and hc_update[field]:
+                    setattr(meta.high_concept, field, hc_update[field])
+            # enabled 字段: LLM 可以开/关 (如明确传 enabled=false 则尊重)
+            if "enabled" in hc_update:
+                meta.high_concept.enabled = bool(hc_update["enabled"])
         mgr.save_meta(meta)
         changes.append(f"元数据: 已更新")
 
