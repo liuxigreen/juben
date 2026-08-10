@@ -12,14 +12,14 @@ cd juben
 pip install -e .
 
 # 2. 验证安装
-juben --version   # 应该输出 1.1.0
+juben --version   # 应该输出 1.1.1
 juben --help
 ```
 
 ## 步骤 1: 初始化项目 (2 分钟)
 
 ```bash
-# 方式 A: 重生复仇 (完整模板, 神算子验证)
+# 方式 A: 重生复仇 (完整模板, 长篇项目验证)
 juben init "主角被合伙人背叛,重生回3年前,利用前世记忆复仇" \
   --title "逆流" \
   --template rebirth-revenge \
@@ -120,9 +120,25 @@ juben commit 1
 | `写第N章不可行 [RED]` | 故事线已耗尽 | 这是**正常行为**! 考虑收尾或开新项目 |
 | LLM 输出复读 | 模型自身问题 | 重跑 `juben write N` |
 
+## 步骤 4 (v1.1.1 新增): 剧本 → 分镜 → Veo prompt
+
+写完全部章节后, 一键生成 Veo 3.1 视频提示词:
+
+```bash
+# Stage 2: 剧本 → 分镜
+juben storyboard --dir my-novel
+# → v3_storyboard/chNN_shots.json (每个镜头 shot_type/duration/character)
+
+# Stage 3: 分镜 → Veo prompt
+juben export-prompts --dir my-novel
+# → flow_prompts_pro/chNN_pro_prompts.md (喂给 Veo/Flow 直接生成视频)
+```
+
+`juben init` 已自动建好 `config/` 目录 (8 个 yaml), Stage 2/3 立即可跑。无需手抄模板。
+
 ## 下一步
 
 - 写完第一本书: 复制 `my-novel` 目录作为下一本的模板
 - 自定义题材: 写新 mixin YAML 放到 `templates/mixins/`
-- 看别人的项目: `projects/` 下有 7 个真实项目 (神算子/死亡指数/心声咖啡等)
+- 看别人的项目: `projects/` 下有 `_template/` 模板, 真实项目由你 `juben init` 创建
 - 报告问题: https://github.com/liuxigreen/juben/issues

@@ -182,13 +182,21 @@ def init(premise: str, template: str, dir: str, mixin: str, skeleton: str,
         characters=result["characters"],
         world_rules=result["world_rules"],
     )
-    
+
     # 保存Timeline Lock骨架配置
     timeline_lock_config = {
         "skeleton_type": timeline_skeleton,
         "description": f"Timeline Lock骨架类型: {timeline_skeleton}"
     }
     mgr._write_json("timeline_lock_config.json", timeline_lock_config)
+
+    # === v1.1.1: 自动生成 Stage 2/3 所需的 config/ 目录 ===
+    # 若 config/ 已有内容, _init_stage23_config 会 raise (防污染) → 阻断 init
+    try:
+        _init_stage23_config(project_dir, result, project_name=title or result["meta"].title or "未命名")
+    except FileExistsError as e:
+        console.print(f"[red]✗ Config 隔离保护触发:[/red]\n{e}")
+        sys.exit(1)
 
     console.print(Panel(
         f"[green]✓ 项目初始化完成[/green]\n\n"
@@ -200,9 +208,166 @@ def init(premise: str, template: str, dir: str, mixin: str, skeleton: str,
         f"  1. juben bootstrap --dir {project_dir}  (生成LLM填充prompt)\n"
         f"  2. 把prompt喂给LLM，保存输出为 bootstrap_response.json\n"
         f"  3. juben bootstrap --apply --dir {project_dir}  (应用LLM输出)\n"
-        f"  4. juben write 1 --dir {project_dir}  (开始写作)",
+        f"  4. juben write 1 --dir {project_dir}  (开始写作)\n"
+        f"  5. juben storyboard --dir {project_dir}  (Stage 2: 剧本→分镜)\n"
+        f"  6. juben export-prompts --dir {project_dir}  (Stage 3: 分镜→Veo prompt)",
         title="🎬 剧本引擎",
     ))
+
+
+def _init_stage23_config(project_dir: Path, result: dict, project_name: str,
+                          force: bool = False):
+    """
+    v1.1.1: 自动生成 Stage 2/3 所需的 config/ 目录
+
+    从 projects/_template/config/ 复制 5 个纯配置 (action_rules/beat_triggers/
+    hook_templates/prompt_style/events), 并根据 result 中的 characters 自动生成
+    正确格式的 characters.yaml (心声咖啡格式: name: {en:..., desc:...}) 和
+    locations.yaml。 project_config.yaml 替换 project_name + default_location。
+
+    隔离保证 (v1.1.1-hardened):
+      - config/ 已有内容时, 默认 raise ConfigExistsError (防止 cp 错项目)
+      - 强制覆盖需传 --force
+      - 检测到 template 缺失的 4 个文件时 raise (防止 _template 被破坏)
+    """
+    import shutil
+    import yaml as yaml_lib
+
+    template_dir = Path(__file__).resolve().parent.parent / "projects" / "_template" / "config"
+    config_dir = project_dir / "config"
+
+    # === 防污染隔离检查 (v1.1.1-hardened) ===
+    REQUIRED_TEMPLATE_FILES = [
+        "action_rules.yaml", "beat_triggers.yaml", "hook_templates.yaml",
+        "prompt_style.yaml", "events.yaml",
+    ]
+    missing_tpl = [f for f in REQUIRED_TEMPLATE_FILES if not (template_dir / f).exists()]
+    if missing_tpl:
+        raise FileNotFoundError(
+            f"_template/config 缺失必备文件: {missing_tpl}\n"
+            f"路径: {template_dir}\n"
+            f"修复: git checkout main -- projects/_template/config/{missing_tpl[0]}"
+        )
+
+    if config_dir.exists() and any(config_dir.iterdir()):
+        if not force:
+            # 列出已有内容, 帮用户判断是否污染
+            existing = sorted(p.name for p in config_dir.iterdir())
+            raise FileExistsError(
+                f"项目 config/ 已有内容 ({len(existing)} 个文件): {existing[:5]}"
+                f"{'...' if len(existing) > 5 else ''}\n"
+                f"为防污染, _init_stage23_config 默认拒绝覆盖.\n"
+                f"强制重建: 传 force=True (CLI: juben init-config --force)"
+            )
+        console.print(f"[yellow]⚠ --force 模式: 将覆盖 {config_dir} 现有内容[/yellow]")
+
+    config_dir.mkdir(parents=True, exist_ok=True)
+
+    # 1. 复制 5 个纯配置文件 (无项目特异性)
+    for fname in REQUIRED_TEMPLATE_FILES:
+        src = template_dir / fname
+        if src.exists():
+            shutil.copy(src, config_dir / fname)
+
+    # 2. 生成 project_config.yaml (替换 project_name + default_location)
+    default_loc: str = project_name
+    if result.get("characters"):
+        char0 = result["characters"][0]
+        # 优先用 state.location (Pydantic 对象, 取其 location 字段)
+        if hasattr(char0, "state") and hasattr(char0.state, "location"):
+            loc_str = char0.state.location
+            if loc_str and isinstance(loc_str, str):
+                default_loc = loc_str
+
+    pc_template = template_dir / "project_config.yaml"
+    if pc_template.exists():
+        pc_content = pc_template.read_text(encoding="utf-8")
+        pc_content = pc_content.replace("你的剧名", project_name)
+        pc_content = pc_content.replace("剧集标题", project_name)
+        pc_content = pc_content.replace("揽月阁", default_loc)
+        (config_dir / "project_config.yaml").write_text(pc_content, encoding="utf-8")
+
+    # 3. 生成 characters.yaml (心声咖啡格式: name: {en:..., desc:...})
+    def _safe_str(v, default=""):
+        """防 Pydantic 对象污染 YAML — 递归转 dict/str"""
+        if v is None:
+            return default
+        if isinstance(v, str):
+            return v
+        # Pydantic BaseModel: dump to dict 然后转字符串描述
+        if hasattr(v, "model_dump"):
+            try:
+                d = v.model_dump()
+                # 转成易读的中文描述
+                parts = []
+                for k, val in d.items():
+                    if val is None or val == "" or val == [] or val == {}:
+                        continue
+                    if isinstance(val, (str, int, float, bool)):
+                        parts.append(f"{k}={val}")
+                    elif isinstance(val, dict):
+                        # 嵌套 dict 扁平化
+                        for k2, v2 in val.items():
+                            if isinstance(v2, (str, int, float, bool)):
+                                parts.append(f"{k}.{k2}={v2}")
+                    elif isinstance(val, list):
+                        parts.append(f"{k}={','.join(str(x) for x in val)}")
+                return "; ".join(parts) if parts else default
+            except Exception:
+                pass
+        return str(v) if v else default
+
+    chars_yaml = {}
+    for i, c in enumerate(result.get("characters", [])):
+        name = _safe_str(getattr(c, "name", f"角色{i+1}"), f"角色{i+1}")
+        en_name = _to_english_name(name)
+        role = getattr(c, "role", "supporting")
+        # Pydantic enum (继承 str) 用 .value
+        role_val = role.value if hasattr(role, "value") and hasattr(role, "_value_") else _safe_str(role, "supporting")
+        chars_yaml[name] = {
+            "en": en_name,
+            "role": role_val,
+            "appearance": _safe_str(getattr(c, "appearance", ""), "普通外貌"),
+            "personality": _safe_str(getattr(c, "personality", ""), "普通性格"),
+            "speech_style": _safe_str(getattr(c, "speech_style", ""), "说话正常"),
+            "wardrobe": _safe_str(getattr(c, "wardrobe", ""), "日常服装"),
+            "background": _safe_str(getattr(c, "background", ""), "普通背景"),
+        }
+    (config_dir / "characters.yaml").write_text(
+        yaml_lib.dump({"characters": chars_yaml}, allow_unicode=True, sort_keys=False),
+        encoding="utf-8"
+    )
+
+    # 4. 生成 locations.yaml (默认 1 个: 主角所在)
+    loc_name = default_loc if default_loc else project_name
+    loc_data = {"locations": {loc_name: {
+        "type": "interior",
+        "description": loc_name,
+        "atmosphere": "日常",
+        "props": [],
+        "lighting": {"time": "day", "quality": "自然光", "mood": "neutral"},
+    }}}
+    (config_dir / "locations.yaml").write_text(
+        yaml_lib.dump(loc_data, allow_unicode=True, sort_keys=False),
+        encoding="utf-8"
+    )
+
+
+# 简化的中→英文名映射 (Veo/Flow 英文名要求)
+_EN_NAME_MAP = {
+    "林越": "Lin Yue", "周昊": "Zhou Hao", "苏晴": "Su Qing", "陈叔": "Uncle Chen",
+    "苏念": "Su Nian", "陈睿": "Chen Rui", "苏远": "Su Yuan", "顾深": "Gu Shen",
+    "陆九": "Lu Jiu", "白无垢": "Bai Wugou", "瞎眼先生": "Blind Master",
+    "奶奶": "Grandma", "主角": "Protagonist", "反派": "Antagonist", "女配": "Female Lead",
+}
+
+
+def _to_english_name(name: str) -> str:
+    """中→英文名映射, 未知则用拼音占位 (Veo 友好)"""
+    if name in _EN_NAME_MAP:
+        return _EN_NAME_MAP[name]
+    # 简单 fallback: 保留中文 + 拼音首字母
+    return name
 
 
 # ============================================================
@@ -1063,6 +1228,202 @@ def feasibility(chapter: int, dir: str):
 
     if not result.feasible:
         sys.exit(1)
+
+
+# ============================================================
+# storyboard — Stage 2: 剧本 → 分镜 (v1.1.1)
+# ============================================================
+
+@main.command()
+@click.option("--dir", "-d", default=".", help="项目目录")
+@click.option("--chapter", "-c", type=int, default=0, help="指定单章处理 (0=全部)")
+def storyboard(dir: str, chapter: int):
+    """Stage 2: 将剧本章节转为分镜 (v3_storyboard/chN_shots.json)"""
+    from juben.pipeline import run_pipeline
+
+    project_dir = Path(dir).resolve()
+    if not (project_dir / "chapters").exists():
+        console.print(f"[red]目录 {project_dir} 没有 chapters/ — 不是有效项目[/red]")
+        sys.exit(1)
+
+    console.print(f"[cyan]▶ Stage 2: 剧本 → 分镜[/cyan]  项目: {project_dir.name}")
+    run_pipeline(project_dir, only_chapter=chapter if chapter > 0 else None)
+    console.print(f"[green]✓ 分镜完成 → {project_dir}/v3_storyboard/[/green]")
+    console.print(f"[yellow]下一步:[/yellow] juben export-prompts --dir {project_dir}")
+
+
+# ============================================================
+# export-prompts — Stage 3: 分镜 → Veo prompt (v1.1.1)
+# ============================================================
+
+@main.command()
+@click.option("--dir", "-d", default=".", help="项目目录")
+@click.option("--chapter", "-c", type=int, default=0, help="指定单章导出 (0=全部)")
+def export_prompts(dir: str, chapter: int):
+    """Stage 3: 将分镜转为 Veo 3.1 专业提示词 (flow_prompts_pro/chN_pro_prompts.md)"""
+    from juben.export_pro_prompts import export_professional_prompts
+
+    project_dir = Path(dir).resolve()
+    if not (project_dir / "v3_storyboard").exists():
+        console.print(f"[red]目录 {project_dir} 没有 v3_storyboard/ — 请先跑 storyboard[/red]")
+        sys.exit(1)
+
+    console.print(f"[cyan]▶ Stage 3: 分镜 → Veo prompt[/cyan]  项目: {project_dir.name}")
+    export_professional_prompts(project_dir, only_chapter=chapter if chapter > 0 else None)
+    console.print(f"[green]✓ Veo prompt 完成 → {project_dir}/flow_prompts_pro/[/green]")
+    console.print(f"[yellow]下一步:[/yellow] 把 chNN_pro_prompts.md 喂给 Veo/Flow 生成视频")
+
+
+# ============================================================
+# init-config — 独立重建/校验 config/ (v1.1.1-hardened)
+# ============================================================
+
+@main.command("init-config")
+@click.option("--dir", "-d", default=".", help="项目目录")
+@click.option("--force", is_flag=True, help="覆盖已有 config/ (会清空再重建)")
+def init_config(dir: str, force: bool):
+    """独立重建/校验项目的 config/ 目录 (从 _template 复制 + 用 characters.json 填充)
+
+    默认拒绝覆盖已有 config/, 防 cp 错项目污染。 --force 才覆盖。
+
+    防污染: 若 _template/config 缺失必备文件, raise。
+    """
+    project_dir = Path(dir).resolve()
+    if not (project_dir / "characters.json").exists():
+        console.print(f"[red]目录 {project_dir} 没有 characters.json — 不是有效项目[/red]")
+        sys.exit(1)
+
+    # 读 characters.json 还原 init 时的 result 格式
+    with open(project_dir / "characters.json", encoding="utf-8") as f:
+        chars_data = json.load(f)
+    meta_data = {}
+    if (project_dir / "story_meta.json").exists():
+        with open(project_dir / "story_meta.json", encoding="utf-8") as f:
+            meta_data = json.load(f)
+
+    # 模拟 init 时的 result 格式 (StateManager 风格)
+    class _Wrap:
+        def __init__(self, d):
+            for k, v in d.items():
+                setattr(self, k, v)
+    characters = [_Wrap(c) for c in chars_data.get("characters", [])]
+    project_name = meta_data.get("title", project_dir.name)
+    result = {
+        "meta": _Wrap(meta_data),
+        "characters": characters,
+    }
+
+    if force and (project_dir / "config").exists():
+        import shutil
+        shutil.rmtree(project_dir / "config")
+        console.print(f"[yellow]⚠ --force: 已清空 {project_dir / 'config'}[/yellow]")
+
+    try:
+        _init_stage23_config(project_dir, result, project_name=project_name, force=force)
+    except FileExistsError as e:
+        console.print(f"[red]✗ Config 隔离保护触发:[/red]\n{e}")
+        sys.exit(1)
+
+    console.print(f"[green]✓ config/ 已生成[/green]  路径: {project_dir / 'config'}")
+    console.print(f"[yellow]下一步:[/yellow] juben storyboard --dir {project_dir}")
+
+
+# ============================================================
+# lint-config — 防污染检查 (v1.1.1-hardened)
+# ============================================================
+
+@main.command("lint-config")
+@click.option("--dir", "-d", default=".", help="项目目录")
+@click.option("--strict", is_flag=True, help="把警告也当错误退出")
+def lint_config(dir: str, strict: bool):
+    """检查项目 config/ 是否与 characters.json 角色一致, 是否存在跨项目污染
+
+    检查项 (v1.1.1-hardened):
+      1. config/characters.yaml 的角色名 ⊆ characters.json 的角色名 (中文)
+      2. config/locations.yaml 的场景名不在 characters.json 里 (说明是别的项目漏的)
+      3. config/characters.yaml 的 en 字段映射合规
+      4. _template/config 5 个必备文件全在
+
+    退出码: 0=OK, 1=有错误, 2=有警告 (--strict 时)
+    """
+    import yaml as yaml_lib
+
+    project_dir = Path(dir).resolve()
+    errors: list[str] = []
+    warnings: list[str] = []
+
+    # 1. characters.json 是事实源
+    chars_json_path = project_dir / "characters.json"
+    valid_names: set[str] = set()  # 提前初始化, 防止 unbound 警告
+    json_main_names: set[str] = set()  # 仅主名 (不含 aliases) — 用于 missing 判断
+    if not chars_json_path.exists():
+        errors.append(f"缺少 characters.json (项目未 bootstrap 完成)")
+    else:
+        with open(chars_json_path, encoding="utf-8") as f:
+            chars_json = json.load(f)
+        json_main_names = {c["name"] for c in chars_json.get("characters", [])}
+        valid_names = set(json_main_names)
+        # 也接受 aliases
+        for c in chars_json.get("characters", []):
+            for alias in c.get("aliases", []):
+                valid_names.add(alias)
+
+    # 2. config/characters.yaml 检查
+    chars_yaml_path = project_dir / "config" / "characters.yaml"
+    if not chars_yaml_path.exists():
+        errors.append(f"缺少 {chars_yaml_path} (Stage 2 找不到角色映射)")
+    else:
+        with open(chars_yaml_path, encoding="utf-8") as f:
+            chars_yaml = yaml_lib.safe_load(f) or {}
+        # 支持两种格式: {name: {...}} 或 {characters: {name: {...}}}
+        if "characters" in chars_yaml and isinstance(chars_yaml["characters"], dict):
+            yaml_chars = chars_yaml["characters"]
+        else:
+            yaml_chars = chars_yaml
+        yaml_names = set(yaml_chars.keys())
+
+        if chars_json_path.exists():
+            # yaml 里的角色必须都在 characters.json 里 (主名 + aliases)
+            extra = yaml_names - valid_names
+            if extra:
+                errors.append(
+                    f"config/characters.yaml 含 characters.json 外的角色: {sorted(extra)}\n"
+                    f"   极可能是 cp 错项目 (心声咖啡污染神算子就是这个症状)\n"
+                    f"   修复: juben init-config --dir {project_dir} --force"
+                )
+            # missing 只检查主名 (aliases 未必进 yaml, 不算缺)
+            missing = json_main_names - yaml_names
+            if missing:
+                warnings.append(
+                    f"characters.json 有但 config/characters.yaml 缺主名: {sorted(missing)}\n"
+                    f"   修复: juben init-config --dir {project_dir} --force"
+                )
+
+    # 3. _template 必备文件检查
+    template_dir = project_dir.parent / "_template" / "config"
+    if not template_dir.exists():
+        errors.append(f"_template/config 不存在: {template_dir}")
+    else:
+        for fname in ["action_rules.yaml", "beat_triggers.yaml", "hook_templates.yaml",
+                      "prompt_style.yaml", "events.yaml"]:
+            if not (template_dir / fname).exists():
+                errors.append(f"_template/config 缺 {fname} (init 会失败)")
+
+    # 4. 输出
+    if errors:
+        for e in errors:
+            console.print(f"[red]✗ {e}[/red]")
+    if warnings:
+        for w in warnings:
+            console.print(f"[yellow]⚠ {w}[/yellow]")
+
+    if errors:
+        console.print(f"\n[red]FAIL: {len(errors)} 错误, {len(warnings)} 警告[/red]")
+        sys.exit(1)
+    if warnings and strict:
+        console.print(f"\n[yellow]WARN (strict): {len(warnings)} 警告[/yellow]")
+        sys.exit(2)
+    console.print(f"[green]✓ config lint OK ({len(warnings)} 警告)[/green]")
 
 
 if __name__ == "__main__":

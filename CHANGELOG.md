@@ -1,10 +1,127 @@
 # CHANGELOG
 
+## [1.1.2] - 2026-08-10
+
+### 核心：防污染隔离硬化 + 死代码清理
+
+v1.1.1 解决了"init 自动建 config"，但留下 3 个污染风险：
+- `_init_stage23_config` 已有 config 时**静默跳过**（不报错）— cp 错项目不会被发现
+- 跨项目 cp 错 config 后无 lint 工具检测
+- archive/ + 一次性规划 + 硬编码神算子路径的脚本长期堆积
+
+本版做 3 件事：(1) 强制隔离 (2) 加 lint (3) 删死代码。
+
+### 新增
+
+#### 2 条新 CLI 命令
+
+```bash
+juben lint-config --dir <project>            # 防污染检查 (cp 错项目立即 ERROR + exit 1)
+juben lint-config --dir <project> --strict   # 警告也当错误
+juben init-config --dir <project>            # 独立重建 config/ (默认拒绝覆盖)
+juben init-config --dir <project> --force    # 强制清空重建
+```
+
+#### `_init_stage23_config` 隔离保护
+
+- **已有 config/ 时 raise FileExistsError**（不再静默跳过）— 阻断 init 防污染
+- **检测 _template 5 个必备文件缺失时 raise FileNotFoundError** — 防止 _template 被破坏后静默失败
+- 强制覆盖需 `--force`（CLI 或函数参数）
+- init 主流程接住 FileExistsError，sys.exit(1) + 打印原因
+
+#### `lint-config` 5 项检查
+
+1. `characters.json` 存在性（项目 bootstrap 完成）
+2. `config/characters.yaml` 角色 ⊆ `characters.json` 角色（含 aliases）— **错项目 cp 立即 ERROR**
+3. `config/characters.yaml` 主名 ⊆ `characters.json` 主名 — 缺主名 WARN
+4. `_template/config/` 5 个必备文件 — 缺文件 ERROR
+5. 退出码：0=OK, 1=ERROR, 2=WARN(strict)
+
+### 修复 (v1.1.1 残留)
+
+- `juben init-config` 模拟 StateManager 的 result 格式，正确还原 characters/meta
+- `juben lint-config` 兼容 yaml 两种格式：`{name: ...}` 和 `{characters: {name: ...}}`
+- missing 检查改用主名（不含 aliases），消除误报
+
+### 删除 (死代码)
+
+- `archive/export_pro_prompts.py` `archive/generate_script.py` `archive/pipeline_v3.py` `archive/smart_adapter_test.py`
+- `refactor_plan.md` (一次性规划)
+- `scripts/auto_chapter.py` (硬编码神算子路径，违反零硬编码)
+- `scripts/write_chapter.py` `scripts/gen_demo.py` (重复/无引用)
+
+### 已知遗留
+
+- 早期项目 (v1.0 时期) 的 `v3_storyboard/ch*_shots.json` 可能是用错项目 characters 生成的，**chapters/ 文本本身不受影响**。彻底修复需重跑 `juben storyboard -c 0`（会触发 LLM）
+- 用户的真实项目不随 juben skill 仓库发布 — `projects/` 只含 `_template/`，新项目由 `juben init` 创建
+
+## [1.1.1] - 2026-08-08
+
+### 核心：Stage 2/3 一键化 + 工程化坑修复
+
+v1.1.0 已完成项目级资源预算。本版聚焦"init 后跑通全链路"的工程化补完——
+让用户**一条命令完成剧本→分镜→Veo prompt**，并把 v1.0 期间反复踩的 Pydantic/YAML 坑固化为防御代码。
+
+### 新增
+
+#### 2 条新 CLI 命令
+
+```bash
+juben storyboard --dir <project>              # Stage 2: 剧本→分镜
+juben storyboard --dir <project> --chapter 5  # 仅处理单章
+juben export-prompts --dir <project>          # Stage 3: 分镜→Veo prompt
+juben export-prompts --dir <project> --chapter 5
+```
+
+Stage 1 (`juben init`) 现已自动创建 `config/` 目录含 5 个模板 + 2 个项目特异文件 (characters/locations/project_config)，
+Stage 2/3 不再因"找不到 config"而失败。
+
+#### init 自动生成 config/ 目录
+
+- 5 个纯配置从 `projects/_template/config/` 复制（无项目特异性）：
+  `action_rules.yaml` / `beat_triggers.yaml` / `hook_templates.yaml` / `prompt_style.yaml` / `events.yaml`
+- `project_config.yaml` 自动替换 `project_name` + `default_location`（主角 location）
+- `characters.yaml` 从 Pydantic result 生成，格式: `name: {en, role, appearance, personality, speech_style, wardrobe, background}`
+- `locations.yaml` 用 `state.location` 作为 key（取自主角 state）
+- 中→英文名映射（13 条）：林越→Lin Yue、苏念→Su Nian、白无垢→Bai Wugou 等
+
+### 修复
+
+#### 3 个 Pydantic→YAML 陷阱
+
+1. **Pydantic 对象污染** — `appearance: !!python/object:...` 污染 YAML
+   → `_safe_str()` 递归展开 `model_dump()` 为 `key=val; key.sub=val` 易读字符串
+
+2. **CharacterRole 枚举未继承 str** — `role.value` 在 `Enum` 上挂掉
+   → 检测 `hasattr(role, 'value') and hasattr(role, '_value_')` 双保险取值
+
+3. **state.location 类型判断** — 主角 location 有时是 str 有时是 Pydantic
+   → `isinstance(loc_str, str)` 严格校验后再用
+
+#### pipeline.py 跳过已定稿章节
+
+- 跳过 `chapters/NNN.md.locked`（内容已定稿，不应重转分镜）
+- 单章模式 `--chapter N` 仅处理指定章
+- 最大章节数从 `config.max_chapter` 读，无则扫描 `chapters/*.md` 实际文件名
+
+#### export_pro_prompts.py 修复 characters 格式 + 扫描真实章节
+
+- 旧版假设 characters.yaml 是 `name: info` 格式，实际是 `{characters: {name: info}}` 嵌套
+- 旧版硬编码 1-20 章，现在扫描 `v3_storyboard/ch*_shots.json` 实际文件
+
+### 验证
+
+- 新项目 init: ✅ 8 个 config 文件全部生成，characters/locations YAML 正确
+- pipeline .locked 跳过: ✅ 19/20 done (ch001 被 lock 跳过)
+- CLI help: ✅ `juben storyboard --help` / `juben export-prompts --help` 可用
+
+---
+
 ## [1.0.0] - 2026-08-07
 
 ### 核心突破：从"章节原子"升级到"项目级资源预算"
 
-神算子30章复盘证明: 引擎能保证"这章写好"，但**无法回答"这故事还能不能继续"**。
+长篇项目 (30+ 章) 复盘证明: 引擎能保证"这章写好"，但**无法回答"这故事还能不能继续"**。
 v1.0 引入**项目级资源预算层**，让引擎像 git 追踪代码变更一样追踪故事资源。
 
 ### 新增
@@ -66,7 +183,7 @@ juben world list
 
 ### 验证
 
-神算子 30 章真实数据回放测试:
+长篇项目 (30+ 章) 真实数据回放测试:
 
 ```
 === 实体消费预算 ===

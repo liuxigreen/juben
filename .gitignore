@@ -38,3 +38,17 @@ htmlcov/
 # Local secrets
 .env
 .env.local
+
+# ===========================================
+# juben skill: 用户项目隔离 (v1.1.2)
+# ===========================================
+# projects/ 下只放 _template/ (新项目模板)
+# 用户的真实剧目 (神算子, 心声咖啡等) 绝不进 juben 通用 skill 仓库
+projects/*
+!projects/_template/
+!projects/_template/**
+# 用户即使 init 错, 也会被 lint-config 检出 (防污染)
+# Stage 2/3 输出也不应进 juben 通用仓库
+**/v3_storyboard/
+**/flow_prompts_pro/
+**/srt_subtitles/

@@ -1,10 +1,11 @@
 ---
 name: juben-write
-version: 1.1.0
+version: 1.1.2
 description: |
   写剧本/小说 skill — 从一句话前提到完整章节正文。
   Python 控世界观 + LLM 写正文, 防吃书/防AI味/防复读, 每章带 cliffhanger。
   包含项目级资源预算层, 写第N章前自动检查"故事还能不能继续"。
+  **v1.1.2 防污染隔离硬化**: init 自动建 config + lint-config 拦截错项目 cp + init-config 独立重建。
 triggers:
   - "写剧本"
   - "写小说"
@@ -30,8 +31,8 @@ entry_point: juben.cli:main
 
 ## 这是什么
 
-`juben` 是一个 Python 控世界观 + LLM 写正文的剧本引擎。v1.1.0 新增**项目级资源预算层**,
-让引擎在故事线耗尽时主动拒绝继续生成(神算子 30 章实证)。
+`juben` 是一个 Python 控世界观 + LLM 写正文的剧本引擎。v1.1.0 新增**项目级资源预算层**, v1.1.1 新增 **Stage 2/3 一键化** (init 自动生成 config + storyboard/export-prompts CLI + 跳过 .locked)。
+让引擎在故事线耗尽时主动拒绝继续生成(实证: 长篇项目在 30 章左右触发资源预算告警)。
 
 ## 必走流程 (3 步)
 
@@ -74,7 +75,7 @@ done
 ## 题材模板 (2 个完整 + 14 个 mixin)
 
 完整模板:
-- `rebirth-revenge` — 重生复仇 (神算子验证)
+- `rebirth-revenge` — 重生复仇 (长篇项目验证)
 - `universal` — Mixin 驱动的通用模板
 
 Mixin (可组合):
@@ -108,9 +109,42 @@ my-story/
 └── curator/               跨章状态追踪
 ```
 
+## v1.1.1 新增 (Stage 2/3 一键化 + Pydantic→YAML 防御)
+
+**核心问题**: v1.0 后用户仍需手抄 `config/` 目录 + 手动维护 `characters.yaml` 格式。Stage 2/3 因"找不到 config"反复失败。Pydantic 对象在 YAML dump 时反复污染（`!!python/object:` 错误、Enum 挂掉、location 类型不一致）。
+
+### 2 条新 CLI
+
+```bash
+# Stage 2: 剧本 → 分镜
+juben storyboard --dir projects/<your-project>
+juben storyboard --dir projects/<your-project> --chapter 5   # 单章模式
+
+# Stage 3: 分镜 → Veo prompt
+juben export-prompts --dir projects/<your-project>
+juben export-prompts --dir projects/<your-project> --chapter 5
+```
+
+### init 自动生成 config/
+
+`juben init` 自动建 8 个文件：5 模板 (action_rules/beat_triggers/hook_templates/prompt_style/events) + 3 项目特异 (project_config/characters/locations)。Stage 2/3 立即可跑。
+
+### 3 个 Pydantic→YAML 防御
+
+- `_safe_str()` 递归展开 Pydantic `model_dump()` 为 `key=val; key.sub=val` 字符串
+- `CharacterRole` 枚举双保险: `hasattr(role, 'value') and hasattr(role, '_value_')`
+- `state.location` 用 `isinstance(loc_str, str)` 严格校验
+
+### pipeline.py 跳过 .locked
+
+```bash
+touch chapters/001.md.locked   # 标记已定稿
+juben storyboard --dir projects/foo   # 自动跳过 001
+```
+
 ## v1.1.0 新增 (项目级资源预算)
 
-神算子 30 章翻车 4 根因全解:
+真实项目长篇运行翻车的 4 根因 (见 docs/project-retrospective.md):
 
 | 翻车样本 | 根因 | v1.1.0 解决 |
 |---|---|---|
@@ -169,7 +203,7 @@ cd juben
 pip install -e .
 
 # 验证
-juben --version  # 应该输出 1.1.0
+juben --version  # 应该输出 1.1.1
 juben --help
 ```
 

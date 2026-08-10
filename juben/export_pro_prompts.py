@@ -217,7 +217,7 @@ def generate_professional_prompt(shot: dict, char_desc: dict, chapter_num: int) 
     return prompt
 
 
-def export_professional_prompts(project_dir: Path):
+def export_professional_prompts(project_dir: Path, only_chapter: int = 0):
     """导出所有章节的专业Flow提示词"""
     d = project_dir / "v3_storyboard"
     out_dir = project_dir / "flow_prompts_pro"
@@ -228,11 +228,26 @@ def export_professional_prompts(project_dir: Path):
     char_file = project_dir / "config" / "characters.yaml"
     if char_file.exists():
         chars_raw = yaml.safe_load(char_file.read_text(encoding="utf-8"))
-        char_desc = {info["en"]: info for info in chars_raw.values() if isinstance(info, dict)}
+        # v1.1.1: characters.yaml 格式是 {characters: {name: {en:..., role:...}}}
+        chars_dict = chars_raw.get("characters", chars_raw) if isinstance(chars_raw, dict) else {}
+        char_desc = {info["en"]: info for info in chars_dict.values() if isinstance(info, dict) and "en" in info}
     else:
         char_desc = {}
     
-    for ch in range(1, 21):
+    # === v1.1.0: 扫描 v3_storyboard 目录里所有 chN_shots.json ===
+    max_chapter = 0
+    if d.exists():
+        for f in d.glob("ch*_shots.json"):
+            try:
+                n = int(f.stem.split("_")[0][2:])
+                if n > max_chapter:
+                    max_chapter = n
+            except (ValueError, IndexError):
+                pass
+    if max_chapter == 0:
+        max_chapter = 20  # fallback
+
+    for ch in range(1, max_chapter + 1):
         shots_file = d / f"ch{ch:03d}_shots.json"
         if not shots_file.exists():
             continue
@@ -274,4 +289,9 @@ def export_professional_prompts(project_dir: Path):
 
 
 if __name__ == "__main__":
-    export_professional_prompts(Path.home() / "juben/projects/心声咖啡")
+    import sys
+    if len(sys.argv) > 1:
+        project_dir = Path(sys.argv[1])
+    else:
+        project_dir = Path.home() / "juben/projects/心声咖啡"
+    export_professional_prompts(project_dir)

@@ -143,7 +143,7 @@ story-project/
 
 | 模板 | 骨架 | 适用场景 |
 |---|---|---|
-| `rebirth-revenge` | 身份落差+命运逆转 | 重生复仇文 (神算子验证) |
+| `rebirth-revenge` | 身份落差+命运逆转 | 重生复仇文 (长篇项目验证) |
 | `universal` | Mixin 自由组合 | 任意题材 (用 mixin 拼) |
 
 ### Mixin 组合 (14 个 YAML, 推荐路径)
@@ -229,6 +229,50 @@ juben world list
 ```
 
 详见 [CHANGELOG.md](./CHANGELOG.md)
+
+## 🔧 v1.1.1 — Stage 2/3 一键化 + 工程化坑修复
+
+**问题**: v1.0 后用户仍需手抄 `config/` 目录 + 手动维护 `characters.yaml` 格式，且 Pydantic 对象在 YAML dump 时反复污染（`!!python/object:` 错误、Enum 挂掉、location 类型不一致）。
+
+### 2 条新 CLI
+
+```bash
+# Stage 2: 剧本 → 分镜 (一键)
+juben storyboard --dir projects/<your-project>
+juben storyboard --dir projects/<your-project> --chapter 5   # 单章
+
+# Stage 3: 分镜 → Veo prompt (一键)
+juben export-prompts --dir projects/<your-project>
+juben export-prompts --dir projects/<your-project> --chapter 5
+```
+
+### init 自动生成 config/
+
+`juben init` 后项目 `config/` 自动含 8 个文件，Stage 2/3 不再因"找不到 config"失败：
+
+| 文件 | 来源 | 说明 |
+|---|---|---|
+| `action_rules.yaml` | _template | 动作规则 |
+| `beat_triggers.yaml` | _template | 触发器 |
+| `hook_templates.yaml` | _template | 钩子模板 |
+| `prompt_style.yaml` | _template | 风格（含 audio_control）|
+| `events.yaml` | _template | 事件库 |
+| `project_config.yaml` | 自动生成 | 替换 project_name + default_location |
+| `characters.yaml` | 自动生成 | 从 Pydantic characters + 中→英名映射 |
+| `locations.yaml` | 自动生成 | 主角 state.location 作 key |
+
+### 3 个 Pydantic→YAML 防御
+
+- `_safe_str()` 递归展开 Pydantic `model_dump()` 为 `key=val; key.sub=val` 字符串
+- `CharacterRole` 枚举双保险: `hasattr(role, 'value') and hasattr(role, '_value_')`
+- `state.location` 用 `isinstance(loc_str, str)` 严格校验
+
+### pipeline.py 跳过 .locked
+
+```bash
+touch chapters/001.md.locked   # 标记已定稿
+juben storyboard --dir projects/foo   # 自动跳过 001
+```
 
 ## License
 

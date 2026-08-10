@@ -1,24 +1,45 @@
 # 事件类型配置模板
 # 定义剧本中的特殊事件（超能力、闪回等）
+# 格式: events 是 list，每项 {type, triggers, shot_recipe}
+# 引擎 EventEngine.match() 遍历 list，匹配 triggers
+#
+# 这是骨架模板——新项目 init 后应按题材重写具体 events
+# 参考实现: projects/心声咖啡/config/events.yaml (mind_reading)
+#           projects/神算子算不到自己/config/events.yaml (divination)
 
 events:
-  mind_reading:
-    name: 读心
-    enabled: false  # 按题材启用
-    visual_cue: "瞳孔特写"
-    audio_cue: "低沉嗡鸣"
-    duration_range: [3, 6]
-    
-  flashback:
-    name: 闪回
-    enabled: true
-    visual_cue: "画面褪色"
-    audio_cue: "环境音减弱"
-    duration_range: [4, 8]
-    
-  conflict:
-    name: 冲突
-    enabled: true
-    visual_cue: "镜头抖动"
-    audio_cue: "紧张音乐"
-    duration_range: [5, 10]
+  - type: "generic_focus"         # 通用聚焦事件（占位，新项目应替换）
+    triggers: ["注意到", "看到", "发现", "突然", "猛地"]
+    shot_recipe:
+      - name: "subject_cu"
+        space: "Physical"
+        action: "{char} freezes mid-motion, pupils dilating, breath held"
+        shot_type: "CU"
+        camera: "static"
+        emotion: "Focus"
+        focus: "{char}'s face"
+      - name: "prop_ecu"
+        space: "Physical"
+        action: "Ambient motion freezes around the focal point, only the object in focus remains sharp and vivid"
+        shot_type: "ECU"
+        camera: "slow_zoom_in"
+        emotion: "Tension"
+        focus: "focal object"
+
+  - type: "flashback"             # 闪回（通用）
+    triggers: ["那年", "当时", "从前", "记得", "回忆", "仿佛"]
+    shot_recipe:
+      - name: "wide_shot"
+        space: "Memory"
+        action: "The scene desaturates to sepia, edges soften, and a memory tableau materializes around the protagonist"
+        shot_type: "Wide"
+        camera: "slow_pull_back"
+        emotion: "Nostalgia"
+        focus: "memory tableau"
+      - name: "subject_ecu"
+        space: "Memory"
+        action: "A younger version of {char} or a key figure from the past appears, expression caught in a single frozen moment"
+        shot_type: "ECU"
+        camera: "static"
+        emotion: "Longing"
+        focus: "younger face"

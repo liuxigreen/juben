@@ -877,7 +877,7 @@ def _fmt(s):
 # 主流程
 # ============================================================
 
-def run_pipeline(project_dir: Path):
+def run_pipeline(project_dir: Path, only_chapter=None):
     cfg = load_config(project_dir)
     extractor = BeatExtractor(cfg)
     compiler = ShotCompiler(cfg)
@@ -890,6 +890,25 @@ def run_pipeline(project_dir: Path):
     if isinstance(loc_map, dict):
         loc_map = {k: v for k, v in loc_map.items() if isinstance(v, str)}
 
+    # === v1.1.0: 最大章节数改为从config读取, 默认扫描实际chapters/目录 ===
+    max_chapter_cfg = cfg.get("max_chapter", 0)
+    if max_chapter_cfg > 0:
+        max_chapter = max_chapter_cfg
+    else:
+        # 自动扫描 chapters/ 目录获取最大章节号
+        ch_dir = project_dir / "chapters"
+        max_chapter = 0
+        if ch_dir.exists():
+            for f in ch_dir.glob("*.md"):
+                try:
+                    n = int(f.stem.lstrip("0") or "0")
+                    if n > max_chapter:
+                        max_chapter = n
+                except ValueError:
+                    pass
+    if max_chapter == 0:
+        max_chapter = 20  # fallback
+
     out = project_dir / "v3_storyboard"
     srt_dir = project_dir / "srt_subtitles"
     out.mkdir(exist_ok=True)
@@ -898,9 +917,14 @@ def run_pipeline(project_dir: Path):
     results = []
     total_score = {"action_completeness": 0, "focus_rendered": 0, "shot_variety": 0, "audio_separation": 0, "character_coverage": 0}
 
-    for ch in range(1, 21):
+    # 跳过已 lock 的章节 (存在 .md.locked 表示内容已定稿, 不应重复转分镜)
+    for ch in range(1, max_chapter + 1):
+        if only_chapter and ch != only_chapter:
+            continue
         ch_path = project_dir / "chapters" / f"{ch:03d}.md"
+        lock_path = project_dir / "chapters" / f"{ch:03d}.md.locked"
         if not ch_path.exists(): continue
+        if lock_path.exists(): continue  # 已 lock, 跳过
 
         text = ch_path.read_text(encoding="utf-8")
         beats = extractor.extract(text)
