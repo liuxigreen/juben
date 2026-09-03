@@ -347,6 +347,35 @@ def generate_professional_prompt(shot: dict, char_desc: dict, chapter_num: int) 
     return prompt
 
 
+def generate_keyframe_prompt(shot: dict, char_desc: dict) -> str:
+    """关键帧静帧提示词（图生视频工作流）：
+    即梦/可灵先用文生图出本镜第一帧（人物一致性远好于纯文生视频），
+    再把静帧喂给图生视频。复用分镜的场景/构图/表演描述，去掉音频/时长。"""
+    st = shot.get("shot_type", "MS")
+    st_name = SHOT_SPEC.get(st, {}).get("name", "medium shot")
+    subject_parts = []
+    for char_en in shot.get("characters", []):
+        desc = char_desc.get(char_en, {})
+        full = desc.get("full", char_en)
+        subject_parts.append(full)
+    subject = "; ".join(subject_parts) if subject_parts else "a character"
+    perf = PERFORMANCE_RECIPES.get(shot.get("emotion", "Neutral"), PERFORMANCE_RECIPES["Neutral"])
+    ctx = _pick_context(shot)
+    time_light = ctx["time_map"].get(shot.get("emotion", "Neutral"), "soft afternoon daylight")
+
+    parts = [f"cinematic still frame, {st_name}"]
+    if shot.get("characters"):
+        parts.append(f"featuring {subject}")
+        parts.append(f"expression: {perf.get('eyes', 'focused eyes')}")
+    if shot.get("action_visual"):
+        parts.append(str(shot["action_visual"]))
+    parts.append(f"{ctx['base']}, {time_light}")
+    parts.append("photorealistic Chinese short drama, film grain, shallow depth of field, 9:16 vertical, 8k detail")
+    parts.append("IDENTITY LOCK: faces and outfits must match the character reference sheet exactly")
+    parts.append("Negative prompt: deformed hands, extra fingers, warped face, text, watermark, blurry")
+    return ". ".join(parts)
+
+
 def export_professional_prompts(project_dir: Path, only_chapter: int = 0):
     """导出所有章节的专业Flow提示词"""
     d = project_dir / "v3_storyboard"
@@ -407,9 +436,11 @@ def export_professional_prompts(project_dir: Path, only_chapter: int = 0):
         
         for s in shots:
             prompt = generate_professional_prompt(s, char_desc, ch)
+            keyframe = generate_keyframe_prompt(s, char_desc)
             audio = s.get("audio", {})
-            
-            lines.append(f"### Shot {s['shot_id']} [{s['shot_type']}] {s['duration']:.0f}s")
+
+            lines.append(f"### Shot {s['shot_id']} [{s['shot_type']}] {s['duration']:.0f}s"
+                         + (f" （节拍: {s.get('pacing_label', '')}）" if s.get('pacing_label') else ""))
             lines.append(f"**Camera:** {CAMERA_SPEC.get(s.get('camera_movement','static'),{}).get('name','static')}")
             lines.append(f"**Emotion:** {s.get('emotion','Neutral')}")
             if audio.get("dialogue_zh"):
@@ -420,6 +451,12 @@ def export_professional_prompts(project_dir: Path, only_chapter: int = 0):
             lines.append("**Prompt:**")
             lines.append(f"```")
             lines.append(prompt)
+            lines.append(f"```")
+            lines.append("")
+            # 图生视频工作流：先出静帧（一致性更好），再图生视频
+            lines.append("**Keyframe（先文生图出首帧，再图生视频）:**")
+            lines.append(f"```")
+            lines.append(keyframe)
             lines.append(f"```")
             lines.append("")
         

@@ -224,6 +224,74 @@ def apply_cliffhanger(shots: list[dict], cliff_cfg: Any = None):
 
 
 # ============================================================
+# 节拍定位（pacing-aware 分镜，爆款对齐）
+# 9 点卡点表不只用于校验——每个 shot 必须知道自己服务于哪个节拍，
+# 运镜/景别/情绪按节拍执行，否则中段就是均匀分布的"信息真空"。
+# ============================================================
+
+PACING_MARKS = [
+    (3, "3s_Hook"), (15, "15s_Conflict"), (30, "30s_Retention"),
+    (45, "45s_Escalation"), (60, "60s_Explosion"), (75, "75s_Satisfaction"),
+    (82, "82s_Twist"), (90, "90s_Cliffhanger"),
+]
+
+# 节拍 → 运镜/景别/渲染语言（爆点给 crash zoom，蓄力给缓推，爽点给拉回反应镜头）
+PACING_GRAMMAR = {
+    "3s_Hook": {"shot_type": "CU", "camera": "push",
+                "style": "strong sensory impact in the first frame, hook established immediately"},
+    "15s_Conflict": {"shot_type": "CU", "camera": "push",
+                     "style": "positions clash, stakes rising, rapid exchange"},
+    "30s_Retention": {"shot_type": "MCU", "camera": "push",
+                      "style": "a secret surfaces in the framing, tension building"},
+    "45s_Escalation": {"shot_type": "CU", "camera": "static",
+                       "style": "the humiliator pushes one notch higher, pressure at breaking point"},
+    "60s_Explosion": {"shot_type": "MCU", "camera": "crash_zoom",
+                      "style": "the blow lands — high-energy turn, physical or public reversal"},
+    "75s_Satisfaction": {"shot_type": "MCU", "camera": "pull",
+                         "style": "reaction beat: onlookers gasp, the aggressor's face collapses"},
+    "82s_Twist": {"shot_type": "CU", "camera": "push",
+                  "style": "a new variable enters the frame, the win sours into a bigger threat"},
+    "90s_Cliffhanger": {"shot_type": "CU", "camera": "push",
+                        "style": "suspense cliffhanger framing, cut before the answer is revealed"},
+}
+
+
+def apply_pacing(shots: list[dict]) -> None:
+    """按累计时长给每个 shot 打 pacing_label，并套用节拍运镜/景别语法。
+    幂等：重复调用不叠加。"""
+    if not shots:
+        return
+    t = 0.0
+    for shot in shots:
+        dur = float(shot.get("duration") or 0)
+        mid = t + dur / 2.0
+        label = PACING_MARKS[0][1]
+        for mark, name in PACING_MARKS:
+            if mid >= mark:
+                label = name
+        shot["pacing_label"] = label
+        t += dur
+
+    for shot in shots:
+        label = shot.get("pacing_label")
+        rule = PACING_GRAMMAR.get(label)
+        if not rule:
+            continue
+        # 景别：只在原判定过宽时收紧（WS/MS → CU/MCU），不放宽已有 ECU/CU
+        want_st = rule["shot_type"]
+        if shot.get("shot_type") in ("WS", "MS", "") or not shot.get("shot_type"):
+            shot["shot_type"] = want_st
+        elif label == "60s_Explosion" and shot.get("shot_type") in ("WS", "FS"):
+            shot["shot_type"] = "MCU"
+        # 运镜：爆点强制 crash_zoom；其他节拍只在原运镜是 static 时升级
+        if label == "60s_Explosion":
+            shot["camera_movement"] = rule["camera"]
+        elif shot.get("camera_movement") in ("static", ""):
+            shot["camera_movement"] = rule["camera"]
+        shot["pacing_style"] = rule["style"]
+
+
+# ============================================================
 # BeatExtractor
 # ============================================================
 
@@ -641,6 +709,16 @@ class ShotCompiler:
 
         if target:
             self._adjust(shots, target)
+        # 爆款对齐：节拍定位（在 _adjust 定稿时长后执行，标签按最终秒数落位）
+        apply_pacing(shots)
+        # 剧本过薄预警：beat 太少时即使每镜顶到 8s 上限也凑不满单集时长，
+        # 说明 Scribe 正文注水不足量（台词/事件密度不够），回写窗口加戏
+        if target:
+            total_dur = sum(float(s.get("duration") or 0) for s in shots)
+            if total_dur < target * 0.6:
+                print(f"⚠ 剧本过薄：全部镜头仅 {total_dur:.0f}s（目标 {target}s）。"
+                      f"需要更多冲突回合/台词/事件，回到 Scribe 加密叙事，不要拉长镜头硬凑。",
+                      flush=True)
         return shots
 
     # --- 台词→时长推算（中文4-5字/秒） ---
@@ -987,6 +1065,10 @@ class PromptRenderer:
         # 竖屏安全区（字幕/标题留白）+ 断崖悬念构图
         if self.safe_area:
             parts.append(self.SAFE_AREA_EN)
+        # 节拍渲染语言：爆点/蓄力/爽点各有专属镜头语言（pacing-aware）
+        pacing_style = shot.get("pacing_style")
+        if pacing_style:
+            parts.append(pacing_style)
         if shot.get("cliffhanger"):
             parts.append(self.CLIFFHANGER_EN)
         parts.append(self.suffix)
@@ -1198,6 +1280,30 @@ class QualityScorer:
         empty_chars = sum(1 for s in shots if not s.get("characters"))
         scores["character_coverage"] = round((1 - empty_chars / max(1, total)) * 100)
 
+        # === 爆款对齐：真实判别性检查（此前评分器恒 100 分，是摆设） ===
+        # 6. pacing_coverage: 9 点节拍覆盖率（钩子/蓄力/爆点/爽点/断崖缺一不可）
+        labels = {s.get("pacing_label") for s in shots}
+        required = {"3s_Hook", "45s_Escalation", "60s_Explosion", "75s_Satisfaction", "90s_Cliffhanger"}
+        covered = sum(1 for r in required if r in labels)
+        scores["pacing_coverage"] = round(covered / len(required) * 100)
+
+        # 7. speech_floor_respect: 台词镜头时长 >= 念完台词所需（配音不被截断）
+        dlg_shots = [s for s in shots if (s.get("audio", {}).get("dialogue_zh")
+                                          or s.get("audio", {}).get("voiceover_zh"))]
+        if dlg_shots:
+            ok = sum(1 for s in dlg_shots
+                     if float(s.get("duration") or 0) >= float(s.get("_speech_floor") or 0) - 0.05)
+            scores["speech_floor_respect"] = round(ok / len(dlg_shots) * 100)
+        else:
+            scores["speech_floor_respect"] = 100
+
+        # 8. cliffhanger_present: 末镜必须断崖
+        scores["cliffhanger_present"] = 100 if shots and shots[-1].get("cliffhanger") else 0
+
+        # 9. emotion_variety: 情绪至少 3 种（全程 Neutral = 情绪平线，必划走）
+        distinct_emotions = {s.get("emotion", "Neutral") for s in shots}
+        scores["emotion_variety"] = round(min(1, len(distinct_emotions) / 3) * 100)
+
         scores["overall"] = round(sum(scores.values()) / len(scores))
         return {"total": total, "scores": scores}
 
@@ -1222,7 +1328,7 @@ def generate_srt(shots, path):
         if vt == "inner_voice" and a.get("voiceover_zh"):
             txt = f"（心声）{a['voiceover_zh']}"
         elif vt == "onscreen" and a.get("dialogue_zh"):
-            txt = a["dialogue_zh"]
+            txt = a["dialogue_zh"].strip()
         if txt:
             lines.append(f"{seq}\n{_fmt(t)} --> {_fmt(t+dur)}\n{txt}\n")
             seq += 1
@@ -1231,6 +1337,41 @@ def generate_srt(shots, path):
 
 def _fmt(s):
     return f"{int(s//3600):02d}:{int(s%3600//60):02d}:{int(s%60):02d},{int(s%1*1000):03d}"
+
+
+def generate_voice_data(chapter: int, shots: list, path):
+    """导出 TTS 配音数据（voice_data.json）：每镜台词/心声、说话人、情感、时长。
+    扁平追加式（全剧一个文件），供外部 TTS/合成工具直接消费。"""
+    voice_path = Path(path)
+    data = []
+    if voice_path.exists():
+        try:
+            data = json.loads(voice_path.read_text(encoding="utf-8"))
+            if not isinstance(data, list):
+                data = []
+        except Exception:
+            data = []
+    t = 0.0
+    for shot in shots:
+        a = shot.get("audio", {})
+        vt = a.get("voice_type", "none")
+        text = (a.get("voiceover_zh") if vt == "inner_voice" else a.get("dialogue_zh", "") or "").strip()
+        if not text:
+            t += shot.get("duration", 5.0)
+            continue
+        data.append({
+            "chapter": chapter,
+            "shot_id": shot.get("shot_id"),
+            "start_sec": round(t, 1),
+            "duration": shot.get("duration", 5.0),
+            "voice_type": vt,
+            "speaker": a.get("dialogue_speaker", "") if vt != "inner_voice" else "旁白(心声)",
+            "emotion": a.get("emotion_tag", "calm"),
+            "text": text,
+            "pacing_label": shot.get("pacing_label", ""),
+        })
+        t += shot.get("duration", 5.0)
+    voice_path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
 # ============================================================
@@ -1275,7 +1416,9 @@ def run_pipeline(project_dir: Path, only_chapter=None):
     srt_dir.mkdir(exist_ok=True)
 
     results = []
-    total_score = {"action_completeness": 0, "focus_rendered": 0, "shot_variety": 0, "audio_separation": 0, "character_coverage": 0}
+    total_score = {"action_completeness": 0, "focus_rendered": 0, "shot_variety": 0, "audio_separation": 0,
+                   "character_coverage": 0, "pacing_coverage": 0, "speech_floor_respect": 0,
+                   "cliffhanger_present": 0, "emotion_variety": 0}
 
     # 跳过已 lock 的章节 (存在 .md.locked 表示内容已定稿, 不应重复转分镜)
     for ch in range(1, max_chapter + 1):
@@ -1331,6 +1474,7 @@ def run_pipeline(project_dir: Path, only_chapter=None):
         (out / f"ch{ch:03d}_shots.json").write_text(json.dumps(shots, ensure_ascii=False, indent=2))
         (out / f"ch{ch:03d}_beats.json").write_text(json.dumps(beats, ensure_ascii=False, indent=2))
         generate_srt(shots, srt_dir / f"ch{ch:03d}.srt")
+        generate_voice_data(ch, shots, project_dir / "voice_data.json")
 
         td = sum(s["duration"] for s in shots)
         cn = sum(1 for s in shots if any("\u4e00" <= c <= "\u9fff" for c in s.get("veo_prompt", "")))
