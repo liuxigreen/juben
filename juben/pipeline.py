@@ -288,6 +288,12 @@ def apply_pacing(shots: list[dict]) -> None:
             shot["camera_movement"] = rule["camera"]
         elif shot.get("camera_movement") in ("static", ""):
             shot["camera_movement"] = rule["camera"]
+        # 情绪兜底：关键词匹配不到时的节拍级覆盖（爆点不能是暖光，断崖不能是平铺）
+        emotion_override = {"60s_Explosion": "Shock", "90s_Cliffhanger": "Tension",
+                            "3s_Hook": "Tension", "45s_Escalation": "Tension"}
+        want = emotion_override.get(label)
+        if want and shot.get("emotion", "Neutral") in ("Neutral", "Warmth"):
+            shot["emotion"] = want
         shot["pacing_style"] = rule["style"]
 
 
@@ -340,6 +346,7 @@ class BeatExtractor:
         self.events = config.get("events", {})
         self.event_engine = EventEngine(self.events.get("events", []) if isinstance(self.events, dict) else [])
         self.triggers = config.get("beat_triggers", {})
+        self._last_dlg_speaker = ""  # 跨 beat 的说话人连读追踪（省略主语的开场白沿用）
         self.action_rules = config.get("action_rules", {})
         self.action_templates = self.action_rules.get("action_templates", [])
         self.action_rewrite = self.action_rules.get("action_rewrite", {})
@@ -555,12 +562,20 @@ class BeatExtractor:
                 voice_text = voice_text or raw
             elif not voice_text:
                 dlg_text = raw
+                # 说话人只在台词行本身里找（"林晚冷笑："）——扫整段会把同 beat
+                # 后文提到的角色误判为说话人（群众台词被标成主角）
                 for name, info in self.chars.items():
-                    if name in text:
+                    if name in raw:
                         dlg_speaker = info["en"]
                         break
                 if not dlg_speaker:
-                    dlg_speaker = primary
+                    # 无归属台词：省略主语开头（……/——）视为上一说话人连读，
+                    # 否则按群众杂音处理（TTS 用群杂音色，配音才不会张冠李戴）
+                    if self._last_dlg_speaker and raw.startswith(("……", "——", "—")):
+                        dlg_speaker = self._last_dlg_speaker
+                    else:
+                        dlg_speaker = "Crowd"
+                self._last_dlg_speaker = dlg_speaker
 
         if voice_text:
             vt = "inner_voice"
@@ -1134,6 +1149,13 @@ class PromptRenderer:
                     'natural lip sync in Chinese, subtitle-friendly framing with the face '
                     'in the upper frame, {accent}').format(
                     speaker=spk_en, line_zh=line_zh, tone=tone, accent=accent)
+            audio = cfg.get("dialogue_audio", "")
+        elif vt == "onscreen" and line_zh and not spk_en:
+            # 群杂台词（说话人无法归属，如围观起哄）：渲染为背景人声而非主角口型，
+            # 否则这些镜头会被错误渲染成"无人说话"
+            mouth = ('a crowd of background voices speaking in Chinese, saying: "{line_zh}", '
+                     'overlapping chatter, no single identifiable speaker, subtitle-friendly framing').format(
+                line_zh=line_zh)
             audio = cfg.get("dialogue_audio", "")
         elif vt == "inner_voice" and (line_en or line_zh):
             spk = spk_en or (chars[0] if chars else "the character")

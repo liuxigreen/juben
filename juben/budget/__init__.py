@@ -165,7 +165,24 @@ class ArcStateTracker:
         if not path.exists():
             return []
         data = json.loads(path.read_text(encoding="utf-8"))
-        self._characters_cache = data if isinstance(data, list) else data.get("characters", [])
+        chars = data if isinstance(data, list) else data.get("characters", [])
+        # 归一化：兼容 {name: info} 字典结构（bootstrap/手工填写常见），
+        # 转成 list 并确保 id 字段存在（缺省用 key 或 name）
+        if isinstance(chars, dict):
+            items = []
+            for key, info in chars.items():
+                if isinstance(info, str):
+                    info = {"name": info}
+                if not isinstance(info, dict):
+                    continue
+                info.setdefault("id", str(info.get("id") or key))
+                items.append(info)
+            chars = items
+        if isinstance(chars, list):
+            for c in chars:
+                if isinstance(c, dict):
+                    c.setdefault("id", str(c.get("id") or c.get("name") or ""))
+        self._characters_cache = chars
         return self._characters_cache
 
     def get_arc_state(self, char_id: str) -> dict:

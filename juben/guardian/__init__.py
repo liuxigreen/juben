@@ -1352,15 +1352,9 @@ def check_dialogue_ratio(chapter_text: str, structure_type: str | None = None, p
             description=f"对话占比{ratio:.0%}（超过{cap:.0%}上限，结构类型: {structure_type or '未知'}{'+' + '+'.join(content_types) if content_types else ''}），剧情靠嘴炮推进",
             suggestion="用动作、读心、潜伏、偷听等方式替代直接对话。每2句对话后插入1段物理动作/环境变化。",
         )
-    elif ratio > 0.30 and not content_types:
-        # 只有纯动作/追逐章节才在30%时给warning
-        return GuardianViolation(
-            rule="dialogue_ratio_warning",
-            severity="warning",
-            description=f"对话占比{ratio:.0%}（超过30%），对话偏多",
-            suggestion="考虑用Show Don't Tell替代部分对话。",
-        )
-    
+    # 爆款对齐：废除旧的 30% 对话警告（与新对话密度规则冲突——
+    # 语料实测爆款开场台词占比过半，密度由信息倾倒检测守门，不压总占比）
+
     return None
 
 
