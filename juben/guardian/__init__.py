@@ -398,7 +398,9 @@ def check_anti_dialogue(
     ratio = non_protag_chars / total_chars
 
     # 检查1：非主角对话占比
-    if ratio > 0.35:
+    # 爆款对齐：群像复仇/揭秘集非主角戏份天然重（语料实证反派交代戏合法），
+    # 上限从 35%/25% 提到 50%/40%；真正的注水判定交给"信息倾倒"检查（连续≥3句解释性句式）
+    if ratio > 0.50:
         # 定位违规片段
         offending = []
         for d in non_protag_dialogues:
@@ -413,16 +415,16 @@ def check_anti_dialogue(
         return GuardianViolation(
             rule="anti_dialogue_ratio",
             severity="critical",
-            description=f"非主角对话占比{ratio:.0%}（超过35%），剧情靠嘴炮推进",
+            description=f"非主角对话占比{ratio:.0%}（超过50%），剧情靠嘴炮推进",
             suggestion="用动作、读心、潜伏、偷听等方式替代反派主动交代",
             offending_segments=offending,
         )
-    elif ratio > 0.30:
+    elif ratio > 0.40:
         return GuardianViolation(
             rule="anti_dialogue_ratio",
             severity="warning",
-            description=f"非主角对话占比{ratio:.0%}（超过25%），对话偏多",
-            suggestion="考虑用Show Don't Tell替代部分对话",
+            description=f"非主角对话占比{ratio:.0%}（超过40%），主角戏份偏少",
+            suggestion="把一部分揭示台词还给主角，让主角在交锋里主动逼出真相",
         )
 
     # 检查2：交代真相的对话数量
@@ -684,14 +686,18 @@ def _extract_ending(text: str, chars: int = 100) -> str:
 
 
 def _similarity(a: str, b: str) -> float:
-    """简单的字符级相似度"""
+    """结尾相似度：字符二元组(bigram)重叠，而非单字集合 Jaccard。
+    单字集合对固定班底的连续剧必然高重合（人名/地名不变），会把"措辞不同的正常续写"
+    误报成复读；bigram 对"换措辞/换句式"敏感，才能真正抓到复读。"""
     if not a or not b:
         return 0.0
-    set_a = set(a)
-    set_b = set(b)
-    intersection = len(set_a & set_b)
-    union = len(set_a | set_b)
-    return intersection / union if union > 0 else 0.0
+    def bigrams(s: str) -> set:
+        s = "".join(s.split())
+        return {s[i:i+2] for i in range(len(s) - 1)}
+    set_a, set_b = bigrams(a), bigrams(b)
+    if not set_a or not set_b:
+        return 0.0
+    return len(set_a & set_b) / len(set_a | set_b)
 
 
 def check_anti_repetition(chapter_endings: list[str], chapter_num: int = 0, total_chapters: int = 50) -> GuardianViolation | None:
@@ -836,8 +842,9 @@ def check_hook_density(chapter_text: str, chapter_num: int) -> GuardianViolation
     if not lines:
         return None
 
-    # 取最后一段
-    last_para = lines[-1]
+    # 取最后两段合并判定（爆款断崖常是"揭示→反应"双拍：倒数第二段抛信息，
+    # 最后一段给反应镜头，只看最后一段会漏掉合法断崖）
+    last_para = " ".join(lines[-2:]) if len(lines) >= 2 else (lines[-1] if lines else "")
 
     # 钩子元素（与check_physical_interruption_lock()统一）
     hook_indicators = [
@@ -850,6 +857,9 @@ def check_hook_density(chapter_text: str, chapter_num: int) -> GuardianViolation
         "不对", "有问题", "奇怪",  # 悬念词
         "还没", "正要", "即将", "准备",  # 未完成动作
         "渗出", "传来", "响起", "炸开",  # 物理异象
+        # 爆款对齐：反应镜头式收尾（身体失控/身份重锤/数字悬念）也是合法断崖
+        "抖", "僵", "停在半空", "顿住", "煞白", "铁青", "凝固", "停住",
+        "名字", "签名", "日期", "第一次",  # 揭示型钩子
     ]
 
     # 感官冲击词（与check_physical_interruption_lock()统一）

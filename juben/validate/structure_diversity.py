@@ -124,8 +124,11 @@ def check_structure_diversity(
     # 与上一章比较
     if previous_text:
         prev_fp = extract_event_fingerprint(previous_text, event_fingerprints)
-        sim = fingerprint_similarity(current_fp, prev_fp)
-        
+        shared = set(current_fp) & set(prev_fp)
+        diff_current = [e for e in current_fp if e not in shared]
+        diff_prev = [e for e in prev_fp if e not in shared]
+        sim = fingerprint_similarity(diff_current, diff_prev)
+
         if sim >= adjusted_threshold:
             return {
                 "rule": "structure_diversity",
@@ -139,9 +142,19 @@ def check_structure_diversity(
     # 与前几章指纹比较（防止3章以上的循环）
     if previous_fingerprints and len(previous_fingerprints) >= 2:
         recent_fps = previous_fingerprints[-3:]  # 最近3章
-        similarities = [fingerprint_similarity(current_fp, fp) for fp in recent_fps]
+
+        # 爆款对齐：连续短剧的"格式常量事件"（每集都有的对峙/打脸/揭示）不算复读信号。
+        # 比较前先剔除所有章节指纹的交集——只看差异化事件，否则连续剧必然误报。
+        all_fps = recent_fps + [current_fp]
+        shared = set(all_fps[0])
+        for fp in all_fps[1:]:
+            shared &= set(fp)
+        diff_current = [e for e in current_fp if e not in shared]
+        diff_fps = [[e for e in fp if e not in shared] for fp in recent_fps]
+
+        similarities = [fingerprint_similarity(diff_current, fp) for fp in diff_fps]
         avg_sim = sum(similarities) / len(similarities)
-        
+
         if avg_sim >= adjusted_batch_threshold:
             return {
                 "rule": "structure_diversity_batch",
