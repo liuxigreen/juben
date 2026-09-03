@@ -119,6 +119,12 @@ class StoryMeta(BaseModel):
     hook_types: list[str] = Field(default_factory=list, description="本题材的主钩子类型（语料实证分类）")
     rhythm_curve: str = Field(default="", description="本题材的节奏曲线（段落占比）")
 
+    # === 爆款对齐：换皮槽位（新颖性在执行层，不在情绪公式层）===
+    novelty_slots: list[str] = Field(
+        default_factory=list,
+        description="本剧选定的 2 个新颖执行槽位（如 职业=鉴宝师/年代=1998/物件=怀表/规则=好感度可见），见 references/novelty-slots.md"
+    )
+
 
 # ============================================================
 # 角色卡 (characters.json)

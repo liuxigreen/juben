@@ -507,6 +507,11 @@ class ConstraintInjector:
         if opening_injection:
             blocks.append(opening_injection)
 
+        # 5.8c 换皮槽位注入（新颖性主战场：情绪公式不动，皮必须新）
+        novelty_injection = self._build_novelty_injection()
+        if novelty_injection:
+            blocks.append(novelty_injection)
+
         # 5.9 爽点类型注入（基于satisfaction-matrix.md）
         satisfaction_injection = self._build_satisfaction_injection(chapter_num)
         if satisfaction_injection:
@@ -1334,7 +1339,14 @@ class ConstraintInjector:
 **关键词**：{kw_str}
 **要求**：本章必须出现 {visual_anchor_prop} 的描写。"""
 
-        return f"""### 🧠 高概念核心（全剧最高优先级）
+        return f"""### 🧠 高概念核心（第三层：AI 奇观加成层）
+
+**三层配方定位（务必分清）**：
+- 第一层【情绪公式】是留存机器，任何情况下不许动：市场钩子（身份反差/关系背叛/情绪爆点…）、
+  每 15-30 秒反转、怼脸密集台词、90 秒断崖——这些来自 4497 条真实爆款统计，全剧照常执行
+- 第二层【换皮槽位】是新颖性的主战场：职业/年代/行业规则/核心物件/桥段执行方式/世界观，
+  见"换皮槽位"注入块
+- 第三层【本高概念】是奇观加成：异常规则负责"AI 才拍得出的画面"，不负责替代前两层
 
 **本剧异常规则**：{anomaly}
 
@@ -1343,13 +1355,18 @@ class ConstraintInjector:
 **主角持续代价**：{personal_cost}
 
 **本章要求**：
+- 情绪公式照常走（钩子/反转/爽点/断崖一个不少），异常规则叠加在其上
 - 必须推进异常规则的暴露或代价的加深
+- 异常规则的画面必须优先设计成"AI 才拍得出"的奇观（大场景/超自然/奇幻生物/时空折叠），
+  而不是普通都市剧也能拍的日常画面
 - 不能把异常解释成幻觉、巧合、普通犯罪
-- 不能偏离异常规则的核心吸引力
 {banned_section}
 {anchor_section}
 
-**退化警告**：如果本章剧情出现"其实是隐藏身份""原来是失忆""靠系统开挂"等退化模式，系统将判定为critical违规。"""
+**退化判定（只判执行偷懒，不判市场桥段）**：
+- ✅ 允许且鼓励：身份揭露、打脸、下跪、系统流等市场验证桥段——只要执行方式是新的（换了皮）
+- ❌ 判退化：同一反转方式连续两章原样复读、无铺垫黑化、天降贵人无代价解围、
+  以及触犯上方 banned_patterns 中用户明令禁止的结构"""
 
     # ============================================================
     # 新增：钩子类型注入（基于hook-design.md）
@@ -1398,6 +1415,67 @@ class ConstraintInjector:
             "- 钩子落地必须配一个怼脸特写或当众事件，不能只靠旁白交代\n"
         )
         return "\n".join(parts)
+
+    # 语料实证的新颖桥段灵感库（4497 条真实在投剧的 emergent 标签去重）
+    NOVELTY_DEVICE_BANK = [
+        "读心术", "好感度系统", "鉴宝异能", "赌石", "玄学萌宝", "假死归来", "女扮男装",
+        "穿书改命", "时间循环", "种田空间", "美食竞技", "荒岛求生", "兽世", "赌术复仇",
+        "戏中戏反转", "古今混搭", "慢性下毒", "偷录取证", "发丝疑云", "疫苗争夺",
+        "锁门冻渣男", "改写剧情", "火刑设伏", "仙剑嫁祸", "毒哑灭口", "赝品打假",
+        "信物认亲", "管家夺权", "鸠占鹊巢", "声东击西", "换衣脱身", "办公室恋情",
+        "乡村创业", "商战联姻", "黑手党联姻", "人鱼奇幻", "萌宠助攻",
+    ]
+
+    def _build_novelty_injection(self) -> str:
+        """换皮槽位注入：市场钩子恒定，新颖性由执行层槽位提供。
+        灵感库来自语料 emergent 标签；本剧已声明的 novelty_slots 每章必须可见。"""
+        meta = {}
+        meta_path = self.project_dir / "story_meta.json"
+        if meta_path.exists():
+            try:
+                meta = json.loads(meta_path.read_text(encoding="utf-8"))
+            except Exception as e:
+                logger.warning(f"加载story_meta.json失败: {e}")
+
+        slots = [str(s) for s in (meta.get("novelty_slots") or []) if str(s).strip()]
+        slots_section = ""
+        if slots:
+            slots_section = (
+                "**本剧已锁定的新颖槽位（每章必须至少可见一个，剧情推进其暴露或升级）**：\n"
+                + "\n".join(f"- 🔁 {s}" for s in slots) + "\n"
+            )
+        else:
+            logger.warning(
+                "story_meta.json 未声明 novelty_slots（换皮槽位），"
+                "Architect 需在大纲阶段从槽位表选定 2 个并写入 story_meta.novelty_slots"
+            )
+            slots_section = (
+                "⚠️ 本剧尚未锁定换皮槽位：Architect 必须在大纲阶段从下方槽位表选 2 个"
+                "（不同槽位），写入 story_meta.json 的 novelty_slots 字段。\n"
+            )
+
+        bank = "、".join(self.NOVELTY_DEVICE_BANK[:24])
+        return f"""### 🎭 换皮槽位（新颖性规则——违反即平庸）
+
+**核心原理**：观众要的是"熟悉的情绪配方 × 没见过的皮"。钩子和爽点公式是市场验证的，
+不动；但职业/年代/物件/规则/桥段执行必须至少换 2 个新皮，否则就是千篇一律的流水线剧。
+
+{slots_section}
+**六个换皮槽位**（每剧选 2 个做新组合，其余保持行业默认）：
+1. 职业/身份：霸总→鉴宝师/赌石师/电竞选手/入殓师/火锅店老板娘（语料已出现：美食竞技、赌术复仇、鉴宝异能）
+2. 年代/地域：现代都市→1998 下岗潮/民国上海/九十年代香港/东北老工业区（年代皮自带服化道奇观）
+3. 行业规则：豪门→相声班/地质队/殡葬业/直播公会/兽世部落（行业黑话和规矩就是免费的信息差弹药）
+4. 核心物件：黑卡→怀表/婚书/老照片/一箱借条/奶奶的菜谱（物件贯穿全剧，天然视觉锚点）
+5. 桥段执行方式：身份揭露不说破→用一场戏"演给对方看"；带球跑→孩子会读心（语料已出现：玄学萌宝、读心术）
+6. AI 奇观世界观：现实剧→叠一层"AI 才拍得出"的异常规则（时空折叠/好感度可视化/怪兽守护）
+
+**新颖桥段灵感库**（4497 条真实剧里实际出现的新颖执行，可直接借用或变体）：
+{bank}
+
+**反同质化硬规则**：
+- 同一打脸/反转方式不得连续两章原样复读（换执行手段：当众对峙→证据反转→局中局→借刀杀人轮换）
+- 两个不同项目不得使用完全相同的槽位组合（上一步：真千金+读心；这一步就换：赌石+假死归来）
+- 换皮必须影响剧情走向，不能只改个职业名"""
 
     def _build_hook_injection(self, chapter_num: int) -> str:
         """根据骨架类型选择合适的结尾钩子"""
