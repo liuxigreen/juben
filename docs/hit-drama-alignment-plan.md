@@ -135,3 +135,10 @@
 
 ### 开源方案借鉴（对比结论）
 调研了 MoneyPrinterTurbo（文案→配音→字幕→素材→成片的批量流水线）、NarratoAI（解说+分镜）等开源实现：它们的强项在"素材合成自动化"（TTS、字幕烧录、素材库匹配），juben 的强项在"叙事结构与钩子工程"。本 PR 取长补短：把本次升级的台词密度/口型/负向提示词/场景一致性对齐 Veo3 实操最佳实践；TTS/字幕烧录层维持 juben 现有 voice_data.json + srt 输出接口不变，后续如需接入 MoneyPrinterTurbo 式合成可在 Stage4 对接。
+
+### 补充：分镜引擎本体（juben/pipeline.py）的升级
+15. **断崖合成器 `apply_cliffhanger()`**：每集最后 1-2 个 shot 强制悬念构图（门半开/转身回眸/话说一半/手悬停/黑影现身 5 模板），只有"弱收尾"动作才替换（剧情动作不丢），末镜运镜强制缓推，WS/MS 降为 CU
+16. **台词密集时长推算**：beat 级 `dialogue_all`/`dialogue_chars` 字段，镜头时长按中文 4.5 字/秒 + 0.6s 停顿保底（英文按 3 词/秒），**超长台词自动拆镜**（`_split_long_dialogue_beats`），配音不再被截断
+17. **冲突事件强制怼脸**：face_slap/identity_reveal/kneel_beg/confrontation 类事件强制 ECU/CU；反转瞬间（打脸/身份揭露/重生觉醒）强制 crash zoom 快切；events.yaml 的 recipe 可显式指定景别/运镜（此前被静默忽略）
+
+> 以上三项已通过语法检查与冒烟测试（apply_cliffhanger / _speech_seconds 实测通过）。
