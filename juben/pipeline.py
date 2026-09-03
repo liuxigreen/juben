@@ -76,6 +76,10 @@ class EventEngine:
                 "emotion": recipe.get("emotion", "Neutral"),
                 "source_text": f"[event: {event.get('type', 'unknown')}]",
                 "event_type": event.get("type"),
+                # v1.2: recipe可显式指定景别/运镜（如打脸事件强制ECU+crash_zoom），
+                # ShotCompiler会服从（此前这两个字段被静默忽略）
+                "event_shot_type": recipe.get("shot_type", ""),
+                "event_camera": recipe.get("camera", ""),
             })
         return beats
 
@@ -116,6 +120,7 @@ class HookManager:
             if tpl:
                 char = shot.get("characters", ["Character"])[0]
                 shot["action_visual"] = tpl["text"].replace("{char}", char)
+                shot["hook_applied"] = tpl["id"]  # 标记已挂钩子，断崖合成器不再重复替换
                 self._usage_history.append(tpl["id"])
                 if len(self._usage_history) > 10:
                     self._usage_history.pop(0)
@@ -131,6 +136,71 @@ class HookManager:
             if self._usage_history and tpl["id"] != self._usage_history[-1]:
                 return tpl
         return self.templates[0] if self.templates else None
+
+
+# ============================================================
+# 断崖合成器（每集最后1-2个shot强制悬念构图）
+# ============================================================
+
+# 内置断崖构图模板（门半开/转身回眸/话说到一半/手悬停/黑影现身）
+CLIFFHANGER_DEFAULT_TEMPLATES = [
+    {"id": "door_half_open",
+     "text": "{char} pushes the door — it swings half-open, the room beyond pitch dark, and every sound inside stops the instant the gap widens"},
+    {"id": "turn_look_back",
+     "text": "{char} turns to leave, then looks back over the shoulder, eyes locking on something off-frame, lips pressed tight"},
+    {"id": "line_cut_half",
+     "text": "{char} leans closer, lips parting to speak — the words never land before the frame locks on the widening eyes"},
+    {"id": "hand_freezes",
+     "text": "{char} reaches for the door handle and freezes, fingertips trembling an inch from the metal"},
+    {"id": "silhouette_step_in",
+     "text": "a tall silhouette steps silently into the doorway behind {char}, close enough to touch, unseen"},
+]
+
+# 视为"弱收尾"的动作短语（命中才允许被断崖模板替换，不丢剧情内容）
+CLIFFHANGER_WEAK_ENDINGS = [
+    "stands still", "breathing slowly", "gaze lowered", "eyes unfocused",
+    "stands behind", "looks down", "stares at", "gazes at", "speaks softly",
+    "sets the cup down", "turns on the faucet", "walks through the door",
+    "stands up", "sits down", "walks out", "turns and leaves", "nods slowly",
+    "shakes head", "looks up", "turns around", "wipes", "clears cups",
+    "dries hands", "folds the cleaning rag", "places down", "puts away",
+]
+
+
+def apply_cliffhanger(shots: list[dict], cliff_cfg: Any = None):
+    """把每集最后1-2个shot强制成悬念构图（对齐Stage1的cliffhanger设计）。
+
+    规则：
+    - 最后1-2个shot打 cliffhanger 标记（渲染层会追加断崖悬念短语）
+    - WS/MS 降为 CU（断崖不用远景）
+    - 最后一个 shot 运镜强制 push（缓推逼近）
+    - 只有"弱收尾"动作（黑名单/中性动作）才替换成断崖模板，剧情动作不丢
+    """
+    cfg = cliff_cfg if isinstance(cliff_cfg, dict) else {}
+    if cfg.get("enabled") is False or not shots:
+        return
+    n = max(1, int(cfg.get("last_shots", 2)))
+    templates = cfg.get("templates") or CLIFFHANGER_DEFAULT_TEMPLATES
+    weak_markers = cfg.get("weak_endings") or CLIFFHANGER_WEAK_ENDINGS
+    force_cam = cfg.get("force_camera", "push")
+
+    targets = shots[-n:]
+    for k, shot in enumerate(reversed(targets)):  # k=0 是最后一个
+        shot["cliffhanger"] = True
+        if shot.get("shot_type") in ("WS", "MS"):
+            shot["shot_type"] = "CU"
+        if k == 0:
+            shot["camera_movement"] = force_cam if force_cam else shot.get("camera_movement", "push")
+        # 弱动作才替换为断崖构图（hook模板已是悬念动作，跳过）
+        act = (shot.get("action_visual") or "").lower()
+        weak = (not act) or any(m in act for m in weak_markers)
+        if weak and not shot.get("hook_applied"):
+            tpl = templates[shot.get("shot_id", 0) % len(templates)] \
+                if isinstance(templates, list) and templates else None
+            if tpl:
+                char = shot.get("characters", ["Character"])[0] if shot.get("characters") else "Character"
+                shot["action_visual"] = tpl.get("text", "").replace("{char}", char)
+                shot["cliffhanger_template"] = tpl.get("id", "")
 
 
 # ============================================================
@@ -383,6 +453,11 @@ class BeatExtractor:
             "dialogue_speaker": dlg_speaker,
             "inner_voice": voice_text,
             "voice_type": vt,
+            # v1.2 台词密集支持：本beat全部口播台词（多行）+ 字数，
+            # 供时长推算（中文4-5字/秒）与长台词拆镜使用。
+            # 仅在纯口播beat填充（有心声时沿用旧行为：心声优先，口播丢弃）
+            "dialogue_all": "\n".join(dialogues) if dlg_text else "",
+            "dialogue_chars": sum(len(d) for d in dialogues) if dlg_text else 0,
             "focus_object": self._extract_anchor(text),
             "emotion": self._detect_emotion(text),
             "source_text": text[:80],
@@ -400,6 +475,38 @@ class BeatExtractor:
 class ShotCompiler:
     DUR_MIN, DUR_MAX = 3.0, 7.5
 
+    # 冲突/打脸/揭露类事件（强制怼脸近景）
+    CONFLICT_EVENTS = {"face_slap", "identity_reveal", "kneel_beg", "confrontation"}
+    # 反转瞬间（强制快切运镜 crash zoom）
+    REVERSAL_EVENTS = {"face_slap", "identity_reveal", "rebirth_awaken"}
+    # 冲突类动作短语（英文action_visual里检测）
+    CONFLICT_ACTION_KEYWORDS = [
+        "slap", "kneel", "grab", "slam", "shove", "smash", "accuse",
+        "expose", "confront", "tear", "snatch", "goes pale", "snaps eyes open",
+        "clenches fist", "kicks", "throws",
+    ]
+    # 景别/运镜别名归一（events.yaml recipe → 引擎枚举）
+    SHOT_TYPE_ALIASES = {
+        "WIDE": "WS", "EWS": "WS", "WS": "WS", "FS": "FS",
+        "ECU": "ECU", "CU": "CU", "MCU": "MCU", "MS": "MS", "OTS": "CU",
+    }
+    CAMERA_ALIASES = {
+        "slow_zoom_in": "push", "zoom_in": "push", "slow_pull_back": "pull",
+        "pull_back": "pull", "static": "static", "push": "push",
+        "pull": "pull", "rapid_push": "rapid_push", "handheld": "handheld",
+        "whip_pan": "whip_pan", "crash_zoom": "crash_zoom", "pan": "static",
+        "crash_zoom_in": "crash_zoom", "whip_pan_left": "whip_pan",
+        "whip_pan_right": "whip_pan",
+    }
+    # 台词语速默认（中文约4-5字/秒，取4.5；爆款语料7.6字/秒为上限极值）
+    SPEECH_DEFAULTS = {
+        "chars_per_second": 4.5,
+        "pause_seconds": 0.6,
+        "min_shot_seconds": 3.0,
+        "max_shot_seconds": 8.0,
+        "split_long_dialogue": True,
+    }
+
     def __init__(self, config: dict):
         self.cfg = config
         self.style = config.get("prompt_style", {})
@@ -409,10 +516,14 @@ class ShotCompiler:
         self.camera_semantic = self.style.get("camera_semantic_map", {})
         self.voice_emotion = self.style.get("voice_emotion_map", {})
         self.merge_cfg = self.style.get("beat_merge", {})
+        # 台词→时长推算参数（prompt_style.speech 可覆盖）
+        self.speech = {**self.SPEECH_DEFAULTS, **(self.style.get("speech") or {})}
 
     def compile(self, beats: list[dict], target: int | None = 90, location: str = "") -> list[dict]:
         """target=总时长目标(秒)做整体缩放；target=None 时不限制总时长，
         每镜头按剧情+台词自然长度走（适合逐镜头生成后剪成长视频）。"""
+        # v1.2 台词保底：超长台词的beat先拆成多个镜头（每镜台词念得完）
+        beats = self._split_long_dialogue_beats(beats)
         max_shots = self.merge_cfg.get("max_shots_per_chapter", 25)
         if len(beats) > max_shots:
             beats = self._merge_beats(beats, max_shots)
@@ -443,8 +554,14 @@ class ShotCompiler:
 
             # 台词念白保底时长（供_adjust保护，不被缩放击穿）
             vt = beat.get("voice_type", "none")
-            line_en = beat.get("inner_voice_en", "") if vt == "inner_voice" else beat.get("line_en", "")
-            sfloor = round(len(line_en.split()) / 3.0 + 0.6, 1) if line_en else 3.0
+            sfloor = self._speech_seconds(beat)
+
+            # v1.2 冲突对话+双人在场 → 过肩正反打（竖屏打脸戏标配）
+            framing = ""
+            dlg = beat.get("spoken_dialogue", "")
+            if st in ("CU", "MCU") and vt == "onscreen" and dlg \
+                    and len(beat.get("characters_present", [])) >= 2:
+                framing = "over-the-shoulder"
 
             shots.append({
                 "shot_id": i + 1, "shot_type": st, "camera_movement": cam,
@@ -453,11 +570,14 @@ class ShotCompiler:
                 "location": location, "space": beat.get("space", "Physical"),
                 "characters": beat.get("characters_present", []),
                 "action_visual": beat.get("action_visual", ""),
-                "dialogue": beat.get("spoken_dialogue", ""),
+                "dialogue": beat.get("dialogue_all") or dlg,
+                "dialogue_speaker": beat.get("dialogue_speaker", ""),
+                "voice_type": vt,
                 "inner_voice": beat.get("inner_voice", ""),
                 "focus_object": beat.get("focus_object", ""),
                 "lighting": self.emotion_lighting.get(emotion, "Natural"),
                 "emotion": emotion,
+                "framing": framing,
                 "visual_anchors": [beat.get("focus_object", "")] if beat.get("focus_object") else [],
                 "beat_id": beat.get("beat_id"),
                 "event_type": beat.get("event_type", ""),
@@ -466,6 +586,72 @@ class ShotCompiler:
         if target:
             self._adjust(shots, target)
         return shots
+
+    # --- 台词→时长推算（中文4-5字/秒） ---
+
+    def _speech_seconds(self, beat: dict) -> float:
+        """该镜头台词念完所需秒数。中文按字数/语速，英文台词(兼容出海)按词数/3。"""
+        vt = beat.get("voice_type", "none")
+        cps = float(self.speech.get("chars_per_second", 4.5))
+        pause = float(self.speech.get("pause_seconds", 0.6))
+        cn_chars = 0
+        if vt == "inner_voice":
+            cn_chars = len(beat.get("inner_voice", "") or "")
+        else:
+            # onscreen或未标voice_type：数全部口播台词
+            cn_chars = int(beat.get("dialogue_chars", 0)) or len(beat.get("dialogue_all", "") or "") \
+                or len(beat.get("spoken_dialogue", "") or "")
+        secs = cn_chars / cps if cn_chars else 0.0
+        # 英文台词兼容（line_en由上层项目注入时生效）
+        line_en = beat.get("inner_voice_en", "") if vt == "inner_voice" else beat.get("line_en", "")
+        if line_en:
+            secs = max(secs, len(line_en.split()) / 3.0)
+        return round(secs + (pause if secs else 0.0), 2)
+
+    def _split_long_dialogue_beats(self, beats: list[dict]) -> list[dict]:
+        """台词超过单镜可念上限的beat拆成多个镜头（每镜保留原画面，台词分段）。"""
+        if not self.speech.get("split_long_dialogue", True):
+            return beats
+        max_s = float(self.speech.get("max_shot_seconds", 8.0))
+        pause = float(self.speech.get("pause_seconds", 0.6))
+        cps = float(self.speech.get("chars_per_second", 4.5))
+        max_chars = max(10, int((max_s - pause) * cps))
+        out = []
+        for b in beats:
+            dlg = b.get("dialogue_all") or b.get("spoken_dialogue", "") or ""
+            if b.get("voice_type", "none") == "onscreen" and len(dlg) > max_chars:
+                chunks = self._split_cn_text(dlg, max_chars)
+                for i, ch in enumerate(chunks):
+                    nb = dict(b)
+                    nb["spoken_dialogue"] = ch
+                    nb["dialogue_all"] = ch
+                    nb["dialogue_chars"] = len(ch)
+                    if i > 0:
+                        # 后续段：保持说话状态（画面给反应/递进的微动作）
+                        who = b.get("primary_char", "Character")
+                        nb["action_visual"] = f"{who} keeps speaking, expression intensifying, breath quickening"
+                    out.append(nb)
+            else:
+                out.append(b)
+        return out
+
+    @staticmethod
+    def _split_cn_text(text: str, max_chars: int) -> list[str]:
+        """按中文句末标点切分并贪心打包成≤max_chars的段落。"""
+        parts = [p for p in re.split(r'(?<=[。！？!?…；;])', text) if p.strip()]
+        if len(parts) <= 1:
+            # 无标点：硬切
+            return [text[i:i + max_chars] for i in range(0, len(text), max_chars)] or [text]
+        chunks, buf = [], ""
+        for p in parts:
+            if buf and len(buf) + len(p) > max_chars:
+                chunks.append(buf)
+                buf = p
+            else:
+                buf += p
+        if buf:
+            chunks.append(buf)
+        return chunks
 
     # 动作文本显式指定景别时的识别（服从剧本，避免机位与动作描述打架）
     SHOT_KEYWORDS = [
@@ -484,19 +670,61 @@ class ShotCompiler:
                 return st
         return None
 
+    def _normalize_shot_type(self, val) -> str:
+        """events recipe景别归一（'Wide'→'WS'等），非法值返回''"""
+        if not val:
+            return ""
+        return self.SHOT_TYPE_ALIASES.get(str(val).strip().upper(), "")
+
+    def _normalize_camera(self, val) -> str:
+        if not val:
+            return ""
+        return self.CAMERA_ALIASES.get(str(val).strip().lower(), "")
+
+    def _is_conflict(self, beat: dict) -> bool:
+        """冲突/打脸/揭露类beat：强制怼脸近景"""
+        if beat.get("event_type") in self.CONFLICT_EVENTS:
+            return True
+        if beat.get("emotion") == "Shock":
+            return True
+        act = (beat.get("action_visual") or "").lower()
+        return any(kw in act for kw in self.CONFLICT_ACTION_KEYWORDS)
+
+    def _is_reversal(self, beat: dict) -> bool:
+        """反转瞬间：接crash zoom等快切语言"""
+        if beat.get("event_type") in self.REVERSAL_EVENTS:
+            return True
+        act = (beat.get("action_visual") or "").lower()
+        return beat.get("emotion") == "Shock" and any(
+            kw in act for kw in ("slap", "kneel", "expose", "reveal", "goes pale", "snaps eyes open"))
+
     def _choose_shot_type(self, beat, idx, last, ecu):
         # 动作文本显式指定景别 → 服从剧本（冷开场特写钩子等，优先级最高）
         # 出海英文配音模式下口型由Veo跟台词生成，说话镜头也可怼脸(ECU)秀口型对齐
         explicit = self._explicit_shot(beat)
         if explicit:
             return explicit
+        # events recipe 显式指定景别 → 服从（打脸/读心/闪回等事件镜头语言）
+        ev = self._normalize_shot_type(beat.get("event_shot_type"))
+        if ev:
+            return ev
+        # 转场beat才用WS（远景只用于转场/定场）
+        if beat.get("space") == "Transition":
+            return "WS"
         if idx == 0:
             return "WS"
+        # 冲突/打脸/揭露 → 怼脸CU（Shock升ECU），对话对手戏走正反打
+        if self._is_conflict(beat):
+            return "ECU" if beat.get("emotion") == "Shock" else "CU"
         if beat.get("space") == "Mental":
             return "CU"
-        # onscreen 对话：按情绪给景别（激烈情绪可怼脸CU秀口型），优先于道具特写
+        # onscreen 对话：按情绪给景别，竖屏下限MCU（近景怼脸利于口型+字幕构图）
         if beat.get("spoken_dialogue") and beat.get("voice_type") == "onscreen":
+            if beat.get("emotion") in ("Shock", "Tension"):
+                return "CU"
             pref = self.emotion_shot.get(beat.get("emotion", "Neutral"), "MCU")
+            if pref in ("WS", "MS"):
+                pref = "MCU"  # 对话镜头禁用远景/中景
             if pref == last:
                 pref = {"ECU": "CU", "CU": "MCU", "MCU": "MS", "MS": "MCU"}.get(pref, "MCU")
             return pref
@@ -506,11 +734,20 @@ class ShotCompiler:
         if beat.get("spoken_dialogue"):
             return "MS" if last == "MCU" else "MCU"
         pref = self.emotion_shot.get(beat.get("emotion", "Neutral"), "MS")
+        if pref == "WS":
+            pref = "MS"  # 非转场内容不用远景
         if pref == last:
             pref = {"CU": "MCU", "MCU": "MS", "MS": "MCU"}.get(pref, "MCU")
         return pref
 
     def _choose_camera(self, beat, st, last):
+        # events recipe 显式指定运镜 → 服从
+        ev_cam = self._normalize_camera(beat.get("event_camera"))
+        if ev_cam:
+            return ev_cam
+        # 反转瞬间 → crash zoom（快切语言，references/camera-language.md）
+        if self._is_reversal(beat):
+            return "crash_zoom"
         act = beat.get("action_visual", "").lower()
         for kw, cam in self.camera_semantic.items():
             if kw in act:
@@ -524,8 +761,7 @@ class ShotCompiler:
     def _angle(emotion):
         return "low" if emotion in ("Shock", "Tension") else "high" if emotion == "Sadness" else "eye-level"
 
-    @staticmethod
-    def _calc_duration(beat, total, target):
+    def _calc_duration(self, beat, total, target):
         # target=None：不限总时长，每镜给自然基准5s，再按台词/内容微调
         base = (target / max(1, total)) if target else 5.0
         wc = len(beat.get("action_visual", "")) + len(beat.get("spoken_dialogue", ""))
@@ -533,14 +769,13 @@ class ShotCompiler:
         elif wc < 30: base *= 0.7
         if beat.get("space") == "Mental" or beat.get("focus_object"):
             base *= 1.1
-        # 台词保底：有英文台词时，时长必须够念完（英文约3词/秒 + 0.6s头尾停顿）
-        # 否则配音会被截断（"I'm out"丢失）。取 line_en 或按语音类型选源
-        vt = beat.get("voice_type", "none")
-        line_en = beat.get("inner_voice_en", "") if vt == "inner_voice" else beat.get("line_en", "")
-        speech_floor = 0.0
-        if line_en:
-            speech_floor = len(line_en.split()) / 3.0 + 0.6
-        return round(max(3.0, speech_floor, min(7.5, base)), 1)
+        max_s = float(self.speech.get("max_shot_seconds", 8.0))
+        min_s = float(self.speech.get("min_shot_seconds", 3.0))
+        # 台词保底（v1.2）：时长必须够把台词念完。
+        # 中文按字数/4.5字每秒，英文按3词/秒（line_en兼容出海），否则配音/字幕被截断。
+        speech_floor = self._speech_seconds(beat)
+        dur = max(min_s, min(max_s, base))
+        return round(max(dur, speech_floor), 1)
 
     def _merge_beats(self, beats, max_count):
         never_merge = set(self.merge_cfg.get("never_merge", []))
@@ -571,17 +806,17 @@ class ShotCompiler:
         if buf: merged.append(buf)
         return merged[:max_count]
 
-    @staticmethod
-    def _adjust(shots, target):
+    def _adjust(self, shots, target):
         if not shots: return
         # 台词镜头的念白保底时长(speech_floor)不可被缩放击穿，否则配音截断
         def floor(s):
             return s.get("_speech_floor", 3.0)
+        max_s = float(self.speech.get("max_shot_seconds", 8.0))
         cur = sum(s["duration"] for s in shots)
         if cur <= 0: return
         r = target / cur
         for s in shots:
-            s["duration"] = round(max(floor(s), min(8.0, s["duration"] * r)), 1)
+            s["duration"] = round(max(floor(s), min(max_s, s["duration"] * r)), 1)
         # 若因保底导致总时长超标，只压缩"无台词、超过3s"的镜头，保护念白镜头
         t = sum(s["duration"] for s in shots)
         if t > target * 1.15:
@@ -602,13 +837,25 @@ class PromptRenderer:
     SHOT_EN = {"ECU": "extreme close-up", "CU": "close-up", "MCU": "medium close-up",
                "MS": "medium shot", "WS": "wide shot"}
     CAM_EN = {"static": "static camera", "push": "slow dolly forward", "pull": "slow dolly backward",
-              "rapid_push": "rapid push-in", "handheld": "handheld camera"}
+              "rapid_push": "rapid push-in", "handheld": "handheld camera",
+              "whip_pan": "whip pan", "crash_zoom": "crash zoom in", "dolly_zoom": "dolly zoom"}
     ANG_EN = {"eye-level": "eye level", "low": "low angle looking up", "high": "high angle looking down"}
     LIGHT_EN = {"Natural": "natural daylight, soft shadows", "Warm": "warm golden light",
                 "Low key": "low key lighting, deep shadows", "High contrast": "high contrast dramatic lighting"}
     MOOD_EN = {"Neutral": "neutral, observational", "Tension": "tense, suspenseful",
                "Shock": "shocked, dramatic", "Sadness": "sad, melancholic",
                "Warmth": "warm, heartwarming", "Mystery": "mysterious, intriguing"}
+
+    # 统一负向提示词（Veo3常见失误：畸形手/换脸/水印/随机加对白）
+    DEFAULT_NEGATIVE = ("deformed hands, extra fingers, distorted face, face swap, "
+                        "identity drift, outfit change, watermark, subtitles burned in, text overlay, logo, "
+                        "camera shake, glitch, blurry, low resolution, extra people, duplicate characters")
+    # 竖屏安全区：脸在上2/3，底部留字幕，顶部留标题
+    SAFE_AREA_EN = ("vertical 9:16 composition, subject placed in the upper two-thirds of the frame, "
+                    "keep the bottom 15% of the frame clear for subtitles, "
+                    "leave a slim top margin clear for the episode title")
+    CLIFFHANGER_EN = "suspense cliffhanger framing, cut before the answer is revealed"
+    OTS_EN = "over-the-shoulder shot-reverse-shot framing"
 
     def __init__(self, config: dict):
         self.chars = config.get("characters", {})
@@ -621,6 +868,13 @@ class PromptRenderer:
         self.char_first = self.renderer_cfg.get("character_first", True)
         # character_mode: "reference"=只引用角色名(配合Flow角色系统) | "inline"=每镜头塞长相描述
         self.char_mode = self.renderer_cfg.get("character_mode", "inline")
+        # reference模式下的一致性锁（Flow角色系统之外的每镜头保险）
+        self.consistency_lock = self.renderer_cfg.get(
+            "consistency_lock", "identical face and same outfit as the character reference, no outfit change")
+        # 负向提示词（可配置；输出到 shot["negative_prompt"]，导出层单独成行）
+        self.negative_prompt = str(style.get("negative_prompt") or self.DEFAULT_NEGATIVE)
+        # 竖屏安全区提示（每镜头注入）
+        self.safe_area = style.get("safe_area", True)
         # 音频/口型控制（Veo 3.1 适配）
         self.audio_cfg = style.get("audio_control", {})
         # 情绪→面部表演指令（有角色时注入，解决表情不丰富）
@@ -643,6 +897,9 @@ class PromptRenderer:
         parts = []
         st, cm, ca = shot.get("shot_type", "MS"), shot.get("camera_movement", "static"), shot.get("camera_angle", "eye-level")
         parts.append(f"{self.SHOT_EN.get(st, 'medium shot')}, {self.CAM_EN.get(cm, 'static camera')}, {self.ANG_EN.get(ca, 'eye level')}")
+        # 过肩正反打（冲突对手戏）
+        if shot.get("framing") == "over-the-shoulder":
+            parts.append(self.OTS_EN)
         if self.char_first:
             cp = []
             for ce in shot.get("characters", []):
@@ -671,6 +928,11 @@ class PromptRenderer:
         # 口型 + 音轨控制层（Veo 3.1）
         mouth, audio = self._audio_parts(shot, location)
         if mouth: parts.append(mouth)
+        # 竖屏安全区（字幕/标题留白）+ 断崖悬念构图
+        if self.safe_area:
+            parts.append(self.SAFE_AREA_EN)
+        if shot.get("cliffhanger"):
+            parts.append(self.CLIFFHANGER_EN)
         parts.append(self.suffix)
         if audio: parts.append(audio)
         return ", ".join(parts)
@@ -705,26 +967,54 @@ class PromptRenderer:
         tone = self.audio_cfg.get("tone_map", {}).get(shot.get("emotion", "Neutral"), "calm, even")
         spk_en = self._spk_en(shot)
         line_en = shot.get("line_en", "")
+        # v1.2 中文台词兜底：line_en缺失（默认中文链路）时用中文原句+中文口型指令，
+        # 修复"有台词镜头被渲染成 lips closed"的口型事故
+        line_zh = shot.get("dialogue", "") if vt == "onscreen" else shot.get("inner_voice", "")
         mouth, audio = "", ""
-        if vt == "onscreen" and line_en and spk_en:
+        if vt == "onscreen" and (line_en or line_zh) and spk_en:
             if len(chars) > 1:
                 others = [c for c in chars if c != spk_en]
-                mouth = cfg.get("onscreen_multi_tpl", "").format(
-                    speaker=spk_en, line_en=line_en, tone=tone, accent=accent,
-                    others=", ".join(others))
-            else:
+                if line_en:
+                    mouth = cfg.get("onscreen_multi_tpl", "").format(
+                        speaker=spk_en, line_en=line_en, tone=tone, accent=accent,
+                        others=", ".join(others))
+                else:
+                    mouth = cfg.get(
+                        "onscreen_multi_tpl_zh",
+                        '{speaker} speaks in Chinese, saying: "{line_zh}", {tone} delivery, '
+                        'natural lip sync in Chinese, subtitle-friendly framing; '
+                        '{others} stay silent with closed lips, listening').format(
+                        speaker=spk_en, line_zh=line_zh, tone=tone, accent=accent,
+                        others=", ".join(others))
+            elif line_en:
                 mouth = cfg.get("onscreen_tpl", "").format(
                     speaker=spk_en, line_en=line_en, tone=tone, accent=accent)
+            else:
+                mouth = cfg.get(
+                    "onscreen_tpl_zh",
+                    '{speaker} speaks in Chinese, saying: "{line_zh}", {tone} delivery, '
+                    'natural lip sync in Chinese, subtitle-friendly framing with the face '
+                    'in the upper frame, {accent}').format(
+                    speaker=spk_en, line_zh=line_zh, tone=tone, accent=accent)
             audio = cfg.get("dialogue_audio", "")
-        elif vt == "inner_voice" and line_en:
+        elif vt == "inner_voice" and (line_en or line_zh):
             spk = spk_en or (chars[0] if chars else "the character")
-            mouth = cfg.get("inner_voice_tpl", "").format(
-                speaker=spk, line_en=line_en, tone=tone, accent=accent)
+            if line_en:
+                mouth = cfg.get("inner_voice_tpl", "").format(
+                    speaker=spk, line_en=line_en, tone=tone, accent=accent)
+            else:
+                mouth = cfg.get(
+                    "inner_voice_tpl_zh",
+                    '{speaker} stays silent with lips closed, a {tone} intimate interior '
+                    'monologue voiceover in Chinese as if heard inside the head: "{line_zh}", '
+                    'same voice as {speaker} but internalized, {accent}').format(
+                    speaker=spk, line_zh=line_zh, tone=tone, accent=accent)
             iva = cfg.get("inner_voice_audio", "")
             audio = f"{ambient}, {iva}" if ambient else iva
         else:
             if chars:
-                mouth = cfg.get("none_mouth", "lips closed, no speaking")
+                # 无声镜头：明确 no dialogue（Veo3常见失误是随机加对白）
+                mouth = cfg.get("none_mouth", "lips closed, no speaking, no dialogue")
             suffix = cfg.get("ambient_suffix", "")
             audio = f"{ambient}, {suffix}" if ambient else suffix
         return mouth, audio
@@ -764,6 +1054,8 @@ class PromptRenderer:
         if anchors: parts.extend(anchors)
         if location: parts.append(location)
         parts.append(self.LIGHT_EN.get(shot.get("lighting", "Natural"), "").split(",")[0])
+        if self.safe_area: parts.append("9:16 vertical, bottom 15% clear for subtitles")
+        if shot.get("cliffhanger"): parts.append(self.CLIFFHANGER_EN)
         parts.append(self.suffix)
         return ", ".join(parts)
 
@@ -777,22 +1069,34 @@ class PromptRenderer:
         elif act:
             parts.append(act)
         if location: parts.append(f"in {location}")
+        if self.safe_area: parts.append("9:16 vertical, subject in upper two-thirds, bottom clear for subtitles")
+        if shot.get("cliffhanger"): parts.append(self.CLIFFHANGER_EN)
         parts.append(self.suffix)
         return ", ".join(parts)
 
     def _char_phrase(self, ce):
-        # reference 模式：只输出角色名（无括号描述），配合 Flow 角色系统
+        # v1.2 角色一致性：每镜头都带外观锚点（发型/服装/年龄短语），避免换装穿帮。
+        # reference模式 = Flow角色系统管长相，附加一致性锁短语做双保险；
+        # inline模式 = 首次全量锚点，后续短锚点。
         tag = self._tag(ce)
         return f"{ce} ({tag})" if tag else ce
 
     def _tag(self, ce):
-        # reference 模式：只用角色名，长相由 Flow 角色系统保证一致（不塞描述）
+        info = None
+        for inf in self.chars.values():
+            if isinstance(inf, dict) and inf.get("en") == ce:
+                info = inf
+                break
+        if info is None:
+            return ce if self.char_mode == "inline" else ""
         if self.char_mode == "reference":
-            return ""
-        for info in self.chars.values():
-            if info.get("en") == ce:
-                return info.get("full", ce) if self._count.get(ce, 0) <= 1 else info.get("short", ce)
-        return ce
+            # Flow 角色系统保证长相；仍注入轻量一致性锁（服装锚点）防换装
+            anchor = info.get("prompt_anchor_short") or info.get("prompt_anchor", "")
+            return self.consistency_lock if not anchor else f"{anchor}, {self.consistency_lock}"
+        # inline模式：full/short字段优先（旧项目），否则用 characters.yaml 的英文锚点
+        full = info.get("full") or info.get("prompt_anchor") or ce
+        short = info.get("short") or info.get("prompt_anchor_short") or full
+        return full if self._count.get(ce, 0) <= 1 else short
 
 
 # ============================================================
@@ -936,21 +1240,29 @@ def run_pipeline(project_dir: Path, only_chapter=None):
                 if zh in text: loc = en; break
 
         shots = compiler.compile(beats, 90, loc)
+        # v1.2 修复：钩子/断崖必须在渲染前应用，否则替换后的动作进不了veo_prompt
+        hook.apply(shots)
+        apply_cliffhanger(shots, cfg.get("hook_templates", {}).get("cliffhanger", {})
+                          if isinstance(cfg.get("hook_templates", {}), dict) else {})
+        beats_by_id = {b.get("beat_id"): b for b in beats}
         renderer.reset()
         for shot in shots:
             shot["characters"] = [cfg.get("characters", {}).get(c, {}).get("en", c) for c in shot.get("characters", [])]
             shot["veo_prompt"] = renderer.render(shot, loc)
-            bd = beats[shot["shot_id"] - 1] if shot["shot_id"] <= len(beats) else {}
+            # 统一负向提示词（Veo3畸形手/换脸/水印/随机对白防护，可配置）
+            shot["negative_prompt"] = renderer.negative_prompt
+            # v1.2 修复：音频来源改用 beat_id 映射+镜头自带字段，
+            # 此前用 beats[shot_id-1]，镜头合并/拆分后台词错位
+            bd = beats_by_id.get(shot.get("beat_id"), {}) or {}
             shot["audio"] = {
-                "dialogue_zh": bd.get("spoken_dialogue", ""),
-                "dialogue_speaker": bd.get("dialogue_speaker", ""),
-                "voiceover_zh": bd.get("inner_voice", ""),
-                "voice_type": bd.get("voice_type", "none"),
-                "subtitle": bd.get("inner_voice", "")[:30] if bd.get("inner_voice") else "",
+                "dialogue_zh": shot.get("dialogue") or bd.get("spoken_dialogue", ""),
+                "dialogue_speaker": shot.get("dialogue_speaker") or bd.get("dialogue_speaker", ""),
+                "voiceover_zh": shot.get("inner_voice") or bd.get("inner_voice", ""),
+                "voice_type": shot.get("voice_type") or bd.get("voice_type", "none"),
+                "subtitle": (shot.get("inner_voice") or bd.get("inner_voice", "") or "")[:30],
                 "emotion_tag": compiler.voice_emotion.get(shot.get("emotion", "Neutral"), "calm"),
                 "duration_hint": f"{shot['duration']:.1f}s",
             }
-        hook.apply(shots)
 
         (out / f"ch{ch:03d}_shots.json").write_text(json.dumps(shots, ensure_ascii=False, indent=2))
         (out / f"ch{ch:03d}_beats.json").write_text(json.dumps(beats, ensure_ascii=False, indent=2))

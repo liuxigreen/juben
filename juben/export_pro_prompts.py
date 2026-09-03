@@ -62,6 +62,132 @@ COFFEE_SHOP_CONTEXT = {
 # 5. Style & Ambiance（风格氛围）
 STYLE_BASE = "photorealistic Chinese short drama, shot on anamorphic lens, shallow depth of field, natural film grain, 24fps"
 
+# ============================================================
+# 爆款对齐升级：
+# 1) 场景上下文按 shot.location 动态匹配（旧版硬编码咖啡店，全剧穿帮成同一间店）
+# 2) 统一负向提示词（Veo3 常见翻车：多手指/换脸/水印/随机加对白）
+# 3) 无台词镜头显式标注 no dialogue；台词镜头标注 lip-sync
+# ============================================================
+
+NEGATIVE_PROMPT = (
+    "Negative prompt: deformed hands, extra fingers, warped face, inconsistent "
+    "character appearance, face swap, changing outfits between shots, watermark, "
+    "text overlay, random dialogue, camera shake, low quality, blurry"
+)
+
+GENERIC_CONTEXT = {
+    "base": "in a modern Chinese city, interior location matching the scene",
+    "details": [
+        "contemporary Chinese urban interior",
+        "practical props that match the scene's social setting",
+        "natural window light mixed with practical lamps",
+        "clean vertical framing with headroom for titles and subtitles",
+    ],
+}
+
+LOCATION_CONTEXT_MAP = {
+    "咖啡": {
+        "base": "inside a small intimate Chinese coffee shop",
+        "details": [
+            "wooden counter with worn patina",
+            "yellowed sticky notes with handwriting covering one wall",
+            "vintage espresso machine behind the counter",
+            "afternoon light filtering through lace curtains",
+        ],
+    },
+    "办公": {
+        "base": "inside a high-rise corporate office, floor-to-ceiling windows",
+        "details": [
+            "glass conference table with city skyline behind",
+            "employee badges and laptop screens glowing",
+            "cold blue-white office lighting",
+        ],
+    },
+    "会议": {
+        "base": "inside a high-rise corporate boardroom",
+        "details": [
+            "long polished table, leather chairs",
+            "projection screen glow on faces",
+            "city skyline through floor-to-ceiling glass",
+        ],
+    },
+    "家": {
+        "base": "inside a warm family apartment living room",
+        "details": [
+            "framed family photos on the wall",
+            "fabric sofa with a knitted throw",
+            "evening lamp light, warm tones",
+        ],
+    },
+    "客厅": {
+        "base": "inside a warm family apartment living room",
+        "details": ["fabric sofa", "TV glow", "evening lamp light"],
+    },
+    "卧室": {
+        "base": "inside a softly lit bedroom at night",
+        "details": ["bedside lamp glow", "curtains half drawn", "muted warm tones"],
+    },
+    "医院": {
+        "base": "inside a hospital ward corridor",
+        "details": [
+            "fluorescent white lighting, IV stand",
+            "nurses station in soft-focus background",
+            "sterile pale green and white palette",
+        ],
+    },
+    "学校": {
+        "base": "inside a high school classroom",
+        "details": ["rows of desks", "chalk dust in window light", "blackboard handwriting"],
+    },
+    "教室": {
+        "base": "inside a high school classroom",
+        "details": ["rows of desks", "chalk dust in window light", "blackboard handwriting"],
+    },
+    "餐厅": {
+        "base": "inside an upscale Chinese restaurant private room",
+        "details": ["round banquet table", "lazy susan with dishes", "warm pendant lights"],
+    },
+    "婚": {
+        "base": "inside a wedding banquet hall",
+        "details": ["red and gold decorations", "flower arch", "guest tables with champagne"],
+    },
+    "车": {
+        "base": "inside a luxury sedan at night",
+        "details": ["city neon streaks past the windows", "leather interior", "dash glow"],
+    },
+    "豪宅": {
+        "base": "inside a palatial mansion hall",
+        "details": ["marble floor reflections", "crystal chandelier", "double-height ceiling"],
+    },
+    "别墅": {
+        "base": "inside a palatial mansion hall",
+        "details": ["marble floor reflections", "crystal chandelier", "double-height ceiling"],
+    },
+    "雨": {
+        "base": "outdoor city street in heavy rain at night",
+        "details": ["neon reflections on wet asphalt", "umbrellas", "headlight halos in the rain"],
+    },
+}
+
+
+def _pick_context(shot: dict) -> dict:
+    """按 shot.location 关键词匹配场景上下文；未命中回退通用场景。
+    mood→光照的 time_map 全场景共用（情绪打光与地点解耦）。"""
+    ctx = dict(GENERIC_CONTEXT)
+    ctx["time_map"] = COFFEE_SHOP_CONTEXT["time_map"]  # 情绪光照映射与地点无关
+    loc = str(shot.get("location") or "")
+    for key, mapped in LOCATION_CONTEXT_MAP.items():
+        if key in loc:
+            merged = dict(mapped)
+            merged["time_map"] = ctx["time_map"]
+            if len(merged.get("details", [])) < 4:
+                merged["details"] = merged.get("details", []) + ctx["details"][:2]
+            return merged
+    if loc:
+        ctx["base"] = f"in a modern Chinese city — {loc}"
+    return ctx
+
+
 LIGHTING_MAP = {
     "Natural": "soft diffused daylight from the window, gentle fill shadows",
     "Warm": "golden hour warmth, amber highlights on skin, soft bokeh from hanging lights",
@@ -181,8 +307,8 @@ def generate_professional_prompt(shot: dict, char_desc: dict, chapter_num: int) 
     
     action_text = ". ".join(action_parts)
     
-    # === Part 4: Context ===
-    ctx = COFFEE_SHOP_CONTEXT
+    # === Part 4: Context（按 shot.location 动态匹配，不再全剧一间咖啡店）===
+    ctx = _pick_context(shot)
     time_light = ctx["time_map"].get(emotion, "soft afternoon daylight")
     # 随机选3个场景细节
     import random
@@ -198,22 +324,26 @@ def generate_professional_prompt(shot: dict, char_desc: dict, chapter_num: int) 
     # === 组装完整提示词 ===
     prompt = f"{cinematography}. {subject} — {action_text}. {context}. {style}."
     
-    # 音频标注
+    # 音频标注：有台词→口型+语种；无台词→显式 no dialogue（防 Veo3 随机加对白）
     audio_notes = []
     dlg = audio.get("dialogue_zh", "")
     voice = audio.get("voiceover_zh", "")
     if dlg:
         speaker = audio.get("dialogue_speaker", "")
-        audio_notes.append(f'Dialogue ({speaker}): "{dlg}"')
+        audio_notes.append(
+            f'Dialogue ({speaker}, lip-sync accurate, speaking Mandarin Chinese): "{dlg}"'
+        )
     if voice:
-        audio_notes.append(f'Voiceover (inner monologue): "{voice}"')
-    
+        audio_notes.append(f'Voiceover (inner monologue, no lip movement): "{voice}"')
+    if not dlg and not voice:
+        audio_notes.append("No dialogue, ambient sound only, natural room tone")
+
     if audio_notes:
         prompt += f" Audio: {'. '.join(audio_notes)}."
-    
-    # 时长和画幅
-    prompt += f" Duration: {dur:.0f}s. Aspect ratio: 9:16 vertical."
-    
+
+    # 时长、画幅与统一负向提示词
+    prompt += f" Duration: {dur:.0f}s. Aspect ratio: 9:16 vertical. {NEGATIVE_PROMPT}."
+
     return prompt
 
 

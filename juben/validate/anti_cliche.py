@@ -14,8 +14,17 @@ from juben.state.schema import Severity, ValidationResult, Violation, ViolationT
 
 
 # ============================================================
-# 内置20个高频致命烂梗
+# 内置20个高频烂梗
+# 爆款对齐（4497条真实在投短剧语料）：其中 8 条是市场验证过的爆款标准镜头
+# （身份揭露出现1380次、身份反差钩子占34%），从 CRITICAL 熔断降级为
+# "同章重复预算"——一章内同款桥段 ≥2 次才 WARNING，跨章不限制。
+# 真正熔断的只剩"执行类烂梗"：降智/巧合/顿悟/死亡flag/光环救命等偷懒写法。
 # ============================================================
+
+# 降级为预算制的爆款标准镜头（题材白名单：写对应题材时完全豁免）
+BUDGET_CLICHE_IDS = {"cliche_001", "cliche_002", "cliche_004", "cliche_005", "cliche_006", "cliche_007", "cliche_016", "cliche_018"}
+# 同一章内同一预算梗允许出现次数（≥2 次触发 WARNING，表示偷懒复读）
+BUDGET_CLICHE_LIMIT = 2
 
 BUILTIN_CLICHES = [
     {
@@ -148,18 +157,45 @@ class AntiClicheChecker:
         self.builtin = BUILTIN_CLICHES
         self.project_blacklist = project_blacklist or []
 
+    @staticmethod
+    def _count_overlaps(pattern: str, text: str) -> int:
+        """重叠计数：贪婪正则可能把相邻两次桥段吞成一个长匹配（跨句吞噬），
+        逐位重扫保证同款出现次数不被低估。"""
+        count = 0
+        pos = 0
+        while pos <= len(text):
+            m = re.search(pattern, text[pos:])
+            if not m:
+                break
+            count += 1
+            pos += m.start() + 1
+        return count
+
     def check(self, text: str) -> ValidationResult:
         violations = []
 
-        # 1. 检查内置烂梗
+        # 1. 检查内置烂梗：爆款标准镜头走预算制，执行类烂梗保持 CRITICAL
         for cliche in self.builtin:
-            match = re.search(cliche["pattern"], text)
-            if match:
+            n = self._count_overlaps(cliche["pattern"], text)
+            if not n:
+                continue
+            first = re.search(cliche["pattern"], text)
+            if cliche["id"] in BUDGET_CLICHE_IDS:
+                # 预算制：一章内同款出现 ≥BUDGET_CLICHE_LIMIT 次 → WARNING（复读偷懒）
+                if n >= BUDGET_CLICHE_LIMIT:
+                    violations.append(Violation(
+                        type=ViolationType.CLICHE_DETECTED,
+                        severity=Severity.WARNING,
+                        description=f"爆款桥段本章重复{n}次 [{cliche['name']}]：市场验证过可以用，但同章复读=偷懒",
+                        location=f"匹配: '{first.group()[:50]}'",
+                        suggestion="换一种打脸/揭露的执行方式（同一反转方式不得连用）",
+                    ))
+            else:
                 violations.append(Violation(
                     type=ViolationType.CLICHE_DETECTED,
                     severity=Severity.CRITICAL,
                     description=f"触发烂梗 [{cliche['name']}]: {cliche['description']}",
-                    location=f"匹配: '{match.group()[:50]}'",
+                    location=f"匹配: '{first.group()[:50]}'",
                     suggestion="用角色行动和具体细节替代套路",
                 ))
 

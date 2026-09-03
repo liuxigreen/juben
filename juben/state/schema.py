@@ -89,7 +89,9 @@ class StoryMeta(BaseModel):
     premise: str = Field(default="", description="一句话核心前提")
     logline: str = ""
     target_chapters: int = 50
-    target_word_count_per_chapter: int = 2000
+    # 爆款对齐：90秒竖屏单集 ≈ 500-900字台词本体（语料实测 7.6字/秒上限推算）。
+    # 2000字小说体改用 --mode novel 显式开启，避免短剧模式凑字数注水。
+    target_word_count_per_chapter: int = 900
     pov: str = "third_person_limited"
     language: str = "zh-CN"
     last_chapter_written: int = 0
@@ -111,6 +113,11 @@ class StoryMeta(BaseModel):
 
     # === 高概念模式 ===
     high_concept: HighConcept = Field(default_factory=HighConcept)
+
+    # === 爆款对齐：genre mixin 的市场验证配方（merge_engine 从 genre-templates.yaml 接线）===
+    opening_rule: str = Field(default="", description="开场硬规则（前3秒/25秒钩子怎么落）")
+    hook_types: list[str] = Field(default_factory=list, description="本题材的主钩子类型（语料实证分类）")
+    rhythm_curve: str = Field(default="", description="本题材的节奏曲线（段落占比）")
 
 
 # ============================================================

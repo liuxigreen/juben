@@ -1,7 +1,7 @@
 # 竖屏短剧节奏模板
 # 适用于：YouTube Shorts / TikTok / 红果 / 抖音 / 快手
 # 单集时长：60-120秒
-# 单集字数：800-1500字
+# 单集字数：500-900字台词本体（90秒 × 约7字/秒语速上限，爆款对齐）
 
 name: vertical-drama
 description: "竖屏短剧节奏模板 — 双轴校验（字数轴+秒数轴）"
@@ -11,42 +11,67 @@ version: "1.0"
 # 节奏卡点（双轴）
 # ============================================================
 pacing_checkpoints:
+  # 爆款对齐：5点扩到9点，字数轴按 90s ≈ 500-900 字台词本体校准
   - label: "3s_Hook"
-    word_range: [0, 100]
+    word_range: [0, 50]
     time_range: [0, 3]
-    rule: "动词+特写开局。禁止背景铺垫。必须出现一个具体的感官冲击（坠落感/疼痛/重生的眩晕/血/碎裂声）"
+    rule: "动词+特写开局。禁止背景铺垫。钩子画面3秒内成立（坠落感/疼痛/重生的眩晕/血/碎裂声）"
     emotion: "震惊/恐惧"
     shot_type: "CU"
     camera_movement: "static"
 
-  - label: "15s_Retention"
-    word_range: [300, 500]
-    time_range: [10, 20]
-    rule: "爆出核心信息差——主角知道但其他人不知道的关键事实。这是留住观众的炸弹"
+  - label: "15s_Conflict"
+    word_range: [80, 160]
+    time_range: [12, 18]
+    rule: "第一次冲突升级：立场交锋开始，15秒内必须出现新信息"
+    emotion: "愤怒/不甘"
+    shot_type: "CU"
+    camera_movement: "push"
+
+  - label: "30s_Retention"
+    word_range: [170, 300]
+    time_range: [25, 35]
+    rule: "信息差炸弹（主角知道但旁人不知道）+第一次小反转"
     emotion: "掌控感/暗爽"
     shot_type: "MCU"
     camera_movement: "push"
 
-  - label: "30s_Explosion"
-    word_range: [600, 800]
-    time_range: [25, 35]
-    rule: "视觉/物理冲击（踢飞、玻璃碎、雷劈、打翻茶杯）。必须有物理位移，不能只靠对话"
-    emotion: "紧张/冲击"
-    shot_type: "MS"
-    camera_movement: "handheld"
+  - label: "45s_Escalation"
+    word_range: [300, 420]
+    time_range: [40, 50]
+    rule: "打脸前蓄力：施辱者把赌注/羞辱抬到最高，情绪压到临界点"
+    emotion: "压抑/蓄力"
+    shot_type: "CU"
+    camera_movement: "static"
 
-  - label: "60s_Satisfaction"
-    word_range: [1000, 1200]
-    time_range: [50, 65]
-    rule: "小赢——主角获得一个小胜利（点头、表扬、反派愣住、证据到手）"
+  - label: "60s_Explosion"
+    word_range: [430, 560]
+    time_range: [55, 65]
+    rule: "爆点：打脸/揭露/物理冲击，必须有当众翻转或物理位移"
+    emotion: "紧张/爆发"
+    shot_type: "MS"
+    camera_movement: "whip_pan"
+
+  - label: "75s_Satisfaction"
+    word_range: [560, 680]
+    time_range: [70, 78]
+    rule: "爽点兑现+旁观者反应镜头（惊呼/下跪/改口称呼），给足反应特写"
     emotion: "暗爽/掌控"
     shot_type: "MCU"
     camera_movement: "pull"
 
+  - label: "82s_Twist"
+    word_range: [680, 780]
+    time_range: [78, 85]
+    rule: "新变量插入：第二次反转或更大敌人现身，爽点之后立刻拉新钩子"
+    emotion: "错愕/期待"
+    shot_type: "CU"
+    camera_movement: "push"
+
   - label: "90s_Cliffhanger"
-    word_range: [1700, 2000]
-    time_range: [80, 95]
-    rule: "断崖钩子。必须在最后一句植入一个具体的未回答问题或突发事件"
+    word_range: [780, 900]
+    time_range: [85, 90]
+    rule: "断崖钩子。最后一句植入具体的未回答问题或突发事件，卡在观众最想看下一口气的位置"
     emotion: "悬念/紧迫"
     shot_type: "CU"
     camera_movement: "push"
