@@ -1465,5 +1465,229 @@ def lint_config(dir: str, strict: bool):
     console.print(f"[green]✓ config lint OK ({len(warnings)} 警告)[/green]")
 
 
+# ============================================================
+# topics — 爆款选题器（4497条语料驱动，爆款对齐新增）
+# ============================================================
+
+@main.command()
+@click.option("--count", "-n", default=5, help="生成候选选题数量")
+@click.option("--genre", "-g", default="", help="偏好题材（逗号分隔，空=按市场配比采样）")
+def topics(count: int, genre: str):
+    """语料驱动选题：按市场配比组合 钩子×题材×换皮槽位，输出 premise 候选"""
+    import random
+
+    stats_path = Path(__file__).parent / "data" / "corpus_stats.json"
+    if not stats_path.exists():
+        console.print("[red]缺少 juben/data/corpus_stats.json（语料统计）[/red]")
+        sys.exit(1)
+    stats = json.loads(stats_path.read_text(encoding="utf-8"))
+
+    hooks = stats.get("opening_hook_types", {})
+    genres = stats.get("genre_l1_freq", {})
+    devices = stats.get("genre_to_devices", {})
+
+    pref = [g.strip() for g in genre.split(",") if g.strip()]
+    if pref:
+        genre_pool = [g for g in pref if g in genres] or pref
+    else:
+        # 按市场配比加权采样（霸总权重高就多出霸总）
+        genre_pool = []
+        for g, n in genres.items():
+            genre_pool += [g] * max(1, n // 100)
+
+    # 换皮槽位灵感（与 references/novelty-slots.md 对齐）
+    slot_bank = {
+        "职业": ["鉴宝师", "入殓师", "赌石师", "电竞退役选手", "非遗修复师", "火锅店老板娘", "地质队员", "陪诊师"],
+        "年代": ["1998下岗潮", "九十年代香港", "民国当铺", "东北老工业区", "2003非典"],
+        "物件": ["怀表", "婚书", "一箱借条", "奶奶的菜谱", "半张全家福", "录音笔", "旧收音机"],
+        "桥段": ["读心术", "好感度系统", "假死归来", "玄学萌宝", "时间循环", "女扮男装", "戏中戏反转", "赌石", "鉴宝异能"],
+        "AI奇观": ["好感度可视化", "时间回溯30秒", "亡者NPC", "穿书成炮灰", "怪兽守护者"],
+    }
+
+    hook_examples = {
+        "身份反差": "被全场看不起的人实为隐藏身份的大佬",
+        "关系背叛": "最亲密的人在最关键的时刻当众捅刀",
+        "情绪爆点": "弱者被逼到绝境（救命钱/葬礼/孩子）",
+        "时间改命": "带着记忆重生回关键节点，睁眼即知谁害我",
+        "系统异能": "打脸瞬间系统激活，奖励可见",
+        "补偿回报": "当年施恩的人如今百倍报恩",
+        "反转打脸": "开场即完成一次完整打脸",
+    }
+
+    random.seed()
+    console.print("[cyan]▶ 语料驱动选题（钩子×题材×换皮槽位）[/cyan]\n")
+    made = set()
+    shown = 0
+    attempts = 0
+    while shown < count and attempts < count * 20:
+        attempts += 1
+        hook = random.choices(list(hooks.keys()), weights=list(hooks.values()))[0]
+        g = random.choice(genre_pool)
+        slot_kinds = random.sample(list(slot_bank.keys()), 2)
+        picks = ["{}={}".format(k, random.choice(slot_bank[k])) for k in slot_kinds]
+        key = (hook, g, tuple(picks))
+        if key in made:
+            continue
+        made.add(key)
+        shown += 1
+        dev = random.choice(devices.get(g, ["身份揭露"]))
+        tpl = hook_examples.get(hook, hook)
+        premise = "{}。题材基调【{}】，核心狗血桥段【{}】，新颖皮【{} + {}】".format(
+            tpl, g, dev, picks[0], picks[1])
+        console.print(Panel(
+            "钩子: {}（市场占比 {:.0%}）\n题材: {}｜主桥段: {}\n换皮槽位: {}　+　{}\n──\n{}\n──\n"
+            "[dim]下一步: juben init \"{}\" -t universal --high-concept -y\n"
+            "并在 story_meta.json 的 novelty_slots 里填入上面两个槽位[/dim]".format(
+                hook, hooks.get(hook, 0), g, dev, picks[0], picks[1], premise, premise),
+            title="[green]选题 {}[/green]".format(shown),
+        ))
+    if shown == 0:
+        console.print("[red]未能生成选题，请检查语料统计文件[/red]")
+
+
+# ============================================================
+# outline — 大纲 Architect prompt（README 第一步，此前缺失）
+# ============================================================
+
+@main.command()
+@click.option("--dir", "-d", default=".", help="项目目录")
+@click.option("--chapters", "-n", default=0, type=int, help="总集数（默认读 story_meta.target_chapters）")
+def outline(dir: str, chapters: int):
+    """生成大纲 Architect prompt（每集拍子表），输出到 outlines/architect_prompt.md"""
+    project_dir = Path(dir).resolve()
+    meta_path = project_dir / "story_meta.json"
+    if not meta_path.exists():
+        console.print("[red]找不到 story_meta.json — 先运行 juben init[/red]")
+        sys.exit(1)
+    meta = json.loads(meta_path.read_text(encoding="utf-8"))
+    total = chapters or meta.get("target_chapters", 20)
+    premise = meta.get("premise", "")
+    hook_types = meta.get("hook_types") or ["身份反差", "关系背叛", "情绪爆点"]
+    rhythm = meta.get("rhythm_curve", "")
+    slots = meta.get("novelty_slots") or []
+    opening_rule = meta.get("opening_rule", "")
+
+    cards = meta.get("pacing_cards") or []
+    card_lines = []
+    for c in cards:
+        wr = c.get("word_range") or [0, 900]
+        tr = c.get("time_range") or [0, 90]
+        card_lines.append(
+            "- {}（{}-{}s，{}-{}字）：{}｜情绪: {}".format(
+                c.get("label"), tr[0], tr[1], wr[0], wr[1], c.get("rule", ""), c.get("emotion", ""))
+        )
+    cards_text = "\n".join(card_lines) if card_lines else "（未配置 pacing_cards，按 references/hit-formula.md 的 9 点结构排）"
+
+    hook_str = "、".join(hook_types) if isinstance(hook_types, list) else str(hook_types)
+    slot_str = "、".join(slots) if slots else "⚠ 未声明——请先从 references/novelty-slots.md 选 2 个并回填 story_meta.novelty_slots"
+
+    prompt = """# Architect 大纲任务 — {title}
+
+你是竖屏爆款短剧的架构师。基于以下信息输出全剧 {total} 集的分集大纲（每集一个拍子表）。
+
+## 硬性输入
+- 故事前提: {premise}
+- 意外变量/金手指: {disruption}
+- 主钩子类型（市场验证，不许换）: {hooks}
+- 开场硬规则: {opening}
+- 节奏曲线: {rhythm}
+- 换皮槽位（每集至少可见一个）: {slots}
+
+## 单集结构（90秒 / 500-900字台词本体）
+{cards}
+
+## 输出要求（严格遵守）
+1. 每集输出：集号 / 钩子（0-3s画面+25s主钩子）/ 三次反转的位置与方式（方式不得与上一集重复）/ 爽点类型与强度（1-5星）/ 断崖钩（具体到台词或画面）/ 本集推进的伏笔
+2. 第 6-10 集之间设首个付费卡点 = 全剧情绪最高点 + 极致悬念
+3. 每 5-10 集一个卡点；第 1 集必须完成主钩子亮相 + 第一次小打脸
+4. 同一打脸方式不得连续两集使用；桥段执行方式轮换（当众对峙→证据反转→局中局→借刀杀人）
+5. 只输出分集大纲正文，不要解释
+
+输出为 Markdown 表格或分集列表均可，保存为 outlines/episodes.md。""".format(
+        title=meta.get("title", "未命名"), total=total, premise=premise,
+        disruption=meta.get("disruption_variable", ""), hooks=hook_str,
+        opening=opening_rule or "前25秒落地主钩子", rhythm=rhythm or "按 hit-formula.md",
+        slots=slot_str, cards=cards_text)
+
+    out_dir = project_dir / "outlines"
+    out_dir.mkdir(exist_ok=True)
+    out = out_dir / "architect_prompt.md"
+    out.write_text(prompt, encoding="utf-8")
+    console.print("[green]✓ Architect prompt 已生成 → {}[/green]".format(out))
+    console.print("[dim]把 prompt 投喂给 LLM，输出存为 outlines/episodes.md[/dim]")
+
+
+# ============================================================
+# ref-sheets — AI 视频角色参考图提示词（解决跨镜一致性）
+# ============================================================
+
+@main.command("ref-sheets")
+@click.option("--dir", "-d", default=".", help="项目目录")
+def ref_sheets(dir: str):
+    """从 characters.yaml 生成每个角色的参考图提示词（喂即梦/可灵做主体参考）"""
+    import yaml
+    project_dir = Path(dir).resolve()
+    char_file = project_dir / "config" / "characters.yaml"
+    if not char_file.exists():
+        console.print("[red]找不到 config/characters.yaml[/red]")
+        sys.exit(1)
+    raw = yaml.safe_load(char_file.read_text(encoding="utf-8"))
+    items = raw.get("characters", raw) if isinstance(raw, dict) else raw
+    if isinstance(items, dict):
+        items = list(items.values())
+
+    lines = [
+        "# 角色参考图提示词（Character Reference Sheets）",
+        "",
+        "> 用法：每个角色先按 POSITIVE 生成一张标准参考图（即梦/可灵「主体参考」功能），",
+        "> 后续所有镜头生成时挂载该参考图，解决跨镜头长相漂移。",
+        "",
+    ]
+    for info in items if isinstance(items, list) else []:
+        if not isinstance(info, dict):
+            continue
+        name = info.get("name", "?")
+        en = info.get("en") or name
+        ap = info.get("appearance", {}) or {}
+        wd = info.get("wardrobe", {}) or {}
+        base = "a {}-year-old Chinese {}, {}, {} build, face: {}, hair: {}".format(
+            info.get("age", "?"),
+            {"male": "man", "female": "woman"}.get(info.get("gender"), "person"),
+            ap.get("height", ""), ap.get("build", ""), ap.get("face", ""), ap.get("hair", ""))
+        if ap.get("distinguishing"):
+            base += ", distinguishing mark: {}".format(ap["distinguishing"])
+        w1 = wd.get("primary", "")
+        w2 = wd.get("secondary", "")
+        lines += [
+            "## {}（{}）".format(name, en),
+            "",
+            "**POSITIVE（标准参考图）**:",
+            "```",
+            ("photorealistic portrait of {}, wearing {}, front-facing, neutral expression, "
+             "standing, full body, clean grey studio background, soft even lighting, "
+             "9:16 vertical, photorealistic Chinese short drama style, 8k detail. "
+             "IDENTITY LOCK (must be identical in every shot): same face, same hairstyle, "
+             "same {} outfit, no makeup change, no outfit change between shots. "
+             "Negative prompt: deformed face, extra fingers, blurry, watermark, inconsistent identity.").format(
+                base, w1, w1),
+            "```",
+            "",
+            "**备选服装版**：把 wearing {} 换成 wearing {}，其余不变（同一张脸）。".format(w1, w2),
+            "",
+            "**表情变体**（同一参考图 + 换表情词）：",
+            "- 愤怒: furious expression, jaw clenched, veins on temple",
+            "- 崩溃: crying, tears streaming, trembling lips",
+            "- 得意: smug smirk, chin up, condescending gaze",
+            "- 震惊: eyes wide in disbelief, mouth slightly open, stepped back",
+            "",
+        ]
+    out = project_dir / "flow_prompts_pro"
+    out.mkdir(exist_ok=True)
+    outp = out / "character_sheets.md"
+    outp.write_text("\n".join(lines), encoding="utf-8")
+    console.print("[green]✓ 角色参考图提示词 → {}[/green]".format(outp))
+    console.print("[dim]先按此生成每个角色的标准参考图，再生成分镜视频[/dim]")
+
+
 if __name__ == "__main__":
     main()

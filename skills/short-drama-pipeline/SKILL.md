@@ -1,378 +1,107 @@
 ---
 name: short-drama-pipeline
-description: AI短剧全流程制作系统 - 从剧本到视频的工业级pipeline
-version: 2.0
+description: AI短剧全流程制作系统 - 选题→剧本→分镜→Veo提示词，当前窗口（Agent/LLM）驱动
+version: 3.0
 author: juben-team
 tags: [short-drama, storyboard, video-generation, ai-video, veo, flow]
 ---
 
-# AI短剧全流程制作系统
+# AI短剧全流程制作系统（Agent 驱动版）
 
 ## 概述
 
-从创意到成片的完整短剧制作pipeline，支持任意题材、任意AI视频平台。
+从选题到可投喂视频平台的完整 pipeline。**工作方式：CLI 生成确定性结构与 prompt，
+你在当前对话窗口里扮演 Architect/Scribe 完成创作，产物存回项目目录，CLI 负责校验与分镜。**
 
 ```
-创意 → 剧本 → 分镜 → 提示词 → 视频生成 → 后期合成
-Stage1   Stage2   Stage2    Stage3      Stage3       Stage4
+选题(topics) → 初始化(init) → 大纲(outline) → 写剧本(write→当前窗口写→audit循环)
+→ 分镜(storyboard) → 参考图+Veo提示词(ref-sheets+export-prompts) → 视频平台生成 → 合成
+   CLI        CLI+窗口        CLI+窗口         窗口+CLI               CLI            外部
 ```
 
-## 快速开始
+## 标准作业流程（照此执行，全部命令真实存在）
 
-### 1. 创建新项目
-
+### 第 0 步：选题（可选，爆款对齐）
 ```bash
-# 复制通用模板
-cp -r projects/_template projects/你的剧名
-
-# 编辑项目配置
-vi projects/你的剧名/config/project_config.yaml
+juben topics -n 5                # 语料驱动选题：钩子×题材×换皮槽位，按市场配比采样
+juben topics -n 3 -g 霸总,复仇    # 指定题材
 ```
+选中一个 premise 后记住它的**两个换皮槽位**（如 职业=鉴宝师 + 物件=奶奶的菜谱）。
 
-### 2. 配置文件说明
-
-| 文件 | 用途 | 必须修改 |
-|------|------|----------|
-| `project_config.yaml` | 项目主配置（标题、章节数、时长） | ✅ |
-| `characters.yaml` | 角色定义（名字、外貌、性格） | ✅ |
-| `locations.yaml` | 场景定义（地点、氛围、道具） | ✅ |
-| `events.yaml` | 事件类型（读心、闪回、冲突） | 按需 |
-| `action_rules.yaml` | 动作规则（可拍性检查） | 可选 |
-| `beat_triggers.yaml` | Beat触发规则 | 可选 |
-| `hook_templates.yaml` | 钩子模板 | 可选 |
-| `prompt_style.yaml` | 提示词风格配置 | 可选 |
-
-### 3. 运行pipeline
-
+### 第 1 步：初始化项目
 ```bash
-# Stage 1: 剧本生成（需LLM）
-python3 generate_script.py --project 你的剧名 --all --prompt-only
-# 将生成的提示词发送给LLM，保存结果到 chapters/
-
-# Stage 2: 分镜生成（纯算法）
-python3 pipeline_v3.py projects/你的剧名
-python3 pipeline_v3.py projects/你的剧名 --chapters 1-5
-
-# Stage 3: 提示词生成（纯算法）
-python3 export_pro_prompts.py --project projects/你的剧名
+juben init "<premise>" -t universal --high-concept -y -d projects/你的剧名
 ```
+然后**手工编辑** `story_meta.json`：
+- `novelty_slots`: 填入选定的 2 个换皮槽位（缺失会在后续步骤告警）
+- `hook_types` / `opening_rule` / `rhythm_curve`：按 `references/hook-taxonomy.md` 填
+- `high_concept`：anomaly 设计成"AI 才拍得出"的奇观（见 `references/novelty-slots.md` 槽位 6）
 
-## 架构设计
-
-### 核心原则
-
-1. **引擎与配置分离** — `pipeline.py`是通用引擎，项目数据在`config/`目录
-2. **换项目只改配置** — 不动代码，只修改YAML文件
-3. **LLM做语义，代码做计算** — 确定性逻辑用代码，创意内容用LLM
-
-### 目录结构
-
-```
-juben/
-├── juben/                         # 核心引擎模块（22个Python文件）
-│   ├── pipeline.py                # v3分镜引擎主逻辑
-│   ├── adapter_v3.py              # 剧本适配器
-│   ├── visual_beat_chunker.py     # Beat分块器
-│   ├── prompt_renderer.py         # 提示词渲染器
-│   └── ...                        # 其他模块
-├── generate_script.py             # Stage 1: 剧本生成器
-├── pipeline_v3.py                 # Stage 2: 分镜生成器（调用juben/pipeline.py）
-├── export_pro_prompts.py          # Stage 3: 专业提示词生成器
-├── skills/
-│   └── short-drama-pipeline/      # 本skill
-│       └── SKILL.md
-├── projects/
-│   ├── _template/                 # 项目模板
-│   │   └── config/                # 配置模板
-│   └── 你的剧名/
-│       ├── config/                # 项目配置（8个YAML）
-│       ├── chapters/              # Stage1输出：剧本
-│       ├── v3_storyboard/         # Stage2输出：分镜
-│       │   ├── ch001_beats.json   # Beat数据
-│       │   └── ch001_shots.json   # Shot数据
-│       ├── flow_prompts_pro/      # Stage3输出：专业提示词
-│       │   └── ch001_pro_prompts.md
-│       ├── srt_subtitles/         # 字幕文件
-│       ├── voice_data.json        # 配音数据
-│       └── voice_direction.txt    # 配音手册
-└── config/
-    └── references/                # 参考资料
-        ├── veo3-prompting-guide.md
-        ├── facial-expression-skill.md
-        └── ...
-```
-
-## Stage 1: 剧本生成
-
-### 输入
-- 创意大纲（用户提供）
-- `project_config.yaml`（章节结构）
-- `characters.yaml`（角色设定）
-- `locations.yaml`（场景设定）
-- `events.yaml`（事件类型）
-
-### 输出
-- `chapters/ch001.md` ~ `ch020.md`（20章剧本）
-
-### 生成方式
-
-#### 方式1：使用脚本生成提示词（推荐）
-
+### 第 2 步：大纲（Architect = 当前窗口的你）
 ```bash
-# 生成所有章节的提示词
-python3 generate_script.py --project 你的剧名 --all --prompt-only
-
-# 生成指定章节
-python3 generate_script.py --project 你的剧名 --chapters 1-5 --prompt-only
+juben outline -d projects/你的剧名        # 生成 outlines/architect_prompt.md
 ```
+把 `architect_prompt.md` 的内容当指令，在当前窗口输出全剧分集拍子表，保存为
+`outlines/episodes.md`。自检：每集有钩子/3次反转/爽点星级/断崖；同款反转不得连用两集；
+第 6-10 集有付费卡点。
 
-这会生成 `chapters/001_prompt.txt` 等文件，将内容发送给LLM即可。
-
-#### 方式2：直接调用LLM
-
-```python
-from generate_script import load_config, build_chapter_prompt, save_chapter
-
-# 加载配置
-config = load_config(Path("projects/你的剧名"))
-
-# 生成提示词
-prompt = build_chapter_prompt(
-    chapter_num=1,
-    total_chapters=20,
-    config=config
-)
-
-# 调用LLM（需要实现）
-response = your_llm_call(prompt)
-
-# 保存
-save_chapter(Path("projects/你的剧名"), 1, response)
-```
-
-#### 方式3：手动写作
-
-按下方格式要求直接编写Markdown文件，保存到 `chapters/001.md`。
-
-### 剧本格式要求
-
-```markdown
-## 第一章：标题
-
-### 场景1：咖啡店 - 下午
-
-苏念在吧台后擦拭杯子，第三次看向门口。
-
-**顾深**走进来，灰色西装，径直坐下。
-
-**苏念**：（微笑）美式？
-
-**顾深**：（点头，手指敲桌）
-
-苏念转身磨豆，[注意到顾深的敲击有规律]。
-
----
-
-### 场景2：巷子 - 晚上
-
-...
-```
-
-### 关键约束
-- 每章3-5个场景
-- 每场景有明确的时间/地点
-- 动作必须是**物理可拍**的（不能写"回忆起过去"）
-- 对话要口语化（15字以内）
-
-## Stage 2: 分镜生成
-
-### 输入
-- 剧本文件
-- 项目配置
-
-### 输出
-- `v3_storyboard/ch001_beats.json` — Beat结构
-- `v3_storyboard/ch001_shots.json` — 镜头列表
-
-### 分镜数据结构
-
-```json
-{
-  "chapter": 1,
-  "title": "第一章标题",
-  "shots": [
-    {
-      "shot_id": 1,
-      "type": "scene",
-      "duration_sec": 4,
-      "camera": {
-        "shot_type": "MCU",
-        "movement": "static",
-        "angle": "eye-level"
-      },
-      "description": "苏念在吧台后擦拭杯子",
-      "characters": ["苏念"],
-      "props": ["杯子", "吧台"],
-      "veo_prompt": "Medium close-up of a young Chinese woman wiping a cup behind a coffee counter..."
-    }
-  ]
-}
-```
-
-### 质量检查
-
+### 第 3 步：逐集写剧本（Scribe 循环 = 核心工作）
 ```bash
-# 自动检查
-python3 pipeline.py --audit --project 你的剧名
-
-# 检查项
-# - 动作可拍性（无抽象词）
-# - 时长合理性（3-8秒/镜头）
-# - 角色一致性
-# - 场景连续性
+juben write 1 -d projects/你的剧名        # 生成第1章 Scribe prompt（含全部硬约束）
 ```
+1. 读 prompt，在当前窗口按约束写正文（台词每秒1句、内心OS、断崖结尾）
+2. 存为 `chapters/001.md`（**注意是 001.md 不是 ch001.md**）
+3. 校验：运行 `juben audit 1 -d projects/你的剧名`
+4. audit 不过 → `juben rewrite 1 -d ...` 生成重写 prompt → 回到第 1 步（最多 2 轮）
+5. 通过后 `juben commit 1 -d ...` 锁章，写下一集
 
-## Stage 3: 视频生成
-
-### 方案A: Google Flow（推荐，无API）
-
-#### 3.1 角色定妆
-
-在Flow中创建Character，使用以下模板：
-
-```
-[外貌描述] + [服装] + [标志性特征] + [气质关键词]
-
-示例：
-Young Chinese woman, 26 years old, round face, shoulder-length black hair.
-Wearing a brown apron over white t-shirt.
-Small burn scar on left ring finger.
-Warm, observant, slightly anxious demeanor.
-```
-
-#### 3.2 场景参考
-
-创建Ingredient，使用以下模板：
-
-```
-[地点类型] + [关键道具] + [光线] + [氛围]
-
-示例：
-Intimate Chinese coffee shop interior.
-Wooden counter with yellowed sticky notes, espresso machine, warm amber lighting.
-Afternoon sunlight through window, dust motes floating.
-Cozy, slightly melancholic atmosphere.
-```
-
-#### 3.3 镜头生成
-
-从`flow_prompts_pro/ch001_pro_prompts.md`复制提示词：
-
-```
-[Cinematography] + [Subject] + [Action+Performance] + [Context] + [Style]
-
-示例：
-Medium close-up, slow dolly forward, slight low angle, 50mm lens, f/2.8.
-26yo Chinese woman, round face, shoulder-length hair, apron, burn scar on ring finger —
-Su Nian freezes, breath catching. eyes: gaze darts then locks, pupils dilate.
-Inside a small intimate Chinese coffee shop, late afternoon, long shadows.
-Photorealistic Chinese short drama, anamorphic lens, shallow DOF, film grain.
-Duration: 4s. Aspect ratio: 9:16 vertical.
-```
-
-#### 3.4 Scene Builder
-
-1. 生成Shot 1 → 满意 → Add to Scene
-2. 选中Shot 1 → Jump To → 生成Shot 2
-3. 重复直到全章完成
-4. 下载Scene
-
-### 方案B: Veo API（自动化）
-
-```python
-# 使用pipeline直接调用
-python3 pipeline.py --stage 3 --project 你的剧名 --api veo
-```
-
-## Stage 4: 后期合成
-
-### 4.1 字幕
-
+### 第 4 步：分镜（纯算法）
 ```bash
-# SRT文件已生成在 srt_subtitles/
-# 导入剪映：设置 → 字幕 → 导入SRT
+juben storyboard -d projects/你的剧名     # chapters/*.md → v3_storyboard/chNNN_shots.json
 ```
+自检输出：每集 shots 数、末镜是否 cliffhanger、quality 汇总。⚠ 0 shots = 剧本格式问题，
+看日志里的 ⚠ 警告行。
 
-### 4.2 配音
-
+### 第 5 步：参考图 + Veo 提示词
 ```bash
-# 参考 voice_direction.txt 录制配音
-# 或使用AI配音工具
+juben ref-sheets -d projects/你的剧名     # 每个角色的参考图提示词 → flow_prompts_pro/character_sheets.md
+juben export-prompts -d projects/你的剧名 # 分镜 → flow_prompts_pro/chNNN_pro_prompts.md
+```
+**先按 character_sheets.md 在即梦/可灵生成每个角色的标准参考图（主体参考）**，
+再逐镜用 pro_prompts 生成视频片段——挂参考图是解决跨镜头长相漂移的唯一可靠手段。
+
+### 第 6 步：成片（外部工具）
+- 逐镜生成视频片段（即梦 Seedance 口型好→台词镜头；可灵画面强→空镜）
+- TTS 配音：`voice_data.json`（每镜台词+情感标签）；字幕：`srt_subtitles/chNNN.srt`
+- 剪辑合成：剪映/FFmpeg，按 shots 的 duration 排布
+
+## 硬性规则（爆款对齐，违反必平庸）
+
+1. **台词密度**：每分钟 380-460 字（约每秒 1 句、单句≤15字）；单集 90s = 500-900 字台词本体
+2. **钩子**：25 秒内落地主钩子（语料中位 25s）；钩子类型按 hook-taxonomy.md 市场占比选
+3. **反转**：每集 ≥2 次（中位 3），同款方式不得连用两集
+4. **断崖**：每集 85-90s 处断崖，卡在"就差一口气"的位置
+5. **换皮**：每剧 2 个新颖槽位（novelty_slots），情绪公式照旧
+6. **付费卡点**：第 6-10 集首个，之后每 5-10 集一个
+
+## 目录结构（init 自动生成）
+
+```
+projects/你的剧名/
+├── story_meta.json          # 元数据+金手指+novelty_slots+高概念
+├── characters.json          # 世界观角色卡（bootstrap 后）
+├── config/                  # 8 个 YAML（characters.yaml 要填！）
+├── outlines/                # architect_prompt.md / episodes.md
+├── chapters/                # 001.md 002.md ...（Scribe 产物）
+├── v3_storyboard/           # chNNN_shots.json / chNNN_beats.json
+├── flow_prompts_pro/        # chNNN_pro_prompts.md / character_sheets.md
+├── srt_subtitles/           # chNNN.srt
+└── voice_data.json          # 配音数据
 ```
 
-### 4.3 合成
+## 常见坑（已修复，留意）
 
-```bash
-# 使用ffmpeg合成
-ffmpeg -i video.mp4 -i audio.mp3 -i subtitle.srt \
-  -c:v copy -c:a aac -c:s mov_text \
-  output.mp4
-```
-
-## 换题材指南
-
-### 最小修改（同类型）
-
-只改3个文件：
-1. `project_config.yaml` — 标题、简介
-2. `characters.yaml` — 角色名、外貌
-3. `locations.yaml` — 场景名、描述
-
-### 完全换题材
-
-1. 复制模板：`cp -r projects/_template projects/新剧名`
-2. 编辑所有config文件
-3. 重新运行pipeline
-
-### 配置示例：悬疑剧 → 甜宠剧
-
-```yaml
-# characters.yaml
-characters:
-  - name: 苏念
-    archetype: 坚韧女主      # 改为：甜美女主
-    personality: 敏感、压抑   # 改为：活泼、开朗
-    
-# events.yaml
-events:
-  mind_reading:              # 删除或改为：
-    enabled: false           #   甜蜜互动
-  sweet_moment:              #   enabled: true
-    enabled: true
-```
-
-## 常见问题
-
-### Q: 提示词太简单怎么办？
-A: 使用`generate_pro_prompts.py`生成5-Part专业提示词，包含镜头语言、人物表演、环境氛围。
-
-### Q: 角色一致性怎么保证？
-A: 三重保障：@角色名 + 参考图(Ingredient) + Jump To连接相邻镜头。
-
-### Q: 换视频平台怎么办？
-A: 修改`prompt_style.yaml`中的renderer配置，pipeline会自动适配不同平台的提示词格式。
-
-### Q: 分镜质量怎么检查？
-A: 运行`python3 pipeline.py --audit`，会检查动作可拍性、时长合理性、角色一致性等。
-
-## 参考资料
-
-- `config/references/veo3-prompting-guide.md` — Veo 3专业提示指南
-- `config/references/facial-expression-skill.md` — 人物表演框架
-- `config/references/full-video-framework.md` — 完整视频框架
-- `config/references/performance-recipes.md` — 表演配方
-
-## 版本历史
-
-- **v2.0** (2026-07) — 配置分层、事件类型化、专业提示词
-- **v1.0** (2026-07) — 初始版本、通用pipeline
+- 章节文件名：引擎认 `001.md`，也兼容 `ch001.md`；0 shots 时看 ⚠ 警告
+- characters.yaml 必须填真实角色（含 appearance/wardrobe），占位符会让提示词变 "a character"
+- `config/` 子目录和项目根的 project_config.yaml 都能被识别
+- audit 熔断 ≠ 重写整个故事：先看 rewrite prompt，通常只改出错的字段

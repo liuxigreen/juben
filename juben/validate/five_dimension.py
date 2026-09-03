@@ -156,19 +156,26 @@ class FiveDimensionReviewer:
         # 检查台词数量
         import re
         dialogue_count = len(re.findall(r'["「](.*?)["」]', text))
-        if dialogue_count < 3:
+        # 爆款对齐：90秒单集台词本体 500-900 字 ≈ 40-70 句，台词稀疏即电影腔
+        if dialogue_count < 15:
             score -= 1.5
-            issues.append(f"台词不足（当前{dialogue_count}句）")
-            suggestions.append("每个镜头块至少1句台词")
+            issues.append(f"台词过稀（当前{dialogue_count}句，爆款中位约50句/集）")
+            suggestions.append("台词密度提到每秒1句：冲突改怼脸对话推进，删环境描写凑字数")
 
-        # 检查台词是否超过3句/镜头
-        shot_blocks = text.split("## 镜头")
-        for i, block in enumerate(shot_blocks[1:], 1):
-            block_dialogue = len(re.findall(r'["「](.*?)["」]', block))
-            if block_dialogue > 3:
-                score -= 1.0
-                issues.append(f"镜头{i}台词过多（{block_dialogue}句）")
-                suggestions.append(f"镜头{i}台词应≤3句")
+        # 检查单人连续信息倾倒（新版注水定义；旧"≤3句/镜头"规则基于'## 镜头'分隔，
+        # 对剧本体输出永不触发，已废弃）
+        dump_run = 0
+        max_run = 0
+        for line in text.splitlines():
+            if re.match(r'^\s*["「]', line):
+                dump_run += 1
+                max_run = max(max_run, dump_run)
+            else:
+                dump_run = 0
+        if max_run >= 3:
+            score -= 1.0
+            issues.append(f"单人连续{max_run}句台词（信息倾倒）")
+            suggestions.append("把背景信息拆进对话交锋里，对手要抢话/反咬，不是只当提问机")
 
         # 检查是否有记忆点台词
         memorable_patterns = ["……", "！", "？", "你以为", "其实", "真相是"]
