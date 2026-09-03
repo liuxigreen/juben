@@ -22,17 +22,37 @@ import yaml
 
 def load_config(project_dir: Path) -> dict:
     """加载主配置 + 所有子配置"""
+    # 主配置兼容两处位置：项目根（旧约定）或 config/ 子目录（juben init 的实际输出）
     main_path = project_dir / "project_config.yaml"
     if not main_path.exists():
-        raise FileNotFoundError(f"Config not found: {main_path}")
+        alt_path = project_dir / "config" / "project_config.yaml"
+        if alt_path.exists():
+            main_path = alt_path
+        else:
+            raise FileNotFoundError(
+                f"Config not found: {main_path} (also tried {alt_path})"
+            )
     with open(main_path, encoding="utf-8") as f:
         cfg = yaml.safe_load(f)
 
-    # 加载子配置
+    # 加载子配置：先按主配置声明的相对路径，再回退 config/ 子目录
     config_dir = project_dir
+    config_sub = project_dir / "config"
     paths = cfg.get("config_paths", {})
+    if not paths and config_sub.exists():
+        # 主配置在 config/ 下时，默认加载同目录子配置
+        for sub in ("characters", "locations", "events", "action_rules",
+                    "beat_triggers", "hook_templates", "prompt_style"):
+            sub_path = config_sub / f"{sub}.yaml"
+            if sub_path.exists():
+                with open(sub_path, encoding="utf-8") as f:
+                    cfg[sub.replace("-", "_")] = yaml.safe_load(f)
     for key, rel_path in paths.items():
         full_path = config_dir / rel_path
+        if not full_path.exists() and config_sub.exists():
+            alt = config_sub / Path(rel_path).name
+            if alt.exists():
+                full_path = alt
         if full_path.exists():
             with open(full_path, encoding="utf-8") as f:
                 cfg[key] = yaml.safe_load(f)
@@ -210,9 +230,45 @@ def apply_cliffhanger(shots: list[dict], cliff_cfg: Any = None):
 class BeatExtractor:
     """通用Beat提取器"""
 
+    @staticmethod
+    def _normalize_chars(raw: Any) -> dict:
+        """角色表归一化，兼容三种来源：
+        1) config/characters.yaml（juben init 生成，{'characters': [list]}，条目无 en 字段）
+        2) characters.json（bootstrap 产出，{'characters': {name: {en, pronouns, role}}})
+        3) 直接的 {name: info} 字典
+        统一成 {中文名: {en, pronouns, role}}；缺 en 时回退用名字本身。
+        """
+        items: Any = raw
+        if isinstance(raw, dict) and "characters" in raw:
+            items = raw["characters"]
+        out: dict = {}
+        if isinstance(items, list):
+            for info in items:
+                if not isinstance(info, dict):
+                    continue
+                name = str(info.get("name") or "").strip()
+                if not name:
+                    continue
+                out[name] = {
+                    "en": str(info.get("en") or name),
+                    "pronouns": info.get("pronouns", []) or [],
+                    "role": info.get("role") or info.get("archetype") or "",
+                }
+        elif isinstance(items, dict):
+            for name, info in items.items():
+                if isinstance(info, str):
+                    out[str(name)] = {"en": info, "pronouns": [], "role": ""}
+                elif isinstance(info, dict):
+                    out[str(name)] = {
+                        "en": str(info.get("en") or name),
+                        "pronouns": info.get("pronouns", []) or [],
+                        "role": info.get("role") or "",
+                    }
+        return out
+
     def __init__(self, config: dict):
         self.cfg = config
-        self.chars = config.get("characters", {})
+        self.chars = self._normalize_chars(config.get("characters", {}))
         self.events = config.get("events", {})
         self.event_engine = EventEngine(self.events.get("events", []) if isinstance(self.events, dict) else [])
         self.triggers = config.get("beat_triggers", {})
@@ -858,7 +914,7 @@ class PromptRenderer:
     OTS_EN = "over-the-shoulder shot-reverse-shot framing"
 
     def __init__(self, config: dict):
-        self.chars = config.get("characters", {})
+        self.chars = BeatExtractor._normalize_chars(config.get("characters", {}))
         style = config.get("prompt_style", {})
         active = style.get("active_renderer", "flow_v1")
         renderers = style.get("renderers", {})
@@ -1225,14 +1281,21 @@ def run_pipeline(project_dir: Path, only_chapter=None):
     for ch in range(1, max_chapter + 1):
         if only_chapter and ch != only_chapter:
             continue
+        # 章节文件名兼容两种约定：官方 001.md 与技能文档 ch001.md
         ch_path = project_dir / "chapters" / f"{ch:03d}.md"
-        lock_path = project_dir / "chapters" / f"{ch:03d}.md.locked"
+        if not ch_path.exists():
+            alt = project_dir / "chapters" / f"ch{ch:03d}.md"
+            if alt.exists():
+                ch_path = alt
+        lock_path = ch_path.with_suffix(".md.locked")
         if not ch_path.exists(): continue
         if lock_path.exists(): continue  # 已 lock, 跳过
 
         text = ch_path.read_text(encoding="utf-8")
         beats = extractor.extract(text)
-        if not beats: continue
+        if not beats:
+            print(f"⚠ Ch{ch}: 分镜提取到 0 个 beat（剧本是否为空/格式不符？），跳过", flush=True)
+            continue
 
         loc = default_loc
         if isinstance(loc_map, dict):
@@ -1247,7 +1310,8 @@ def run_pipeline(project_dir: Path, only_chapter=None):
         beats_by_id = {b.get("beat_id"): b for b in beats}
         renderer.reset()
         for shot in shots:
-            shot["characters"] = [cfg.get("characters", {}).get(c, {}).get("en", c) for c in shot.get("characters", [])]
+            norm_chars = BeatExtractor._normalize_chars(cfg.get("characters", {}))
+            shot["characters"] = [norm_chars.get(c, {}).get("en", c) for c in shot.get("characters", [])]
             shot["veo_prompt"] = renderer.render(shot, loc)
             # 统一负向提示词（Veo3畸形手/换脸/水印/随机对白防护，可配置）
             shot["negative_prompt"] = renderer.negative_prompt

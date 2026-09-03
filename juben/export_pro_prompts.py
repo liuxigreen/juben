@@ -358,9 +358,20 @@ def export_professional_prompts(project_dir: Path, only_chapter: int = 0):
     char_file = project_dir / "config" / "characters.yaml"
     if char_file.exists():
         chars_raw = yaml.safe_load(char_file.read_text(encoding="utf-8"))
-        # v1.1.1: characters.yaml 格式是 {characters: {name: {en:..., role:...}}}
-        chars_dict = chars_raw.get("characters", chars_raw) if isinstance(chars_raw, dict) else {}
-        char_desc = {info["en"]: info for info in chars_dict.values() if isinstance(info, dict) and "en" in info}
+        # 兼容两种格式：{characters: [list]}（juben init 模板）与 {characters: {name: {...}}}
+        chars_items = []
+        if isinstance(chars_raw, dict):
+            c = chars_raw.get("characters", chars_raw)
+            chars_items = list(c.values()) if isinstance(c, dict) else c
+        elif isinstance(chars_raw, list):
+            chars_items = chars_raw
+        char_desc = {}
+        for info in chars_items:
+            if isinstance(info, dict):
+                # 缺 en 字段时回退用中文名（模板占位角色没有 en）
+                key = str(info.get("en") or info.get("name") or "").strip()
+                if key:
+                    char_desc[key] = info
     else:
         char_desc = {}
     
