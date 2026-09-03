@@ -85,43 +85,46 @@ RHYTHM_STRUCTURE_MAP = {
 # ============================================================
 
 # Guardian熔断红线（单一事实来源）
-GUARDIAN_DIALOGUE_CAPS = {'action_heavy': 0.25, 'chase': 0.28, 'suspense': 0.3, 'investigation': 0.35, 'confrontation': 0.4, 'reveal': 0.4}
+# 爆款对齐（4497条真实在投短剧语料）：开场实测中位 7.6 字/秒台词，冲突靠怼脸对话推进，
+# 上限从 0.22-0.40 提到 0.55-0.75；注水防线改为"单人连续≥3句信息倾倒"检测（guardian 侧），
+# 不再限制对话总占比。
+GUARDIAN_DIALOGUE_CAPS = {'action_heavy': 0.55, 'chase': 0.58, 'suspense': 0.60, 'investigation': 0.65, 'confrontation': 0.75, 'reveal': 0.75}
 
 STRUCTURE_REQUIREMENTS = {
     "action_heavy": {
-        "dialogue_max": 0.22,
-        "action_min": 0.45,
-        "description": "动作主导：物理动作≥45%，对话≤22%",
-        "forbidden": ["纯对话推进", "概述性动作"],
+        "dialogue_max": 0.52,
+        "action_min": 0.30,
+        "description": "动作主导：物理动作≥30%，对话≤52%，边打边说，每个动作带台词或呼吸感",
+        "forbidden": ["概述性动作"],
     },
     "investigation": {
-        "dialogue_max": 0.31999999999999995,
-        "action_min": 0.30,
-        "description": "调查发现：主角主动探索、发现线索、拼凑信息",
+        "dialogue_max": 0.62,
+        "action_min": 0.20,
+        "description": "调查发现：主角主动探索、发现线索、拼凑信息，追问要有攻防",
         "required_elements": ["发现", "观察", "推理"],
     },
     "confrontation": {
-        "dialogue_max": 0.37,
-        "action_min": 0.25,
-        "description": "对峙冲突：角色间直接冲突，情绪张力拉满",
+        "dialogue_max": 0.72,
+        "action_min": 0.12,
+        "description": "对峙冲突：怼脸对话正反打，每回合立场或信息必须变化，情绪张力拉满",
         "required_elements": ["威胁", "反击", "对视"],
     },
     "reveal": {
-        "dialogue_max": 0.37,
-        "action_min": 0.30,
-        "description": "真相揭示：信息炸弹，颠覆认知",
+        "dialogue_max": 0.72,
+        "action_min": 0.15,
+        "description": "真相揭示：信息炸弹，颠覆认知，揭示瞬间给足反应镜头",
         "required_elements": ["真相", "意外", "反转"],
     },
     "chase": {
-        "dialogue_max": 0.25,
-        "action_min": 0.45,
-        "description": "追逐紧迫：高速节奏，物理动作密集",
+        "dialogue_max": 0.55,
+        "action_min": 0.30,
+        "description": "追逐紧迫：高速节奏，边跑边喊，物理动作密集",
         "required_elements": ["跑", "追", "躲", "逃"],
     },
     "suspense": {
-        "dialogue_max": 0.27,
-        "action_min": 0.35,
-        "description": "悬疑压迫：环境恐惧，感官放大",
+        "dialogue_max": 0.57,
+        "action_min": 0.22,
+        "description": "悬疑压迫：环境恐惧，感官放大，台词压低但信息密度不减",
         "required_elements": ["异响", "阴影", "不安"],
     },
 }
@@ -499,6 +502,11 @@ class ConstraintInjector:
         if hook_injection:
             blocks.append(hook_injection)
 
+        # 5.8b 开场硬规则注入（语料实证钩子类型学 + genre mixin 的 opening_rule）
+        opening_injection = self._build_opening_rule_injection(chapter_num)
+        if opening_injection:
+            blocks.append(opening_injection)
+
         # 5.9 爽点类型注入（基于satisfaction-matrix.md）
         satisfaction_injection = self._build_satisfaction_injection(chapter_num)
         if satisfaction_injection:
@@ -748,24 +756,27 @@ class ConstraintInjector:
             structure_type = history[-1].get("type")
 
         req = STRUCTURE_REQUIREMENTS.get(structure_type, {})
-        max_pct = int(req.get("dialogue_max", 0.30) * 100)
+        max_pct = int(req.get("dialogue_max", 0.65) * 100)
 
-        return f"""### 📊 对话比例硬指标（违反即熔断）
+        return f"""### 📊 对话密度硬指标（违反即熔断）
 
 **规则**：
-- 对话总字数 ≤ 全文字数的 {max_pct}%（本章结构: {structure_type or '默认'}）
-- 每出现一句对话（<15字），必须跟随至少 1 段关于"环境观察"或"手部/足部物理微动作"的描写
-- 禁止连续2句以上纯对话（必须插入动作/环境/感官）
+- 对话总字数 ≥ 全文字数的 40%、≤ {max_pct}%（本章结构: {structure_type or '默认'}）——短剧是怼脸对话驱动的媒介，台词是主体
+- 每个对话回合必须发生"立场变化 / 新信息 / 情绪升级"三者之一；重复立场的寒暄视为注水
+- 禁止单人连续 ≥3 句在陈述背景信息（信息倾倒）；真相只能挤牙膏式暴露
+- 动作/环境描写服务于冲突节拍（0.5-1 句），不再强制"一句对话配一段环境"
 
 **为什么**：
-对话过多 = 结构单调 = Guardian扣分
-动作/环境描写 = 视觉密度 = 可拍摄性 = 高分
+4497条真实爆款语料实测：开场中位 7.6 字/秒台词（每分钟 38-57 句），冲突全靠怼脸正反打推进。
+台词稀疏 + 大段环境描写 = 电影腔 = 观众划走。
 
-**正确示范**：
+**正确示范**（每回合都有增量，1 秒 1 句的密度）：
 ```
-"你是谁？"陈默问。他的手指不自觉地摸了一下右手食指的伤疤。
-窗外传来救护车的鸣笛声，由远及近，又渐渐远去。
-"王建国。"那个人伸出手。他的左手无名指戴着一枚旧式金戒指，在走廊的灯光下反射出一道暗淡的光。
+"退婚可以。"林晚把婚书推回去，"彩礼三倍，今天结清。"
+"你疯了？苏家拿得出吗？"
+"拿不出就拿苏氏的股份抵。"
+"你——你不过是抱了个野男人大腿！"
+"野男人？"林晚笑了，"三年前输掉两个亿项目的，也是他。"
 ```"""
 
     # ============================================================
@@ -1343,6 +1354,50 @@ class ConstraintInjector:
     # ============================================================
     # 新增：钩子类型注入（基于hook-design.md）
     # ============================================================
+
+    def _build_opening_rule_injection(self, chapter_num: int) -> str:
+        """开场硬规则注入：优先用 genre mixin 接线的 opening_rule/hook_types，
+        缺失时回退到语料实证钩子类型学（4497条真实在投短剧统计），并打 WARNING。"""
+        meta_path = self.project_dir / "story_meta.json"
+        meta = {}
+        if meta_path.exists():
+            try:
+                meta = json.loads(meta_path.read_text(encoding="utf-8"))
+            except Exception as e:
+                logger.warning(f"加载story_meta.json失败: {e}")
+
+        opening_rule = str(meta.get("opening_rule") or "").strip()
+        hook_types = [str(h) for h in (meta.get("hook_types") or []) if str(h).strip()]
+        rhythm_curve = str(meta.get("rhythm_curve") or "").strip()
+
+        if not opening_rule:
+            logger.warning(
+                "story_meta.json 缺少 opening_rule/hook_types（genre mixin 配方未接线或未生成），"
+                "使用语料默认开场配方"
+            )
+            # 语料实证默认：身份反差34% > 关系背叛20% > 情绪爆点17%
+            hook_types = hook_types or ["身份反差", "关系背叛", "情绪爆点"]
+            opening_rule = (
+                "开场25秒内落地主钩子（4497条语料实测钩子出现中位25秒）："
+                "①身份反差——被羞辱者藏着碾压性身份；②关系背叛——最亲的人当众捅刀；"
+                "③情绪爆点——弱者被逼到绝境。三选一，画面直给，不做背景铺垫。"
+            )
+
+        parts = ["### 🪝 开场硬规则（前25秒定生死，违反即熔断）\n"]
+        parts.append(f"**开场规则**：{opening_rule}\n")
+        if hook_types:
+            parts.append(f"**本剧主钩子类型**：{'、'.join(hook_types)}（本章开场从中轮转选用，连续两章不得同款）\n")
+        if rhythm_curve:
+            parts.append(f"**题材节奏曲线**：{rhythm_curve}\n")
+        parts.append(
+            "**钩子类型速查（语料占比）**：身份反差34% | 关系背叛20% | 情绪爆点17% | "
+            "时间改命9% | 系统异能7% | 补偿回报2% | 反转打脸2%\n"
+            "\n**执行标准**：\n"
+            "- 第一句台词就是冲突现场，禁止回忆/天气/环境开场\n"
+            "- 台词按每秒1句的密度给，25秒内主钩子必须被观众看懂\n"
+            "- 钩子落地必须配一个怼脸特写或当众事件，不能只靠旁白交代\n"
+        )
+        return "\n".join(parts)
 
     def _build_hook_injection(self, chapter_num: int) -> str:
         """根据骨架类型选择合适的结尾钩子"""

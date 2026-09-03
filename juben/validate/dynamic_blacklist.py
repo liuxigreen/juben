@@ -32,21 +32,6 @@ SEED_BLACKLIST = [
     # 眼神系列
     "眼中闪过一丝光芒",
     "眼睛里闪过一丝光芒",
-    # 情绪系列
-    "战意升腾",
-    "倒吸一口凉气",
-    "瞳孔剧烈收缩",
-    "瞳孔骤缩",
-    # 副词系列
-    "不禁",
-    "竟然",
-    "居然",
-    "仿佛",
-    "好像",
-    "似乎",
-    "一瞬间",
-    "那一刻",
-    "就这样",
     # 身体系列
     "感觉到自己的",
     "感觉到自己的血液在沸腾",
@@ -58,6 +43,30 @@ SEED_BLACKLIST = [
     "想说什么，但又说不出来",
     "他的眼睛亮了",
 ]
+
+# ============================================================
+# 1b. 情绪强调词 — 预算制而非禁止
+# 爆款对齐：狗血情绪是竖屏短剧的情绪引擎（4497条语料：情绪爆点钩子占17%），
+# 短剧允许"竟然/居然/倒吸一口凉气/瞳孔地震"，只限用量防AI味。
+# ============================================================
+
+EMOTION_BUDGET_WORDS = [
+    "战意升腾",
+    "倒吸一口凉气",
+    "瞳孔剧烈收缩",
+    "瞳孔骤缩",
+    "不禁",
+    "竟然",
+    "居然",
+    "仿佛",
+    "好像",
+    "似乎",
+    "一瞬间",
+    "那一刻",
+]
+
+# 每章合计出现次数上限（超过才报警，且为 warning 级）
+EMOTION_WORD_BUDGET = 5
 
 
 # ============================================================
@@ -200,6 +209,26 @@ def check_ai_flavor(
                     "line": i,
                     "context": line.strip()[:80],
                 })
+
+    # 1b. 情绪强调词预算（超额才报一条 budget 级违规，允许适度的狗血情绪）
+    budget_total = 0
+    budget_last_line = 1
+    for phrase in EMOTION_BUDGET_WORDS:
+        if phrase in whitelist:
+            continue
+        count = text.count(phrase)
+        budget_total += count
+        if count:
+            for i, line in enumerate(lines, 1):
+                if phrase in line:
+                    budget_last_line = max(budget_last_line, i)
+    if budget_total > EMOTION_WORD_BUDGET:
+        violations.append({
+            "type": "budget",
+            "match": f"情绪强调词共出现{budget_total}次（预算{EMOTION_WORD_BUDGET}次）",
+            "line": budget_last_line,
+            "context": "情绪词是短剧的情绪引擎，但过量即AI味；删减到预算内",
+        })
 
     # 2. 正则模式匹配
     for pattern in AI_PATTERNS:

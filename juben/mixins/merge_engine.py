@@ -293,11 +293,25 @@ class MergeEngine:
         # 从genre mixins推断genre和themes
         genre_parts = []
         themes = []
+        # 爆款对齐：接线 genre mixin 的市场验证配方（此前 opening_rule/hook_types/
+        # rhythm_curve 定义了但没有任何代码读取，纯摆设）
+        opening_rule = ""
+        hook_types: list[str] = []
+        rhythm_curve = ""
         for category, name, data in self.resolve_mixin_names(genre_mixins):
             if "description" in data:
                 genre_parts.append(data["description"])
             if "core_principles" in data:
                 themes.extend(data["core_principles"][:3])
+            if data.get("opening_rule") and not opening_rule:
+                opening_rule = str(data["opening_rule"])
+            for ht in data.get("hook_types") or []:
+                if ht not in hook_types:
+                    hook_types.append(str(ht))
+            if data.get("rhythm_curve") and not rhythm_curve:
+                rhythm_curve = str(data["rhythm_curve"])
+        if not opening_rule:
+            logger.warning("genre mixin 未提供 opening_rule，开场规则将退回默认钩子注入")
 
         return StoryMeta(
             title=title or "未命名",
@@ -310,6 +324,9 @@ class MergeEngine:
             narrative_skeleton="mixins:" + ",".join(skeleton_mixins),
             global_hook_density="high",
             themes=themes[:5],
+            opening_rule=opening_rule,
+            hook_types=hook_types[:5],
+            rhythm_curve=rhythm_curve,
             # === v1.1.0: 高概念模式默认开 ===
             high_concept=HighConcept(
                 enabled=True,

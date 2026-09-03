@@ -1314,34 +1314,36 @@ def check_dialogue_ratio(chapter_text: str, structure_type: str | None = None, p
     
     # 基础阈值：按结构类型设置不同上限
     # Guardian熔断红线（与constraint_injector.GUARDIAN_DIALOGUE_CAPS保持一致）
+    # 爆款对齐：4497条语料实测开场 7.6 字/秒台词，冲突靠怼脸对话推进，上限整体抬高；
+    # 注水防线改由信息倾倒检测（单人连续≥3句背景陈述）承担，不再压对话总占比。
     DIALOGUE_CAPS = {
-        "action_heavy": 0.25,
-        "chase": 0.28,
-        "suspense": 0.30,
-        "investigation": 0.35,
-        "confrontation": 0.40,
-        "reveal": 0.40,
+        "action_heavy": 0.55,
+        "chase": 0.58,
+        "suspense": 0.60,
+        "investigation": 0.65,
+        "confrontation": 0.75,
+        "reveal": 0.75,
     }
-    
+
     # 获取本章的基础对话比例上限
-    base_cap = DIALOGUE_CAPS.get(structure_type or "", 0.35)
+    base_cap = DIALOGUE_CAPS.get(structure_type or "", 0.65)
 
     # 混合结构自适应：检测章节实际内容，如果包含对峙/揭露元素则放宽上限
     content_types = _detect_dialogue_content_type(chapter_text, project_dir)
     if content_types:
         # 取所有匹配内容类型的上限中的最大值
-        content_caps = [DIALOGUE_CAPS.get(ct, 0.35) for ct in content_types]
+        content_caps = [DIALOGUE_CAPS.get(ct, 0.65) for ct in content_types]
         blended_cap = max(base_cap, max(content_caps))
         # 对混合结构给予额外5%容忍度（因为章节既有动作又有对峙）
-        cap = min(blended_cap + 0.05, 0.45)  # 绝对上限45%
+        cap = min(blended_cap + 0.05, 0.80)  # 绝对上限80%
     else:
         cap = base_cap
-    
-    # 物证豁免：confrontation/reveal章节，35%-40%之间给予warning而非critical
+
+    # 物证豁免：confrontation/reveal章节，超线10%以内给予warning而非critical
     if ratio > cap:
         severity = "critical"
         # confrontation/reveal或混合结构的弹性容忍
-        if (structure_type in ("confrontation", "reveal") or content_types) and ratio <= 0.45:
+        if (structure_type in ("confrontation", "reveal") or content_types) and ratio <= cap + 0.10:
             severity = "warning"
         
         return GuardianViolation(

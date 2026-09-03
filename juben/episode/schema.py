@@ -72,12 +72,23 @@ class Composition(str, Enum):
 
 
 class PacingLabel(str, Enum):
-    """节奏卡点标签"""
-    HOOK_3S = "3s_Hook"                      # 前100字/3秒：感官冲击
-    RETENTION_15S = "15s_Retention"          # 300-500字/10-20秒：信息差炸弹
-    EXPLOSION_30S = "30s_Explosion"          # 600-800字/25-35秒：视觉/物理冲击
-    SATISFACTION_60S = "60s_Satisfaction"    # 1000-1200字/50-65秒：小赢
-    CLIFFHANGER_90S = "90s_Cliffhanger"     # 1700-2000字/80-95秒：断崖钩子
+    """节奏卡点标签
+    爆款对齐：从5点扩到9点——抖音/红果留存铁律是"15秒一个钩子、30秒一个反转"，
+    任何15秒无新信息即划走；旧表 30s→60s→90s 之间的长直道是中段信息真空。
+    字数轴按 90 秒 ≈ 500-900 字台词本体校准（见 docs/hit-drama-alignment-plan.md 闸门6）。
+    """
+    HOOK_3S = "3s_Hook"                      # 0-3秒：感官冲击+主钩子画面
+    CONFLICT_15S = "15s_Conflict"            # 12-18秒：第一冲突升级（立场交锋）
+    RETENTION_30S = "30s_Retention"          # 25-35秒：信息差炸弹+第一次小反转
+    ESCALATE_45S = "45s_Escalation"          # 40-50秒：打脸前蓄力/施辱者加码
+    EXPLOSION_60S = "60s_Explosion"          # 55-65秒：爆点（打脸/揭露/物理冲击）
+    SATISFACTION_75S = "75s_Satisfaction"    # 70-78秒：爽点兑现+反应镜头
+    TWIST_82S = "82s_Twist"                  # 78-85秒：新变量插入（第二次反转）
+    CLIFFHANGER_90S = "90s_Cliffhanger"     # 85-90秒：断崖钩子（卡在最后一口气）
+    # 兼容旧标签名（映射到新刻度）
+    RETENTION_15S = "15s_Retention"          # 旧名，语义并入 CONFLICT_15S
+    EXPLOSION_30S = "30s_Explosion"          # 旧名，语义并入 RETENTION_30S
+    SATISFACTION_60S = "60s_Satisfaction"    # 旧名，语义并入 EXPLOSION_60S
 
 
 # ============================================================

@@ -108,3 +108,30 @@
 2. 同一 premise 各生成 10 集，人工盲测：与红果热榜同题材剧放一起，"像不像一个工业体系的产品" ≥8/10。
 3. 五套校验器不再出现"同词一禁一奖"；audit 全绿耗时不劣于现状。
 4. `references/hook-taxonomy.md` 的类型学可被 constraint_injector 程序化读取。
+
+---
+
+## 六、第二阶段实施记录（本 PR 已落地的改动）
+
+创作层：
+1. `juben/constraint_injector.py` — GUARDIAN_DIALOGUE_CAPS 0.22-0.40 → **0.55-0.75**；STRUCTURE_REQUIREMENTS 同步重写；"对话比例硬指标"块改为"对话密度硬指标"（占比带 40%-72%、每回合必须增量、禁单人≥3句信息倾倒，示范改成 1 秒 1 句的怼脸交锋）；新增 `_build_opening_rule_injection()`（开场硬规则注入，接线 genre mixin 的 opening_rule/hook_types/rhythm_curve，缺失回退语料默认配方并打 WARNING）
+2. `juben/guardian/__init__.py` — 对话熔断红线同步抬到 0.55-0.75（绝对上限 0.80），warning 弹性带改为超线 10% 以内
+3. `juben/validate/anti_cliche.py` — 8 条市场验证的爆款桥段（下跪/令牌/退婚/废物觉醒/系统/打脸公式/震惊体/碾压）从 CRITICAL 降级为**同章预算制**（≥2 次才 WARNING）；新增重叠计数 `_count_overlaps`（修复贪婪正则跨句吞噬导致漏计）；执行类烂梗（降智/巧合/顿悟/死亡flag/光环）保持 CRITICAL
+4. `juben/validate/dynamic_blacklist.py` — 情绪强调词（竟然/居然/仿佛/倒吸凉气/瞳孔…12 个）从黑名单移入 `EMOTION_BUDGET_WORDS` 预算制（每章合计 ≤5 次，超额报 budget 级），保留真 AI 味短语禁用
+5. `juben/extract/__init__.py` — Scribe 人格"专业小说作者"→"深谙抖音/红果爆款逻辑的顶级短剧编剧"；创作纪律新增第 9 条（内心 OS 每章 1-3 句）和第 10 条（台词密度 380-460 字/分钟）；负面模板"错误3"改为只禁"单人连续灌输"，不再禁"对话多"
+6. `juben/episode/schema.py` + `juben/episode/rhythm.py` + `templates/mixins/skeleton/vertical-drama.yaml` — 卡点表 5 点 → **9 点**（3s钩子/15s冲突/30s信息差/45s蓄力/60s爆点/75s爽点/82s新变量/90s断崖），字数轴按 90s≈500-900 字台词本体统一（旧表 1700-2000 字与"单集800-1500字"自述矛盾已消除）
+7. `juben/state/schema.py` — `target_word_count_per_chapter` 2000 → 900；StoryMeta 新增 `opening_rule`/`hook_types`/`rhythm_curve` 三字段
+8. `juben/mixins/merge_engine.py` — build_story_meta 真正读取 genre mixin 的 opening_rule/hook_types/rhythm_curve（此前定义了但无代码读取），缺失时 WARNING
+9. `juben/genre_templates/rebirth_revenge.py` — 金手指改回**先知确定性**（记忆 100% 灵验），代价改为"每次动用先知有坠楼闪回反噬 + 暴露风险"，删除"记忆会失准"的自我削弱设定；黑名单移除爆款桥段、只留执行类烂梗；字数默认 900
+
+语料资产（新增，本库独有护城河）：
+10. `juben/data/corpus_stats.json` — 4497 条真实在投剧的题材频次/钩子占比/反转密度/台词密度，机器可读
+11. `references/hook-taxonomy.md` — 7 类钩子类型学（占比+高播放 skew+画面范式+执行数值）
+12. `references/hit-formula.md` — 爆款结构配方（90s 单集结构表/反转预算/题材-狗血桥段配给/台词规范/付费卡点/爽点分级）
+
+分镜/Veo 提示词层：
+13. `juben/export_pro_prompts.py` — 场景上下文按 `shot.location` 动态匹配 15 类常见场景（旧版全剧硬编码咖啡店，跨场景全穿帮）；统一 NEGATIVE_PROMPT（多手指/换脸/换装/水印/随机对白）；有台词镜头标注 lip-sync + 语种，无台词镜头显式 "No dialogue, ambient sound only"（防 Veo3 自作主张加旁白）；内心 OS 声音标注 no lip movement
+14. 保留已有优点：时长保底由台词字数推算（`_speech_seconds`）、表演配方（眼神/呼吸/微表情）、9:16 竖屏
+
+### 开源方案借鉴（对比结论）
+调研了 MoneyPrinterTurbo（文案→配音→字幕→素材→成片的批量流水线）、NarratoAI（解说+分镜）等开源实现：它们的强项在"素材合成自动化"（TTS、字幕烧录、素材库匹配），juben 的强项在"叙事结构与钩子工程"。本 PR 取长补短：把本次升级的台词密度/口型/负向提示词/场景一致性对齐 Veo3 实操最佳实践；TTS/字幕烧录层维持 juben 现有 voice_data.json + srt 输出接口不变，后续如需接入 MoneyPrinterTurbo 式合成可在 Stage4 对接。
