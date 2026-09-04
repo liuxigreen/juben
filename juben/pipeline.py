@@ -494,6 +494,22 @@ class BeatExtractor:
             return self._apply_rewrite(f"{char} {fv[0]}", char)
         if fn:
             return self._apply_rewrite(f"{char} gazes at the {fn[0]}", char)
+        # 爆款对齐兜底词库：模板词表覆盖不到的短剧高频动作（掀桌/攥拳/切石/下跪…）
+        DRAMA_ACTION_MAP = {
+            "掀翻椅子": "flips the chair over", "攥碎": "crushes it in his fist",
+            "攥紧": "clenches his fist hard", "掰开手指": "pries the fingers open",
+            "下跪": "drops to his knees", "跪下": "drops to his knees",
+            "画线": "marks a cutting line on the stone with chalk",
+            "落刀": "drives the cutting blade down", "切石": "feeds the stone into the saw",
+            "摘下": "takes off", "捡起": "picks up", "转身": "turns around sharply",
+            "后退": "stumbles backward", "掀开": "pulls the cover off",
+            "举起": "holds it up high", "砸": "slams it down", "摔": "slams it down",
+            "推门": "pushes the door open", "夺门而出": "bolts out the door",
+            "卷起袖子": "rolls up the sleeve", "拍案": "slams the table",
+        }
+        for zh_act, en_act in DRAMA_ACTION_MAP.items():
+            if zh_act in text:
+                return self._apply_rewrite(f"{char} {en_act}", char)
         fallback = self.action_rules.get("action_fallback", "{char} stands still")
         return self._apply_rewrite(fallback.replace("{char}", char), char)
 
@@ -582,8 +598,19 @@ class BeatExtractor:
         elif dlg_text:
             vt = "onscreen"
 
+        # 爆款对齐：beat 级场景检测（公盘/仓库/当铺…），场景氛围才能进提示词
+        loc_map_cfg = self.cfg.get("locations") or {}
+        if isinstance(loc_map_cfg, dict) and set(loc_map_cfg.keys()) == {"locations"}:
+            loc_map_cfg = loc_map_cfg["locations"]
+        beat_loc = ""
+        if isinstance(loc_map_cfg, dict):
+            for zh_key, en_loc in loc_map_cfg.items():
+                if isinstance(en_loc, str) and zh_key in text:
+                    beat_loc = en_loc
+                    break
         return {
             "beat_id": beat_id,
+            "location": beat_loc,
             "space": self._detect_space(text),
             "characters_present": chars,
             "primary_char": primary,
@@ -706,7 +733,8 @@ class ShotCompiler:
                 "shot_id": i + 1, "shot_type": st, "camera_movement": cam,
                 "camera_angle": self._angle(emotion), "duration": dur,
                 "_speech_floor": sfloor,
-                "location": location, "space": beat.get("space", "Physical"),
+                "location": beat.get("location") or location,
+                "space": beat.get("space", "Physical"),
                 "characters": beat.get("characters_present", []),
                 "action_visual": beat.get("action_visual", ""),
                 "dialogue": beat.get("dialogue_all") or dlg,
@@ -776,9 +804,16 @@ class ShotCompiler:
                     nb["dialogue_all"] = ch
                     nb["dialogue_chars"] = len(ch)
                     if i > 0:
-                        # 后续段：保持说话状态（画面给反应/递进的微动作）
+                        # 后续段：保持说话状态，填充动作轮换（同一动作连用N镜=画面复读）
                         who = b.get("primary_char", "Character")
-                        nb["action_visual"] = f"{who} keeps speaking, expression intensifying, breath quickening"
+                        fillers = [
+                            f"{who} keeps speaking, leaning forward, jaw tight with conviction",
+                            f"{who} keeps speaking, one hand slicing the air for emphasis",
+                            f"{who} keeps speaking, stepping closer, voice harder",
+                            f"{who} keeps speaking, eyes locked on the listener, breath quickening",
+                            f"{who} keeps speaking, palms open in a defiant shrug",
+                        ]
+                        nb["action_visual"] = fillers[i % len(fillers)]
                     out.append(nb)
             else:
                 out.append(b)
@@ -1410,6 +1445,8 @@ def run_pipeline(project_dir: Path, only_chapter=None):
 
     default_loc = cfg.get("default_location", "")
     loc_map = cfg.get("locations", {})
+    if isinstance(loc_map, dict) and set(loc_map.keys()) == {"locations"}:
+        loc_map = loc_map["locations"]
     if isinstance(loc_map, dict):
         loc_map = {k: v for k, v in loc_map.items() if isinstance(v, str)}
 

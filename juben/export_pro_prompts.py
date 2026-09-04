@@ -163,6 +163,42 @@ LOCATION_CONTEXT_MAP = {
         "base": "inside a palatial mansion hall",
         "details": ["marble floor reflections", "crystal chandelier", "double-height ceiling"],
     },
+    "公盘": {
+        "base": "inside a large jade trading hall, exhibition spotlights over rows of stone tables",
+        "details": [
+            "numbered jade gambling stones on velvet",
+            "crowds of bidders craning their necks",
+            "cutting machine with water spray in the background",
+        ],
+    },
+    "赌石": {
+        "base": "inside a large jade trading hall, exhibition spotlights over rows of stone tables",
+        "details": [
+            "cutting machine with water spray",
+            "green dust on the cutting bay",
+            "crowd pressed against the rope line",
+        ],
+    },
+    "仓库": {
+        "base": "inside an old dim storage warehouse",
+        "details": [
+            "burnt wooden racks, charred stone shelves",
+            "dust motes floating in one shaft of light",
+            "tarpaulin covering tall shapes",
+        ],
+    },
+    "当铺": {
+        "base": "inside a traditional Chinese pawnshop counter",
+        "details": [
+            "tall wooden counter with brass scale",
+            "shelves of bundled items in cloth",
+            "warm bulb light over the counter",
+        ],
+    },
+    "夜市": {
+        "base": "outdoor night market street, neon and lantern glow",
+        "details": ["steam from food stalls", "hanging string lights", "wet pavement reflections"],
+    },
     "雨": {
         "base": "outdoor city street in heavy rain at night",
         "details": ["neon reflections on wet asphalt", "umbrellas", "headlight halos in the rain"],
